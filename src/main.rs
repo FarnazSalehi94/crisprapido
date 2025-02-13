@@ -351,7 +351,8 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 }
 
 fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8], 
-               max_mismatches: u32, max_bulges: u32, max_bulge_size: u32)
+               max_mismatches: u32, max_bulges: u32, max_bulge_size: u32,
+               no_filter: bool)
                -> Option<(i32, String, u32, u32, u32, usize)> {
     aligner.align(window, guide);  // Target sequence first, then guide sequence
     let score = aligner.score();
@@ -422,7 +423,7 @@ fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8],
            cigar, n_adjusted_mismatches, gaps, max_gap_size);
 
     // Filter based on thresholds unless disabled
-    if args.no_filter || (matches >= 1 && ((cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
+    if no_filter || (matches >= 1 && ((cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
        (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size))) {
         Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size, leading_dels))
     } else {
