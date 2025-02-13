@@ -203,7 +203,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, target, 1, 1, 1);
         assert!(result.is_some());
-        let (_score, cigar) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
         assert_eq!(cigar, "MMMMMMMMMM");
     }
 
@@ -213,9 +213,9 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGTTCGAT";  // Single mismatch at position 5
         
-        let result = scan_window(&mut aligner, guide, target);
+        let result = scan_window(&mut aligner, guide, target, 1, 1, 1);
         assert!(result.is_some(), "Should accept a single mismatch");
-        let (_score, cigar) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
         assert_eq!(cigar, "MMMMXMMMMM");
     }
 
@@ -225,9 +225,9 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGAATCGAT";  // Single base insertion after position 4
         
-        let result = scan_window(&mut aligner, guide, target);
+        let result = scan_window(&mut aligner, guide, target, 1, 1, 1);
         assert!(result.is_some(), "Should accept a single base bulge");
-        let (_score, cigar) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
     }
 
@@ -248,9 +248,9 @@ mod tests {
         let guide = b"ATCGATCGAT";
         let target = create_flanked_sequence(&mut rng, guide, 500);
         
-        let result = scan_window(&mut aligner, guide, &target[500..510]);
+        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1);
         assert!(result.is_some(), "Should match perfectly even with flanks");
-        let (_score, cigar) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
         assert_eq!(cigar, "MMMMMMMMMM");
     }
 
@@ -262,9 +262,9 @@ mod tests {
         let core = b"ATCGTTCGAT";  // Single mismatch at position 5
         let target = create_flanked_sequence(&mut rng, core, 500);
         
-        let result = scan_window(&mut aligner, guide, &target[500..510]);
+        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1);
         assert!(result.is_some(), "Should accept a single mismatch with flanks");
-        let (_score, cigar) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
         assert_eq!(cigar, "MMMMXMMMMM");
     }
 
@@ -276,7 +276,7 @@ mod tests {
         let core = b"ATCGAATCGAT";  // Single base insertion after position 4
         let target = create_flanked_sequence(&mut rng, core, 500);
         
-        let result = scan_window(&mut aligner, guide, &target[500..511]);
+        let result = scan_window(&mut aligner, guide, &target[500..511], 1, 1, 1);
         assert!(result.is_some(), "Should accept a single base bulge with flanks");
         let (_score, cigar) = result.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
@@ -290,7 +290,7 @@ mod tests {
         let core = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
         let target = create_flanked_sequence(&mut rng, core, 500);
         
-        let result = scan_window(&mut aligner, guide, &target[500..510]);
+        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1);
         assert!(result.is_none(), "Should reject sequence with too many mismatches even with flanks");
     }
 }
