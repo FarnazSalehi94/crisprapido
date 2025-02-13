@@ -83,8 +83,8 @@ cargo run --features debug
 
 ## License
 
-[Add your chosen license here]
+See LICENSE file
 
 ## Citation
 
-[Add citation information if applicable]
+Stay tuned!
