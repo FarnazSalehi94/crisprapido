@@ -237,7 +237,7 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
         
-        let result = scan_window(&mut aligner, guide, target);
+        let result = scan_window(&mut aligner, guide, target, 1, 1, 1);
         assert!(result.is_none());
     }
 
@@ -278,7 +278,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, &target[500..511], 1, 1, 1);
         assert!(result.is_some(), "Should accept a single base bulge with flanks");
-        let (_score, cigar) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
     }
 
@@ -358,7 +358,7 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 }
 
 fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8], 
-               max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) 
+               _max_mismatches: u32, _max_bulges: u32, _max_bulge_size: u32)
                -> Option<(i32, String, u32, u32, u32)> {
     aligner.align(window, guide);  // Target sequence first, then guide sequence
     let score = aligner.score();
