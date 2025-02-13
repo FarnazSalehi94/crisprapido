@@ -273,7 +273,7 @@ fn main() {
     println!("#Reference\tStart\tEnd\tStrand\tGuide\tTarget\tScore\tMM/Gaps/Size\tCIGAR");
     
     // Import required WFA2 types
-    use libwfa2::affine_wavefront::{AlignmentScope, AffineWavefronts};
+    use libwfa2::affine_wavefront::{AlignmentSpan, AffineWavefronts};
 
     // Set up WFA parameters with CRISPR-specific penalties and end-free alignment
     let mut aligner = AffineWavefronts::with_penalties(
