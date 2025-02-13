@@ -194,7 +194,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, target, 1, 1, 1);
         assert!(result.is_some(), "Should accept a single mismatch");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert_eq!(cigar, "MMMMXMMMMM");
     }
 
@@ -206,7 +206,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, target, 1, 1, 1);
         assert!(result.is_some(), "Should accept a single base bulge");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
     }
 
@@ -229,7 +229,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1);
         assert!(result.is_some(), "Should match perfectly even with flanks");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert_eq!(cigar, "MMMMMMMMMM");
     }
 
@@ -243,7 +243,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1);
         assert!(result.is_some(), "Should accept a single mismatch with flanks");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert_eq!(cigar, "MMMMXMMMMM");
     }
 
@@ -257,7 +257,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, &target[500..511], 1, 1, 1);
         assert!(result.is_some(), "Should accept a single base bulge with flanks");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
     }
 
