@@ -1,4 +1,7 @@
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
+use std::fs::File;
+use std::io::{self, BufRead, BufReader};
+use flate2::read::MultiGzDecoder;
 use std::sync::Arc;
 use clap::Parser;
 use bio::io::fasta;
@@ -445,7 +448,14 @@ fn main() {
     let guide_len = guide_fwd.len();
 
     // Process reference sequences
-    let reader = fasta::Reader::from_file(args.reference).expect("Failed to read FASTA file");
+    // Create transparent reader that handles both plain and gzipped files
+    let file = File::open(&args.reference).expect("Failed to open reference file");
+    let reader: Box<dyn BufRead> = if args.reference.extension().map_or(false, |ext| ext == "gz") {
+        Box::new(BufReader::new(MultiGzDecoder::new(file)))
+    } else {
+        Box::new(BufReader::new(file))
+    };
+    let reader = fasta::Reader::new(reader);
     
     for result in reader.records() {
         let record = result.expect("Error during FASTA record parsing");
