@@ -16,7 +16,7 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
 }
 
 fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char, 
-              score: i32, cigar: &str) {
+              score: i32, cigar: &str, guide: &[u8]) {
     // Parse CIGAR to handle leading indels and calculate positions
     let mut ref_pos = pos;
     let mut ref_consumed = 0;
@@ -43,18 +43,24 @@ fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char,
         .trim_end_matches(|c| c == 'D' || c == 'I')
         .to_string();
     
-    // Calculate alignment statistics
+    // Calculate alignment statistics, accounting for N positions
     let mut mismatches = 0;
     let mut gaps = 0;
     let mut current_gap_size = 0;
     let mut max_gap_size = 0;
+    let mut pos = 0;
+    let guide_bytes = guide.as_bytes();
     
     for c in trimmed_cigar.chars() {
         match c {
             'X' => {
-                mismatches += 1;
+                // Only count mismatch if this position in the guide isn't N
+                if pos < guide_bytes.len() && guide_bytes[pos] != b'N' {
+                    mismatches += 1;
+                }
                 ref_consumed += 1;
                 query_consumed += 1;
+                pos += 1;
             },
             'I' => {
                 current_gap_size += 1;
@@ -81,22 +87,32 @@ fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char,
         }
     }
 
-    // Recalculate score based on the trimmed alignment
+    // Recalculate score based on the trimmed alignment, accounting for N positions
     let mut adjusted_score = 0;
     let mut in_gap = false;
+    let mut pos = 0;
+    let guide_bytes = guide.as_bytes();
     
     for c in trimmed_cigar.chars() {
         match c {
-            'X' => adjusted_score += 3,  // Mismatch penalty
+            'X' => {
+                // Only count mismatch if this position in the guide isn't N
+                if pos < guide_bytes.len() && guide_bytes[pos] != b'N' {
+                    adjusted_score += 3;  // Mismatch penalty
+                }
+                pos += 1;
+            },
             'I' | 'D' => {
                 if !in_gap {
                     adjusted_score += 5;  // Gap opening penalty
                     in_gap = true;
                 }
                 adjusted_score += 1;  // Gap extension penalty
+                if c == 'I' { pos += 1; }
             },
             'M' | '=' => {
                 in_gap = false;
+                pos += 1;
             },
             _ => ()
         }
@@ -391,14 +407,14 @@ fn main() {
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
                 scan_window(&mut aligner, guide_fwd, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '+', score, &cigar);
+                report_hit(record.id(), i, guide_len, '+', score, &cigar, guide_fwd);
             }
             
             // Try reverse complement orientation
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
                 scan_window(&mut aligner, &guide_rc, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '-', score, &cigar);
+                report_hit(record.id(), i, guide_len, '-', score, &cigar, &guide_rc);
             }
         }
     }
