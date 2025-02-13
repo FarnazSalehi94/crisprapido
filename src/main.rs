@@ -284,7 +284,15 @@ fn main() {
     );
     
     // Configure end-free alignment with single-gap allowance
-    aligner.set_alignment_scope(AlignmentScope::EndsFree);
+    aligner.set_alignment_span(AlignmentSpan::EndsFree {
+        pattern_begin_free: 1,  // Start of guide RNA
+        pattern_end_free: 1,    // End of guide RNA
+        text_begin_free: 1,     // Start of genomic sequence
+        text_end_free: 1        // End of genomic sequence
+    });
+    
+    // Limit maximum alignment steps to control compute time
+    aligner.set_max_alignment_steps(100);
     
     // Prepare guide sequences (forward and reverse complement)
     let guide_fwd = args.guide.as_bytes();
