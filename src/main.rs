@@ -292,8 +292,8 @@ fn main() {
         let record = result.expect("Error during FASTA record parsing");
         let seq = record.seq();
         
-        // Scan sequence directly without windowing
-        for (i, window) in seq.windows(guide_len).enumerate() {
+        // Take windows of the specified size
+        for (i, window) in seq.windows(args.window_size).enumerate() {
             // Try forward orientation
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
                 scan_window(&mut aligner, guide_fwd, window,
@@ -302,11 +302,10 @@ fn main() {
                           score, mismatches, gaps, max_gap_size, &cigar);
             }
             
-            // Try reverse complement orientation by using RC'd guide against original window
+            // Try reverse complement orientation
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
                 scan_window(&mut aligner, &guide_rc, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                // For reverse hits, show the RC'd guide against the original window
                 report_hit(record.id(), i, guide_len, '-', &guide_rc, window,
                           score, mismatches, gaps, max_gap_size, &cigar);
             }
