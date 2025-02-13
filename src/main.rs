@@ -501,6 +501,7 @@ fn main() {
                 report_hit(&record_id, i + leading_dels, guide_len, '-', score, &cigar, &guide_rc, seq_len,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size);
                 }
-            });
+            })
+            .collect::<()>();
     }
 }
