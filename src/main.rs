@@ -2,6 +2,7 @@ use std::path::PathBuf;
 use clap::Parser;
 use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
+#[cfg(test)]
 use rand::{SeedableRng, RngCore, rngs::SmallRng};
 
 #[cfg(test)]
@@ -37,7 +38,7 @@ mod tests {
         let guide = b"ATCGATCGAT";
         let target = b"ATCGATCGAT";
         
-        let result = scan_window(&mut aligner, guide, target);
+        let result = scan_window(&mut aligner, guide, target, 1, 1, 1);
         assert!(result.is_some());
         let (_score, cigar) = result.unwrap();
         assert_eq!(cigar, "MMMMMMMMMM");
@@ -159,7 +160,8 @@ struct Args {
     window_size: usize,
 }
 
-fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> Option<(i32, String)> {
+fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8], 
+               max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) -> Option<(i32, String)> {
     aligner.align(guide, window);
     let score = aligner.score();
     let cigar = String::from_utf8_lossy(aligner.cigar()).to_string();
@@ -192,15 +194,13 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> O
     eprintln!("CIGAR: {}, Mismatches: {}, Gaps: {}, Max gap size: {}", 
               cigar, mismatches, gaps, max_gap_size);
 
-    // Stricter thresholds for test environment
     #[cfg(test)]
-    if mismatches <= 1 && gaps <= 1 && max_gap_size <= 1 {
-        return Some((score, cigar));
-    }
-
-    // Normal thresholds for production
+    let (max_m, max_b, max_bs) = (1, 1, 1);  // Stricter thresholds for tests
+    
     #[cfg(not(test))]
-    if mismatches <= args.max_mismatches && gaps <= args.max_bulges && max_gap_size <= args.max_bulge_size {
+    let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
+
+    if mismatches <= max_m && gaps <= max_b && max_gap_size <= max_bs {
         return Some((score, cigar));
     }
 
@@ -237,7 +237,8 @@ fn main() {
                    && subwindow[guide_len + 1] == b'G' 
                    && subwindow[guide_len + 2] == b'G' {
                     
-                    if let Some((score, cigar)) = scan_window(&mut aligner, guide, &subwindow[..guide_len]) {
+                    if let Some((score, cigar)) = scan_window(&mut aligner, guide, &subwindow[..guide_len],
+                                                            args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                         println!("Hit in {} at position {}:", record.id(), i + j);
                         println!("Guide:     {}", String::from_utf8_lossy(guide));
                         println!("Target:    {}", String::from_utf8_lossy(&subwindow[..guide_len]));
