@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 use clap::Parser;
 use bio::io::fasta;
-use libwfa2::affine_wavefront::{AffineWavefronts, MemoryMode};
+use libwfa2::affine_wavefront::AffineWavefronts;
 
 #[derive(Parser)]
 #[command(author, version, about = "CRISPR guide RNA off-target scanner")]
@@ -25,6 +25,10 @@ struct Args {
     /// Maximum size of each bulge in bp
     #[arg(short = 'z', long, default_value = "2")]
     max_bulge_size: u32,
+
+    /// Size of sequence window to scan (bp)
+    #[arg(short = 'w', long, default_value = "1000")]
+    window_size: usize,
 }
 
 fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> Option<(i32, String)> {
@@ -81,14 +85,15 @@ fn main() {
         let seq = record.seq();
         
         // Scan windows
-        for (i, window) in seq.windows(guide_len + 3).enumerate() {
-            // Check if window ends with NGG PAM
-            if window.len() >= guide_len + 3 
-               && window[guide_len + 1] == b'G' 
-               && window[guide_len + 2] == b'G' {
-                
-                if let Some((score, cigar)) = scan_window(&mut aligner, guide, &window[..guide_len]) {
-                    println!("Hit in {} at position {}:", record.id(), i);
+        for (i, window) in seq.windows(args.window_size).enumerate() {
+            // Scan the window for NGG PAM sites
+            for (j, subwindow) in window.windows(guide_len + 3).enumerate() {
+                if subwindow.len() >= guide_len + 3 
+                   && subwindow[guide_len + 1] == b'G' 
+                   && subwindow[guide_len + 2] == b'G' {
+                    
+                    if let Some((score, cigar)) = scan_window(&mut aligner, guide, &subwindow[..guide_len]) {
+                    println!("Hit in {} at position {}:", record.id(), i + j);
                     println!("Guide:     {}", String::from_utf8_lossy(guide));
                     println!("Target:    {}", String::from_utf8_lossy(&window[..guide_len]));
                     println!("PAM:       {}", String::from_utf8_lossy(&window[guide_len..guide_len+3]));
