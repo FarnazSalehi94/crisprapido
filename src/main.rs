@@ -17,19 +17,33 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
 
 fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char, 
               score: i32, cigar: &str) {
-    // Count leading deletions to adjust start position
-    let leading_dels = cigar.chars()
-        .take_while(|&c| c == 'D')
-        .count();
+    // Parse CIGAR to handle leading indels and calculate positions
+    let mut ref_pos = pos;
+    let mut ref_consumed = 0;
+    let mut query_consumed = 0;
+    let mut leading_indels = true;
+    let mut leading_dels = 0;
     
-    // Trim leading and trailing deletions
+    // First pass: count leading deletions and find first match/mismatch
+    for c in cigar.chars() {
+        if leading_indels {
+            match c {
+                'D' => leading_dels += 1,
+                'I' => (), // ignore leading insertions
+                _ => leading_indels = false
+            }
+        }
+    }
+    
+    // Adjust start position and trim leading/trailing deletions
+    ref_pos += leading_dels;
     let trimmed_cigar: String = cigar.chars()
-        .skip_while(|&c| c == 'D')
+        .skip_while(|&c| c == 'D' || c == 'I')
         .collect::<String>()
-        .trim_end_matches('D')
+        .trim_end_matches(|c| c == 'D' || c == 'I')
         .to_string();
     
-    // Recalculate alignment statistics after trimming
+    // Calculate alignment statistics
     let mut mismatches = 0;
     let mut gaps = 0;
     let mut current_gap_size = 0;
@@ -37,16 +51,31 @@ fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char,
     
     for c in trimmed_cigar.chars() {
         match c {
-            'X' => mismatches += 1,
-            'I' | 'D' => {
+            'X' => {
+                mismatches += 1;
+                ref_consumed += 1;
+                query_consumed += 1;
+            },
+            'I' => {
                 current_gap_size += 1;
                 if current_gap_size == 1 {
                     gaps += 1;
                 }
                 max_gap_size = max_gap_size.max(current_gap_size);
+                query_consumed += 1;
             },
-            'M' => {
+            'D' => {
+                current_gap_size += 1;
+                if current_gap_size == 1 {
+                    gaps += 1;
+                }
+                max_gap_size = max_gap_size.max(current_gap_size);
+                ref_consumed += 1;
+            },
+            'M' | '=' => {
                 current_gap_size = 0;
+                ref_consumed += 1;
+                query_consumed += 1;
             },
             _ => ()
         }
@@ -54,11 +83,11 @@ fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char,
 
     println!("{}\t{}\t{}\t{}\t{}\t{}/{}/{}\t{}", 
         ref_id,                           // Reference sequence name
-        pos + leading_dels,               // Start position (0-based), adjusted for leading dels
-        pos + len,                        // End position
-        strand,                          // Strand (+/-)
-        score,                           // Alignment score
-        mismatches, gaps, max_gap_size,  // Alignment statistics
+        ref_pos,                          // Start position (0-based), adjusted for leading dels
+        ref_pos + ref_consumed,           // End position based on reference consumption
+        strand,                           // Strand (+/-)
+        score,                            // Alignment score
+        mismatches, gaps, max_gap_size,   // Alignment statistics
         convert_to_minimap2_cigar(&trimmed_cigar) // Trimmed CIGAR string
     );
 }
