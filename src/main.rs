@@ -412,8 +412,12 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     #[cfg(not(test))]
     let (_max_m, _max_b, _max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
-    // Always return the alignment result - filtering happens in report_hit
-    Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
+    // Filter based on thresholds before returning
+    if n_adjusted_mismatches <= _max_m && gaps <= _max_b && max_gap_size <= _max_bs {
+        Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
+    } else {
+        None
+    }
 }
 
 fn main() {
