@@ -422,9 +422,19 @@ fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8],
     debug!("CIGAR: {}, N-adjusted Mismatches: {}, Gaps: {}, Max gap size: {}", 
            cigar, n_adjusted_mismatches, gaps, max_gap_size);
 
+    // Calculate match percentage (excluding N positions in guide)
+    let non_n_positions = guide.iter().filter(|&&b| b != b'N').count();
+    let match_percentage = if non_n_positions > 0 {
+        (matches as f32 / non_n_positions as f32) * 100.0
+    } else {
+        0.0
+    };
+
     // Filter based on thresholds unless disabled
-    if no_filter || (matches >= 1 && ((cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
-       (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size))) {
+    if no_filter || (matches >= 1 && 
+        match_percentage >= 50.0 && 
+        ((cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
+        (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size))) {
         Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size, leading_dels))
     } else {
         None
