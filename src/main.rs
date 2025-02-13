@@ -154,13 +154,14 @@ fn main() {
                    && subwindow[guide_len + 2] == b'G' {
                     
                     if let Some((score, cigar)) = scan_window(&mut aligner, guide, &subwindow[..guide_len]) {
-                    println!("Hit in {} at position {}:", record.id(), i + j);
-                    println!("Guide:     {}", String::from_utf8_lossy(guide));
-                    println!("Target:    {}", String::from_utf8_lossy(&window[..guide_len]));
-                    println!("PAM:       {}", String::from_utf8_lossy(&window[guide_len..guide_len+3]));
-                    println!("Score:     {}", score);
-                    println!("CIGAR:     {}", cigar);
-                    println!();
+                        println!("Hit in {} at position {}:", record.id(), i + j);
+                        println!("Guide:     {}", String::from_utf8_lossy(guide));
+                        println!("Target:    {}", String::from_utf8_lossy(&subwindow[..guide_len]));
+                        println!("PAM:       {}", String::from_utf8_lossy(&subwindow[guide_len..guide_len+3]));
+                        println!("Score:     {}", score);
+                        println!("CIGAR:     {}", cigar);
+                        println!();
+                    }
                 }
             }
         }
