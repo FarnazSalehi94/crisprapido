@@ -23,9 +23,11 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
 fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char, 
               _score: i32, cigar: &str, guide: &[u8], target_len: usize,
               _max_mismatches: u32, _max_bulges: u32, _max_bulge_size: u32) {
-    // Calculate reference position and consumed bases
+    // Calculate reference and query positions and consumed bases
     let mut ref_pos = pos;
     let mut ref_consumed = 0;
+    let mut query_start = 0;
+    let mut query_consumed = 0;
     
     // Count leading deletions to adjust start position
     let leading_dels = cigar.chars()
@@ -47,6 +49,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
                     mismatches += 1;
                 }
                 ref_consumed += 1;
+                query_consumed += 1;
                 pos += 1;
             },
             'I' => {
@@ -55,6 +58,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
                     gaps += 1;
                 }
                 max_gap_size = max_gap_size.max(current_gap_size);
+                query_consumed += 1;
             },
             'D' => {
                 current_gap_size += 1;
@@ -63,10 +67,12 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
                 }
                 max_gap_size = max_gap_size.max(current_gap_size);
                 ref_consumed += 1;
+                query_start += 1;  // Adjust query start for leading deletions
             },
             'M' | '=' => {
                 current_gap_size = 0;
                 ref_consumed += 1;
+                query_consumed += 1;
             },
             _ => ()
         }
@@ -130,9 +136,10 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     debug!("  Passes filters: true");
     debug!("");
 
-    println!("Guide\t{}\t0\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}", 
+    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}", 
         guide_len,                        // Query length
-        guide_len,                        // Query end
+        query_start,                      // Query start
+        query_start + query_consumed,     // Query end
         strand,                           // Strand (+/-)
         ref_id,                           // Target sequence name
         target_len,                       // Full target sequence length
