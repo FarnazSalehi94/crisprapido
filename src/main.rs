@@ -292,8 +292,12 @@ fn main() {
         let record = result.expect("Error during FASTA record parsing");
         let seq = record.seq();
         
-        // Take windows of the specified size
-        for (i, window) in seq.windows(args.window_size).enumerate() {
+        // Take windows of the specified size with 50% overlap
+        let step_size = args.window_size / 2;
+        for i in (0..seq.len()).step_by(step_size) {
+            let end = (i + args.window_size).min(seq.len());
+            let window = &seq[i..end];
+            if window.len() < guide_len { continue; }
             // Try forward orientation
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
                 scan_window(&mut aligner, guide_fwd, window,
