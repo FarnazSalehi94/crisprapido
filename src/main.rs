@@ -339,7 +339,7 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
     result
 }
 
-fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8], 
+fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8], 
                max_mismatches: u32, max_bulges: u32, max_bulge_size: u32)
                -> Option<(i32, String, u32, u32, u32, usize)> {
     aligner.align(window, guide);  // Target sequence first, then guide sequence
@@ -488,7 +488,7 @@ fn main() {
             
             // Try forward orientation
             if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
-                scan_window(&mut aligner, &guide_fwd, window,
+                scan_window(aligner, &guide_fwd, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                 report_hit(&record_id, i + leading_dels, guide_len, '+', score, &cigar, &guide_fwd, seq_len,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size);
@@ -496,7 +496,7 @@ fn main() {
             
             // Try reverse complement orientation
             if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
-                scan_window(&mut aligner, &guide_rc, window,
+                scan_window(aligner, &guide_rc, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                 report_hit(&record_id, i + leading_dels, guide_len, '-', score, &cigar, &guide_rc, seq_len,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size);
