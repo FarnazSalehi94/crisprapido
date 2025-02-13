@@ -19,7 +19,7 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
 
 fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char, 
               _score: i32, cigar: &str, guide: &[u8], target_len: usize,
-              max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) {
+              _max_mismatches: u32, _max_bulges: u32, _max_bulge_size: u32) {
     // Calculate reference position and consumed bases
     let mut ref_pos = pos;
     let mut ref_consumed = 0;
