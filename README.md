@@ -2,7 +2,8 @@
 
 ![CRISPRapido Logo](crisprapido.png)
 
-A fast CRISPR guide RNA off-target scanner written in Rust. CRISPRapido uses the WFA2 (Wavefront Alignment) algorithm to efficiently identify potential off-target sites for CRISPR guide RNAs in genomic sequences.
+
+CRISPRapido is a reference-free tool for comprehensive detection of CRISPR off-target sites using complete genome assemblies. Unlike traditional approaches that rely on reference genomes and variant files, CRISPRapido directly analyzes haplotype-resolved assemblies to identify potential off-targets arising from any form of genetic variation. By leveraging the efficient Wavefront Alignment (WFA) algorithm and parallel processing, CRISPRapido enables fast scanning of whole genomes while considering both mismatches and DNA/RNA bulges. The tool is particularly valuable for therapeutic applications, where comprehensive off-target analysis is critical for safety assessment. CRISPRapido can process both complete assemblies and raw sequencing data, providing flexibility for different analysis scenarios while maintaining high computational efficiency through its robust Rust implementation.
 
 ## Features
 
