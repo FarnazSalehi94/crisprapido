@@ -191,46 +191,30 @@ struct Args {
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
     let mut result = String::new();
     let mut count = 0;
-    let mut last_char = None;
+    let mut current_op = None;
 
     for c in cigar.chars() {
-        match c {
-            'M' => {
-                count += 1;
-                last_char = Some('=');
-            },
-            'X' => {
-                if let Some('=') = last_char {
-                    if count > 0 {
-                        write!(result, "{}=", count).unwrap();
-                    }
-                    count = 0;
-                }
-                count += 1;
-                last_char = Some('X');
-            },
-            'I' | 'D' => {
-                if let Some(prev) = last_char {
-                    if prev != c {
-                        if count > 0 {
-                            write!(result, "{}{}", count, prev).unwrap();
-                        }
-                        count = 0;
-                    }
-                }
-                count += 1;
-                last_char = Some(c);
-            },
-            _ => ()
+        let op = match c {
+            'M' => '=',
+            'X' | 'I' | 'D' => c,
+            _ => continue,
+        };
+
+        if Some(op) == current_op {
+            count += 1;
+        } else {
+            if count > 0 {
+                write!(result, "{}{}", count, current_op.unwrap()).unwrap();
+            }
+            current_op = Some(op);
+            count = 1;
         }
     }
-    
-    if let Some(c) = last_char {
-        if count > 0 {
-            write!(result, "{}{}", count, c).unwrap();
-        }
+
+    if count > 0 && current_op.is_some() {
+        write!(result, "{}{}", count, current_op.unwrap()).unwrap();
     }
-    
+
     result
 }
 
@@ -319,11 +303,12 @@ fn main() {
                           score, mismatches, gaps, max_gap_size, &cigar);
             }
             
-            // Try reverse orientation
+            // Try reverse orientation with reverse complemented window
+            let window_rc = reverse_complement(window);
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
-                scan_window(&mut aligner, &guide_rev, window,
+                scan_window(&mut aligner, guide_fwd, &window_rc,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '-', &guide_rev, window,
+                report_hit(record.id(), i, guide_len, '-', guide_fwd, &window_rc,
                           score, mismatches, gaps, max_gap_size, &cigar);
             }
         }
