@@ -307,9 +307,9 @@ struct Args {
     #[arg(short = 'z', long, default_value = "2")]
     max_bulge_size: u32,
 
-    /// Size of sequence window to scan (bp)
-    #[arg(short = 'w', long, default_value = "1000")]
-    window_size: usize,
+    /// Size of sequence window to scan (bp, default: 4x guide length)
+    #[arg(short = 'w', long)]
+    window_size: Option<usize>,
 
     /// Number of threads to use (default: number of logical CPUs)
     #[arg(short = 't', long)]
@@ -495,11 +495,12 @@ fn main() {
         let seq_len = seq.len();
         let record_id = record.id().to_string();
         
-        // Generate all window positions first
-        let step_size = args.window_size / 2;
+        // Calculate window size as 4x guide length if not specified
+        let window_size = args.window_size.unwrap_or(guide_len * 4);
+        let step_size = window_size / 2;
         let windows: Vec<_> = (0..seq.len())
             .step_by(step_size)
-            .map(|i| (i, (i + args.window_size).min(seq.len())))
+            .map(|i| (i, (i + window_size).min(seq.len())))
             .collect();
 
 
