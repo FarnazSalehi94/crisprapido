@@ -31,11 +31,11 @@ mod tests {
     #[test]
     fn test_with_mismatches() {
         let mut aligner = setup_aligner();
-        let guide = b"ATCGATCGAT";
-        let target = b"ATCGTTCGAT";  // 1 mismatch
+        let guide =  b"ATCGATCGAT";
+        let target = b"ATCGTTCGAT";  // Single mismatch at position 5
         
         let result = scan_window(&mut aligner, guide, target);
-        assert!(result.is_some());
+        assert!(result.is_some(), "Should accept a single mismatch");
         let (_score, cigar) = result.unwrap();
         assert_eq!(cigar, "MMMMXMMMMM");
     }
@@ -43,20 +43,20 @@ mod tests {
     #[test]
     fn test_with_bulge() {
         let mut aligner = setup_aligner();
-        let guide = b"ATCGATCGAT";
-        let target = b"ATCGAATCGAT";  // 1bp insertion/bulge
+        let guide =  b"ATCGATCGAT";
+        let target = b"ATCGAATCGAT";  // Single base insertion after position 4
         
         let result = scan_window(&mut aligner, guide, target);
-        assert!(result.is_some());
+        assert!(result.is_some(), "Should accept a single base bulge");
         let (_score, cigar) = result.unwrap();
-        assert!(cigar.contains('I') || cigar.contains('D'));
+        assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
     }
 
     #[test]
     fn test_too_many_differences() {
         let mut aligner = setup_aligner();
-        let guide = b"ATCGATCGAT";
-        let target = b"ATCGTTCGTT";  // 3 mismatches, should fail
+        let guide =  b"ATCGATCGAT";
+        let target = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
         
         let result = scan_window(&mut aligner, guide, target);
         assert!(result.is_none());
@@ -121,7 +121,8 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> O
 
     // Debug print for test environment
     #[cfg(test)]
-    eprintln!("Mismatches: {}, Gaps: {}, Max gap size: {}", mismatches, gaps, max_gap_size);
+    eprintln!("CIGAR: {}, Mismatches: {}, Gaps: {}, Max gap size: {}", 
+              cigar, mismatches, gaps, max_gap_size);
 
     // Stricter thresholds for test environment
     #[cfg(test)]
