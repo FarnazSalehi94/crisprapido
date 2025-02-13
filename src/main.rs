@@ -296,11 +296,11 @@ mod tests {
 #[derive(Parser)]
 #[command(author, version, about = "CRISPR guide RNA off-target scanner")]
 struct Args {
-    /// Input reference FASTA file
+    /// Input reference FASTA file (-r)
     #[arg(short, long)]
     reference: PathBuf,
 
-    /// Guide RNA sequence (without PAM)
+    /// Guide RNA sequence (without PAM) (-g)
     #[arg(short, long)]
     guide: String,
 
