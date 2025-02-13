@@ -3,6 +3,17 @@ use clap::Parser;
 use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
 use std::fmt::Write;
+
+fn reverse_complement(seq: &[u8]) -> Vec<u8> {
+    seq.iter().rev().map(|&b| match b {
+        b'A' => b'T',
+        b'T' => b'A',
+        b'G' => b'C',
+        b'C' => b'G',
+        b'N' => b'N',
+        _ => b,
+    }).collect()
+}
 #[cfg(test)]
 use rand::{SeedableRng, RngCore, rngs::SmallRng};
 
@@ -259,7 +270,7 @@ fn main() {
     let args = Args::parse();
     
     // Print header
-    println!("#Reference\tStart\tEnd\tGuide\tTarget\tPAM\tScore\tMM/Gaps/Size\tCIGAR");
+    println!("#Reference\tStart\tEnd\tStrand\tGuide\tTarget\tScore\tMM/Gaps/Size\tCIGAR");
     
     // Set up WFA parameters with CRISPR-specific penalties
     let mut aligner = AffineWavefronts::with_penalties(
@@ -269,13 +280,10 @@ fn main() {
         1      // gap extension penalty
     );
     
-    // Prepare guide sequence (remove GG from input if present)
-    let guide = if args.guide.ends_with("GG") {
-        args.guide[..args.guide.len()-2].as_bytes()
-    } else {
-        args.guide.as_bytes()
-    };
-    let guide_len = guide.len() - 1;  // Exclude the N at the end
+    // Prepare guide sequences (forward and reverse complement)
+    let guide_fwd = args.guide.as_bytes();
+    let guide_rev = reverse_complement(guide_fwd);
+    let guide_len = guide_fwd.len();
     
     // Process reference sequences
     let reader = fasta::Reader::from_file(args.reference).expect("Failed to read FASTA file");
@@ -286,29 +294,41 @@ fn main() {
         
         // Scan windows
         for (i, window) in seq.windows(args.window_size).enumerate() {
-            // Scan the window for NGG PAM sites
-            for (j, subwindow) in window.windows(guide_len + 3).enumerate() {
-                // For guide RNA with N at end, look for GG in target after match position
-                if subwindow.len() >= guide_len + 2 
-                   && guide[guide_len] == b'N'  // Guide should end with N
-                   && subwindow[guide_len] == b'G'  // Target should have GG after matching region
-                   && subwindow[guide_len + 1] == b'G' {
-                    
-                    if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
-                        scan_window(&mut aligner, &guide[..guide_len], &subwindow[..guide_len],
-                                  args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                        // Print tab-separated output
-                        println!("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}", 
-                            record.id(),           // Reference sequence name
-                            i + j,                 // Start position (0-based)
-                            i + j + guide_len,     // End position
-                            String::from_utf8_lossy(guide),  // Guide sequence
-                            String::from_utf8_lossy(&subwindow[..guide_len]),  // Target sequence
-                            String::from_utf8_lossy(&subwindow[guide_len..guide_len+3]),  // PAM
-                            score,                 // Alignment score
-                            format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
-                            convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
-                        );
+            // Scan the window for potential targets
+            for (j, subwindow) in window.windows(guide_len).enumerate() {
+                // Try forward orientation
+                if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
+                    scan_window(&mut aligner, guide_fwd, subwindow,
+                              args.max_mismatches, args.max_bulges, args.max_bulge_size) {
+                    // Print tab-separated output for forward hit
+                    println!("{}\t{}\t{}\t+\t{}\t{}\t{}\t{}\t{}", 
+                        record.id(),           // Reference sequence name
+                        i + j,                 // Start position (0-based)
+                        i + j + guide_len,     // End position
+                        String::from_utf8_lossy(guide_fwd),  // Guide sequence
+                        String::from_utf8_lossy(subwindow),  // Target sequence
+                        score,                 // Alignment score
+                        format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
+                        convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
+                    );
+                }
+                
+                // Try reverse orientation
+                if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
+                    scan_window(&mut aligner, &guide_rev, subwindow,
+                              args.max_mismatches, args.max_bulges, args.max_bulge_size) {
+                    // Print tab-separated output for reverse hit
+                    println!("{}\t{}\t{}\t-\t{}\t{}\t{}\t{}\t{}", 
+                        record.id(),           // Reference sequence name
+                        i + j,                 // Start position (0-based)
+                        i + j + guide_len,     // End position
+                        String::from_utf8_lossy(&guide_rev),  // Guide sequence
+                        String::from_utf8_lossy(subwindow),  // Target sequence
+                        score,                 // Alignment score
+                        format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
+                        convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
+                    );
+                }
                     }
                 }
             }
