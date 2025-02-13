@@ -56,7 +56,6 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
                     mismatches += 1;
                 }
                 ref_consumed += 1;
-                query_consumed += 1;
                 pos += 1;
             },
             'I' => {
@@ -65,7 +64,6 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
                     gaps += 1;
                 }
                 max_gap_size = max_gap_size.max(current_gap_size);
-                query_consumed += 1;
             },
             'D' => {
                 current_gap_size += 1;
@@ -78,7 +76,6 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
             'M' | '=' => {
                 current_gap_size = 0;
                 ref_consumed += 1;
-                query_consumed += 1;
             },
             _ => ()
         }
