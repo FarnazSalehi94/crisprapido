@@ -7,7 +7,8 @@ use clap::Parser;
 use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
 use std::fmt::Write;
-use rayon::{prelude::*, ThreadLocal};
+use rayon::prelude::*;
+use rayon::ThreadLocal;
 
 fn reverse_complement(seq: &[u8]) -> Vec<u8> {
     seq.iter().rev().map(|&b| match b {
