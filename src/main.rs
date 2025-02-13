@@ -81,12 +81,33 @@ fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char,
         }
     }
 
+    // Recalculate score based on the trimmed alignment
+    let mut adjusted_score = 0;
+    let mut in_gap = false;
+    
+    for c in trimmed_cigar.chars() {
+        match c {
+            'X' => adjusted_score += 3,  // Mismatch penalty
+            'I' | 'D' => {
+                if !in_gap {
+                    adjusted_score += 5;  // Gap opening penalty
+                    in_gap = true;
+                }
+                adjusted_score += 1;  // Gap extension penalty
+            },
+            'M' | '=' => {
+                in_gap = false;
+            },
+            _ => ()
+        }
+    }
+
     println!("{}\t{}\t{}\t{}\t{}\t{}/{}/{}\t{}", 
         ref_id,                           // Reference sequence name
         ref_pos,                          // Start position (0-based), adjusted for leading dels
         ref_pos + ref_consumed,           // End position based on reference consumption
         strand,                           // Strand (+/-)
-        score,                            // Alignment score
+        adjusted_score,                   // Recalculated alignment score
         mismatches, gaps, max_gap_size,   // Alignment statistics
         convert_to_minimap2_cigar(&trimmed_cigar) // Trimmed CIGAR string
     );
