@@ -233,9 +233,11 @@ fn main() {
         for (i, window) in seq.windows(args.window_size).enumerate() {
             // Scan the window for NGG PAM sites
             for (j, subwindow) in window.windows(guide_len + 3).enumerate() {
+                // For guide RNA with N at position 21, look for GG at 22-23 in target
                 if subwindow.len() >= guide_len + 3 
-                   && subwindow[guide_len + 1] == b'G' 
-                   && subwindow[guide_len + 2] == b'G' {
+                   && guide[guide_len - 1] == b'N'  // Guide should end with N
+                   && subwindow[guide_len] == b'G'  // Target should have GG after matching region
+                   && subwindow[guide_len + 1] == b'G' {
                     
                     if let Some((score, cigar)) = scan_window(&mut aligner, guide, &subwindow[..guide_len],
                                                             args.max_mismatches, args.max_bulges, args.max_bulge_size) {
