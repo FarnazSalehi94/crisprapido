@@ -18,7 +18,8 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
 }
 
 fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char, 
-              _score: i32, cigar: &str, guide: &[u8], target_len: usize) {
+              _score: i32, cigar: &str, guide: &[u8], target_len: usize,
+              max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) {
     // Parse CIGAR to handle leading indels and calculate positions
     let mut ref_pos = pos;
     let mut ref_consumed = 0;
@@ -140,7 +141,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     debug!("  Guide sequence: {}", String::from_utf8_lossy(guide));
     
     // Apply filters after trimming and N-adjustment
-    if mismatches > args.max_mismatches || gaps > args.max_bulges || max_gap_size > args.max_bulge_size {
+    if mismatches > max_mismatches || gaps > max_bulges || max_gap_size > max_bulge_size {
         debug!("  Passes filters: false");
         debug!("");
         return;
@@ -481,14 +482,16 @@ fn main() {
             if let Some((score, cigar, _mismatches, _gaps, _max_gap_size)) = 
                 scan_window(&mut aligner, &guide_fwd, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(&record_id, i, guide_len, '+', score, &cigar, &guide_fwd, seq_len);
+                report_hit(&record_id, i, guide_len, '+', score, &cigar, &guide_fwd, seq_len,
+                          args.max_mismatches, args.max_bulges, args.max_bulge_size);
             }
             
             // Try reverse complement orientation
             if let Some((score, cigar, _mismatches, _gaps, _max_gap_size)) = 
                 scan_window(&mut aligner, &guide_rc, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(&record_id, i, guide_len, '-', score, &cigar, &guide_rc, seq_len);
+                report_hit(&record_id, i, guide_len, '-', score, &cigar, &guide_rc, seq_len,
+                          args.max_mismatches, args.max_bulges, args.max_bulge_size);
             }
         });
     }
