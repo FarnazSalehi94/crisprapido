@@ -413,7 +413,12 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     #[cfg(not(test))]
     let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
-    Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
+    // Filter based on thresholds
+    if n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size {
+        Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
+    } else {
+        None
+    }
 }
 
 fn main() {
