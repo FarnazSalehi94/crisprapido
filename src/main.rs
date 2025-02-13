@@ -1,8 +1,7 @@
 use std::path::PathBuf;
 use clap::Parser;
 use bio::io::fasta;
-use libwfa2::{wavefront_aligner_attr_default, wavefront_aligner_new, MemoryMode, DistanceMetric};
-use libwfa2::affine_wavefront::AffineWavefronts;
+use libwfa2::affine_wavefront::{AffineWavefronts, MemoryMode};
 
 #[derive(Parser)]
 #[command(author, version, about = "CRISPR guide RNA off-target scanner")]
@@ -62,15 +61,13 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> O
 fn main() {
     let args = Args::parse();
     
-    // Set up WFA parameters
-    let mut attributes = wavefront_aligner_attr_default();
-    attributes.memory_mode = MemoryMode::Ultralow;
-    attributes.distance_metric = DistanceMetric::GapAffine;
-    attributes.affine_penalties.mismatch = 3;
-    attributes.affine_penalties.gap_opening = 5;
-    attributes.affine_penalties.gap_extension = 1;
-
-    let mut aligner = AffineWavefronts::new_with_attributes(&attributes);
+    // Set up WFA parameters with CRISPR-specific penalties
+    let mut aligner = AffineWavefronts::with_penalties(
+        0,     // match score
+        3,     // mismatch penalty
+        5,     // gap opening penalty
+        1      // gap extension penalty
+    );
     
     // Prepare guide sequence
     let guide = args.guide.as_bytes();
