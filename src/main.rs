@@ -8,7 +8,6 @@ use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
 use std::fmt::Write;
 use rayon::prelude::*;
-use rayon::ThreadLocal;
 
 fn reverse_complement(seq: &[u8]) -> Vec<u8> {
     seq.iter().rev().map(|&b| match b {
@@ -479,16 +478,13 @@ fn main() {
                 .unwrap();
         }
 
-        // Create thread-local aligners
-        let aligners = ThreadLocal::new(|| AffineWavefronts::with_penalties(0, 3, 5, 1));
-
-        // Process windows in parallel
-        windows.into_par_iter().for_each(|(i, end)| {
-            let window = &seq[i..end];
-            if window.len() < guide_len { return; }
-
-            // Get thread-local aligner
-            let mut aligner = aligners.get_mut();
+        // Process windows in parallel with thread-local aligners
+        windows.into_par_iter()
+            .map_init(
+                || AffineWavefronts::with_penalties(0, 3, 5, 1),
+                |aligner, (i, end)| {
+                    let window = &seq[i..end];
+                    if window.len() < guide_len { return; }
             
             // Try forward orientation
             if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
@@ -504,7 +500,7 @@ fn main() {
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                 report_hit(&record_id, i + leading_dels, guide_len, '-', score, &cigar, &guide_rc, seq_len,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size);
-            }
-        });
+                }
+            });
     }
 }
