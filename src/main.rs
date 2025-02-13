@@ -16,18 +16,50 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
 }
 
 fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char, 
-              guide: &[u8], target: &[u8], score: i32,
-              mismatches: u32, gaps: u32, gap_size: u32, cigar: &str) {
-    println!("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}/{}/{}\t{}", 
+              score: i32, cigar: &str) {
+    // Count leading deletions to adjust start position
+    let leading_dels = cigar.chars()
+        .take_while(|&c| c == 'D')
+        .count();
+    
+    // Trim leading and trailing deletions
+    let trimmed_cigar: String = cigar.chars()
+        .skip_while(|&c| c == 'D')
+        .collect::<String>()
+        .trim_end_matches('D')
+        .to_string();
+    
+    // Recalculate alignment statistics after trimming
+    let mut mismatches = 0;
+    let mut gaps = 0;
+    let mut current_gap_size = 0;
+    let mut max_gap_size = 0;
+    
+    for c in trimmed_cigar.chars() {
+        match c {
+            'X' => mismatches += 1,
+            'I' | 'D' => {
+                current_gap_size += 1;
+                if current_gap_size == 1 {
+                    gaps += 1;
+                }
+                max_gap_size = max_gap_size.max(current_gap_size);
+            },
+            'M' => {
+                current_gap_size = 0;
+            },
+            _ => ()
+        }
+    }
+
+    println!("{}\t{}\t{}\t{}\t{}\t{}/{}/{}\t{}", 
         ref_id,                           // Reference sequence name
-        pos,                             // Start position (0-based)
-        pos + len,                       // End position
+        pos + leading_dels,               // Start position (0-based), adjusted for leading dels
+        pos + len,                        // End position
         strand,                          // Strand (+/-)
-        String::from_utf8_lossy(guide),  // Guide sequence
-        String::from_utf8_lossy(target), // Target sequence
         score,                           // Alignment score
-        mismatches, gaps, gap_size,      // Alignment statistics
-        convert_to_minimap2_cigar(cigar) // CIGAR string
+        mismatches, gaps, max_gap_size,  // Alignment statistics
+        convert_to_minimap2_cigar(&trimmed_cigar) // Trimmed CIGAR string
     );
 }
 #[cfg(test)]
@@ -266,7 +298,7 @@ fn main() {
     let args = Args::parse();
     
     // Print header
-    println!("#Reference\tStart\tEnd\tStrand\tGuide\tTarget\tScore\tMM/Gaps/Size\tCIGAR");
+    println!("#Reference\tStart\tEnd\tStrand\tScore\tMM/Gaps/Size\tCIGAR");
     
     // Import required WFA2 types
     use libwfa2::affine_wavefront::{AlignmentSpan, AffineWavefronts};
@@ -309,16 +341,14 @@ fn main() {
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
                 scan_window(&mut aligner, guide_fwd, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '+', guide_fwd, window,
-                          score, mismatches, gaps, max_gap_size, &cigar);
+                report_hit(record.id(), i, guide_len, '+', score, &cigar);
             }
             
             // Try reverse complement orientation
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
                 scan_window(&mut aligner, &guide_rc, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '-', &guide_rc, window,
-                          score, mismatches, gaps, max_gap_size, &cigar);
+                report_hit(record.id(), i, guide_len, '-', score, &cigar);
             }
         }
     }
