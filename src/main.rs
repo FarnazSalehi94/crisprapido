@@ -280,9 +280,8 @@ fn main() {
         1      // gap extension penalty
     );
     
-    // Prepare guide sequences (forward and reverse complement)
+    // Prepare guide sequence
     let guide_fwd = args.guide.as_bytes();
-    let guide_rev = reverse_complement(guide_fwd);
     let guide_len = guide_fwd.len();
     
     // Process reference sequences
@@ -303,12 +302,13 @@ fn main() {
                           score, mismatches, gaps, max_gap_size, &cigar);
             }
             
-            // Try reverse orientation with reverse complemented window
+            // Try reverse orientation
             let window_rc = reverse_complement(window);
+            let guide_rc = reverse_complement(guide_fwd);
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
-                scan_window(&mut aligner, guide_fwd, &window_rc,
+                scan_window(&mut aligner, &guide_rc, &window_rc,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '-', guide_fwd, &window_rc,
+                report_hit(record.id(), i, guide_len, '-', &guide_rc, &window_rc,
                           score, mismatches, gaps, max_gap_size, &cigar);
             }
         }
