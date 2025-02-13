@@ -292,43 +292,49 @@ fn main() {
         let record = result.expect("Error during FASTA record parsing");
         let seq = record.seq();
         
-        // Scan windows
-        for (i, window) in seq.windows(args.window_size).enumerate() {
-            // Scan the window for potential targets
-            for (j, subwindow) in window.windows(guide_len).enumerate() {
-                // Try forward orientation
-                if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
-                    scan_window(&mut aligner, guide_fwd, subwindow,
-                              args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                    // Print tab-separated output for forward hit
-                    println!("{}\t{}\t{}\t+\t{}\t{}\t{}\t{}\t{}", 
-                        record.id(),           // Reference sequence name
-                        i + j,                 // Start position (0-based)
-                        i + j + guide_len,     // End position
-                        String::from_utf8_lossy(guide_fwd),  // Guide sequence
-                        String::from_utf8_lossy(subwindow),  // Target sequence
-                        score,                 // Alignment score
-                        format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
-                        convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
-                    );
-                }
+        // Scan sequence directly without windowing
+        for (i, window) in seq.windows(guide_len).enumerate() {
+            // Try forward orientation
+            if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
+                scan_window(&mut aligner, guide_fwd, window,
+                          args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                 
-                // Try reverse orientation
-                if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
-                    scan_window(&mut aligner, &guide_rev, subwindow,
-                              args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                    // Print tab-separated output for reverse hit
-                    println!("{}\t{}\t{}\t-\t{}\t{}\t{}\t{}\t{}", 
-                        record.id(),           // Reference sequence name
-                        i + j,                 // Start position (0-based)
-                        i + j + guide_len,     // End position
-                        String::from_utf8_lossy(&guide_rev),  // Guide sequence
-                        String::from_utf8_lossy(subwindow),  // Target sequence
-                        score,                 // Alignment score
-                        format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
-                        convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
-                    );
-                }
+                // Debug print in non-test mode
+                eprintln!("Forward hit at {}: CIGAR={}, MM={}, Gaps={}, Size={}", 
+                         i, cigar, mismatches, gaps, max_gap_size);
+                // Print tab-separated output for forward hit
+                println!("{}\t{}\t{}\t+\t{}\t{}\t{}\t{}\t{}", 
+                    record.id(),           // Reference sequence name
+                    i,                     // Start position (0-based)
+                    i + guide_len,         // End position
+                    String::from_utf8_lossy(guide_fwd),  // Guide sequence
+                    String::from_utf8_lossy(window),  // Target sequence
+                    score,                 // Alignment score
+                    format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
+                    convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
+                );
+            }
+            
+            // Try reverse orientation
+            if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
+                scan_window(&mut aligner, &guide_rev, window,
+                          args.max_mismatches, args.max_bulges, args.max_bulge_size) {
+                
+                // Debug print in non-test mode
+                eprintln!("Reverse hit at {}: CIGAR={}, MM={}, Gaps={}, Size={}", 
+                         i, cigar, mismatches, gaps, max_gap_size);
+                
+                // Print tab-separated output for reverse hit
+                println!("{}\t{}\t{}\t-\t{}\t{}\t{}\t{}\t{}", 
+                    record.id(),           // Reference sequence name
+                    i,                     // Start position (0-based)
+                    i + guide_len,         // End position
+                    String::from_utf8_lossy(&guide_rev),  // Guide sequence
+                    String::from_utf8_lossy(window),  // Target sequence
+                    score,                 // Alignment score
+                    format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
+                    convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
+                );
             }
         }
     }
