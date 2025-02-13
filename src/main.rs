@@ -314,6 +314,10 @@ struct Args {
     /// Number of threads to use (default: number of logical CPUs)
     #[arg(short = 't', long)]
     threads: Option<usize>,
+
+    /// Disable all filtering (report every alignment)
+    #[arg(long)]
+    no_filter: bool,
 }
 
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
@@ -417,9 +421,9 @@ fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8],
     debug!("CIGAR: {}, N-adjusted Mismatches: {}, Gaps: {}, Max gap size: {}", 
            cigar, n_adjusted_mismatches, gaps, max_gap_size);
 
-    // Filter based on thresholds - require at least 1 match and respect limits
-    if matches >= 1 && ((cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
-       (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size)) {
+    // Filter based on thresholds unless disabled
+    if args.no_filter || (matches >= 1 && ((cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
+       (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size))) {
         Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size, leading_dels))
     } else {
         None
