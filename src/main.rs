@@ -140,7 +140,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     debug!("  Guide sequence: {}", String::from_utf8_lossy(guide));
     
     // Apply filters after trimming and N-adjustment
-    if mismatches > 4 || gaps > 1 || max_gap_size > 2 {
+    if mismatches > args.max_mismatches || gaps > args.max_bulges || max_gap_size > args.max_bulge_size {
         debug!("  Passes filters: false");
         debug!("");
         return;
@@ -412,12 +412,7 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     #[cfg(not(test))]
     let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
-    // Filter based on thresholds before returning
-    if n_adjusted_mismatches <= max_m && gaps <= max_b && max_gap_size <= max_bs {
-        Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
-    } else {
-        None
-    }
+    Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
 }
 
 fn main() {
