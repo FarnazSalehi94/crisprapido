@@ -49,13 +49,11 @@ fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char,
     let mut current_gap_size = 0;
     let mut max_gap_size = 0;
     let mut pos = 0;
-    let guide_bytes = guide.as_bytes();
-    
     for c in trimmed_cigar.chars() {
         match c {
             'X' => {
                 // Only count mismatch if this position in the guide isn't N
-                if pos < guide_bytes.len() && guide_bytes[pos] != b'N' {
+                if pos < guide.len() && guide[pos] != b'N' {
                     mismatches += 1;
                 }
                 ref_consumed += 1;
@@ -91,13 +89,11 @@ fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char,
     let mut adjusted_score = 0;
     let mut in_gap = false;
     let mut pos = 0;
-    let guide_bytes = guide.as_bytes();
-    
     for c in trimmed_cigar.chars() {
         match c {
             'X' => {
                 // Only count mismatch if this position in the guide isn't N
-                if pos < guide_bytes.len() && guide_bytes[pos] != b'N' {
+                if pos < guide.len() && guide[pos] != b'N' {
                     adjusted_score += 3;  // Mismatch penalty
                 }
                 pos += 1;
