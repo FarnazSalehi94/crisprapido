@@ -253,7 +253,7 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8], 
                max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) 
                -> Option<(i32, String, u32, u32, u32)> {
-    aligner.align(guide, window);
+    aligner.align(window, guide);  // Target sequence first, then guide sequence
     let score = aligner.score();
     let cigar = String::from_utf8_lossy(aligner.cigar()).to_string();
     
