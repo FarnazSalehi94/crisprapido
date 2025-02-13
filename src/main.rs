@@ -329,7 +329,6 @@ fn main() {
                         convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
                     );
                 }
-                    }
                 }
             }
         }
