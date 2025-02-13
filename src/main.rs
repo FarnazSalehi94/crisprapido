@@ -121,6 +121,24 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     // Convert guide length to string once
     let guide_len = guide.len();
     
+    // Debug print filter conditions
+    eprintln!("Window scan debug:");
+    eprintln!("  CIGAR before trim: {}", cigar);
+    eprintln!("  CIGAR after trim: {}", trimmed_cigar);
+    eprintln!("  N-adjusted mismatches: {} (max: 4)", mismatches);
+    eprintln!("  Gaps: {} (max: 1)", gaps);
+    eprintln!("  Max gap size: {} (max: 2)", max_gap_size);
+    eprintln!("  Guide sequence: {}", String::from_utf8_lossy(guide));
+    
+    // Apply filters after trimming and N-adjustment
+    if mismatches > 4 || gaps > 1 || max_gap_size > 2 {
+        eprintln!("  Passes filters: false");
+        eprintln!("");
+        return;
+    }
+    eprintln!("  Passes filters: true");
+    eprintln!("");
+
     println!("Guide\t{}\t0\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}", 
         guide_len,                        // Query length
         guide_len,                        // Query end
@@ -375,24 +393,8 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     #[cfg(not(test))]
     let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
-    // Debug print filter conditions
-    eprintln!("Window scan debug:");
-    eprintln!("  CIGAR before trim: {}", cigar);
-    eprintln!("  N-adjusted mismatches: {} (max: {})", n_adjusted_mismatches, max_m);
-    eprintln!("  Gaps: {} (max: {})", gaps, max_b);
-    eprintln!("  Max gap size: {} (max: {})", max_gap_size, max_bs);
-    eprintln!("  Guide sequence: {}", String::from_utf8_lossy(guide));
-    
-    // Apply filters using N-adjusted mismatch count
-    let passes = n_adjusted_mismatches <= max_m && gaps <= max_b && max_gap_size <= max_bs;
-    eprintln!("  Passes filters: {}", passes);
-    eprintln!("");
-    
-    if passes {
-        Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
-    } else {
-        None
-    }
+    // Always return the alignment result - filtering happens in report_hit
+    Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
 }
 
 fn main() {
