@@ -16,7 +16,7 @@ A fast CRISPR guide RNA off-target scanner written in Rust. CRISPRapido uses the
 Requires Rust 2021 edition or later. Install using cargo:
 
 ```bash
-cargo install crisprapido
+cargo install --git https://github.com/pinellolab/crisprapido.git
 ```
 
 ## Usage
