@@ -1,6 +1,3 @@
-fn main() {
-    println!("Hello, world!");
-}
 use std::path::PathBuf;
 use clap::Parser;
 use bio::io::fasta;
