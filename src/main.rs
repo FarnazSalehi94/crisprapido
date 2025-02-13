@@ -182,7 +182,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, target, 1, 1, 1);
         assert!(result.is_some());
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size) = result.unwrap();
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert_eq!(cigar, "MMMMMMMMMM");
     }
 
@@ -338,7 +338,7 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 
 fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8], 
                max_mismatches: u32, max_bulges: u32, max_bulge_size: u32)
-               -> Option<(i32, String, u32, u32, u32)> {
+               -> Option<(i32, String, u32, u32, u32, usize)> {
     aligner.align(window, guide);  // Target sequence first, then guide sequence
     let score = aligner.score();
     let raw_cigar = String::from_utf8_lossy(aligner.cigar()).to_string();
@@ -408,7 +408,7 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     // Filter based on thresholds - stricter in tests
     if (cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
        (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size) {
-        Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
+        Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size, leading_dels))
     } else {
         None
     }
@@ -477,18 +477,18 @@ fn main() {
             let mut aligner = AffineWavefronts::with_penalties(0, 3, 5, 1);
             
             // Try forward orientation
-            if let Some((score, cigar, _mismatches, _gaps, _max_gap_size)) = 
+            if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
                 scan_window(&mut aligner, &guide_fwd, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(&record_id, i, guide_len, '+', score, &cigar, &guide_fwd, seq_len,
+                report_hit(&record_id, i + leading_dels, guide_len, '+', score, &cigar, &guide_fwd, seq_len,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size);
             }
             
             // Try reverse complement orientation
-            if let Some((score, cigar, _mismatches, _gaps, _max_gap_size)) = 
+            if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
                 scan_window(&mut aligner, &guide_rc, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(&record_id, i, guide_len, '-', score, &cigar, &guide_rc, seq_len,
+                report_hit(&record_id, i + leading_dels, guide_len, '-', score, &cigar, &guide_rc, seq_len,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size);
             }
         });
