@@ -377,7 +377,7 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
 
     // Apply filters using N-adjusted mismatch count
     if n_adjusted_mismatches <= max_m && gaps <= max_b && max_gap_size <= max_bs {
-        Some((score, cigar, mismatches, gaps, max_gap_size))
+        Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
     } else {
         None
     }
