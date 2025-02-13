@@ -1,8 +1,10 @@
 use std::path::PathBuf;
+use std::sync::Arc;
 use clap::Parser;
 use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
 use std::fmt::Write;
+use rayon::prelude::*;
 
 fn reverse_complement(seq: &[u8]) -> Vec<u8> {
     seq.iter().rev().map(|&b| match b {
@@ -436,8 +438,8 @@ fn main() {
     });
     
     // Prepare guide sequences (forward and reverse complement)
-    let guide_fwd = args.guide.as_bytes();
-    let guide_rc = reverse_complement(guide_fwd);
+    let guide_fwd = Arc::new(args.guide.as_bytes().to_vec());
+    let guide_rc = Arc::new(reverse_complement(&guide_fwd));
     let guide_len = guide_fwd.len();
 
     // Process reference sequences
@@ -445,27 +447,38 @@ fn main() {
     
     for result in reader.records() {
         let record = result.expect("Error during FASTA record parsing");
-        let seq = record.seq();
+        let seq = record.seq().to_vec();
+        let seq_len = seq.len();
+        let record_id = record.id().to_string();
         
-        // Take windows of the specified size with 50% overlap
+        // Generate all window positions first
         let step_size = args.window_size / 2;
-        for i in (0..seq.len()).step_by(step_size) {
-            let end = (i + args.window_size).min(seq.len());
+        let windows: Vec<_> = (0..seq.len())
+            .step_by(step_size)
+            .map(|i| (i, (i + args.window_size).min(seq.len())))
+            .collect();
+
+        // Process windows in parallel
+        windows.into_par_iter().for_each(|(i, end)| {
             let window = &seq[i..end];
-            if window.len() < guide_len { continue; }
+            if window.len() < guide_len { return; }
+
+            // Create a new aligner for each thread
+            let mut aligner = AffineWavefronts::with_penalties(0, 3, 5, 1);
+            
             // Try forward orientation
             if let Some((score, cigar, _mismatches, _gaps, _max_gap_size)) = 
-                scan_window(&mut aligner, guide_fwd, window,
+                scan_window(&mut aligner, &guide_fwd, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '+', score, &cigar, guide_fwd, seq.len());
+                report_hit(&record_id, i, guide_len, '+', score, &cigar, &guide_fwd, seq_len);
             }
             
             // Try reverse complement orientation
             if let Some((score, cigar, _mismatches, _gaps, _max_gap_size)) = 
                 scan_window(&mut aligner, &guide_rc, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '-', score, &cigar, &guide_rc, seq.len());
+                report_hit(&record_id, i, guide_len, '-', score, &cigar, &guide_rc, seq_len);
             }
-        }
+        });
     }
 }
