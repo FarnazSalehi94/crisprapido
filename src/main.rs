@@ -11,8 +11,24 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
         b'G' => b'C',
         b'C' => b'G',
         b'N' => b'N',
-        _ => b,
+        _ => b'N',  // Convert any unexpected bases to N
     }).collect()
+}
+
+fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char, 
+              guide: &[u8], target: &[u8], score: i32,
+              mismatches: u32, gaps: u32, gap_size: u32, cigar: &str) {
+    println!("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}/{}/{}\t{}", 
+        ref_id,                           // Reference sequence name
+        pos,                             // Start position (0-based)
+        pos + len,                       // End position
+        strand,                          // Strand (+/-)
+        String::from_utf8_lossy(guide),  // Guide sequence
+        String::from_utf8_lossy(target), // Target sequence
+        score,                           // Alignment score
+        mismatches, gaps, gap_size,      // Alignment statistics
+        convert_to_minimap2_cigar(cigar) // CIGAR string
+    );
 }
 #[cfg(test)]
 use rand::{SeedableRng, RngCore, rngs::SmallRng};
@@ -299,42 +315,16 @@ fn main() {
                 scan_window(&mut aligner, guide_fwd, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                 
-                // Debug print in non-test mode
-                eprintln!("Forward hit at {}: CIGAR={}, MM={}, Gaps={}, Size={}", 
-                         i, cigar, mismatches, gaps, max_gap_size);
-                // Print tab-separated output for forward hit
-                println!("{}\t{}\t{}\t+\t{}\t{}\t{}\t{}\t{}", 
-                    record.id(),           // Reference sequence name
-                    i,                     // Start position (0-based)
-                    i + guide_len,         // End position
-                    String::from_utf8_lossy(guide_fwd),  // Guide sequence
-                    String::from_utf8_lossy(window),  // Target sequence
-                    score,                 // Alignment score
-                    format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
-                    convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
-                );
+                report_hit(record.id(), i, guide_len, '+', guide_fwd, window,
+                          score, mismatches, gaps, max_gap_size, &cigar);
             }
             
             // Try reverse orientation
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
                 scan_window(&mut aligner, &guide_rev, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                
-                // Debug print in non-test mode
-                eprintln!("Reverse hit at {}: CIGAR={}, MM={}, Gaps={}, Size={}", 
-                         i, cigar, mismatches, gaps, max_gap_size);
-                
-                // Print tab-separated output for reverse hit
-                println!("{}\t{}\t{}\t-\t{}\t{}\t{}\t{}\t{}", 
-                    record.id(),           // Reference sequence name
-                    i,                     // Start position (0-based)
-                    i + guide_len,         // End position
-                    String::from_utf8_lossy(&guide_rev),  // Guide sequence
-                    String::from_utf8_lossy(window),  // Target sequence
-                    score,                 // Alignment score
-                    format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
-                    convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
-                );
+                report_hit(record.id(), i, guide_len, '-', &guide_rev, window,
+                          score, mismatches, gaps, max_gap_size, &cigar);
             }
         }
     }
