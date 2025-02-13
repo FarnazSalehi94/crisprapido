@@ -148,7 +148,7 @@ struct Args {
     max_mismatches: u32,
 
     /// Maximum number of bulges allowed
-    #[arg(short, long, default_value = "1")]
+    #[arg(short = 'b', long, default_value = "1")]
     max_bulges: u32,
 
     /// Maximum size of each bulge in bp
