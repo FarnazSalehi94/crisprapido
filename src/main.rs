@@ -7,7 +7,7 @@ use clap::Parser;
 use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
 use std::fmt::Write;
-use rayon::prelude::*;
+use rayon::{prelude::*, ThreadLocal};
 
 fn reverse_complement(seq: &[u8]) -> Vec<u8> {
     seq.iter().rev().map(|&b| match b {
@@ -478,13 +478,16 @@ fn main() {
                 .unwrap();
         }
 
+        // Create thread-local aligners
+        let aligners = ThreadLocal::new(|| AffineWavefronts::with_penalties(0, 3, 5, 1));
+
         // Process windows in parallel
         windows.into_par_iter().for_each(|(i, end)| {
             let window = &seq[i..end];
             if window.len() < guide_len { return; }
 
-            // Create a new aligner for each thread
-            let mut aligner = AffineWavefronts::with_penalties(0, 3, 5, 1);
+            // Get thread-local aligner
+            let mut aligner = aligners.get_mut();
             
             // Try forward orientation
             if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
