@@ -269,9 +269,13 @@ fn main() {
         1      // gap extension penalty
     );
     
-    // Prepare guide sequence
-    let guide = args.guide.as_bytes();
-    let guide_len = guide.len();
+    // Prepare guide sequence (remove GG from input if present)
+    let guide = if args.guide.ends_with("GG") {
+        args.guide[..args.guide.len()-2].as_bytes()
+    } else {
+        args.guide.as_bytes()
+    };
+    let guide_len = guide.len() - 1;  // Exclude the N at the end
     
     // Process reference sequences
     let reader = fasta::Reader::from_file(args.reference).expect("Failed to read FASTA file");
@@ -284,14 +288,14 @@ fn main() {
         for (i, window) in seq.windows(args.window_size).enumerate() {
             // Scan the window for NGG PAM sites
             for (j, subwindow) in window.windows(guide_len + 3).enumerate() {
-                // For guide RNA with N at position 21, look for GG at 22-23 in target
-                if subwindow.len() >= guide_len + 3 
-                   && guide[guide_len - 1] == b'N'  // Guide should end with N
+                // For guide RNA with N at end, look for GG in target after match position
+                if subwindow.len() >= guide_len + 2 
+                   && guide[guide_len] == b'N'  // Guide should end with N
                    && subwindow[guide_len] == b'G'  // Target should have GG after matching region
                    && subwindow[guide_len + 1] == b'G' {
                     
                     if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
-                        scan_window(&mut aligner, guide, &subwindow[..guide_len],
+                        scan_window(&mut aligner, &guide[..guide_len], &subwindow[..guide_len],
                                   args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                         // Print tab-separated output
                         println!("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}", 
