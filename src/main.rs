@@ -273,24 +273,24 @@ fn main() {
     println!("#Reference\tStart\tEnd\tStrand\tGuide\tTarget\tScore\tMM/Gaps/Size\tCIGAR");
     
     // Import required WFA2 types
-    use libwfa2::{wavefront_aligner_attr_default, AlignmentSpan};
+    use libwfa2::affine_wavefront::{AlignmentForm, AlignmentSpan};
 
     // Set up WFA parameters with CRISPR-specific penalties and end-free alignment
-    let mut attributes = wavefront_aligner_attr_default();
-    attributes.alignment_form.span = AlignmentSpan::EndsFree;
+    let mut form = AlignmentForm::default();
+    form.span = AlignmentSpan::EndsFree;
     // Configure single-gap allowance at sequence ends
-    attributes.alignment_form.pattern_begin_free = 1;  // Start of guide RNA
-    attributes.alignment_form.pattern_end_free = 1;    // End of guide RNA
-    attributes.alignment_form.text_begin_free = 1;     // Start of genomic sequence
-    attributes.alignment_form.text_end_free = 1;       // End of genomic sequence
+    form.pattern_begin_free = 1;  // Start of guide RNA
+    form.pattern_end_free = 1;    // End of guide RNA
+    form.text_begin_free = 1;     // Start of genomic sequence
+    form.text_end_free = 1;       // End of genomic sequence
     
-    let mut aligner = AffineWavefronts::new_with_attributes(
+    let mut aligner = AffineWavefronts::with_penalties(
         0,     // match score
         3,     // mismatch penalty
         5,     // gap opening penalty
-        1,     // gap extension penalty
-        attributes
+        1      // gap extension penalty
     );
+    aligner.set_alignment_form(form);
     
     // Prepare guide sequences (forward and reverse complement)
     let guide_fwd = args.guide.as_bytes();
