@@ -3,6 +3,67 @@ use clap::Parser;
 use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn setup_aligner() -> AffineWavefronts {
+        AffineWavefronts::with_penalties(
+            0,     // match score
+            3,     // mismatch penalty
+            5,     // gap opening penalty
+            1      // gap extension penalty
+        )
+    }
+
+    #[test]
+    fn test_perfect_match() {
+        let mut aligner = setup_aligner();
+        let guide = b"ATCGATCGAT";
+        let target = b"ATCGATCGAT";
+        
+        let result = scan_window(&mut aligner, guide, target);
+        assert!(result.is_some());
+        let (score, cigar) = result.unwrap();
+        assert_eq!(score, 0);
+        assert_eq!(cigar, "MMMMMMMMMM");
+    }
+
+    #[test]
+    fn test_with_mismatches() {
+        let mut aligner = setup_aligner();
+        let guide = b"ATCGATCGAT";
+        let target = b"ATCGTTCGAT";  // 1 mismatch
+        
+        let result = scan_window(&mut aligner, guide, target);
+        assert!(result.is_some());
+        let (score, cigar) = result.unwrap();
+        assert_eq!(cigar, "MMMMXMMMMM");
+    }
+
+    #[test]
+    fn test_with_bulge() {
+        let mut aligner = setup_aligner();
+        let guide = b"ATCGATCGAT";
+        let target = b"ATCGAATCGAT";  // 1bp insertion/bulge
+        
+        let result = scan_window(&mut aligner, guide, target);
+        assert!(result.is_some());
+        let (score, cigar) = result.unwrap();
+        assert!(cigar.contains('I') || cigar.contains('D'));
+    }
+
+    #[test]
+    fn test_too_many_differences() {
+        let mut aligner = setup_aligner();
+        let guide = b"ATCGATCGAT";
+        let target = b"ATCGTTCGTT";  // 3 mismatches, should fail
+        
+        let result = scan_window(&mut aligner, guide, target);
+        assert!(result.is_none());
+    }
+}
+
 #[derive(Parser)]
 #[command(author, version, about = "CRISPR guide RNA off-target scanner")]
 struct Args {
