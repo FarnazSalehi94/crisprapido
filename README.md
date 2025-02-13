@@ -1,5 +1,7 @@
 # CRISPRapido
 
+![CRISPRapido Logo](crisprapido.png)
+
 A fast CRISPR guide RNA off-target scanner written in Rust. CRISPRapido uses the WFA2 (Wavefront Alignment) algorithm to efficiently identify potential off-target sites for CRISPR guide RNAs in genomic sequences.
 
 ## Features
