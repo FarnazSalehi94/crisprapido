@@ -16,11 +16,8 @@ A fast CRISPR guide RNA off-target scanner written in Rust. CRISPRapido uses the
 Requires Rust nightly toolchain due to WFA2 dependency. Install using:
 
 ```bash
-# Switch to nightly toolchain for this directory
-rustup override set nightly
-
-# Install from GitHub repository
-cargo install --git https://github.com/pinellolab/crisprapido.git
+# Install from GitHub repository using nightly toolchain
+cargo +nightly install --git https://github.com/pinellolab/crisprapido.git
 ```
 
 ## Usage
