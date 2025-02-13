@@ -208,7 +208,8 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 }
 
 fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8], 
-               max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) -> Option<(i32, String)> {
+               max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) 
+               -> Option<(i32, String, u32, u32, u32)> {
     aligner.align(guide, window);
     let score = aligner.score();
     let cigar = String::from_utf8_lossy(aligner.cigar()).to_string();
@@ -248,7 +249,7 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
     if mismatches <= max_m && gaps <= max_b && max_gap_size <= max_bs {
-        return Some((score, cigar));
+        return Some((score, cigar, mismatches, gaps, max_gap_size));
     }
 
     None
@@ -289,8 +290,9 @@ fn main() {
                    && subwindow[guide_len] == b'G'  // Target should have GG after matching region
                    && subwindow[guide_len + 1] == b'G' {
                     
-                    if let Some((score, cigar)) = scan_window(&mut aligner, guide, &subwindow[..guide_len],
-                                                            args.max_mismatches, args.max_bulges, args.max_bulge_size) {
+                    if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
+                        scan_window(&mut aligner, guide, &subwindow[..guide_len],
+                                  args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                         // Print tab-separated output
                         println!("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}", 
                             record.id(),           // Reference sequence name
