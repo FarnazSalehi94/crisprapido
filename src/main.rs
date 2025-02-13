@@ -284,6 +284,9 @@ fn main() {
     let guide_fwd = args.guide.as_bytes();
     let guide_rc = reverse_complement(guide_fwd);
     let guide_len = guide_fwd.len();
+
+    eprintln!("Forward guide: {}", String::from_utf8_lossy(guide_fwd));
+    eprintln!("Reverse comp: {}", String::from_utf8_lossy(&guide_rc));
     
     // Process reference sequences
     let reader = fasta::Reader::from_file(args.reference).expect("Failed to read FASTA file");
