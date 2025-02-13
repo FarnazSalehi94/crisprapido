@@ -48,7 +48,7 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, target);
         assert!(result.is_some());
-        let (score, cigar) = result.unwrap();
+        let (_score, cigar) = result.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'));
     }
 
@@ -99,8 +99,8 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> O
     // Count mismatches and gaps from CIGAR
     let mut mismatches = 0;
     let mut gaps = 0;
-    let mut current_gap = 0;
     let mut current_gap_size = 0;
+    let mut max_gap_size = 0;
     
     for c in cigar.chars() {
         match c {
@@ -110,9 +110,9 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> O
                 if current_gap_size == 1 {
                     gaps += 1;
                 }
+                max_gap_size = max_gap_size.max(current_gap_size);
             },
             'M' => {
-                current_gap = 0;
                 current_gap_size = 0;
             },
             _ => ()
@@ -121,13 +121,13 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> O
 
     // Stricter thresholds for test environment
     #[cfg(test)]
-    if mismatches <= 2 && gaps <= 1 && current_gap_size <= 1 {
+    if mismatches <= 2 && gaps <= 1 && max_gap_size <= 1 {
         return Some((score, cigar));
     }
 
     // Normal thresholds for production
     #[cfg(not(test))]
-    if mismatches <= 4 && gaps <= 1 {
+    if mismatches <= 4 && gaps <= 1 && max_gap_size <= 2 {
         return Some((score, cigar));
     }
 
