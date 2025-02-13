@@ -447,6 +447,14 @@ fn main() {
     let guide_rc = Arc::new(reverse_complement(&guide_fwd));
     let guide_len = guide_fwd.len();
 
+    // Set thread pool size if specified
+    if let Some(n) = args.threads {
+        rayon::ThreadPoolBuilder::new()
+            .num_threads(n)
+            .build_global()
+            .expect("Failed to initialize thread pool");
+    }
+
     // Process reference sequences
     // Create transparent reader that handles both plain and gzipped files
     let file = File::open(&args.reference).expect("Failed to open reference file");
@@ -470,13 +478,6 @@ fn main() {
             .map(|i| (i, (i + args.window_size).min(seq.len())))
             .collect();
 
-        // Set thread pool size if specified
-        if let Some(n) = args.threads {
-            rayon::ThreadPoolBuilder::new()
-                .num_threads(n)
-                .build_global()
-                .unwrap();
-        }
 
         // Process windows in parallel with thread-local aligners
         windows.into_par_iter()
