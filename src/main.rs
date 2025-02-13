@@ -121,23 +121,30 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     // Convert guide length to string once
     let guide_len = guide.len();
     
-    // Debug print filter conditions
-    eprintln!("Window scan debug:");
-    eprintln!("  CIGAR before trim: {}", cigar);
-    eprintln!("  CIGAR after trim: {}", trimmed_cigar);
-    eprintln!("  N-adjusted mismatches: {} (max: 4)", mismatches);
-    eprintln!("  Gaps: {} (max: 1)", gaps);
-    eprintln!("  Max gap size: {} (max: 2)", max_gap_size);
-    eprintln!("  Guide sequence: {}", String::from_utf8_lossy(guide));
+    // Debug macro for development/testing
+    macro_rules! debug {
+        ($($arg:tt)*) => {
+            #[cfg(feature = "debug")]
+            eprintln!($($arg)*);
+        }
+    }
+
+    debug!("Window scan debug:");
+    debug!("  CIGAR before trim: {}", cigar);
+    debug!("  CIGAR after trim: {}", trimmed_cigar);
+    debug!("  N-adjusted mismatches: {} (max: 4)", mismatches);
+    debug!("  Gaps: {} (max: 1)", gaps);
+    debug!("  Max gap size: {} (max: 2)", max_gap_size);
+    debug!("  Guide sequence: {}", String::from_utf8_lossy(guide));
     
     // Apply filters after trimming and N-adjustment
     if mismatches > 4 || gaps > 1 || max_gap_size > 2 {
-        eprintln!("  Passes filters: false");
-        eprintln!("");
+        debug!("  Passes filters: false");
+        debug!("");
         return;
     }
-    eprintln!("  Passes filters: true");
-    eprintln!("");
+    debug!("  Passes filters: true");
+    debug!("");
 
     println!("Guide\t{}\t0\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}", 
         guide_len,                        // Query length
@@ -382,10 +389,16 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
         }
     }
 
-    // Debug print for test environment
-    #[cfg(test)]
-    eprintln!("CIGAR: {}, N-adjusted Mismatches: {}, Gaps: {}, Max gap size: {}", 
-              cigar, n_adjusted_mismatches, gaps, max_gap_size);
+    // Debug macro for development/testing
+    macro_rules! debug {
+        ($($arg:tt)*) => {
+            #[cfg(feature = "debug")]
+            eprintln!($($arg)*);
+        }
+    }
+
+    debug!("CIGAR: {}, N-adjusted Mismatches: {}, Gaps: {}, Max gap size: {}", 
+           cigar, n_adjusted_mismatches, gaps, max_gap_size);
 
     #[cfg(test)]
     let (max_m, max_b, max_bs) = (1, 1, 1);  // Stricter thresholds for tests
