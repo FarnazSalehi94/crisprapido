@@ -302,13 +302,13 @@ fn main() {
                           score, mismatches, gaps, max_gap_size, &cigar);
             }
             
-            // Try reverse orientation
+            // Try reverse orientation by reverse complementing the window
             let window_rc = reverse_complement(window);
-            let guide_rc = reverse_complement(guide_fwd);
             if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
-                scan_window(&mut aligner, &guide_rc, &window_rc,
+                scan_window(&mut aligner, guide_fwd, &window_rc,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                report_hit(record.id(), i, guide_len, '-', &guide_rc, &window_rc,
+                // For reverse hits, show the original guide and the reverse complemented window
+                report_hit(record.id(), i, guide_len, '-', guide_fwd, &window_rc,
                           score, mismatches, gaps, max_gap_size, &cigar);
             }
         }
