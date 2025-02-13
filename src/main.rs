@@ -321,6 +321,10 @@ struct Args {
     /// Size of sequence window to scan (bp)
     #[arg(short = 'w', long, default_value = "1000")]
     window_size: usize,
+
+    /// Number of threads to use (default: number of logical CPUs)
+    #[arg(short = 't', long)]
+    threads: Option<usize>,
 }
 
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
@@ -457,6 +461,14 @@ fn main() {
             .step_by(step_size)
             .map(|i| (i, (i + args.window_size).min(seq.len())))
             .collect();
+
+        // Set thread pool size if specified
+        if let Some(n) = args.threads {
+            rayon::ThreadPoolBuilder::new()
+                .num_threads(n)
+                .build_global()
+                .unwrap();
+        }
 
         // Process windows in parallel
         windows.into_par_iter().for_each(|(i, end)| {
