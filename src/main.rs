@@ -259,11 +259,7 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     #[cfg(not(test))]
     let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
-    if mismatches <= max_m && gaps <= max_b && max_gap_size <= max_bs {
-        return Some((score, cigar, mismatches, gaps, max_gap_size));
-    }
-
-    None
+    Some((score, cigar, mismatches, gaps, max_gap_size))
 }
 
 fn main() {
@@ -290,9 +286,6 @@ fn main() {
         text_begin_free: 1,     // Start of genomic sequence
         text_end_free: 1        // End of genomic sequence
     });
-    
-    // Limit maximum alignment steps to control compute time
-    aligner.set_max_alignment_steps(100);
     
     // Prepare guide sequences (forward and reverse complement)
     let guide_fwd = args.guide.as_bytes();
