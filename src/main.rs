@@ -121,7 +121,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     // Convert guide length to string once
     let guide_len = guide.len();
     
-    println!("Guide\t{}\t0\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tAS:i:{}\tNM:i:{}\tNG:i:{}\tBS:i:{}\tcg:Z:{}", 
+    println!("Guide\t{}\t0\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}", 
         guide_len,                        // Query length
         guide_len,                        // Query end
         strand,                           // Strand (+/-)
@@ -373,8 +373,8 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
 fn main() {
     let args = Args::parse();
     
-    // Print PAF header as comment
-    println!("#Query\tQLen\tQStart\tQEnd\tStrand\tTarget\tTLen\tTStart\tTEnd\tMatches\tBlockLen\tMapQ\tTags");
+    // Print PAF header as comment (disabled)
+    // println!("#Query\tQLen\tQStart\tQEnd\tStrand\tTarget\tTLen\tTStart\tTEnd\tMatches\tBlockLen\tMapQ\tTags");
     
     // Import required WFA2 types
     use libwfa2::affine_wavefront::{AlignmentSpan, AffineWavefronts};
