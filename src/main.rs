@@ -308,7 +308,7 @@ fn main() {
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                 // For reverse hits, show the RC'd guide against the original window
                 report_hit(record.id(), i, guide_len, '-', &guide_rc, window,
-                          -score, mismatches, gaps, max_gap_size, &cigar);
+                          score, mismatches, gaps, max_gap_size, &cigar);
             }
         }
     }
