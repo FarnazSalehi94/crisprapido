@@ -333,24 +333,32 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     let score = aligner.score();
     let cigar = String::from_utf8_lossy(aligner.cigar()).to_string();
     
-    // Count mismatches and gaps from CIGAR
-    let mut mismatches = 0;
+    // Count mismatches ignoring N positions in guide
+    let mut n_adjusted_mismatches = 0;
     let mut gaps = 0;
     let mut current_gap_size = 0;
     let mut max_gap_size = 0;
+    let mut pos = 0;
     
     for c in cigar.chars() {
         match c {
-            'X' => mismatches += 1,
+            'X' => {
+                if pos < guide.len() && guide[pos] != b'N' {
+                    n_adjusted_mismatches += 1;
+                }
+                pos += 1;
+            },
             'I' | 'D' => {
                 current_gap_size += 1;
                 if current_gap_size == 1 {
                     gaps += 1;
                 }
                 max_gap_size = max_gap_size.max(current_gap_size);
+                if c == 'I' { pos += 1; }
             },
-            'M' => {
+            'M' | '=' => {
                 current_gap_size = 0;
+                pos += 1;
             },
             _ => ()
         }
@@ -358,8 +366,8 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
 
     // Debug print for test environment
     #[cfg(test)]
-    eprintln!("CIGAR: {}, Mismatches: {}, Gaps: {}, Max gap size: {}", 
-              cigar, mismatches, gaps, max_gap_size);
+    eprintln!("CIGAR: {}, N-adjusted Mismatches: {}, Gaps: {}, Max gap size: {}", 
+              cigar, n_adjusted_mismatches, gaps, max_gap_size);
 
     #[cfg(test)]
     let (max_m, max_b, max_bs) = (1, 1, 1);  // Stricter thresholds for tests
@@ -367,8 +375,8 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     #[cfg(not(test))]
     let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
-    // Apply filters after N positions are ignored
-    if mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size {
+    // Apply filters using N-adjusted mismatch count
+    if n_adjusted_mismatches <= max_m && gaps <= max_b && max_gap_size <= max_bs {
         Some((score, cigar, mismatches, gaps, max_gap_size))
     } else {
         None
