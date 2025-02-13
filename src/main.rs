@@ -401,10 +401,10 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
            cigar, n_adjusted_mismatches, gaps, max_gap_size);
 
     #[cfg(test)]
-    let (max_m, max_b, max_bs) = (1, 1, 1);  // Stricter thresholds for tests
+    let (_max_m, _max_b, _max_bs) = (1, 1, 1);  // Stricter thresholds for tests
     
     #[cfg(not(test))]
-    let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
+    let (_max_m, _max_b, _max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
     // Always return the alignment result - filtering happens in report_hit
     Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
