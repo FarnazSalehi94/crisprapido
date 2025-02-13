@@ -140,12 +140,6 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     debug!("  Max gap size: {} (max: 2)", max_gap_size);
     debug!("  Guide sequence: {}", String::from_utf8_lossy(guide));
     
-    // Apply filters after trimming and N-adjustment
-    if mismatches > max_mismatches || gaps > max_bulges || max_gap_size > max_bulge_size {
-        debug!("  Passes filters: false");
-        debug!("");
-        return;
-    }
     debug!("  Passes filters: true");
     debug!("");
 
@@ -407,14 +401,9 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     debug!("CIGAR: {}, N-adjusted Mismatches: {}, Gaps: {}, Max gap size: {}", 
            cigar, n_adjusted_mismatches, gaps, max_gap_size);
 
-    // Filter based on thresholds
-    #[cfg(test)]
-    let should_accept = n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1;
-    
-    #[cfg(not(test))]
-    let should_accept = n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size;
-
-    if should_accept {
+    // Filter based on thresholds - stricter in tests
+    if (cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
+       (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size) {
         Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size))
     } else {
         None
