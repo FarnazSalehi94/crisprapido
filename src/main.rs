@@ -20,30 +20,15 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
 fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char, 
               _score: i32, cigar: &str, guide: &[u8], target_len: usize,
               max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) {
-    // Parse CIGAR to handle leading indels and calculate positions
+    // Calculate reference position and consumed bases
     let mut ref_pos = pos;
     let mut ref_consumed = 0;
-    let mut leading_indels = true;
-    let mut leading_dels = 0;
     
-    // First pass: count leading deletions and find first match/mismatch
-    for c in cigar.chars() {
-        if leading_indels {
-            match c {
-                'D' => leading_dels += 1,
-                'I' => (), // ignore leading insertions
-                _ => leading_indels = false
-            }
-        }
-    }
-    
-    // Adjust start position and trim leading/trailing deletions
+    // Count leading deletions to adjust start position
+    let leading_dels = cigar.chars()
+        .take_while(|&c| c == 'D')
+        .count();
     ref_pos += leading_dels;
-    let trimmed_cigar: String = cigar.chars()
-        .skip_while(|&c| c == 'D' || c == 'I')
-        .collect::<String>()
-        .trim_end_matches(|c| c == 'D' || c == 'I')
-        .to_string();
     
     // Calculate alignment statistics, accounting for N positions
     let mut mismatches = 0;
@@ -51,7 +36,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     let mut current_gap_size = 0;
     let mut max_gap_size = 0;
     let mut pos = 0;
-    for c in trimmed_cigar.chars() {
+    for c in cigar.chars() {
         match c {
             'X' => {
                 // Only count mismatch if this position in the guide isn't N
@@ -84,11 +69,11 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         }
     }
 
-    // Recalculate score based on the trimmed alignment, accounting for N positions
+    // Recalculate score based on the alignment, accounting for N positions
     let mut adjusted_score = 0;
     let mut in_gap = false;
     let mut pos = 0;
-    for c in trimmed_cigar.chars() {
+    for c in cigar.chars() {
         match c {
             'X' => {
                 // Only count mismatch if this position in the guide isn't N
@@ -114,12 +99,12 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     }
 
     // Count matches from CIGAR
-    let matches = trimmed_cigar.chars()
+    let matches = cigar.chars()
         .filter(|&c| c == 'M' || c == '=')
         .count();
     
     // Calculate block length (matches + mismatches + indels)
-    let block_len = trimmed_cigar.len();
+    let block_len = cigar.len();
     
     // Convert guide length to string once
     let guide_len = guide.len();
@@ -133,8 +118,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     }
 
     debug!("Window scan debug:");
-    debug!("  CIGAR before trim: {}", cigar);
-    debug!("  CIGAR after trim: {}", trimmed_cigar);
+    debug!("  CIGAR: {}", cigar);
     debug!("  N-adjusted mismatches: {} (max: 4)", mismatches);
     debug!("  Gaps: {} (max: 1)", gaps);
     debug!("  Max gap size: {} (max: 2)", max_gap_size);
@@ -157,7 +141,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         mismatches,                       // NM:i number of mismatches
         gaps,                             // NG:i number of gaps
         max_gap_size,                     // BS:i biggest gap size
-        convert_to_minimap2_cigar(&trimmed_cigar) // cg:Z CIGAR string
+        convert_to_minimap2_cigar(cigar) // cg:Z CIGAR string
     );
 }
 #[cfg(test)]
@@ -357,7 +341,27 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
                -> Option<(i32, String, u32, u32, u32)> {
     aligner.align(window, guide);  // Target sequence first, then guide sequence
     let score = aligner.score();
-    let cigar = String::from_utf8_lossy(aligner.cigar()).to_string();
+    let raw_cigar = String::from_utf8_lossy(aligner.cigar()).to_string();
+
+    // First pass: count leading deletions and find first match/mismatch
+    let mut leading_indels = true;
+    let mut leading_dels = 0;
+    for c in raw_cigar.chars() {
+        if leading_indels {
+            match c {
+                'D' => leading_dels += 1,
+                'I' => (), // ignore leading insertions
+                _ => leading_indels = false
+            }
+        }
+    }
+    
+    // Trim leading/trailing indels
+    let cigar = raw_cigar.chars()
+        .skip_while(|&c| c == 'D' || c == 'I')
+        .collect::<String>()
+        .trim_end_matches(|c| c == 'D' || c == 'I')
+        .to_string();
     
     // Count mismatches ignoring N positions in guide
     let mut n_adjusted_mismatches = 0;
