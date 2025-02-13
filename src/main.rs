@@ -110,14 +110,32 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         }
     }
 
-    println!("{}\t{}\t{}\t{}\t{}\t{}/{}/{}\t{}", 
-        ref_id,                           // Reference sequence name
-        ref_pos,                          // Start position (0-based), adjusted for leading dels
-        ref_pos + ref_consumed,           // End position based on reference consumption
+    // Count matches from CIGAR
+    let matches = trimmed_cigar.chars()
+        .filter(|&c| c == 'M' || c == '=')
+        .count();
+    
+    // Calculate block length (matches + mismatches + indels)
+    let block_len = trimmed_cigar.len();
+    
+    // Convert guide length to string once
+    let guide_len = guide.len();
+    
+    println!("Guide\t{}\t0\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tAS:i:{}\tNM:i:{}\tNG:i:{}\tBS:i:{}\tcg:Z:{}", 
+        guide_len,                        // Query length
+        guide_len,                        // Query end
         strand,                           // Strand (+/-)
-        adjusted_score,                   // Recalculated alignment score
-        mismatches, gaps, max_gap_size,   // Alignment statistics
-        convert_to_minimap2_cigar(&trimmed_cigar) // Trimmed CIGAR string
+        ref_id,                           // Target sequence name
+        ref_consumed + ref_pos,           // Target length (just use end position)
+        ref_pos,                          // Target start
+        ref_pos + ref_consumed,           // Target end
+        matches,                          // Number of matches
+        block_len,                        // Total alignment block length
+        adjusted_score,                   // AS:i alignment score
+        mismatches,                       // NM:i number of mismatches
+        gaps,                             // NG:i number of gaps
+        max_gap_size,                     // BS:i biggest gap size
+        convert_to_minimap2_cigar(&trimmed_cigar) // cg:Z CIGAR string
     );
 }
 #[cfg(test)]
@@ -355,8 +373,8 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
 fn main() {
     let args = Args::parse();
     
-    // Print header
-    println!("#Reference\tStart\tEnd\tStrand\tScore\tMM/Gaps/Size\tCIGAR");
+    // Print PAF header as comment
+    println!("#Query\tQLen\tQStart\tQEnd\tStrand\tTarget\tTLen\tTStart\tTEnd\tMatches\tBlockLen\tMapQ\tTags");
     
     // Import required WFA2 types
     use libwfa2::affine_wavefront::{AlignmentSpan, AffineWavefronts};
