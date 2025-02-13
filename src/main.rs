@@ -2,10 +2,25 @@ use std::path::PathBuf;
 use clap::Parser;
 use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
+use rand::{SeedableRng, RngCore, rngs::SmallRng};
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn generate_random_seq(rng: &mut SmallRng, length: usize) -> Vec<u8> {
+        let bases = b"ACGT";
+        (0..length)
+            .map(|_| bases[rng.next_u32() as usize % 4])
+            .collect()
+    }
+
+    fn create_flanked_sequence(rng: &mut SmallRng, core: &[u8], flank_size: usize) -> Vec<u8> {
+        let mut seq = generate_random_seq(rng, flank_size);
+        seq.extend_from_slice(core);
+        seq.extend(generate_random_seq(rng, flank_size));
+        seq
+    }
 
     fn setup_aligner() -> AffineWavefronts {
         AffineWavefronts::with_penalties(
@@ -60,6 +75,59 @@ mod tests {
         
         let result = scan_window(&mut aligner, guide, target);
         assert!(result.is_none());
+    }
+
+    #[test]
+    fn test_perfect_match_with_flanks() {
+        let mut rng = SmallRng::seed_from_u64(42);
+        let mut aligner = setup_aligner();
+        let guide = b"ATCGATCGAT";
+        let target = create_flanked_sequence(&mut rng, guide, 500);
+        
+        let result = scan_window(&mut aligner, guide, &target[500..510]);
+        assert!(result.is_some(), "Should match perfectly even with flanks");
+        let (_score, cigar) = result.unwrap();
+        assert_eq!(cigar, "MMMMMMMMMM");
+    }
+
+    #[test]
+    fn test_with_mismatches_and_flanks() {
+        let mut rng = SmallRng::seed_from_u64(42);
+        let mut aligner = setup_aligner();
+        let guide = b"ATCGATCGAT";
+        let core = b"ATCGTTCGAT";  // Single mismatch at position 5
+        let target = create_flanked_sequence(&mut rng, core, 500);
+        
+        let result = scan_window(&mut aligner, guide, &target[500..510]);
+        assert!(result.is_some(), "Should accept a single mismatch with flanks");
+        let (_score, cigar) = result.unwrap();
+        assert_eq!(cigar, "MMMMXMMMMM");
+    }
+
+    #[test]
+    fn test_with_bulge_and_flanks() {
+        let mut rng = SmallRng::seed_from_u64(42);
+        let mut aligner = setup_aligner();
+        let guide = b"ATCGATCGAT";
+        let core = b"ATCGAATCGAT";  // Single base insertion after position 4
+        let target = create_flanked_sequence(&mut rng, core, 500);
+        
+        let result = scan_window(&mut aligner, guide, &target[500..511]);
+        assert!(result.is_some(), "Should accept a single base bulge with flanks");
+        let (_score, cigar) = result.unwrap();
+        assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
+    }
+
+    #[test]
+    fn test_too_many_differences_with_flanks() {
+        let mut rng = SmallRng::seed_from_u64(42);
+        let mut aligner = setup_aligner();
+        let guide = b"ATCGATCGAT";
+        let core = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
+        let target = create_flanked_sequence(&mut rng, core, 500);
+        
+        let result = scan_window(&mut aligner, guide, &target[500..510]);
+        assert!(result.is_none(), "Should reject sequence with too many mismatches even with flanks");
     }
 }
 
