@@ -2,6 +2,7 @@ use std::path::PathBuf;
 use clap::Parser;
 use bio::io::fasta;
 use libwfa2::affine_wavefront::AffineWavefronts;
+use std::fmt::Write;
 #[cfg(test)]
 use rand::{SeedableRng, RngCore, rngs::SmallRng};
 
@@ -160,6 +161,52 @@ struct Args {
     window_size: usize,
 }
 
+fn convert_to_minimap2_cigar(cigar: &str) -> String {
+    let mut result = String::new();
+    let mut count = 0;
+    let mut last_char = None;
+
+    for c in cigar.chars() {
+        match c {
+            'M' => {
+                count += 1;
+                last_char = Some('=');
+            },
+            'X' => {
+                if let Some('=') = last_char {
+                    if count > 0 {
+                        write!(result, "{}=", count).unwrap();
+                    }
+                    count = 0;
+                }
+                count += 1;
+                last_char = Some('X');
+            },
+            'I' | 'D' => {
+                if let Some(prev) = last_char {
+                    if prev != c {
+                        if count > 0 {
+                            write!(result, "{}{}", count, prev).unwrap();
+                        }
+                        count = 0;
+                    }
+                }
+                count += 1;
+                last_char = Some(c);
+            },
+            _ => ()
+        }
+    }
+    
+    if let Some(c) = last_char {
+        if count > 0 {
+            write!(result, "{}{}", count, c).unwrap();
+        }
+    }
+    
+    result
+}
+
 fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8], 
                max_mismatches: u32, max_bulges: u32, max_bulge_size: u32) -> Option<(i32, String)> {
     aligner.align(guide, window);
@@ -210,6 +257,9 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
 fn main() {
     let args = Args::parse();
     
+    // Print header
+    println!("#Reference\tStart\tEnd\tGuide\tTarget\tPAM\tScore\tMM/Gaps/Size\tCIGAR");
+    
     // Set up WFA parameters with CRISPR-specific penalties
     let mut aligner = AffineWavefronts::with_penalties(
         0,     // match score
@@ -241,13 +291,18 @@ fn main() {
                     
                     if let Some((score, cigar)) = scan_window(&mut aligner, guide, &subwindow[..guide_len],
                                                             args.max_mismatches, args.max_bulges, args.max_bulge_size) {
-                        println!("Hit in {} at position {}:", record.id(), i + j);
-                        println!("Guide:     {}", String::from_utf8_lossy(guide));
-                        println!("Target:    {}", String::from_utf8_lossy(&subwindow[..guide_len]));
-                        println!("PAM:       {}", String::from_utf8_lossy(&subwindow[guide_len..guide_len+3]));
-                        println!("Score:     {}", score);
-                        println!("CIGAR:     {}", cigar);
-                        println!();
+                        // Print tab-separated output
+                        println!("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}", 
+                            record.id(),           // Reference sequence name
+                            i + j,                 // Start position (0-based)
+                            i + j + guide_len,     // End position
+                            String::from_utf8_lossy(guide),  // Guide sequence
+                            String::from_utf8_lossy(&subwindow[..guide_len]),  // Target sequence
+                            String::from_utf8_lossy(&subwindow[guide_len..guide_len+3]),  // PAM
+                            score,                 // Alignment score
+                            format!("{}/{}/{}", mismatches, gaps, max_gap_size),  // Mismatch/gap stats
+                            convert_to_minimap2_cigar(&cigar)  // CIGAR in minimap2 format
+                        );
                     }
                 }
             }
