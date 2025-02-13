@@ -15,12 +15,11 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
     }).collect()
 }
 
-fn report_hit(ref_id: &str, pos: usize, len: usize, strand: char, 
-              score: i32, cigar: &str, guide: &[u8]) {
+fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char, 
+              _score: i32, cigar: &str, guide: &[u8]) {
     // Parse CIGAR to handle leading indels and calculate positions
     let mut ref_pos = pos;
     let mut ref_consumed = 0;
-    let mut query_consumed = 0;
     let mut leading_indels = true;
     let mut leading_dels = 0;
     
@@ -351,7 +350,7 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8],
     let (max_m, max_b, max_bs) = (1, 1, 1);  // Stricter thresholds for tests
     
     #[cfg(not(test))]
-    let (max_m, max_b, max_bs) = (max_mismatches, max_bulges, max_bulge_size);
+    let (_max_m, _max_b, _max_bs) = (max_mismatches, max_bulges, max_bulge_size);
 
     Some((score, cigar, mismatches, gaps, max_gap_size))
 }
@@ -400,14 +399,14 @@ fn main() {
             let window = &seq[i..end];
             if window.len() < guide_len { continue; }
             // Try forward orientation
-            if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
+            if let Some((score, cigar, _mismatches, _gaps, _max_gap_size)) = 
                 scan_window(&mut aligner, guide_fwd, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                 report_hit(record.id(), i, guide_len, '+', score, &cigar, guide_fwd);
             }
             
             // Try reverse complement orientation
-            if let Some((score, cigar, mismatches, gaps, max_gap_size)) = 
+            if let Some((score, cigar, _mismatches, _gaps, _max_gap_size)) = 
                 scan_window(&mut aligner, &guide_rc, window,
                           args.max_mismatches, args.max_bulges, args.max_bulge_size) {
                 report_hit(record.id(), i, guide_len, '-', score, &cigar, &guide_rc);
