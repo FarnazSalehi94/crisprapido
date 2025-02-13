@@ -366,8 +366,9 @@ fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8],
         .trim_end_matches(|c| c == 'D' || c == 'I')
         .to_string();
     
-    // Count mismatches ignoring N positions in guide
+    // Count matches and mismatches ignoring N positions in guide
     let mut n_adjusted_mismatches = 0;
+    let mut matches = 0;
     let mut gaps = 0;
     let mut current_gap_size = 0;
     let mut max_gap_size = 0;
@@ -391,6 +392,7 @@ fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8],
             },
             'M' | '=' => {
                 current_gap_size = 0;
+                matches += 1;
                 pos += 1;
             },
             _ => ()
@@ -408,9 +410,9 @@ fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8],
     debug!("CIGAR: {}, N-adjusted Mismatches: {}, Gaps: {}, Max gap size: {}", 
            cigar, n_adjusted_mismatches, gaps, max_gap_size);
 
-    // Filter based on thresholds - stricter in tests
-    if (cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
-       (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size) {
+    // Filter based on thresholds - require at least 1 match and respect limits
+    if matches >= 1 && ((cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
+       (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size)) {
         Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size, leading_dels))
     } else {
         None
