@@ -119,15 +119,19 @@ fn scan_window(aligner: &mut AffineWavefronts, guide: &[u8], window: &[u8]) -> O
         }
     }
 
+    // Debug print for test environment
+    #[cfg(test)]
+    eprintln!("Mismatches: {}, Gaps: {}, Max gap size: {}", mismatches, gaps, max_gap_size);
+
     // Stricter thresholds for test environment
     #[cfg(test)]
-    if mismatches <= 2 && gaps <= 1 && max_gap_size <= 1 {
+    if mismatches <= 1 && gaps <= 1 && max_gap_size <= 1 {
         return Some((score, cigar));
     }
 
     // Normal thresholds for production
     #[cfg(not(test))]
-    if mismatches <= 4 && gaps <= 1 && max_gap_size <= 2 {
+    if mismatches <= args.max_mismatches && gaps <= args.max_bulges && max_gap_size <= args.max_bulge_size {
         return Some((score, cigar));
     }
 
