@@ -5,7 +5,7 @@ use flate2::read::MultiGzDecoder;
 use std::sync::Arc;
 use clap::Parser;
 use bio::io::fasta;
-use libwfa2::affine_wavefront::AffineWavefronts;
+use lib_wfa2::affine_wavefront::AffineWavefronts;
 use std::fmt::Write;
 use rayon::prelude::*;
 
@@ -448,7 +448,7 @@ fn main() {
     // println!("#Query\tQLen\tQStart\tQEnd\tStrand\tTarget\tTLen\tTStart\tTEnd\tMatches\tBlockLen\tMapQ\tTags");
     
     // Import required WFA2 types
-    use libwfa2::affine_wavefront::{AlignmentSpan, AffineWavefronts};
+    use lib_wfa2::affine_wavefront::{AlignmentSpan, AffineWavefronts};
 
     // Set up WFA parameters with CRISPR-specific penalties and end-free alignment
     let mut aligner = AffineWavefronts::with_penalties(
