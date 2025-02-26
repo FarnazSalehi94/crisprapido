@@ -39,7 +39,7 @@ cargo install --git https://github.com/pinellolab/crisprapido.git
 
 ```bash
 git clone --recursive https://github.com/pinellolab/crisprapido.git
-cd trace_pocrisprapidoints/WFA2-lib
+cd crisprapido/WFA2-lib
 guix shell -C -D -f guix.scm
 export CC=gcc; make clean all
 exit
