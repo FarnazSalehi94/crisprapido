@@ -244,7 +244,7 @@ mod tests {
         let guide = b"ATCGATCGAT";
         let target = b"ATCGATCGAT";
         
-        let result = scan_window(&mut aligner, guide, target, 1, 1, 1, false);
+        let result = scan_window(&mut aligner, guide, target, 1, 1, 1, 0.75, false);
         assert!(result.is_some());
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert_eq!(cigar, "MMMMMMMMMM");
@@ -256,7 +256,7 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGTTCGAT";  // Single mismatch at position 5
         
-        let result = scan_window(&mut aligner, guide, target, 1, 1, 1, false);
+        let result = scan_window(&mut aligner, guide, target, 1, 1, 1, 0.75, false);
         assert!(result.is_some(), "Should accept a single mismatch");
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert_eq!(cigar, "MMMMXMMMMM");
@@ -268,7 +268,7 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGAATCGAT";  // Single base insertion after position 4
         
-        let result = scan_window(&mut aligner, guide, target, 1, 1, 1, false);
+        let result = scan_window(&mut aligner, guide, target, 1, 1, 1, 0.75, false);
         assert!(result.is_some(), "Should accept a single base bulge");
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
@@ -280,7 +280,7 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
         
-        let result = scan_window(&mut aligner, guide, target, 1, 1, 1, false);
+        let result = scan_window(&mut aligner, guide, target, 1, 1, 1, 0.75, false);
         assert!(result.is_none());
     }
 
@@ -291,7 +291,7 @@ mod tests {
         let guide = b"ATCGATCGAT";
         let target = create_flanked_sequence(&mut rng, guide, 500);
         
-        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1, false);
+        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1, 0.75, false);
         assert!(result.is_some(), "Should match perfectly even with flanks");
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert_eq!(cigar, "MMMMMMMMMM");
@@ -305,7 +305,7 @@ mod tests {
         let core = b"ATCGTTCGAT";  // Single mismatch at position 5
         let target = create_flanked_sequence(&mut rng, core, 500);
         
-        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1, false);
+        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1, 0.75, false);
         assert!(result.is_some(), "Should accept a single mismatch with flanks");
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert_eq!(cigar, "MMMMXMMMMM");
@@ -319,7 +319,7 @@ mod tests {
         let core = b"ATCGAATCGAT";  // Single base insertion after position 4
         let target = create_flanked_sequence(&mut rng, core, 500);
         
-        let result = scan_window(&mut aligner, guide, &target[500..511], 1, 1, 1, false);
+        let result = scan_window(&mut aligner, guide, &target[500..511], 1, 1, 1, 0.75, false);
         assert!(result.is_some(), "Should accept a single base bulge with flanks");
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
@@ -333,7 +333,7 @@ mod tests {
         let core = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
         let target = create_flanked_sequence(&mut rng, core, 500);
         
-        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1, false);
+        let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1, 0.75, false);
         assert!(result.is_none(), "Should reject sequence with too many mismatches even with flanks");
     }
     
@@ -424,6 +424,10 @@ struct Args {
     /// Maximum size of each bulge in bp
     #[arg(short = 'z', long, default_value = "2")]
     max_bulge_size: u32,
+    
+    /// Minimum fraction of guide that must match (0.0-1.0)
+    #[arg(short = 'f', long, default_value = "0.75")]
+    min_match_fraction: f32,
 
     /// Size of sequence window to scan (bp, default: 4x guide length)
     #[arg(short = 'w', long)]
@@ -470,7 +474,7 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 
 fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8], 
                max_mismatches: u32, max_bulges: u32, max_bulge_size: u32,
-               no_filter: bool)
+               min_match_fraction: f32, no_filter: bool)
                -> Option<(i32, String, u32, u32, u32, usize)> {
     aligner.align(window, guide);  // Target sequence first, then guide sequence
     let score = aligner.score();
@@ -548,9 +552,15 @@ fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8],
         0.0
     };
 
+    // Calculate minimum match percentage from fraction
+    let min_match_percentage = min_match_fraction * 100.0;
+    
+    debug!("Match percentage: {}, Minimum required: {}", 
+           match_percentage, min_match_percentage);
+    
     // Filter based on thresholds unless disabled
     if no_filter || (matches >= 1 && 
-        match_percentage >= 50.0 && 
+        match_percentage >= min_match_percentage && 
         ((cfg!(test) && n_adjusted_mismatches <= 1 && gaps <= 1 && max_gap_size <= 1) ||
         (!cfg!(test) && n_adjusted_mismatches <= max_mismatches && gaps <= max_bulges && max_gap_size <= max_bulge_size))) {
         Some((score, cigar, n_adjusted_mismatches, gaps, max_gap_size, leading_dels))
@@ -634,7 +644,7 @@ fn main() {
                     if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
                         scan_window(aligner, &guide_fwd, window,
                                   args.max_mismatches, args.max_bulges, args.max_bulge_size,
-                                  args.no_filter) {
+                                  args.min_match_fraction, args.no_filter) {
                         return Some(Hit {
                             ref_id: record_id.clone(),
                             pos: i + leading_dels,
@@ -653,7 +663,7 @@ fn main() {
                     if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
                         scan_window(aligner, &guide_rc, window,
                                   args.max_mismatches, args.max_bulges, args.max_bulge_size,
-                                  args.no_filter) {
+                                  args.min_match_fraction, args.no_filter) {
                         return Some(Hit {
                             ref_id: record_id.clone(),
                             pos: i + leading_dels,
