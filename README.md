@@ -16,11 +16,35 @@ CRISPRapido is a reference-free tool for comprehensive detection of CRISPR off-t
 
 ## Installation
 
-Requires Rust nightly toolchain due to WFA2 dependency. Install using:
+You need to build `WFA2-lib` first, which is a submodule of this repository. To do so, run:
 
 ```bash
-# Install from GitHub repository using nightly toolchain
-cargo +nightly install --git https://github.com/pinellolab/crisprapido.git
+git clone --recursive https://github.com/pinellolab/crisprapido.git
+cd crisprapido/WFA2-lib
+make clean all
+cd ..
+```
+
+Then, you can install CRISPRapido using Cargo:
+
+```shell
+# Point to your pre-built WFA2-lib directory
+export WFA2LIB_PATH="./WFA2-lib"
+
+# Install CRISPRapido
+cargo install --git https://github.com/pinellolab/crisprapido.git
+```
+
+### For GUIX's users
+
+```bash
+git clone --recursive https://github.com/pinellolab/crisprapido.git
+cd trace_pocrisprapidoints/WFA2-lib
+guix shell -C -D -f guix.scm
+export CC=gcc; make clean all
+exit
+cd ..
+env -i bash -c 'WFA2LIB_PATH="./WFA2-lib" PATH=/usr/local/bin:/usr/bin:/bin ~/.cargo/bin/cargo install'
 ```
 
 ## Usage
