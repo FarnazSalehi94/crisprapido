@@ -3,6 +3,7 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 use flate2::read::MultiGzDecoder;
 use std::sync::Arc;
+use std::collections::HashMap;
 use clap::Parser;
 use bio::io::fasta;
 use lib_wfa2::affine_wavefront::AffineWavefronts;
@@ -18,6 +19,59 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
         b'N' => b'N',
         _ => b'N',  // Convert any unexpected bases to N
     }).collect()
+}
+
+#[derive(Clone)]
+struct Hit {
+    ref_id: String,
+    pos: usize,
+    strand: char,
+    score: i32,
+    cigar: String,
+    guide: Arc<Vec<u8>>,
+    target_len: usize,
+    max_mismatches: u32,
+    max_bulges: u32,
+    max_bulge_size: u32,
+}
+
+impl Hit {
+    fn quality_score(&self) -> i32 {
+        // Count matches and other stats
+        let matches = self.cigar.chars()
+            .filter(|&c| c == 'M' || c == '=')
+            .count();
+            
+        let mismatches = self.cigar.chars()
+            .filter(|&c| c == 'X')
+            .count();
+            
+        let gaps = self.cigar.chars()
+            .filter(|&c| c == 'I' || c == 'D')
+            .count();
+            
+        // Higher score is better
+        matches as i32 - (mismatches as i32) - (gaps as i32 * 2) - self.score
+    }
+    
+    fn end_pos(&self) -> usize {
+        // Calculate reference consumed bases
+        let mut ref_consumed = 0;
+        for c in self.cigar.chars() {
+            match c {
+                'M' | '=' | 'X' | 'D' => ref_consumed += 1,
+                _ => {}
+            }
+        }
+        self.pos + ref_consumed
+    }
+    
+    fn overlaps_with(&self, other: &Hit) -> bool {
+        self.strand == other.strand && 
+        self.ref_id == other.ref_id &&
+        self.pos < other.end_pos() && 
+        other.pos < self.end_pos()
+    }
 }
 
 fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char, 
@@ -504,32 +558,108 @@ fn main() {
             .collect();
 
 
-        // Process windows in parallel with thread-local aligners
-        windows.into_par_iter()
-            .map_init(
+        // Process windows in parallel and collect all hits
+        let hits: Vec<Hit> = windows.into_par_iter()
+            .filter_map_init(
                 || AffineWavefronts::with_penalties(0, 3, 5, 1),
                 |aligner, (i, end)| {
                     let window = &seq[i..end];
-                    if window.len() < guide_len { return; }
+                    if window.len() < guide_len { return None; }
             
-            // Try forward orientation
-            if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
-                scan_window(aligner, &guide_fwd, window,
-                          args.max_mismatches, args.max_bulges, args.max_bulge_size,
-                          args.no_filter) {
-                report_hit(&record_id, i + leading_dels, guide_len, '+', score, &cigar, &guide_fwd, seq_len,
-                          args.max_mismatches, args.max_bulges, args.max_bulge_size);
-            }
+                    // Try forward orientation
+                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
+                        scan_window(aligner, &guide_fwd, window,
+                                  args.max_mismatches, args.max_bulges, args.max_bulge_size,
+                                  args.no_filter) {
+                        return Some(Hit {
+                            ref_id: record_id.clone(),
+                            pos: i + leading_dels,
+                            strand: '+',
+                            score,
+                            cigar: cigar.clone(),
+                            guide: Arc::clone(&guide_fwd),
+                            target_len: seq_len,
+                            max_mismatches: args.max_mismatches,
+                            max_bulges: args.max_bulges,
+                            max_bulge_size: args.max_bulge_size,
+                        });
+                    }
+                    
+                    // Try reverse complement orientation
+                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
+                        scan_window(aligner, &guide_rc, window,
+                                  args.max_mismatches, args.max_bulges, args.max_bulge_size,
+                                  args.no_filter) {
+                        return Some(Hit {
+                            ref_id: record_id.clone(),
+                            pos: i + leading_dels,
+                            strand: '-',
+                            score,
+                            cigar: cigar.clone(),
+                            guide: Arc::clone(&guide_rc),
+                            target_len: seq_len,
+                            max_mismatches: args.max_mismatches,
+                            max_bulges: args.max_bulges,
+                            max_bulge_size: args.max_bulge_size,
+                        });
+                    }
+                    
+                    None
+                })
+            .collect();
+
+        // Group hits by chromosome and strand
+        let mut hits_by_group: HashMap<(String, char), Vec<Hit>> = HashMap::new();
+        for hit in hits {
+            hits_by_group.entry((hit.ref_id.clone(), hit.strand))
+                        .or_insert_with(Vec::new)
+                        .push(hit);
+        }
+
+        // For each group, filter overlapping hits
+        for (_, mut group_hits) in hits_by_group {
+            // Sort by position
+            group_hits.sort_by_key(|hit| hit.pos);
             
-            // Try reverse complement orientation
-            if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
-                scan_window(aligner, &guide_rc, window,
-                          args.max_mismatches, args.max_bulges, args.max_bulge_size,
-                          args.no_filter) {
-                report_hit(&record_id, i + leading_dels, guide_len, '-', score, &cigar, &guide_rc, seq_len,
-                          args.max_mismatches, args.max_bulges, args.max_bulge_size);
+            // Filter overlapping hits
+            let mut filtered_hits = Vec::new();
+            let mut i = 0;
+            while i < group_hits.len() {
+                // Find all hits that overlap with the current one
+                let mut best_idx = i;
+                let mut best_quality = group_hits[i].quality_score();
+                let mut j = i + 1;
+                
+                while j < group_hits.len() && group_hits[j].pos < group_hits[i].end_pos() {
+                    if group_hits[j].overlaps_with(&group_hits[i]) {
+                        let quality = group_hits[j].quality_score();
+                        if quality > best_quality {
+                            best_quality = quality;
+                            best_idx = j;
+                        }
+                    }
+                    j += 1;
                 }
-            })
-            .collect::<()>();
+                
+                // Add the best hit to filtered results
+                let best_hit = &group_hits[best_idx];
+                report_hit(
+                    &best_hit.ref_id, 
+                    best_hit.pos, 
+                    best_hit.guide.len(), 
+                    best_hit.strand, 
+                    best_hit.score, 
+                    &best_hit.cigar, 
+                    &best_hit.guide, 
+                    best_hit.target_len,
+                    best_hit.max_mismatches, 
+                    best_hit.max_bulges, 
+                    best_hit.max_bulge_size
+                );
+                
+                // Move to the next non-overlapping hit
+                i = j;
+            }
+        }
     }
 }
