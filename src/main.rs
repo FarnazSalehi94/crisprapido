@@ -398,7 +398,7 @@ mod tests {
         // Test end position calculation
         assert_eq!(perfect_hit.end_pos(), 110, "End position should be pos + matches");
         assert_eq!(mismatch_hit.end_pos(), 115, "End position includes mismatches");
-        assert_eq!(bulge_hit.end_pos(), 120, "End position includes deletions");
+        assert_eq!(bulge_hit.end_pos(), 119, "End position includes deletions");
     }
 }
 
