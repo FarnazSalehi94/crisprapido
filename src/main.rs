@@ -623,7 +623,7 @@ fn main() {
             group_hits.sort_by_key(|hit| hit.pos);
             
             // Filter overlapping hits
-            let mut filtered_hits = Vec::new();
+            let mut filtered_hits: Vec<Hit> = Vec::new();
             let mut i = 0;
             while i < group_hits.len() {
                 // Find all hits that overlap with the current one
