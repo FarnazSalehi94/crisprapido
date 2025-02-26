@@ -69,13 +69,50 @@ crisprapido -r <reference.fa> -g <guide_sequence> [OPTIONS]
 
 ## Output Format
 
-Output is in PAF format with custom tags, including:
-- Standard PAF columns for position and alignment information
-- `as:i`: Alignment score
-- `nm:i`: Number of mismatches
-- `ng:i`: Number of gaps
-- `bs:i`: Biggest gap size
-- `cg:Z`: CIGAR string
+CRISPRapido outputs results in the Pairwise Alignment Format (PAF), which is widely used for representing genomic alignments. Each line represents a potential off-target site with the following tab-separated fields:
+
+| Column | Field | Description |
+|--------|-------|-------------|
+| 1 | Query name | "Guide" (the guide RNA sequence) |
+| 2 | Query length | Length of the guide RNA |
+| 3 | Query start | 0-based start position in the guide sequence |
+| 4 | Query end | 0-based end position in the guide sequence |
+| 5 | Strand | '+' (forward) or '-' (reverse complement) |
+| 6 | Target name | Reference sequence name (e.g., chromosome) |
+| 7 | Target length | Length of the target reference sequence |
+| 8 | Target start | 0-based start position in reference |
+| 9 | Target end | 0-based end position in reference |
+| 10 | Matches | Number of matching bases |
+| 11 | Block length | Total alignment block length |
+| 12 | Mapping quality | Always 255 for CRISPRapido |
+
+Additionally, CRISPRapido includes these custom tags:
+
+| Tag | Description |
+|-----|-------------|
+| `as:i` | Alignment score (lower is better) |
+| `nm:i` | Number of mismatches |
+| `ng:i` | Number of gaps (indels) |
+| `bs:i` | Biggest gap size in bases |
+| `cg:Z` | CIGAR string representing alignment details |
+
+### Example Output
+
+```
+Guide   20      0       20      +       chr1    248956422       10050   10070   19      21      255     as:i:6  nm:i:1  ng:i:0  bs:i:0  cg:Z:19=1X
+```
+
+This indicates:
+- A 20bp guide RNA aligned to chromosome 1
+- Position 10050-10070 on the forward strand
+- 19 bases match with 1 mismatch (nm:i:1)
+- No gaps (ng:i:0)
+- Alignment score of 6 (as:i:6)
+- CIGAR string shows 19 matches followed by 1 mismatch
+
+### PAF Format Specification
+
+For more details on the PAF format, see the [official specification](https://github.com/lh3/miniasm/blob/master/PAF.md) from the developers of miniasm.
 
 ## Example
 
