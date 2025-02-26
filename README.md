@@ -83,19 +83,14 @@ Output is in PAF format with custom tags, including:
 crisprapido -r genome.fa -g ATCGATCGATCG -m 3 -b 1 -z 2
 ```
 
-## Building from Source
-
-```bash
-git clone https://github.com/yourusername/crisprapido
-cd crisprapido
-cargo build --release
-```
-
 ## Testing
 
 Run the test suite:
 
 ```bash
+# Point to your pre-built WFA2-lib directory
+export WFA2LIB_PATH="./WFA2-lib"
+
 cargo test
 ```
 
