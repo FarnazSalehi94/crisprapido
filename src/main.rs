@@ -336,6 +336,70 @@ mod tests {
         let result = scan_window(&mut aligner, guide, &target[500..510], 1, 1, 1, false);
         assert!(result.is_none(), "Should reject sequence with too many mismatches even with flanks");
     }
+    
+    #[test]
+    fn test_hit_quality_scoring_and_filtering() {
+        // Create Hit objects with different qualities
+        let guide_seq = Arc::new(b"ATCGATCGAT".to_vec());
+        
+        // Perfect match hit
+        let perfect_hit = Hit {
+            ref_id: "chr1".to_string(),
+            pos: 100,
+            strand: '+',
+            score: 0,
+            cigar: "MMMMMMMMMM".to_string(),  // 10 perfect matches
+            guide: Arc::clone(&guide_seq),
+            target_len: 1000,
+            max_mismatches: 4,
+            max_bulges: 1,
+            max_bulge_size: 2,
+        };
+        
+        // Hit with one mismatch
+        let mismatch_hit = Hit {
+            ref_id: "chr1".to_string(),
+            pos: 105,  // Overlaps with perfect_hit
+            strand: '+',
+            score: 3,  // Higher score (worse)
+            cigar: "MMMMXMMMMM".to_string(),  // 9 matches, 1 mismatch
+            guide: Arc::clone(&guide_seq),
+            target_len: 1000,
+            max_mismatches: 4,
+            max_bulges: 1,
+            max_bulge_size: 2,
+        };
+        
+        // Hit with a bulge
+        let bulge_hit = Hit {
+            ref_id: "chr1".to_string(),
+            pos: 110,  // Doesn't overlap with others
+            strand: '+',
+            score: 6,  // Even higher score (worse)
+            cigar: "MMMDMMMMM".to_string(),  // Gap
+            guide: Arc::clone(&guide_seq),
+            target_len: 1000,
+            max_mismatches: 4,
+            max_bulges: 1,
+            max_bulge_size: 2,
+        };
+        
+        // Verify overlapping detection
+        assert!(perfect_hit.overlaps_with(&mismatch_hit), "Hits should overlap");
+        assert!(mismatch_hit.overlaps_with(&perfect_hit), "Overlap should be symmetric");
+        assert!(!perfect_hit.overlaps_with(&bulge_hit), "These hits shouldn't overlap");
+        
+        // Verify quality scoring
+        assert!(perfect_hit.quality_score() > mismatch_hit.quality_score(),
+                "Perfect match should have higher quality than mismatch");
+        assert!(mismatch_hit.quality_score() > bulge_hit.quality_score(),
+                "Mismatch should have higher quality than bulge");
+                
+        // Test end position calculation
+        assert_eq!(perfect_hit.end_pos(), 110, "End position should be pos + matches");
+        assert_eq!(mismatch_hit.end_pos(), 115, "End position includes mismatches");
+        assert_eq!(bulge_hit.end_pos(), 120, "End position includes deletions");
+    }
 }
 
 #[derive(Parser)]
@@ -623,7 +687,7 @@ fn main() {
             group_hits.sort_by_key(|hit| hit.pos);
             
             // Filter overlapping hits
-            let mut filtered_hits: Vec<Hit> = Vec::new();
+            let _filtered_hits: Vec<Hit> = Vec::new(); // Unused, but keeping for future expansion
             let mut i = 0;
             while i < group_hits.len() {
                 // Find all hits that overlap with the current one
