@@ -44,7 +44,7 @@ guix shell -C -D -f guix.scm
 export CC=gcc; make clean all
 exit
 cd ..
-env -i bash -c 'WFA2LIB_PATH="./WFA2-lib" PATH=/usr/local/bin:/usr/bin:/bin ~/.cargo/bin/cargo install'
+env -i bash -c 'WFA2LIB_PATH="./WFA2-lib" PATH=/usr/local/bin:/usr/bin:/bin ~/.cargo/bin/cargo install --path .'
 ```
 
 ## Usage
