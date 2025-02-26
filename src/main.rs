@@ -560,7 +560,7 @@ fn main() {
 
         // Process windows in parallel and collect all hits
         let hits: Vec<Hit> = windows.into_par_iter()
-            .filter_map_init(
+            .map_init(
                 || AffineWavefronts::with_penalties(0, 3, 5, 1),
                 |aligner, (i, end)| {
                     let window = &seq[i..end];
@@ -606,6 +606,7 @@ fn main() {
                     
                     None
                 })
+            .filter_map(|x| x)
             .collect();
 
         // Group hits by chromosome and strand
