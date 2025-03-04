@@ -218,6 +218,8 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     // Add CFD score if available
     if let Some(cfd) = cfd_score {
         output.push_str(&format!("\tcf:f:{:.3}", cfd));
+        // Also add a human-readable percentage
+        output.push_str(&format!("\tcfd:f:{:.1}%", cfd * 100.0));
     }
     
     // Add Elevation score if available
@@ -464,7 +466,7 @@ struct Args {
     no_filter: bool,
     
     /// Calculate CFD (Cutting Frequency Determination) scores
-    #[arg(long)]
+    #[arg(long, help = "Calculate and report CFD scores (0-1 scale where higher is better)")]
     cfd: bool,
     
     /// Calculate Elevation scores (Doench lab)
@@ -688,7 +690,9 @@ fn main() {
                         
                         // Calculate scores if requested
                         let cfd_score = if args.cfd {
-                            Some(scoring::calculate_cfd_score(&guide_fwd, &target_seq, &cigar))
+                            // Calculate CFD score for this alignment
+                            let score = scoring::calculate_cfd_score(&guide_fwd, &target_seq, &cigar);
+                            Some(score)
                         } else {
                             None
                         };
@@ -734,7 +738,9 @@ fn main() {
                         
                         // Calculate scores if requested
                         let cfd_score = if args.cfd {
-                            Some(scoring::calculate_cfd_score(&guide_rc, &target_seq, &cigar))
+                            // Calculate CFD score for this alignment
+                            let score = scoring::calculate_cfd_score(&guide_rc, &target_seq, &cigar);
+                            Some(score)
                         } else {
                             None
                         };

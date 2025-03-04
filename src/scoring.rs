@@ -213,6 +213,28 @@ mod tests {
     }
     
     #[test]
+    fn test_cfd_with_multiple_mismatches() {
+        let guide = b"ATCGATCGAT";
+        let target = b"ATCGTTCGTT";  // Mismatches at positions 4, 8
+        let cigar = "MMMMXMMXMX";
+        
+        let score = calculate_cfd_score(guide, target, cigar);
+        // Multiple mismatches should result in a lower score
+        assert!(score < 0.8);
+    }
+    
+    #[test]
+    fn test_cfd_with_bulge() {
+        let guide = b"ATCGATCGAT";
+        let target = b"ATCGAATCGAT";  // Insertion after position 4
+        let cigar = "MMMMIMMMMMM";
+        
+        let score = calculate_cfd_score(guide, target, cigar);
+        // Bulges are heavily penalized
+        assert!(score <= 0.5);
+    }
+    
+    #[test]
     fn test_elevation_perfect_match() {
         let guide = b"ATCGATCGAT";
         let target = b"ATCGATCGAT";
