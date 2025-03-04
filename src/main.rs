@@ -10,6 +10,8 @@ use lib_wfa2::affine_wavefront::AffineWavefronts;
 use std::fmt::Write;
 use rayon::prelude::*;
 
+mod scoring;
+
 fn reverse_complement(seq: &[u8]) -> Vec<u8> {
     seq.iter().rev().map(|&b| match b {
         b'A' => b'T',
@@ -33,6 +35,9 @@ struct Hit {
     max_mismatches: u32,
     max_bulges: u32,
     max_bulge_size: u32,
+    cfd_score: Option<f32>,
+    elevation_score: Option<f32>,
+    target_seq: Vec<u8>,
 }
 
 impl Hit {
@@ -76,7 +81,8 @@ impl Hit {
 
 fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char, 
               _score: i32, cigar: &str, guide: &[u8], target_len: usize,
-              _max_mismatches: u32, _max_bulges: u32, _max_bulge_size: u32) {
+              _max_mismatches: u32, _max_bulges: u32, _max_bulge_size: u32,
+              cfd_score: Option<f32>, elevation_score: Option<f32>, target_seq: &[u8]) {
     // Calculate reference and query positions and consumed bases
     let mut ref_pos = pos;
     let mut ref_consumed = 0;
@@ -190,7 +196,8 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     debug!("  Passes filters: true");
     debug!("");
 
-    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}", 
+    // Add CFD and Elevation scores if available
+    let mut output = format!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}", 
         guide_len,                        // Query length
         query_start,                      // Query start
         query_start + query_consumed,     // Query end
@@ -205,8 +212,23 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         mismatches,                       // NM:i number of mismatches
         gaps,                             // NG:i number of gaps
         max_gap_size,                     // BS:i biggest gap size
-        convert_to_minimap2_cigar(cigar) // cg:Z CIGAR string
+        convert_to_minimap2_cigar(cigar)  // cg:Z CIGAR string
     );
+    
+    // Add CFD score if available
+    if let Some(cfd) = cfd_score {
+        output.push_str(&format!("\tcf:f:{:.3}", cfd));
+    }
+    
+    // Add Elevation score if available
+    if let Some(elev) = elevation_score {
+        output.push_str(&format!("\tel:f:{:.3}", elev));
+    }
+    
+    // Add target sequence
+    output.push_str(&format!("\tts:Z:{}", String::from_utf8_lossy(target_seq)));
+    
+    println!("{}", output);
 }
 #[cfg(test)]
 use rand::{SeedableRng, RngCore, rngs::SmallRng};
@@ -440,6 +462,14 @@ struct Args {
     /// Disable all filtering (report every alignment)
     #[arg(long)]
     no_filter: bool,
+    
+    /// Calculate CFD (Cutting Frequency Determination) scores
+    #[arg(long)]
+    cfd: bool,
+    
+    /// Calculate Elevation scores (Doench lab)
+    #[arg(long)]
+    elevation: bool,
 }
 
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
@@ -645,6 +675,30 @@ fn main() {
                         scan_window(aligner, &guide_fwd, window,
                                   args.max_mismatches, args.max_bulges, args.max_bulge_size,
                                   args.min_match_fraction, args.no_filter) {
+                        
+                        // Extract the target sequence for this hit
+                        let target_start = i + leading_dels;
+                        let target_end = target_start + guide_fwd.len();
+                        let target_seq = if target_end <= window.len() {
+                            window[target_start - i..target_end - i].to_vec()
+                        } else {
+                            // Handle case where target extends beyond window
+                            window[target_start - i..].to_vec()
+                        };
+                        
+                        // Calculate scores if requested
+                        let cfd_score = if args.cfd {
+                            Some(scoring::calculate_cfd_score(&guide_fwd, &target_seq, &cigar))
+                        } else {
+                            None
+                        };
+                        
+                        let elevation_score = if args.elevation {
+                            Some(scoring::calculate_elevation_score(&guide_fwd, &target_seq, &cigar))
+                        } else {
+                            None
+                        };
+                        
                         return Some(Hit {
                             ref_id: record_id.clone(),
                             pos: i + leading_dels,
@@ -656,6 +710,9 @@ fn main() {
                             max_mismatches: args.max_mismatches,
                             max_bulges: args.max_bulges,
                             max_bulge_size: args.max_bulge_size,
+                            cfd_score,
+                            elevation_score,
+                            target_seq,
                         });
                     }
                     
@@ -664,6 +721,30 @@ fn main() {
                         scan_window(aligner, &guide_rc, window,
                                   args.max_mismatches, args.max_bulges, args.max_bulge_size,
                                   args.min_match_fraction, args.no_filter) {
+                        
+                        // Extract the target sequence for this hit
+                        let target_start = i + leading_dels;
+                        let target_end = target_start + guide_rc.len();
+                        let target_seq = if target_end <= window.len() {
+                            window[target_start - i..target_end - i].to_vec()
+                        } else {
+                            // Handle case where target extends beyond window
+                            window[target_start - i..].to_vec()
+                        };
+                        
+                        // Calculate scores if requested
+                        let cfd_score = if args.cfd {
+                            Some(scoring::calculate_cfd_score(&guide_rc, &target_seq, &cigar))
+                        } else {
+                            None
+                        };
+                        
+                        let elevation_score = if args.elevation {
+                            Some(scoring::calculate_elevation_score(&guide_rc, &target_seq, &cigar))
+                        } else {
+                            None
+                        };
+                        
                         return Some(Hit {
                             ref_id: record_id.clone(),
                             pos: i + leading_dels,
@@ -675,6 +756,9 @@ fn main() {
                             max_mismatches: args.max_mismatches,
                             max_bulges: args.max_bulges,
                             max_bulge_size: args.max_bulge_size,
+                            cfd_score,
+                            elevation_score,
+                            target_seq,
                         });
                     }
                     
@@ -729,7 +813,10 @@ fn main() {
                     best_hit.target_len,
                     best_hit.max_mismatches, 
                     best_hit.max_bulges, 
-                    best_hit.max_bulge_size
+                    best_hit.max_bulge_size,
+                    best_hit.cfd_score,
+                    best_hit.elevation_score,
+                    &best_hit.target_seq
                 );
                 
                 // Move to the next non-overlapping hit
