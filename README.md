@@ -67,7 +67,7 @@ crisprapido -r <reference.fa> -g <guide_sequence> [OPTIONS]
 - `-t, --threads <NUM>`: Number of threads to use (default: number of logical CPUs)
 - `--no-filter`: Disable all filtering (report every alignment)
 - `--cfd`: Calculate CFD scores (default: true)
-- `--elevation`: Calculate Elevation scores
+- `--elevation`: Calculate Elevation scores (default: true)
 
 ## Output Format
 
@@ -89,6 +89,7 @@ CRISPRapido outputs results in the Pairwise Alignment Format (PAF), which is wid
 | 12 | Mapping quality | Always 255 for CRISPRapido |
 | 13 | CFD Score | Cutting Frequency Determination score (0-1 scale) |
 | 14 | CFD Percent | CFD score as percentage (0-100%) |
+| 15 | Elevation Score | Elevation score (0-1 scale) |
 
 Additionally, CRISPRapido includes these custom tags:
 
@@ -101,12 +102,13 @@ Additionally, CRISPRapido includes these custom tags:
 | `cg:Z` | CIGAR string representing alignment details |
 | `cf:f` | CFD score (0-1 scale, higher is better) |
 | `cfd:f` | CFD score as percentage |
+| `el:f` | Elevation score (0-1 scale, higher is better) |
 | `ts:Z` | Target sequence |
 
 ### Example Output
 
 ```
-Guide   20      0       20      +       chr1    248956422       10050   10070   19      21      255     0.833   83.3%   as:i:6  nm:i:1  ng:i:0  bs:i:0  cg:Z:19=1X  cf:f:0.833  cfd:f:83.3%  ts:Z:ATCGATCGATCGATCGATC
+Guide   20      0       20      +       chr1    248956422       10050   10070   19      21      255     0.833   83.3%   0.765   as:i:6  nm:i:1  ng:i:0  bs:i:0  cg:Z:19=1X  cf:f:0.833  cfd:f:83.3%  el:f:0.765  ts:Z:ATCGATCGATCGATCGATC
 ```
 
 This indicates:
@@ -116,6 +118,7 @@ This indicates:
 - No gaps (ng:i:0)
 - Alignment score of 6 (as:i:6)
 - CFD score of 0.833 (83.3%)
+- Elevation score of 0.765
 - CIGAR string shows 19 matches followed by 1 mismatch
 - Target sequence is provided in the ts:Z tag
 
