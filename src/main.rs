@@ -220,6 +220,9 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         output.push_str(&format!("\tcf:f:{:.3}", cfd));
         // Also add a human-readable percentage
         output.push_str(&format!("\tcfd:f:{:.1}%", cfd * 100.0));
+    } else {
+        // Add empty columns to maintain consistent format
+        output.push_str("\tcf:f:0.000\tcfd:f:0.0%");
     }
     
     // Add Elevation score if available
@@ -227,10 +230,28 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         output.push_str(&format!("\tel:f:{:.3}", elev));
     }
     
+    // Extract CFD score for separate columns
+    let cfd_score_value = cfd_score.unwrap_or(0.0);
+    let cfd_percent = cfd_score_value * 100.0;
+    
     // Add target sequence
     output.push_str(&format!("\tts:Z:{}", String::from_utf8_lossy(target_seq)));
     
-    println!("{}", output);
+    // Print output with CFD score as separate columns
+    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\t{:.3}\t{:.1}%\t{}", 
+        guide_len,                        // Query length
+        query_start,                      // Query start
+        query_start + query_consumed,     // Query end
+        strand,                           // Strand (+/-)
+        ref_id,                           // Target sequence name
+        target_len,                       // Full target sequence length
+        ref_pos,                          // Target start
+        ref_pos + ref_consumed,           // Target end
+        matches,                          // Number of matches
+        block_len,                        // Total alignment block length
+        cfd_score_value,                  // CFD score as separate column
+        cfd_percent,                      // CFD percentage as separate column
+        output.trim_start_matches("Guide\t"));  // Rest of the tags
 }
 #[cfg(test)]
 use rand::{SeedableRng, RngCore, rngs::SmallRng};
@@ -466,7 +487,7 @@ struct Args {
     no_filter: bool,
     
     /// Calculate CFD (Cutting Frequency Determination) scores
-    #[arg(long, help = "Calculate and report CFD scores (0-1 scale where higher is better)")]
+    #[arg(long, default_value = "true", help = "Calculate and report CFD scores (0-1 scale where higher is better)")]
     cfd: bool,
     
     /// Calculate Elevation scores (Doench lab)
@@ -604,8 +625,8 @@ fn scan_window(aligner: &AffineWavefronts, guide: &[u8], window: &[u8],
 fn main() {
     let args = Args::parse();
     
-    // Print PAF header as comment (disabled)
-    // println!("#Query\tQLen\tQStart\tQEnd\tStrand\tTarget\tTLen\tTStart\tTEnd\tMatches\tBlockLen\tMapQ\tTags");
+    // Print PAF header as comment
+    println!("#Query\tQLen\tQStart\tQEnd\tStrand\tTarget\tTLen\tTStart\tTEnd\tMatches\tBlockLen\tMapQ\tCFD_Score\tCFD_Percent\tTags");
     
     // Import required WFA2 types
     use lib_wfa2::affine_wavefront::{AlignmentSpan, AffineWavefronts};
