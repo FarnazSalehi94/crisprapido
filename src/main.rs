@@ -225,17 +225,24 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         output.push_str("\tcf:f:0.000\tcfd:f:0.0%");
     }
     
-    // Elevation score is calculated but not displayed in the output
+    // Add Elevation score if available
+    if let Some(elev) = elevation_score {
+        output.push_str(&format!("\tel:f:{:.3}", elev));
+    } else {
+        // Add empty column to maintain consistent format
+        output.push_str("\tel:f:0.000");
+    }
     
-    // Extract CFD score for separate columns
+    // Extract scores for separate columns
     let cfd_score_value = cfd_score.unwrap_or(0.0);
     let cfd_percent = cfd_score_value * 100.0;
+    let elevation_score_value = elevation_score.unwrap_or(0.0);
     
     // Add target sequence
     output.push_str(&format!("\tts:Z:{}", String::from_utf8_lossy(target_seq)));
     
-    // Print output with CFD score as separate columns
-    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\t{:.3}\t{:.1}%\t{}", 
+    // Print output with CFD and Elevation scores as separate columns
+    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\t{:.3}\t{:.1}%\t{:.3}\t{}", 
         guide_len,                        // Query length
         query_start,                      // Query start
         query_start + query_consumed,     // Query end
@@ -248,6 +255,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         block_len,                        // Total alignment block length
         cfd_score_value,                  // CFD score as separate column
         cfd_percent,                      // CFD percentage as separate column
+        elevation_score_value,            // Elevation score as separate column
         output.trim_start_matches("Guide\t"));  // Rest of the tags
 }
 #[cfg(test)]
@@ -488,7 +496,7 @@ struct Args {
     cfd: bool,
     
     /// Calculate Elevation scores (Doench lab)
-    #[arg(long, help = "Calculate Elevation scores (not displayed in output)")]
+    #[arg(long, default_value = "true", help = "Calculate Elevation scores (0-1 scale where higher is better)")]
     elevation: bool,
 }
 
@@ -623,7 +631,7 @@ fn main() {
     let args = Args::parse();
     
     // Print PAF header as comment
-    println!("#Query\tQLen\tQStart\tQEnd\tStrand\tTarget\tTLen\tTStart\tTEnd\tMatches\tBlockLen\tMapQ\tCFD_Score\tCFD_Percent\tTags");
+    println!("#Query\tQLen\tQStart\tQEnd\tStrand\tTarget\tTLen\tTStart\tTEnd\tMatches\tBlockLen\tMapQ\tCFD_Score\tCFD_Percent\tElevation_Score\tTags");
     
     // Import required WFA2 types
     use lib_wfa2::affine_wavefront::{AlignmentSpan, AffineWavefronts};
