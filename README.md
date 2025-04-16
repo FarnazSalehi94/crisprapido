@@ -50,7 +50,7 @@ env -i bash -c 'WFA2LIB_PATH="./WFA2-lib" PATH=/usr/local/bin:/usr/bin:/bin ~/.c
 ## Usage
 
 ```bash
-crisprapido -r <reference.fa> -g <guide_sequence> [OPTIONS]
+crisprapido -r <reference.fa> -g <guide_sequence> -p <pam_sequence> [OPTIONS]
 ```
 
 ### Required Arguments
