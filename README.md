@@ -132,7 +132,7 @@ For more details on the PAF format, see the [official specification](https://git
 ## Example
 
 ```bash
-crisprapido -r genome.fa -g ATCGATCGATCG -m 3 -b 1 -z 2
+crisprapido -r genome.fa -g ATCGATCGATCG -p GG -m 3 -b 1 -z 2
 ```
 
 ## Testing
