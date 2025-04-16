@@ -13,7 +13,7 @@ CRISPRapido is a reference-free tool for comprehensive detection of CRISPR off-t
 - Automatic reverse complement scanning
 - PAF-format output compatible with downstream analysis tools
 - Multi-threaded processing for improved performance
-
+- CFD (Cutting Frequency Determination) scoring for off-targets
 ## Installation
 
 You need to build `WFA2-lib` first, which is a submodule of this repository. To do so, run:
@@ -57,7 +57,7 @@ crisprapido -r <reference.fa> -g <guide_sequence> [OPTIONS]
 
 - `-r, --reference <FILE>`: Input reference FASTA file (supports .fa and .fa.gz)
 - `-g, --guide <SEQUENCE>`: Guide RNA sequence (without PAM)
-
+- `-p, --pam <SEQUENCE>` : PAM sequence for CFD
 ### Optional Arguments
 
 - `-m, --max-mismatches <NUM>`: Maximum number of mismatches allowed (default: 4)
@@ -95,7 +95,22 @@ Additionally, CRISPRapido includes these custom tags:
 | `ng:i` | Number of gaps (indels) |
 | `bs:i` | Biggest gap size in bases |
 | `cg:Z` | CIGAR string representing alignment details |
+| `cf:f` | CFD score
 
+
+### CFD Score
+
+The Cutting Frequency Determination (CFD) score estimates the likelihood of a guide RNA cutting at an off-target site.
+The score ranges from 0.0 to 1.0,  taking into account:
+
+- Position-specific mismatch penalties
+- PAM sequence efficiency
+- Bulge and gap effects
+
+This implementation requires two data files:
+
+- `mismatch_scores.txt` : Position-specific mismatch penalties
+- `pam_scores.txt` : Efficiency scores for different PAM sequences
 ### Example Output
 
 ```
@@ -144,3 +159,4 @@ See LICENSE file
 ## Citation
 
 Stay tuned!
+
