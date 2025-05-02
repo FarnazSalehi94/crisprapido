@@ -195,20 +195,21 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     debug!("  Passes filters: true");
     debug!("");
 
-    // Calculate CFD score if possible
+    // Calculate CFD score
     let cfd_score = if !target_seq.is_empty() {
         cfd_score::get_cfd_score(guide, target_seq, cigar, pam)
     } else {
         None
     };
-    
-    // Add CFD score to output tags if available
+
+    // Add CFD score to output
     let cfd_tag = if let Some(score) = cfd_score {
         format!("\tcf:f:{:.4}", score)
     } else {
         String::new()
     };
 
+    // Update println to include CFD score
     println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}",
         guide_len,                        // Query length
         query_start,                      // Query start
@@ -228,7 +229,6 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         cfd_tag                           // cf:f CFD score
     );
 }
-
 #[cfg(test)]
 use rand::{SeedableRng, RngCore, rngs::SmallRng};
 
@@ -728,7 +728,7 @@ fn main() {
                             target_seq: window.to_vec(),  // Store target sequence
                         });
                     }
-                    
+
                     None
                 })
             .filter_map(|x| x)
