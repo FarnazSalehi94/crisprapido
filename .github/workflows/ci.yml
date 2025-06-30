@@ -15,7 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
     
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
@@ -25,3 +26,9 @@ jobs:
       
     - name: Build release
       run: cargo build --release --verbose
+      
+    - name: Test CLI
+      run: |
+        echo ">test_seq" > test.fa
+        echo "AAATCGATCGATCGAAATCG" >> test.fa
+        ./target/release/crisprapido --help
