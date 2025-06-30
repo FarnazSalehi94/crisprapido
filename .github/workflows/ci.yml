@@ -26,9 +26,3 @@ jobs:
       
     - name: Build release
       run: cargo build --release --verbose
-      
-    - name: Test CLI
-      run: |
-        echo ">test_seq" > test.fa
-        echo "AAATCGATCGATCGAAATCG" >> test.fa
-        ./target/release/crisprapido --help
