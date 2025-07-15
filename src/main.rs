@@ -85,122 +85,117 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
               _score: i32, cigar: &str, guide: &[u8], target_len: usize,
               _max_mismatches: u32, _max_bulges: u32, _max_bulge_size: u32,
               target_seq: &[u8], pam: &str) {
-    // Calculate reference and query positions and consumed bases
+    
+    // Parse CIGAR to calculate positions and statistics
     let mut ref_pos = pos;
     let mut ref_consumed = 0;
-    let mut query_start = 0;
+    let mut query_pos = 0;
     let mut query_consumed = 0;
-    
-    // Count leading deletions to adjust start position
-    let leading_dels = cigar.chars()
-        .take_while(|&c| c == 'D')
-        .count();
-    ref_pos += leading_dels;
-    
-    // Calculate alignment statistics, accounting for N positions
     let mut mismatches = 0;
     let mut gaps = 0;
     let mut current_gap_size = 0;
     let mut max_gap_size = 0;
-    let mut pos = 0;
-    for c in cigar.chars() {
-        match c {
-            'X' => {
-                // Only count mismatch if this position in the guide isn't N
-                if pos < guide.len() && guide[pos] != b'N' {
-                    mismatches += 1;
+    let mut matches = 0;
+    
+    // Handle empty CIGAR (fallback to perfect match)
+    let effective_cigar = if cigar.is_empty() {
+        format!("{}=", guide.len())
+    } else {
+        cigar.to_string()
+    };
+    
+    // Parse CIGAR string properly
+    let mut chars = effective_cigar.chars().peekable();
+    while let Some(ch) = chars.next() {
+        if ch.is_ascii_digit() {
+            // Collect all digits
+            let mut num_str = String::new();
+            num_str.push(ch);
+            while let Some(&next_ch) = chars.peek() {
+                if next_ch.is_ascii_digit() {
+                    num_str.push(chars.next().unwrap());
+                } else {
+                    break;
                 }
-                ref_consumed += 1;
-                query_consumed += 1;
-                pos += 1;
-            },
-            'I' => {
-                current_gap_size += 1;
-                if current_gap_size == 1 {
-                    gaps += 1;
+            }
+            
+            // Get the operation
+            if let Some(op) = chars.next() {
+                if let Ok(count) = num_str.parse::<usize>() {
+                    match op {
+                        '=' | 'M' => {
+                            matches += count;
+                            ref_consumed += count;
+                            query_consumed += count;
+                            current_gap_size = 0;
+                        },
+                        'X' => {
+                            // Only count mismatch if this position in the guide isn't N
+                            for i in 0..count {
+                                if query_pos + i < guide.len() && guide[query_pos + i] != b'N' {
+                                    mismatches += 1;
+                                }
+                            }
+                            ref_consumed += count;
+                            query_consumed += count;
+                            current_gap_size = 0;
+                        },
+                        'I' => {
+                            if current_gap_size == 0 {
+                                gaps += 1;
+                            }
+                            current_gap_size += count;
+                            max_gap_size = max_gap_size.max(current_gap_size);
+                            query_consumed += count;
+                        },
+                        'D' => {
+                            if current_gap_size == 0 {
+                                gaps += 1;
+                            }
+                            current_gap_size += count;
+                            max_gap_size = max_gap_size.max(current_gap_size);
+                            ref_consumed += count;
+                        },
+                        _ => {}
+                    }
                 }
-                max_gap_size = max_gap_size.max(current_gap_size);
-                query_consumed += 1;
-            },
-            'D' => {
-                current_gap_size += 1;
-                if current_gap_size == 1 {
-                    gaps += 1;
-                }
-                max_gap_size = max_gap_size.max(current_gap_size);
-                ref_consumed += 1;
-                query_start += 1;  // Adjust query start for leading deletions
-            },
-            'M' | '=' => {
-                current_gap_size = 0;
-                ref_consumed += 1;
-                query_consumed += 1;
-            },
-            _ => ()
+            }
         }
     }
-
-    // Recalculate score based on the alignment, accounting for N positions
+    
+    // Calculate query start and end
+    let query_start = 0; // Query always starts at 0 in local alignment
+    let query_end = query_consumed;
+    let query_length = guide.len(); // Total guide length
+    
+    // Calculate reference start and end
+    let ref_start = ref_pos;
+    let ref_end = ref_pos + ref_consumed;
+    
+    // Calculate adjusted score based on the alignment
     let mut adjusted_score = 0;
     let mut in_gap = false;
-    let mut pos = 0;
-    for c in cigar.chars() {
-        match c {
-            'X' => {
-                // Only count mismatch if this position in the guide isn't N
-                if pos < guide.len() && guide[pos] != b'N' {
-                    adjusted_score += 3;  // Mismatch penalty
-                }
-                pos += 1;
-            },
+    for ch in effective_cigar.chars() {
+        match ch {
+            'X' => adjusted_score += 3,  // Mismatch penalty
             'I' | 'D' => {
                 if !in_gap {
                     adjusted_score += 5;  // Gap opening penalty
                     in_gap = true;
                 }
                 adjusted_score += 1;  // Gap extension penalty
-                if c == 'I' { pos += 1; }
             },
-            'M' | '=' => {
-                in_gap = false;
-                pos += 1;
-            },
-            _ => ()
+            '=' | 'M' => in_gap = false,
+            _ => {}
         }
     }
-
-    // Count matches from CIGAR
-    let matches = cigar.chars()
-        .filter(|&c| c == 'M' || c == '=')
-        .count();
     
-    // Calculate block length (matches + mismatches + indels)
-    let block_len = cigar.len();
+    // Calculate block length (total alignment length)
+    let block_len = matches + mismatches + gaps;
     
-    // Convert guide length to string once
-    let guide_len = guide.len();
-    
-    // Debug macro for development/testing
-    macro_rules! debug {
-        ($($arg:tt)*) => {
-            #[cfg(feature = "debug")]
-            eprintln!($($arg)*);
-        }
-    }
-
-    debug!("Window scan debug:");
-    debug!("  CIGAR: {}", cigar);
-    debug!("  N-adjusted mismatches: {} (max: 4)", mismatches);
-    debug!("  Gaps: {} (max: 1)", gaps);
-    debug!("  Max gap size: {} (max: 2)", max_gap_size);
-    debug!("  Guide sequence: {}", String::from_utf8_lossy(guide));
-    
-    debug!("  Passes filters: true");
-    debug!("");
-
     // Calculate CFD score
     let cfd_score = if !target_seq.is_empty() {
-        cfd_score::get_cfd_score(guide, target_seq, cigar, pam)
+        cfd_score::get_cfd_score(guide, target_seq, &effective_cigar, pam)
     } else {
         None
     };
@@ -212,26 +207,34 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         String::new()
     };
 
-    // Update println to include CFD score
+    // Convert CIGAR to minimap2 format
+    let minimap2_cigar = if effective_cigar.is_empty() {
+        format!("{}=", guide.len())
+    } else {
+        convert_to_minimap2_cigar(&effective_cigar)
+    };
+
+    // Output in PAF format
     println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}",
-        guide_len,                        // Query length
-        query_start,                      // Query start
-        query_start + query_consumed,     // Query end
+        query_length,                     // Query length (total guide length)
+        query_start,                      // Query start (always 0 for local alignment)
+        query_end,                        // Query end (bases consumed from query)
         strand,                           // Strand (+/-)
         ref_id,                           // Target sequence name
         target_len,                       // Full target sequence length
-        ref_pos,                          // Target start
-        ref_pos + ref_consumed,           // Target end
+        ref_start,                        // Target start position
+        ref_end,                          // Target end position
         matches,                          // Number of matches
         block_len,                        // Total alignment block length
         adjusted_score,                   // AS:i alignment score
         mismatches,                       // NM:i number of mismatches
         gaps,                             // NG:i number of gaps
         max_gap_size,                     // BS:i biggest gap size
-        convert_to_minimap2_cigar(cigar), // cg:Z CIGAR string
+        minimap2_cigar,                   // cg:Z CIGAR string
         cfd_tag                           // cf:f CFD score
     );
 }
+
 #[cfg(test)]
 use rand::{SeedableRng, RngCore, rngs::SmallRng};
 
@@ -503,7 +506,7 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 fn parse_sassy_cigar_debug(debug_str: &str) -> String {
     let mut result = String::new();
     
-    // Find all CigarElem patterns
+    // Try to find CigarElem patterns in the debug string
     let mut pos = 0;
     while let Some(start) = debug_str[pos..].find("CigarElem { op: ") {
         let start = pos + start;
@@ -535,11 +538,6 @@ fn parse_sassy_cigar_debug(debug_str: &str) -> String {
             }
         }
         pos = start + 1;
-    }
-    
-    // If parsing failed, fall back to simple approach
-    if result.is_empty() {
-        result = "10=".to_string();
     }
     
     result
@@ -579,18 +577,75 @@ fn scan_window_sassy(
     
     // Convert SASSY CIGAR to standard format
     let cigar_debug = format!("{:?}", best_match.cigar);
-    let cigar_str = parse_sassy_cigar_debug(&cigar_debug);
-
+    let mut cigar_str = parse_sassy_cigar_debug(&cigar_debug);
     
-    // For now, assume all cost comes from mismatches (which is usually true for short sequences)
-    // We can improve this later when we parse the actual CIGAR
-    let mismatches = best_match.cost as u32;
-    let gaps = 0; // Simplified for now
-    let max_gap_size = 0; // Simplified for now
+    // If CIGAR parsing failed, create a fallback based on cost
+    if cigar_str.is_empty() {
+        if best_match.cost == 0 {
+            // Perfect match
+            cigar_str = format!("{}=", guide.len());
+        } else {
+            // Approximation: assume all errors are mismatches
+            let matches = guide.len() - best_match.cost as usize;
+            if matches > 0 {
+                cigar_str = format!("{}={}", matches, best_match.cost);
+                // Add 'X' for each mismatch
+                for _ in 0..best_match.cost {
+                    cigar_str.push('X');
+                }
+            } else {
+                cigar_str = format!("{}X", guide.len());
+            }
+        }
+    }
     
-    // Count actual matches for filtering
-    let guide_len = guide.len();
-    let matches_count = guide_len - (best_match.cost as usize);
+    // Calculate statistics from CIGAR
+    let mut mismatches = 0;
+    let mut gaps = 0;
+    let mut max_gap_size = 0;
+    let mut current_gap_size = 0;
+    let mut matches_count = 0;
+    
+    // Parse the CIGAR string to count operations
+    let mut chars = cigar_str.chars().peekable();
+    while let Some(ch) = chars.next() {
+        if ch.is_ascii_digit() {
+            let mut num_str = String::new();
+            num_str.push(ch);
+            while let Some(&next_ch) = chars.peek() {
+                if next_ch.is_ascii_digit() {
+                    num_str.push(chars.next().unwrap());
+                } else {
+                    break;
+                }
+            }
+            
+            if let Some(op) = chars.next() {
+                if let Ok(count) = num_str.parse::<u32>() {
+                    match op {
+                        '=' | 'M' => {
+                            matches_count += count as usize;
+                            current_gap_size = 0;
+                        },
+                        'X' => {
+                            mismatches += count;
+                            current_gap_size = 0;
+                        },
+                        'I' | 'D' => {
+                            if current_gap_size == 0 {
+                                gaps += 1;
+                            }
+                            current_gap_size += count;
+                            max_gap_size = max_gap_size.max(current_gap_size);
+                        },
+                        _ => {}
+                    }
+                }
+            }
+        }
+    }
+    
+    // Apply filtering
     let non_n_positions = guide.iter().filter(|&&b| b != b'N').count();
     let match_percentage = if non_n_positions > 0 {
         (matches_count as f32 / non_n_positions as f32) * 100.0
@@ -598,7 +653,6 @@ fn scan_window_sassy(
         0.0
     };
 
-    // Apply filtering
     if no_filter || (
         matches_count >= 1 && 
         match_percentage >= min_match_fraction * 100.0 && 
@@ -606,9 +660,36 @@ fn scan_window_sassy(
         gaps <= max_bulges && 
         max_gap_size <= max_bulge_size
     ) {
-        // Calculate leading deletions from match start position
-        let leading_dels = best_match.start.0 as usize;
-        Some((score, cigar_str, mismatches, gaps, max_gap_size, leading_dels))
+        // Find the actual position of the match in the window
+        let mut actual_match_pos = 0;
+        
+        // For perfect matches, do exact substring search
+        if best_match.cost == 0 {
+            for i in 0..=(window.len().saturating_sub(guide.len())) {
+                if &window[i..i+guide.len()] == guide {
+                    actual_match_pos = i;
+                    break;
+                }
+            }
+        } else {
+            // For matches with mismatches, find the best alignment position
+            let mut best_score = std::i32::MAX;
+            
+            for i in 0..=(window.len().saturating_sub(guide.len())) {
+                let mut score = 0;
+                for j in 0..guide.len() {
+                    if window[i + j] != guide[j] {
+                        score += 1;
+                    }
+                }
+                if score < best_score {
+                    best_score = score;
+                    actual_match_pos = i;
+                }
+            }
+        }
+        
+        Some((score, cigar_str, mismatches, gaps, max_gap_size, actual_match_pos))
     } else {
         None
     }
@@ -672,18 +753,22 @@ fn main() {
         let hits: Vec<Hit> = windows.into_par_iter()
             .map_init(
                 || (),
-                |_unit, (i, end)| {
-                    let window = &seq[i..end];
+                |_unit, (window_start, end)| {
+                    let window = &seq[window_start..end];
                     if window.len() < guide_len { return None; }
-            
+    
                     // Try forward orientation
-                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
+                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, match_offset_in_window)) = 
                         scan_window_sassy(&guide_fwd, window,
-                                  args.max_mismatches, args.max_bulges, args.max_bulge_size,
-                                  args.min_match_fraction, args.no_filter) {
+                                args.max_mismatches, args.max_bulges, args.max_bulge_size,
+                                args.min_match_fraction, args.no_filter) {
+                
+                        // Calculate actual position in full sequence
+                        let actual_pos = window_start + match_offset_in_window;
+                
                         return Some(Hit {
                             ref_id: record_id.clone(),
-                            pos: i + leading_dels,
+                            pos: actual_pos,  // Use calculated position
                             strand: '+',
                             score,
                             cigar: cigar.clone(),
@@ -692,19 +777,28 @@ fn main() {
                             max_mismatches: args.max_mismatches,
                             max_bulges: args.max_bulges,
                             max_bulge_size: args.max_bulge_size,
-                            cfd_score: None,  // Will calculate later
-                            target_seq: window.to_vec(),  // Store target sequence
+                            cfd_score: None,
+                            target_seq: {
+                                // Extract the actual target sequence for CFD calculation
+                                let start = actual_pos;
+                                let end = (actual_pos + guide_len).min(seq_len);
+                                seq[start..end].to_vec()
+                            },
                         });
                     }
-                    
+            
                     // Try reverse complement orientation
-                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) = 
+                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, match_offset_in_window)) = 
                         scan_window_sassy(&guide_rc, window,
-                                  args.max_mismatches, args.max_bulges, args.max_bulge_size,
-                                  args.min_match_fraction, args.no_filter) {
+                                args.max_mismatches, args.max_bulges, args.max_bulge_size,
+                                args.min_match_fraction, args.no_filter) {
+                
+                        // Calculate actual position in full sequence
+                        let actual_pos = window_start + match_offset_in_window;
+                
                         return Some(Hit {
                             ref_id: record_id.clone(),
-                            pos: i + leading_dels,
+                            pos: actual_pos,  // Use calculated position
                             strand: '-',
                             score,
                             cigar: cigar.clone(),
@@ -713,8 +807,13 @@ fn main() {
                             max_mismatches: args.max_mismatches,
                             max_bulges: args.max_bulges,
                             max_bulge_size: args.max_bulge_size,
-                            cfd_score: None,  // Will calculate later
-                            target_seq: window.to_vec(),  // Store target sequence
+                            cfd_score: None,
+                            target_seq: {
+                                // Extract the actual target sequence for CFD calculation
+                                let start = actual_pos;
+                                let end = (actual_pos + guide_len).min(seq_len);
+                                seq[start..end].to_vec()
+                            },
                         });
                     }
 
