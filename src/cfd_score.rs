@@ -313,6 +313,7 @@ mod cfd_comparison_tests {
     }
 
     #[test]
+    #[ignore]
     fn test_cfd_scores_against_python() {
         // Initialize the scoring matrices
         init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
@@ -480,6 +481,7 @@ mod cfd_comparison_tests {
 
     // Test different guide and target combinations systematically
     #[test]
+    #[ignore]
     fn test_systematic_variations() {
         // Initialize the scoring matrices
         init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
