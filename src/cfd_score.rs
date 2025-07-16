@@ -59,56 +59,25 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
     let pam_scores = pam_scores_lock.as_ref()
         .ok_or_else(|| "PAM scores not initialized".to_string())?;
     
-    // Pre-process sequences
-    let spacer_list: Vec<char> = spacer.to_uppercase().replace("T", "U").chars().collect();
-    let protospacer_list: Vec<char> = protospacer.to_uppercase().replace("T", "U").chars().collect();
+    // Process sequences: convert T to U for spacer (RNA), keep original bases for protospacer lookup
+    let spacer_rna: Vec<char> = spacer.to_uppercase().replace("T", "U").chars().collect();
+    let protospacer_dna: Vec<char> = protospacer.to_uppercase().chars().collect(); // Keep as DNA bases
     
-    // Check if this is one of our test cases - hardcoded approach for validation
-    let spacer_str: String = spacer_list.iter().collect();
-    let protospacer_str: String = protospacer_list.iter().collect();
-    let pam_upper = pam.to_uppercase();
-    
-    // Hardcoded mapping for test cases
-    if spacer_str == "CUAACAGUUGCUUUUAUCAC" && protospacer_str == "UUAACAGUUGCUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.857143);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "AAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.857143);
-    } else if spacer_str == "-AAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.96);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGGCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.5);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGUCGAUUUUAUAAC" && pam_upper == "GG" {
-        return Ok(0.333333);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGUCGAUUUUAUCAA" && pam_upper == "GG" {
-        return Ok(0.5625);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGGCGAUUUUAUAAC" && pam_upper == "GG" {
-        return Ok(0.166667);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "AAAACAGGCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.428571);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "AAAACAGUCGAUUUUAUCAA" && pam_upper == "GG" {
-        return Ok(0.482143);
-    } else if spacer_str == "CUAACAGUUGCUUUUAUCAC" && protospacer_str == "CUAACAGAUGCUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.5);
-    } else if spacer_str == "GAAACAG-CGAUUUUAUCAC" && protospacer_str == "GAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.0);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCA-" && protospacer_str == "GAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.0);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "UAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.857143);
-    }
-    
-    // Regular calculation path for non-test cases
+    // Regular calculation path
     let mut score = 1.0;
-    for (i, &nt) in protospacer_list.iter().enumerate() {
-        if spacer_list[i] == nt {
-            // No penalty for perfect match
-            continue; // Same as score *= 1.0
-        } else if i == 0 && (spacer_list[i] == '-' || nt == '-') {
-            // No penalty for gap at most PAM-distal nucleotide
-            continue; // Same as score *= 1.0
+    
+    for (i, &protospacer_base) in protospacer_dna.iter().enumerate() {
+        let spacer_base = spacer_rna[i];
+        
+        if (spacer_base == 'U' && protospacer_base == 'T') || 
+           (spacer_base == 'T' && protospacer_base == 'T') ||
+           (spacer_base == protospacer_base) {
+            continue; // Match - no penalty
+        } else if i == 0 && (spacer_base == '-' || protospacer_base == '-') {
+            continue; // Gap at PAM-distal end - no penalty
         } else {
-            // Incorporate score for given RNA-DNA basepair at this position
-            let key = format!("r{}:d{},{}", spacer_list[i], reverse_complement_nt(nt), i + 1);
+            // The CFD matrix key format: r<RNA_base>:d<DNA_base>,<position>
+            let key = format!("r{}:d{},{}", spacer_base, protospacer_base, i + 1);
             
             match mm_scores.get(&key) {
                 Some(penalty) => {
@@ -122,6 +91,7 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
     }
     
     // Incorporate PAM score
+    let pam_upper = pam.to_uppercase();
     match pam_scores.get(&pam_upper) {
         Some(pam_penalty) => {
             score *= pam_penalty;
@@ -144,19 +114,6 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
 /// 
 /// # Returns
 /// * `Option<f64>` - CFD score if calculation succeeds
-pub fn get_cfd_score(guide: &[u8], target: &[u8], cigar: &str, pam: &str) -> Option<f64> {
-    // Prepare aligned sequences for CFD calculation
-    let (spacer, protospacer) = prepare_aligned_sequences(guide, target, cigar);
-    
-    // Calculate CFD score
-    match calculate_cfd(&spacer, &protospacer, pam) {
-        Ok(score) => Some(score),
-        Err(e) => {
-            eprintln!("CFD score calculation error: {}", e);
-            None
-        }
-    }
-}
 
 /// Prepare aligned spacer and protospacer sequences for CFD calculation
 fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (String, String) {
@@ -166,39 +123,62 @@ fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (Strin
     let mut guide_pos = 0;
     let mut target_pos = 0;
     
-    for c in cigar.chars() {
-        match c {
-            'M' | '=' => {
-                if guide_pos < guide.len() && target_pos < target.len() {
-                    spacer.push(char::from(guide[guide_pos]));
-                    protospacer.push(char::from(target[target_pos]));
-                    guide_pos += 1;
-                    target_pos += 1;
+    // Parse CIGAR string properly (format: "21=1X1=" means 21 matches, 1 mismatch, 1 match)
+    let mut chars = cigar.chars().peekable();
+    while let Some(ch) = chars.next() {
+        if ch.is_ascii_digit() {
+            // Collect all digits
+            let mut num_str = String::new();
+            num_str.push(ch);
+            while let Some(&next_ch) = chars.peek() {
+                if next_ch.is_ascii_digit() {
+                    num_str.push(chars.next().unwrap());
+                } else {
+                    break;
                 }
-            },
-            'X' => {
-                if guide_pos < guide.len() && target_pos < target.len() {
-                    spacer.push(char::from(guide[guide_pos]));
-                    protospacer.push(char::from(target[target_pos]));
-                    guide_pos += 1;
-                    target_pos += 1;
+            }
+            
+            // Get the operation
+            if let Some(op) = chars.next() {
+                if let Ok(count) = num_str.parse::<usize>() {
+                    // Apply the operation 'count' times
+                    for _ in 0..count {
+                        match op {
+                            'M' | '=' => {
+                                if guide_pos < guide.len() && target_pos < target.len() {
+                                    spacer.push(char::from(guide[guide_pos]));
+                                    protospacer.push(char::from(target[target_pos]));
+                                    guide_pos += 1;
+                                    target_pos += 1;
+                                }
+                            },
+                            'X' => {
+                                if guide_pos < guide.len() && target_pos < target.len() {
+                                    spacer.push(char::from(guide[guide_pos]));
+                                    protospacer.push(char::from(target[target_pos]));
+                                    guide_pos += 1;
+                                    target_pos += 1;
+                                }
+                            },
+                            'I' => {
+                                if guide_pos < guide.len() {
+                                    spacer.push(char::from(guide[guide_pos]));
+                                    protospacer.push('-');
+                                    guide_pos += 1;
+                                }
+                            },
+                            'D' => {
+                                if target_pos < target.len() {
+                                    spacer.push('-');
+                                    protospacer.push(char::from(target[target_pos]));
+                                    target_pos += 1;
+                                }
+                            },
+                            _ => {}
+                        }
+                    }
                 }
-            },
-            'I' => {
-                if guide_pos < guide.len() {
-                    spacer.push(char::from(guide[guide_pos]));
-                    protospacer.push('-');
-                    guide_pos += 1;
-                }
-            },
-            'D' => {
-                if target_pos < target.len() {
-                    spacer.push('-');
-                    protospacer.push(char::from(target[target_pos]));
-                    target_pos += 1;
-                }
-            },
-            _ => {}
+            }
         }
     }
     
@@ -211,10 +191,46 @@ fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (Strin
     }
     
     // Truncate to 20nt if longer
-    let spacer = spacer[0..20].to_string();
-    let protospacer = protospacer[0..20].to_string();
+    let spacer = spacer.chars().take(20).collect::<String>();
+    let protospacer = protospacer.chars().take(20).collect::<String>();
     
     (spacer, protospacer)
+}
+
+/// Get CFD score using CIGAR-based alignment
+/// 
+/// # Arguments
+/// * `guide` - Guide RNA sequence as byte array
+/// * `target` - Target DNA sequence as byte array
+/// * `cigar` - CIGAR string representing the alignment
+/// * `pam` - 2nt PAM sequence
+/// 
+/// # Returns
+/// * `Option<f64>` - CFD score if calculation succeeds
+pub fn get_cfd_score(guide: &[u8], target: &[u8], cigar: &str, pam: &str) -> Option<f64> {
+    // Skip CFD calculation if matrices aren't initialized
+    {
+        let mm_scores_lock = MISMATCH_SCORES.lock().unwrap();
+        let pam_scores_lock = PAM_SCORES.lock().unwrap();
+        
+        if mm_scores_lock.is_none() || pam_scores_lock.is_none() {
+            return None;
+        }
+    }
+    
+    // Handle empty CIGAR string
+    if cigar.is_empty() {
+        return None;
+    }
+    
+    // Prepare aligned sequences for CFD calculation
+    let (spacer, protospacer) = prepare_aligned_sequences(guide, target, cigar);
+    
+    // Calculate CFD score
+    match calculate_cfd(&spacer, &protospacer, pam) {
+        Ok(score) => Some(score),
+        Err(_) => None // Silently fail for production
+    }
 }
 
 /// Get reverse complement of a single nucleotide (supports bulges)
