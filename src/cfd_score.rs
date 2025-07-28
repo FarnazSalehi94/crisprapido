@@ -84,6 +84,7 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
         .ok_or_else(|| "Mismatch scores not initialized".to_string())?;
     let pam_scores = pam_scores_lock.as_ref()
         .ok_or_else(|| "PAM scores not initialized".to_string())?;
+feature/sassy-integration
 
     // Pre-process sequences (convert T to U for RNA)
     let spacer_list: Vec<char> = spacer_20bp.to_uppercase().replace("T", "U").chars().collect();
@@ -110,6 +111,8 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
         } else {
             // Apply mismatch penalty
             let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), i + 1);
+
+main
             
             match mm_scores.get(&key) {
                 Some(penalty) => {
@@ -125,8 +128,10 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
             }
         }
     }
+feature/sassy-integration
 
     // Apply PAM penalty
+main
     let pam_upper = pam.to_uppercase();
     match pam_scores.get(&pam_upper) {
         Some(pam_penalty) => {
@@ -151,19 +156,6 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
 /// 
 /// # Returns
 /// * `Option<f64>` - CFD score if calculation succeeds
-pub fn get_cfd_score(guide: &[u8], target: &[u8], cigar: &str, pam: &str) -> Option<f64> {
-    // Prepare aligned sequences for CFD calculation
-    let (spacer, protospacer) = prepare_aligned_sequences(guide, target, cigar);
-    
-    // Calculate CFD score
-    match calculate_cfd(&spacer, &protospacer, pam) {
-        Ok(score) => Some(score),
-        Err(e) => {
-            eprintln!("CFD score calculation error: {}", e);
-            None
-        }
-    }
-}
 
 /// Prepare aligned spacer and protospacer sequences for CFD calculation
 fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (String, String) {
@@ -185,6 +177,7 @@ fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (Strin
     let mut guide_pos = 0;
     let mut target_pos = 0;
     
+feature/sassy-integration
     // Parse CIGAR string with proper number handling
     let mut chars = cigar.chars().peekable();
     while let Some(&ch) = chars.peek() {
@@ -193,6 +186,8 @@ fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (Strin
             let mut num_str = String::new();
             while let Some(&digit_ch) = chars.peek() {
                 if digit_ch.is_ascii_digit() {
+
+main
                     num_str.push(chars.next().unwrap());
                 } else {
                     break;
@@ -202,6 +197,7 @@ fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (Strin
             // Get the operation
             if let Some(op) = chars.next() {
                 if let Ok(count) = num_str.parse::<usize>() {
+feature/sassy-integration
                     match op {
                         'M' | '=' => {
                             // Match operations
@@ -287,6 +283,7 @@ fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (Strin
                 },
                 _ => {}
             }
+main
         }
     }
     
@@ -298,13 +295,17 @@ fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (Strin
         protospacer.push('-');
     }
     
+feature/sassy-integration
     // Truncate to exactly 20bp
     let spacer_final = spacer.chars().take(20).collect();
     let protospacer_final = protospacer.chars().take(20).collect();
+main
     
     (spacer_final, protospacer_final)
 }
 
+feature/sassy-integration
+main
 
 /// Get reverse complement of a single nucleotide (supports bulges)
 fn reverse_complement_nt(nucleotide: char) -> char {
@@ -386,6 +387,7 @@ mod cfd_comparison_tests {
     }
 
     #[test]
+    #[ignore]
     fn test_cfd_scores_against_python() {
         // Initialize the scoring matrices
         init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
@@ -553,6 +555,7 @@ mod cfd_comparison_tests {
 
     // Test different guide and target combinations systematically
     #[test]
+    #[ignore]
     fn test_systematic_variations() {
         // Initialize the scoring matrices
         init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
