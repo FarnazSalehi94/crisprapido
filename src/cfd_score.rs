@@ -84,7 +84,6 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
         .ok_or_else(|| "Mismatch scores not initialized".to_string())?;
     let pam_scores = pam_scores_lock.as_ref()
         .ok_or_else(|| "PAM scores not initialized".to_string())?;
-feature/sassy-integration
 
     // Pre-process sequences (convert T to U for RNA)
     let spacer_list: Vec<char> = spacer_20bp.to_uppercase().replace("T", "U").chars().collect();
@@ -112,7 +111,6 @@ feature/sassy-integration
             // Apply mismatch penalty
             let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), i + 1);
 
-main
             
             match mm_scores.get(&key) {
                 Some(penalty) => {
@@ -128,10 +126,8 @@ main
             }
         }
     }
-feature/sassy-integration
 
     // Apply PAM penalty
-main
     let pam_upper = pam.to_uppercase();
     match pam_scores.get(&pam_upper) {
         Some(pam_penalty) => {
@@ -177,7 +173,6 @@ fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (Strin
     let mut guide_pos = 0;
     let mut target_pos = 0;
     
-feature/sassy-integration
     // Parse CIGAR string with proper number handling
     let mut chars = cigar.chars().peekable();
     while let Some(&ch) = chars.peek() {
@@ -187,7 +182,6 @@ feature/sassy-integration
             while let Some(&digit_ch) = chars.peek() {
                 if digit_ch.is_ascii_digit() {
 
-main
                     num_str.push(chars.next().unwrap());
                 } else {
                     break;
@@ -197,7 +191,6 @@ main
             // Get the operation
             if let Some(op) = chars.next() {
                 if let Ok(count) = num_str.parse::<usize>() {
-feature/sassy-integration
                     match op {
                         'M' | '=' => {
                             // Match operations
@@ -283,7 +276,6 @@ feature/sassy-integration
                 },
                 _ => {}
             }
-main
         }
     }
     
@@ -295,17 +287,13 @@ main
         protospacer.push('-');
     }
     
-feature/sassy-integration
     // Truncate to exactly 20bp
     let spacer_final = spacer.chars().take(20).collect();
     let protospacer_final = protospacer.chars().take(20).collect();
-main
     
     (spacer_final, protospacer_final)
 }
 
-feature/sassy-integration
-main
 
 /// Get reverse complement of a single nucleotide (supports bulges)
 fn reverse_complement_nt(nucleotide: char) -> char {
