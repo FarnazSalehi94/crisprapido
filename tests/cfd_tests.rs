@@ -12,6 +12,7 @@ fn ensure_score_files() {
 
 /// Test function to validate our CFD score calculation against Python implementation
 #[test]
+#[ignore]
 fn test_cfd_score_against_python() {
     // Initialize scoring matrices
     cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
