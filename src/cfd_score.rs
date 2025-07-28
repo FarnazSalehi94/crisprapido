@@ -646,3 +646,21 @@ mod cfd_comparison_tests {
     }
 }
 
+// Add the new function here, before the final closing brace
+pub fn get_cfd_score(guide: &[u8], target_seq: &[u8], _cigar: &str, pam: &str) -> Option<f64> {
+    // Convert byte arrays to strings
+    let guide_str = match std::str::from_utf8(guide) {
+        Ok(s) => s,
+        Err(_) => return None,
+    };
+    
+    let target_str = match std::str::from_utf8(target_seq) {
+        Ok(s) => s,
+        Err(_) => return None,
+    };
+    
+    match calculate_cfd(guide_str, target_str, pam) {
+        Ok(score) => Some(score),
+        Err(_) => None,
+    }
+}
