@@ -101,12 +101,10 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         cigar.to_string()
     };
     
-    
     // Parse CIGAR string to count operations
     let mut chars = effective_cigar.chars().peekable();
     while let Some(&ch) = chars.peek() {
         if ch.is_ascii_digit() {
-            // Extract the count
             let mut num_str = String::new();
             while let Some(&next_ch) = chars.peek() {
                 if next_ch.is_ascii_digit() {
@@ -116,7 +114,6 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
                 }
             }
             
-            // Get the operation
             if let Some(op) = chars.next() {
                 if let Ok(count) = num_str.parse::<usize>() {
                     match op {
@@ -135,7 +132,6 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
                 }
             }
         } else {
-            // Handle single-character operations
             let op = chars.next().unwrap();
             match op {
                 '=' | 'M' => matches += 1,
@@ -164,25 +160,42 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     // Calculate block length
     let block_len = matches + mismatches + gaps;
     
-    // Disable CFD calculation for now
-    let cfd_score = if !target_seq.is_empty() {
-        cfd_score::get_cfd_score(guide, target_seq, &effective_cigar, pam)
+    // Enable CFD calculation
+    let cfd_score = if !target_seq.is_empty() && target_seq.len() >= guide.len() {
+        let target_for_cfd = if target_seq.len() >= 20 {
+            &target_seq[0..20]
+        } else {
+            target_seq
+        };
+        
+        let guide_for_cfd = if guide.len() >= 20 {
+            &guide[0..20]
+        } else {
+            guide
+        };
+        
+        cfd_score::get_cfd_score(guide_for_cfd, target_for_cfd, &effective_cigar, pam)
     } else {
         None
     };
 
-    // Add CFD tag to output (disabled for now)
-    let cfd_tag = if let Some(score) = cfd_score {
-        format!("\tcf:f:{:.4}", score)
-    } else {
-        String::new()
+    let cfd_tag = match cfd_score {
+        Some(score) => format!("\tcf:f:{:.4}", score),
+        None => "\tcf:f:0.0000".to_string()
     };
 
-    // Convert CIGAR to minimap2 format
-    let minimap2_cigar = convert_to_minimap2_cigar(&effective_cigar);
+    // Convert sequences to strings for display
+    let guide_str = String::from_utf8_lossy(guide);
+    let target_str = String::from_utf8_lossy(target_seq);
+    
+    // Create sequence alignment display
+    let seq_tag = format!("\tqs:Z:{}\tts:Z:{}", guide_str, target_str);
 
-    // Output in PAF format
-    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}",
+    // Convert CIGAR to minimap2 format (remove debug print)
+    let minimap2_cigar = effective_cigar.clone();
+
+    // Output in PAF format with sequences
+    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}{}",
         query_length,      // Query length (total guide length)
         query_start,       // Query start (always 0 for local alignment)
         query_end,         // Query end (bases consumed from query)
@@ -198,7 +211,8 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
         gaps,              // NG:i number of gaps
         max_gap_size,      // BS:i biggest gap size
         minimap2_cigar,    // cg:Z CIGAR string
-        cfd_tag            // cf:f CFD score (empty for now)
+        cfd_tag,           // cf:f CFD score
+        seq_tag            // qs:Z and ts:Z sequence tags
     );
 }
 
@@ -427,15 +441,12 @@ struct Args {
 
 
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
-    // For now, just return the CIGAR as-is since it's already in the right format
-    
+    // Remove the debug print line
     if cigar.is_empty() {
         return "".to_string();
     }
     
-    let result = cigar.to_string();
-    println!("Minimap2 CIGAR result: '{}'", result);
-    result
+    cigar.to_string()  // Just return the CIGAR as-is
 }
 
 fn scan_window_sassy(
@@ -595,12 +606,20 @@ fn parse_cigar_stats(cigar: &str) -> (usize, u32, u32, u32) {
 fn main() {
     let args = Args::parse();
     
-    // Initialize CFD score matrices
-    if let Err(e) = cfd_score::init_score_matrices(
+    // **FIXED: Better CFD initialization with more informative error handling**
+    match cfd_score::init_score_matrices(
         args.mismatch_scores.to_str().unwrap_or("mismatch_scores.txt"),
         args.pam_scores.to_str().unwrap_or("pam_scores.txt")
     ) {
-        eprintln!("Warning: CFD scoring disabled - {}", e);
+        Ok(()) => {
+            eprintln!("CFD scoring initialized successfully");
+        }
+        Err(e) => {
+            eprintln!("Warning: CFD scoring disabled - {}", e);
+            eprintln!("Expected files: {} and {}", 
+                      args.mismatch_scores.display(), 
+                      args.pam_scores.display());
+        }
     }
     
     // Prepare guide sequences (forward and reverse complement)
