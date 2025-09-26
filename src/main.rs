@@ -195,7 +195,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     let minimap2_cigar = effective_cigar.clone();
 
     // Output in PAF format with sequences
-    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}{}",
+    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\t\tcg:Z:{}\tcf:f:{:.4}{}",
         query_length,      // Query length (total guide length)
         query_start,       // Query start (always 0 for local alignment)
         query_end,         // Query end (bases consumed from query)
