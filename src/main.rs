@@ -225,13 +225,26 @@ mod tests {
 
 
     #[test]
+    fn test_normalize_cigar() {
+        assert_eq!(normalize_cigar("10="), "10=");
+        assert_eq!(normalize_cigar("4=X5="), "4=1X5=");
+        assert_eq!(normalize_cigar("===XX="), "3=2X1=");
+        assert_eq!(normalize_cigar("2=3X"), "2=3X");
+        assert_eq!(normalize_cigar("=X=X="), "1=1X1=1X1=");
+        assert_eq!(normalize_cigar("4=I5="), "4=1I5=");
+        assert_eq!(normalize_cigar("4=2D5="), "4=2D5=");
+        assert_eq!(normalize_cigar("XXXXXXXXXX"), "10X");
+        assert_eq!(normalize_cigar("2=2X2="), "2=2X2=");
+    }
+
+    #[test]
     fn test_perfect_match_sassy() {
         let guide = b"ATCGATCGAT";
         let target = b"ATCGATCGAT";
-        
-        let result = scan_window_sassy(guide, target, 1, 1, 1, 0.75, false);
-        assert!(result.is_some());
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
+
+        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false);
+        assert!(!results.is_empty());
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = &results[0];
         assert_eq!(cigar, "10=");
     }
 
@@ -239,10 +252,10 @@ mod tests {
     fn test_with_mismatches_sassy() {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGTTCGAT";  // Single mismatch at position 5
-        
-        let result = scan_window_sassy(guide, target, 1, 1, 1, 0.75, false);
-        assert!(result.is_some(), "Should accept a single mismatch");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
+
+        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false);
+        assert!(!results.is_empty(), "Should accept a single mismatch");
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = &results[0];
         assert_eq!(cigar, "4=1X5=");
     }
 
@@ -250,10 +263,10 @@ mod tests {
     fn test_with_bulge_sassy() {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGAATCGAT";  // Single base insertion after position 4
-        
-        let result = scan_window_sassy(guide, target, 1, 1, 1, 0.75, false);
-        assert!(result.is_some(), "Should accept a single base bulge");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
+
+        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false);
+        assert!(!results.is_empty(), "Should accept a single base bulge");
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = &results[0];
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
     }
 
@@ -261,9 +274,9 @@ mod tests {
     fn test_too_many_differences_sassy() {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
-        
-        let result = scan_window_sassy(guide, target, 1, 1, 1, 0.75, false);
-        assert!(result.is_none());
+
+        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false);
+        assert!(results.is_empty());
     }
 
     #[test]
@@ -271,10 +284,14 @@ mod tests {
         let mut rng = SmallRng::seed_from_u64(42);
         let guide = b"ATCGATCGAT";
         let target = create_flanked_sequence(&mut rng, guide, 500);
-        
-        let result = scan_window_sassy(guide, &target[500..510], 1, 1, 1, 0.75, false);
-        assert!(result.is_some(), "Should match perfectly even with flanks");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
+
+        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false);
+        assert!(!results.is_empty(), "Should match perfectly even with flanks");
+
+        // Find the match at position 500 (SASSY may find other matches in random flanks)
+        let match_at_500 = results.iter().find(|(_, _, _, _, _, pos)| *pos == 500);
+        assert!(match_at_500.is_some(), "Should find match at position 500");
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = match_at_500.unwrap();
         assert_eq!(cigar, "10=");
     }
 
@@ -284,23 +301,31 @@ mod tests {
         let guide = b"ATCGATCGAT";
         let core = b"ATCGTTCGAT";  // Single mismatch at position 5
         let target = create_flanked_sequence(&mut rng, core, 500);
-        
-        let result = scan_window_sassy(guide, &target[500..510], 1, 1, 1, 0.75, false);
-        assert!(result.is_some(), "Should accept a single mismatch with flanks");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
+
+        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false);
+        assert!(!results.is_empty(), "Should accept a single mismatch with flanks");
+
+        // Find the match at position 500 (SASSY may find other matches in random flanks)
+        let match_at_500 = results.iter().find(|(_, _, _, _, _, pos)| *pos == 500);
+        assert!(match_at_500.is_some(), "Should find match at position 500");
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = match_at_500.unwrap();
         assert_eq!(cigar, "4=1X5=");
     }
-    
+
     #[test]
     fn test_with_bulge_and_flanks_sassy() {
         let mut rng = SmallRng::seed_from_u64(42);
         let guide = b"ATCGATCGAT";
         let core = b"ATCGAATCGAT";  // Single base insertion after position 4
         let target = create_flanked_sequence(&mut rng, core, 500);
-        
-        let result = scan_window_sassy(guide, &target[500..511], 1, 1, 1, 0.75, false);
-        assert!(result.is_some(), "Should accept a single base bulge with flanks");
-        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _leading_dels) = result.unwrap();
+
+        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false);
+        assert!(!results.is_empty(), "Should accept a single base bulge with flanks");
+
+        // Find the match at position 500 (SASSY may find other matches in random flanks)
+        let match_at_500 = results.iter().find(|(_, _, _, _, _, pos)| *pos == 500);
+        assert!(match_at_500.is_some(), "Should find match at position 500");
+        let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = match_at_500.unwrap();
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
     }
 
@@ -310,9 +335,13 @@ mod tests {
         let guide = b"ATCGATCGAT";
         let core = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
         let target = create_flanked_sequence(&mut rng, core, 500);
-        
-        let result = scan_window_sassy(guide, &target[500..510], 1, 1, 1, 0.75, false);
-        assert!(result.is_none(), "Should reject sequence with too many mismatches even with flanks");
+
+        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false);
+
+        // Should not find a match at position 500 (too many mismatches)
+        // Note: SASSY may find accidental matches in the random flanks, so we only check position 500
+        let match_at_500 = results.iter().find(|(_, _, _, _, _, pos)| *pos == 500);
+        assert!(match_at_500.is_none(), "Should reject sequence with too many mismatches at position 500");
     }
     
     #[test]
@@ -412,10 +441,6 @@ struct Args {
     #[arg(long, default_value = "pam_scores.txt")]
     pam_scores: PathBuf,
 
-    /// Size of sequence window to scan (bp, default: 4x guide length)
-    #[arg(short = 'w', long)]
-    window_size: Option<usize>,
-
     /// Number of threads to use (default: number of logical CPUs)
     #[arg(short = 't', long)]
     threads: Option<usize>,
@@ -438,87 +463,117 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
     result
 }
 
-fn scan_window_sassy(
-    guide: &[u8], 
-    window: &[u8], 
-    max_mismatches: u32, 
-    max_bulges: u32, 
+fn scan_contig_sassy(
+    guide: &[u8],
+    contig: &[u8],
+    max_mismatches: u32,
+    max_bulges: u32,
     max_bulge_size: u32,
-    min_match_fraction: f32, 
+    min_match_fraction: f32,
     no_filter: bool
-) -> Option<(i32, String, u32, u32, u32, usize)> {
-    
+) -> Vec<(i32, String, u32, u32, u32, usize)> {
+
     // Calculate maximum allowed errors
     let max_errors = (max_mismatches + max_bulges) as usize;
-    
+
     // Create SASSY searcher with DNA profile
     let mut searcher: Searcher<Dna> = Searcher::new(false, None);
-    
-    // Convert window to a Vec so it implements SearchAble
-    let window_vec = window.to_vec();
-    
-    // Search for matches using real SASSY
-    let matches = searcher.search(guide, &window_vec, max_errors);
+
+    // Convert to Vec for SASSY's SearchAble trait
+    let contig_vec = contig.to_vec();
+
+    // Search for ALL matches using SASSY
+    let matches = searcher.search(guide, &contig_vec, max_errors);
 
     if matches.is_empty() {
-        return None;
+        return Vec::new();
     }
-    
-    // Take the best match (lowest cost)
-    let best_match = matches.into_iter().min_by_key(|m| m.cost)?;
-    
-    let score = best_match.cost as i32;
-    
-    // Simple CIGAR generation based on alignment cost
-    let cigar_str = if best_match.cost == 0 {
-        format!("{}=", guide.len())
-    } else {
-        let matches = guide.len().saturating_sub(best_match.cost as usize);
-        let mismatches = best_match.cost as usize;
-        
-        if matches > 0 && mismatches > 0 {
-            format!("{}={}X", matches, mismatches)
-        } else if mismatches > 0 {
-            format!("{}X", mismatches)
+
+    // Process ALL matches, not just the best one
+    matches.into_iter()
+        .filter_map(|sassy_match| {
+            let score = sassy_match.cost as i32;
+            let pos = sassy_match.start.1 as usize;
+
+            // Use SASSY's CIGAR and normalize it to always include counts
+            let cigar_str = normalize_cigar(&sassy_match.cigar.to_string());
+
+            // Calculate statistics from CIGAR
+            let (matches_count, mismatches, gaps, max_gap_size) = parse_cigar_stats(&cigar_str);
+
+            // Apply filtering
+            let non_n_positions = guide.iter().filter(|&&b| b != b'N').count();
+            let match_percentage = if non_n_positions > 0 {
+                (matches_count as f32 / non_n_positions as f32) * 100.0
+            } else {
+                0.0
+            };
+
+            if no_filter || (
+                matches_count >= 1 &&
+                match_percentage >= min_match_fraction * 100.0 &&
+                mismatches <= max_mismatches &&
+                gaps <= max_bulges &&
+                max_gap_size <= max_bulge_size
+            ) {
+                Some((score, cigar_str, mismatches, gaps, max_gap_size, pos))
+            } else {
+                None
+            }
+        })
+        .collect()
+}
+
+/// Normalize CIGAR string to always include counts and consolidate consecutive operations
+/// e.g., "X" -> "1X", "===XX=" -> "3=2X1="
+fn normalize_cigar(cigar: &str) -> String {
+    let mut ops: Vec<(u32, char)> = Vec::new();
+    let mut chars = cigar.chars().peekable();
+
+    // First, parse the CIGAR into (count, op) pairs
+    while let Some(&ch) = chars.peek() {
+        let count = if ch.is_ascii_digit() {
+            // Has a count, parse it
+            let mut num_str = String::new();
+            while let Some(&digit_ch) = chars.peek() {
+                if digit_ch.is_ascii_digit() {
+                    num_str.push(chars.next().unwrap());
+                } else {
+                    break;
+                }
+            }
+            num_str.parse::<u32>().unwrap_or(1)
         } else {
-            format!("{}=", guide.len())
+            1
+        };
+
+        // Get the operation
+        if let Some(op) = chars.next() {
+            ops.push((count, op));
         }
-    };
-
-    // Calculate statistics from CIGAR
-    let (matches_count, mismatches, gaps, max_gap_size) = parse_cigar_stats(&cigar_str);
-
-    // Apply filtering
-    let non_n_positions = guide.iter().filter(|&&b| b != b'N').count();
-    let match_percentage = if non_n_positions > 0 {
-        (matches_count as f32 / non_n_positions as f32) * 100.0
-    } else {
-        0.0
-    };
-
-    if no_filter || (
-        matches_count >= 1 && 
-        match_percentage >= min_match_fraction * 100.0 && 
-        mismatches <= max_mismatches && 
-        gaps <= max_bulges && 
-        max_gap_size <= max_bulge_size
-    ) {
-        // DEBUG: Show what SASSY found
-        let actual_match_pos = best_match.start.1 as usize;
-    
-
-    
-        // Show the actual sequences being compared
-        if actual_match_pos + guide.len() <= window.len() {
-            let found_seq = &window[actual_match_pos..actual_match_pos + guide.len()];
-        } else {
-            println!("ERROR: Position {} + {} > window length {}", actual_match_pos, guide.len(), window.len());
-        }
-    
-        Some((score, cigar_str, mismatches, gaps, max_gap_size, actual_match_pos))
-    } else {
-        None
     }
+
+    // Now consolidate consecutive operations
+    let mut consolidated: Vec<(u32, char)> = Vec::new();
+    for (count, op) in ops {
+        if let Some(last) = consolidated.last_mut() {
+            if last.1 == op {
+                // Same operation, add to count
+                last.0 += count;
+            } else {
+                // Different operation, add new entry
+                consolidated.push((count, op));
+            }
+        } else {
+            // First operation
+            consolidated.push((count, op));
+        }
+    }
+
+    // Format as string
+    consolidated.iter()
+        .map(|(count, op)| format!("{}{}", count, op))
+        .collect::<String>()
 }
 
 fn parse_cigar_stats(cigar: &str) -> (usize, u32, u32, u32) {
@@ -616,7 +671,7 @@ fn main() {
             .expect("Failed to initialize thread pool");
     }
 
-    // Process reference sequences
+    // Process reference sequences - collect all records first for parallel processing
     let file = File::open(&args.reference).expect("Failed to open reference file");
     let reader: Box<dyn BufRead> = if args.reference.extension().map_or(false, |ext| ext == "gz") {
         Box::new(BufReader::new(MultiGzDecoder::new(file)))
@@ -624,82 +679,57 @@ fn main() {
         Box::new(BufReader::new(file))
     };
     let reader = fasta::Reader::new(reader);
-    
-    for result in reader.records() {
-        let record = result.expect("Error during FASTA record parsing");
-        let seq = record.seq().to_vec();
+
+    // Collect all records for parallel processing
+    let records: Vec<_> = reader.records()
+        .map(|r| r.expect("Error during FASTA record parsing"))
+        .collect();
+
+    // Process contigs in parallel
+    records.par_iter().for_each(|record| {
+        let seq = record.seq();
         let seq_len = seq.len();
-        let record_id = record.id().to_string();
-        
-        // Calculate window size as 4x guide length if not specified
-        let window_size = args.window_size.unwrap_or(guide_len * 4);
-        let step_size = window_size / 2;
-        let windows: Vec<_> = (0..seq.len())
-            .step_by(step_size)
-            .map(|i| (i, (i + window_size).min(seq.len())))
-            .collect();
+        let record_id = record.id();
 
-        // Process windows in parallel and collect all hits
-        let hits: Vec<Hit> = windows.into_par_iter()
-            .map_init(
-                || (),
-                |_unit, (window_start, end)| {
-                    let window = &seq[window_start..end];
-                    if window.len() < guide_len { return None; }
-    
-                    // Try forward orientation
-                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, match_offset_in_window)) = 
-                        scan_window_sassy(&guide_fwd, window,
-                                args.max_mismatches, args.max_bulges, args.max_bulge_size,
-                                args.min_match_fraction, args.no_filter) {
-                
-                        // DEBUG: Show the coordinate calculation
+        // Skip contigs shorter than guide
+        if seq_len < guide_len {
+            return;
+        }
 
-                        let actual_pos = window_start + match_offset_in_window;
-                
-                        return Some(Hit {
-                            ref_id: record_id.clone(),
-                            pos: actual_pos,
-                            strand: '+',
-                            score,
-                            cigar: cigar.clone(),
-                            guide: Arc::clone(&guide_fwd),
-                            target_len: seq_len,
-                            max_mismatches: args.max_mismatches,
-                            max_bulges: args.max_bulges,
-                            max_bulge_size: args.max_bulge_size,
-                            cfd_score: None,
-                            target_seq: {
-                                // Extract target sequence from the correct position
-                                let start = actual_pos;
-                                let end = (actual_pos + guide_len).min(seq_len);
-                                seq[start..end].to_vec()
-                            },
-                        });
-                    }
-            
-                    None
-                })
-            .filter_map(|x| x)
-            .collect();
+        // Scan entire contig with SASSY - returns ALL matches
+        let matches = scan_contig_sassy(
+            &guide_fwd,
+            seq,
+            args.max_mismatches,
+            args.max_bulges,
+            args.max_bulge_size,
+            args.min_match_fraction,
+            args.no_filter
+        );
 
-        // Report hits directly (simplified for now)
-        for hit in hits {
+        // Report all hits found in this contig
+        for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
+            let target_seq = {
+                let start = pos;
+                let end = (pos + guide_len).min(seq_len);
+                seq[start..end].to_vec()
+            };
+
             report_hit(
-                &hit.ref_id, 
-                hit.pos, 
-                hit.guide.len(), 
-                hit.strand, 
-                hit.score, 
-                &hit.cigar, 
-                &hit.guide, 
-                hit.target_len,
-                hit.max_mismatches, 
-                hit.max_bulges, 
-                hit.max_bulge_size,
-                &hit.target_seq,
+                record_id,
+                pos,
+                guide_len,
+                '+',
+                score,
+                &cigar,
+                &guide_fwd,
+                seq_len,
+                args.max_mismatches,
+                args.max_bulges,
+                args.max_bulge_size,
+                &target_seq,
                 &args.pam
             );
         }
-    }
+    });
 }
