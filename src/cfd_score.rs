@@ -104,12 +104,16 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
             // println!("    Pos {}: {} = {} (match, score *= 1.0)", i+1, spacer_nt, proto_nt);
             continue;
         } else if i == 0 && (spacer_nt == '-' || proto_nt == '-') {
-            // Gap at PAM-distal position (position 1) - no penalty per CFD rules
-            // println!("    Pos {}: {} ≠ {} (gap at PAM-distal, score *= 1.0)", i+1, spacer_nt, proto_nt);
+            // Gap at PAM-distal position receives no empirical penalty in reference implementation
             continue;
         } else {
             // Apply mismatch penalty
-            let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), i + 1);
+            let key = format!(
+                "r{}:d{},{}",
+                spacer_nt,
+                reverse_complement_nt(proto_nt),
+                i + 1
+            );
 
             
             match mm_scores.get(&key) {
@@ -344,25 +348,25 @@ mod cfd_comparison_tests {
         scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "TG".to_string()), 0.038961038999999996);
 
         // Single mismatches at different positions with GG PAM
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.857142857); // pos 1
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.5); // pos 8
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATAAC".to_string(), "GG".to_string()), 0.333333333); // pos 18
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.5625); // pos 20
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.9); // pos 1
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.7333333329999999); // pos 8
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATAAC".to_string(), "GG".to_string()), 0.538461538); // pos 18
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.5); // pos 20
 
         // Multiple mismatches with GG PAM
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.482142857); // pos 1, 20
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.428571429); // pos 1, 8
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATAAC".to_string(), "GG".to_string()), 0.166666667); // pos 8, 18
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.45); // pos 1, 20
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.6599999996999999); // pos 1, 8
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATAAC".to_string(), "GG".to_string()), 0.39487179435384606); // pos 8, 18
 
         // Gaps/bulges with GG PAM
-        scores.insert(("-AAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.96); // gap at pos 1
+        scores.insert(("-AAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 1.0); // gap at pos 1
         scores.insert(("GAAACAG-CGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.0); // gap in middle
-        scores.insert(("GAAACAGTCGATTTTATCA-".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.0); // gap at end
+        scores.insert(("GAAACAGTCGATTTTATCA-".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.529411764706); // gap at end
 
         // Real examples from papers and documentation
         scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "CTAACAGTTGCTTTTATCAC".to_string(), "GG".to_string()), 1.0);
-        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "TTAACAGTTGCTTTTATCAC".to_string(), "GG".to_string()), 0.857142857);
-        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "CTAACAGATGCTTTTATCAC".to_string(), "GG".to_string()), 0.5);
+        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "TTAACAGTTGCTTTTATCAC".to_string(), "GG".to_string()), 1.0);
+        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "CTAACAGATGCTTTTATCAC".to_string(), "GG".to_string()), 0.8);
 
         // Test cases with different capitalization
         scores.insert(("gaaacagtcgattttatcac".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "gg".to_string()), 1.0);
@@ -375,7 +379,6 @@ mod cfd_comparison_tests {
     }
 
     #[test]
-    #[ignore]
     fn test_cfd_scores_against_python() {
         // Initialize the scoring matrices
         init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
@@ -432,7 +435,12 @@ mod cfd_comparison_tests {
                             } else if i == 0 && (spacer_list[i] == '-' || nt == '-') {
                                 println!("Pos {}: Gap at PAM-distal end (no penalty)", i+1);
                             } else {
-                                let key = format!("r{}:d{},{}", spacer_list[i], reverse_complement_nt(nt), i + 1);
+                        let key = format!(
+                            "r{}:d{},{}",
+                            spacer_list[i],
+                            reverse_complement_nt(nt),
+                            i + 1
+                        );
                                 let mut mm_scores_lock = MISMATCH_SCORES.lock().unwrap();
                                 let mm_scores = mm_scores_lock.as_mut().unwrap();
 
@@ -543,7 +551,6 @@ mod cfd_comparison_tests {
 
     // Test different guide and target combinations systematically
     #[test]
-    #[ignore]
     fn test_systematic_variations() {
         // Initialize the scoring matrices
         init_score_matrices("mismatch_scores.txt", "pam_scores.txt")

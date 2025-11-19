@@ -12,7 +12,6 @@ fn ensure_score_files() {
 
 /// Test function to validate our CFD score calculation against Python implementation
 #[test]
-#[ignore]
 fn test_cfd_score_against_python() {
     // Initialize scoring matrices
     cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
@@ -34,12 +33,12 @@ fn test_cfd_score_against_python() {
     
     assert!((score1 - 1.0).abs() < 0.0001, "Perfect match should be 1.0, got {}", score1);
 
-    // Test case 2: Single mismatch at position 1 (A->T)
+    // Test case 2: Single mismatch at position 2 (T->A)
     let spacer2 = "ATCGATCGATCGATCGATCG";
-    let protospacer2 = "TTCGATCGATCGATCGATCG";
+    let protospacer2 = "AACGATCGATCGATCGATCG";
     let pam2 = "GG";
     
-    println!("\nTest case 2: Single mismatch at position 1");
+    println!("\nTest case 2: Single mismatch at position 2");
     println!("Spacer:      {}", spacer2);
     println!("Protospacer: {}", protospacer2);
     println!("PAM:         {}", pam2);
@@ -53,8 +52,8 @@ fn test_cfd_score_against_python() {
     
     // Test CIGAR-based calculation
     let guide2 = b"ATCGATCGATCGATCGATCG";
-    let target2 = b"TTCGATCGATCGATCGATCG";
-    let cigar2 = "1X19=";
+    let target2 = b"AACGATCGATCGATCGATCG";
+    let cigar2 = "1=1X18=";
     
     println!("\nTesting CIGAR-based calculation:");
     let cigar_score2 = cfd_score::get_cfd_score(guide2, target2, cigar2, pam2)
