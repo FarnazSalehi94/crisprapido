@@ -6,7 +6,7 @@ use std::sync::Arc;
 use clap::Parser;
 use bio::io::fasta;
 use sassy::profiles::Dna;
-use sassy::search::Searcher;
+use sassy::Searcher;
 use rayon::prelude::*;
 use crossbeam_channel::unbounded;
 use std::thread;
@@ -75,6 +75,60 @@ impl OutputHit {
             &self.target_seq,
             &self.pam,
         );
+    }
+}
+
+// Structure to hold contig data with N-position tracking
+struct ContigData {
+    id: String,
+    seq: Vec<u8>,           // Sequence with N's replaced by A's
+    n_positions: Vec<bool>,  // Bit vector: true if position originally had N
+}
+
+impl ContigData {
+    fn from_record(record: fasta::Record) -> Self {
+        let id = record.id().to_string();
+        let original_seq = record.seq();
+        let mut seq = Vec::with_capacity(original_seq.len());
+        let mut n_positions = vec![false; original_seq.len()];
+
+        for (i, &base) in original_seq.iter().enumerate() {
+            if base == b'N' || base == b'n' {
+                seq.push(b'A');  // Replace N with A for SASSY
+                n_positions[i] = true;
+            } else {
+                seq.push(base);
+            }
+        }
+
+        ContigData {
+            id,
+            seq,
+            n_positions,
+        }
+    }
+
+    fn seq(&self) -> &[u8] {
+        &self.seq
+    }
+
+    fn id(&self) -> &str {
+        &self.id
+    }
+
+    fn len(&self) -> usize {
+        self.seq.len()
+    }
+
+    // Restore N's in a sequence slice based on the bit vector
+    fn restore_ns(&self, start: usize, end: usize) -> Vec<u8> {
+        let mut result = self.seq[start..end].to_vec();
+        for (i, is_n) in self.n_positions[start..end].iter().enumerate() {
+            if *is_n {
+                result[i] = b'N';
+            }
+        }
+        result
     }
 }
 
@@ -544,7 +598,7 @@ fn scan_contig_sassy(
     matches.into_iter()
         .filter_map(|sassy_match| {
             let score = sassy_match.cost as i32;
-            let pos = sassy_match.start.1 as usize;
+            let pos = sassy_match.text_start as usize;
 
             // Use SASSY's CIGAR and normalize it to always include counts
             let cigar_str = normalize_cigar(&sassy_match.cigar.to_string());
@@ -772,10 +826,12 @@ fn main() {
     };
     let fasta_reader = fasta::Reader::new(reader);
 
-    // Collect all contigs as Arc-wrapped records for shared access
-    let contigs: Arc<Vec<fasta::Record>> = Arc::new(
+    // Collect all contigs as Arc-wrapped ContigData for shared access
+    // N's are replaced with A's and tracked in bit vectors
+    let contigs: Arc<Vec<ContigData>> = Arc::new(
         fasta_reader.records()
             .map(|r| r.expect("Error during FASTA record parsing"))
+            .map(ContigData::from_record)
             .collect()
     );
 
@@ -823,10 +879,11 @@ fn main() {
 
             // Send all hits to output thread
             for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
+                // Restore N's in the target sequence using the bit vector
                 let target_seq = {
                     let start = pos;
                     let end = (pos + guide_len).min(seq_len);
-                    seq[start..end].to_vec()
+                    record.restore_ns(start, end)
                 };
 
                 let output_hit = OutputHit {
