@@ -6,7 +6,7 @@ use std::sync::Arc;
 use clap::Parser;
 use bio::io::fasta;
 use sassy::profiles::Dna;
-use sassy::search::Searcher;
+use sassy::Searcher;
 use rayon::prelude::*;
 use crossbeam_channel::unbounded;
 use std::thread;
@@ -544,7 +544,7 @@ fn scan_contig_sassy(
     matches.into_iter()
         .filter_map(|sassy_match| {
             let score = sassy_match.cost as i32;
-            let pos = sassy_match.start.1 as usize;
+            let pos = sassy_match.text_start as usize;
 
             // Use SASSY's CIGAR and normalize it to always include counts
             let cigar_str = normalize_cigar(&sassy_match.cigar.to_string());
