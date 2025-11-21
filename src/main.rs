@@ -847,64 +847,69 @@ fn main() {
         }
     });
 
-    // Process all (guide, contig) pairs in parallel
-    // Clone tx for each guide to avoid ownership issues
-    guides.par_iter().for_each(|guide| {
+    // Create flat list of all (guide_idx, contig_idx) task pairs
+    // This eliminates nested parallelism and barriers
+    let tasks: Vec<(usize, usize)> = (0..guides.len())
+        .flat_map(|g_idx| {
+            (0..contigs.len()).map(move |c_idx| (g_idx, c_idx))
+        })
+        .collect();
+
+    eprintln!("Processing {} tasks (guides × contigs)", tasks.len());
+
+    // Process all tasks in parallel - flat, no barriers!
+    tasks.par_iter().for_each(|(guide_idx, contig_idx)| {
+        let guide = &guides[*guide_idx];
+        let contig = &contigs[*contig_idx];
         let guide_len = guide.len();
-        let contigs = Arc::clone(&contigs);
-        let tx = tx.clone();
-        let pam = args.pam.clone();
 
-        // For each guide, process all contigs in parallel
-        contigs.par_iter().for_each(|record| {
-            let seq = record.seq();
-            let seq_len = seq.len();
-            let record_id = record.id();
+        let seq = contig.seq();
+        let seq_len = seq.len();
+        let record_id = contig.id();
 
-            // Skip contigs shorter than guide
-            if seq_len < guide_len {
-                return;
-            }
+        // Skip contigs shorter than guide
+        if seq_len < guide_len {
+            return;
+        }
 
-            // Scan entire contig with SASSY - returns ALL matches
-            let matches = scan_contig_sassy(
-                guide,
-                seq,
-                args.max_mismatches,
-                args.max_bulges,
-                args.max_bulge_size,
-                args.min_match_fraction,
-                args.no_filter
-            );
+        // Scan entire contig with SASSY - returns ALL matches
+        let matches = scan_contig_sassy(
+            guide,
+            seq,
+            args.max_mismatches,
+            args.max_bulges,
+            args.max_bulge_size,
+            args.min_match_fraction,
+            args.no_filter
+        );
 
-            // Send all hits to output thread
-            for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
-                // Restore N's in the target sequence using the bit vector
-                let target_seq = {
-                    let start = pos;
-                    let end = (pos + guide_len).min(seq_len);
-                    record.restore_ns(start, end)
-                };
+        // Send all hits to output thread
+        for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
+            // Restore N's in the target sequence using the bit vector
+            let target_seq = {
+                let start = pos;
+                let end = (pos + guide_len).min(seq_len);
+                contig.restore_ns(start, end)
+            };
 
-                let output_hit = OutputHit {
-                    ref_id: record_id.to_string(),
-                    pos,
-                    guide_len,
-                    strand: '+',
-                    score,
-                    cigar,
-                    guide: guide.clone(),
-                    target_len: seq_len,
-                    max_mismatches: args.max_mismatches,
-                    max_bulges: args.max_bulges,
-                    max_bulge_size: args.max_bulge_size,
-                    target_seq,
-                    pam: pam.clone(),
-                };
+            let output_hit = OutputHit {
+                ref_id: record_id.to_string(),
+                pos,
+                guide_len,
+                strand: '+',
+                score,
+                cigar,
+                guide: guide.clone(),
+                target_len: seq_len,
+                max_mismatches: args.max_mismatches,
+                max_bulges: args.max_bulges,
+                max_bulge_size: args.max_bulge_size,
+                target_seq,
+                pam: args.pam.clone(),
+            };
 
-                tx.send(output_hit).expect("Failed to send hit to output thread");
-            }
-        });
+            tx.send(output_hit).expect("Failed to send hit to output thread");
+        }
     });
 
     // Drop the original sender to signal completion
