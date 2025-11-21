@@ -347,10 +347,10 @@ version = "0.1.0"
 dependencies = [
  "bio",
  "clap",
+ "crossbeam-channel",
  "flate2",
  "lazy_static",
  "rand 0.9.0",
- "rayon",
  "sassy",
 ]
 
@@ -385,6 +385,15 @@ checksum = "6b50826342786a51a89e2da3a28f1c32b06e387201bc2d19791f622c673706b1"
 dependencies = [
  "cast",
  "itertools 0.10.5",
+]
+
+[[package]]
+name = "crossbeam-channel"
+version = "0.5.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "82b8f8f868b36967f9606790d1903570de9ceaf870a7bf9fbbd3016d636a2cb2"
+dependencies = [
+ "crossbeam-utils",
 ]
 
 [[package]]
@@ -1203,7 +1212,7 @@ dependencies = [
 [[package]]
 name = "sassy"
 version = "0.1.0"
-source = "git+https://github.com/RagnarGrootKoerkamp/sassy?branch=master#243eb28bd7d027b430012e7bd7b5bd04f8af1eab"
+source = "git+https://github.com/RagnarGrootKoerkamp/sassy?rev=c8becbd4#c8becbd48583b3bf2afe7f18413cf5df76e7cf91"
 dependencies = [
  "arrayvec",
  "clap",
