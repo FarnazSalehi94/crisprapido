@@ -588,11 +588,9 @@ fn scan_contig_sassy(
     let max_errors = (max_mismatches + max_bulges) as usize;
 
     // Use thread-local SASSY searcher (reused across calls in same thread)
+    // ZERO-COPY: SASSY accepts &[u8] via RcSearchAble trait
     let matches = SEARCHER.with(|searcher| {
-        let mut searcher = searcher.borrow_mut();
-        // Convert to Vec for SASSY's SearchAble trait
-        let contig_vec = contig.to_vec();
-        searcher.search(guide, &contig_vec, max_errors)
+        searcher.borrow_mut().search(guide, &contig, max_errors)
     });
 
     if matches.is_empty() {
