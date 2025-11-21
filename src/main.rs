@@ -3,15 +3,13 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 use flate2::read::MultiGzDecoder;
 use std::sync::Arc;
-use std::collections::HashMap;
 use clap::Parser;
 use bio::io::fasta;
 use sassy::profiles::Dna;
 use sassy::search::Searcher;
-// Remove the broken imports for now - we'll add correct ones later
-// use sassy::{search, Alphabet, SearchConfig};
-use std::fmt::Write;
 use rayon::prelude::*;
+use crossbeam_channel::unbounded;
+use std::thread;
 
 mod cfd_score;
 
@@ -40,6 +38,44 @@ struct Hit {
     max_bulge_size: u32,
     cfd_score: Option<f64>,  // Add CFD score field
     target_seq: Vec<u8>,     // Add target sequence for CFD calculation
+}
+
+// Structure for passing output data through the channel
+#[derive(Clone)]
+struct OutputHit {
+    ref_id: String,
+    pos: usize,
+    guide_len: usize,
+    strand: char,
+    score: i32,
+    cigar: String,
+    guide: Vec<u8>,
+    target_len: usize,
+    max_mismatches: u32,
+    max_bulges: u32,
+    max_bulge_size: u32,
+    target_seq: Vec<u8>,
+    pam: String,
+}
+
+impl OutputHit {
+    fn write_output(&self) {
+        report_hit(
+            &self.ref_id,
+            self.pos,
+            self.guide_len,
+            self.strand,
+            self.score,
+            &self.cigar,
+            &self.guide,
+            self.target_len,
+            self.max_mismatches,
+            self.max_bulges,
+            self.max_bulge_size,
+            &self.target_seq,
+            &self.pam,
+        );
+    }
 }
 
 impl Hit {
@@ -424,8 +460,12 @@ struct Args {
     reference: PathBuf,
 
     /// Guide RNA sequence (without PAM) (-g)
-    #[arg(short, long)]
-    guide: String,
+    #[arg(short, long, conflicts_with = "guides_file")]
+    guide: Option<String>,
+
+    /// File containing guide RNA sequences, one per line (without PAM)
+    #[arg(long = "guides-file", conflicts_with = "guide")]
+    guides_file: Option<PathBuf>,
 
     /// PAM sequence (to use for CFD scoring)
     #[arg(short = 'p', long, default_value = "GG")]
@@ -658,9 +698,29 @@ fn parse_cigar_stats(cigar: &str) -> (usize, u32, u32, u32) {
     (matches_count, mismatches, gaps, max_gap_size)
 }
 
+fn read_guides_from_file(path: &PathBuf) -> std::io::Result<Vec<Vec<u8>>> {
+    let file = File::open(path)?;
+    let reader: Box<dyn BufRead> = if path.extension().map_or(false, |ext| ext == "gz") {
+        Box::new(BufReader::new(MultiGzDecoder::new(file)))
+    } else {
+        Box::new(BufReader::new(file))
+    };
+
+    let mut guides = Vec::new();
+    for line in reader.lines() {
+        let line = line?;
+        let trimmed = line.trim();
+        if !trimmed.is_empty() && !trimmed.starts_with('#') {
+            guides.push(trimmed.as_bytes().to_vec());
+        }
+    }
+
+    Ok(guides)
+}
+
 fn main() {
     let args = Args::parse();
-    
+
     // **FIXED: Better CFD initialization with more informative error handling**
     match cfd_score::init_score_matrices(
         args.mismatch_scores.to_str().unwrap_or("mismatch_scores.txt"),
@@ -671,16 +731,29 @@ fn main() {
         }
         Err(e) => {
             eprintln!("Warning: CFD scoring disabled - {}", e);
-            eprintln!("Expected files: {} and {}", 
-                      args.mismatch_scores.display(), 
+            eprintln!("Expected files: {} and {}",
+                      args.mismatch_scores.display(),
                       args.pam_scores.display());
         }
     }
-    
-    // Prepare guide sequences (forward and reverse complement)
-    let guide_fwd = Arc::new(args.guide.as_bytes().to_vec());
-    let _guide_rc = Arc::new(reverse_complement(&guide_fwd));
-    let guide_len = guide_fwd.len();
+
+    // Load guides from either -g or --guides-file
+    let guides: Vec<Vec<u8>> = if let Some(ref guide_str) = args.guide {
+        vec![guide_str.as_bytes().to_vec()]
+    } else if let Some(ref guides_path) = args.guides_file {
+        read_guides_from_file(guides_path)
+            .expect("Failed to read guides file")
+    } else {
+        eprintln!("Error: Must provide either --guide (-g) or --guides-file");
+        std::process::exit(1);
+    };
+
+    if guides.is_empty() {
+        eprintln!("Error: No guides provided");
+        std::process::exit(1);
+    }
+
+    eprintln!("Loaded {} guide(s)", guides.len());
 
     // Set thread pool size if specified
     if let Some(n) = args.threads {
@@ -690,65 +763,96 @@ fn main() {
             .expect("Failed to initialize thread pool");
     }
 
-    // Process reference sequences - collect all records first for parallel processing
+    // Load all reference sequences into memory (shared, immutable)
     let file = File::open(&args.reference).expect("Failed to open reference file");
     let reader: Box<dyn BufRead> = if args.reference.extension().map_or(false, |ext| ext == "gz") {
         Box::new(BufReader::new(MultiGzDecoder::new(file)))
     } else {
         Box::new(BufReader::new(file))
     };
-    let reader = fasta::Reader::new(reader);
+    let fasta_reader = fasta::Reader::new(reader);
 
-    // Collect all records for parallel processing
-    let records: Vec<_> = reader.records()
-        .map(|r| r.expect("Error during FASTA record parsing"))
-        .collect();
+    // Collect all contigs as Arc-wrapped records for shared access
+    let contigs: Arc<Vec<fasta::Record>> = Arc::new(
+        fasta_reader.records()
+            .map(|r| r.expect("Error during FASTA record parsing"))
+            .collect()
+    );
 
-    // Process contigs in parallel
-    records.par_iter().for_each(|record| {
-        let seq = record.seq();
-        let seq_len = seq.len();
-        let record_id = record.id();
+    eprintln!("Loaded {} contig(s)", contigs.len());
 
-        // Skip contigs shorter than guide
-        if seq_len < guide_len {
-            return;
+    // Create channel for sending hits from workers to output thread
+    let (tx, rx) = unbounded::<OutputHit>();
+
+    // Spawn single output consumer thread
+    let output_thread = thread::spawn(move || {
+        for hit in rx {
+            hit.write_output();
         }
+    });
 
-        // Scan entire contig with SASSY - returns ALL matches
-        let matches = scan_contig_sassy(
-            &guide_fwd,
-            seq,
-            args.max_mismatches,
-            args.max_bulges,
-            args.max_bulge_size,
-            args.min_match_fraction,
-            args.no_filter
-        );
+    // Process all (guide, contig) pairs in parallel
+    // Clone tx for each guide to avoid ownership issues
+    guides.par_iter().for_each(|guide| {
+        let guide_len = guide.len();
+        let contigs = Arc::clone(&contigs);
+        let tx = tx.clone();
+        let pam = args.pam.clone();
 
-        // Report all hits found in this contig
-        for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
-            let target_seq = {
-                let start = pos;
-                let end = (pos + guide_len).min(seq_len);
-                seq[start..end].to_vec()
-            };
+        // For each guide, process all contigs in parallel
+        contigs.par_iter().for_each(|record| {
+            let seq = record.seq();
+            let seq_len = seq.len();
+            let record_id = record.id();
 
-            report_hit(
-                record_id,
-                pos,
-                guide_len,
-                '+',
-                score,
-                &cigar,
-                &guide_fwd,
-                seq_len,
+            // Skip contigs shorter than guide
+            if seq_len < guide_len {
+                return;
+            }
+
+            // Scan entire contig with SASSY - returns ALL matches
+            let matches = scan_contig_sassy(
+                guide,
+                seq,
                 args.max_mismatches,
                 args.max_bulges,
                 args.max_bulge_size,
-                &target_seq,
-                &args.pam
+                args.min_match_fraction,
+                args.no_filter
             );
-        }
+
+            // Send all hits to output thread
+            for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
+                let target_seq = {
+                    let start = pos;
+                    let end = (pos + guide_len).min(seq_len);
+                    seq[start..end].to_vec()
+                };
+
+                let output_hit = OutputHit {
+                    ref_id: record_id.to_string(),
+                    pos,
+                    guide_len,
+                    strand: '+',
+                    score,
+                    cigar,
+                    guide: guide.clone(),
+                    target_len: seq_len,
+                    max_mismatches: args.max_mismatches,
+                    max_bulges: args.max_bulges,
+                    max_bulge_size: args.max_bulge_size,
+                    target_seq,
+                    pam: pam.clone(),
+                };
+
+                tx.send(output_hit).expect("Failed to send hit to output thread");
+            }
+        });
     });
+
+    // Drop the original sender to signal completion
+    drop(tx);
+
+    // Wait for output thread to finish writing all results
+    output_thread.join().expect("Output thread panicked");
 }

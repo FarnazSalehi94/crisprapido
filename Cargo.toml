@@ -14,3 +14,4 @@ rand = { version = "0.9.0", features = ["small_rng"] }
 rayon = "1.10.0"
 flate2 = "1.1.0"
 lazy_static = "1.4"
+crossbeam-channel = "0.5"
