@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 use std::fs::File;
-use std::io::{BufRead, BufReader};
+use std::io::{BufRead, BufReader, BufWriter, Write};
 use flate2::read::MultiGzDecoder;
 use std::sync::Arc;
 use clap::Parser;
@@ -10,6 +10,7 @@ use sassy::Searcher;
 use rayon::prelude::*;
 use crossbeam_channel::unbounded;
 use std::thread;
+use std::cell::RefCell;
 
 mod cfd_score;
 
@@ -564,8 +565,13 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
     if cigar.is_empty() {
         return "".to_string();
     }
-    
+
     cigar.to_string()  // Just return the CIGAR as-is
+}
+
+// Thread-local SASSY searcher to avoid repeated allocation
+thread_local! {
+    static SEARCHER: RefCell<Searcher<Dna>> = RefCell::new(Searcher::new(false, None));
 }
 
 fn scan_contig_sassy(
@@ -581,14 +587,13 @@ fn scan_contig_sassy(
     // Calculate maximum allowed errors
     let max_errors = (max_mismatches + max_bulges) as usize;
 
-    // Create SASSY searcher with DNA profile
-    let mut searcher: Searcher<Dna> = Searcher::new(false, None);
-
-    // Convert to Vec for SASSY's SearchAble trait
-    let contig_vec = contig.to_vec();
-
-    // Search for ALL matches using SASSY
-    let matches = searcher.search(guide, &contig_vec, max_errors);
+    // Use thread-local SASSY searcher (reused across calls in same thread)
+    let matches = SEARCHER.with(|searcher| {
+        let mut searcher = searcher.borrow_mut();
+        // Convert to Vec for SASSY's SearchAble trait
+        let contig_vec = contig.to_vec();
+        searcher.search(guide, &contig_vec, max_errors)
+    });
 
     if matches.is_empty() {
         return Vec::new();
@@ -840,11 +845,15 @@ fn main() {
     // Create channel for sending hits from workers to output thread
     let (tx, rx) = unbounded::<OutputHit>();
 
-    // Spawn single output consumer thread
+    // Spawn single output consumer thread with buffered output
     let output_thread = thread::spawn(move || {
+        let stdout = std::io::stdout();
+        let mut writer = BufWriter::with_capacity(256 * 1024, stdout.lock()); // 256KB buffer
         for hit in rx {
             hit.write_output();
         }
+        // Flush on drop
+        drop(writer);
     });
 
     // Create flat list of all (guide_idx, contig_idx) task pairs
