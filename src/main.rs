@@ -60,8 +60,9 @@ struct OutputHit {
 }
 
 impl OutputHit {
-    fn write_output(&self) {
+    fn write_output(&self, writer: &mut impl Write) {
         report_hit(
+            writer,
             &self.ref_id,
             self.pos,
             self.guide_len,
@@ -174,7 +175,7 @@ impl Hit {
 
 // Replace your entire report_hit function with this corrected version:
 
-fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char, 
+fn report_hit(writer: &mut impl Write, ref_id: &str, pos: usize, _len: usize, strand: char,
               _score: i32, cigar: &str, guide: &[u8], target_len: usize,
               _max_mismatches: u32, _max_bulges: u32, _max_bulge_size: u32,
               target_seq: &[u8], pam: &str) {
@@ -286,7 +287,7 @@ fn report_hit(ref_id: &str, pos: usize, _len: usize, strand: char,
     let minimap2_cigar = effective_cigar.clone();
 
     // Output in PAF format with sequences
-    println!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}{}",
+    let _ = writeln!(writer, "Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}{}",
         query_length,      // Query length (total guide length)
         query_start,       // Query start (always 0 for local alignment)
         query_end,         // Query end (bases consumed from query)
@@ -848,10 +849,9 @@ fn main() {
         let stdout = std::io::stdout();
         let mut writer = BufWriter::with_capacity(256 * 1024, stdout.lock()); // 256KB buffer
         for hit in rx {
-            hit.write_output();
+            hit.write_output(&mut writer);
         }
-        // Flush on drop
-        drop(writer);
+        writer.flush().expect("Failed to flush output");
     });
 
     // Create flat list of all (guide_idx, contig_idx) task pairs
