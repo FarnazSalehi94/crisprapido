@@ -5,7 +5,7 @@ use flate2::read::MultiGzDecoder;
 use std::sync::Arc;
 use clap::Parser;
 use bio::io::fasta;
-use sassy::profiles::Dna;
+use sassy::profiles::Iupac;
 use sassy::Searcher;
 use rayon::prelude::*;
 use crossbeam_channel::unbounded;
@@ -80,33 +80,17 @@ impl OutputHit {
     }
 }
 
-// Structure to hold contig data with N-position tracking
+// Structure to hold contig data
 struct ContigData {
     id: String,
-    seq: Vec<u8>,           // Sequence with N's replaced by A's
-    n_positions: Vec<bool>,  // Bit vector: true if position originally had N
+    seq: Vec<u8>,
 }
 
 impl ContigData {
     fn from_record(record: fasta::Record) -> Self {
-        let id = record.id().to_string();
-        let original_seq = record.seq();
-        let mut seq = Vec::with_capacity(original_seq.len());
-        let mut n_positions = vec![false; original_seq.len()];
-
-        for (i, &base) in original_seq.iter().enumerate() {
-            if base == b'N' || base == b'n' {
-                seq.push(b'A');  // Replace N with A for SASSY
-                n_positions[i] = true;
-            } else {
-                seq.push(base);
-            }
-        }
-
         ContigData {
-            id,
-            seq,
-            n_positions,
+            id: record.id().to_string(),
+            seq: record.seq().to_vec(),
         }
     }
 
@@ -120,17 +104,6 @@ impl ContigData {
 
     fn len(&self) -> usize {
         self.seq.len()
-    }
-
-    // Restore N's in a sequence slice based on the bit vector
-    fn restore_ns(&self, start: usize, end: usize) -> Vec<u8> {
-        let mut result = self.seq[start..end].to_vec();
-        for (i, is_n) in self.n_positions[start..end].iter().enumerate() {
-            if *is_n {
-                result[i] = b'N';
-            }
-        }
-        result
     }
 }
 
@@ -506,6 +479,28 @@ mod tests {
         assert_eq!(mismatch_hit.end_pos(), 115, "End position includes mismatches");
         assert_eq!(bulge_hit.end_pos(), 119, "End position includes deletions");
     }
+
+    #[test]
+    fn test_handles_ns_in_target() {
+        // Test that scan_contig_sassy handles N's in the target sequence (via Iupac profile)
+        let guide = b"ATCGATCGAT";
+        let target_with_n = b"ATCGATCNATCGATCGAT";  // Has an N in the middle
+
+        // Should not panic - Iupac profile handles N's natively
+        let results = scan_contig_sassy(guide, target_with_n, 1, 1, 1, 0.75, false);
+        assert!(!results.is_empty(), "Should handle N's in target and find match");
+    }
+
+    #[test]
+    fn test_handles_ns_in_guide() {
+        // Test that scan_contig_sassy handles N's in the guide sequence (via Iupac profile)
+        let guide_with_n = b"ATCNATCGAT";  // Has an N at position 3
+        let target = b"ATCGATCGAT";
+
+        // Should not panic - Iupac profile handles N's natively (N matches any base)
+        let results = scan_contig_sassy(guide_with_n, target, 1, 1, 1, 0.75, false);
+        assert!(!results.is_empty(), "Should handle N's in guide");
+    }
 }
 
 #[derive(Parser)]
@@ -571,8 +566,9 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 }
 
 // Thread-local SASSY searcher to avoid repeated allocation
+// Using Iupac profile for native N handling (faster than Dna + N->A conversion)
 thread_local! {
-    static SEARCHER: RefCell<Searcher<Dna>> = RefCell::new(Searcher::new(false, None));
+    static SEARCHER: RefCell<Searcher<Iupac>> = RefCell::new(Searcher::new(false, None));
 }
 
 fn scan_contig_sassy(
@@ -892,11 +888,11 @@ fn main() {
 
         // Send all hits to output thread
         for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
-            // Restore N's in the target sequence using the bit vector
+            // Extract target sequence slice
             let target_seq = {
                 let start = pos;
                 let end = (pos + guide_len).min(seq_len);
-                contig.restore_ns(start, end)
+                contig.seq()[start..end].to_vec()
             };
 
             let output_hit = OutputHit {
