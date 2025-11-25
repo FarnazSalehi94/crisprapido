@@ -1090,8 +1090,8 @@ dependencies = [
 
 [[package]]
 name = "sassy"
-version = "0.1.8"
-source = "git+https://github.com/RagnarGrootKoerkamp/sassy?branch=master#5799b49fa7e71402a78a8d8363d2d157e8ca44e9"
+version = "0.1.9"
+source = "git+https://github.com/RagnarGrootKoerkamp/sassy?branch=master#c31fee51e14f5798f0c0f3b241579194bb09b222"
 dependencies = [
  "clap",
  "colored",

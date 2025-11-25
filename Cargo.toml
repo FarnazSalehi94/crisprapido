@@ -6,6 +6,10 @@ edition = "2021"
 [features]
 debug = []
 
+[[bench]]
+name = "dna_vs_iupac"
+harness = false
+
 [dependencies]
 sassy = { git = "https://github.com/RagnarGrootKoerkamp/sassy", branch = "master" }
 clap = { version = "4.5.37", features = ["derive"] }
