@@ -99,29 +99,41 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
     let mut score = 1.0;
     
     for (i, (&spacer_nt, &proto_nt)) in spacer_list.iter().zip(protospacer_list.iter()).enumerate() {
+        let position = i + 1;
+        
         if spacer_nt == proto_nt {
             // Perfect match - no penalty
-            // println!("    Pos {}: {} = {} (match, score *= 1.0)", i+1, spacer_nt, proto_nt);
             continue;
-        } else if i == 0 && (spacer_nt == '-' || proto_nt == '-') {
-            // Gap at PAM-distal position (position 1) - no penalty per CFD rules
-            // println!("    Pos {}: {} ≠ {} (gap at PAM-distal, score *= 1.0)", i+1, spacer_nt, proto_nt);
-            continue;
-        } else {
-            // Apply mismatch penalty
-            let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), i + 1);
-
+        } else if spacer_nt == '-' || proto_nt == '-' {
+            // Handle gaps - use gap-specific keys from scoring matrix
+            let key = if spacer_nt == '-' {
+                // Gap in RNA (guide) - format: "r-:dA,1"
+                format!("r-:d{},{}", proto_nt, position)
+            } else {
+                // Gap in DNA (target) - format: "rA:d-,1"
+                format!("r{}:d-,{}", spacer_nt, position)
+            };
             
             match mm_scores.get(&key) {
                 Some(penalty) => {
-                    // println!("    Pos {}: {} ≠ {} -> key: '{}' -> penalty: {:.6} -> score *= {:.6}", 
-                    //         i+1, spacer_nt, proto_nt, key, penalty, penalty);
                     score *= penalty;
                 },
                 None => {
-                    println!("    Pos {}: {} ≠ {} -> key: '{}' -> KEY NOT FOUND -> score = 0.0", 
-                             i+1, spacer_nt, proto_nt, key);
-                    return Ok(0.0); // Unknown mismatch gets score 0
+                    // If gap key not found, return 0.0 as per Python implementation
+                    return Ok(0.0);
+                }
+            }
+        } else {
+            // Apply mismatch penalty
+            let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), position);
+
+            match mm_scores.get(&key) {
+                Some(penalty) => {
+                    score *= penalty;
+                },
+                None => {
+                    // If mismatch key not found, return 0.0 as per Python implementation
+                    return Ok(0.0);
                 }
             }
         }
