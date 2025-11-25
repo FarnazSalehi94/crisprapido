@@ -1,14 +1,6 @@
 extern crate crisprapido;
 
 use crisprapido::cfd_score;
-use std::fs;
-use std::path::Path;
-
-/// Ensure score files exist for testing
-fn ensure_score_files() {
-    // We'll skip the file creation since you already have the files
-    // Make sure mismatch_scores.txt and pam_scores.txt are in the root directory
-}
 
 /// Test function to validate our CFD score calculation against Python implementation
 #[test]

@@ -99,41 +99,29 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
     let mut score = 1.0;
     
     for (i, (&spacer_nt, &proto_nt)) in spacer_list.iter().zip(protospacer_list.iter()).enumerate() {
-        let position = i + 1;
-        
         if spacer_nt == proto_nt {
             // Perfect match - no penalty
+            // println!("    Pos {}: {} = {} (match, score *= 1.0)", i+1, spacer_nt, proto_nt);
             continue;
-        } else if spacer_nt == '-' || proto_nt == '-' {
-            // Handle gaps - use gap-specific keys from scoring matrix
-            let key = if spacer_nt == '-' {
-                // Gap in RNA (guide) - format: "r-:dA,1"
-                format!("r-:d{},{}", proto_nt, position)
-            } else {
-                // Gap in DNA (target) - format: "rA:d-,1"
-                format!("r{}:d-,{}", spacer_nt, position)
-            };
+        } else if i == 0 && (spacer_nt == '-' || proto_nt == '-') {
+            // Gap at PAM-distal position (position 1) - no penalty per CFD rules
+            // println!("    Pos {}: {} ≠ {} (gap at PAM-distal, score *= 1.0)", i+1, spacer_nt, proto_nt);
+            continue;
+        } else {
+            // Apply mismatch penalty
+            let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), i + 1);
+
             
             match mm_scores.get(&key) {
                 Some(penalty) => {
+                    // println!("    Pos {}: {} ≠ {} -> key: '{}' -> penalty: {:.6} -> score *= {:.6}", 
+                    //         i+1, spacer_nt, proto_nt, key, penalty, penalty);
                     score *= penalty;
                 },
                 None => {
-                    // If gap key not found, return 0.0 as per Python implementation
-                    return Ok(0.0);
-                }
-            }
-        } else {
-            // Apply mismatch penalty
-            let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), position);
-
-            match mm_scores.get(&key) {
-                Some(penalty) => {
-                    score *= penalty;
-                },
-                None => {
-                    // If mismatch key not found, return 0.0 as per Python implementation
-                    return Ok(0.0);
+                    println!("    Pos {}: {} ≠ {} -> key: '{}' -> KEY NOT FOUND -> score = 0.0", 
+                             i+1, spacer_nt, proto_nt, key);
+                    return Ok(0.0); // Unknown mismatch gets score 0
                 }
             }
         }
@@ -165,146 +153,7 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
 /// # Returns
 /// * `Option<f64>` - CFD score if calculation succeeds
 
-/// Prepare aligned spacer and protospacer sequences for CFD calculation
-fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (String, String) {
-    let mut spacer = String::new();
-    let mut protospacer = String::new();
-    
-    // Handle empty CIGAR by assuming perfect match
-    if cigar.is_empty() {
-        let guide_str = String::from_utf8_lossy(guide);
-        let target_str = String::from_utf8_lossy(target);
-        
-        // Take first 20bp of each sequence
-        let spacer_20 = if guide_str.len() >= 20 { &guide_str[0..20] } else { &guide_str };
-        let target_20 = if target_str.len() >= 20 { &target_str[0..20] } else { &target_str };
-        
-        return (spacer_20.to_string(), target_20.to_string());
-    }
-    
-    let mut guide_pos = 0;
-    let mut target_pos = 0;
-    
-    // Parse CIGAR string with proper number handling
-    let mut chars = cigar.chars().peekable();
-    while let Some(&ch) = chars.peek() {
-        if ch.is_ascii_digit() {
-            // Extract the count
-            let mut num_str = String::new();
-            while let Some(&digit_ch) = chars.peek() {
-                if digit_ch.is_ascii_digit() {
 
-                    num_str.push(chars.next().unwrap());
-                } else {
-                    break;
-                }
-            }
-            
-            // Get the operation
-            if let Some(op) = chars.next() {
-                if let Ok(count) = num_str.parse::<usize>() {
-                    match op {
-                        'M' | '=' => {
-                            // Match operations
-                            for _ in 0..count {
-                                if guide_pos < guide.len() && target_pos < target.len() {
-                                    spacer.push(guide[guide_pos] as char);
-                                    protospacer.push(target[target_pos] as char);
-                                    guide_pos += 1;
-                                    target_pos += 1;
-                                } else {
-                                    break;
-                                }
-                            }
-                        },
-                        'X' => {
-                            // Mismatch operations
-                            for _ in 0..count {
-                                if guide_pos < guide.len() && target_pos < target.len() {
-                                    spacer.push(guide[guide_pos] as char);
-                                    protospacer.push(target[target_pos] as char);
-                                    guide_pos += 1;
-                                    target_pos += 1;
-                                } else {
-                                    break;
-                                }
-                            }
-                        },
-                        'I' => {
-                            // Insertion in query (gap in target)
-                            for _ in 0..count {
-                                if guide_pos < guide.len() {
-                                    spacer.push(guide[guide_pos] as char);
-                                    protospacer.push('-');
-                                    guide_pos += 1;
-                                } else {
-                                    break;
-                                }
-                            }
-                        },
-                        'D' => {
-                            // Deletion in query (gap in query) 
-                            for _ in 0..count {
-                                if target_pos < target.len() {
-                                    spacer.push('-');
-                                    protospacer.push(target[target_pos] as char);
-                                    target_pos += 1;
-                                } else {
-                                    break;
-                                }
-                            }
-                        },
-                        _ => {
-                            eprintln!("Warning: Unknown CIGAR operation: {}", op);
-                        }
-                    }
-                }
-            }
-        } else {
-            // Handle single character operations (legacy format)
-            let op = chars.next().unwrap();
-            match op {
-                'M' | '=' | 'X' => {
-                    if guide_pos < guide.len() && target_pos < target.len() {
-                        spacer.push(guide[guide_pos] as char);
-                        protospacer.push(target[target_pos] as char);
-                        guide_pos += 1;
-                        target_pos += 1;
-                    }
-                },
-                'I' => {
-                    if guide_pos < guide.len() {
-                        spacer.push(guide[guide_pos] as char);
-                        protospacer.push('-');
-                        guide_pos += 1;
-                    }
-                },
-                'D' => {
-                    if target_pos < target.len() {
-                        spacer.push('-');
-                        protospacer.push(target[target_pos] as char);
-                        target_pos += 1;
-                    }
-                },
-                _ => {}
-            }
-        }
-    }
-    
-    // Ensure we have exactly 20 characters by padding or truncating
-    while spacer.len() < 20 {
-        spacer.push('-');
-    }
-    while protospacer.len() < 20 {
-        protospacer.push('-');
-    }
-    
-    // Truncate to exactly 20bp
-    let spacer_final = spacer.chars().take(20).collect();
-    let protospacer_final = protospacer.chars().take(20).collect();
-    
-    (spacer_final, protospacer_final)
-}
 
 
 /// Get reverse complement of a single nucleotide (supports bulges)
