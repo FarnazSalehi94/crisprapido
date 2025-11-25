@@ -100,7 +100,7 @@ This implementation requires two data files:
 - `pam_scores.txt` : Efficiency scores for different PAM sequences
 
 **CFD Score Implementation Source**
-The CFD score calculation in CRISPRapido is based on the Python implementation from the [crisprScan repository](https://github.com/maximilianh/crisprScan) by Maximilian Haeussler. The algorithm has been ported to Rust and includes:
+The CFD score calculation in CRISPRapido is based on the Python implementation from the [CFD_score_calculator repository](https://github.com/lindayqlin/CFD_score_calculator) by Linda Lin. The algorithm has been ported to Rust and includes:
 - Position-specific mismatch penalties for all 20 guide positions
 - Comprehensive gap/bulge handling with position-specific penalties
 - PAM sequence efficiency scoring
