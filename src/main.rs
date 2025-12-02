@@ -321,7 +321,7 @@ mod tests {
         let guide = b"ATCGATCGAT";
         let target = b"ATCGATCGAT";
 
-        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false, true);
         assert!(!results.is_empty());
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = &results[0];
         assert_eq!(cigar, "10=");
@@ -332,7 +332,7 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGTTCGAT";  // Single mismatch at position 5
 
-        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false, true);
         assert!(!results.is_empty(), "Should accept a single mismatch");
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = &results[0];
         assert_eq!(cigar, "4=1X5=");
@@ -343,7 +343,7 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGAATCGAT";  // Single base insertion after position 4
 
-        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false, true);
         assert!(!results.is_empty(), "Should accept a single base bulge");
         let (_score, cigar, _mismatches, _gaps, _max_gap_size, _pos) = &results[0];
         assert!(cigar.contains('I') || cigar.contains('D'), "Should contain an insertion or deletion");
@@ -354,7 +354,7 @@ mod tests {
         let guide =  b"ATCGATCGAT";
         let target = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
 
-        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, target, 1, 1, 1, 0.75, false, true);
         assert!(results.is_empty());
     }
 
@@ -364,7 +364,7 @@ mod tests {
         let guide = b"ATCGATCGAT";
         let target = create_flanked_sequence(&mut rng, guide, 500);
 
-        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false, true);
         assert!(!results.is_empty(), "Should match perfectly even with flanks");
 
         // Find the match at position 500 (SASSY may find other matches in random flanks)
@@ -381,7 +381,7 @@ mod tests {
         let core = b"ATCGTTCGAT";  // Single mismatch at position 5
         let target = create_flanked_sequence(&mut rng, core, 500);
 
-        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false, true);
         assert!(!results.is_empty(), "Should accept a single mismatch with flanks");
 
         // Find the match at position 500 (SASSY may find other matches in random flanks)
@@ -398,7 +398,7 @@ mod tests {
         let core = b"ATCGAATCGAT";  // Single base insertion after position 4
         let target = create_flanked_sequence(&mut rng, core, 500);
 
-        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false, true);
         assert!(!results.is_empty(), "Should accept a single base bulge with flanks");
 
         // Find the match at position 500 (SASSY may find other matches in random flanks)
@@ -415,7 +415,7 @@ mod tests {
         let core = b"ATCGTTCGTT";  // Three mismatches at positions 5, 8, 9
         let target = create_flanked_sequence(&mut rng, core, 500);
 
-        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, &target, 1, 1, 1, 0.75, false, true);
 
         // Should not find a match at position 500 (too many mismatches)
         // Note: SASSY may find accidental matches in the random flanks, so we only check position 500
@@ -487,8 +487,13 @@ mod tests {
         let target_with_n = b"ATCGATCNATCGATCGAT";  // Has an N in the middle
 
         // Should not panic - Iupac profile handles N's natively
-        let results = scan_contig_sassy(guide, target_with_n, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide, target_with_n, 1, 1, 1, 0.75, false, true);
         assert!(!results.is_empty(), "Should handle N's in target and find match");
+        assert!(results.iter().any(|(_, _, _, _, _, pos)| alignment_overlaps_ambiguous(target_with_n, *pos, guide.len())));
+
+        // By default, ambiguous hits should be dropped
+        let filtered = scan_contig_sassy(guide, target_with_n, 1, 1, 1, 0.75, false, false);
+        assert!(filtered.iter().all(|(_, _, _, _, _, pos)| !alignment_overlaps_ambiguous(target_with_n, *pos, guide.len())));
     }
 
     #[test]
@@ -498,8 +503,11 @@ mod tests {
         let target = b"ATCGATCGAT";
 
         // Should not panic - Iupac profile handles N's natively (N matches any base)
-        let results = scan_contig_sassy(guide_with_n, target, 1, 1, 1, 0.75, false);
+        let results = scan_contig_sassy(guide_with_n, target, 1, 1, 1, 0.75, false, true);
         assert!(!results.is_empty(), "Should handle N's in guide");
+
+        let filtered = scan_contig_sassy(guide_with_n, target, 1, 1, 1, 0.75, false, false);
+        assert!(filtered.is_empty(), "Ambiguous guide bases should be ignored unless requested");
     }
 }
 
@@ -553,6 +561,10 @@ struct Args {
     /// Disable all filtering (report every alignment)
     #[arg(long)]
     no_filter: bool,
+
+    /// Include hits that overlap ambiguous bases (N/R/Y etc.)
+    #[arg(long)]
+    include_ambiguous: bool,
 }
 
 
@@ -578,8 +590,14 @@ fn scan_contig_sassy(
     max_bulges: u32,
     max_bulge_size: u32,
     min_match_fraction: f32,
-    no_filter: bool
+    no_filter: bool,
+    include_ambiguous: bool,
 ) -> Vec<(i32, String, u32, u32, u32, usize)> {
+    if !include_ambiguous {
+        if guide.iter().any(|&b| is_ambiguous_base(b)) {
+            return Vec::new();
+        }
+    }
 
     // Calculate maximum allowed errors
     let max_errors = (max_mismatches + max_bulges) as usize;
@@ -602,6 +620,11 @@ fn scan_contig_sassy(
 
             // Use SASSY's CIGAR and normalize it to always include counts
             let cigar_str = normalize_cigar(&sassy_match.cigar.to_string());
+
+            // Skip alignments that touch ambiguous bases unless explicitly requested
+            if !include_ambiguous && alignment_overlaps_ambiguous(contig, pos, guide.len()) {
+                return None;
+            }
 
             // Calculate statistics from CIGAR
             let (matches_count, mismatches, gaps, max_gap_size) = parse_cigar_stats(&cigar_str);
@@ -679,6 +702,30 @@ fn normalize_cigar(cigar: &str) -> String {
     consolidated.iter()
         .map(|(count, op)| format!("{}{}", count, op))
         .collect::<String>()
+}
+
+fn alignment_overlaps_ambiguous(contig: &[u8], start: usize, guide_len: usize) -> bool {
+    let end = start.saturating_add(guide_len).min(contig.len());
+    contig[start..end]
+        .iter()
+        .any(|&b| is_ambiguous_base(b))
+}
+
+fn is_ambiguous_base(b: u8) -> bool {
+    matches!(
+        b,
+        b'N' | b'n'
+            | b'R' | b'r'
+            | b'Y' | b'y'
+            | b'S' | b's'
+            | b'W' | b'w'
+            | b'K' | b'k'
+            | b'M' | b'm'
+            | b'B' | b'b'
+            | b'D' | b'd'
+            | b'H' | b'h'
+            | b'V' | b'v'
+    )
 }
 
 fn parse_cigar_stats(cigar: &str) -> (usize, u32, u32, u32) {
@@ -883,7 +930,8 @@ fn main() {
             args.max_bulges,
             args.max_bulge_size,
             args.min_match_fraction,
-            args.no_filter
+            args.no_filter,
+            args.include_ambiguous,
         );
 
         // Send all hits to output thread
