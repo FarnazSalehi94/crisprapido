@@ -1,301 +1,85 @@
-//! # Cutting frequency determination (CFD) score calculator
-//! Module for calculating CFD scores for CRISPR guide RNA off-target sites
-//! Adapted from the Python implementation by Linda Lin 3/23/2025
-
-use std::fs::File;
-use std::io::{BufRead, BufReader};
 use std::collections::HashMap;
-use std::sync::Once;
-use std::sync::Mutex;
+use std::fs::read_to_string;
 use lazy_static::lazy_static;
+use std::sync::Mutex;
 
-// Static matrices for CFD scoring
 lazy_static! {
-    static ref MISMATCH_SCORES: Mutex<Option<HashMap<String, f64>>> = Mutex::new(None);
-    static ref PAM_SCORES: Mutex<Option<HashMap<String, f64>>> = Mutex::new(None);
-    static ref INIT: Once = Once::new();
+    static ref MISMATCH_SCORES: Mutex<HashMap<String, f64>> = Mutex::new(HashMap::new());
+    static ref PAM_SCORES: Mutex<HashMap<String, f64>> = Mutex::new(HashMap::new());
+    static ref INITIALIZED: Mutex<bool> = Mutex::new(false);
 }
 
-/// Initialize the scoring matrices from the provided file paths
-pub fn init_score_matrices(mismatch_path: &str, pam_path: &str) -> Result<(), String> {
-    INIT.call_once(|| {
-        let mm_matrix = parse_scoring_matrix(mismatch_path)
-            .map_err(|e| format!("Failed to load mismatch scores: {}", e));
-        
-        let pam_matrix = parse_scoring_matrix(pam_path)
-            .map_err(|e| format!("Failed to load PAM scores: {}", e));
-        
-        if let (Ok(mm), Ok(pam)) = (mm_matrix, pam_matrix) {
-            *MISMATCH_SCORES.lock().unwrap() = Some(mm);
-            *PAM_SCORES.lock().unwrap() = Some(pam);
-        }
-    });
-    
-    // Check if matrices were successfully loaded
-    let mm_loaded = MISMATCH_SCORES.lock().unwrap().is_some();
-    let pam_loaded = PAM_SCORES.lock().unwrap().is_some();
-    
-    if mm_loaded && pam_loaded {
-        Ok(())
-    } else {
-        Err("Failed to initialize scoring matrices".to_string())
-    }
-}
-
-/// Calculate CFD score for aligned sequences
-pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, String> {
-    
-    // Handle different guide lengths by taking first 20bp
-    let spacer_20bp = if spacer.len() >= 20 {
-        if spacer.contains('-') {
-            // Handle gaps - for now, truncate to 20 characters including gaps
-            let truncated = if spacer.len() > 20 { &spacer[0..20] } else { spacer };
-            truncated.to_string()
-        } else {
-            spacer[0..20].to_string() // Take first 20bp
-        }
-    } else {
-        return Err(format!("Spacer too short: {} bp, expected at least 20 bp", spacer.len()));
-    };
-
-    let protospacer_20bp = if protospacer.len() >= 20 {
-        if protospacer.contains('-') {
-            let truncated = if protospacer.len() > 20 { &protospacer[0..20] } else { protospacer };
-            truncated.to_string()
-        } else {
-            protospacer[0..20].to_string() // Take first 20bp
-        }
-    } else {
-        return Err(format!("Protospacer too short: {} bp, expected at least 20 bp", protospacer.len()));
-    };
-
-
-    // Validate PAM length
-    if pam.len() != 2 {
-        return Err(format!("PAM must be 2 nucleotides, got {} bp", pam.len()));
-    }
-
-    // Get locked references to scoring matrices
-    let mm_scores_lock = MISMATCH_SCORES.lock().unwrap();
-    let pam_scores_lock = PAM_SCORES.lock().unwrap();
-
-    // Verify matrices are initialized
-    let mm_scores = mm_scores_lock.as_ref()
-        .ok_or_else(|| "Mismatch scores not initialized".to_string())?;
-    let pam_scores = pam_scores_lock.as_ref()
-        .ok_or_else(|| "PAM scores not initialized".to_string())?;
-
-    // Pre-process sequences (convert T to U for RNA)
-    let spacer_list: Vec<char> = spacer_20bp.to_uppercase().replace("T", "U").chars().collect();
-    let protospacer_list: Vec<char> = protospacer_20bp.to_uppercase().replace("T", "U").chars().collect();
-
-    // Ensure both sequences are exactly 20bp after processing
-    if spacer_list.len() != 20 || protospacer_list.len() != 20 {
-        return Err(format!("Processed sequences must be 20bp: spacer={}, protospacer={}", 
-                          spacer_list.len(), protospacer_list.len()));
-    }
-
-    // Calculate CFD score
-    let mut score = 1.0;
-    
-    for (i, (&spacer_nt, &proto_nt)) in spacer_list.iter().zip(protospacer_list.iter()).enumerate() {
-        if spacer_nt == proto_nt {
-            // Perfect match - no penalty
-            // println!("    Pos {}: {} = {} (match, score *= 1.0)", i+1, spacer_nt, proto_nt);
+fn parse_scores(content: &str) -> Result<HashMap<String, f64>, &'static str> {
+    let mut map = HashMap::new();
+    for line in content.lines() {
+        let trimmed = line.trim();
+        if trimmed.is_empty() || trimmed.starts_with('#') {
             continue;
-        } else if i == 0 && (spacer_nt == '-' || proto_nt == '-') {
-            // Gap at PAM-distal position (position 1) - no penalty per CFD rules
-            // println!("    Pos {}: {} ≠ {} (gap at PAM-distal, score *= 1.0)", i+1, spacer_nt, proto_nt);
+        }
+        let parts: Vec<&str> = trimmed.split_whitespace().collect();
+        if parts.len() != 2 {
             continue;
-        } else {
-            // Apply mismatch penalty
-            let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), i + 1);
-
-            
-            match mm_scores.get(&key) {
-                Some(penalty) => {
-                    // println!("    Pos {}: {} ≠ {} -> key: '{}' -> penalty: {:.6} -> score *= {:.6}", 
-                    //         i+1, spacer_nt, proto_nt, key, penalty, penalty);
-                    score *= penalty;
-                },
-                None => {
-                    println!("    Pos {}: {} ≠ {} -> key: '{}' -> KEY NOT FOUND -> score = 0.0", 
-                             i+1, spacer_nt, proto_nt, key);
-                    return Ok(0.0); // Unknown mismatch gets score 0
-                }
-            }
         }
+        let score: f64 = parts[1].parse().map_err(|_| "invalid score")?;
+        map.insert(parts[0].to_string(), score);
     }
-
-    // Apply PAM penalty
-    let pam_upper = pam.to_uppercase();
-    match pam_scores.get(&pam_upper) {
-        Some(pam_penalty) => {
-            score *= pam_penalty;
-        },
-        None => {
-            // println!("  PAM '{}': NOT FOUND -> score = 0.0", pam_upper);
-            return Ok(0.0); // Unknown PAM gets score 0
-        }
-    }
-
-    Ok(score)
+    Ok(map)
 }
 
-/// Get CFD score using CIGAR-based alignment
-/// 
-/// # Arguments
-/// * `guide` - Guide RNA sequence as byte array
-/// * `target` - Target DNA sequence as byte array
-/// * `cigar` - CIGAR string representing the alignment
-/// * `pam` - 2nt PAM sequence
-/// 
-/// # Returns
-/// * `Option<f64>` - CFD score if calculation succeeds
+pub fn init_score_matrices(mis_path: &str, pam_path: &str) -> Result<(), &'static str> {
+    let mut initialized = INITIALIZED.lock().unwrap();
+    if *initialized {
+        return Ok(());
+    }
+    *initialized = true;
 
-/// Prepare aligned spacer and protospacer sequences for CFD calculation
-fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (String, String) {
-    let mut spacer = String::new();
-    let mut protospacer = String::new();
-    
-    // Handle empty CIGAR by assuming perfect match
-    if cigar.is_empty() {
-        let guide_str = String::from_utf8_lossy(guide);
-        let target_str = String::from_utf8_lossy(target);
-        
-        // Take first 20bp of each sequence
-        let spacer_20 = if guide_str.len() >= 20 { &guide_str[0..20] } else { &guide_str };
-        let target_20 = if target_str.len() >= 20 { &target_str[0..20] } else { &target_str };
-        
-        return (spacer_20.to_string(), target_20.to_string());
-    }
-    
-    let mut guide_pos = 0;
-    let mut target_pos = 0;
-    
-    // Parse CIGAR string with proper number handling
-    let mut chars = cigar.chars().peekable();
-    while let Some(&ch) = chars.peek() {
-        if ch.is_ascii_digit() {
-            // Extract the count
-            let mut num_str = String::new();
-            while let Some(&digit_ch) = chars.peek() {
-                if digit_ch.is_ascii_digit() {
+    let mis_content = read_to_string(mis_path).map_err(|_| "failed to read mismatch_scores.txt")?;
+    let mut mis = MISMATCH_SCORES.lock().unwrap();
+    *mis = parse_scores(&mis_content).map_err(|_| "failed to parse mismatch_scores.txt")?;
 
-                    num_str.push(chars.next().unwrap());
-                } else {
-                    break;
-                }
-            }
-            
-            // Get the operation
-            if let Some(op) = chars.next() {
-                if let Ok(count) = num_str.parse::<usize>() {
-                    match op {
-                        'M' | '=' => {
-                            // Match operations
-                            for _ in 0..count {
-                                if guide_pos < guide.len() && target_pos < target.len() {
-                                    spacer.push(guide[guide_pos] as char);
-                                    protospacer.push(target[target_pos] as char);
-                                    guide_pos += 1;
-                                    target_pos += 1;
-                                } else {
-                                    break;
-                                }
-                            }
-                        },
-                        'X' => {
-                            // Mismatch operations
-                            for _ in 0..count {
-                                if guide_pos < guide.len() && target_pos < target.len() {
-                                    spacer.push(guide[guide_pos] as char);
-                                    protospacer.push(target[target_pos] as char);
-                                    guide_pos += 1;
-                                    target_pos += 1;
-                                } else {
-                                    break;
-                                }
-                            }
-                        },
-                        'I' => {
-                            // Insertion in query (gap in target)
-                            for _ in 0..count {
-                                if guide_pos < guide.len() {
-                                    spacer.push(guide[guide_pos] as char);
-                                    protospacer.push('-');
-                                    guide_pos += 1;
-                                } else {
-                                    break;
-                                }
-                            }
-                        },
-                        'D' => {
-                            // Deletion in query (gap in query) 
-                            for _ in 0..count {
-                                if target_pos < target.len() {
-                                    spacer.push('-');
-                                    protospacer.push(target[target_pos] as char);
-                                    target_pos += 1;
-                                } else {
-                                    break;
-                                }
-                            }
-                        },
-                        _ => {
-                            eprintln!("Warning: Unknown CIGAR operation: {}", op);
-                        }
-                    }
-                }
-            }
-        } else {
-            // Handle single character operations (legacy format)
-            let op = chars.next().unwrap();
-            match op {
-                'M' | '=' | 'X' => {
-                    if guide_pos < guide.len() && target_pos < target.len() {
-                        spacer.push(guide[guide_pos] as char);
-                        protospacer.push(target[target_pos] as char);
-                        guide_pos += 1;
-                        target_pos += 1;
-                    }
-                },
-                'I' => {
-                    if guide_pos < guide.len() {
-                        spacer.push(guide[guide_pos] as char);
-                        protospacer.push('-');
-                        guide_pos += 1;
-                    }
-                },
-                'D' => {
-                    if target_pos < target.len() {
-                        spacer.push('-');
-                        protospacer.push(target[target_pos] as char);
-                        target_pos += 1;
-                    }
-                },
-                _ => {}
-            }
-        }
-    }
-    
-    // Ensure we have exactly 20 characters by padding or truncating
-    while spacer.len() < 20 {
-        spacer.push('-');
-    }
-    while protospacer.len() < 20 {
-        protospacer.push('-');
-    }
-    
-    // Truncate to exactly 20bp
-    let spacer_final = spacer.chars().take(20).collect();
-    let protospacer_final = protospacer.chars().take(20).collect();
-    
-    (spacer_final, protospacer_final)
+    let pam_content = read_to_string(pam_path).map_err(|_| "failed to read pam_scores.txt")?;
+    let mut pam = PAM_SCORES.lock().unwrap();
+    *pam = parse_scores(&pam_content).map_err(|_| "failed to parse pam_scores.txt")?;
+
+    Ok(())
 }
 
+pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, &'static str> {
+    let spacer_rna = spacer.replace('T', "U");
+    if spacer_rna.len() != 20 || protospacer.len() != 20 {
+        return Err("sequences must be exactly 20 nt long");
+    }
 
-/// Get reverse complement of a single nucleotide (supports bulges)
+    let mis = MISMATCH_SCORES.lock().unwrap();
+    if mis.is_empty() {
+        return Err("score matrices not initialized. Call init_score_matrices first.");
+    }
+
+    let pams = PAM_SCORES.lock().unwrap();
+    let pam_score = *pams.get(pam).unwrap_or(&0.0);
+
+    let mut total_score = pam_score;
+    for (i, (spacer_nt, proto_nt)) in spacer_rna.chars().zip(protospacer.chars()).enumerate() {
+        let position = i + 1;
+        let spacer_equiv = if spacer_nt.to_ascii_lowercase() == 'u' { 'T' } else { spacer_nt.to_ascii_uppercase() };
+        let proto_equiv = proto_nt.to_ascii_uppercase();
+        if spacer_equiv == proto_equiv {
+            total_score *= 1.0;
+            continue;
+        }
+        let key = format!("r{}:d{},{}", spacer_nt.to_ascii_uppercase(), reverse_complement_nt(proto_nt), position);
+        let mismatch_score = *mis.get(&key).unwrap_or(&0.0);
+        total_score *= mismatch_score;
+    }
+    Ok(total_score)
+}
+
+pub fn get_cfd_score(guide: &[u8], target_seq: &[u8], _cigar: &str, pam: &str) -> Option<f64> {
+    let guide_str = std::str::from_utf8(guide).ok()?;
+    let target_str = std::str::from_utf8(target_seq).ok()?;
+    calculate_cfd(guide_str, target_str, pam).ok()
+}
+
 fn reverse_complement_nt(nucleotide: char) -> char {
     match nucleotide {
         'A' => 'T',
@@ -307,27 +91,51 @@ fn reverse_complement_nt(nucleotide: char) -> char {
     }
 }
 
-/// Parse scoring matrix from space-delimited file
-fn parse_scoring_matrix(file_path: &str) -> Result<HashMap<String, f64>, String> {
-    // Open file
-    let file = File::open(file_path)
-        .map_err(|e| format!("Cannot open {}: {}", file_path, e))?;
-    
-    // Read file
-    let reader = BufReader::new(file);
-    let mut matrix = HashMap::new();
-    for line in reader.lines() {
-        let line = line.map_err(|e| format!("Error reading line: {}", e))?;
-        let parts: Vec<&str> = line.split_whitespace().collect();
-        if parts.len() >= 2 {
-            let score = parts[1].parse::<f64>()
-                .map_err(|e| format!("Invalid score format: {}", e))?;
-            matrix.insert(parts[0].to_string(), score);
-        }
     }
-    Ok(matrix)
+    *initialized = true;
+
+    let mis_content = read_to_string(mis_path).map_err(|_| "failed to read mismatch_scores.txt")?;
+    let mut mis = MISMATCH_SCORES.lock().unwrap();
+    *mis = parse_scores(&mis_content).map_err(|_| "failed to parse mismatch_scores.txt")?;
+
+    let pam_content = read_to_string(pam_path).map_err(|_| "failed to read pam_scores.txt")?;
+    let mut pam = PAM_SCORES.lock().unwrap();
+    *pam = parse_scores(&pam_content).map_err(|_| "failed to parse pam_scores.txt")?;
+
+    Ok(())
 }
 
+pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, &'static str> {
+    let spacer_rna = spacer.replace('T', "U");
+    if spacer_rna.len() != 20 || protospacer.len() != 20 {
+        return Err("sequences must be exactly 20 nt long");
+    }
+
+    let mis = MISMATCH_SCORES.lock().unwrap();
+    if mis.is_empty() {
+        return Err("score matrices not initialized. Call init_score_matrices first.");
+    }
+
+    let pams = PAM_SCORES.lock().unwrap();
+    let pam_score = *pams.get(pam).unwrap_or(&0.0);
+
+    let mut total_score = pam_score;
+    for (i, (spacer_nt, proto_nt)) in spacer_rna.chars().zip(protospacer.chars()).enumerate() {
+        let position = i + 1;
+        let spacer_equiv = if spacer_nt.to_ascii_lowercase() == 'u' { 'T' } else { spacer_nt.to_ascii_uppercase() };
+        let proto_equiv = proto_nt.to_ascii_uppercase();
+        if spacer_equiv == proto_equiv {
+            total_score *= 1.0;
+            continue;
+        }
+        let key = format!("r{}:d{},{}", spacer_nt.to_ascii_uppercase(), proto_nt.to_ascii_uppercase(), position);
+        let mismatch_score = *mis.get(&key).unwrap_or(&0.0);
+        total_score *= mismatch_score;
+    }
+    Ok(total_score)
+}
+
+<<<<<<< HEAD
 #[cfg(test)]
 mod cfd_unit_tests {
     use super::*;
@@ -481,3 +289,10 @@ pub fn get_cfd_score(guide: &[u8], target_seq: &[u8], cigar: &str, pam: &str) ->
         Err(_) => None,
     }
 }
+=======
+pub fn get_cfd_score(guide: &[u8], target_seq: &[u8], _cigar: &str, pam: &str) -> Option<f64> {
+    let guide_str = std::str::from_utf8(guide).ok()?;
+    let target_str = std::str::from_utf8(target_seq).ok()?;
+    calculate_cfd(guide_str, target_str, pam).ok()
+}
+>>>>>>> 9c12ff6 (fix: CFD matches Python reference (T->U spacer, revcomp keys, gap handling, unignore tests))
