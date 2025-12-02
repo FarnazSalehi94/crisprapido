@@ -704,6 +704,38 @@ fn normalize_cigar(cigar: &str) -> String {
         .collect::<String>()
 }
 
+fn reverse_cigar(cigar: &str) -> String {
+    if cigar.is_empty() {
+        return String::new();
+    }
+
+    let mut ops: Vec<(String, char)> = Vec::new();
+    let mut chars = cigar.chars().peekable();
+    while let Some(&ch) = chars.peek() {
+        let mut num_str = String::new();
+        while let Some(&digit_ch) = chars.peek() {
+            if digit_ch.is_ascii_digit() {
+                num_str.push(chars.next().unwrap());
+            } else {
+                break;
+            }
+        }
+
+        if num_str.is_empty() {
+            break;
+        }
+
+        if let Some(op) = chars.next() {
+            ops.push((num_str, op));
+        }
+    }
+
+    ops.reverse();
+    ops.into_iter()
+        .map(|(count, op)| format!("{}{}", count, op))
+        .collect::<String>()
+}
+
 fn alignment_overlaps_ambiguous(contig: &[u8], start: usize, guide_len: usize) -> bool {
     let end = start.saturating_add(guide_len).min(contig.len());
     contig[start..end]
@@ -854,6 +886,11 @@ fn main() {
         std::process::exit(1);
     }
 
+    let guide_rcs: Vec<Vec<u8>> = guides
+        .iter()
+        .map(|g| reverse_complement(g))
+        .collect();
+
     eprintln!("Loaded {} guide(s)", guides.len());
 
     // Set thread pool size if specified
@@ -910,6 +947,7 @@ fn main() {
     // Process all tasks in parallel - flat, no barriers!
     tasks.par_iter().for_each(|(guide_idx, contig_idx)| {
         let guide = &guides[*guide_idx];
+        let rev_guide = &guide_rcs[*guide_idx];
         let contig = &contigs[*contig_idx];
         let guide_len = guide.len();
 
@@ -940,7 +978,7 @@ fn main() {
             let target_seq = {
                 let start = pos;
                 let end = (pos + guide_len).min(seq_len);
-                contig.seq()[start..end].to_vec()
+                seq[start..end].to_vec()
             };
 
             let output_hit = OutputHit {
@@ -960,6 +998,46 @@ fn main() {
             };
 
             tx.send(output_hit).expect("Failed to send hit to output thread");
+        }
+
+        let rev_matches = scan_contig_sassy(
+            rev_guide,
+            seq,
+            args.max_mismatches,
+            args.max_bulges,
+            args.max_bulge_size,
+            args.min_match_fraction,
+            args.no_filter,
+            args.include_ambiguous,
+        );
+
+        for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in rev_matches {
+            let target_seq = {
+                let start = pos;
+                let end = (pos + guide_len).min(seq_len);
+                let slice = &seq[start..end];
+                reverse_complement(slice)
+            };
+
+            let adjusted_cigar = reverse_cigar(&cigar);
+
+            let output_hit = OutputHit {
+                ref_id: record_id.to_string(),
+                pos,
+                guide_len,
+                strand: '-',
+                score,
+                cigar: adjusted_cigar,
+                guide: guide.clone(),
+                target_len: seq_len,
+                max_mismatches: args.max_mismatches,
+                max_bulges: args.max_bulges,
+                max_bulge_size: args.max_bulge_size,
+                target_seq,
+                pam: args.pam.clone(),
+            };
+
+            tx.send(output_hit).expect("Failed to send reverse-strand hit");
         }
     });
 
