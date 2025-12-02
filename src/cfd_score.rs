@@ -119,9 +119,17 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
                     score *= penalty;
                 },
                 None => {
-                    println!("    Pos {}: {} ≠ {} -> key: '{}' -> KEY NOT FOUND -> score = 0.0", 
-                             i+1, spacer_nt, proto_nt, key);
-                    return Ok(0.0); // Unknown mismatch gets score 0
+                    // Unknown mismatch (often due to IUPAC ambiguity like 'N');
+                    // treat as neutral mismatch with zero penalty rather than
+                    // spamming stdout and forcing the score to zero.
+                    eprintln!(
+                        "Warning: Unrecognized mismatch key '{}' at position {} ({} vs {}). Treating as score 1.",
+                        key,
+                        i + 1,
+                        spacer_nt,
+                        proto_nt
+                    );
+                    continue;
                 }
             }
         }
