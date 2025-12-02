@@ -84,6 +84,18 @@ fn test_pam_effects() {
     }
 }
 
+#[test]
+fn test_terminal_ns_are_neutral() {
+    cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
+        .expect("Failed to initialize scoring matrices");
+
+    let spacer = "CACACAGGTCCAAAGGCGGG";
+    let target = "NNNNNNNNNNNNNNNNNNGG";
+
+    let score = cfd_score::calculate_cfd(spacer, target, "GG").unwrap();
+    assert_eq!(score, 1.0, "Ambiguous Ns at distal end should not penalize score");
+}
+
 /// Test CIGAR-based calculation matches direct calculation
 #[test]
 fn test_cigar_matches_direct() {

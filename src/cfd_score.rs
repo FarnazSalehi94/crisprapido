@@ -100,38 +100,20 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
     
     for (i, (&spacer_nt, &proto_nt)) in spacer_list.iter().zip(protospacer_list.iter()).enumerate() {
         if spacer_nt == proto_nt {
-            // Perfect match - no penalty
-            // println!("    Pos {}: {} = {} (match, score *= 1.0)", i+1, spacer_nt, proto_nt);
             continue;
-        } else if i == 0 && (spacer_nt == '-' || proto_nt == '-') {
-            // Gap at PAM-distal position (position 1) - no penalty per CFD rules
-            // println!("    Pos {}: {} ≠ {} (gap at PAM-distal, score *= 1.0)", i+1, spacer_nt, proto_nt);
-            continue;
-        } else {
-            // Apply mismatch penalty
-            let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), i + 1);
+        }
 
-            
-            match mm_scores.get(&key) {
-                Some(penalty) => {
-                    // println!("    Pos {}: {} ≠ {} -> key: '{}' -> penalty: {:.6} -> score *= {:.6}", 
-                    //         i+1, spacer_nt, proto_nt, key, penalty, penalty);
-                    score *= penalty;
-                },
-                None => {
-                    // Unknown mismatch (often due to IUPAC ambiguity like 'N');
-                    // treat as neutral mismatch with zero penalty rather than
-                    // spamming stdout and forcing the score to zero.
-                    eprintln!(
-                        "Warning: Unrecognized mismatch key '{}' at position {} ({} vs {}). Treating as score 1.",
-                        key,
-                        i + 1,
-                        spacer_nt,
-                        proto_nt
-                    );
-                    continue;
-                }
-            }
+        if is_ambiguous_nt(spacer_nt) || is_ambiguous_nt(proto_nt) {
+            continue;
+        }
+
+        if i == 0 && (spacer_nt == '-' || proto_nt == '-') {
+            continue;
+        }
+
+        let key = format!("r{}:d{},{}", spacer_nt, reverse_complement_nt(proto_nt), i + 1);
+        if let Some(penalty) = mm_scores.get(&key) {
+            score *= penalty;
         }
     }
 
@@ -313,6 +295,10 @@ fn reverse_complement_nt(nucleotide: char) -> char {
         '-' => '-',
         _ => nucleotide,
     }
+}
+
+fn is_ambiguous_nt(nt: char) -> bool {
+    matches!(nt, 'N' | 'n' | 'R' | 'Y' | 'S' | 'W' | 'K' | 'M' | 'B' | 'D' | 'H' | 'V')
 }
 
 /// Parse scoring matrix from space-delimited file
