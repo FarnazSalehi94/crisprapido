@@ -66,6 +66,8 @@ fn test_pam_effects() {
         ("TG", 0.038961038999999996),  // Non-canonical
         ("CG", 0.107142857),           // Non-canonical
         ("AT", 0.0),                   // Non-functional
+        ("NGG", 1.0),                  // 3nt PAM should collapse to GG
+        ("NAG", 0.25925925899999996),  // 3nt variant matching AG penalty
     ];
 
     for (pam, expected_score) in pams {

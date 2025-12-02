@@ -70,12 +70,16 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
     };
 
 
-    // Validate PAM length
-    if pam.len() != 2 {
-        return Err(format!("PAM must be 2 nucleotides, got {} bp", pam.len()));
-    }
+    // Validate PAM length (allow NGG-style 3-mers by dropping the first base)
+    let pam_clean = pam.to_uppercase();
+    let pam_processed = match pam_clean.len() {
+        2 => pam_clean,
+        3 => pam_clean[1..].to_string(),
+        _ => return Err(format!("PAM must be 2 or 3 nucleotides, got {} bp", pam.len())),
+    };
 
     // Get locked references to scoring matrices
+
     let mm_scores_lock = MISMATCH_SCORES.lock().unwrap();
     let pam_scores_lock = PAM_SCORES.lock().unwrap();
 
@@ -118,13 +122,11 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
     }
 
     // Apply PAM penalty
-    let pam_upper = pam.to_uppercase();
-    match pam_scores.get(&pam_upper) {
+    match pam_scores.get(&pam_processed) {
         Some(pam_penalty) => {
             score *= pam_penalty;
         },
         None => {
-            // println!("  PAM '{}': NOT FOUND -> score = 0.0", pam_upper);
             return Ok(0.0); // Unknown PAM gets score 0
         }
     }
