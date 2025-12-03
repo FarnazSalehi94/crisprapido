@@ -981,6 +981,10 @@ fn main() {
                 seq[start..end].to_vec()
             };
 
+            if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
+                continue;
+            }
+
             let output_hit = OutputHit {
                 ref_id: record_id.to_string(),
                 pos,
@@ -1018,6 +1022,10 @@ fn main() {
                 let slice = &seq[start..end];
                 reverse_complement(slice)
             };
+
+            if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
+                continue;
+            }
 
             let adjusted_cigar = reverse_cigar(&cigar);
 
