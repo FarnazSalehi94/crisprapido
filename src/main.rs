@@ -8,7 +8,7 @@ use bio::io::fasta;
 use sassy::profiles::Iupac;
 use sassy::Searcher;
 use rayon::prelude::*;
-use crossbeam_channel::unbounded;
+use crossbeam_channel::bounded;
 use std::thread;
 use std::cell::RefCell;
 
@@ -922,7 +922,8 @@ fn main() {
     eprintln!("Loaded {} contig(s)", contigs.len());
 
     // Create channel for sending hits from workers to output thread
-    let (tx, rx) = unbounded::<OutputHit>();
+    // Use bounded channel to provide backpressure and limit queued hits
+    let (tx, rx) = bounded::<OutputHit>(2048);
 
     // Spawn single output consumer thread with buffered output
     let output_thread = thread::spawn(move || {
@@ -961,6 +962,11 @@ fn main() {
         }
 
         // Scan entire contig with SASSY - returns ALL matches
+        // Reserve buffers outside of scan loops to limit per-hit allocations
+        let mut target_seq_buf = Vec::with_capacity(guide_len);
+        let mut rc_target_seq_buf = Vec::with_capacity(guide_len);
+        let mut rc_cache = Vec::with_capacity(guide_len);
+
         let matches = scan_contig_sassy(
             guide,
             seq,
@@ -972,16 +978,14 @@ fn main() {
             args.include_ambiguous,
         );
 
-        // Send all hits to output thread
         for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
-            // Extract target sequence slice
-            let target_seq = {
-                let start = pos;
-                let end = (pos + guide_len).min(seq_len);
-                seq[start..end].to_vec()
-            };
+            // Extract target sequence slice into reusable buffer
+            target_seq_buf.clear();
+            let start = pos;
+            let end = (pos + guide_len).min(seq_len);
+            target_seq_buf.extend_from_slice(&seq[start..end]);
 
-            if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
+            if !args.include_ambiguous && target_seq_buf.iter().any(|&b| is_ambiguous_base(b)) {
                 continue;
             }
 
@@ -997,7 +1001,7 @@ fn main() {
                 max_mismatches: args.max_mismatches,
                 max_bulges: args.max_bulges,
                 max_bulge_size: args.max_bulge_size,
-                target_seq,
+                target_seq: target_seq_buf.clone(),
                 pam: args.pam.clone(),
             };
 
@@ -1016,14 +1020,14 @@ fn main() {
         );
 
         for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in rev_matches {
-            let target_seq = {
-                let start = pos;
-                let end = (pos + guide_len).min(seq_len);
-                let slice = &seq[start..end];
-                reverse_complement(slice)
-            };
+            rc_target_seq_buf.clear();
+            rc_cache.clear();
+            let start = pos;
+            let end = (pos + guide_len).min(seq_len);
+            rc_cache.extend_from_slice(&seq[start..end]);
+            rc_target_seq_buf.extend(reverse_complement(&rc_cache));
 
-            if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
+            if !args.include_ambiguous && rc_target_seq_buf.iter().any(|&b| is_ambiguous_base(b)) {
                 continue;
             }
 
@@ -1041,7 +1045,7 @@ fn main() {
                 max_mismatches: args.max_mismatches,
                 max_bulges: args.max_bulges,
                 max_bulge_size: args.max_bulge_size,
-                target_seq,
+                target_seq: rc_target_seq_buf.clone(),
                 pam: args.pam.clone(),
             };
 
