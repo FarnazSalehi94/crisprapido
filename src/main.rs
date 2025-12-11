@@ -1,18 +1,177 @@
 use std::path::PathBuf;
 use std::fs::File;
 use std::io::{BufRead, BufReader, BufWriter, Write};
+use std::sync::{Arc, atomic::{AtomicBool, AtomicU64, Ordering}};
+use std::time::{Duration, Instant};
 use flate2::read::MultiGzDecoder;
-use std::sync::Arc;
 use clap::Parser;
 use bio::io::fasta;
 use sassy::profiles::Iupac;
 use sassy::Searcher;
 use rayon::prelude::*;
-use crossbeam_channel::bounded;
+use crossbeam_channel::{bounded, Sender};
 use std::thread;
 use std::cell::RefCell;
 
 mod cfd_score;
+
+#[derive(Default)]
+struct PerfCounters {
+    hits_sent: AtomicU64,
+    hits_written: AtomicU64,
+    bytes_written: AtomicU64,
+    send_block_ns: AtomicU64,
+    send_block_count: AtomicU64,
+    task_total_ns: AtomicU64,
+    task_count: AtomicU64,
+    queue_max_depth: AtomicU64,
+}
+
+impl PerfCounters {
+    fn record_hit_sent(&self, blocked: Duration) {
+        if blocked.as_nanos() > 0 {
+            self.send_block_ns.fetch_add(blocked.as_nanos() as u64, Ordering::Relaxed);
+            self.send_block_count.fetch_add(1, Ordering::Relaxed);
+        }
+        let sent = self.hits_sent.fetch_add(1, Ordering::Relaxed) + 1;
+        let written = self.hits_written.load(Ordering::Relaxed);
+        let depth = sent.saturating_sub(written);
+        self.update_max_depth(depth);
+    }
+
+    fn record_hit_written(&self) {
+        self.hits_written.fetch_add(1, Ordering::Relaxed);
+    }
+
+    fn record_bytes(&self, bytes: usize) {
+        self.bytes_written.fetch_add(bytes as u64, Ordering::Relaxed);
+    }
+
+    fn record_task_duration(&self, duration: Duration) {
+        self.task_total_ns.fetch_add(duration.as_nanos() as u64, Ordering::Relaxed);
+        self.task_count.fetch_add(1, Ordering::Relaxed);
+    }
+
+    fn update_max_depth(&self, depth: u64) {
+        loop {
+            let current = self.queue_max_depth.load(Ordering::Relaxed);
+            if depth <= current {
+                break;
+            }
+            if self
+                .queue_max_depth
+                .compare_exchange(current, depth, Ordering::Relaxed, Ordering::Relaxed)
+                .is_ok()
+            {
+                break;
+            }
+        }
+    }
+
+    fn print_summary(&self) {
+        let hits = self.hits_written.load(Ordering::Relaxed);
+        let bytes = self.bytes_written.load(Ordering::Relaxed);
+        let tasks = self.task_count.load(Ordering::Relaxed);
+        let avg_task_ms = if tasks > 0 {
+            let total_ns = self.task_total_ns.load(Ordering::Relaxed);
+            (total_ns as f64 / tasks as f64) / 1_000_000.0
+        } else {
+            0.0
+        };
+        let avg_block_ms = {
+            let blocks = self.send_block_count.load(Ordering::Relaxed);
+            if blocks > 0 {
+                let total_ns = self.send_block_ns.load(Ordering::Relaxed);
+                (total_ns as f64 / blocks as f64) / 1_000_000.0
+            } else {
+                0.0
+            }
+        };
+        eprintln!(
+            "[perf] total_hits={} total_bytes={:.2}MB avg_task_ms={:.2} avg_send_wait_ms={:.3} max_queue_depth={}",
+            hits,
+            bytes as f64 / (1024.0 * 1024.0),
+            avg_task_ms,
+            avg_block_ms,
+            self.queue_max_depth.load(Ordering::Relaxed)
+        );
+    }
+}
+
+struct CountingWriter<W: Write> {
+    inner: W,
+    perf: Option<Arc<PerfCounters>>,
+}
+
+impl<W: Write> CountingWriter<W> {
+    fn new(inner: W, perf: Option<Arc<PerfCounters>>) -> Self {
+        Self { inner, perf }
+    }
+}
+
+impl<W: Write> Write for CountingWriter<W> {
+    fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
+        let written = self.inner.write(buf)?;
+        if let Some(perf) = &self.perf {
+            perf.record_bytes(written);
+        }
+        Ok(written)
+    }
+
+    fn flush(&mut self) -> std::io::Result<()> {
+        self.inner.flush()
+    }
+}
+
+fn spawn_perf_monitor(
+    perf: Arc<PerfCounters>,
+    stop_flag: Arc<AtomicBool>,
+) -> thread::JoinHandle<()> {
+    thread::spawn(move || {
+        let interval = Duration::from_secs(5);
+        let mut last_hits = 0;
+        let mut last_bytes = 0;
+        let mut last_tasks = 0;
+        let mut last_blocks = 0;
+        while !stop_flag.load(Ordering::Relaxed) {
+            thread::sleep(interval);
+            if stop_flag.load(Ordering::Relaxed) {
+                break;
+            }
+            let hits = perf.hits_written.load(Ordering::Relaxed);
+            let bytes = perf.bytes_written.load(Ordering::Relaxed);
+            let tasks = perf.task_count.load(Ordering::Relaxed);
+            let blocks = perf.send_block_count.load(Ordering::Relaxed);
+            let interval_secs = interval.as_secs_f64();
+            let hits_rate = (hits - last_hits) as f64 / interval_secs;
+            let bytes_rate = (bytes - last_bytes) as f64 / (1024.0 * 1024.0) / interval_secs;
+            let task_rate = (tasks - last_tasks) as f64 / interval_secs;
+            let block_rate = (blocks - last_blocks) as f64 / interval_secs;
+            let avg_task_ms = if tasks > 0 {
+                let total_ns = perf.task_total_ns.load(Ordering::Relaxed);
+                (total_ns as f64 / tasks as f64) / 1_000_000.0
+            } else {
+                0.0
+            };
+            eprintln!(
+                "[perf] hits/s={:.1} MB/s={:.2} tasks/s={:.1} queue_depth={} max_queue={} block/s={:.1} avg_task_ms={:.2}",
+                hits_rate,
+                bytes_rate,
+                task_rate,
+                perf.hits_sent.load(Ordering::Relaxed)
+                    .saturating_sub(perf.hits_written.load(Ordering::Relaxed)),
+                perf.queue_max_depth.load(Ordering::Relaxed),
+                block_rate,
+                avg_task_ms,
+            );
+            last_hits = hits;
+            last_bytes = bytes;
+            last_tasks = tasks;
+            last_blocks = blocks;
+        }
+    })
+}
+
 
 fn reverse_complement(seq: &[u8]) -> Vec<u8> {
     seq.iter().rev().map(|&b| match b {
@@ -853,6 +1012,16 @@ fn read_guides_from_file(path: &PathBuf) -> std::io::Result<Vec<Vec<u8>>> {
 
 fn main() {
     let args = Args::parse();
+    let perf_enabled = std::env::var("CRISPRAPIDO_TRACE_PERF").is_ok();
+    let perf_counters = if perf_enabled {
+        Some(Arc::new(PerfCounters::default()))
+    } else {
+        None
+    };
+    let perf_stop = perf_counters.as_ref().map(|_| Arc::new(AtomicBool::new(false)));
+    let perf_handle = perf_counters.as_ref().zip(perf_stop.as_ref()).map(|(perf, stop)| {
+        spawn_perf_monitor(perf.clone(), stop.clone())
+    });
 
     // **FIXED: Better CFD initialization with more informative error handling**
     match cfd_score::init_score_matrices(
@@ -922,15 +1091,29 @@ fn main() {
     eprintln!("Loaded {} contig(s)", contigs.len());
 
     // Create channel for sending hits from workers to output thread
+<<<<<<< HEAD
     // Use bounded channel to provide backpressure and limit queued hits
     let (tx, rx) = bounded::<OutputHit>(2048);
+=======
+<<<<<<< HEAD
+    let (tx, rx) = unbounded::<OutputHit>();
+=======
+    // Use bounded channel to provide backpressure and limit queued hits
+    let (tx, rx) = bounded::<OutputHit>(2048);
+    let perf_for_writer = perf_counters.clone();
+>>>>>>> 946a37c (add opt-in perf telemetry)
+>>>>>>> 037b91c (add opt-in perf telemetry)
 
     // Spawn single output consumer thread with buffered output
     let output_thread = thread::spawn(move || {
         let stdout = std::io::stdout();
-        let mut writer = BufWriter::with_capacity(256 * 1024, stdout.lock()); // 256KB buffer
+        let writer = stdout.lock();
+        let mut writer = CountingWriter::new(BufWriter::with_capacity(256 * 1024, writer), perf_for_writer);
         for hit in rx {
             hit.write_output(&mut writer);
+            if let Some(perf) = &writer.perf {
+                perf.record_hit_written();
+            }
         }
         writer.flush().expect("Failed to flush output");
     });
@@ -946,6 +1129,7 @@ fn main() {
     eprintln!("Processing {} tasks (guides × contigs)", tasks.len());
 
     // Process all tasks in parallel - flat, no barriers!
+    let perf_for_workers = perf_counters.clone();
     tasks.par_iter().for_each(|(guide_idx, contig_idx)| {
         let guide = &guides[*guide_idx];
         let rev_guide = &guide_rcs[*guide_idx];
@@ -962,11 +1146,21 @@ fn main() {
         }
 
         // Scan entire contig with SASSY - returns ALL matches
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 037b91c (add opt-in perf telemetry)
         // Reserve buffers outside of scan loops to limit per-hit allocations
         let mut target_seq_buf = Vec::with_capacity(guide_len);
         let mut rc_target_seq_buf = Vec::with_capacity(guide_len);
         let mut rc_cache = Vec::with_capacity(guide_len);
 
+<<<<<<< HEAD
+=======
+        let worker_start = perf_for_workers.as_ref().map(|_| Instant::now());
+>>>>>>> 946a37c (add opt-in perf telemetry)
+>>>>>>> 037b91c (add opt-in perf telemetry)
         let matches = scan_contig_sassy(
             guide,
             seq,
@@ -1005,7 +1199,14 @@ fn main() {
                 pam: args.pam.clone(),
             };
 
-            tx.send(output_hit).expect("Failed to send hit to output thread");
+            if let Some(perf) = &perf_for_workers {
+                let start = Instant::now();
+                tx.send(output_hit).expect("Failed to send hit to output thread");
+                let blocked = start.elapsed();
+                perf.record_hit_sent(blocked);
+            } else {
+                tx.send(output_hit).expect("Failed to send hit to output thread");
+            }
         }
 
         let rev_matches = scan_contig_sassy(
@@ -1049,7 +1250,18 @@ fn main() {
                 pam: args.pam.clone(),
             };
 
-            tx.send(output_hit).expect("Failed to send reverse-strand hit");
+            if let Some(perf) = &perf_for_workers {
+                let start = Instant::now();
+                tx.send(output_hit).expect("Failed to send reverse-strand hit");
+                let blocked = start.elapsed();
+                perf.record_hit_sent(blocked);
+            } else {
+                tx.send(output_hit).expect("Failed to send reverse-strand hit");
+            }
+        }
+
+        if let (Some(perf), Some(worker_start)) = (perf_for_workers.as_ref(), worker_start) {
+            perf.record_task_duration(worker_start.elapsed());
         }
     });
 
@@ -1058,4 +1270,14 @@ fn main() {
 
     // Wait for output thread to finish writing all results
     output_thread.join().expect("Output thread panicked");
+
+    if let Some(stop) = perf_stop.as_ref() {
+        stop.store(true, Ordering::Relaxed);
+    }
+    if let Some(handle) = perf_handle {
+        let _ = handle.join();
+    }
+    if let Some(perf) = perf_counters {
+        perf.print_summary();
+    }
 }
