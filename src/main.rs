@@ -1091,18 +1091,9 @@ fn main() {
     eprintln!("Loaded {} contig(s)", contigs.len());
 
     // Create channel for sending hits from workers to output thread
-<<<<<<< HEAD
-    // Use bounded channel to provide backpressure and limit queued hits
-    let (tx, rx) = bounded::<OutputHit>(2048);
-=======
-<<<<<<< HEAD
-    let (tx, rx) = unbounded::<OutputHit>();
-=======
     // Use bounded channel to provide backpressure and limit queued hits
     let (tx, rx) = bounded::<OutputHit>(2048);
     let perf_for_writer = perf_counters.clone();
->>>>>>> 946a37c (add opt-in perf telemetry)
->>>>>>> 037b91c (add opt-in perf telemetry)
 
     // Spawn single output consumer thread with buffered output
     let output_thread = thread::spawn(move || {
@@ -1146,21 +1137,12 @@ fn main() {
         }
 
         // Scan entire contig with SASSY - returns ALL matches
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 037b91c (add opt-in perf telemetry)
         // Reserve buffers outside of scan loops to limit per-hit allocations
         let mut target_seq_buf = Vec::with_capacity(guide_len);
         let mut rc_target_seq_buf = Vec::with_capacity(guide_len);
         let mut rc_cache = Vec::with_capacity(guide_len);
 
-<<<<<<< HEAD
-=======
         let worker_start = perf_for_workers.as_ref().map(|_| Instant::now());
->>>>>>> 946a37c (add opt-in perf telemetry)
->>>>>>> 037b91c (add opt-in perf telemetry)
         let matches = scan_contig_sassy(
             guide,
             seq,
