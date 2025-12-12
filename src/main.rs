@@ -787,6 +787,10 @@ struct Args {
     /// Include hits that overlap ambiguous bases (N/R/Y etc.)
     #[arg(long)]
     include_ambiguous: bool,
+
+    /// Maximum number of hits buffered between workers and writer
+    #[arg(long = "channel-depth", default_value = "16384")]
+    channel_depth: usize,
 }
 
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
@@ -1168,34 +1172,41 @@ fn main() {
     eprintln!("Loaded {} contig(s)", contigs.len());
 
     // Create channel for sending hits from workers to output thread
-    // Use bounded channel to provide backpressure and limit queued hits
-    let (tx, rx) = bounded::<OutputHit>(2048);
+    // Depth is configurable so callers can tune throughput/backpressure
+    let channel_depth = args.channel_depth.max(1024);
+    let (tx, rx) = bounded::<OutputHit>(channel_depth);
     let perf_for_writer = perf_counters.clone();
 
     // Spawn single output consumer thread with buffered output
     let contigs_for_writer = contigs.clone();
     let guides_for_writer = guides.clone();
     let pam_for_writer = args.pam.clone();
-    let output_thread = thread::spawn(move || {
-        let stdout = std::io::stdout();
-        let writer = stdout.lock();
-        let mut writer = CountingWriter::new(
-            BufWriter::with_capacity(256 * 1024, writer),
-            perf_for_writer,
-        );
-        for hit in rx {
-            hit.write_output(
-                &mut writer,
-                &guides_for_writer,
-                &contigs_for_writer,
-                &pam_for_writer,
-            );
-            if let Some(perf) = &writer.perf {
-                perf.record_hit_written();
-            }
-        }
-        writer.flush().expect("Failed to flush output");
-    });
+
+    let worker_count = rayon::current_num_threads().max(1);
+    let writer_threads = worker_count.min(4);
+    let rx = Arc::new(rx);
+    let writers: Vec<_> = (0..writer_threads)
+        .map(|_| {
+            let rx = rx.clone();
+            let guides = guides_for_writer.clone();
+            let contigs = contigs_for_writer.clone();
+            let pam = pam_for_writer.clone();
+            let perf = perf_for_writer.clone();
+            thread::spawn(move || {
+                let stdout = std::io::stdout();
+                let writer = stdout.lock();
+                let mut writer =
+                    CountingWriter::new(BufWriter::with_capacity(256 * 1024, writer), perf);
+                while let Ok(hit) = rx.recv() {
+                    hit.write_output(&mut writer, &guides, &contigs, &pam);
+                    if let Some(perf) = &writer.perf {
+                        perf.record_hit_written();
+                    }
+                }
+                writer.flush().expect("Failed to flush output");
+            })
+        })
+        .collect();
 
     // Create flat list of all (guide_idx, contig_idx) task pairs
     // This eliminates nested parallelism and barriers
@@ -1338,8 +1349,10 @@ fn main() {
     // Drop the original sender to signal completion
     drop(tx);
 
-    // Wait for output thread to finish writing all results
-    output_thread.join().expect("Output thread panicked");
+    // Wait for output threads to finish writing all results
+    for handle in writers {
+        handle.join().expect("Output thread panicked");
+    }
 
     if let Some(stop) = perf_stop.as_ref() {
         stop.store(true, Ordering::Relaxed);
