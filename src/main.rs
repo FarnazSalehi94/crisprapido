@@ -1,6 +1,6 @@
 use bio::io::fasta;
 use clap::Parser;
-use crossbeam_channel::bounded;
+use crossbeam_channel::unbounded;
 use flate2::read::MultiGzDecoder;
 use rayon::prelude::*;
 use sassy::profiles::Iupac;
@@ -1336,10 +1336,8 @@ fn main() {
     // Drop the original sender to signal completion
     drop(tx);
 
-    // Wait for output threads to finish writing all results
-    for handle in writers {
-        handle.join().expect("Output thread panicked");
-    }
+    // Wait for output thread to finish writing all results
+    output_thread.join().expect("Output thread panicked");
 
     if let Some(stop) = perf_stop.as_ref() {
         stop.store(true, Ordering::Relaxed);
