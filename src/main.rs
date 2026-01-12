@@ -805,7 +805,7 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 // Thread-local SASSY searcher to avoid repeated allocation
 // Using Iupac profile for native N handling (faster than Dna + N->A conversion)
 thread_local! {
-    static SEARCHER: RefCell<Searcher<Iupac>> = RefCell::new(Searcher::new(false, None, Default::default()));
+    static SEARCHER: RefCell<Searcher<Iupac>> = RefCell::new(Searcher::new(false, None));
 }
 
 fn scan_contig_sassy(
