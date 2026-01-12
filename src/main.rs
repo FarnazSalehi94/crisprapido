@@ -1,6 +1,6 @@
 use bio::io::fasta;
 use clap::Parser;
-use crossbeam_channel::unbounded;
+use crossbeam_channel::bounded;
 use flate2::read::MultiGzDecoder;
 use rayon::prelude::*;
 use sassy::profiles::Iupac;
@@ -1171,8 +1171,8 @@ fn main() {
 
     eprintln!("Loaded {} contig(s)", contigs.len());
 
-    // Create channel for sending hits from workers to output thread
-    let (tx, rx) = unbounded::<OutputHit>();
+    // Create bounded channel for sending hits from workers to output thread
+    let (tx, rx) = bounded::<OutputHit>(args.channel_depth);
     let perf_for_writer = perf_counters.clone();
 
     // Spawn single output consumer thread with buffered output
