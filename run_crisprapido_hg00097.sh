@@ -10,7 +10,7 @@ REFERENCE="/lizardfs/old/salehi/crispr2/HG00097/HG00097.fa"
 GUIDES="/lizardfs/old/salehi/crispr2/crispr-progress/ref-only/geckov2_gRNAs.txt"
 OUTPUT="/lizardfs/old/salehi/crispr2/crispr-progress/crisprapido-pangenome/HG00097/HG00097_results.txt"
 THREADS=48
-THREAD_MULTIPLIER=2.5
+THREAD_MULTIPLIER=3.0
 CHANNEL_DEPTH=200000
 
 TMPDIR="/tmp/crisprapido_${SLURM_JOB_ID:-$$}"

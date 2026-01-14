@@ -782,7 +782,7 @@ struct Args {
     /// Multiply base thread count to oversubscribe CPU usage
     #[arg(
         long = "thread-multiplier",
-        default_value_t = 2.0f32,
+        default_value_t = 2.5f32,
         value_parser = clap::value_parser!(f32),
         value_name = "FACTOR"
     )]
