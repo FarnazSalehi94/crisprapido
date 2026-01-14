@@ -56,7 +56,9 @@ cargo install --git https://github.com/FarnazSalehi94/crisprapido.git
 - `-b, --max-bulges <NUM>`: Maximum number of bulges allowed (default: 1)
 - `-z, --max-bulge-size <NUM>`: Maximum size of each bulge in bp (default: 2)
 - `-w, --window-size <NUM>`: Size of sequence window to scan (default: 4x guide length)
-- `-t, --threads <NUM>`: Number of threads to use (default: number of logical CPUs)
+- `-t, --threads <NUM>`: Base number of worker threads (default: logical CPUs)
+- `--thread-multiplier <FACTOR>`: Multiply base worker count (default: 1.0)
+- `--allow-oversubscribe`: Allow Rayon to oversubscribe threads (power users)
 - `--no-filter`: Disable all filtering (report every alignment)
 
 ## Output Format

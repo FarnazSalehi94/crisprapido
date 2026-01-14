@@ -208,7 +208,6 @@ struct Hit {
     target_seq: Vec<u8>,    // Add target sequence for CFD calculation
 }
 
-// Structure for passing output data through the channel
 #[derive(Clone)]
 struct OutputHit {
     guide_idx: usize,
@@ -780,6 +779,15 @@ struct Args {
     #[arg(short = 't', long)]
     threads: Option<usize>,
 
+    /// Multiply base thread count to oversubscribe CPU usage
+    #[arg(
+        long = "thread-multiplier",
+        default_value_t = 1.0f32,
+        value_parser = clap::value_parser!(f32),
+        value_name = "FACTOR"
+    )]
+    thread_multiplier: f32,
+
     /// Disable all filtering (report every alignment)
     #[arg(long)]
     no_filter: bool,
@@ -791,6 +799,10 @@ struct Args {
     /// Maximum number of hits buffered between workers and writer
     #[arg(long = "channel-depth", default_value = "16384")]
     channel_depth: usize,
+
+    /// Allow oversubscribed worker threads (may improve CPU usage)
+    #[arg(long = "allow-oversubscribe", default_value_t = false)]
+    allow_oversubscribe: bool,
 }
 
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
@@ -1141,13 +1153,33 @@ fn main() {
 
     eprintln!("Loaded {} guide(s)", guides.len());
 
-    // Set thread pool size if specified
-    if let Some(n) = args.threads {
-        rayon::ThreadPoolBuilder::new()
-            .num_threads(n)
-            .build_global()
-            .expect("Failed to initialize thread pool");
+    // Determine desired worker threads
+    let logical_cpus = num_cpus::get();
+    let base_threads = args.threads.unwrap_or(logical_cpus);
+    let scaled_threads = (base_threads as f32 * args.thread_multiplier)
+        .ceil()
+        .max(1.0) as usize;
+
+    let max_threads = if args.allow_oversubscribe {
+        logical_cpus * 4
+    } else {
+        logical_cpus
+    };
+    let limited_threads = scaled_threads.min(max_threads.max(1));
+
+    // Configure Rayon thread pool
+    let mut builder = rayon::ThreadPoolBuilder::new().num_threads(limited_threads);
+    if args.allow_oversubscribe {
+        builder = builder.stack_size(4 * 1024 * 1024);
     }
+    builder
+        .build_global()
+        .expect("Failed to initialize thread pool");
+
+    eprintln!(
+        "Using {} Rayon worker threads (logical CPUs: {}, multiplier: {:.2})",
+        limited_threads, logical_cpus, args.thread_multiplier
+    );
 
     // Load all reference sequences into memory (shared, immutable)
     let file = File::open(&args.reference).expect("Failed to open reference file");
@@ -1187,7 +1219,12 @@ fn main() {
             perf_for_writer,
         );
         for hit in rx {
-            hit.write_output(&mut writer, &guides_for_writer, &contigs_for_writer, &pam_for_writer);
+            hit.write_output(
+                &mut writer,
+                &guides_for_writer,
+                &contigs_for_writer,
+                &pam_for_writer,
+            );
             if let Some(perf) = &writer.perf {
                 perf.record_hit_written();
             }
@@ -1275,6 +1312,8 @@ fn main() {
                     .expect("Failed to send hit to output thread");
             }
         }
+
+        drop(target_seq_buf);
 
         let rev_matches = scan_contig_sassy(
             rev_guide,
