@@ -1,10 +1,10 @@
 //! Benchmark comparing Dna vs Iupac profile performance
 //! Run with: cargo bench --bench dna_vs_iupac
 
-use std::time::Instant;
-use rand::{SeedableRng, RngCore, rngs::SmallRng};
-use sassy::Searcher;
+use rand::{rngs::SmallRng, RngCore, SeedableRng};
 use sassy::profiles::{Dna, Iupac};
+use sassy::Searcher;
+use std::time::Instant;
 
 fn generate_random_seq_with_ns(rng: &mut SmallRng, length: usize, n_frequency: f64) -> Vec<u8> {
     let bases = b"ACGT";
@@ -36,7 +36,11 @@ fn main() {
 
     let n_count = target_with_ns.iter().filter(|&&b| b == b'N').count();
     println!("Sequence length: {} bp", seq_len);
-    println!("N count: {} ({:.2}%)", n_count, 100.0 * n_count as f64 / seq_len as f64);
+    println!(
+        "N count: {} ({:.2}%)",
+        n_count,
+        100.0 * n_count as f64 / seq_len as f64
+    );
 
     // Generate guide (no Ns)
     let guide = b"ATCGATCGATCGATCGATCG"; // 20bp guide
@@ -44,10 +48,13 @@ fn main() {
     let max_errors = 4;
     let iterations = 10;
 
-    println!("\nBenchmarking {} iterations with max_errors={}...\n", iterations, max_errors);
+    println!(
+        "\nBenchmarking {} iterations with max_errors={}...\n",
+        iterations, max_errors
+    );
 
     // Benchmark Dna profile (requires N->A conversion)
-    let mut dna_searcher: Searcher<Dna> = Searcher::new(false, None);
+    let mut dna_searcher: Searcher<Dna> = Searcher::new(false, None, Default::default());
     let start = Instant::now();
     let mut dna_matches = 0;
     for _ in 0..iterations {
@@ -61,7 +68,7 @@ fn main() {
     println!("  Matches found: {}", dna_matches);
 
     // Benchmark Iupac profile (native N support)
-    let mut iupac_searcher: Searcher<Iupac> = Searcher::new(false, None);
+    let mut iupac_searcher: Searcher<Iupac> = Searcher::new(false, None, Default::default());
     let start = Instant::now();
     let mut iupac_matches = 0;
     for _ in 0..iterations {
