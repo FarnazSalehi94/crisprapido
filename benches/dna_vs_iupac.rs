@@ -54,7 +54,7 @@ fn main() {
     );
 
     // Benchmark Dna profile (requires N->A conversion)
-    let mut dna_searcher: Searcher<Dna> = Searcher::new(false, None);
+    let mut dna_searcher: Searcher<Dna> = Searcher::new_fwd();
     let start = Instant::now();
     let mut dna_matches = 0;
     for _ in 0..iterations {
@@ -68,7 +68,7 @@ fn main() {
     println!("  Matches found: {}", dna_matches);
 
     // Benchmark Iupac profile (native N support)
-    let mut iupac_searcher: Searcher<Iupac> = Searcher::new(false, None);
+    let mut iupac_searcher: Searcher<Iupac> = Searcher::new_fwd();
     let start = Instant::now();
     let mut iupac_matches = 0;
     for _ in 0..iterations {
