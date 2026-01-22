@@ -61,18 +61,17 @@ fn test_pam_effects() {
 
     // Test different PAM sequences (expected values from Python reference)
     let pams = vec![
-        ("GG", 1.0),                   // Canonical PAM - highest score
-        ("AG", 0.25925925899999996),   // Non-canonical but functional
-        ("TG", 0.038961038999999996),  // Non-canonical
-        ("CG", 0.107142857),           // Non-canonical
-        ("AT", 0.0),                   // Non-functional
-        ("NGG", 1.0),                  // 3nt PAM should collapse to GG
-        ("NAG", 0.25925925899999996),  // 3nt variant matching AG penalty
+        ("GG", 1.0),                  // Canonical PAM - highest score
+        ("AG", 0.25925925899999996),  // Non-canonical but functional
+        ("TG", 0.038961038999999996), // Non-canonical
+        ("CG", 0.107142857),          // Non-canonical
+        ("AT", 0.0),                  // Non-functional
+        ("NGG", 1.0),                 // 3nt PAM should collapse to GG
+        ("NAG", 0.25925925899999996), // 3nt variant matching AG penalty
     ];
 
     for (pam, expected_score) in pams {
-        let score = cfd_score::calculate_cfd(spacer, spacer, pam)
-            .expect("CFD calculation failed");
+        let score = cfd_score::calculate_cfd(spacer, spacer, pam).expect("CFD calculation failed");
 
         // Allow some floating point tolerance
         let tolerance = 1e-6;
@@ -95,7 +94,10 @@ fn test_terminal_ns_are_neutral() {
     let target = "NNNNNNNNNNNNNNNNNNGG";
 
     let score = cfd_score::calculate_cfd(spacer, target, "GG").unwrap();
-    assert_eq!(score, 1.0, "Ambiguous Ns at distal end should not penalize score");
+    assert_eq!(
+        score, 1.0,
+        "Ambiguous Ns at distal end should not penalize score"
+    );
 }
 
 /// Test CIGAR-based calculation matches direct calculation
