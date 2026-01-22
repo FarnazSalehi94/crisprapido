@@ -1,15 +1,18 @@
 use bio::io::fasta;
 use clap::Parser;
-use crossbeam_channel::unbounded;
+use crossbeam_channel::{bounded, unbounded, Sender};
 use flate2::read::MultiGzDecoder;
-use rayon::prelude::*;
+use num_cpus;
 use sassy::profiles::Iupac;
 use sassy::Searcher;
 use std::cell::RefCell;
 use std::fs::File;
 use std::io::{BufRead, BufReader, BufWriter, Write};
 use std::path::PathBuf;
-use std::sync::Arc;
+use std::sync::{
+    atomic::{AtomicUsize, Ordering},
+    Arc,
+};
 use std::thread;
 
 mod cfd_score;
@@ -40,11 +43,10 @@ struct Hit {
     max_mismatches: u32,
     max_bulges: u32,
     max_bulge_size: u32,
-    cfd_score: Option<f64>, // Add CFD score field
-    target_seq: Vec<u8>,    // Add target sequence for CFD calculation
+    cfd_score: Option<f64>,
+    target_seq: Vec<u8>,
 }
 
-// Structure for passing output data through the channel
 #[derive(Clone)]
 struct OutputHit {
     ref_id: String,
@@ -60,6 +62,17 @@ struct OutputHit {
     max_bulge_size: u32,
     target_seq: Vec<u8>,
     pam: String,
+}
+
+#[derive(Clone)]
+struct GuideJob {
+    forward: Vec<u8>,
+    reverse: Vec<u8>,
+}
+
+enum GuideSource {
+    Inline(Vec<Vec<u8>>),
+    File(PathBuf),
 }
 
 impl OutputHit {
@@ -149,9 +162,9 @@ fn report_hit(
     writer: &mut impl Write,
     ref_id: &str,
     pos: usize,
-    _len: usize,
+    guide_len: usize,
     strand: char,
-    _score: i32,
+    score: i32,
     cigar: &str,
     guide: &[u8],
     target_len: usize,
@@ -161,131 +174,45 @@ fn report_hit(
     target_seq: &[u8],
     pam: &str,
 ) {
-    // Parse CIGAR to calculate positions and statistics
-    let mut mismatches = 0;
-    let mut gaps = 0;
-    let mut max_gap_size = 0;
-    let mut matches = 0;
+    let (matches, mismatches, gaps, max_gap_size) = parse_cigar_stats(cigar);
 
-    // Handle empty CIGAR (fallback to perfect match)
     let effective_cigar = if cigar.is_empty() {
-        format!("{}=", guide.len())
+        format!("{}=", guide_len)
     } else {
         cigar.to_string()
     };
 
-    // Parse CIGAR string to count operations
-    let mut chars = effective_cigar.chars().peekable();
-    while let Some(&ch) = chars.peek() {
-        if ch.is_ascii_digit() {
-            let mut num_str = String::new();
-            while let Some(&next_ch) = chars.peek() {
-                if next_ch.is_ascii_digit() {
-                    num_str.push(chars.next().unwrap());
-                } else {
-                    break;
-                }
-            }
+    let guide_window_len = guide_len.min(guide.len());
+    let target_window_len = guide_len.min(target_seq.len());
 
-            if let Some(op) = chars.next() {
-                if let Ok(count) = num_str.parse::<usize>() {
-                    match op {
-                        '=' | 'M' => {
-                            matches += count;
-                        }
-                        'X' => {
-                            mismatches += count;
-                        }
-                        'I' | 'D' => {
-                            gaps += 1;
-                            max_gap_size = max_gap_size.max(count);
-                        }
-                        _ => {}
-                    }
-                }
-            }
-        } else {
-            let op = chars.next().unwrap();
-            match op {
-                '=' | 'M' => matches += 1,
-                'X' => mismatches += 1,
-                'I' | 'D' => {
-                    gaps += 1;
-                    max_gap_size = max_gap_size.max(1);
-                }
-                _ => {}
-            }
-        }
-    }
+    let guide_window = &guide[..guide_window_len];
+    let target_window = &target_seq[..target_window_len];
 
-    // Calculate query positions
-    let query_start = 0;
-    let query_end = guide.len();
-    let query_length = guide.len();
+    let cfd_score =
+        cfd_score::get_cfd_score(guide_window, target_window, &effective_cigar, pam).unwrap_or(0.0);
 
-    // Calculate reference positions
-    let ref_start = pos;
-    let ref_end = pos + guide.len();
+    let guide_str = String::from_utf8_lossy(guide_window);
+    let target_str = String::from_utf8_lossy(target_window);
 
-    // Calculate adjusted score
-    let adjusted_score = mismatches * 3 + gaps * 5;
-
-    // Calculate block length
-    let block_len = matches + mismatches + gaps;
-
-    // Enable CFD calculation
-    let cfd_score = if !target_seq.is_empty() && target_seq.len() >= guide.len() {
-        let target_for_cfd = if target_seq.len() >= 20 {
-            &target_seq[0..20]
-        } else {
-            target_seq
-        };
-
-        let guide_for_cfd = if guide.len() >= 20 {
-            &guide[0..20]
-        } else {
-            guide
-        };
-
-        cfd_score::get_cfd_score(guide_for_cfd, target_for_cfd, &effective_cigar, pam)
-    } else {
-        None
-    };
-
-    let cfd_tag = match cfd_score {
-        Some(score) => format!("\tcf:f:{:.4}", score),
-        None => "\tcf:f:0.0000".to_string(),
-    };
-
-    // Convert sequences to strings for display
-    let guide_str = String::from_utf8_lossy(guide);
-    let target_str = String::from_utf8_lossy(target_seq);
-
-    // Create sequence alignment display
-    let seq_tag = format!("\tqs:Z:{}\tts:Z:{}", guide_str, target_str);
-
-    // Convert CIGAR to minimap2 format (remove debug print)
-    let minimap2_cigar = effective_cigar.clone();
-
-    // Output in PAF format with sequences
-    let _ = writeln!(writer, "Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}{}",
-        query_length,      // Query length (total guide length)
-        query_start,       // Query start (always 0 for local alignment)
-        query_end,         // Query end (bases consumed from query)
-        strand,            // Strand (+/-)
-        ref_id,            // Target sequence name
-        target_len,        // Full target sequence length
-        ref_start,         // Target start position
-        ref_end,           // Target end position
-        matches,           // Number of matches
-        block_len,         // Total alignment block length
-        adjusted_score,    // AS:i alignment score
-        mismatches,        // NM:i number of mismatches
-        gaps,              // NG:i number of gaps
-        max_gap_size,      // BS:i biggest gap size
-        minimap2_cigar,    // cg:Z CIGAR string
-        cfd_tag,           // cf:f CFD score
-        seq_tag            // qs:Z and ts:Z sequence tags
+    let _ = writeln!(
+        writer,
+        "Guide\t{}\t0\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}\tcf:f:{:.4}\tqs:Z:{}\tts:Z:{}",
+        guide_len,
+        guide_window_len,
+        strand,
+        ref_id,
+        target_len,
+        pos,
+        pos + guide_window_len,
+        matches,
+        score,
+        mismatches,
+        gaps,
+        max_gap_size,
+        effective_cigar,
+        cfd_score,
+        guide_str,
+        target_str
     );
 }
 
@@ -562,7 +489,7 @@ mod tests {
     }
 }
 
-#[derive(Parser)]
+#[derive(Parser, Debug, Clone)]
 #[command(author, version, about = "CRISPR guide RNA off-target scanner")]
 struct Args {
     /// Input reference FASTA file (-r)
@@ -631,6 +558,70 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
 // Using Iupac profile for native N handling (faster than Dna + N->A conversion)
 thread_local! {
     static SEARCHER: RefCell<Searcher<Iupac>> = RefCell::new(Searcher::new_fwd());
+}
+
+fn process_single_guide(
+    args: &Arc<Args>,
+    contigs: &Arc<Vec<ContigData>>,
+    tx_hits: &Sender<OutputHit>,
+    job: GuideJob,
+) {
+    for contig in contigs.iter() {
+        let seq = contig.seq();
+        if seq.len() < job.forward.len() {
+            continue;
+        }
+
+        for (guide, strand) in [(&job.forward, '+'), (&job.reverse, '-')] {
+            let matches = scan_contig_sassy(
+                guide,
+                seq,
+                args.max_mismatches,
+                args.max_bulges,
+                args.max_bulge_size,
+                args.min_match_fraction,
+                args.no_filter,
+                args.include_ambiguous,
+            );
+
+            for (score, cigar, _mm, _gaps, _max_gap, pos) in matches {
+                let guide_len = guide.len();
+                let start = pos;
+                let end = (pos + guide_len).min(seq.len());
+                let mut target_seq = seq[start..end].to_vec();
+
+                if strand == '-' {
+                    target_seq = reverse_complement(&target_seq);
+                }
+
+                if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
+                    continue;
+                }
+
+                let output_hit = OutputHit {
+                    ref_id: contig.id().to_string(),
+                    pos,
+                    guide_len,
+                    strand,
+                    score,
+                    cigar: if strand == '-' {
+                        reverse_cigar(&cigar)
+                    } else {
+                        cigar.clone()
+                    },
+                    guide: guide.clone(),
+                    target_len: seq.len(),
+                    max_mismatches: args.max_mismatches,
+                    max_bulges: args.max_bulges,
+                    max_bulge_size: args.max_bulge_size,
+                    target_seq,
+                    pam: args.pam.clone(),
+                };
+
+                tx_hits.send(output_hit).expect("Failed to send hit");
+            }
+        }
+    }
 }
 
 fn scan_contig_sassy(
@@ -709,8 +700,8 @@ fn normalize_cigar(cigar: &str) -> String {
     let mut chars = cigar.chars().peekable();
 
     // First, parse the CIGAR into (count, op) pairs
-    while let Some(&ch) = chars.peek() {
-        let count = if ch.is_ascii_digit() {
+    while let Some(&_ch) = chars.peek() {
+        let count = if _ch.is_ascii_digit() {
             // Has a count, parse it
             let mut num_str = String::new();
             while let Some(&digit_ch) = chars.peek() {
@@ -762,7 +753,7 @@ fn reverse_cigar(cigar: &str) -> String {
 
     let mut ops: Vec<(String, char)> = Vec::new();
     let mut chars = cigar.chars().peekable();
-    while let Some(&ch) = chars.peek() {
+    while let Some(&_ch) = chars.peek() {
         let mut num_str = String::new();
         while let Some(&digit_ch) = chars.peek() {
             if digit_ch.is_ascii_digit() {
@@ -826,11 +817,9 @@ fn parse_cigar_stats(cigar: &str) -> (usize, u32, u32, u32) {
     let mut max_gap_size = 0;
     let mut current_gap_size = 0;
 
-    // Parse CIGAR string with proper number handling
     let mut chars = cigar.chars().peekable();
     while let Some(&ch) = chars.peek() {
         if ch.is_ascii_digit() {
-            // Extract the count
             let mut num_str = String::new();
             while let Some(&digit_ch) = chars.peek() {
                 if digit_ch.is_ascii_digit() {
@@ -840,7 +829,6 @@ fn parse_cigar_stats(cigar: &str) -> (usize, u32, u32, u32) {
                 }
             }
 
-            // Get the operation
             if let Some(op) = chars.next() {
                 if let Ok(count) = num_str.parse::<u32>() {
                     match op {
@@ -890,26 +878,6 @@ fn parse_cigar_stats(cigar: &str) -> (usize, u32, u32, u32) {
     (matches_count, mismatches, gaps, max_gap_size)
 }
 
-fn read_guides_from_file(path: &PathBuf) -> std::io::Result<Vec<Vec<u8>>> {
-    let file = File::open(path)?;
-    let reader: Box<dyn BufRead> = if path.extension().map_or(false, |ext| ext == "gz") {
-        Box::new(BufReader::new(MultiGzDecoder::new(file)))
-    } else {
-        Box::new(BufReader::new(file))
-    };
-
-    let mut guides = Vec::new();
-    for line in reader.lines() {
-        let line = line?;
-        let trimmed = line.trim();
-        if !trimmed.is_empty() && !trimmed.starts_with('#') {
-            guides.push(trimmed.as_bytes().to_vec());
-        }
-    }
-
-    Ok(guides)
-}
-
 fn main() {
     let args = Args::parse();
 
@@ -933,33 +901,6 @@ fn main() {
         }
     }
 
-    // Load guides from either -g or --guides-file
-    let guides: Vec<Vec<u8>> = if let Some(ref guide_str) = args.guide {
-        vec![guide_str.as_bytes().to_vec()]
-    } else if let Some(ref guides_path) = args.guides_file {
-        read_guides_from_file(guides_path).expect("Failed to read guides file")
-    } else {
-        eprintln!("Error: Must provide either --guide (-g) or --guides-file");
-        std::process::exit(1);
-    };
-
-    if guides.is_empty() {
-        eprintln!("Error: No guides provided");
-        std::process::exit(1);
-    }
-
-    let guide_rcs: Vec<Vec<u8>> = guides.iter().map(|g| reverse_complement(g)).collect();
-
-    eprintln!("Loaded {} guide(s)", guides.len());
-
-    // Set thread pool size if specified
-    if let Some(n) = args.threads {
-        rayon::ThreadPoolBuilder::new()
-            .num_threads(n)
-            .build_global()
-            .expect("Failed to initialize thread pool");
-    }
-
     // Load all reference sequences into memory (shared, immutable)
     let file = File::open(&args.reference).expect("Failed to open reference file");
     let reader: Box<dyn BufRead> = if args.reference.extension().map_or(false, |ext| ext == "gz") {
@@ -981,137 +922,98 @@ fn main() {
 
     eprintln!("Loaded {} contig(s)", contigs.len());
 
-    // Create channel for sending hits from workers to output thread
+    let guide_queue_size = num_cpus::get().max(2);
+    let (guide_tx, guide_rx) = bounded::<GuideJob>(guide_queue_size);
+
+    let total_guides = Arc::new(AtomicUsize::new(0));
+    let guide_counter = total_guides.clone();
+
+    let guide_source = if let Some(ref guide_str) = args.guide {
+        GuideSource::Inline(vec![guide_str.as_bytes().to_vec()])
+    } else if let Some(ref guides_file) = args.guides_file {
+        GuideSource::File(guides_file.clone())
+    } else {
+        eprintln!("Error: Must provide either --guide (-g) or --guides-file");
+        std::process::exit(1);
+    };
+
+    let consumer_contigs = contigs.clone();
+    let consumer_args = Arc::new(args.clone());
     let (tx, rx) = unbounded::<OutputHit>();
 
-    // Spawn single output consumer thread with buffered output
+    // Spawn output thread first
     let output_thread = thread::spawn(move || {
         let stdout = std::io::stdout();
-        let mut writer = BufWriter::with_capacity(256 * 1024, stdout.lock()); // 256KB buffer
+        let mut writer = BufWriter::with_capacity(256 * 1024, stdout.lock());
         for hit in rx {
             hit.write_output(&mut writer);
         }
         writer.flush().expect("Failed to flush output");
     });
 
-    // Create flat list of all (guide_idx, contig_idx) task pairs
-    // This eliminates nested parallelism and barriers
-    let tasks: Vec<(usize, usize)> = (0..guides.len())
-        .flat_map(|g_idx| (0..contigs.len()).map(move |c_idx| (g_idx, c_idx)))
-        .collect();
+    // Producer: feed guides into bounded queue
+    let producer_handle = thread::spawn(move || {
+        let enqueue = |guide: Vec<u8>| {
+            let reverse = reverse_complement(&guide);
+            guide_counter.fetch_add(1, Ordering::Relaxed);
+            guide_tx
+                .send(GuideJob {
+                    forward: guide,
+                    reverse,
+                })
+                .ok();
+        };
 
-    eprintln!("Processing {} tasks (guides × contigs)", tasks.len());
-
-    // Process all tasks in parallel - flat, no barriers!
-    tasks.par_iter().for_each(|(guide_idx, contig_idx)| {
-        let guide = &guides[*guide_idx];
-        let rev_guide = &guide_rcs[*guide_idx];
-        let contig = &contigs[*contig_idx];
-        let guide_len = guide.len();
-
-        let seq = contig.seq();
-        let seq_len = seq.len();
-        let record_id = contig.id();
-
-        // Skip contigs shorter than guide
-        if seq_len < guide_len {
-            return;
-        }
-
-        // Scan entire contig with SASSY - returns ALL matches
-        let matches = scan_contig_sassy(
-            guide,
-            seq,
-            args.max_mismatches,
-            args.max_bulges,
-            args.max_bulge_size,
-            args.min_match_fraction,
-            args.no_filter,
-            args.include_ambiguous,
-        );
-
-        // Send all hits to output thread
-        for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in matches {
-            // Extract target sequence slice
-            let target_seq = {
-                let start = pos;
-                let end = (pos + guide_len).min(seq_len);
-                seq[start..end].to_vec()
-            };
-
-            if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
-                continue;
+        match guide_source {
+            GuideSource::Inline(list) => {
+                for guide in list {
+                    enqueue(guide);
+                }
             }
+            GuideSource::File(path) => {
+                let file = File::open(&path).expect("Failed to open guides file");
+                let reader: Box<dyn BufRead> = if path.extension().map_or(false, |ext| ext == "gz")
+                {
+                    Box::new(BufReader::new(MultiGzDecoder::new(file)))
+                } else {
+                    Box::new(BufReader::new(file))
+                };
 
-            let output_hit = OutputHit {
-                ref_id: record_id.to_string(),
-                pos,
-                guide_len,
-                strand: '+',
-                score,
-                cigar,
-                guide: guide.clone(),
-                target_len: seq_len,
-                max_mismatches: args.max_mismatches,
-                max_bulges: args.max_bulges,
-                max_bulge_size: args.max_bulge_size,
-                target_seq,
-                pam: args.pam.clone(),
-            };
-
-            tx.send(output_hit)
-                .expect("Failed to send hit to output thread");
-        }
-
-        let rev_matches = scan_contig_sassy(
-            rev_guide,
-            seq,
-            args.max_mismatches,
-            args.max_bulges,
-            args.max_bulge_size,
-            args.min_match_fraction,
-            args.no_filter,
-            args.include_ambiguous,
-        );
-
-        for (score, cigar, _mismatches, _gaps, _max_gap_size, pos) in rev_matches {
-            let target_seq = {
-                let start = pos;
-                let end = (pos + guide_len).min(seq_len);
-                let slice = &seq[start..end];
-                reverse_complement(slice)
-            };
-
-            if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
-                continue;
+                for line in reader.lines().filter_map(Result::ok) {
+                    let trimmed = line.trim();
+                    if trimmed.is_empty() || trimmed.starts_with('#') {
+                        continue;
+                    }
+                    enqueue(trimmed.as_bytes().to_vec());
+                }
             }
-
-            let adjusted_cigar = reverse_cigar(&cigar);
-
-            let output_hit = OutputHit {
-                ref_id: record_id.to_string(),
-                pos,
-                guide_len,
-                strand: '-',
-                score,
-                cigar: adjusted_cigar,
-                guide: guide.clone(),
-                target_len: seq_len,
-                max_mismatches: args.max_mismatches,
-                max_bulges: args.max_bulges,
-                max_bulge_size: args.max_bulge_size,
-                target_seq,
-                pam: args.pam.clone(),
-            };
-
-            tx.send(output_hit)
-                .expect("Failed to send reverse-strand hit");
         }
+        // close the channel to signal completion
+        drop(guide_tx);
     });
 
-    // Drop the original sender to signal completion
+    let worker_count = args.threads.unwrap_or_else(num_cpus::get);
+    let mut workers = Vec::with_capacity(worker_count);
+
+    for _ in 0..worker_count {
+        let rx_guides = guide_rx.clone();
+        let contigs = consumer_contigs.clone();
+        let tx_hits = tx.clone();
+        let args = Arc::clone(&consumer_args);
+
+        workers.push(thread::spawn(move || {
+            for job in rx_guides {
+                process_single_guide(&args, &contigs, &tx_hits, job);
+            }
+        }));
+    }
+
     drop(tx);
 
-    // Wait for output thread to finish writing all results
+    for worker in workers {
+        let _ = worker.join();
+    }
+
+    let _ = producer_handle.join();
     output_thread.join().expect("Output thread panicked");
 }

@@ -88,7 +88,8 @@ fn test_cfd_against_python_reference() {
                 failed += 1;
                 failed_cases.push(format!(
                     "Case {}: {} - Unexpected test case structure",
-                    i + 1, tc.description
+                    i + 1,
+                    tc.description
                 ));
             }
         }
