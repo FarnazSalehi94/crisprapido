@@ -188,8 +188,16 @@ fn report_hit(
     let guide_window = &guide[..guide_window_len];
     let target_window = &target_seq[..target_window_len];
 
+    let spacer_for_cfd = if strand == '-' {
+        reverse_complement(guide_window)
+    } else {
+        guide_window.to_vec()
+    };
+    let protospacer_for_cfd = target_window.to_vec();
+
     let cfd_score =
-        cfd_score::get_cfd_score(guide_window, target_window, &effective_cigar, pam).unwrap_or(0.0);
+        cfd_score::get_cfd_score(&spacer_for_cfd, &protospacer_for_cfd, &effective_cigar, pam)
+            .unwrap_or(0.0);
 
     let guide_str = String::from_utf8_lossy(guide_window);
     let target_str = String::from_utf8_lossy(target_window);
@@ -486,6 +494,62 @@ mod tests {
             filtered.is_empty(),
             "Ambiguous guide bases should be ignored unless requested"
         );
+    }
+
+    #[test]
+    fn test_cfd_scores_are_strand_invariant() {
+        cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
+            .expect("Failed to initialize scoring matrices");
+
+        let guide = b"GAAACAGTCGATTTTATCAC".to_vec();
+        let pam = "GG";
+
+        let plus_line = capture_report_line('+', guide.as_slice(), guide.as_slice(), pam);
+        let plus_cf = extract_cf_score(&plus_line);
+
+        let guide_rc = reverse_complement(guide.as_slice());
+        let minus_line = capture_report_line('-', guide_rc.as_slice(), guide.as_slice(), pam);
+        let minus_cf = extract_cf_score(&minus_line);
+
+        assert!(
+            (plus_cf - minus_cf).abs() < 1e-9,
+            "CFD scores should match on both strands: plus={}, minus={}",
+            plus_cf,
+            minus_cf
+        );
+        assert!(
+            (plus_cf - 1.0).abs() < 1e-9,
+            "Perfect match should stay at 1.0, got {}",
+            plus_cf
+        );
+    }
+
+    fn capture_report_line(strand: char, guide: &[u8], target: &[u8], pam: &str) -> String {
+        let mut buffer = Vec::new();
+        report_hit(
+            &mut buffer,
+            "chr_demo",
+            0,
+            guide.len(),
+            strand,
+            0,
+            "20=",
+            guide,
+            target.len(),
+            0,
+            0,
+            0,
+            target,
+            pam,
+        );
+        String::from_utf8(buffer).expect("report_hit output should be valid UTF-8")
+    }
+
+    fn extract_cf_score(line: &str) -> f64 {
+        line.split('\t')
+            .find_map(|field| field.strip_prefix("cf:f:"))
+            .and_then(|value| value.parse::<f64>().ok())
+            .expect("cf:f field missing or unparsable")
     }
 }
 
