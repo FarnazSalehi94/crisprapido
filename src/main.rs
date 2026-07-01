@@ -9,6 +9,7 @@ use std::cell::RefCell;
 use std::fs::File;
 use std::io::{BufRead, BufReader, BufWriter, Write};
 use std::path::PathBuf;
+use std::process::Command;
 use std::sync::{
     atomic::{AtomicUsize, Ordering},
     Arc,
@@ -572,17 +573,22 @@ struct Args {
     #[arg(short = 'p', long, default_value = "GG")]
     pam: String,
 
-    /// Maximum number of mismatches allowed
-    #[arg(short, long, default_value = "4")]
+    /// Maximum number of mismatches allowed (0 = perfect match only, up to 3)
+    #[arg(short, long, default_value = "3", value_parser = clap::value_parser!(u32).range(0..=3))]
     max_mismatches: u32,
 
-    /// Maximum number of bulges allowed
+    /// Maximum number of bulges (indel events) allowed — only used by sassy backend
     #[arg(short = 'b', long, default_value = "1")]
     max_bulges: u32,
 
-    /// Maximum size of each bulge in bp
+    /// Maximum size of each bulge in bp — only used by sassy backend
     #[arg(short = 'z', long, default_value = "2")]
     max_bulge_size: u32,
+
+    /// Allow insertions and deletions (indels/bulges) in matches.
+    /// When absent, only SNP-style mismatches are reported (bulges filtered out).
+    #[arg(long)]
+    allow_indels: bool,
 
     /// Minimum fraction of guide that must match (0.0-1.0)
     #[arg(short = 'f', long, default_value = "0.75")]
@@ -607,6 +613,16 @@ struct Args {
     /// Include hits that overlap ambiguous bases (N/R/Y etc.)
     #[arg(long)]
     include_ambiguous: bool,
+
+    /// Use ropebwt3 as the search backend instead of sassy.
+    /// Builds an FM-index (.fmd) from the reference once at startup,
+    /// then queries it for each guide RNA. Faster for large genomes.
+    #[arg(long)]
+    use_ropebwt3: bool,
+
+    /// Path to the ropebwt3 binary
+    #[arg(long, default_value = "./ropebwt3/ropebwt3")]
+    ropebwt3_bin: PathBuf,
 }
 
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
@@ -629,60 +645,142 @@ fn process_single_guide(
     contigs: &Arc<Vec<ContigData>>,
     tx_hits: &Sender<OutputHit>,
     job: GuideJob,
+    fmd_path: Option<Arc<PathBuf>>,
 ) {
-    for contig in contigs.iter() {
-        let seq = contig.seq();
-        if seq.len() < job.forward.len() {
-            continue;
+    if args.use_ropebwt3 {
+        // ── ropebwt3 backend ──────────────────────────────────────────────
+        // ropebwt3 searches both strands internally (BWT includes reverse complement),
+        // so we only query the forward guide and let ropebwt3 report strand via PAF.
+        let fmd = fmd_path.as_ref().expect("fmd_path must be set when use_ropebwt3=true");
+        let threads = args.threads.unwrap_or_else(num_cpus::get).max(1);
+
+        let hits = query_ropebwt3(
+            &args.ropebwt3_bin,
+            fmd,
+            &job.forward,
+            args.max_mismatches,
+            args.allow_indels,
+            threads,
+        );
+
+        // Build a contig lookup map for fast seq retrieval
+        let contig_map: std::collections::HashMap<&str, &ContigData> =
+            contigs.iter().map(|c| (c.id(), c)).collect();
+
+        for (ref_id, pos, cigar, score) in hits {
+            // Filter indels if not allowed
+            let (_, _, gaps, _) = parse_cigar_stats(&cigar);
+            if !args.allow_indels && gaps > 0 {
+                continue;
+            }
+
+            // Count mismatches and enforce limit
+            let (_, mismatches, _, _) = parse_cigar_stats(&cigar);
+            if mismatches > args.max_mismatches {
+                continue;
+            }
+
+            let contig = match contig_map.get(ref_id.as_str()) {
+                Some(c) => c,
+                None => continue,
+            };
+            let seq = contig.seq();
+            let guide_len = job.forward.len();
+            let end = (pos + guide_len).min(seq.len());
+            if pos >= seq.len() {
+                continue;
+            }
+            let target_seq = seq[pos..end].to_vec();
+
+            if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
+                continue;
+            }
+
+            // ropebwt3 reports strand in PAF but we unify to '+' here (index covers both strands)
+            let strand = '+';
+
+            let output_hit = OutputHit {
+                ref_id: ref_id.clone(),
+                pos,
+                guide_len,
+                strand,
+                score,
+                cigar,
+                guide: job.forward.clone(),
+                target_len: seq.len(),
+                max_mismatches: args.max_mismatches,
+                max_bulges: args.max_bulges,
+                max_bulge_size: args.max_bulge_size,
+                target_seq,
+                pam: args.pam.clone(),
+            };
+
+            tx_hits.send(output_hit).expect("Failed to send hit");
         }
+    } else {
+        // ── sassy backend (original) ──────────────────────────────────────
+        for contig in contigs.iter() {
+            let seq = contig.seq();
+            if seq.len() < job.forward.len() {
+                continue;
+            }
 
-        for (guide, strand) in [(&job.forward, '+'), (&job.reverse, '-')] {
-            let matches = scan_contig_sassy(
-                guide,
-                seq,
-                args.max_mismatches,
-                args.max_bulges,
-                args.max_bulge_size,
-                args.min_match_fraction,
-                args.no_filter,
-                args.include_ambiguous,
-            );
+            for (guide, strand) in [(&job.forward, '+'), (&job.reverse, '-')] {
+                let effective_bulges = if args.allow_indels { args.max_bulges } else { 0 };
+                let effective_bulge_size = if args.allow_indels { args.max_bulge_size } else { 0 };
 
-            for (score, cigar, _mm, _gaps, _max_gap, pos) in matches {
-                let guide_len = guide.len();
-                let start = pos;
-                let end = (pos + guide_len).min(seq.len());
-                let mut target_seq = seq[start..end].to_vec();
+                let matches = scan_contig_sassy(
+                    guide,
+                    seq,
+                    args.max_mismatches,
+                    effective_bulges,
+                    effective_bulge_size,
+                    args.min_match_fraction,
+                    args.no_filter,
+                    args.include_ambiguous,
+                );
 
-                if strand == '-' {
-                    target_seq = reverse_complement(&target_seq);
+                for (score, cigar, _mm, gaps, _max_gap, pos) in matches {
+                    // Enforce --allow-indels at the filter level
+                    if !args.allow_indels && gaps > 0 {
+                        continue;
+                    }
+
+                    let guide_len = guide.len();
+                    let start = pos;
+                    let end = (pos + guide_len).min(seq.len());
+                    let mut target_seq = seq[start..end].to_vec();
+
+                    if strand == '-' {
+                        target_seq = reverse_complement(&target_seq);
+                    }
+
+                    if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
+                        continue;
+                    }
+
+                    let output_hit = OutputHit {
+                        ref_id: contig.id().to_string(),
+                        pos,
+                        guide_len,
+                        strand,
+                        score,
+                        cigar: if strand == '-' {
+                            reverse_cigar(&cigar)
+                        } else {
+                            cigar.clone()
+                        },
+                        guide: guide.clone(),
+                        target_len: seq.len(),
+                        max_mismatches: args.max_mismatches,
+                        max_bulges: args.max_bulges,
+                        max_bulge_size: args.max_bulge_size,
+                        target_seq,
+                        pam: args.pam.clone(),
+                    };
+
+                    tx_hits.send(output_hit).expect("Failed to send hit");
                 }
-
-                if !args.include_ambiguous && target_seq.iter().any(|&b| is_ambiguous_base(b)) {
-                    continue;
-                }
-
-                let output_hit = OutputHit {
-                    ref_id: contig.id().to_string(),
-                    pos,
-                    guide_len,
-                    strand,
-                    score,
-                    cigar: if strand == '-' {
-                        reverse_cigar(&cigar)
-                    } else {
-                        cigar.clone()
-                    },
-                    guide: guide.clone(),
-                    target_len: seq.len(),
-                    max_mismatches: args.max_mismatches,
-                    max_bulges: args.max_bulges,
-                    max_bulge_size: args.max_bulge_size,
-                    target_seq,
-                    pam: args.pam.clone(),
-                };
-
-                tx_hits.send(output_hit).expect("Failed to send hit");
             }
         }
     }
@@ -942,6 +1040,143 @@ fn parse_cigar_stats(cigar: &str) -> (usize, u32, u32, u32) {
     (matches_count, mismatches, gaps, max_gap_size)
 }
 
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ropebwt3 backend
+// ─────────────────────────────────────────────────────────────────────────────
+
+/// Build a ropebwt3 FM-index (.fmd) from the reference FASTA.
+/// Returns the path to the .fmd file.
+/// If the index already exists, skips building (fast re-runs).
+fn build_ropebwt3_index(bin: &PathBuf, reference: &PathBuf) -> PathBuf {
+    let fmd_path = reference.with_extension("fmd");
+
+    if fmd_path.exists() {
+        eprintln!(
+            "ropebwt3: index already exists at {}, skipping build",
+            fmd_path.display()
+        );
+        return fmd_path;
+    }
+
+    eprintln!(
+        "ropebwt3: building FM-index from {} → {}",
+        reference.display(),
+        fmd_path.display()
+    );
+
+    let status = Command::new(bin)
+        .args(["build", "-o"])
+        .arg(&fmd_path)
+        .arg(reference)
+        .status()
+        .expect("Failed to launch ropebwt3 build — check --ropebwt3-bin path");
+
+    if !status.success() {
+        eprintln!("ropebwt3 build failed with exit code: {:?}", status.code());
+        std::process::exit(1);
+    }
+
+    eprintln!("ropebwt3: index built successfully");
+    fmd_path
+}
+
+/// Query the ropebwt3 FM-index for one guide RNA sequence.
+/// Uses `ropebwt3 sw` for inexact matching (mismatches + optional indels).
+/// Returns hits as (ref_id, pos, cigar, score).
+fn query_ropebwt3(
+    bin: &PathBuf,
+    fmd_path: &PathBuf,
+    guide: &[u8],
+    max_mismatches: u32,
+    allow_indels: bool,
+    threads: usize,
+) -> Vec<(String, usize, String, i32)> {
+    // Write the guide to a temp FASTA for ropebwt3 input
+    let tmp_dir = std::env::temp_dir();
+    let tmp_fa = tmp_dir.join(format!(
+        "crisprapido_guide_{}.fa",
+        std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap_or_default()
+            .subsec_nanos()
+    ));
+
+    {
+        let mut f = File::create(&tmp_fa).expect("Failed to create temp guide FASTA");
+        writeln!(f, ">guide").unwrap();
+        writeln!(f, "{}", String::from_utf8_lossy(guide)).unwrap();
+    }
+
+    // ropebwt3 sw: local alignment with affine-gap penalty
+    // -e     : end-to-end mode (full guide must align)
+    // -N<k>  : maximum edit distance (mismatches + gaps)
+    // -t<n>  : threads
+    let max_errors = if allow_indels {
+        max_mismatches
+    } else {
+        max_mismatches // gaps will be filtered post-hoc when allow_indels=false
+    };
+
+    let output = Command::new(bin)
+        .arg("sw")
+        .arg("-e")
+        .arg(format!("-N{}", max_errors))
+        .arg(format!("-t{}", threads))
+        .arg(fmd_path)
+        .arg(&tmp_fa)
+        .output()
+        .expect("Failed to launch ropebwt3 sw");
+
+    let _ = std::fs::remove_file(&tmp_fa);
+
+    if !output.status.success() {
+        eprintln!(
+            "ropebwt3 sw warning: exit code {:?}",
+            output.status.code()
+        );
+        return Vec::new();
+    }
+
+    // Parse PAF output: qname, qlen, qstart, qend, strand, tname, tlen, tstart, tend, matches, block, mapq, [tags]
+    let stdout = String::from_utf8_lossy(&output.stdout);
+    let mut hits = Vec::new();
+
+    for line in stdout.lines() {
+        if line.is_empty() || line.starts_with('#') {
+            continue;
+        }
+        let fields: Vec<&str> = line.split('\t').collect();
+        if fields.len() < 12 {
+            continue;
+        }
+
+        let strand_char = fields[4];
+        let ref_id = fields[5].to_string();
+        let tstart: usize = fields[7].parse().unwrap_or(0);
+        let matches: i32 = fields[9].parse().unwrap_or(0);
+        let block_len: i32 = fields[10].parse().unwrap_or(0);
+        let score = block_len - matches; // edit distance approximation
+
+        // Extract CIGAR from cg:Z: tag if present
+        let cigar = fields
+            .iter()
+            .skip(12)
+            .find_map(|f| f.strip_prefix("cg:Z:"))
+            .map(|s| s.to_string())
+            .unwrap_or_else(|| format!("{}=", guide.len()));
+
+        let cigar = normalize_cigar(&cigar);
+
+        // Flip strand: ropebwt3 indexes both strands; strand '+' in PAF means forward
+        let _strand = if strand_char == "+" { '+' } else { '-' };
+
+        hits.push((ref_id, tstart, cigar, score));
+    }
+
+    hits
+}
+
 fn main() {
     let args = Args::parse();
 
@@ -999,6 +1234,14 @@ fn main() {
     } else {
         eprintln!("Error: Must provide either --guide (-g) or --guides-file");
         std::process::exit(1);
+    };
+
+    // Build ropebwt3 index once at startup if requested
+    let fmd_path: Option<Arc<PathBuf>> = if args.use_ropebwt3 {
+        let fmd = build_ropebwt3_index(&args.ropebwt3_bin, &args.reference);
+        Some(Arc::new(fmd))
+    } else {
+        None
     };
 
     let consumer_contigs = contigs.clone();
@@ -1064,10 +1307,11 @@ fn main() {
         let contigs = consumer_contigs.clone();
         let tx_hits = tx.clone();
         let args = Arc::clone(&consumer_args);
+        let fmd = fmd_path.clone();
 
         workers.push(thread::spawn(move || {
             for job in rx_guides {
-                process_single_guide(&args, &contigs, &tx_hits, job);
+                process_single_guide(&args, &contigs, &tx_hits, job, fmd.clone());
             }
         }));
     }

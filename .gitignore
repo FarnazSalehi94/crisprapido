@@ -13,3 +13,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *~
+target/
+*.fmd
+*.fa.gz
+.guix-stubs/
+.guix/
+ropebwt3/
