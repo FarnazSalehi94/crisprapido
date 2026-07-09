@@ -145,6 +145,22 @@ Enable debug output during development:
 cargo run --features debug
 ```
 
+## Known Issues
+
+### Memory usage explodes with large guide batches
+- **Observed behavior:** jobs that include tens of thousands of guides (e.g., 124 k gRNAs) steadily increase their resident memory (RES) until the scheduler’s OOM killer terminates the process (`Killed`). Running the same setup with only a few thousand guides completes successfully.
+- **Why it happens:** the current implementation materializes every guide and every `(guide, contig)` pair in memory and keeps per-hit data (guide copies, reverse complements, target slices, CIGAR strings) until the entire run finishes. With hundreds of thousands of guides, these vectors consume multiple GB of RAM even before Rayon starts processing.
+- **How to reproduce:**
+  1. Build the release binary: `cargo build --release`.
+  2. Prepare a large guide file (≥100 k sequences) and a genome FASTA.
+  3. Run `./target/release/crisprapido -r <assembly.fa> -gfile <124k_guides.txt> -p GG -t <threads>` and monitor `RES` via `htop`/`ps`. Memory climbs continuously and the job eventually prints `Killed` once the server exhausts RAM.
+- **Workarounds:**
+  - Split the guides file into smaller batches and run CRISPRapido per chunk, concatenating the PAF outputs afterward.
+  - Reduce `--threads` so Rayon keeps fewer worker-local buffers (helps only marginally compared to batching).
+  - Request machines with significantly more RAM if a single monolithic run is required.
+
+A long-term fix requires redesigning the pipeline so guides are streamed to workers (producer/consumer model) and hits are emitted immediately rather than stored globally. Until that refactor lands, plan on batching to avoid OOM kills.
+
 ## License
 See LICENSE file
 
