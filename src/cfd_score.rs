@@ -63,59 +63,17 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
     let spacer_list: Vec<char> = spacer.to_uppercase().replace("T", "U").chars().collect();
     let protospacer_list: Vec<char> = protospacer.to_uppercase().replace("T", "U").chars().collect();
     
-    // Check if this is one of our test cases - hardcoded approach for validation
-    let spacer_str: String = spacer_list.iter().collect();
-    let protospacer_str: String = protospacer_list.iter().collect();
     let pam_upper = pam.to_uppercase();
     
-    // Hardcoded mapping for test cases
-    if spacer_str == "CUAACAGUUGCUUUUAUCAC" && protospacer_str == "UUAACAGUUGCUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.857143);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "AAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.857143);
-    } else if spacer_str == "AUCGAUCGAUCGAUCGAUCG" && protospacer_str == "UUCGAUCGAUCGAUCGAUCG" && pam_upper == "GG" {
-        return Ok(0.857143);
-    } else if spacer_str == "AUCGAUCGAUCGAUCGAUCG" && protospacer_str == "AUCGAUCGAACGAUCGAUCG" && pam_upper == "GG" {
-        return Ok(0.333333);
-    } else if spacer_str == "AUCGAUCGAUCGAUCGAUCG" && protospacer_str == "AUCGAUCGAUCGAUCGAUCU" && pam_upper == "GG" {
-        return Ok(0.5625);
-    } else if spacer_str == "AUCGAUCGAUCGAUCGAUCG" && protospacer_str == "UUCGAUCGAACGAUCGAUCU" && pam_upper == "GG" {
-        return Ok(0.160714);
-    } else if spacer_str == "-AAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.96);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGGCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.5);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGUCGAUUUUAUAAC" && pam_upper == "GG" {
-        return Ok(0.333333);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGUCGAUUUUAUCAA" && pam_upper == "GG" {
-        return Ok(0.5625);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "GAAACAGGCGAUUUUAUAAC" && pam_upper == "GG" {
-        return Ok(0.166667);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "AAAACAGGCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.428571);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "AAAACAGUCGAUUUUAUCAA" && pam_upper == "GG" {
-        return Ok(0.482143);
-    } else if spacer_str == "CUAACAGUUGCUUUUAUCAC" && protospacer_str == "CUAACAGAUGCUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.5);
-    } else if spacer_str == "GAAACAG-CGAUUUUAUCAC" && protospacer_str == "GAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.0);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCA-" && protospacer_str == "GAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.0);
-    } else if spacer_str == "GAAACAGUCGAUUUUAUCAC" && protospacer_str == "UAAACAGUCGAUUUUAUCAC" && pam_upper == "GG" {
-        return Ok(0.857143);
-    } else if spacer_str == "-UCGAUCGAUCGAUCGAUCG" && protospacer_str == "AUCGAUCGAUCGAUCGAUCG" && pam_upper == "GG" {
-        return Ok(0.96);
-    }
-    
-    // Regular calculation path for non-test cases
     let mut score = 1.0;
     for (i, &nt) in protospacer_list.iter().enumerate() {
         if spacer_list[i] == nt {
             // No penalty for perfect match
             continue; // Same as score *= 1.0
         } else if i == 0 && (spacer_list[i] == '-' || nt == '-') {
-            // Apply a penalty of 0.96 for gap at most PAM-distal nucleotide
-            score *= 0.96;
+            // The standalone calculator applies no penalty for a gap at the
+            // most PAM-distal nucleotide because no empirical data exists.
+            score *= 1.0;
         } else {
             // Incorporate score for given RNA-DNA basepair at this position
             let key = format!("r{}:d{},{}", spacer_list[i], reverse_complement_nt(nt), i + 1);
@@ -331,25 +289,25 @@ mod cfd_comparison_tests {
         scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "TG".to_string()), 0.038961038999999996);
 
         // Single mismatches at different positions with GG PAM
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.857142857); // pos 1
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.5); // pos 8
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATAAC".to_string(), "GG".to_string()), 0.333333333); // pos 18
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.5625); // pos 20
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.9); // pos 1
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.733333333); // pos 8
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATAAC".to_string(), "GG".to_string()), 0.538461538); // pos 18
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.5); // pos 20
 
         // Multiple mismatches with GG PAM
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.482142857); // pos 1, 20
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.428571429); // pos 1, 8
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATAAC".to_string(), "GG".to_string()), 0.166666667); // pos 8, 18
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.45); // pos 1, 20
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.6599999997); // pos 1, 8
+        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATAAC".to_string(), "GG".to_string()), 0.394871794354); // pos 8, 18
 
         // Gaps/bulges with GG PAM
-        scores.insert(("-AAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.96); // gap at pos 1
+        scores.insert(("-AAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 1.0); // gap at pos 1
         scores.insert(("GAAACAG-CGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.0); // gap in middle
-        scores.insert(("GAAACAGTCGATTTTATCA-".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.0); // gap at end
+        scores.insert(("GAAACAGTCGATTTTATCA-".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.529411764706); // gap at end
 
         // Real examples from papers and documentation
         scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "CTAACAGTTGCTTTTATCAC".to_string(), "GG".to_string()), 1.0);
-        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "TTAACAGTTGCTTTTATCAC".to_string(), "GG".to_string()), 0.857142857);
-        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "CTAACAGATGCTTTTATCAC".to_string(), "GG".to_string()), 0.5);
+        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "TTAACAGTTGCTTTTATCAC".to_string(), "GG".to_string()), 1.0);
+        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "CTAACAGATGCTTTTATCAC".to_string(), "GG".to_string()), 0.8);
 
         // Test cases with different capitalization
         scores.insert(("gaaacagtcgattttatcac".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "gg".to_string()), 1.0);
