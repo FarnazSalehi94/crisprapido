@@ -62,9 +62,9 @@ fn test_cfd_score_against_python() {
             for (s, p) in spacer.chars().zip(protospacer.chars()) {
                 if s == '-' || p == '-' {
                     if s == '-' {
-                        cigar.push('I'); // Insertion in target (deletion in spacer)
+                        cigar.push('D'); // Genomic target base aligned to a spacer gap
                     } else {
-                        cigar.push('D'); // Deletion in target (insertion in spacer)
+                        cigar.push('I'); // Guide base aligned to a genomic target gap
                     }
                 } else if s == p {
                     cigar.push('M');
@@ -100,7 +100,13 @@ fn test_cfd_score_against_python() {
             }
         }
         
-        // Test approach 2: Use the aligned sequence calculation via CIGAR
+        // get_cfd_score accepts ungapped guide/target sequences and applies the
+        // CIGAR itself. Pre-aligned gap cases above belong to calculate_cfd.
+        if spacer.contains('-') || protospacer.contains('-') {
+            continue;
+        }
+
+        // Test approach 2: reconstruct an ungapped alignment via CIGAR.
         let spacer_bytes = spacer.as_bytes();
         let protospacer_bytes = protospacer.as_bytes();
         
@@ -221,68 +227,40 @@ fn test_pam_effects() {
 /// Test with bulges (insertions/deletions)
 #[test]
 fn test_bulge_effects() {
-    // Initialize score matrices
     cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
         .expect("Failed to initialize scoring matrices");
-    
-    // Base perfect-match sequence
-    let base_spacer = "ATCGATCGATCGATCGATCG";
-    
-    // Test bulges at different positions
-    for pos in 1..=20 {
-        // Create a sequence with a deletion at position pos
-        let mut del_proto = base_spacer.to_string();
-        let mut del_chars: Vec<char> = del_proto.chars().collect();
-        del_chars.remove(pos-1);
-        del_chars.push('-'); // Add placeholder to keep length
-        del_proto = del_chars.into_iter().collect();
-        
-        // Create CIGAR string for deletion
-        let mut del_cigar = String::with_capacity(20);
-        for i in 0..20 {
-            if i == pos-1 {
-                del_cigar.push('D'); // Deletion
-            } else {
-                del_cigar.push('M'); // Match
-            }
-        }
-        
-        // Create a sequence with an insertion at position pos
-        let mut ins_proto = base_spacer.to_string();
-        let mut ins_chars: Vec<char> = ins_proto.chars().collect();
-        ins_chars.insert(pos-1, '-');
-        ins_chars.pop(); // Remove last char to keep length
-        ins_proto = ins_chars.into_iter().collect();
-        
-        // Create CIGAR string for insertion
-        let mut ins_cigar = String::with_capacity(20);
-        for i in 0..20 {
-            if i == pos-1 {
-                ins_cigar.push('I'); // Insertion
-            } else {
-                ins_cigar.push('M'); // Match
-            }
-        }
-        
-        // Calculate CFD score for deletion
-        let del_score = cfd_score::get_cfd_score(
-            base_spacer.as_bytes(), 
-            del_proto.as_bytes(), 
-            &del_cigar, 
-            "GG"
+
+    let guide = b"ATCGATCGATCGATCGATCG";
+
+    for pos in 0..20 {
+        let mut target_with_guide_insertion = guide.to_vec();
+        target_with_guide_insertion.remove(pos);
+        let guide_insertion_cigar = format!("{}I{}", "=".repeat(pos), "=".repeat(19 - pos));
+        assert!(
+            cfd_score::get_cfd_score(
+                guide,
+                &target_with_guide_insertion,
+                &guide_insertion_cigar,
+                "GG",
+            )
+            .is_some(),
+            "guide-only I at aligned position {} should have a 20-column CFD representation",
+            pos + 1
         );
-        
-        // Calculate CFD score for insertion
-        let ins_score = cfd_score::get_cfd_score(
-            base_spacer.as_bytes(), 
-            ins_proto.as_bytes(), 
-            &ins_cigar, 
-            "GG"
+
+        let mut target_with_genomic_insertion = guide.to_vec();
+        target_with_genomic_insertion.insert(pos, b'A');
+        let genomic_insertion_cigar = format!("{}D{}", "=".repeat(pos), "=".repeat(20 - pos));
+        assert_eq!(
+            cfd_score::get_cfd_score(
+                guide,
+                &target_with_genomic_insertion,
+                &genomic_insertion_cigar,
+                "GG",
+            ),
+            None,
+            "genomic-only D at aligned position {} produces 21 columns",
+            pos + 1
         );
-        
-        // Print results
-        println!("Position {} bulge:", pos);
-        println!("  Deletion: CFD score = {:?}", del_score);
-        println!("  Insertion: CFD score = {:?}", ins_score);
     }
 }

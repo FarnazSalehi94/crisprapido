@@ -155,20 +155,20 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
 /// # Returns
 /// * `Option<f64>` - CFD score if calculation succeeds
 pub fn get_cfd_score(guide: &[u8], target: &[u8], cigar: &str, pam: &str) -> Option<f64> {
-    // Special case for sequences with leading gap
-    if cigar.starts_with('I') && guide.len() > 0 && guide[0] == b'-' {
-        // When guide already has a gap that matches the CIGAR's insertion,
-        // pass the sequences directly to calculate_cfd
-        let g_str = String::from_utf8_lossy(guide).into_owned();
-        let t_str = String::from_utf8_lossy(target).into_owned();
-        return match calculate_cfd(&g_str, &t_str, pam) {
-            Ok(score) => Some(score),
-            Err(_) => None,
-        };
+    let (spacer, protospacer) = match prepare_aligned_sequences(guide, target, cigar) {
+        Ok(alignment) => alignment,
+        Err(e) => {
+            eprintln!("CFD alignment reconstruction error: {}", e);
+            return None;
+        }
+    };
+
+    // The standalone CFD implementation accepts exactly 20 aligned columns.
+    // In particular, a D operation in a verified 20nt-guide alignment produces
+    // more than 20 columns and cannot be projected without losing information.
+    if spacer.len() != 20 || protospacer.len() != 20 {
+        return None;
     }
-    
-    // Regular calculation
-    let (spacer, protospacer) = prepare_aligned_sequences(guide, target, cigar);
     
     // Calculate CFD score
     match calculate_cfd(&spacer, &protospacer, pam) {
@@ -180,70 +180,106 @@ pub fn get_cfd_score(guide: &[u8], target: &[u8], cigar: &str, pam: &str) -> Opt
     }
 }
 
+fn parse_cigar_operations(cigar: &str) -> Result<Vec<(usize, char)>, String> {
+    let mut operations = Vec::new();
+    let mut length = None;
+
+    for c in cigar.chars() {
+        if c.is_ascii_digit() {
+            let digit = c
+                .to_digit(10)
+                .ok_or_else(|| format!("Invalid CIGAR digit: {}", c))? as usize;
+            let current = length.unwrap_or(0usize);
+            length = Some(
+                current
+                    .checked_mul(10)
+                    .and_then(|value| value.checked_add(digit))
+                    .ok_or_else(|| "CIGAR operation length overflow".to_string())?,
+            );
+            continue;
+        }
+
+        if !matches!(c, 'M' | '=' | 'X' | 'I' | 'D') {
+            return Err(format!("Unsupported CIGAR operation: {}", c));
+        }
+
+        let operation_length = length.take().unwrap_or(1);
+        if operation_length == 0 {
+            return Err("CIGAR operation length must be greater than zero".to_string());
+        }
+        operations.push((operation_length, c));
+    }
+
+    if length.is_some() {
+        return Err("CIGAR ends with an operation length but no operation".to_string());
+    }
+
+    Ok(operations)
+}
+
 /// Prepare aligned spacer and protospacer sequences for CFD calculation
-fn prepare_aligned_sequences(guide: &[u8], target: &[u8], cigar: &str) -> (String, String) {
-    let mut spacer = String::with_capacity(20);
-    let mut protospacer = String::with_capacity(20);
+fn prepare_aligned_sequences(
+    guide: &[u8],
+    target: &[u8],
+    cigar: &str,
+) -> Result<(String, String), String> {
+    if guide.contains(&b'-') || target.contains(&b'-') {
+        return Err("Guide and target must be ungapped before applying the CIGAR".to_string());
+    }
+
+    let mut spacer = String::new();
+    let mut protospacer = String::new();
     
     let mut guide_pos = 0;
     let mut target_pos = 0;
-    
-    for (i, c) in cigar.chars().enumerate() {
-        match c {
-            'M' | '=' => {
-                if guide_pos < guide.len() && target_pos < target.len() {
-                    spacer.push(char::from(guide[guide_pos]));
-                    protospacer.push(char::from(target[target_pos]));
+
+    for (length, operation) in parse_cigar_operations(cigar)? {
+        for _ in 0..length {
+            match operation {
+                'M' | '=' | 'X' => {
+                    let guide_base = guide.get(guide_pos).ok_or_else(|| {
+                        format!("CIGAR consumes beyond the {}nt guide", guide.len())
+                    })?;
+                    let target_base = target.get(target_pos).ok_or_else(|| {
+                        format!("CIGAR consumes beyond the {}nt genomic target", target.len())
+                    })?;
+                    spacer.push(char::from(*guide_base));
+                    protospacer.push(char::from(*target_base));
                     guide_pos += 1;
                     target_pos += 1;
                 }
-            },
-            'X' => {
-                if guide_pos < guide.len() && target_pos < target.len() {
-                    spacer.push(char::from(guide[guide_pos]));
-                    protospacer.push(char::from(target[target_pos]));
-                    guide_pos += 1;
-                    target_pos += 1;
-                }
-            },
-            'I' => {
-                // Handle insertion (deletion in spacer)
-                if i == 0 {
-                    // Special case: insertion at the beginning
-                    spacer.push('-');
-                    protospacer.push(char::from(target[target_pos]));
-                    target_pos += 1;
-                } else if target_pos < target.len() {
-                    spacer.push('-');
-                    protospacer.push(char::from(target[target_pos]));
-                    target_pos += 1;
-                }
-            },
-            'D' => {
-                // Handle deletion (insertion in spacer)
-                if guide_pos < guide.len() {
-                    spacer.push(char::from(guide[guide_pos]));
+                'I' => {
+                    let guide_base = guide.get(guide_pos).ok_or_else(|| {
+                        format!("CIGAR consumes beyond the {}nt guide", guide.len())
+                    })?;
+                    spacer.push(char::from(*guide_base));
                     protospacer.push('-');
                     guide_pos += 1;
                 }
-            },
-            _ => {}
+                'D' => {
+                    let target_base = target.get(target_pos).ok_or_else(|| {
+                        format!("CIGAR consumes beyond the {}nt genomic target", target.len())
+                    })?;
+                    spacer.push('-');
+                    protospacer.push(char::from(*target_base));
+                    target_pos += 1;
+                }
+                _ => unreachable!("CIGAR operations are validated before reconstruction"),
+            }
         }
     }
-    
-    // Pad to 20nt if needed
-    while spacer.len() < 20 {
-        spacer.push('-');
+
+    if guide_pos != guide.len() || target_pos != target.len() {
+        return Err(format!(
+            "CIGAR consumed guide {}/{}nt and genomic target {}/{}nt",
+            guide_pos,
+            guide.len(),
+            target_pos,
+            target.len()
+        ));
     }
-    while protospacer.len() < 20 {
-        protospacer.push('-');
-    }
-    
-    // Truncate to 20nt if longer
-    let spacer = spacer[0..20].to_string();
-    let protospacer = protospacer[0..20].to_string();
-    
-    (spacer, protospacer)
+
+    Ok((spacer, protospacer))
 }
 
 /// Get reverse complement of a single nucleotide (supports bulges)
@@ -592,5 +628,174 @@ mod cfd_comparison_tests {
                 }
             }
         }
+    }
+}
+
+#[cfg(test)]
+mod alignment_reconstruction_tests {
+    use super::*;
+
+    const GUIDE: &[u8] = b"GAAACAGTCGATTTTATCAC";
+
+    fn aligned(target: &[u8], cigar: &str) -> (String, String) {
+        prepare_aligned_sequences(GUIDE, target, cigar)
+            .unwrap_or_else(|error| panic!("failed to reconstruct {cigar}: {error}"))
+    }
+
+    fn assert_one_sided_gaps(spacer: &str, protospacer: &str) {
+        assert!(!spacer
+            .chars()
+            .zip(protospacer.chars())
+            .any(|(guide_base, target_base)| guide_base == '-' && target_base == '-'));
+    }
+
+    #[test]
+    fn reconstructs_perfect_compact_cigar() {
+        let alignment = aligned(GUIDE, "20=");
+        assert_eq!(
+            alignment,
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+            )
+        );
+    }
+
+    #[test]
+    fn reconstructs_mismatch_only_cigar() {
+        let alignment = aligned(b"GAAACCGTCGATTTTATCAC", "5=1X14=");
+        assert_eq!(
+            alignment,
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACCGTCGATTTTATCAC".to_string(),
+            )
+        );
+    }
+
+    #[test]
+    fn reconstructs_internal_guide_insertion() {
+        let (spacer, protospacer) = aligned(b"GAAACGTCGATTTTATCAC", "5=1I14=");
+        assert_eq!(spacer, "GAAACAGTCGATTTTATCAC");
+        assert_eq!(protospacer, "GAAAC-GTCGATTTTATCAC");
+        assert_eq!(spacer.as_bytes()[5], b'A');
+        assert_eq!(protospacer.as_bytes()[5], b'-');
+        assert_eq!(&spacer[6..], &protospacer[6..]);
+        assert_one_sided_gaps(&spacer, &protospacer);
+    }
+
+    #[test]
+    fn reconstructs_leading_guide_insertion() {
+        let (spacer, protospacer) = aligned(b"AAACAGTCGATTTTATCAC", "1I19=");
+        assert_eq!(spacer, "GAAACAGTCGATTTTATCAC");
+        assert_eq!(protospacer, "-AAACAGTCGATTTTATCAC");
+        assert_eq!(&spacer[1..], &protospacer[1..]);
+        assert_one_sided_gaps(&spacer, &protospacer);
+    }
+
+    #[test]
+    fn reconstructs_trailing_guide_insertion_without_losing_final_guide_base() {
+        let (spacer, protospacer) = aligned(b"GAAACAGTCGATTTTATCA", "19=1I");
+        assert_eq!(spacer, "GAAACAGTCGATTTTATCAC");
+        assert_eq!(protospacer, "GAAACAGTCGATTTTATCA-");
+        assert_eq!(spacer.as_bytes()[19], b'C');
+        assert_eq!(protospacer.as_bytes()[19], b'-');
+        assert_one_sided_gaps(&spacer, &protospacer);
+    }
+
+    #[test]
+    fn reconstructs_mismatch_and_trailing_guide_insertion() {
+        let target = b"GAAACCGTCGATTTTATCA";
+        let (spacer, protospacer) = aligned(target, "5=1X13=1I");
+        assert_eq!(spacer, "GAAACAGTCGATTTTATCAC");
+        assert_eq!(protospacer, "GAAACCGTCGATTTTATCA-");
+        assert_eq!((spacer.as_bytes()[5], protospacer.as_bytes()[5]), (b'A', b'C'));
+        assert_eq!((spacer.as_bytes()[19], protospacer.as_bytes()[19]), (b'C', b'-'));
+        assert_one_sided_gaps(&spacer, &protospacer);
+
+        init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
+            .expect("Failed to initialize scoring matrices");
+        let expected_score = calculate_cfd(&spacer, &protospacer, "GG").unwrap();
+        assert_eq!(
+            get_cfd_score(GUIDE, target, "5=1X13=1I", "GG"),
+            Some(expected_score)
+        );
+    }
+
+    #[test]
+    fn reconstructs_internal_genomic_insertion_before_declining_cfd() {
+        let target = b"GAAACTAGTCGATTTTATCAC";
+        let (spacer, protospacer) = aligned(target, "5=1D15=");
+        assert_eq!(spacer, "GAAAC-AGTCGATTTTATCAC");
+        assert_eq!(protospacer, "GAAACTAGTCGATTTTATCAC");
+        assert_eq!((spacer.as_bytes()[5], protospacer.as_bytes()[5]), (b'-', b'T'));
+        assert_eq!(spacer.len(), 21);
+        assert_eq!(protospacer.len(), 21);
+        assert_one_sided_gaps(&spacer, &protospacer);
+        assert_eq!(get_cfd_score(GUIDE, target, "5=1D15=", "GG"), None);
+    }
+
+    #[test]
+    fn reconstructs_leading_genomic_insertion_before_declining_cfd() {
+        let target = b"TGAAACAGTCGATTTTATCAC";
+        let (spacer, protospacer) = aligned(target, "1D20=");
+        assert_eq!(spacer, "-GAAACAGTCGATTTTATCAC");
+        assert_eq!(protospacer, "TGAAACAGTCGATTTTATCAC");
+        assert_eq!((spacer.as_bytes()[0], protospacer.as_bytes()[0]), (b'-', b'T'));
+        assert_one_sided_gaps(&spacer, &protospacer);
+        assert_eq!(get_cfd_score(GUIDE, target, "1D20=", "GG"), None);
+    }
+
+    #[test]
+    fn reconstructs_trailing_genomic_insertion_before_declining_cfd() {
+        let target = b"GAAACAGTCGATTTTATCACA";
+        let (spacer, protospacer) = aligned(target, "20=1D");
+        assert_eq!(spacer, "GAAACAGTCGATTTTATCAC-");
+        assert_eq!(protospacer, "GAAACAGTCGATTTTATCACA");
+        assert_eq!((spacer.as_bytes()[20], protospacer.as_bytes()[20]), (b'-', b'A'));
+        assert_one_sided_gaps(&spacer, &protospacer);
+
+        // Regression: the D-consumed genomic base must not disappear and turn
+        // this into a perfect 20-column guide/guide CFD input.
+        assert_eq!(get_cfd_score(GUIDE, target, "20=1D", "GG"), None);
+    }
+
+    #[test]
+    fn reconstructs_mismatch_and_genomic_insertion_before_declining_cfd() {
+        let target = b"GAAACCGTCGTATTTTATCAC";
+        let (spacer, protospacer) = aligned(target, "5=1X4=1D10=");
+        assert_eq!(spacer, "GAAACAGTCG-ATTTTATCAC");
+        assert_eq!(protospacer, "GAAACCGTCGTATTTTATCAC");
+        assert_eq!((spacer.as_bytes()[5], protospacer.as_bytes()[5]), (b'A', b'C'));
+        assert_eq!((spacer.as_bytes()[10], protospacer.as_bytes()[10]), (b'-', b'T'));
+        assert_one_sided_gaps(&spacer, &protospacer);
+        assert_eq!(
+            get_cfd_score(GUIDE, target, "5=1X4=1D10=", "GG"),
+            None
+        );
+    }
+
+    #[test]
+    fn compact_and_expanded_cigars_reconstruct_identically() {
+        let insertion_target = b"GAAACCGTCGATTTTATCA";
+        let expanded_insertion = format!("{}X{}I", "=".repeat(5), "=".repeat(13));
+        let compact_alignment = aligned(insertion_target, "5=1X13=1I");
+        let expanded_alignment = aligned(insertion_target, &expanded_insertion);
+
+        assert_eq!(compact_alignment, expanded_alignment);
+        assert_eq!(
+            compact_alignment,
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACCGTCGATTTTATCA-".to_string(),
+            )
+        );
+
+        let deletion_target = b"GAAACTAGTCGATTTTATCAC";
+        let expanded_deletion = format!("{}D{}", "=".repeat(5), "=".repeat(15));
+        assert_eq!(
+            aligned(deletion_target, "5=1D15="),
+            aligned(deletion_target, &expanded_deletion)
+        );
     }
 }

@@ -148,32 +148,17 @@ fn extract_cfd_target_from_alignment(
     alignment_offset: usize,
     cigar: &str,
 ) -> Option<Vec<u8>> {
-    let mut target = Vec::new();
-    let mut target_pos = alignment_offset;
+    let reference_span = cigar_operations(cigar)?.into_iter().try_fold(
+        0usize,
+        |span, (length, op)| match op {
+            'M' | '=' | 'X' | 'D' => span.checked_add(length),
+            'I' => Some(span),
+            _ => None,
+        },
+    )?;
+    let target_end = alignment_offset.checked_add(reference_span)?;
 
-    for (length, op) in cigar_operations(cigar)? {
-        match op {
-            'M' | '=' | 'X' => {
-                for _ in 0..length {
-                    let base = *oriented_window.get(target_pos)?;
-                    target.push(base);
-                    target_pos += 1;
-                }
-            }
-            'I' => {
-                target.extend(std::iter::repeat(b'-').take(length));
-            }
-            'D' => {
-                target_pos = target_pos.checked_add(length)?;
-                if target_pos > oriented_window.len() {
-                    return None;
-                }
-            }
-            _ => {}
-        }
-    }
-
-    Some(target)
+    Some(oriented_window.get(alignment_offset..target_end)?.to_vec())
 }
 
 fn extract_adjacent_pam(
@@ -1035,6 +1020,48 @@ mod tests {
             cigar_operations("MMXDI").unwrap(),
             vec![(1, 'M'), (1, 'M'), (1, 'X'), (1, 'D'), (1, 'I')]
         );
+    }
+
+    #[test]
+    fn test_cfd_target_extraction_preserves_ungapped_reference_bases() {
+        let guide_insertion_target = b"GAAACGTCGATTTTATCAC";
+        assert_eq!(
+            extract_cfd_target_from_alignment(guide_insertion_target, 0, "5=1I14=")
+                .unwrap(),
+            guide_insertion_target
+        );
+
+        let genomic_insertion_target = b"GAAACTAGTCGATTTTATCAC";
+        assert_eq!(
+            extract_cfd_target_from_alignment(genomic_insertion_target, 0, "5=1D15=")
+                .unwrap(),
+            genomic_insertion_target
+        );
+    }
+
+    #[test]
+    fn test_terminal_d_preserves_genomic_base_and_has_no_cfd_score() {
+        let args = columba_test_args();
+        let guide = Arc::new(b"GAAACAGTCGATTTTATCAC".to_vec());
+        let target = b"GAAACAGTCGATTTTATCACA";
+        let mut seq = target.to_vec();
+        seq.extend_from_slice(b"GG");
+        let hit = build_verified_hit(
+            "chr1".to_string(),
+            &seq,
+            0,
+            '+',
+            0,
+            "20=1D".to_string(),
+            guide,
+            target,
+            0,
+            &args,
+        );
+
+        assert_eq!(hit.target_seq, target);
+        assert_eq!(hit.pam_seq.as_deref(), Some("GG"));
+        assert_eq!(cfd_for_hit(&hit), None);
     }
 
     #[test]
