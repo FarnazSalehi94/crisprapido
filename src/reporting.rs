@@ -40,6 +40,10 @@ pub(crate) fn report_filtered_hits(hits: Vec<Hit>, pam: &str) {
     print!("{}", format_filtered_hits(hits, pam));
 }
 
+pub(crate) fn report_filtered_hits_for_query(hits: Vec<Hit>, pam: &str, query_name: &str) {
+    print!("{}", format_filtered_hits_for_query(hits, pam, query_name));
+}
+
 fn pam_matches_requested(hit: &Hit, requested_pam: &str) -> bool {
     let Some(pam) = hit.pam_seq.as_deref() else {
         return false;
@@ -70,6 +74,10 @@ fn preferred_overlap_hit(candidate: &Hit, current: &Hit, requested_pam: &str) ->
 }
 
 fn format_filtered_hits(hits: Vec<Hit>, pam: &str) -> String {
+    format_filtered_hits_for_query(hits, pam, "Guide")
+}
+
+fn format_filtered_hits_for_query(hits: Vec<Hit>, pam: &str, query_name: &str) -> String {
     let mut hits_by_group: HashMap<(String, char), Vec<Hit>> = HashMap::new();
     for hit in hits {
         hits_by_group
@@ -107,7 +115,8 @@ fn format_filtered_hits(hits: Vec<Hit>, pam: &str) -> String {
             }
 
             let best_hit = &group_hits[best_idx];
-            output.push_str(&format_hit(
+            output.push_str(&format_hit_for_query(
+                query_name,
                 &best_hit.ref_id,
                 best_hit.pos,
                 best_hit.guide.len(),
@@ -131,7 +140,42 @@ fn format_filtered_hits(hits: Vec<Hit>, pam: &str) -> String {
     output
 }
 
+#[cfg(test)]
 pub(crate) fn format_hit(
+    ref_id: &str,
+    pos: usize,
+    _len: usize,
+    strand: char,
+    _score: i32,
+    cigar: &str,
+    guide: &[u8],
+    target_len: usize,
+    _max_mismatches: u32,
+    _max_bulges: u32,
+    _max_bulge_size: u32,
+    target_seq: &[u8],
+    pam: &str,
+) -> String {
+    format_hit_for_query(
+        "Guide",
+        ref_id,
+        pos,
+        _len,
+        strand,
+        _score,
+        cigar,
+        guide,
+        target_len,
+        _max_mismatches,
+        _max_bulges,
+        _max_bulge_size,
+        target_seq,
+        pam,
+    )
+}
+
+fn format_hit_for_query(
+    query_name: &str,
     ref_id: &str,
     pos: usize,
     _len: usize,
@@ -271,7 +315,8 @@ pub(crate) fn format_hit(
         String::new()
     };
 
-    format!("Guide\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}",
+    format!("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t255\tas:i:{}\tnm:i:{}\tng:i:{}\tbs:i:{}\tcg:Z:{}{}",
+        query_name,
         guide_len,
         query_start,
         query_start + query_consumed,
@@ -320,6 +365,31 @@ mod tests {
 
         assert!(line.contains("\tcg:Z:20="));
         assert!(line.contains("\tcf:f:"));
+    }
+
+    #[test]
+    fn test_batch_output_uses_stable_query_name() {
+        cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
+            .expect("Failed to initialize scoring matrices");
+        let guide = b"GAGTCCGAGCAGAAGAAGAA";
+        let line = format_hit_for_query(
+            "guide_alpha",
+            "chr1",
+            0,
+            guide.len(),
+            '+',
+            0,
+            "MMMMMMMMMMMMMMMMMMMM",
+            guide,
+            guide.len(),
+            4,
+            1,
+            2,
+            guide,
+            "GG",
+        );
+
+        assert!(line.starts_with("guide_alpha\t20\t"));
     }
 
     fn test_hit(ref_id: &str, strand: char, pos: usize) -> Hit {

@@ -1,10 +1,11 @@
+use std::collections::{HashMap, HashSet};
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::path::PathBuf;
 use std::sync::Arc;
 
 use bio::io::fasta;
-use clap::Parser;
+use clap::{ArgGroup, Parser};
 use flate2::read::MultiGzDecoder;
 use lib_wfa2::affine_wavefront::AffineWavefronts;
 use rayon::prelude::*;
@@ -16,11 +17,11 @@ mod reporting;
 mod verification;
 
 use columba::{
-    candidate_edit_distance_bound, parse_columba_sam_file, run_columba_candidate_generation,
-    ColumbaRunConfig,
+    candidate_edit_distance_bound, load_guide_fasta, parse_columba_sam_file,
+    run_columba_candidate_generation, ColumbaQuery, ColumbaRunConfig,
 };
 use hit::Hit;
-use reporting::report_filtered_hits;
+use reporting::{report_filtered_hits, report_filtered_hits_for_query};
 use verification::{
     build_verified_hit, load_reference_records, scan_window, uppercase_ascii_sequence,
     verify_columba_candidates,
@@ -41,7 +42,12 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
 }
 
 #[derive(Parser)]
-#[command(author, version, about = "CRISPR guide RNA off-target scanner")]
+#[command(
+    author,
+    version,
+    about = "CRISPR guide RNA off-target scanner",
+    group(ArgGroup::new("guide_input").required(true).args(["guide", "guides"]))
+)]
 pub(crate) struct Args {
     /// Input reference FASTA file (-r)
     #[arg(short, long)]
@@ -49,7 +55,11 @@ pub(crate) struct Args {
 
     /// Guide RNA sequence (without PAM) (-g)
     #[arg(short, long)]
-    guide: String,
+    guide: Option<String>,
+
+    /// Multi-guide FASTA with unique, stable record IDs (-G)
+    #[arg(short = 'G', long)]
+    guides: Option<PathBuf>,
 
     /// PAM sequence (to use for CFD scoring)
     #[arg(short = 'p', long, default_value = "GG")]
@@ -130,15 +140,33 @@ fn main() {
         eprintln!("Warning: CFD scoring disabled - {}", e);
     }
 
-    let guide_fwd = Arc::new(args.guide.as_bytes().to_vec());
-    let guide_rc = Arc::new(reverse_complement(&guide_fwd));
-    let guide_len = guide_fwd.len();
-
     if let Some(n) = args.threads {
         rayon::ThreadPoolBuilder::new()
             .num_threads(n)
             .build_global()
             .expect("Failed to initialize thread pool");
+    }
+
+    let batch_mode = args.guides.is_some();
+    let queries = if let Some(path) = &args.guides {
+        load_guide_fasta(path).unwrap_or_else(|e| {
+            eprintln!("{}", e);
+            std::process::exit(1);
+        })
+    } else {
+        vec![ColumbaQuery {
+            query_name: "guide".to_string(),
+            sequence: args.guide.clone().expect("clap requires --guide"),
+        }]
+    };
+
+    if batch_mode
+        && args.columba_sam.is_none()
+        && args.columba_bin.is_none()
+        && args.columba_index.is_none()
+    {
+        eprintln!("--guides requires --columba-bin and --columba-index (or --columba-sam)");
+        std::process::exit(1);
     }
 
     if args.columba_sam.is_some() || args.columba_bin.is_some() || args.columba_index.is_some() {
@@ -169,7 +197,7 @@ fn main() {
             run_columba_candidate_generation(&ColumbaRunConfig {
                 columba_bin,
                 index_prefix: columba_index,
-                guide: &args.guide,
+                queries: &queries,
                 candidate_edit_distance,
                 threads: args.threads,
                 keep_sam: args.keep_columba_sam,
@@ -180,11 +208,51 @@ fn main() {
             })
         };
 
-        let hits = verify_columba_candidates(&candidates, &reference_records, &guide_fwd, &args);
-        report_filtered_hits(hits, &args.pam);
+        if batch_mode {
+            let query_names: HashSet<&str> = queries
+                .iter()
+                .map(|query| query.query_name.as_str())
+                .collect();
+            let mut candidates_by_query = HashMap::new();
+            for candidate in candidates {
+                if !query_names.contains(candidate.query_name.as_str()) {
+                    eprintln!(
+                        "Columba candidate has unknown QNAME '{}' not present in --guides",
+                        candidate.query_name
+                    );
+                    std::process::exit(1);
+                }
+                candidates_by_query
+                    .entry(candidate.query_name.clone())
+                    .or_insert_with(Vec::new)
+                    .push(candidate);
+            }
+
+            for query in &queries {
+                let guide_fwd = Arc::new(query.sequence.as_bytes().to_vec());
+                let query_candidates = candidates_by_query
+                    .remove(&query.query_name)
+                    .unwrap_or_default();
+                let hits = verify_columba_candidates(
+                    &query_candidates,
+                    &reference_records,
+                    &guide_fwd,
+                    &args,
+                );
+                report_filtered_hits_for_query(hits, &args.pam, &query.query_name);
+            }
+        } else {
+            let guide_fwd = Arc::new(queries[0].sequence.as_bytes().to_vec());
+            let hits =
+                verify_columba_candidates(&candidates, &reference_records, &guide_fwd, &args);
+            report_filtered_hits(hits, &args.pam);
+        }
         return;
     }
 
+    let guide_fwd = Arc::new(queries[0].sequence.as_bytes().to_vec());
+    let guide_rc = Arc::new(reverse_complement(&guide_fwd));
+    let guide_len = guide_fwd.len();
     let reader = open_reference_reader(&args.reference);
     for result in reader.records() {
         let record = result.expect("Error during FASTA record parsing");

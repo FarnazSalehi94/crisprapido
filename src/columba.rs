@@ -6,11 +6,20 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::time::{SystemTime, UNIX_EPOCH};
 
+use bio::io::fasta;
+use flate2::read::MultiGzDecoder;
+
+#[derive(Debug)]
+pub(crate) struct ColumbaQuery {
+    pub(crate) query_name: String,
+    pub(crate) sequence: String,
+}
+
 #[derive(Debug)]
 pub(crate) struct ColumbaRunConfig<'a> {
     pub(crate) columba_bin: &'a Path,
     pub(crate) index_prefix: &'a Path,
-    pub(crate) guide: &'a str,
+    pub(crate) queries: &'a [ColumbaQuery],
     pub(crate) candidate_edit_distance: u32,
     pub(crate) threads: Option<usize>,
     pub(crate) keep_sam: bool,
@@ -117,6 +126,89 @@ fn write_columba_log(path: &Path, stdout: &[u8], stderr: &[u8]) -> Result<(), St
         .map_err(|e| format!("Failed to write Columba log '{}': {}", path.display(), e))
 }
 
+pub(crate) fn load_guide_fasta(path: &Path) -> Result<Vec<ColumbaQuery>, String> {
+    let file = File::open(path)
+        .map_err(|e| format!("Failed to open guide FASTA '{}': {}", path.display(), e))?;
+    let reader: Box<dyn BufRead> = if path.extension().map_or(false, |ext| ext == "gz") {
+        Box::new(BufReader::new(MultiGzDecoder::new(file)))
+    } else {
+        Box::new(BufReader::new(file))
+    };
+    let reader = fasta::Reader::new(reader);
+    let mut queries = Vec::new();
+    let mut query_names = HashSet::new();
+
+    for result in reader.records() {
+        let record =
+            result.map_err(|e| format!("Error parsing guide FASTA '{}': {}", path.display(), e))?;
+        let query_name = record.id().to_string();
+        if query_name.is_empty() {
+            return Err(format!(
+                "Guide FASTA '{}' contains a record with an empty ID",
+                path.display()
+            ));
+        }
+        if !query_names.insert(query_name.clone()) {
+            return Err(format!(
+                "Guide FASTA '{}' contains duplicate ID '{}'",
+                path.display(),
+                query_name
+            ));
+        }
+        let sequence = String::from_utf8(record.seq().to_vec()).map_err(|_| {
+            format!(
+                "Guide FASTA '{}' record '{}' has a non-UTF-8 sequence",
+                path.display(),
+                query_name
+            )
+        })?;
+        if sequence.is_empty() {
+            return Err(format!(
+                "Guide FASTA '{}' record '{}' has an empty sequence",
+                path.display(),
+                query_name
+            ));
+        }
+        queries.push(ColumbaQuery {
+            query_name,
+            sequence,
+        });
+    }
+
+    if queries.is_empty() {
+        return Err(format!(
+            "Guide FASTA '{}' contains no records",
+            path.display()
+        ));
+    }
+
+    Ok(queries)
+}
+
+fn write_columba_query_fasta(path: &Path, queries: &[ColumbaQuery]) -> Result<(), String> {
+    if queries.is_empty() {
+        return Err("Cannot run Columba without at least one guide".to_string());
+    }
+
+    let mut file = File::create(path).map_err(|e| {
+        format!(
+            "Failed to create temporary Columba query FASTA '{}': {}",
+            path.display(),
+            e
+        )
+    })?;
+    for query in queries {
+        writeln!(file, ">{}\n{}", query.query_name, query.sequence).map_err(|e| {
+            format!(
+                "Failed to write temporary Columba query FASTA '{}': {}",
+                path.display(),
+                e
+            )
+        })?;
+    }
+    Ok(())
+}
+
 pub(crate) fn candidate_edit_distance_bound(
     max_mismatches: u32,
     max_bulges: u32,
@@ -161,13 +253,7 @@ pub(crate) fn run_columba(config: &ColumbaRunConfig<'_>) -> Result<ColumbaRunOut
     let log_path = temp_dir.join("columba.log");
 
     let run_result = (|| {
-        fs::write(&query_path, format!(">guide\n{}\n", config.guide)).map_err(|e| {
-            format!(
-                "Failed to write temporary Columba query FASTA '{}': {}",
-                query_path.display(),
-                e
-            )
-        })?;
+        write_columba_query_fasta(&query_path, config.queries)?;
 
         let mut command = Command::new(config.columba_bin);
         command
@@ -438,6 +524,13 @@ pub(crate) fn parse_columba_sam_file(path: &PathBuf) -> Result<Vec<ColumbaCandid
 mod tests {
     use super::*;
 
+    fn test_queries() -> Vec<ColumbaQuery> {
+        vec![ColumbaQuery {
+            query_name: "guide".to_string(),
+            sequence: "GAGTCCGAGCAGAAGAAGAA".to_string(),
+        }]
+    }
+
     fn parse_candidate(line: &str) -> ColumbaCandidate {
         parse_columba_sam_record(line).unwrap().unwrap()
     }
@@ -545,6 +638,38 @@ mod tests {
         fs::write(prefixed_index_path(prefix, "meta"), b"index").unwrap();
     }
 
+    #[test]
+    fn test_load_guide_fasta_preserves_ids_sequences_and_order() {
+        let dir = unique_test_dir("guide-fasta");
+        let path = dir.join("guides.fa");
+        fs::write(
+            &path,
+            b">guide_alpha description\nGAGTCCGAGCAGAAGAAGAA\n>guide_beta\nATCGATCGATCGATCGATCG\n",
+        )
+        .unwrap();
+
+        let queries = load_guide_fasta(&path).unwrap();
+
+        assert_eq!(queries.len(), 2);
+        assert_eq!(queries[0].query_name, "guide_alpha");
+        assert_eq!(queries[0].sequence, "GAGTCCGAGCAGAAGAAGAA");
+        assert_eq!(queries[1].query_name, "guide_beta");
+        assert_eq!(queries[1].sequence, "ATCGATCGATCGATCGATCG");
+        fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[test]
+    fn test_load_guide_fasta_rejects_duplicate_ids() {
+        let dir = unique_test_dir("duplicate-guide-id");
+        let path = dir.join("guides.fa");
+        fs::write(&path, b">duplicate\nAAAA\n>duplicate\nCCCC\n").unwrap();
+
+        let error = load_guide_fasta(&path).unwrap_err();
+
+        assert!(error.contains("duplicate ID 'duplicate'"));
+        fs::remove_dir_all(dir).unwrap();
+    }
+
     #[cfg(unix)]
     fn write_mock_executable(path: &Path, body: &str) {
         use std::os::unix::fs::PermissionsExt;
@@ -586,11 +711,12 @@ mod tests {
         let dir = unique_test_dir("missing-executable");
         let index_prefix = dir.join("idx");
         write_dummy_index(&index_prefix);
+        let queries = test_queries();
 
         let error = run_columba(&ColumbaRunConfig {
             columba_bin: &dir.join("missing-columba"),
             index_prefix: &index_prefix,
-            guide: "GAGTCCGAGCAGAAGAAGAA",
+            queries: &queries,
             candidate_edit_distance: 1,
             threads: None,
             keep_sam: false,
@@ -607,11 +733,12 @@ mod tests {
         let dir = unique_test_dir("missing-index");
         let bin = dir.join("columba");
         write_mock_executable(&bin, "#!/bin/sh\nexit 0\n");
+        let queries = test_queries();
 
         let error = run_columba(&ColumbaRunConfig {
             columba_bin: &bin,
             index_prefix: &dir.join("missing-index"),
-            guide: "GAGTCCGAGCAGAAGAAGAA",
+            queries: &queries,
             candidate_edit_distance: 1,
             threads: None,
             keep_sam: false,
@@ -630,11 +757,12 @@ mod tests {
         let index_prefix = dir.join("idx");
         write_dummy_index(&index_prefix);
         write_mock_executable(&bin, "#!/bin/sh\necho simulated failure >&2\nexit 7\n");
+        let queries = test_queries();
 
         let error = run_columba(&ColumbaRunConfig {
             columba_bin: &bin,
             index_prefix: &index_prefix,
-            guide: "GAGTCCGAGCAGAAGAAGAA",
+            queries: &queries,
             candidate_edit_distance: 1,
             threads: Some(2),
             keep_sam: false,
@@ -684,11 +812,12 @@ fi
 exit 0
 "#,
         );
+        let queries = test_queries();
 
         let candidates = run_columba_candidate_generation(&ColumbaRunConfig {
             columba_bin: &bin,
             index_prefix: &index_prefix,
-            guide: "GAGTCCGAGCAGAAGAAGAA",
+            queries: &queries,
             candidate_edit_distance: 2,
             threads: None,
             keep_sam: false,
@@ -713,11 +842,12 @@ exit 0
         let index_prefix = dir.join("idx");
         write_dummy_index(&index_prefix);
         write_mock_executable(&bin, successful_mock_script());
+        let queries = test_queries();
 
         let output = run_columba(&ColumbaRunConfig {
             columba_bin: &bin,
             index_prefix: &index_prefix,
-            guide: "GAGTCCGAGCAGAAGAAGAA",
+            queries: &queries,
             candidate_edit_distance: 1,
             threads: Some(2),
             keep_sam: false,
@@ -740,11 +870,12 @@ exit 0
         let index_prefix = dir.join("idx");
         write_dummy_index(&index_prefix);
         write_mock_executable(&bin, successful_mock_script());
+        let queries = test_queries();
 
         let output = run_columba(&ColumbaRunConfig {
             columba_bin: &bin,
             index_prefix: &index_prefix,
-            guide: "GAGTCCGAGCAGAAGAAGAA",
+            queries: &queries,
             candidate_edit_distance: 1,
             threads: None,
             keep_sam: false,
@@ -766,11 +897,12 @@ exit 0
         let index_prefix = dir.join("idx");
         write_dummy_index(&index_prefix);
         write_mock_executable(&bin, successful_mock_script());
+        let queries = test_queries();
 
         let output = run_columba(&ColumbaRunConfig {
             columba_bin: &bin,
             index_prefix: &index_prefix,
-            guide: "GAGTCCGAGCAGAAGAAGAA",
+            queries: &queries,
             candidate_edit_distance: 1,
             threads: None,
             keep_sam: true,
@@ -801,5 +933,19 @@ exit 0
         assert!(candidates
             .iter()
             .any(|candidate| candidate.reference_start == 98 && candidate.edit_distance == 1));
+    }
+
+    #[test]
+    fn test_deduplicate_columba_candidates_keeps_guide_identity() {
+        let first =
+            parse_candidate("guide_alpha\t0\tchr1\t101\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
+        let second =
+            parse_candidate("guide_beta\t0\tchr1\t101\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
+
+        let candidates = deduplicate_columba_candidates(vec![first, second]);
+
+        assert_eq!(candidates.len(), 2);
+        assert_eq!(candidates[0].query_name, "guide_alpha");
+        assert_eq!(candidates[1].query_name, "guide_beta");
     }
 }

@@ -51,13 +51,24 @@ env -i bash -c 'WFA2LIB_PATH="./WFA2-lib" PATH=/usr/local/bin:/usr/bin:/bin ~/.c
 
 ```bash
 crisprapido -r <reference.fa> -g <guide_sequence> -p <pam_sequence> [OPTIONS]
+
+# Columba-backed batch mode
+crisprapido -r <reference.fa> -G <guides.fa> -p <pam_sequence> \
+  --columba-bin <columba> --columba-index <index_prefix> [OPTIONS]
 ```
 
 ### Required Arguments
 
 - `-r, --reference <FILE>`: Input reference FASTA file (supports .fa and .fa.gz)
-- `-g, --guide <SEQUENCE>`: Guide RNA sequence (without PAM)
+- `-g, --guide <SEQUENCE>`: One guide RNA sequence (without PAM)
+- `-G, --guides <FASTA>`: Multi-guide FASTA with unique record IDs; mutually exclusive with `--guide` and requires Columba candidate input
 - `-p, --pam <SEQUENCE>` : PAM sequence for CFD
+
+In batch mode, each FASTA record ID is retained as the Columba QNAME and as
+the PAF query name. The reference is loaded once, and the complete FASTA is
+submitted once at the configured candidate edit bound (`e=3` for `-m 2 -b 1
+-z 1`) plus one exact (`e=0`) recovery run when that bound is nonzero. An
+existing multi-query SAM can instead be supplied with `--columba-sam`.
 ### Optional Arguments
 
 - `-m, --max-mismatches <NUM>`: Maximum number of mismatches allowed (default: 4)
@@ -73,7 +84,7 @@ CRISPRapido outputs results in the Pairwise Alignment Format (PAF), which is wid
 
 | Column | Field | Description |
 |--------|-------|-------------|
-| 1 | Query name | "Guide" (the guide RNA sequence) |
+| 1 | Query name | `Guide` in legacy single-guide mode; the FASTA record ID in batch mode |
 | 2 | Query length | Length of the guide RNA |
 | 3 | Query start | 0-based start position in the guide sequence |
 | 4 | Query end | 0-based end position in the guide sequence |
@@ -159,4 +170,3 @@ See LICENSE file
 ## Citation
 
 Stay tuned!
-

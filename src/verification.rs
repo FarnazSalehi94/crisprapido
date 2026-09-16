@@ -908,7 +908,8 @@ mod tests {
     fn columba_test_args() -> Args {
         Args {
             reference: PathBuf::from("unused.fa"),
-            guide: "GAGTCCGAGCAGAAGAAGAA".to_string(),
+            guide: Some("GAGTCCGAGCAGAAGAAGAA".to_string()),
+            guides: None,
             pam: "GG".to_string(),
             max_mismatches: 4,
             max_bulges: 1,
@@ -935,7 +936,7 @@ mod tests {
         references: Vec<(String, Vec<u8>)>,
     ) -> Vec<Hit> {
         let args = columba_test_args();
-        let guide_fwd = Arc::new(args.guide.as_bytes().to_vec());
+        let guide_fwd = Arc::new(args.guide.as_ref().unwrap().as_bytes().to_vec());
         verify_columba_candidates(&candidates, &references, &guide_fwd, &args)
     }
 
@@ -949,12 +950,12 @@ mod tests {
         references: Vec<(String, Vec<u8>)>,
     ) -> Vec<Hit> {
         let mut args = columba_test_args();
-        args.guide = guide.to_string();
+        args.guide = Some(guide.to_string());
         args.max_mismatches = max_mismatches;
         args.max_bulges = max_bulges;
         args.max_bulge_size = max_bulge_size;
         args.min_match_fraction = min_match_fraction;
-        let guide_fwd = Arc::new(args.guide.as_bytes().to_vec());
+        let guide_fwd = Arc::new(args.guide.as_ref().unwrap().as_bytes().to_vec());
         verify_columba_candidates(&candidates, &references, &guide_fwd, &args)
     }
 
@@ -984,7 +985,7 @@ mod tests {
         window_end: usize,
     ) -> Hit {
         let args = columba_test_args();
-        let guide = Arc::new(args.guide.as_bytes().to_vec());
+        let guide = Arc::new(args.guide.as_ref().unwrap().as_bytes().to_vec());
         let mut aligner = setup_aligner();
         let window = &seq[window_start..window_end];
         let normalized_window = uppercase_ascii_sequence(window);
@@ -1301,7 +1302,7 @@ mod tests {
     #[test]
     fn test_pam_boundary_does_not_panic() {
         let args = columba_test_args();
-        let guide = Arc::new(args.guide.as_bytes().to_vec());
+        let guide = Arc::new(args.guide.as_ref().unwrap().as_bytes().to_vec());
         let hit = build_verified_hit(
             "near_end".to_string(),
             b"GAGTCCGAGCAGAAGAAGAA",
@@ -1324,7 +1325,7 @@ mod tests {
         cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
             .expect("Failed to initialize scoring matrices");
         let args = columba_test_args();
-        let guide = Arc::new(args.guide.as_bytes().to_vec());
+        let guide = Arc::new(args.guide.as_ref().unwrap().as_bytes().to_vec());
         let seq = b"GAGTCCGAGCAGAAGAAGAAAG";
         let hit = build_verified_hit(
             "chr1".to_string(),
@@ -1355,12 +1356,12 @@ mod tests {
         seq: Vec<u8>,
     ) -> (Vec<Hit>, ColumbaVerificationStats) {
         let mut args = columba_test_args();
-        args.guide = guide.to_string();
+        args.guide = Some(guide.to_string());
         args.max_mismatches = max_mismatches;
         args.max_bulges = max_bulges;
         args.max_bulge_size = max_bulge_size;
         args.min_match_fraction = 0.75;
-        let guide_fwd = Arc::new(args.guide.as_bytes().to_vec());
+        let guide_fwd = Arc::new(args.guide.as_ref().unwrap().as_bytes().to_vec());
         verify_columba_candidates_with_stats(
             &candidates,
             &[("chr1".to_string(), seq)],
