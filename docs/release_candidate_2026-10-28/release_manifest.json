@@ -1,0 +1,81 @@
+{
+  "status": "CANDIDATE_NOT_PROMOTED_SEARCH_NOT_RUN",
+  "code_commit": "9c2d3f53673fd135f0b4379812a9a7a4a7f20961",
+  "branch": "fix/pam-cfd-validation",
+  "worktree": "/export/local/home/salehi/crisprapido-pam-validation",
+  "run_root": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28",
+  "compiler": "rustc 1.85.1 (4eb161250 2025-03-15) (built from a source tarball)",
+  "build_command": "bash release/cargo-local.sh build --release --locked --offline -j 2",
+  "rustflags": "see cargo-local.sh",
+  "cargo_version": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+  "artifacts": {
+    "crisprapido-9c2d3f5": {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/crisprapido-9c2d3f5",
+      "bytes": 2010616,
+      "sha256": "f59b1bbf58e70b321359c7bd7b8687aad81bb874b22dc2f083319453726bc876"
+    },
+    "columba": {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba",
+      "bytes": 1121688,
+      "sha256": "7e44974c81dad4943292fa64a71e54073908b4909ce327480464d769322c40d1"
+    },
+    "columba-runtime": {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba-runtime",
+      "bytes": 402,
+      "sha256": "2367ef7b053a44c83f76b059ed66a8f671f83773d3fe69240cda50893408f28a"
+    },
+    "Cargo.lock": {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/Cargo.lock",
+      "bytes": 30031,
+      "sha256": "93564e52dcafb54bfdacd2b7c6d69ac806aa74fb00ea1a20a6aee75f13c7f0f2"
+    },
+    "LICENSE": {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/LICENSE",
+      "bytes": 654,
+      "sha256": "b9c4d1fc9e2ad9447c6e8d66f4deb8589a26a7e7163eef4d1850df5f1e3c4db4"
+    },
+    "mismatch_scores.txt": {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/mismatch_scores.txt",
+      "bytes": 7490,
+      "sha256": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4"
+    },
+    "pam_scores.txt": {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/pam_scores.txt",
+      "bytes": 203,
+      "sha256": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+    },
+    "cargo-local.sh": {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/cargo-local.sh",
+      "bytes": 757,
+      "sha256": "44e3d456075dec172276653c22e38c6d165689d3571db29d493935e8f2bb8ee3"
+    }
+  },
+  "wfa_library": {
+    "path": "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/crisprapido/WFA2-lib/lib/libwfa.a",
+    "sha256": "c19e330629971317d92aad90fa7c6c532441e4e5b3fccc72c18fd4016c927dbf"
+  },
+  "columba_source_commit": "edcc7ce2a1e28ded6784a44afbd8b9348a4805ad",
+  "columba_build_note": "build_Vanilla is untracked in its source checkout; actual executable hash is authoritative",
+  "loader": "/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib/ld-linux-x86-64.so.2",
+  "runtime_library_path": "/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib:/gnu/store/gmv6n5vy5qcsn71pkapg2hnknyn1p7g3-gcc-12.3.0-lib/lib:/gnu/store/ygm2rzg08w0w96h9587k3n2yvhndcqkn-zlib-1.2.13/lib",
+  "inputs": {
+    "guides_100.fa": "9fff99d40aa75a45b5eb1ad8882ad9e23039e710396ae16fba36d3fb23414358",
+    "guides_100.tsv": "2ccaa8a77060caad014169f9fc78e0ffd62edaeb476b9e085ba2473fdccaafc1",
+    "assemblies_12.tsv": "24e0ab632ea062cac124f5c27ac4b0fe3d6d5b54c5e44e1e3237c07af2073581"
+  },
+  "parameters": {
+    "pam": "GG",
+    "max_mismatches": 4,
+    "max_bulges": 1,
+    "max_bulge_size": 1,
+    "min_match_fraction": 0.75,
+    "threads": 4,
+    "allow_noncanonical_pam": false,
+    "no_filter": false,
+    "keep_columba_sam": true
+  },
+  "external_tools": {
+    "/moosefs/guarracino/condatools/samtools/1.22.1/bin/samtools": "c31e870885f0a10966b08f4e906a2269a62b14a6f971f1adf50207bfa9ce8fbc",
+    "/home/salehi/miniconda3/bin/zstd": "094ecdc87ec8cd22d27784948ea3c460d3f0e5e95a03e69b5c23ec14d01e148c"
+  }
+}

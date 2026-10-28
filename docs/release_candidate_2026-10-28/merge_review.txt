@@ -1,0 +1,23 @@
+Read-only git merge-tree simulation. No merge executed.
+Base 89e9682cf1f8dda36b89cc03059475e85e929189
+Conflict blocks: 28
+
+changed in both
+  base   100644 087ed6450ae14669837f7cb6b1e39c4918cba4c9 src/main.rs
+  our    100644 b830f9103b5981cd89bb18b884c29e6af74ada69 src/main.rs
+  their  100644 39b54c0374d9622ad39cb4beff11331f86b68125 src/main.rs
+
+changed in both
+  base   100644 87d9d80cd5e20915465a726cc8a9801ce0c488cd README.md
+  our    100644 0ee5786ea65eae262e84f2948f7edd624403396b README.md
+  their  100644 a2d34729c4b726d84434b6a207e14b74b53b127c README.md
+
+changed in both
+  base   100644 c0c60b05846b18f5bd3c8a1f53df9dcc59167263 tests/cfd_tests.rs
+  our    100644 9696bceb9f655d2be54c37123e7cb76422418cd4 tests/cfd_tests.rs
+  their  100644 1e45ec82fc406c2cc0d34f08c63bd820f0fc73db tests/cfd_tests.rs
+
+changed in both
+  base   100644 ff1712dc7316c8c0415e317f0dde4d2c28fe331c src/cfd_score.rs
+  our    100644 b5ef226c3e164423d39f3efe17fcae838f5b18f0 src/cfd_score.rs
+  their  100644 d5536d29d05e08b60108ac91319e1eba0edc27a1 src/cfd_score.rs

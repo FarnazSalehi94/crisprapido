@@ -1,0 +1,12 @@
+  columba-cfd-integration cfb1587 Add ropebwt3 backend, --allow-indels, --max-mismatches 0-3, load genome once
+  columba-wfa2-cfd        f75f82a [origin/columba-wfa2-cfd: ahead 1] Add batch-aware Columba guide processing
+* fix/pam-cfd-validation  9c2d3f5 [origin/fix/pam-cfd-validation] Fix strand-aware PAM extraction, enforce explicit PAM policy, and repair alignment coordinates
+  main                    cfb1587 [origin/main] Add ropebwt3 backend, --allow-indels, --max-mismatches 0-3, load genome once
+
+origin	https://github.com/FarnazSalehi94/crisprapido.git (fetch)
+origin	https://github.com/FarnazSalehi94/crisprapido.git (push)
+upstream	https://github.com/pinellolab/crisprapido.git (fetch)
+upstream	https://github.com/pinellolab/crisprapido.git (push)
+
+## fix/pam-cfd-validation...origin/fix/pam-cfd-validation
+?? docs/release_candidate_2026-10-28/

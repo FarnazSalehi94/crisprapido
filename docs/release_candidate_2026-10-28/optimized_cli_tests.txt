@@ -1,0 +1,25 @@
+   Compiling crisprapido v0.1.0 (/export/local/home/salehi/crisprapido-pam-validation)
+warning: field `cfd_score` is never read
+  --> src/hit.rs:15:16
+   |
+4  | pub(crate) struct Hit {
+   |                   --- field in this struct
+...
+15 |     pub(crate) cfd_score: Option<f64>,
+   |                ^^^^^^^^^
+   |
+   = note: `Hit` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `crisprapido` (bin "crisprapido") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 1.24s
+     Running tests/pam_cli_tests.rs (/export/local/home/salehi/crisprapido-pam-target/release/deps/pam_cli_tests-a2c957f117646b57)
+
+running 5 tests
+test direct_scan_checks_both_strands_in_one_window ... ok
+test mismatch_and_indel_coordinates_remain_consistent_on_both_strands ... ok
+test incomplete_or_ambiguous_pams_are_not_scored ... ok
+test canonical_policy_and_actual_cfd_on_both_strands ... ok
+test invalid_requested_pam_is_rejected_before_opening_reference ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
