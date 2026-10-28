@@ -3,45 +3,44 @@ use std::fmt::Write;
 
 use crate::cfd_score;
 use crate::hit::Hit;
-use crate::reverse_complement;
 use crate::verification::cigar_operations;
 
 fn convert_to_minimap2_cigar(cigar: &str) -> String {
     let mut result = String::new();
+    let mut current = None;
     let mut count = 0;
-    let mut current_op = None;
-
-    for c in cigar.chars() {
-        let op = match c {
-            'M' => '=',
-            'X' | 'I' | 'D' => c,
-            _ => continue,
-        };
-
-        if Some(op) == current_op {
-            count += 1;
-        } else {
-            if count > 0 {
-                write!(result, "{}{}", count, current_op.unwrap()).unwrap();
-            }
-            current_op = Some(op);
-            count = 1;
+    for (length, op) in cigar_operations(cigar).unwrap_or_default() {
+        let op = if op == 'M' { '=' } else { op };
+        if Some(op) != current && count > 0 {
+            write!(result, "{}{}", count, current.unwrap()).unwrap();
+            count = 0;
         }
+        current = Some(op);
+        count += length;
     }
-
-    if count > 0 && current_op.is_some() {
-        write!(result, "{}{}", count, current_op.unwrap()).unwrap();
+    if let Some(op) = current {
+        write!(result, "{}{}", count, op).unwrap();
     }
-
     result
 }
 
-pub(crate) fn report_filtered_hits(hits: Vec<Hit>, pam: &str) {
-    print!("{}", format_filtered_hits(hits, pam));
+pub(crate) fn report_filtered_hits(hits: Vec<Hit>, pam: &str, allow_noncanonical: bool) {
+    print!(
+        "{}",
+        format_filtered_hits_with_policy(hits, pam, "Guide", allow_noncanonical)
+    );
 }
 
-pub(crate) fn report_filtered_hits_for_query(hits: Vec<Hit>, pam: &str, query_name: &str) {
-    print!("{}", format_filtered_hits_for_query(hits, pam, query_name));
+pub(crate) fn report_filtered_hits_for_query(
+    hits: Vec<Hit>,
+    pam: &str,
+    query_name: &str,
+    allow_noncanonical: bool,
+) {
+    print!(
+        "{}",
+        format_filtered_hits_with_policy(hits, pam, query_name, allow_noncanonical)
+    );
 }
 
 fn pam_matches_requested(hit: &Hit, requested_pam: &str) -> bool {
@@ -49,10 +48,6 @@ fn pam_matches_requested(hit: &Hit, requested_pam: &str) -> bool {
         return false;
     };
     pam.eq_ignore_ascii_case(requested_pam)
-        || (hit.strand == '-'
-            && pam.eq_ignore_ascii_case(&String::from_utf8_lossy(&reverse_complement(
-                requested_pam.as_bytes(),
-            ))))
 }
 
 fn preferred_overlap_hit(candidate: &Hit, current: &Hit, requested_pam: &str) -> bool {
@@ -73,13 +68,28 @@ fn preferred_overlap_hit(candidate: &Hit, current: &Hit, requested_pam: &str) ->
     candidate.quality_score() > current.quality_score()
 }
 
+#[cfg(test)]
 fn format_filtered_hits(hits: Vec<Hit>, pam: &str) -> String {
     format_filtered_hits_for_query(hits, pam, "Guide")
 }
 
+#[cfg(test)]
 fn format_filtered_hits_for_query(hits: Vec<Hit>, pam: &str, query_name: &str) -> String {
+    format_filtered_hits_with_policy(hits, pam, query_name, false)
+}
+
+fn format_filtered_hits_with_policy(
+    hits: Vec<Hit>,
+    pam: &str,
+    query_name: &str,
+    allow_noncanonical: bool,
+) -> String {
     let mut hits_by_group: HashMap<(String, char), Vec<Hit>> = HashMap::new();
     for hit in hits {
+        // Apply eligibility before choosing overlap representatives.
+        if !allow_noncanonical && !pam_matches_requested(&hit, pam) {
+            continue;
+        }
         hits_by_group
             .entry((hit.ref_id.clone(), hit.strand))
             .or_insert_with(Vec::new)
@@ -190,19 +200,12 @@ fn format_hit_for_query(
     target_seq: &[u8],
     pam: &str,
 ) -> String {
-    let mut ref_pos = pos;
+    let ref_pos = pos;
     let mut ref_consumed = 0;
-    let mut query_start = 0;
+    let query_start = 0;
     let mut query_consumed = 0;
 
     let cigar_ops = cigar_operations(cigar).unwrap_or_default();
-
-    let leading_dels: usize = cigar_ops
-        .iter()
-        .take_while(|(_, op)| *op == 'D')
-        .map(|(length, _)| *length)
-        .sum();
-    ref_pos += leading_dels;
 
     let mut mismatches = 0;
     let mut gaps = 0;
@@ -236,7 +239,6 @@ fn format_hit_for_query(
                 }
                 max_gap_size = max_gap_size.max(current_gap_size);
                 ref_consumed += length;
-                query_start += length;
             }
             'M' | '=' => {
                 current_gap_size = 0;
@@ -518,5 +520,52 @@ mod tests {
         assert_eq!(output.lines().count(), 1);
         assert!(output.contains("	10	28	"));
         assert!(output.contains("	cg:Z:2I18="));
+    }
+}
+
+#[cfg(test)]
+mod coordinate_regressions {
+    use super::*;
+    #[test]
+    fn terminal_deletions_never_advance_query_or_double_shift_target() {
+        let guide = b"ACGTCAGTACGATCGTACGA";
+        for strand in ['+', '-'] {
+            for cigar in [
+                "1D20=",
+                "20=1D",
+                "DMMMMMMMMMMMMMMMMMMMM",
+                "MMMMMMMMMMMMMMMMMMMMD",
+            ] {
+                let line = format_hit(
+                    "chr",
+                    100,
+                    20,
+                    strand,
+                    0,
+                    cigar,
+                    guide,
+                    1000,
+                    4,
+                    1,
+                    1,
+                    &[],
+                    "GG",
+                );
+                let f: Vec<_> = line.split('\t').collect();
+                assert_eq!(&f[2..4], &["0", "20"]);
+                assert_eq!(&f[7..9], &["100", "121"]);
+                assert!(line.contains("cg:Z:1D20=") || line.contains("cg:Z:20=1D"));
+            }
+        }
+    }
+    #[test]
+    fn compact_and_expanded_cigars_have_identical_output() {
+        for (compact, raw, expected) in [
+            ("10=1I9=", "MMMMMMMMMMIMMMMMMMMM", "10=1I9="),
+            ("2M1X17=", "MMXMMMMMMMMMMMMMMMMM", "2=1X17="),
+        ] {
+            assert_eq!(convert_to_minimap2_cigar(compact), expected);
+            assert_eq!(convert_to_minimap2_cigar(raw), expected);
+        }
     }
 }

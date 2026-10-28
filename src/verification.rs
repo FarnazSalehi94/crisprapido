@@ -33,24 +33,29 @@ pub(crate) struct VerificationWindow {
 
 pub(crate) fn cigar_operations(cigar: &str) -> Option<Vec<(usize, char)>> {
     let mut operations = Vec::new();
-    let mut length = 0usize;
-
+    let mut length: Option<usize> = None;
     for c in cigar.chars() {
         if c.is_ascii_digit() {
-            length = length
-                .checked_mul(10)?
-                .checked_add(c.to_digit(10)? as usize)?;
+            length = Some(
+                length
+                    .unwrap_or(0)
+                    .checked_mul(10)?
+                    .checked_add(c.to_digit(10)? as usize)?,
+            );
         } else {
-            let op_len = if length == 0 { 1 } else { length };
-            operations.push((op_len, c));
-            length = 0;
+            if !matches!(c, 'M' | '=' | 'X' | 'I' | 'D') {
+                return None;
+            }
+            let n = length.take().unwrap_or(1);
+            if n == 0 {
+                return None;
+            }
+            operations.push((n, c));
         }
     }
-
-    if length != 0 {
+    if length.is_some() || operations.is_empty() {
         return None;
     }
-
     Some(operations)
 }
 
@@ -148,14 +153,14 @@ fn extract_cfd_target_from_alignment(
     alignment_offset: usize,
     cigar: &str,
 ) -> Option<Vec<u8>> {
-    let reference_span = cigar_operations(cigar)?.into_iter().try_fold(
-        0usize,
-        |span, (length, op)| match op {
-            'M' | '=' | 'X' | 'D' => span.checked_add(length),
-            'I' => Some(span),
-            _ => None,
-        },
-    )?;
+    let reference_span =
+        cigar_operations(cigar)?
+            .into_iter()
+            .try_fold(0usize, |span, (length, op)| match op {
+                'M' | '=' | 'X' | 'D' => span.checked_add(length),
+                'I' => Some(span),
+                _ => None,
+            })?;
     let target_end = alignment_offset.checked_add(reference_span)?;
 
     Some(oriented_window.get(alignment_offset..target_end)?.to_vec())
@@ -167,18 +172,19 @@ fn extract_adjacent_pam(
     protospacer_end: usize,
     strand: char,
 ) -> Option<String> {
-    match strand {
-        '+' => {
-            let pam = seq.get(protospacer_end..protospacer_end + 2)?;
-            Some(String::from_utf8_lossy(&uppercase_ascii_sequence(pam)).to_string())
-        }
-        '-' => {
-            let pam_start = protospacer_start.checked_sub(2)?;
-            let pam = uppercase_ascii_sequence(seq.get(pam_start..protospacer_start)?);
-            Some(String::from_utf8_lossy(&reverse_complement(&pam)).to_string())
-        }
-        _ => None,
+    // Cas9 has a three-base PAM; CFD uses its final two bases.
+    // Normalize to guide orientation before taking the suffix on either strand.
+    let pam = match strand {
+        '+' => uppercase_ascii_sequence(seq.get(protospacer_end..protospacer_end.checked_add(3)?)?),
+        '-' => reverse_complement(&uppercase_ascii_sequence(
+            seq.get(protospacer_start.checked_sub(3)?..protospacer_start)?,
+        )),
+        _ => return None,
+    };
+    if !pam.iter().all(|b| matches!(b, b'A' | b'C' | b'G' | b'T')) {
+        return None;
     }
+    String::from_utf8(pam[1..].to_vec()).ok()
 }
 
 pub(crate) fn build_verified_hit(
@@ -290,10 +296,6 @@ fn hit_matches_requested_pam(hit: &Hit, requested_pam: &str) -> bool {
         return false;
     };
     pam.eq_ignore_ascii_case(requested_pam)
-        || (hit.strand == '-'
-            && pam.eq_ignore_ascii_case(&String::from_utf8_lossy(&reverse_complement(
-                requested_pam.as_bytes(),
-            ))))
 }
 
 fn verify_columba_candidates_impl(
@@ -405,14 +407,13 @@ fn verify_columba_candidates_impl(
         let should_expand = match primary_hit {
             Some(hit) => {
                 stats.primary_accepted += 1;
-                let has_pam = hit.pam_seq.is_some();
                 let requested_pam = hit_matches_requested_pam(&hit, &args.pam);
                 let accepted_reference_insertion = requested_pam && hit.cigar.contains('D');
                 push_unique_hit(hit, &mut hits, &mut seen_hits, &mut stats);
                 recovered = true;
                 args.max_bulges > 0
                     && args.max_bulge_size > 0
-                    && ((has_pam && !requested_pam) || accepted_reference_insertion)
+                    && (!requested_pam || accepted_reference_insertion)
             }
             None => {
                 stats.primary_rejected += 1;
@@ -911,6 +912,7 @@ mod tests {
             guide: Some("GAGTCCGAGCAGAAGAAGAA".to_string()),
             guides: None,
             pam: "GG".to_string(),
+            allow_noncanonical_pam: false,
             max_mismatches: 4,
             max_bulges: 1,
             max_bulge_size: 2,
@@ -1027,26 +1029,26 @@ mod tests {
     fn test_cfd_target_extraction_preserves_ungapped_reference_bases() {
         let guide_insertion_target = b"GAAACGTCGATTTTATCAC";
         assert_eq!(
-            extract_cfd_target_from_alignment(guide_insertion_target, 0, "5=1I14=")
-                .unwrap(),
+            extract_cfd_target_from_alignment(guide_insertion_target, 0, "5=1I14=").unwrap(),
             guide_insertion_target
         );
 
         let genomic_insertion_target = b"GAAACTAGTCGATTTTATCAC";
         assert_eq!(
-            extract_cfd_target_from_alignment(genomic_insertion_target, 0, "5=1D15=")
-                .unwrap(),
+            extract_cfd_target_from_alignment(genomic_insertion_target, 0, "5=1D15=").unwrap(),
             genomic_insertion_target
         );
     }
 
     #[test]
-    fn test_terminal_d_preserves_genomic_base_and_has_no_cfd_score() {
+    fn test_terminal_d_preserves_genomic_base_and_has_projected_cfd_score() {
+        cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
+            .expect("Failed to initialize scoring matrices");
         let args = columba_test_args();
         let guide = Arc::new(b"GAAACAGTCGATTTTATCAC".to_vec());
         let target = b"GAAACAGTCGATTTTATCACA";
         let mut seq = target.to_vec();
-        seq.extend_from_slice(b"GG");
+        seq.extend_from_slice(b"AGG");
         let hit = build_verified_hit(
             "chr1".to_string(),
             &seq,
@@ -1062,7 +1064,8 @@ mod tests {
 
         assert_eq!(hit.target_seq, target);
         assert_eq!(hit.pam_seq.as_deref(), Some("GG"));
-        assert_eq!(cfd_for_hit(&hit), None);
+        let score = cfd_for_hit(&hit).expect("terminal D should produce a projected CFD score");
+        assert!((score - 0.6).abs() < 1e-12);
     }
 
     #[test]
@@ -1070,7 +1073,7 @@ mod tests {
         let guide = b"GAGTCCGAGCAGAAGAAGAA";
         let mut seq = b"TTTT".to_vec();
         seq.extend_from_slice(guide);
-        seq.extend_from_slice(b"GGAAAA");
+        seq.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide_20bp\t0\tchr1\t5\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
@@ -1086,7 +1089,7 @@ mod tests {
         let guide = b"gagtccgagcagaagaagaa";
         let mut seq = b"tttt".to_vec();
         seq.extend_from_slice(guide);
-        seq.extend_from_slice(b"ggaaaa");
+        seq.extend_from_slice(b"aggaaaa");
         let candidate =
             parse_candidate("guide_20bp\t0\tchr1\t5\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
@@ -1103,7 +1106,7 @@ mod tests {
         let guide_rc = reverse_complement(guide);
         let mut seq = b"CCCC".to_vec();
         seq.extend_from_slice(&guide_rc);
-        seq.extend_from_slice(b"GGAAAA");
+        seq.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide_20bp\t16\tchr1\t5\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
@@ -1118,7 +1121,7 @@ mod tests {
         target[10] = b'T';
         let mut seq = b"TTTT".to_vec();
         seq.extend_from_slice(&target);
-        seq.extend_from_slice(b"GGAAAA");
+        seq.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide_20bp\t0\tchr1\t5\t60\t20M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
@@ -1134,7 +1137,7 @@ mod tests {
         target.extend_from_slice(b"AGAAGAAGAA");
         let mut seq = b"TTTT".to_vec();
         seq.extend_from_slice(&target);
-        seq.extend_from_slice(b"GGAAAA");
+        seq.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide_20bp\t0\tchr1\t5\t60\t10M1D10M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
@@ -1149,7 +1152,7 @@ mod tests {
         let guide = b"GAGTCCGAGCAGAAGAAGAA";
         let mut seq = b"TTTT".to_vec();
         seq.extend_from_slice(guide);
-        seq.extend_from_slice(b"GGAAAA");
+        seq.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide_20bp\t256\tchr1\t5\t0\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
@@ -1187,10 +1190,10 @@ mod tests {
         let guide = b"GAGTCCGAGCAGAAGAAGAA";
         let mut chr1 = b"TTTT".to_vec();
         chr1.extend_from_slice(guide);
-        chr1.extend_from_slice(b"GGAAAA");
+        chr1.extend_from_slice(b"AGGAAAA");
         let mut chr2 = b"CCCC".to_vec();
         chr2.extend_from_slice(guide);
-        chr2.extend_from_slice(b"GGAAAA");
+        chr2.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide_20bp\t0\tchr1\t5\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
@@ -1206,7 +1209,7 @@ mod tests {
     fn test_cfd_input_independent_of_flank_size() {
         cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
             .expect("Failed to initialize scoring matrices");
-        let seq = b"AAAAAAAAAAGAGTCCGAGCAGAAGAAGAAGGCCCCCCCCCC";
+        let seq = b"AAAAAAAAAAGAGTCCGAGCAGAAGAAGAAAGGCCCCCCCCCC";
         let small = first_verified_hit_for_window("chr1", seq, 5, 37);
         let large = first_verified_hit_for_window("chr1", seq, 0, seq.len());
 
@@ -1234,7 +1237,7 @@ mod tests {
     fn test_normal_and_columba_perfect_forward_same_cfd_input() {
         cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
             .expect("Failed to initialize scoring matrices");
-        let seq = b"TTTTTTTTTTGAGTCCGAGCAGAAGAAGAAGGTTTTTTTT".to_vec();
+        let seq = b"TTTTTTTTTTGAGTCCGAGCAGAAGAAGAAAGGTTTTTTTT".to_vec();
         let (normal, columba) = compare_normal_and_columba_hit(
             "perfect_forward",
             seq,
@@ -1251,7 +1254,7 @@ mod tests {
     fn test_normal_and_columba_one_substitution_same_cfd_input() {
         cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
             .expect("Failed to initialize scoring matrices");
-        let seq = b"TTTTTTTTTTGAGTCCGAGTAGAAGAAGAAGGTTTTTTTT".to_vec();
+        let seq = b"TTTTTTTTTTGAGTCCGAGTAGAAGAAGAAAGGTTTTTTTT".to_vec();
         let (normal, columba) = compare_normal_and_columba_hit(
             "one_substitution",
             seq,
@@ -1268,7 +1271,7 @@ mod tests {
     fn test_normal_and_columba_one_deletion_same_cfd_input() {
         cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
             .expect("Failed to initialize scoring matrices");
-        let seq = b"TTTTTTTTTTGAGTCCGAGCGAAGAAGAAGGTTTTTTTT".to_vec();
+        let seq = b"TTTTTTTTTTGAGTCCGAGCGAAGAAGAAAGGTTTTTTTT".to_vec();
         let (normal, columba) = compare_normal_and_columba_hit(
             "one_bp_deletion_relative_to_guide",
             seq,
@@ -1286,7 +1289,7 @@ mod tests {
         let guide = b"GAGTCCGAGCAGAAGAAGAA";
         let guide_rc = reverse_complement(guide);
         let mut seq = b"TT".to_vec();
-        seq.extend_from_slice(b"GGGGGGGG");
+        seq.extend_from_slice(b"CCCCCCCC");
         seq.extend_from_slice(&guide_rc);
         seq.extend_from_slice(b"TTTTTT");
         let candidate =
@@ -1296,7 +1299,7 @@ mod tests {
         assert_eq!(hits.len(), 1);
         assert_eq!(hits[0].strand, '-');
         assert_eq!(hits[0].target_seq, guide.to_vec());
-        assert_eq!(hits[0].pam_seq, Some("CC".to_string()));
+        assert_eq!(hits[0].pam_seq, Some("GG".to_string()));
     }
 
     #[test]
@@ -1326,7 +1329,7 @@ mod tests {
             .expect("Failed to initialize scoring matrices");
         let args = columba_test_args();
         let guide = Arc::new(args.guide.as_ref().unwrap().as_bytes().to_vec());
-        let seq = b"GAGTCCGAGCAGAAGAAGAAAG";
+        let seq = b"GAGTCCGAGCAGAAGAAGAAAAG";
         let hit = build_verified_hit(
             "chr1".to_string(),
             seq,
@@ -1375,7 +1378,7 @@ mod tests {
         let guide = "AACGGCCTCCCAAAGTGCTG";
         let mut seq = b"CT".to_vec();
         seq.extend_from_slice(&guide.as_bytes()[2..]);
-        seq.extend_from_slice(b"GG");
+        seq.extend_from_slice(b"AGG");
         let candidate =
             parse_candidate("guide\t0\tchr1\t1\t60\t20M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
@@ -1409,7 +1412,7 @@ mod tests {
         .concat();
         let mut seq = b"CT".to_vec();
         seq.extend_from_slice(&target);
-        seq.extend_from_slice(b"GG");
+        seq.extend_from_slice(b"AGG");
         let candidate =
             parse_candidate("guide\t0\tchr1\t1\t60\t20M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
@@ -1434,11 +1437,11 @@ mod tests {
         let guide = "AACGGCCTCCCAAAGTGCTG";
         let mut oriented = b"CT".to_vec();
         oriented.extend_from_slice(&guide.as_bytes()[2..]);
-        let mut seq = b"CC".to_vec();
+        let mut seq = b"CCT".to_vec();
         seq.extend_from_slice(&reverse_complement(&oriented));
         seq.extend_from_slice(b"AAAA");
         let candidate =
-            parse_candidate("guide\t16\tchr1\t3\t60\t20M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
+            parse_candidate("guide\t16\tchr1\t4\t60\t20M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
         let (hits, stats) =
             verify_candidates_with_stats_for_test(guide, 0, 1, 2, vec![candidate], seq);
@@ -1447,8 +1450,8 @@ mod tests {
         assert_eq!(stats.expansion_triggers, 1);
         assert_eq!(hits.len(), 1);
         assert_eq!(hits[0].strand, '-');
-        assert_eq!(hits[0].pos, 2);
-        assert_eq!(hits[0].end_pos(), 20);
+        assert_eq!(hits[0].pos, 3);
+        assert_eq!(hits[0].end_pos(), 21);
         assert_eq!(hits[0].pam_seq, Some("GG".to_string()));
         assert_eq!(
             cigar_test_counts(&hits[0].cigar, guide.as_bytes()),
@@ -1460,7 +1463,7 @@ mod tests {
     fn test_fallback_not_triggered_when_primary_candidate_passes() {
         let guide = "AACGGCCTCCCAAAGTGCTG";
         let mut seq = guide.as_bytes().to_vec();
-        seq.extend_from_slice(b"GG");
+        seq.extend_from_slice(b"AGG");
         let candidate =
             parse_candidate("guide\t0\tchr1\t1\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
@@ -1479,7 +1482,7 @@ mod tests {
     fn test_fallback_triggers_when_primary_passes_with_nonrequested_pam() {
         let guide = "GACCATCCTGGCTAACACGG";
         let mut seq = guide.as_bytes().to_vec();
-        seq.extend_from_slice(b"TG");
+        seq.extend_from_slice(b"GTG");
         let candidate = parse_candidate("guide	0	chr1	1	60	20M	*	0	0	*	*	AS:i:0	NM:i:0");
 
         let (hits, stats) =
@@ -1500,7 +1503,7 @@ mod tests {
         target.extend_from_slice(b"GA");
         target.extend_from_slice(&guide.as_bytes()[16..]);
         let mut seq = target;
-        seq.extend_from_slice(b"GGTT");
+        seq.extend_from_slice(b"AGGTT");
         let candidate = parse_candidate("guide	0	chr1	5	60	20M	*	0	0	*	*	AS:i:2	NM:i:2");
 
         let (hits, stats) =
@@ -1523,7 +1526,7 @@ mod tests {
     fn test_fallback_triggers_for_requested_pam_reference_insertion_primary() {
         let guide = "GACCATCCTGGCTAACACGG";
         let mut seq = guide.as_bytes().to_vec();
-        seq.extend_from_slice(b"TGGG");
+        seq.extend_from_slice(b"TGGGG");
         let candidate = parse_candidate("guide	0	chr1	1	60	22M	*	0	0	*	*	AS:i:2	NM:i:2");
 
         let (hits, stats) =
@@ -1532,7 +1535,7 @@ mod tests {
         assert_eq!(stats.primary_accepted, 1);
         assert_eq!(stats.expansion_triggers, 1);
         assert!(hits.iter().any(|hit| {
-            hit.pos == 0 && hit.end_pos() == 18 && hit.pam_seq.as_deref() == Some("GG")
+            hit.pos == 0 && hit.end_pos() == 18 && hit.pam_seq.as_deref() == Some("GT")
         }));
     }
 
@@ -1542,10 +1545,10 @@ mod tests {
         let mut oriented = guide.as_bytes()[0..2].to_vec();
         oriented.extend_from_slice(b"TT");
         oriented.extend_from_slice(&guide.as_bytes()[2..]);
-        let mut seq = b"CC".to_vec();
+        let mut seq = b"CCT".to_vec();
         seq.extend_from_slice(&reverse_complement(&oriented));
         seq.extend_from_slice(b"AAAA");
-        let candidate = parse_candidate("guide	16	chr1	3	60	22M	*	0	0	*	*	AS:i:0	NM:i:0");
+        let candidate = parse_candidate("guide	16	chr1	4	60	22M	*	0	0	*	*	AS:i:0	NM:i:0");
 
         let (hits, stats) =
             verify_candidates_with_stats_for_test(guide, 0, 1, 2, vec![candidate], seq);
@@ -1554,8 +1557,8 @@ mod tests {
         assert_eq!(stats.expansion_triggers, 1);
         assert!(hits.iter().any(|hit| {
             hit.strand == '-'
-                && hit.pos == 2
-                && hit.end_pos() == 20
+                && hit.pos == 3
+                && hit.end_pos() == 21
                 && hit.pam_seq.as_deref() == Some("GG")
                 && hit.cigar.starts_with("II")
         }));
@@ -1578,7 +1581,7 @@ mod tests {
                 hit.strand == '-'
                     && hit.pos == 8
                     && hit.end_pos() == 26
-                    && hit.pam_seq.as_deref() == Some("GG")
+                    && hit.pam_seq.as_deref() == Some("GT")
                     && hit.cigar.starts_with("II")
             }),
             "fallback hits: {:?}",
@@ -1599,7 +1602,7 @@ mod tests {
         let guide = "AACGGCCTCCCAAAGTGCTG";
         let mut seq = b"CT".to_vec();
         seq.extend_from_slice(&guide.as_bytes()[2..]);
-        seq.extend_from_slice(b"GG");
+        seq.extend_from_slice(b"AGG");
         let candidate =
             parse_candidate("guide\t0\tchr1\t1\t60\t20M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
@@ -1617,7 +1620,7 @@ mod tests {
         let guide = "GAGTCCGAGCAGAAGAAGAA";
         let mut seq = b"ACGTCAGTACGTACGA".to_vec();
         seq.extend_from_slice(b"TAGTCCGAGCAGAAGAAGAC");
-        seq.extend_from_slice(b"GGTGCATGCATGCATG");
+        seq.extend_from_slice(b"AGGTGCATGCATGCATG");
         let candidate =
             parse_candidate("guide\t256\tchr1\t18\t0\t1I18M1I\t*\t0\t0\t*\t*\tAS:i:2\tNM:i:2");
 
@@ -1646,7 +1649,7 @@ mod tests {
         let target = b"AACTGCTCAATCAAAAAAAA";
         let mut seq = b"TT".to_vec();
         seq.extend_from_slice(target);
-        seq.extend_from_slice(b"GG");
+        seq.extend_from_slice(b"AGG");
         let candidate =
             parse_candidate("guide\t0\tchr1\t3\t0\t16M1I3M\t*\t0\t0\t*\t*\tAS:i:2\tNM:i:2");
 
@@ -1714,7 +1717,7 @@ mod tests {
         let guide = "AACGGCCTCCCAAAGTGCTG";
         let mut seq = b"CT".to_vec();
         seq.extend_from_slice(&guide.as_bytes()[2..]);
-        seq.extend_from_slice(b"GG");
+        seq.extend_from_slice(b"AGG");
         let candidate_one =
             parse_candidate("guide\t0\tchr1\t1\t60\t20M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
         let candidate_two =
@@ -1740,7 +1743,7 @@ mod tests {
         let candidate_ref = b"TATTTCCCTTTTCACCGTA";
         let mut seq = b"AAAAAAAAAA".to_vec();
         seq.extend_from_slice(candidate_ref);
-        seq.extend_from_slice(b"GGCCCC");
+        seq.extend_from_slice(b"AGGCCCC");
         let candidate =
             parse_candidate("guide\t0\tchr1\t11\t60\t1I19M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
@@ -1805,7 +1808,7 @@ mod tests {
         let candidate_ref = b"ATCGACGAT";
         let mut seq = b"TTTT".to_vec();
         seq.extend_from_slice(candidate_ref);
-        seq.extend_from_slice(b"GGAAAA");
+        seq.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide\t0\tchr1\t5\t60\t5M1I4M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
@@ -1831,7 +1834,7 @@ mod tests {
         let candidate_ref = b"ATCGAATCGAT";
         let mut seq = b"TTTT".to_vec();
         seq.extend_from_slice(candidate_ref);
-        seq.extend_from_slice(b"GGAAAA");
+        seq.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide\t0\tchr1\t5\t60\t5M1D5M\t*\t0\t0\t*\t*\tAS:i:1\tNM:i:1");
 
@@ -1883,7 +1886,7 @@ mod tests {
         let guide = "GAGTCCGAGCAGAAGAAGAA";
         let mut seq = b"CCCCCCCCCCCCCCCCCCCC".to_vec();
         seq.extend_from_slice(guide.as_bytes());
-        seq.extend_from_slice(b"GGAAAA");
+        seq.extend_from_slice(b"AGGAAAA");
         let candidate =
             parse_candidate("guide\t0\tchr1\t1\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
@@ -2074,7 +2077,7 @@ mod tests {
     fn test_reverse_columba_candidate_with_mixed_case_reference() {
         let guide = b"GAGTCCGAGCAGAAGAAGAA";
         let guide_rc = reverse_complement(guide);
-        let mut seq = b"TTGGGGGGGG".to_vec();
+        let mut seq = b"TTCCCCCCCC".to_vec();
         seq.extend(guide_rc.iter().map(u8::to_ascii_lowercase));
         seq.extend_from_slice(b"tttttt");
         let candidate =
@@ -2085,7 +2088,7 @@ mod tests {
         assert_eq!(hits[0].pos, 10);
         assert_eq!(hits[0].strand, '-');
         assert_eq!(hits[0].target_seq, guide.to_vec());
-        assert_eq!(hits[0].pam_seq, Some("CC".to_string()));
+        assert_eq!(hits[0].pam_seq, Some("GG".to_string()));
         assert_eq!(hits[0].cigar, "MMMMMMMMMMMMMMMMMMMM");
     }
 
@@ -2218,5 +2221,55 @@ mod tests {
             result.is_none(),
             "Should reject sequence with too many mismatches even with flanks"
         );
+    }
+}
+
+#[cfg(test)]
+mod pam_regressions {
+    use super::*;
+    #[test]
+    fn exact_pam_boundaries_and_suffixes() {
+        for (pam, expected) in [("AGG", "GG"), ("TGG", "GG"), ("GGA", "GA"), ("ACC", "CC")] {
+            let sequence = format!("TTTTTACGTCAGTACGATCGTACGA{}TTTTT", pam);
+            assert_eq!(
+                extract_adjacent_pam(sequence.as_bytes(), 5, 25, '+').as_deref(),
+                Some(expected)
+            );
+            let reverse = reverse_complement(sequence.as_bytes());
+            assert_eq!(
+                extract_adjacent_pam(&reverse, 8, 28, '-').as_deref(),
+                Some(expected)
+            );
+        }
+    }
+    #[test]
+    fn reject_missing_ambiguous_and_invalid_intervals() {
+        for seq in [b"GG".as_slice(), b"NGG", b"ANG", b"ARG"] {
+            assert_eq!(extract_adjacent_pam(seq, 0, 0, '+'), None);
+        }
+        assert_eq!(extract_adjacent_pam(b"AGG", 0, usize::MAX, '+'), None);
+        assert_eq!(extract_adjacent_pam(b"AGG", 2, 3, '-'), None);
+        assert_eq!(
+            extract_adjacent_pam(b"agg", 0, 0, '+').as_deref(),
+            Some("GG")
+        );
+    }
+    #[test]
+    fn reject_malformed_cigar_and_preserve_consumption() {
+        for cigar in [
+            "",
+            "0M",
+            "2M0I",
+            "20",
+            "2S18M",
+            "1N",
+            "2H",
+            "2P",
+            "999999999999999999999999999M",
+        ] {
+            assert!(cigar_operations(cigar).is_none(), "{}", cigar);
+        }
+        assert_eq!(alignment_reference_span("10=1D10="), 21);
+        assert_eq!(alignment_reference_span("10=1I9="), 19);
     }
 }

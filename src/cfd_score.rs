@@ -2,12 +2,12 @@
 //! Module for calculating CFD scores for CRISPR guide RNA off-target sites
 //! Adapted from the Python implementation by Linda Lin 3/23/2025
 
+use lazy_static::lazy_static;
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-use std::collections::HashMap;
-use std::sync::Once;
 use std::sync::Mutex;
-use lazy_static::lazy_static;
+use std::sync::Once;
 
 // Static matrices for CFD scoring
 lazy_static! {
@@ -21,20 +21,20 @@ pub fn init_score_matrices(mismatch_path: &str, pam_path: &str) -> Result<(), St
     INIT.call_once(|| {
         let mm_matrix = parse_scoring_matrix(mismatch_path)
             .map_err(|e| format!("Failed to load mismatch scores: {}", e));
-        
-        let pam_matrix = parse_scoring_matrix(pam_path)
-            .map_err(|e| format!("Failed to load PAM scores: {}", e));
-        
+
+        let pam_matrix =
+            parse_scoring_matrix(pam_path).map_err(|e| format!("Failed to load PAM scores: {}", e));
+
         if let (Ok(mm), Ok(pam)) = (mm_matrix, pam_matrix) {
             *MISMATCH_SCORES.lock().unwrap() = Some(mm);
             *PAM_SCORES.lock().unwrap() = Some(pam);
         }
     });
-    
+
     // Check if matrices were successfully loaded
     let mm_loaded = MISMATCH_SCORES.lock().unwrap().is_some();
     let pam_loaded = PAM_SCORES.lock().unwrap().is_some();
-    
+
     if mm_loaded && pam_loaded {
         Ok(())
     } else {
@@ -46,25 +46,33 @@ pub fn init_score_matrices(mismatch_path: &str, pam_path: &str) -> Result<(), St
 pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, String> {
     // Check for expected input lengths
     if spacer.len() != 20 || protospacer.len() != 20 || pam.len() != 2 {
-        return Err(format!("Incorrect input sequence length, expected 20nt for both spacer and protospacer"));
+        return Err(format!(
+            "Incorrect input sequence length, expected 20nt for both spacer and protospacer"
+        ));
     }
-    
+
     // Get locked references to scoring matrices
     let mm_scores_lock = MISMATCH_SCORES.lock().unwrap();
     let pam_scores_lock = PAM_SCORES.lock().unwrap();
-    
+
     // Verify matrices are initialized
-    let mm_scores = mm_scores_lock.as_ref()
+    let mm_scores = mm_scores_lock
+        .as_ref()
         .ok_or_else(|| "Mismatch scores not initialized".to_string())?;
-    let pam_scores = pam_scores_lock.as_ref()
+    let pam_scores = pam_scores_lock
+        .as_ref()
         .ok_or_else(|| "PAM scores not initialized".to_string())?;
-    
+
     // Pre-process sequences
     let spacer_list: Vec<char> = spacer.to_uppercase().replace("T", "U").chars().collect();
-    let protospacer_list: Vec<char> = protospacer.to_uppercase().replace("T", "U").chars().collect();
-    
+    let protospacer_list: Vec<char> = protospacer
+        .to_uppercase()
+        .replace("T", "U")
+        .chars()
+        .collect();
+
     let pam_upper = pam.to_uppercase();
-    
+
     let mut score = 1.0;
     for (i, &nt) in protospacer_list.iter().enumerate() {
         if spacer_list[i] == nt {
@@ -76,44 +84,49 @@ pub fn calculate_cfd(spacer: &str, protospacer: &str, pam: &str) -> Result<f64, 
             score *= 1.0;
         } else {
             // Incorporate score for given RNA-DNA basepair at this position
-            let key = format!("r{}:d{},{}", spacer_list[i], reverse_complement_nt(nt), i + 1);
-            
+            let key = format!(
+                "r{}:d{},{}",
+                spacer_list[i],
+                reverse_complement_nt(nt),
+                i + 1
+            );
+
             match mm_scores.get(&key) {
                 Some(penalty) => {
                     score *= penalty;
-                },
+                }
                 None => {
                     return Err(format!("Invalid basepair: {}", key));
                 }
             }
         }
     }
-    
+
     // Incorporate PAM score
     match pam_scores.get(&pam_upper) {
         Some(pam_penalty) => {
             score *= pam_penalty;
-        },
+        }
         None => {
             return Err(format!("Invalid PAM: {}", pam_upper));
         }
     }
-    
+
     Ok(score)
 }
 
 /// Get CFD score using CIGAR-based alignment
-/// 
+///
 /// # Arguments
 /// * `guide` - Guide RNA sequence as byte array
 /// * `target` - Target DNA sequence as byte array
 /// * `cigar` - CIGAR string representing the alignment
 /// * `pam` - 2nt PAM sequence
-/// 
+///
 /// # Returns
 /// * `Option<f64>` - CFD score if calculation succeeds
 pub fn get_cfd_score(guide: &[u8], target: &[u8], cigar: &str, pam: &str) -> Option<f64> {
-    let (spacer, protospacer) = match prepare_aligned_sequences(guide, target, cigar) {
+    let (mut spacer, mut protospacer) = match prepare_aligned_sequences(guide, target, cigar) {
         Ok(alignment) => alignment,
         Err(e) => {
             eprintln!("CFD alignment reconstruction error: {}", e);
@@ -121,13 +134,29 @@ pub fn get_cfd_score(guide: &[u8], target: &[u8], cigar: &str, pam: &str) -> Opt
         }
     };
 
-    // The standalone CFD implementation accepts exactly 20 aligned columns.
-    // In particular, a D operation in a verified 20nt-guide alignment produces
-    // more than 20 columns and cannot be projected without losing information.
+    let operations = parse_cigar_operations(cigar).ok()?;
+    let has_guide_bulge = operations.iter().any(|(_, operation)| *operation == 'I');
+    let dna_bulge_size: usize = operations
+        .iter()
+        .filter(|(_, operation)| *operation == 'D')
+        .map(|(length, _)| *length)
+        .sum();
+
+    if dna_bulge_size > 0 && !has_guide_bulge {
+        // CRISPRme projects a DNA-bulge alignment back onto the 20-position
+        // CFD model by removing k PAM-distal columns from both sequences,
+        // where k is the total DNA-bulge size. It does not remove the gap
+        // column unless that gap is itself in the removed prefix.
+        spacer = spacer.chars().skip(dna_bulge_size).collect();
+        protospacer = protospacer.chars().skip(dna_bulge_size).collect();
+    }
+
+    // The CFD implementation accepts exactly 20 aligned columns after any
+    // CRISPRme-compatible DNA-bulge projection.
     if spacer.len() != 20 || protospacer.len() != 20 {
         return None;
     }
-    
+
     // Calculate CFD score
     match calculate_cfd(&spacer, &protospacer, pam) {
         Ok(score) => Some(score),
@@ -144,9 +173,9 @@ fn parse_cigar_operations(cigar: &str) -> Result<Vec<(usize, char)>, String> {
 
     for c in cigar.chars() {
         if c.is_ascii_digit() {
-            let digit = c
-                .to_digit(10)
-                .ok_or_else(|| format!("Invalid CIGAR digit: {}", c))? as usize;
+            let digit =
+                c.to_digit(10)
+                    .ok_or_else(|| format!("Invalid CIGAR digit: {}", c))? as usize;
             let current = length.unwrap_or(0usize);
             length = Some(
                 current
@@ -187,7 +216,7 @@ fn prepare_aligned_sequences(
 
     let mut spacer = String::new();
     let mut protospacer = String::new();
-    
+
     let mut guide_pos = 0;
     let mut target_pos = 0;
 
@@ -199,7 +228,10 @@ fn prepare_aligned_sequences(
                         format!("CIGAR consumes beyond the {}nt guide", guide.len())
                     })?;
                     let target_base = target.get(target_pos).ok_or_else(|| {
-                        format!("CIGAR consumes beyond the {}nt genomic target", target.len())
+                        format!(
+                            "CIGAR consumes beyond the {}nt genomic target",
+                            target.len()
+                        )
                     })?;
                     spacer.push(char::from(*guide_base));
                     protospacer.push(char::from(*target_base));
@@ -216,7 +248,10 @@ fn prepare_aligned_sequences(
                 }
                 'D' => {
                     let target_base = target.get(target_pos).ok_or_else(|| {
-                        format!("CIGAR consumes beyond the {}nt genomic target", target.len())
+                        format!(
+                            "CIGAR consumes beyond the {}nt genomic target",
+                            target.len()
+                        )
                     })?;
                     spacer.push('-');
                     protospacer.push(char::from(*target_base));
@@ -255,9 +290,8 @@ fn reverse_complement_nt(nucleotide: char) -> char {
 /// Parse scoring matrix from space-delimited file
 fn parse_scoring_matrix(file_path: &str) -> Result<HashMap<String, f64>, String> {
     // Open file
-    let file = File::open(file_path)
-        .map_err(|e| format!("Cannot open {}: {}", file_path, e))?;
-    
+    let file = File::open(file_path).map_err(|e| format!("Cannot open {}: {}", file_path, e))?;
+
     // Read file
     let reader = BufReader::new(file);
     let mut matrix = HashMap::new();
@@ -265,7 +299,8 @@ fn parse_scoring_matrix(file_path: &str) -> Result<HashMap<String, f64>, String>
         let line = line.map_err(|e| format!("Error reading line: {}", e))?;
         let parts: Vec<&str> = line.split_whitespace().collect();
         if parts.len() >= 2 {
-            let score = parts[1].parse::<f64>()
+            let score = parts[1]
+                .parse::<f64>()
                 .map_err(|e| format!("Invalid score format: {}", e))?;
             matrix.insert(parts[0].to_string(), score);
         }
@@ -283,38 +318,178 @@ mod cfd_comparison_tests {
         let mut scores = HashMap::new();
 
         // Perfect matches with different PAMs
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 1.0);
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "AG".to_string()), 0.25925925899999996);
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "CG".to_string()), 0.107142857);
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "TG".to_string()), 0.038961038999999996);
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            1.0,
+        );
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "AG".to_string(),
+            ),
+            0.25925925899999996,
+        );
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "CG".to_string(),
+            ),
+            0.107142857,
+        );
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "TG".to_string(),
+            ),
+            0.038961038999999996,
+        );
 
         // Single mismatches at different positions with GG PAM
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.9); // pos 1
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.733333333); // pos 8
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATAAC".to_string(), "GG".to_string()), 0.538461538); // pos 18
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.5); // pos 20
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "AAAACAGTCGATTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            0.9,
+        ); // pos 1
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGGCGATTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            0.733333333,
+        ); // pos 8
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATAAC".to_string(),
+                "GG".to_string(),
+            ),
+            0.538461538,
+        ); // pos 18
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATCAA".to_string(),
+                "GG".to_string(),
+            ),
+            0.5,
+        ); // pos 20
 
         // Multiple mismatches with GG PAM
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGTCGATTTTATCAA".to_string(), "GG".to_string()), 0.45); // pos 1, 20
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "AAAACAGGCGATTTTATCAC".to_string(), "GG".to_string()), 0.6599999997); // pos 1, 8
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "GAAACAGGCGATTTTATAAC".to_string(), "GG".to_string()), 0.394871794354); // pos 8, 18
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "AAAACAGTCGATTTTATCAA".to_string(),
+                "GG".to_string(),
+            ),
+            0.45,
+        ); // pos 1, 20
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "AAAACAGGCGATTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            0.6599999997,
+        ); // pos 1, 8
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGGCGATTTTATAAC".to_string(),
+                "GG".to_string(),
+            ),
+            0.394871794354,
+        ); // pos 8, 18
 
         // Gaps/bulges with GG PAM
-        scores.insert(("-AAACAGTCGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 1.0); // gap at pos 1
-        scores.insert(("GAAACAG-CGATTTTATCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.0); // gap in middle
-        scores.insert(("GAAACAGTCGATTTTATCA-".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 0.529411764706); // gap at end
+        scores.insert(
+            (
+                "-AAACAGTCGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            1.0,
+        ); // gap at pos 1
+        scores.insert(
+            (
+                "GAAACAG-CGATTTTATCAC".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            0.0,
+        ); // gap in middle
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCA-".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            0.529411764706,
+        ); // gap at end
 
         // Real examples from papers and documentation
-        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "CTAACAGTTGCTTTTATCAC".to_string(), "GG".to_string()), 1.0);
-        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "TTAACAGTTGCTTTTATCAC".to_string(), "GG".to_string()), 1.0);
-        scores.insert(("CTAACAGTTGCTTTTATCAC".to_string(), "CTAACAGATGCTTTTATCAC".to_string(), "GG".to_string()), 0.8);
+        scores.insert(
+            (
+                "CTAACAGTTGCTTTTATCAC".to_string(),
+                "CTAACAGTTGCTTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            1.0,
+        );
+        scores.insert(
+            (
+                "CTAACAGTTGCTTTTATCAC".to_string(),
+                "TTAACAGTTGCTTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            1.0,
+        );
+        scores.insert(
+            (
+                "CTAACAGTTGCTTTTATCAC".to_string(),
+                "CTAACAGATGCTTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            0.8,
+        );
 
         // Test cases with different capitalization
-        scores.insert(("gaaacagtcgattttatcac".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "gg".to_string()), 1.0);
-        scores.insert(("GAAACAGTCGATTTTATCAC".to_string(), "gaaacagtcgattttatcac".to_string(), "GG".to_string()), 1.0);
+        scores.insert(
+            (
+                "gaaacagtcgattttatcac".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "gg".to_string(),
+            ),
+            1.0,
+        );
+        scores.insert(
+            (
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "gaaacagtcgattttatcac".to_string(),
+                "GG".to_string(),
+            ),
+            1.0,
+        );
 
         // Test cases with T to U conversion
-        scores.insert(("GAAACAGUCGAUUUUAUCAC".to_string(), "GAAACAGTCGATTTTATCAC".to_string(), "GG".to_string()), 1.0);
+        scores.insert(
+            (
+                "GAAACAGUCGAUUUUAUCAC".to_string(),
+                "GAAACAGTCGATTTTATCAC".to_string(),
+                "GG".to_string(),
+            ),
+            1.0,
+        );
 
         scores
     }
@@ -328,7 +503,10 @@ mod cfd_comparison_tests {
         // Get the known scores from Python implementation
         let python_scores = get_python_scores();
 
-        println!("Testing {} CFD score cases against Python implementation", python_scores.len());
+        println!(
+            "Testing {} CFD score cases against Python implementation",
+            python_scores.len()
+        );
 
         // Keep track of successes and failures
         let mut success_count = 0;
@@ -362,8 +540,13 @@ mod cfd_comparison_tests {
                         println!("Debug info for mismatch:");
 
                         // Convert T to U and print the spacer and protospacer lists
-                        let spacer_list: Vec<char> = spacer.to_uppercase().replace("T", "U").chars().collect();
-                        let protospacer_list: Vec<char> = protospacer.to_uppercase().replace("T", "U").chars().collect();
+                        let spacer_list: Vec<char> =
+                            spacer.to_uppercase().replace("T", "U").chars().collect();
+                        let protospacer_list: Vec<char> = protospacer
+                            .to_uppercase()
+                            .replace("T", "U")
+                            .chars()
+                            .collect();
 
                         println!("Processed spacer:      {:?}", spacer_list);
                         println!("Processed protospacer: {:?}", protospacer_list);
@@ -372,20 +555,36 @@ mod cfd_comparison_tests {
                         let mut debug_score = 1.0;
                         for (i, &nt) in protospacer_list.iter().enumerate() {
                             if spacer_list[i] == nt {
-                                println!("Pos {}: Match '{}' = '{}' (no penalty)", i+1, spacer_list[i], nt);
+                                println!(
+                                    "Pos {}: Match '{}' = '{}' (no penalty)",
+                                    i + 1,
+                                    spacer_list[i],
+                                    nt
+                                );
                             } else if i == 0 && (spacer_list[i] == '-' || nt == '-') {
-                                println!("Pos {}: Gap at PAM-distal end (no penalty)", i+1);
+                                println!("Pos {}: Gap at PAM-distal end (no penalty)", i + 1);
                             } else {
-                                let key = format!("r{}:d{},{}", spacer_list[i], reverse_complement_nt(nt), i + 1);
+                                let key = format!(
+                                    "r{}:d{},{}",
+                                    spacer_list[i],
+                                    reverse_complement_nt(nt),
+                                    i + 1
+                                );
                                 let mut mm_scores_lock = MISMATCH_SCORES.lock().unwrap();
                                 let mm_scores = mm_scores_lock.as_mut().unwrap();
 
                                 match mm_scores.get(&key) {
                                     Some(penalty) => {
-                                        println!("Pos {}: Mismatch '{}' ≠ '{}', key='{}', penalty={:.6}",
-                                                i+1, spacer_list[i], nt, key, penalty);
+                                        println!(
+                                            "Pos {}: Mismatch '{}' ≠ '{}', key='{}', penalty={:.6}",
+                                            i + 1,
+                                            spacer_list[i],
+                                            nt,
+                                            key,
+                                            penalty
+                                        );
                                         debug_score *= penalty;
-                                    },
+                                    }
                                     None => {
                                         println!("Pos {}: ERROR - Key '{}' not found in mismatch_scores.txt", i+1, key);
                                     }
@@ -402,7 +601,7 @@ mod cfd_comparison_tests {
                             Some(pam_penalty) => {
                                 println!("PAM: '{}', penalty={:.6}", pam_upper, pam_penalty);
                                 debug_score *= pam_penalty;
-                            },
+                            }
                             None => {
                                 println!("ERROR - PAM '{}' not found in pam_scores.txt", pam_upper);
                             }
@@ -410,7 +609,7 @@ mod cfd_comparison_tests {
 
                         println!("Final debug score: {:.6}", debug_score);
                     }
-                },
+                }
                 Err(e) => {
                     println!("Result: ✗ ERROR: {}", e);
                     fail_count += 1;
@@ -441,17 +640,17 @@ mod cfd_comparison_tests {
 
         // Check for specific keys we need
         let critical_keys = vec![
-            "rA:dT,1",  // Position 1 A to T mismatch
-            "rG:dA,1",  // Position 1 G to A mismatch
-            "rC:dA,1",  // Position 1 C to A mismatch
-            "rU:dG,1",  // Position a U to G mismatch (T to G in DNA)
+            "rA:dT,1", // Position 1 A to T mismatch
+            "rG:dA,1", // Position 1 G to A mismatch
+            "rC:dA,1", // Position 1 C to A mismatch
+            "rU:dG,1", // Position a U to G mismatch (T to G in DNA)
         ];
 
         for key in critical_keys {
             match mm_scores.get(key) {
                 Some(value) => {
                     println!("Found key '{}' = {:.6}", key, value);
-                },
+                }
                 None => {
                     println!("WARNING: Key '{}' not found in mismatch_scores.txt", key);
 
@@ -471,7 +670,8 @@ mod cfd_comparison_tests {
 
         // Check coverage of positions
         for pos in 1..=20 {
-            let position_keys: Vec<_> = mm_scores.keys()
+            let position_keys: Vec<_> = mm_scores
+                .keys()
                 .filter(|k| k.contains(&format!(",{}", pos)))
                 .collect();
 
@@ -480,7 +680,11 @@ mod cfd_comparison_tests {
             // Print a few examples for this position
             if position_keys.len() > 0 {
                 let sample_count = position_keys.len().min(3);
-                println!("Sample keys for position {}: {:?}", pos, &position_keys[0..sample_count]);
+                println!(
+                    "Sample keys for position {}: {:?}",
+                    pos,
+                    &position_keys[0..sample_count]
+                );
             }
         }
     }
@@ -517,7 +721,12 @@ mod cfd_comparison_tests {
                 chars[pos] = new_base;
                 protospacer = chars.into_iter().collect();
 
-                println!("\nPosition {} mismatch: {} -> {}", pos+1, original_base, new_base);
+                println!(
+                    "\nPosition {} mismatch: {} -> {}",
+                    pos + 1,
+                    original_base,
+                    new_base
+                );
                 println!("Spacer:      {}", standard_spacer);
                 println!("Protospacer: {}", protospacer);
 
@@ -527,26 +736,38 @@ mod cfd_comparison_tests {
                         println!("CFD Score: {:.6}", score);
 
                         // Verify score is in valid range
-                        assert!(score >= 0.0 && score <= 1.0,
-                                "Score out of valid range: {}", score);
+                        assert!(
+                            score >= 0.0 && score <= 1.0,
+                            "Score out of valid range: {}",
+                            score
+                        );
 
                         // Perfect match should have score of 1.0
                         if standard_spacer == protospacer {
-                            assert!((score - 1.0).abs() < 0.0001,
-                                    "Perfect match should have score 1.0, got {}", score);
+                            assert!(
+                                (score - 1.0).abs() < 0.0001,
+                                "Perfect match should have score 1.0, got {}",
+                                score
+                            );
                         } else {
                             // Any mismatch should reduce the score
-                            let is_g_to_a_at_pos7 = pos == 6 && original_base == 'G' && new_base == 'A';
+                            let is_g_to_a_at_pos7 =
+                                pos == 6 && original_base == 'G' && new_base == 'A';
                             if !is_g_to_a_at_pos7 {
-                                assert!(score <= 1.0,
-                                    "Mismatch should have score <= 1.0, got {}", score);
-                        } else {
-                            // For this special case, just print a message rather than failing
-                            println!("Note: Special case G→A at position 7 has score {}", score);
+                                assert!(
+                                    score <= 1.0,
+                                    "Mismatch should have score <= 1.0, got {}",
+                                    score
+                                );
+                            } else {
+                                // For this special case, just print a message rather than failing
+                                println!(
+                                    "Note: Special case G→A at position 7 has score {}",
+                                    score
+                                );
+                            }
                         }
-                     }
-
-                    },
+                    }
                     Err(e) => {
                         panic!("Error calculating CFD score: {}", e);
                     }
@@ -571,15 +792,21 @@ mod cfd_comparison_tests {
                         println!("CFD Score: {:.6}", score);
 
                         // Verify score is in valid range
-                        assert!(score >= 0.0 && score <= 1.0,
-                                "Score out of valid range: {}", score);
+                        assert!(
+                            score >= 0.0 && score <= 1.0,
+                            "Score out of valid range: {}",
+                            score
+                        );
 
                         // GG PAM should have highest score
                         if pam == "GG" {
-                            assert!((score - 1.0).abs() < 0.0001,
-                                    "GG PAM should have score 1.0, got {}", score);
+                            assert!(
+                                (score - 1.0).abs() < 0.0001,
+                                "GG PAM should have score 1.0, got {}",
+                                score
+                            );
                         }
-                    },
+                    }
                     Err(e) => {
                         println!("Error calculating CFD score for PAM {}: {}", pam, e);
                     }
@@ -594,6 +821,20 @@ mod alignment_reconstruction_tests {
     use super::*;
 
     const GUIDE: &[u8] = b"GAAACAGTCGATTTTATCAC";
+    const SBDS_GUIDE: &[u8] = b"ACTGAAATCTGTAAGCAGGC";
+
+    fn init_scores() {
+        init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
+            .expect("Failed to initialize scoring matrices");
+    }
+
+    fn assert_score_close(actual: Option<f64>, expected: f64) {
+        let actual = actual.expect("expected a CFD score");
+        assert!(
+            (actual - expected).abs() < 1e-12,
+            "expected {expected:.15}, got {actual:.15}"
+        );
+    }
 
     fn aligned(target: &[u8], cigar: &str) -> (String, String) {
         prepare_aligned_sequences(GUIDE, target, cigar)
@@ -667,8 +908,14 @@ mod alignment_reconstruction_tests {
         let (spacer, protospacer) = aligned(target, "5=1X13=1I");
         assert_eq!(spacer, "GAAACAGTCGATTTTATCAC");
         assert_eq!(protospacer, "GAAACCGTCGATTTTATCA-");
-        assert_eq!((spacer.as_bytes()[5], protospacer.as_bytes()[5]), (b'A', b'C'));
-        assert_eq!((spacer.as_bytes()[19], protospacer.as_bytes()[19]), (b'C', b'-'));
+        assert_eq!(
+            (spacer.as_bytes()[5], protospacer.as_bytes()[5]),
+            (b'A', b'C')
+        );
+        assert_eq!(
+            (spacer.as_bytes()[19], protospacer.as_bytes()[19]),
+            (b'C', b'-')
+        );
         assert_one_sided_gaps(&spacer, &protospacer);
 
         init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
@@ -681,55 +928,180 @@ mod alignment_reconstruction_tests {
     }
 
     #[test]
-    fn reconstructs_internal_genomic_insertion_before_declining_cfd() {
+    fn projects_internal_dna_bulge_from_pam_distal_end() {
+        init_scores();
         let target = b"GAAACTAGTCGATTTTATCAC";
         let (spacer, protospacer) = aligned(target, "5=1D15=");
         assert_eq!(spacer, "GAAAC-AGTCGATTTTATCAC");
         assert_eq!(protospacer, "GAAACTAGTCGATTTTATCAC");
-        assert_eq!((spacer.as_bytes()[5], protospacer.as_bytes()[5]), (b'-', b'T'));
+        assert_eq!(
+            (spacer.as_bytes()[5], protospacer.as_bytes()[5]),
+            (b'-', b'T')
+        );
         assert_eq!(spacer.len(), 21);
         assert_eq!(protospacer.len(), 21);
         assert_one_sided_gaps(&spacer, &protospacer);
-        assert_eq!(get_cfd_score(GUIDE, target, "5=1D15=", "GG"), None);
+
+        let expected = calculate_cfd(&spacer[1..], &protospacer[1..], "GG").unwrap();
+        assert_score_close(get_cfd_score(GUIDE, target, "5=1D15=", "GG"), expected);
     }
 
     #[test]
-    fn reconstructs_leading_genomic_insertion_before_declining_cfd() {
+    fn projects_leading_dna_bulge_by_removing_the_gap_column() {
+        init_scores();
         let target = b"TGAAACAGTCGATTTTATCAC";
         let (spacer, protospacer) = aligned(target, "1D20=");
         assert_eq!(spacer, "-GAAACAGTCGATTTTATCAC");
         assert_eq!(protospacer, "TGAAACAGTCGATTTTATCAC");
-        assert_eq!((spacer.as_bytes()[0], protospacer.as_bytes()[0]), (b'-', b'T'));
+        assert_eq!(
+            (spacer.as_bytes()[0], protospacer.as_bytes()[0]),
+            (b'-', b'T')
+        );
         assert_one_sided_gaps(&spacer, &protospacer);
-        assert_eq!(get_cfd_score(GUIDE, target, "1D20=", "GG"), None);
+        assert_score_close(get_cfd_score(GUIDE, target, "1D20=", "GG"), 1.0);
     }
 
     #[test]
-    fn reconstructs_trailing_genomic_insertion_before_declining_cfd() {
+    fn projects_trailing_dna_bulge_without_removing_the_gap() {
+        init_scores();
         let target = b"GAAACAGTCGATTTTATCACA";
         let (spacer, protospacer) = aligned(target, "20=1D");
         assert_eq!(spacer, "GAAACAGTCGATTTTATCAC-");
         assert_eq!(protospacer, "GAAACAGTCGATTTTATCACA");
-        assert_eq!((spacer.as_bytes()[20], protospacer.as_bytes()[20]), (b'-', b'A'));
+        assert_eq!(
+            (spacer.as_bytes()[20], protospacer.as_bytes()[20]),
+            (b'-', b'A')
+        );
         assert_one_sided_gaps(&spacer, &protospacer);
 
-        // Regression: the D-consumed genomic base must not disappear and turn
-        // this into a perfect 20-column guide/guide CFD input.
-        assert_eq!(get_cfd_score(GUIDE, target, "20=1D", "GG"), None);
+        let expected = calculate_cfd(&spacer[1..], &protospacer[1..], "GG").unwrap();
+        assert_score_close(get_cfd_score(GUIDE, target, "20=1D", "GG"), expected);
+        assert_score_close(get_cfd_score(GUIDE, target, "20=1D", "GG"), 0.6);
     }
 
     #[test]
-    fn reconstructs_mismatch_and_genomic_insertion_before_declining_cfd() {
+    fn projects_mismatch_and_internal_dna_bulge() {
+        init_scores();
         let target = b"GAAACCGTCGTATTTTATCAC";
         let (spacer, protospacer) = aligned(target, "5=1X4=1D10=");
         assert_eq!(spacer, "GAAACAGTCG-ATTTTATCAC");
         assert_eq!(protospacer, "GAAACCGTCGTATTTTATCAC");
-        assert_eq!((spacer.as_bytes()[5], protospacer.as_bytes()[5]), (b'A', b'C'));
-        assert_eq!((spacer.as_bytes()[10], protospacer.as_bytes()[10]), (b'-', b'T'));
-        assert_one_sided_gaps(&spacer, &protospacer);
         assert_eq!(
-            get_cfd_score(GUIDE, target, "5=1X4=1D10=", "GG"),
-            None
+            (spacer.as_bytes()[5], protospacer.as_bytes()[5]),
+            (b'A', b'C')
+        );
+        assert_eq!(
+            (spacer.as_bytes()[10], protospacer.as_bytes()[10]),
+            (b'-', b'T')
+        );
+        assert_one_sided_gaps(&spacer, &protospacer);
+
+        let expected = calculate_cfd(&spacer[1..], &protospacer[1..], "GG").unwrap();
+        assert_score_close(get_cfd_score(GUIDE, target, "5=1X4=1D10=", "GG"), expected);
+    }
+
+    #[test]
+    fn scores_validated_sbds_dna_bulges() {
+        init_scores();
+        let cases = [
+            (
+                "internal plus strand nm1",
+                b"ACTTGAAATATGTAAGCAGGC".as_slice(),
+                "3=1D5=1X11=",
+                "AG",
+                0.0972222221088,
+            ),
+            (
+                "internal minus strand nm2",
+                b"ACTGGAAATTTGTAAGCAGGG".as_slice(),
+                "4=1D4=1X10=1X",
+                "AG",
+                0.00235486349519,
+            ),
+            (
+                "leading plus strand nm2",
+                b"GTCTGAAATCTGTAGGCAGGC".as_slice(),
+                "1D1X12=1X6=",
+                "TG",
+                0.018181818212987,
+            ),
+            (
+                "trailing plus strand nm2",
+                b"ACTGAAATCGGTAACCAGGCT".as_slice(),
+                "9=1X4=1X5=1D",
+                "GG",
+                0.159183673616327,
+            ),
+        ];
+
+        for (name, target, cigar, pam, expected) in cases {
+            let actual = get_cfd_score(SBDS_GUIDE, target, cigar, pam);
+            let actual = actual.unwrap_or_else(|| panic!("{name} did not produce a CFD score"));
+            assert!(
+                (actual - expected).abs() < 1e-12,
+                "{name}: expected {expected:.15}, got {actual:.15}"
+            );
+        }
+    }
+
+    #[test]
+    fn removes_pam_distal_mismatch_instead_of_internal_gap() {
+        init_scores();
+        let target = b"TCTGAAATCTGTAGAGCAGGC";
+        let cigar = "1X12=1D7=";
+        let (spacer, protospacer) = prepare_aligned_sequences(SBDS_GUIDE, target, cigar).unwrap();
+        assert_eq!(spacer, "ACTGAAATCTGTA-AGCAGGC");
+        assert_eq!(protospacer, "TCTGAAATCTGTAGAGCAGGC");
+        assert_eq!(
+            (spacer.as_bytes()[0], protospacer.as_bytes()[0]),
+            (b'A', b'T')
+        );
+
+        let projected_spacer = &spacer[1..];
+        let projected_protospacer = &protospacer[1..];
+        assert!(projected_spacer.contains('-'));
+        let expected = calculate_cfd(projected_spacer, projected_protospacer, "GG").unwrap();
+        assert_score_close(get_cfd_score(SBDS_GUIDE, target, cigar, "GG"), expected);
+    }
+
+    #[test]
+    fn retained_position_one_gap_has_neutral_penalty() {
+        init_scores();
+        let target = b"GTAAACAGTCGATTTTATCAC";
+        let cigar = "1=1D19=";
+        let (spacer, protospacer) = aligned(target, cigar);
+        assert_eq!(&spacer[1..], "-AAACAGTCGATTTTATCAC");
+        assert_eq!(&protospacer[1..], "TAAACAGTCGATTTTATCAC");
+        assert_score_close(get_cfd_score(GUIDE, target, cigar, "GG"), 1.0);
+    }
+
+    #[test]
+    fn projects_multi_base_dna_bulge_by_total_d_length() {
+        init_scores();
+        let target = b"CTGAAACAGTCGATTTTATCAC";
+        assert_score_close(get_cfd_score(GUIDE, target, "2D20=", "GG"), 1.0);
+    }
+
+    #[test]
+    fn preserves_mixed_bulge_and_malformed_cigar_behavior() {
+        init_scores();
+        assert_eq!(get_cfd_score(GUIDE, GUIDE, "1D1I19=", "GG"), None);
+        assert_eq!(get_cfd_score(GUIDE, GUIDE, "20=Q", "GG"), None);
+    }
+
+    #[test]
+    fn preserves_ungapped_and_guide_bulge_scores() {
+        init_scores();
+        let perfect_expected =
+            calculate_cfd("GAAACAGTCGATTTTATCAC", "GAAACAGTCGATTTTATCAC", "GG").unwrap();
+        assert_score_close(get_cfd_score(GUIDE, GUIDE, "20=", "GG"), perfect_expected);
+
+        let target = b"GAAACCGTCGATTTTATCA";
+        let (spacer, protospacer) = aligned(target, "5=1X13=1I");
+        let insertion_expected = calculate_cfd(&spacer, &protospacer, "GG").unwrap();
+        assert_score_close(
+            get_cfd_score(GUIDE, target, "5=1X13=1I", "GG"),
+            insertion_expected,
         );
     }
 

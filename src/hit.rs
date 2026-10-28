@@ -19,24 +19,20 @@ pub(crate) struct Hit {
 
 impl Hit {
     pub(crate) fn quality_score(&self) -> i32 {
-        let matches = self.cigar.chars().filter(|&c| c == 'M' || c == '=').count();
-
-        let mismatches = self.cigar.chars().filter(|&c| c == 'X').count();
-
-        let gaps = self.cigar.chars().filter(|&c| c == 'I' || c == 'D').count();
-
-        matches as i32 - (mismatches as i32) - (gaps as i32 * 2) - self.score
+        let mut quality = -self.score;
+        for (n, op) in crate::verification::cigar_operations(&self.cigar).unwrap_or_default() {
+            quality += match op {
+                'M' | '=' => n as i32,
+                'X' => -(n as i32),
+                'I' | 'D' => -2 * n as i32,
+                _ => 0,
+            };
+        }
+        quality
     }
 
     pub(crate) fn end_pos(&self) -> usize {
-        let mut ref_consumed = 0;
-        for c in self.cigar.chars() {
-            match c {
-                'M' | '=' | 'X' | 'D' => ref_consumed += 1,
-                _ => {}
-            }
-        }
-        self.pos + ref_consumed
+        self.pos + crate::verification::alignment_reference_span(&self.cigar)
     }
 
     pub(crate) fn overlaps_with(&self, other: &Hit) -> bool {

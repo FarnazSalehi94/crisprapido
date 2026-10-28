@@ -61,9 +61,13 @@ pub(crate) struct Args {
     #[arg(short = 'G', long)]
     guides: Option<PathBuf>,
 
-    /// PAM sequence (to use for CFD scoring)
+    /// Required final two bases of a complete three-base PAM (GG requires NGG)
     #[arg(short = 'p', long, default_value = "GG")]
     pam: String,
+
+    /// Keep noncanonical or unavailable PAMs; score using observed PAM bases
+    #[arg(long)]
+    allow_noncanonical_pam: bool,
 
     /// Maximum number of mismatches allowed
     #[arg(short, long, default_value = "4")]
@@ -97,7 +101,7 @@ pub(crate) struct Args {
     #[arg(short = 't', long)]
     threads: Option<usize>,
 
-    /// Disable all filtering (report every alignment)
+    /// Bypass sequence/PAM eligibility; overlap representative selection still applies
     #[arg(long)]
     no_filter: bool,
 
@@ -129,7 +133,18 @@ fn open_reference_reader(path: &PathBuf) -> fasta::Reader<BufReader<Box<dyn BufR
 }
 
 fn main() {
-    let args = Args::parse();
+    let mut args = Args::parse();
+    args.pam.make_ascii_uppercase();
+    if args.pam.len() != 2
+        || !args
+            .pam
+            .bytes()
+            .all(|b| matches!(b, b'A' | b'C' | b'G' | b'T'))
+    {
+        eprintln!("--pam must contain exactly two DNA bases (A/C/G/T), e.g. GG for NGG");
+        std::process::exit(2);
+    }
+    let allow_noncanonical_pam = args.allow_noncanonical_pam || args.no_filter;
 
     if let Err(e) = cfd_score::init_score_matrices(
         args.mismatch_scores
@@ -239,19 +254,23 @@ fn main() {
                     &guide_fwd,
                     &args,
                 );
-                report_filtered_hits_for_query(hits, &args.pam, &query.query_name);
+                report_filtered_hits_for_query(
+                    hits,
+                    &args.pam,
+                    &query.query_name,
+                    allow_noncanonical_pam,
+                );
             }
         } else {
             let guide_fwd = Arc::new(queries[0].sequence.as_bytes().to_vec());
             let hits =
                 verify_columba_candidates(&candidates, &reference_records, &guide_fwd, &args);
-            report_filtered_hits(hits, &args.pam);
+            report_filtered_hits(hits, &args.pam, allow_noncanonical_pam);
         }
         return;
     }
 
     let guide_fwd = Arc::new(queries[0].sequence.as_bytes().to_vec());
-    let guide_rc = Arc::new(reverse_complement(&guide_fwd));
     let guide_len = guide_fwd.len();
     let reader = open_reference_reader(&args.reference);
     for result in reader.records() {
@@ -271,70 +290,53 @@ fn main() {
             .map_init(
                 || AffineWavefronts::with_penalties(0, 3, 5, 1),
                 |aligner, (i, end)| {
-                    let window = &seq[i..end];
+                    let window = uppercase_ascii_sequence(&seq[i..end]);
+                    let mut hits = Vec::new();
                     if window.len() < guide_len {
-                        return None;
+                        return hits;
                     }
-                    let normalized_window = uppercase_ascii_sequence(window);
-
-                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) =
-                        scan_window(
+                    for strand in ['+', '-'] {
+                        let oriented = if strand == '+' {
+                            window.clone()
+                        } else {
+                            reverse_complement(&window)
+                        };
+                        if let Some((score, cigar, _, _, _, offset)) = scan_window(
                             aligner,
                             &guide_fwd,
-                            &normalized_window,
+                            &oriented,
                             args.max_mismatches,
                             args.max_bulges,
                             args.max_bulge_size,
                             args.min_match_fraction,
                             args.no_filter,
-                        )
-                    {
-                        return Some(build_verified_hit(
-                            record_id.clone(),
-                            &seq,
-                            i + leading_dels,
-                            '+',
-                            score,
-                            cigar.clone(),
-                            Arc::clone(&guide_fwd),
-                            &normalized_window,
-                            leading_dels,
-                            &args,
-                        ));
+                        ) {
+                            let span = verification::alignment_reference_span(&cigar);
+                            let pos = if strand == '+' {
+                                i + offset
+                            } else {
+                                end - offset - span
+                            };
+                            hits.push(build_verified_hit(
+                                record_id.clone(),
+                                &seq,
+                                pos,
+                                strand,
+                                score,
+                                cigar,
+                                Arc::clone(&guide_fwd),
+                                &oriented,
+                                offset,
+                                &args,
+                            ));
+                        }
                     }
-
-                    if let Some((score, cigar, _mismatches, _gaps, _max_gap_size, leading_dels)) =
-                        scan_window(
-                            aligner,
-                            &guide_rc,
-                            &normalized_window,
-                            args.max_mismatches,
-                            args.max_bulges,
-                            args.max_bulge_size,
-                            args.min_match_fraction,
-                            args.no_filter,
-                        )
-                    {
-                        return Some(build_verified_hit(
-                            record_id.clone(),
-                            &seq,
-                            i + leading_dels,
-                            '-',
-                            score,
-                            cigar.clone(),
-                            Arc::clone(&guide_rc),
-                            &normalized_window,
-                            leading_dels,
-                            &args,
-                        ));
-                    }
-
-                    None
+                    hits
                 },
             )
-            .filter_map(|x| x)
+            .flatten()
             .collect();
 
-        report_filtered_hits(hits, &args.pam);
+        report_filtered_hits(hits, &args.pam, allow_noncanonical_pam);
     }
 }

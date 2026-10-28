@@ -62,7 +62,6 @@ crisprapido -r <reference.fa> -G <guides.fa> -p <pam_sequence> \
 - `-r, --reference <FILE>`: Input reference FASTA file (supports .fa and .fa.gz)
 - `-g, --guide <SEQUENCE>`: One guide RNA sequence (without PAM)
 - `-G, --guides <FASTA>`: Multi-guide FASTA with unique record IDs; mutually exclusive with `--guide` and requires Columba candidate input
-- `-p, --pam <SEQUENCE>` : PAM sequence for CFD
 
 In batch mode, each FASTA record ID is retained as the Columba QNAME and as
 the PAF query name. The reference is loaded once, and the complete FASTA is
@@ -71,12 +70,15 @@ submitted once at the configured candidate edit bound (`e=3` for `-m 2 -b 1
 existing multi-query SAM can instead be supplied with `--columba-sam`.
 ### Optional Arguments
 
+- `-p, --pam <DINUCLEOTIDE>`: Required final two bases of a complete three-base PAM (default: `GG`, requiring NGG). Use `--allow-noncanonical-pam` for permissive observed-PAM scoring.
+
 - `-m, --max-mismatches <NUM>`: Maximum number of mismatches allowed (default: 4)
 - `-b, --max-bulges <NUM>`: Maximum number of bulges allowed (default: 1)
 - `-z, --max-bulge-size <NUM>`: Maximum size of each bulge in bp (default: 2)
 - `-w, --window-size <NUM>`: Size of sequence window to scan (default: 4x guide length)
 - `-t, --threads <NUM>`: Number of threads to use (default: number of logical CPUs)
-- `--no-filter`: Disable all filtering (report every alignment)
+- `--allow-noncanonical-pam`: Keep nonmatching or unavailable PAMs; CFD still uses the actual observed PAM suffix.
+- `--no-filter`: Bypass sequence thresholds and PAM eligibility; overlap representative selection still applies.
 
 ## Output Format
 
@@ -170,3 +172,18 @@ See LICENSE file
 ## Citation
 
 Stay tuned!
+
+### PAM/CFD correction and compatibility
+
+By default, `-p GG` now enforces NGG on both strands before overlap selection.
+A full three-base PAM with resolved A/C/G/T bases is required. CFD receives its
+last two bases after strand orientation. Use `--allow-noncanonical-pam` to keep
+other PAMs with their actual observed score; a missing/ambiguous PAM has no CFD
+score. `-p` accepts two DNA bases, not the string `NGG`. `-z` controls bulge size.
+
+Earlier local binaries used the wrong adjacent two bases and did not enforce
+this eligibility rule. Existing CFD thresholds, candidate counts and coordinate
+based analyses may require regeneration from unfiltered candidates. The
+permissive flag does not reproduce buggy historical scoring. See
+[the fix and validation report](docs/PAM_CFD_VALIDATION.md) for corrected
+coordinate conventions, tests, small-subset comparisons and result impact.
