@@ -1,0 +1,19 @@
+assembly	path	status	failure_offset	requested_bytes	errno	error
+HG00128_hap2	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG00128_hap2/HG00128_hap2.brt	UNREADABLE	1409286144	4194304	5	[Errno 5] Input/output error
+HG00128_hap2	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG00128_hap2/HG00128_hap2.rev.brt	UNREADABLE	1543503872	4194304	5	[Errno 5] Input/output error
+HG00128_hap2	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG00128_hap2/HG00128_hap2.txt.bin	UNREADABLE	2013265920	4194304	5	[Errno 5] Input/output error
+HG01081_pat	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG01081_pat/HG01081_pat.brt	UNREADABLE	1879048192	4194304	5	[Errno 5] Input/output error
+HG01081_pat	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG01081_pat/HG01081_pat.txt.bin	UNREADABLE	1543503872	4194304	5	[Errno 5] Input/output error
+HG01081_pat	/moosefs/pangenomes/HPRCv2/HG01081_pat_hprc_r2_v1.0.1.fa.gz	TIMEOUT	482344960	4194304		
+HG02630_mat	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG02630_mat/HG02630_mat.brt	UNREADABLE	1610612736	4194304	5	[Errno 5] Input/output error
+HG02630_mat	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG02630_mat/HG02630_mat.rev.brt	UNREADABLE	872415232	4194304	5	[Errno 5] Input/output error
+HG02630_mat	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG02630_mat/HG02630_mat.txt.bin	UNREADABLE	2348810240	4194304	5	[Errno 5] Input/output error
+HG03369_hap2	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG03369_hap2/HG03369_hap2.bwt	UNREADABLE	1006632960	4194304	5	[Errno 5] Input/output error
+HG03369_hap2	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG03369_hap2/HG03369_hap2.rev.brt	UNREADABLE	1879048192	4194304	5	[Errno 5] Input/output error
+HG03369_hap2	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG03369_hap2/HG03369_hap2.txt.bin	UNREADABLE	67108864	4194304	5	[Errno 5] Input/output error
+HG04184_mat	/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG04184_mat/HG04184_mat.rev.brt	UNREADABLE	1476395008	4194304	5	[Errno 5] Input/output error
+NA18906_mat	/moosefs/salehi/HPRCv2_CRISPRapido/indices/NA18906_mat/NA18906_mat.txt.bin	UNREADABLE	2952790016	4194304	5	[Errno 5] Input/output error
+NA21309_pat	/moosefs/salehi/HPRCv2_CRISPRapido/indices/NA21309_pat/NA21309_pat.txt.bin	UNREADABLE	1610612736	4194304	5	[Errno 5] Input/output error
+CHM13	/moosefs/salehi/HPRCv2_CRISPRapido/indices/chm13v2.0_maskedY_rCRS.fa.PanSN/chm13v2.0_maskedY_rCRS.fa.PanSN.txt.bin	UNREADABLE	2952790016	4194304	5	[Errno 5] Input/output error
+GRCh38	/moosefs/salehi/HPRCv2_CRISPRapido/indices/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.rev.brt	UNREADABLE	872415232	4194304	5	[Errno 5] Input/output error
+GRCh38	/moosefs/salehi/HPRCv2_CRISPRapido/indices/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.sa.4	UNREADABLE	1879048192	4194304	5	[Errno 5] Input/output error

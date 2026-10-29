@@ -1,0 +1,18 @@
+{
+  "scripts/release_validation/audit_emitted.py": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+  "scripts/release_validation/compare_index_text.cpp": "d653b79ddf152d1447daeda000af3c1aab11ff85c64836f50d795b831e9cf641",
+  "scripts/release_validation/rebuild_index.py": "87ef3811020618154ab30055828e3b10746a04e30200adbf9cdc6e5ba8f30bd3",
+  "scripts/release_validation/rebuild_queue.py": "bc4dbc3d7f8a32f436a54a00f2668c0b1cccac807480d62b92e11ba1287df2f6",
+  "scripts/release_validation/recover_text_component.py": "a0abfb8b14a38fdc2f9e382ed040a004e9e1b157f1a7fe471ab4fc6a084035db",
+  "scripts/release_validation/regenerate_text.cpp": "a4cc14f1086830d6be1e051854a55904fa4ceda129c2d2072f1837fc1606e8c4",
+  "scripts/release_validation/scan_index_integrity.py": "f7973890c77a068a74444df84301240fa74d7fc521fd067f0d1f8a3169b8c0f6",
+  "scripts/release_validation/test_audit_emitted.py": "153b731465840842cb571f607626b4b3dfd6341a071268d3c221397c60151d3b",
+  "scripts/release_validation/test_index_provenance.py": "b6ef389db7113ab1e9fe3aa0e73da5a02885ac08f91fce094287349a23d52a9d",
+  "scripts/release_validation/test_queue_safety.py": "e66ec48292d6a6afabeb6cdb550308c6e24681a0c6359a4f9407b0529222690e",
+  "scripts/release_validation/test_rebuild_safety.py": "b61f103f93bc76d56f6677ab61c82cacde6569e5bbccad15b6b334d9e1afd9ba",
+  "scripts/release_validation/test_regenerate_text.py": "20647553bfa05b494a80e2906f815674608f15640ecd734f3bfd744370a4190f",
+  "scripts/release_validation/test_scan_integrity.py": "e42ee51326a0de8e6e15e66e60f6295b01da33544ce1624e889009a6eaa10430",
+  "scripts/release_validation/test_verification_panel.py": "50e1d8f5fa16bd61c1cc60bcf1b536dbb6dcba80f754af4e8589e99e7c636d03",
+  "scripts/release_validation/verify_inputs.py": "a73e47624aba87b74333ddf4331cafd12454b734ed550e4a2c1fb436ade21635",
+  "scripts/release_validation/verify_recovery_set.py": "ad97c2b1637dcc2ec2176799e5d4a584d5f01d581fbcdb1c2102f0156ad19d96"
+}

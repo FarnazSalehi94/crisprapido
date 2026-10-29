@@ -1,0 +1,98 @@
+[
+  {
+    "category": "DNA",
+    "guide_id": "FAM21A_CTCCTTCATTGATGGAACGG",
+    "guide": "CTCCTTCATTGATGGAACGG",
+    "paf": "FAM21A_CTCCTTCATTGATGGAACGG\t20\t0\t20\t+\trow_0024\t33\t5\t26\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:1D8=1X11=\tcf:f:0.6190",
+    "oriented_target": "GCTCCTTCAGTGATGGAACGG",
+    "oriented_pam": "AGG",
+    "expected_cfd": 0.6190476189999999,
+    "source_assembly": "HG00128_hap2",
+    "source_region": "HG00128#2#CM090099.1:52184508-52184540",
+    "provenance": "HG00128_hap2 strict subset; independently validated in PAM_fix_validation_2026-10-28/real_subset_final"
+  },
+  {
+    "category": "RNA",
+    "guide_id": "ACSL1_ATCACGTACATAGTCAACAA",
+    "guide": "ATCACGTACATAGTCAACAA",
+    "paf": "ACSL1_ATCACGTACATAGTCAACAA\t20\t0\t20\t+\trow_0070\t31\t6\t25\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:1=1I3=1X14=\tcf:f:0.6354",
+    "oriented_target": "ACACTTACATAGTCAACAA",
+    "oriented_pam": "GGG",
+    "expected_cfd": 0.635416666984375,
+    "source_assembly": "HG00128_hap2",
+    "source_region": "HG00128#2#CM090097.1:127565864-127565894",
+    "provenance": "HG00128_hap2 strict subset; independently validated in PAM_fix_validation_2026-10-28/real_subset_final"
+  },
+  {
+    "category": "mismatch",
+    "guide_id": "ARTN_GGCTGCGCGGAGAGACCAAG",
+    "guide": "GGCTGCGCGGAGAGACCAAG",
+    "paf": "ARTN_GGCTGCGCGGAGAGACCAAG\t20\t0\t20\t+\trow_0015\t32\t6\t26\t18\t20\t255\tas:i:6\tnm:i:2\tng:i:0\tbs:i:0\tcg:Z:5=1X2=1X11=\tcf:f:0.5969",
+    "oriented_target": "GGCTGAGCAGAGAGACCAAG",
+    "oriented_pam": "GGG",
+    "expected_cfd": 0.5969387759183674,
+    "source_assembly": "HG00128_hap2",
+    "source_region": "HG00128#2#JBHIKT010000005.1:45986041-45986072",
+    "provenance": "HG00128_hap2 strict subset; independently validated in PAM_fix_validation_2026-10-28/real_subset_final"
+  },
+  {
+    "category": "perfect",
+    "guide_id": "CT47A2_TCCTCCCCGAGGCCTTCCAC",
+    "guide": "TCCTCCCCGAGGCCTTCCAC",
+    "paf": "CT47A2_TCCTCCCCGAGGCCTTCCAC\t20\t0\t20\t+\trow_0020\t32\t6\t26\t20\t20\t255\tas:i:0\tnm:i:0\tng:i:0\tbs:i:0\tcg:Z:20=\tcf:f:1.0000",
+    "oriented_target": "TCCTCCCCGAGGCCTTCCAC",
+    "oriented_pam": "GGG",
+    "expected_cfd": 1.0,
+    "source_assembly": "HG00128_hap2",
+    "source_region": "HG00128#2#CM090107.1:119397257-119397288",
+    "provenance": "HG00128_hap2 strict subset; independently validated in PAM_fix_validation_2026-10-28/real_subset_final"
+  },
+  {
+    "category": "DNA",
+    "guide_id": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "guide": "TCTAGCGTTTAACTTCTTCG",
+    "paf": "ELMOD2_TCTAGCGTTTAACTTCTTCG\t20\t0\t20\t-\trow_0060\t33\t6\t27\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:20=1D\tcf:f:0.6000",
+    "oriented_target": "TCTAGCGTTTAACTTCTTCGT",
+    "oriented_pam": "GGG",
+    "expected_cfd": 0.6,
+    "source_assembly": "HG00128_hap2",
+    "source_region": "HG00128#2#CM090094.1:142890020-142890052",
+    "provenance": "HG00128_hap2 strict subset; independently validated in PAM_fix_validation_2026-10-28/real_subset_final"
+  },
+  {
+    "category": "RNA",
+    "guide_id": "ARTN_GGCTGCGCGGAGAGACCAAG",
+    "guide": "GGCTGCGCGGAGAGACCAAG",
+    "paf": "ARTN_GGCTGCGCGGAGAGACCAAG\t20\t0\t20\t-\trow_0032\t31\t6\t25\t17\t20\t255\tas:i:12\tnm:i:2\tng:i:1\tbs:i:1\tcg:Z:5=1I4=1X4=1X4=\tcf:f:0.2844",
+    "oriented_target": "GGCTGGCGGGGAGAACAAG",
+    "oriented_pam": "GGG",
+    "expected_cfd": 0.284375,
+    "source_assembly": "HG00128_hap2",
+    "source_region": "HG00128#2#CM090097.1:160222538-160222568",
+    "provenance": "HG00128_hap2 strict subset; independently validated in PAM_fix_validation_2026-10-28/real_subset_final"
+  },
+  {
+    "category": "mismatch",
+    "guide_id": "GALNT8_CAGGAGACACAATCACAGTG",
+    "guide": "CAGGAGACACAATCACAGTG",
+    "paf": "GALNT8_CAGGAGACACAATCACAGTG\t20\t0\t20\t-\trow_0037\t32\t6\t26\t18\t20\t255\tas:i:6\tnm:i:2\tng:i:0\tbs:i:0\tcg:Z:7=1X1=1X10=\tcf:f:0.2528",
+    "oriented_target": "CAGGAGAAAGAATCACAGTG",
+    "oriented_pam": "GGG",
+    "expected_cfd": 0.25277777785,
+    "source_assembly": "HG00128_hap2",
+    "source_region": "HG00128#2#CM090092.1:194862937-194862968",
+    "provenance": "HG00128_hap2 strict subset; independently validated in PAM_fix_validation_2026-10-28/real_subset_final"
+  },
+  {
+    "category": "perfect",
+    "guide_id": "C20orf202_CCAAGGTCTGCCCAAGACTC",
+    "guide": "CCAAGGTCTGCCCAAGACTC",
+    "paf": "C20orf202_CCAAGGTCTGCCCAAGACTC\t20\t0\t20\t-\trow_0113\t32\t6\t26\t20\t20\t255\tas:i:0\tnm:i:0\tng:i:0\tbs:i:0\tcg:Z:20=\tcf:f:1.0000",
+    "oriented_target": "CCAAGGTCTGCCCAAGACTC",
+    "oriented_pam": "GGG",
+    "expected_cfd": 1.0,
+    "source_assembly": "HG00128_hap2",
+    "source_region": "HG00128#2#CM090106.1:1287103-1287134",
+    "provenance": "HG00128_hap2 strict subset; independently validated in PAM_fix_validation_2026-10-28/real_subset_final"
+  }
+]

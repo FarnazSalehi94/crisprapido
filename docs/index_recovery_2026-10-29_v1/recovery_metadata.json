@@ -1,0 +1,344 @@
+{
+  "finalized_utc": "2026-10-29T14:29:53.664961+00:00",
+  "application_commit": "9c2d3f53673fd135f0b4379812a9a7a4a7f20961",
+  "starting_branch_commit": "babf0fbe787dd3ccb99ed7826b3c53c17e7a289e",
+  "branch": "fix/pam-cfd-validation",
+  "run_root": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28",
+  "original_scan": {
+    "files": 180,
+    "readable": 162,
+    "index_EIO_components": 17,
+    "source_timeouts": 1
+  },
+  "source_retry": {
+    "path": "/moosefs/pangenomes/HPRCv2/HG01081_pat_hprc_r2_v1.0.1.fa.gz",
+    "status": "READABLE",
+    "sha256": "7436cea9f07e120b9efa0838e8f71ba3fab090dfeb05635bd7f9daa991e5d3e7",
+    "size": 901140983,
+    "bytes_completely_read": 901140983,
+    "seconds": 4.939
+  },
+  "final_index_sets": 12,
+  "verified_index_components": 144,
+  "full_rebuilds": 6,
+  "text_only_repairs": 3,
+  "unchanged_originals": 3,
+  "readable_original_component_hash_comparisons": 91,
+  "all_comparisons_match": true,
+  "auditor_unit_tests": 23,
+  "audit_real_rows": {
+    "status": "PASS",
+    "rows": 88,
+    "errors": 0,
+    "provenance": {
+      "paf": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/previous_real_genomic_coordinates.paf",
+      "fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG00128_hap2/input/HG00128_hap2_hprc_r2_v1.0.1.fa.gz",
+      "guides": "/export/local/home/salehi/crisprapido-pam-validation/docs/release_candidate_2026-10-28/guides_100.tsv",
+      "matrices": "/export/local/home/salehi/crisprapido-pam-validation",
+      "samtools": "/moosefs/guarracino/condatools/samtools/1.22.1/bin/samtools",
+      "batch_size": 500,
+      "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+      "paf_sha256": "77d316246e4456a53e6e47207864f499674f98d937ca1cb5963816e9a236d201",
+      "guide_sha256": "2ccaa8a77060caad014169f9fc78e0ffd62edaeb476b9e085ba2473fdccaafc1",
+      "fai_sha256": "1c27d72e6f660a595cabc88d49a2e3f8ae3a19e4e5000786d5b721369112c74b",
+      "matrix_sha256": {
+        "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+        "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+      }
+    },
+    "counts": {
+      "verified": 88,
+      "strand_+": 49,
+      "SCORED": 88,
+      "bulged": 72,
+      "CFD_ge_020": 50,
+      "CFD_lt_020": 38,
+      "ungapped": 16,
+      "strand_-": 39
+    },
+    "per_guide": {
+      "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "MED6_TGCCACCAATACCCTTTGGA": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "HNRNPC_AAATTCACTTACCTAAAACC": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "PPIP5K2_CATAGCTGTTATACGTCATG": {},
+      "YTHDC1_TCTGCATCAGAGTCATATGC": {},
+      "MT1X_GTTGGCTCCTGTGCCTGTGC": {},
+      "PSG8_GCAACCTGTGAGACATAGGG": {},
+      "ZNF274_TGTGGTATCTCAGTTAGAGG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "KLHL38_CTACTGTACAGCAAACAGAC": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "YAP1_TCGAACATGCTGTGGAGTCA": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "VIL1_GCAGTACCCACCAAGCACAC": {
+        "verified": 2,
+        "strand_+": 2
+      },
+      "ADAM2_ATGTGTGATGCAAACTATGC": {},
+      "DSPP_TGGCGATGCAGGTCACAATG": {},
+      "VEZF1_ACCGGATGACTTACCATGTG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "MAP2K2_ACGGCGAGTTGCATTCGTGC": {},
+      "STEAP1_GTGTGTGCTGAAGTTCTGAA": {
+        "verified": 4,
+        "strand_+": 4
+      },
+      "NANP_GGACAACACTCTCATCGACA": {},
+      "EIF1AD_AAGAACATCTGGATCAAGAG": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "HTATSF1_ACCTCCACAAGAAAAAGCCC": {},
+      "SGK2_TGGGGCGTTCTATGCAGTGA": {},
+      "OR2D2_GTTACCCTAACATCATGACC": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "MYO1F_CGTACTTCCGGACAGCCACG": {},
+      "LINS_CAGGCACAGATCCACGACAG": {},
+      "PIGK_AATTACCAACATAGAACTCG": {},
+      "NAP1L4_GCTAAAAATGCAAGTAACAC": {
+        "verified": 2,
+        "strand_-": 2
+      },
+      "RPL36A-HNRNPH2_CTCCCATGAGGAAGTGCGAT": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "Non-Targeting_Control_AACGCTGTCGTACGTGTATA": {},
+      "FLOT2_CCAGGACGTGTATGACAAAG": {},
+      "FAM21C_TGGCAGTATTGTGGACACTG": {
+        "verified": 2,
+        "strand_+": 2
+      },
+      "CELA3A_GAGGGATCTGACCTACCAGG": {},
+      "IL17RE_CCAGTGAAACTGTCATCCTG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "LRRC41_AATGGTCCCACGTAGAACAT": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "NANP_CCTACTTCTATTAACGAATG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "SLC38A7_GATGTACTTGATGATAACGA": {},
+      "AP3B1_TGCTATGAAGCGGATTGTTG": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "PALMD_CTGGACCAAACTTTCAAGAA": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "CT47A2_TCCTCCCCGAGGCCTTCCAC": {
+        "verified": 3,
+        "strand_+": 3
+      },
+      "SRD5A1_CACTCACCTATTAGAAAACG": {},
+      "NAB1_TGATGATCCACACAAAGAGG": {},
+      "ACSL1_ATCACGTACATAGTCAACAA": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "CEP85_TAAAGTAGAAGGCATCACAT": {
+        "verified": 5,
+        "strand_+": 2,
+        "strand_-": 3
+      },
+      "NEK2_GTGGTCATACCGTATTGCAT": {},
+      "ZNF254_TGATCACCTGTCTGGAACAA": {},
+      "MYH6_GCAGGTGAAGAACCTAACAG": {},
+      "FCRL4_CTGCACATGGATCTGTAGCG": {},
+      "RPH3AL_TCAGGGGCAAGATATACTTG": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "AOC2_TATATGGATGTCCACCATCG": {},
+      "C20orf202_CCAAGGTCTGCCCAAGACTC": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "TM2D1_CGAGGAGTCGCTTAAGTGCG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "CEP85L_AGAGTAATCAATGATTGACT": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "ZNRF2_TCCGTACCTCCAAACATGTG": {},
+      "STK40_CGCTGAAGTCATGAGCACAG": {
+        "verified": 3,
+        "strand_+": 2,
+        "strand_-": 1
+      },
+      "CCL11_AGCTACAGGAGAATCACCAG": {
+        "verified": 2,
+        "strand_-": 2
+      },
+      "ZBTB25_ATACACTTATGCCATTACTG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "TRPT1_TGTACCATGGACTAGCATCG": {},
+      "OR2AE1_CATGGTGGTCTTCCTTATTG": {
+        "verified": 4,
+        "strand_+": 1,
+        "strand_-": 3
+      },
+      "RCAN2_ACTGGCGTGGCATCGTTGAT": {},
+      "ARTN_GGCTGCGCGGAGAGACCAAG": {
+        "verified": 3,
+        "strand_+": 1,
+        "strand_-": 2
+      },
+      "POMT2_TGTGCGGCGGCTCGTCCAAG": {},
+      "ZC2HC1B_TGTATGCTAGCCATTAAAGA": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "SIGIRR_GACCAGCACTGAAGTCTATG": {
+        "verified": 5,
+        "strand_-": 2,
+        "strand_+": 3
+      },
+      "VSTM2L_GGATCTCCAGCGAGTAGGAG": {},
+      "UBE3D_AAGACCTGAACTATCCCCAG": {},
+      "POC5_TCACAGTCATCTCATCCTAA": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "RAB3GAP1_TCGAAATCAGTTCGTACACC": {},
+      "IPO7_GTATAAGGGGATATATCCCC": {},
+      "LDLRAD4_GAAGAGCCACCTCCTTACCA": {
+        "verified": 2,
+        "strand_+": 1,
+        "strand_-": 1
+      },
+      "CASP4_TATGCAAGAGAAGCAACGTA": {},
+      "TREML4_TGTTCTTAGAAATATCAGCC": {},
+      "GPRIN2_GTCCGTAGCACCCAGATGCG": {
+        "verified": 3,
+        "strand_-": 1,
+        "strand_+": 2
+      },
+      "HK3_ATCATGGTTCAACCGGAATG": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "OR8H3_CAGAGTCTGACAGTCCCGTA": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "OR1L6_AGCATGAGCAGGCAATGCCG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "TFAP2B_GGACGTCTTCCATTCCGGGA": {},
+      "ISY1_TCAAACAGCTCTCTAACACC": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "SLC4A4_TCTTCAAACTTGATCCACCT": {
+        "verified": 2,
+        "strand_-": 1,
+        "strand_+": 1
+      },
+      "FMOD_AGGTAGTGGAACCACCAATG": {},
+      "PSMB8_AAGGAACGTTCAGATTGAGA": {
+        "verified": 2,
+        "strand_+": 1,
+        "strand_-": 1
+      },
+      "SUCLG2_TTCAATAGTGGTTTGAAAGG": {},
+      "ASB7_AGCTCGCCATTATCCGAGAG": {},
+      "TMSB15B_TAAACCAGACTTGTCGGAAG": {},
+      "GKN2_GATACAATCTCATGGATACG": {},
+      "NPIPB6_CCATACCTTTCTGTCTACTG": {
+        "verified": 2,
+        "strand_+": 2
+      },
+      "PDHX_GCCGCGGAGCTAATTGGAGA": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "POLR1D_GTAACGTAGAGAATTTCCTA": {},
+      "ATP5E_ACTGGAGACAGGCTGGACTC": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "PDIA2_GGCCAAGCTCCTCGTCCACG": {},
+      "ANGPTL3_TGTACCACCATTTATAACAG": {},
+      "KCNE4_CCTCTGAACAGCACGCACCC": {},
+      "OR51F2_GAAGATCAGAGGCTCAGCAA": {
+        "verified": 4,
+        "strand_+": 3,
+        "strand_-": 1
+      },
+      "EID2B_GTGGGACACTGCTATCTCCG": {},
+      "FAM21A_CTCCTTCATTGATGGAACGG": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "CLPX_AGTTATTTACCTGACCCAGT": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "OGFOD3_CCTGCAGCGTAGCTGAAAAG": {},
+      "DTX3L_CAGGTCACCTGATCGACTTG": {
+        "verified": 1,
+        "strand_-": 1
+      },
+      "EAF2_CTCACTCACAGCGCACAGTG": {
+        "verified": 1,
+        "strand_+": 1
+      },
+      "RAD51AP1_ACTTACCATCACTGTCAGAG": {
+        "verified": 2,
+        "strand_+": 2
+      },
+      "RASGRP4_ACCAGGCTCTTGGGACAACG": {
+        "verified": 2,
+        "strand_+": 1,
+        "strand_-": 1
+      },
+      "TRIM37_GGAAACACTTACCGGCAATG": {},
+      "GALNT8_CAGGAGACACAATCACAGTG": {
+        "verified": 1,
+        "strand_-": 1
+      }
+    },
+    "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+  },
+  "negative_control": {
+    "rows": 120,
+    "correct_rejections": 32,
+    "canonical_rows_verified": 88
+  },
+  "complete_search": "NOT_LAUNCHED",
+  "production_binary": "UNCHANGED",
+  "underlying_MooseFS_fault": "Not repaired; originals preserved",
+  "limitations": "Full content readability and frozen-source binding verified. This is not whole-genome search sensitivity validation.",
+  "test_log": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/tests_final_all_guards.log",
+  "content_verifier_execution_sources": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/execution_sources"
+}
