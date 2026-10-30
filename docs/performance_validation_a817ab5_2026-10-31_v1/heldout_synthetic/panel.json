@@ -1,0 +1,761 @@
+{
+  "seed": 20261102,
+  "cases": [
+    {
+      "contig": "held_a_exact_plus",
+      "guide": "held_a",
+      "design": "exact",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_exact_minus",
+      "guide": "held_a",
+      "design": "exact",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mm1_plus",
+      "guide": "held_a",
+      "design": "mm1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mm1_minus",
+      "guide": "held_a",
+      "design": "mm1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mm3_plus",
+      "guide": "held_a",
+      "design": "mm3",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mm3_minus",
+      "guide": "held_a",
+      "design": "mm3",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mm8_plus",
+      "guide": "held_a",
+      "design": "mm8",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mm8_minus",
+      "guide": "held_a",
+      "design": "mm8",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mm13_plus",
+      "guide": "held_a",
+      "design": "mm13",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mm13_minus",
+      "guide": "held_a",
+      "design": "mm13",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mm18_plus",
+      "guide": "held_a",
+      "design": "mm18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mm18_minus",
+      "guide": "held_a",
+      "design": "mm18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mm4_plus",
+      "guide": "held_a",
+      "design": "mm4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mm4_minus",
+      "guide": "held_a",
+      "design": "mm4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_I1_plus",
+      "guide": "held_a",
+      "design": "I1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_I1_minus",
+      "guide": "held_a",
+      "design": "I1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_D1_plus",
+      "guide": "held_a",
+      "design": "D1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_D1_minus",
+      "guide": "held_a",
+      "design": "D1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_I4_plus",
+      "guide": "held_a",
+      "design": "I4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_I4_minus",
+      "guide": "held_a",
+      "design": "I4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_D4_plus",
+      "guide": "held_a",
+      "design": "D4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_D4_minus",
+      "guide": "held_a",
+      "design": "D4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_I9_plus",
+      "guide": "held_a",
+      "design": "I9",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_I9_minus",
+      "guide": "held_a",
+      "design": "I9",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_D9_plus",
+      "guide": "held_a",
+      "design": "D9",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_D9_minus",
+      "guide": "held_a",
+      "design": "D9",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_I14_plus",
+      "guide": "held_a",
+      "design": "I14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_I14_minus",
+      "guide": "held_a",
+      "design": "I14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_D14_plus",
+      "guide": "held_a",
+      "design": "D14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_D14_minus",
+      "guide": "held_a",
+      "design": "D14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_I18_plus",
+      "guide": "held_a",
+      "design": "I18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_I18_minus",
+      "guide": "held_a",
+      "design": "I18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_D18_plus",
+      "guide": "held_a",
+      "design": "D18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_D18_minus",
+      "guide": "held_a",
+      "design": "D18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mixI4_plus",
+      "guide": "held_a",
+      "design": "mixI4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mixI4_minus",
+      "guide": "held_a",
+      "design": "mixI4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mixD4_plus",
+      "guide": "held_a",
+      "design": "mixD4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mixD4_minus",
+      "guide": "held_a",
+      "design": "mixD4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mixI14_plus",
+      "guide": "held_a",
+      "design": "mixI14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mixI14_minus",
+      "guide": "held_a",
+      "design": "mixI14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_a_mixD14_plus",
+      "guide": "held_a",
+      "design": "mixD14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_a_mixD14_minus",
+      "guide": "held_a",
+      "design": "mixD14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_exact_plus",
+      "guide": "held_b",
+      "design": "exact",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_exact_minus",
+      "guide": "held_b",
+      "design": "exact",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mm1_plus",
+      "guide": "held_b",
+      "design": "mm1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mm1_minus",
+      "guide": "held_b",
+      "design": "mm1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mm3_plus",
+      "guide": "held_b",
+      "design": "mm3",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mm3_minus",
+      "guide": "held_b",
+      "design": "mm3",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mm8_plus",
+      "guide": "held_b",
+      "design": "mm8",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mm8_minus",
+      "guide": "held_b",
+      "design": "mm8",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mm13_plus",
+      "guide": "held_b",
+      "design": "mm13",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mm13_minus",
+      "guide": "held_b",
+      "design": "mm13",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mm18_plus",
+      "guide": "held_b",
+      "design": "mm18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mm18_minus",
+      "guide": "held_b",
+      "design": "mm18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mm4_plus",
+      "guide": "held_b",
+      "design": "mm4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mm4_minus",
+      "guide": "held_b",
+      "design": "mm4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_I1_plus",
+      "guide": "held_b",
+      "design": "I1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_I1_minus",
+      "guide": "held_b",
+      "design": "I1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_D1_plus",
+      "guide": "held_b",
+      "design": "D1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_D1_minus",
+      "guide": "held_b",
+      "design": "D1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_I4_plus",
+      "guide": "held_b",
+      "design": "I4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_I4_minus",
+      "guide": "held_b",
+      "design": "I4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_D4_plus",
+      "guide": "held_b",
+      "design": "D4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_D4_minus",
+      "guide": "held_b",
+      "design": "D4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_I9_plus",
+      "guide": "held_b",
+      "design": "I9",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_I9_minus",
+      "guide": "held_b",
+      "design": "I9",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_D9_plus",
+      "guide": "held_b",
+      "design": "D9",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_D9_minus",
+      "guide": "held_b",
+      "design": "D9",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_I14_plus",
+      "guide": "held_b",
+      "design": "I14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_I14_minus",
+      "guide": "held_b",
+      "design": "I14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_D14_plus",
+      "guide": "held_b",
+      "design": "D14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_D14_minus",
+      "guide": "held_b",
+      "design": "D14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_I18_plus",
+      "guide": "held_b",
+      "design": "I18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_I18_minus",
+      "guide": "held_b",
+      "design": "I18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_D18_plus",
+      "guide": "held_b",
+      "design": "D18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_D18_minus",
+      "guide": "held_b",
+      "design": "D18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mixI4_plus",
+      "guide": "held_b",
+      "design": "mixI4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mixI4_minus",
+      "guide": "held_b",
+      "design": "mixI4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mixD4_plus",
+      "guide": "held_b",
+      "design": "mixD4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mixD4_minus",
+      "guide": "held_b",
+      "design": "mixD4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mixI14_plus",
+      "guide": "held_b",
+      "design": "mixI14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mixI14_minus",
+      "guide": "held_b",
+      "design": "mixI14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_b_mixD14_plus",
+      "guide": "held_b",
+      "design": "mixD14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_b_mixD14_minus",
+      "guide": "held_b",
+      "design": "mixD14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_exact_plus",
+      "guide": "held_repeat",
+      "design": "exact",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_exact_minus",
+      "guide": "held_repeat",
+      "design": "exact",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mm1_plus",
+      "guide": "held_repeat",
+      "design": "mm1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mm1_minus",
+      "guide": "held_repeat",
+      "design": "mm1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mm3_plus",
+      "guide": "held_repeat",
+      "design": "mm3",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mm3_minus",
+      "guide": "held_repeat",
+      "design": "mm3",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mm8_plus",
+      "guide": "held_repeat",
+      "design": "mm8",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mm8_minus",
+      "guide": "held_repeat",
+      "design": "mm8",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mm13_plus",
+      "guide": "held_repeat",
+      "design": "mm13",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mm13_minus",
+      "guide": "held_repeat",
+      "design": "mm13",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mm18_plus",
+      "guide": "held_repeat",
+      "design": "mm18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mm18_minus",
+      "guide": "held_repeat",
+      "design": "mm18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mm4_plus",
+      "guide": "held_repeat",
+      "design": "mm4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mm4_minus",
+      "guide": "held_repeat",
+      "design": "mm4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_I1_plus",
+      "guide": "held_repeat",
+      "design": "I1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_I1_minus",
+      "guide": "held_repeat",
+      "design": "I1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_D1_plus",
+      "guide": "held_repeat",
+      "design": "D1",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_D1_minus",
+      "guide": "held_repeat",
+      "design": "D1",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_I4_plus",
+      "guide": "held_repeat",
+      "design": "I4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_I4_minus",
+      "guide": "held_repeat",
+      "design": "I4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_D4_plus",
+      "guide": "held_repeat",
+      "design": "D4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_D4_minus",
+      "guide": "held_repeat",
+      "design": "D4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_I9_plus",
+      "guide": "held_repeat",
+      "design": "I9",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_I9_minus",
+      "guide": "held_repeat",
+      "design": "I9",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_D9_plus",
+      "guide": "held_repeat",
+      "design": "D9",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_D9_minus",
+      "guide": "held_repeat",
+      "design": "D9",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_I14_plus",
+      "guide": "held_repeat",
+      "design": "I14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_I14_minus",
+      "guide": "held_repeat",
+      "design": "I14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_D14_plus",
+      "guide": "held_repeat",
+      "design": "D14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_D14_minus",
+      "guide": "held_repeat",
+      "design": "D14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_I18_plus",
+      "guide": "held_repeat",
+      "design": "I18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_I18_minus",
+      "guide": "held_repeat",
+      "design": "I18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_D18_plus",
+      "guide": "held_repeat",
+      "design": "D18",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_D18_minus",
+      "guide": "held_repeat",
+      "design": "D18",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mixI4_plus",
+      "guide": "held_repeat",
+      "design": "mixI4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mixI4_minus",
+      "guide": "held_repeat",
+      "design": "mixI4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mixD4_plus",
+      "guide": "held_repeat",
+      "design": "mixD4",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mixD4_minus",
+      "guide": "held_repeat",
+      "design": "mixD4",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mixI14_plus",
+      "guide": "held_repeat",
+      "design": "mixI14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mixI14_minus",
+      "guide": "held_repeat",
+      "design": "mixI14",
+      "strand": "minus"
+    },
+    {
+      "contig": "held_repeat_mixD14_plus",
+      "guide": "held_repeat",
+      "design": "mixD14",
+      "strand": "plus"
+    },
+    {
+      "contig": "held_repeat_mixD14_minus",
+      "guide": "held_repeat",
+      "design": "mixD14",
+      "strand": "minus"
+    }
+  ]
+}

@@ -883,8 +883,44 @@ fn eligible_single_gap_alignment(
     } else {
         return None;
     };
+    let non_n_positions = guide.iter().filter(|&&b| b != b'N').count();
     let mut best: Option<(i32, String, u32, u32, u32)> = None;
     for gap in 0..positions {
+        // Evaluate eligibility before allocating/reconstructing a CIGAR.
+        // Accounting follows validate_cigar_accounting, including guide N.
+        let mut matches = 0u32;
+        let mut mismatches = 0u32;
+        let mut raw_mismatches = 0i32;
+        for (qi, &base) in guide.iter().enumerate() {
+            if op == Some('I') && qi == gap {
+                continue;
+            }
+            let ti = match op {
+                Some('I') if qi > gap => qi - 1,
+                Some('D') if qi >= gap => qi + 1,
+                _ => qi,
+            };
+            if base == target[ti] {
+                matches += 1;
+            } else {
+                raw_mismatches += 1;
+                if base != b'N' {
+                    mismatches += 1;
+                }
+            }
+        }
+        let percent = if non_n_positions > 0 {
+            (matches as f32 / non_n_positions as f32) * 100.0
+        } else {
+            0.0
+        };
+        if matches == 0 || mismatches > max_mismatches || !(percent >= min_match_fraction * 100.0) {
+            continue;
+        }
+        let score = -3 * raw_mismatches - if op.is_some() { 6 } else { 0 };
+        if best.as_ref().map_or(false, |b| score < b.0) {
+            continue;
+        }
         let mut qi = 0;
         let mut ti = 0;
         let mut cigar = String::with_capacity(guide.len().max(target.len()));
@@ -907,27 +943,12 @@ fn eligible_single_gap_alignment(
         if qi != guide.len() || ti != target.len() {
             continue;
         }
-        let validation = validate_cigar_accounting(&cigar, guide, false);
-        if !validation_passes(
-            &validation,
-            guide,
-            max_mismatches,
-            1,
-            1,
-            min_match_fraction,
-            false,
-            false,
-        ) {
-            continue;
-        }
-        let raw_mismatches = cigar.bytes().filter(|&c| c == b'X').count() as i32;
-        let score = -3 * raw_mismatches - if op.is_some() { 6 } else { 0 };
         let candidate = (
             score,
             cigar,
-            validation.mismatches,
-            validation.gaps,
-            validation.max_gap_size,
+            mismatches,
+            u32::from(op.is_some()),
+            u32::from(op.is_some()),
         );
         if best.as_ref().map_or(true, |b| {
             candidate.0 > b.0 || (candidate.0 == b.0 && candidate.1 < b.1)
@@ -2466,5 +2487,120 @@ mod bounded_correctness_regressions {
         assert_eq!(hit.3, 0);
         assert_eq!(hit.1.chars().filter(|&x| x == 'X').count(), 4);
         assert!(eligible_single_gap_alignment(guide, target, 3, 0.75).is_none());
+    }
+}
+
+#[cfg(test)]
+mod optimization_equivalence_tests {
+    use super::*;
+    use rand::{rngs::SmallRng, Rng, SeedableRng};
+    fn reference_eligible_single_gap_alignment(
+        guide: &[u8],
+        target: &[u8],
+        max_mismatches: u32,
+        min_match_fraction: f32,
+    ) -> Option<(i32, String, u32, u32, u32)> {
+        let (op, positions) = if guide.len() == target.len() {
+            (None, 1)
+        } else if guide.len() == target.len().saturating_add(1) {
+            (Some('I'), guide.len())
+        } else if target.len() == guide.len().saturating_add(1) {
+            (Some('D'), target.len())
+        } else {
+            return None;
+        };
+        let mut best: Option<(i32, String, u32, u32, u32)> = None;
+        for gap in 0..positions {
+            let mut qi = 0;
+            let mut ti = 0;
+            let mut cigar = String::with_capacity(guide.len().max(target.len()));
+            while qi < guide.len() || ti < target.len() {
+                if op == Some('I') && qi == gap && qi == ti {
+                    cigar.push('I');
+                    qi += 1;
+                } else if op == Some('D') && ti == gap && qi == ti {
+                    cigar.push('D');
+                    ti += 1;
+                } else {
+                    if qi >= guide.len() || ti >= target.len() {
+                        break;
+                    }
+                    cigar.push(if guide[qi] == target[ti] { 'M' } else { 'X' });
+                    qi += 1;
+                    ti += 1;
+                }
+            }
+            if qi != guide.len() || ti != target.len() {
+                continue;
+            }
+            let validation = validate_cigar_accounting(&cigar, guide, false);
+            if !validation_passes(
+                &validation,
+                guide,
+                max_mismatches,
+                1,
+                1,
+                min_match_fraction,
+                false,
+                false,
+            ) {
+                continue;
+            }
+            let raw_mismatches = cigar.bytes().filter(|&c| c == b'X').count() as i32;
+            let score = -3 * raw_mismatches - if op.is_some() { 6 } else { 0 };
+            let candidate = (
+                score,
+                cigar,
+                validation.mismatches,
+                validation.gaps,
+                validation.max_gap_size,
+            );
+            if best.as_ref().map_or(true, |b| {
+                candidate.0 > b.0 || (candidate.0 == b.0 && candidate.1 < b.1)
+            }) {
+                best = Some(candidate);
+            }
+        }
+        best
+    }
+
+    #[test]
+    fn optimized_matches_original_for_resolved_and_ambiguous_sequences() {
+        let mut rng = SmallRng::seed_from_u64(20261031);
+        let alphabet = b"ACGTN";
+        for case in 0..2000 {
+            let guide: Vec<u8> = (0..20)
+                .map(|_| alphabet[rng.random_range(0..alphabet.len())])
+                .collect();
+            let len = [19, 20, 21][case % 3];
+            let target: Vec<u8> = if case % 2 == 0 {
+                let mut target = guide.clone();
+                if len == 19 {
+                    let pos = rng.random_range(0..target.len());
+                    target.remove(pos);
+                } else if len == 21 {
+                    let pos = rng.random_range(0..=target.len());
+                    target.insert(pos, alphabet[rng.random_range(0..alphabet.len())]);
+                }
+                for _ in 0..(case % 6) {
+                    let pos = rng.random_range(0..target.len());
+                    target[pos] = alphabet[rng.random_range(0..alphabet.len())];
+                }
+                target
+            } else {
+                (0..len)
+                    .map(|_| alphabet[rng.random_range(0..alphabet.len())])
+                    .collect()
+            };
+            for &m in &[0, 2, 4] {
+                for &f in &[0.0, 0.75, 1.0, f32::NAN] {
+                    assert_eq!(
+                        eligible_single_gap_alignment(&guide, &target, m, f),
+                        reference_eligible_single_gap_alignment(&guide, &target, m, f),
+                        "case {case} m {m} f {f}"
+                    );
+                }
+            }
+        }
     }
 }

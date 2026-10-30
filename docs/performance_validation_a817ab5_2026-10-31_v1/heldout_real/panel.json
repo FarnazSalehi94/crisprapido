@@ -1,0 +1,122 @@
+{
+  "windows": [
+    {
+      "name": "CHM13_new_1",
+      "fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/input/chm13v2.0_maskedY_rCRS.fa.PanSN.fa.gz",
+      "region": "CHM13#0#chr1:500001-501000"
+    },
+    {
+      "name": "CHM13_new_2",
+      "fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/input/chm13v2.0_maskedY_rCRS.fa.PanSN.fa.gz",
+      "region": "CHM13#0#chr2:900001-901000"
+    },
+    {
+      "name": "GRCh38_new_1",
+      "fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_GRCh38/input/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz",
+      "region": "GRCh38#0#chr1:500001-501000"
+    },
+    {
+      "name": "GRCh38_new_2",
+      "fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_GRCh38/input/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz",
+      "region": "GRCh38#0#chr2:900001-901000"
+    }
+  ],
+  "designs": [
+    {
+      "guide": "held_real0_exact",
+      "contig": "CHM13_new_1",
+      "offset": 112,
+      "type": "exact"
+    },
+    {
+      "guide": "held_real0_mm4",
+      "contig": "CHM13_new_1",
+      "offset": 112,
+      "type": "mm4"
+    },
+    {
+      "guide": "held_real0_I",
+      "contig": "CHM13_new_1",
+      "offset": 112,
+      "type": "I"
+    },
+    {
+      "guide": "held_real0_D",
+      "contig": "CHM13_new_1",
+      "offset": 112,
+      "type": "D"
+    },
+    {
+      "guide": "held_real1_exact",
+      "contig": "CHM13_new_2",
+      "offset": 142,
+      "type": "exact"
+    },
+    {
+      "guide": "held_real1_mm4",
+      "contig": "CHM13_new_2",
+      "offset": 142,
+      "type": "mm4"
+    },
+    {
+      "guide": "held_real1_I",
+      "contig": "CHM13_new_2",
+      "offset": 142,
+      "type": "I"
+    },
+    {
+      "guide": "held_real1_D",
+      "contig": "CHM13_new_2",
+      "offset": 142,
+      "type": "D"
+    },
+    {
+      "guide": "held_real2_exact",
+      "contig": "GRCh38_new_1",
+      "offset": 100,
+      "type": "exact"
+    },
+    {
+      "guide": "held_real2_mm4",
+      "contig": "GRCh38_new_1",
+      "offset": 100,
+      "type": "mm4"
+    },
+    {
+      "guide": "held_real2_I",
+      "contig": "GRCh38_new_1",
+      "offset": 100,
+      "type": "I"
+    },
+    {
+      "guide": "held_real2_D",
+      "contig": "GRCh38_new_1",
+      "offset": 100,
+      "type": "D"
+    },
+    {
+      "guide": "held_real3_exact",
+      "contig": "GRCh38_new_2",
+      "offset": 111,
+      "type": "exact"
+    },
+    {
+      "guide": "held_real3_mm4",
+      "contig": "GRCh38_new_2",
+      "offset": 111,
+      "type": "mm4"
+    },
+    {
+      "guide": "held_real3_I",
+      "contig": "GRCh38_new_2",
+      "offset": 111,
+      "type": "I"
+    },
+    {
+      "guide": "held_real3_D",
+      "contig": "GRCh38_new_2",
+      "offset": 111,
+      "type": "D"
+    }
+  ]
+}

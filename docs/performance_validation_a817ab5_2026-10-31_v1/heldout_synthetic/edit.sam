@@ -1,0 +1,262 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /export/local/home/salehi/crisprapido-heldout-20261031/synthetic/index -f /export/local/home/salehi/crisprapido-heldout-20261031/synthetic/guides.fa -a all -m edit -e 5 -t 1 -o /export/local/home/salehi/crisprapido-heldout-20261031/synthetic/edit.sam
+@SQ	SN:held_a_exact_plus	LN:164
+@SQ	SN:held_a_exact_minus	LN:164
+@SQ	SN:held_a_mm1_plus	LN:164
+@SQ	SN:held_a_mm1_minus	LN:164
+@SQ	SN:held_a_mm3_plus	LN:164
+@SQ	SN:held_a_mm3_minus	LN:164
+@SQ	SN:held_a_mm8_plus	LN:164
+@SQ	SN:held_a_mm8_minus	LN:164
+@SQ	SN:held_a_mm13_plus	LN:164
+@SQ	SN:held_a_mm13_minus	LN:164
+@SQ	SN:held_a_mm18_plus	LN:164
+@SQ	SN:held_a_mm18_minus	LN:164
+@SQ	SN:held_a_mm4_plus	LN:164
+@SQ	SN:held_a_mm4_minus	LN:164
+@SQ	SN:held_a_I1_plus	LN:163
+@SQ	SN:held_a_I1_minus	LN:163
+@SQ	SN:held_a_D1_plus	LN:165
+@SQ	SN:held_a_D1_minus	LN:165
+@SQ	SN:held_a_I4_plus	LN:163
+@SQ	SN:held_a_I4_minus	LN:163
+@SQ	SN:held_a_D4_plus	LN:165
+@SQ	SN:held_a_D4_minus	LN:165
+@SQ	SN:held_a_I9_plus	LN:163
+@SQ	SN:held_a_I9_minus	LN:163
+@SQ	SN:held_a_D9_plus	LN:165
+@SQ	SN:held_a_D9_minus	LN:165
+@SQ	SN:held_a_I14_plus	LN:163
+@SQ	SN:held_a_I14_minus	LN:163
+@SQ	SN:held_a_D14_plus	LN:165
+@SQ	SN:held_a_D14_minus	LN:165
+@SQ	SN:held_a_I18_plus	LN:163
+@SQ	SN:held_a_I18_minus	LN:163
+@SQ	SN:held_a_D18_plus	LN:165
+@SQ	SN:held_a_D18_minus	LN:165
+@SQ	SN:held_a_mixI4_plus	LN:163
+@SQ	SN:held_a_mixI4_minus	LN:163
+@SQ	SN:held_a_mixD4_plus	LN:165
+@SQ	SN:held_a_mixD4_minus	LN:165
+@SQ	SN:held_a_mixI14_plus	LN:163
+@SQ	SN:held_a_mixI14_minus	LN:163
+@SQ	SN:held_a_mixD14_plus	LN:165
+@SQ	SN:held_a_mixD14_minus	LN:165
+@SQ	SN:held_b_exact_plus	LN:164
+@SQ	SN:held_b_exact_minus	LN:164
+@SQ	SN:held_b_mm1_plus	LN:164
+@SQ	SN:held_b_mm1_minus	LN:164
+@SQ	SN:held_b_mm3_plus	LN:164
+@SQ	SN:held_b_mm3_minus	LN:164
+@SQ	SN:held_b_mm8_plus	LN:164
+@SQ	SN:held_b_mm8_minus	LN:164
+@SQ	SN:held_b_mm13_plus	LN:164
+@SQ	SN:held_b_mm13_minus	LN:164
+@SQ	SN:held_b_mm18_plus	LN:164
+@SQ	SN:held_b_mm18_minus	LN:164
+@SQ	SN:held_b_mm4_plus	LN:164
+@SQ	SN:held_b_mm4_minus	LN:164
+@SQ	SN:held_b_I1_plus	LN:163
+@SQ	SN:held_b_I1_minus	LN:163
+@SQ	SN:held_b_D1_plus	LN:165
+@SQ	SN:held_b_D1_minus	LN:165
+@SQ	SN:held_b_I4_plus	LN:163
+@SQ	SN:held_b_I4_minus	LN:163
+@SQ	SN:held_b_D4_plus	LN:165
+@SQ	SN:held_b_D4_minus	LN:165
+@SQ	SN:held_b_I9_plus	LN:163
+@SQ	SN:held_b_I9_minus	LN:163
+@SQ	SN:held_b_D9_plus	LN:165
+@SQ	SN:held_b_D9_minus	LN:165
+@SQ	SN:held_b_I14_plus	LN:163
+@SQ	SN:held_b_I14_minus	LN:163
+@SQ	SN:held_b_D14_plus	LN:165
+@SQ	SN:held_b_D14_minus	LN:165
+@SQ	SN:held_b_I18_plus	LN:163
+@SQ	SN:held_b_I18_minus	LN:163
+@SQ	SN:held_b_D18_plus	LN:165
+@SQ	SN:held_b_D18_minus	LN:165
+@SQ	SN:held_b_mixI4_plus	LN:163
+@SQ	SN:held_b_mixI4_minus	LN:163
+@SQ	SN:held_b_mixD4_plus	LN:165
+@SQ	SN:held_b_mixD4_minus	LN:165
+@SQ	SN:held_b_mixI14_plus	LN:163
+@SQ	SN:held_b_mixI14_minus	LN:163
+@SQ	SN:held_b_mixD14_plus	LN:165
+@SQ	SN:held_b_mixD14_minus	LN:165
+@SQ	SN:held_repeat_exact_plus	LN:164
+@SQ	SN:held_repeat_exact_minus	LN:164
+@SQ	SN:held_repeat_mm1_plus	LN:164
+@SQ	SN:held_repeat_mm1_minus	LN:164
+@SQ	SN:held_repeat_mm3_plus	LN:164
+@SQ	SN:held_repeat_mm3_minus	LN:164
+@SQ	SN:held_repeat_mm8_plus	LN:164
+@SQ	SN:held_repeat_mm8_minus	LN:164
+@SQ	SN:held_repeat_mm13_plus	LN:164
+@SQ	SN:held_repeat_mm13_minus	LN:164
+@SQ	SN:held_repeat_mm18_plus	LN:164
+@SQ	SN:held_repeat_mm18_minus	LN:164
+@SQ	SN:held_repeat_mm4_plus	LN:164
+@SQ	SN:held_repeat_mm4_minus	LN:164
+@SQ	SN:held_repeat_I1_plus	LN:163
+@SQ	SN:held_repeat_I1_minus	LN:163
+@SQ	SN:held_repeat_D1_plus	LN:165
+@SQ	SN:held_repeat_D1_minus	LN:165
+@SQ	SN:held_repeat_I4_plus	LN:163
+@SQ	SN:held_repeat_I4_minus	LN:163
+@SQ	SN:held_repeat_D4_plus	LN:165
+@SQ	SN:held_repeat_D4_minus	LN:165
+@SQ	SN:held_repeat_I9_plus	LN:163
+@SQ	SN:held_repeat_I9_minus	LN:163
+@SQ	SN:held_repeat_D9_plus	LN:165
+@SQ	SN:held_repeat_D9_minus	LN:165
+@SQ	SN:held_repeat_I14_plus	LN:163
+@SQ	SN:held_repeat_I14_minus	LN:163
+@SQ	SN:held_repeat_D14_plus	LN:165
+@SQ	SN:held_repeat_D14_minus	LN:165
+@SQ	SN:held_repeat_I18_plus	LN:163
+@SQ	SN:held_repeat_I18_minus	LN:163
+@SQ	SN:held_repeat_D18_plus	LN:165
+@SQ	SN:held_repeat_D18_minus	LN:165
+@SQ	SN:held_repeat_mixI4_plus	LN:163
+@SQ	SN:held_repeat_mixI4_minus	LN:163
+@SQ	SN:held_repeat_mixD4_plus	LN:165
+@SQ	SN:held_repeat_mixD4_minus	LN:165
+@SQ	SN:held_repeat_mixI14_plus	LN:163
+@SQ	SN:held_repeat_mixI14_minus	LN:163
+@SQ	SN:held_repeat_mixD14_plus	LN:165
+@SQ	SN:held_repeat_mixD14_minus	LN:165
+held_a	0	held_a_exact_plus	71	1	20M	*	0	0	AAATTCACTTACCTAAAACC	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_a	272	held_a_exact_minus	75	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_a	256	held_a_mm1_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_mm1_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_mm3_plus	72	0	4M1I15M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_mm3_minus	75	0	16M1I3M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_mm8_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_mm8_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_mm13_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_mm13_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_mm18_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_mm18_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_mm4_plus	71	0	20M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_a	272	held_a_mm4_minus	75	0	20M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_a	256	held_a_I1_plus	71	0	2M1I17M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_I1_minus	75	0	19M1I	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_D1_plus	73	0	2M1I17M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_D1_minus	75	0	19M1I	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_I4_plus	71	0	4M1I15M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_I4_minus	75	0	16M1I3M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_D4_plus	71	0	4M1D16M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_D4_minus	75	0	16M1D4M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_I9_plus	71	0	9M1I10M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_I9_minus	75	0	11M1I8M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_D9_plus	71	0	9M1D11M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_D9_minus	75	0	11M1D9M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_I14_plus	71	0	17M1I2M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_I14_minus	75	0	5M1I14M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_D14_plus	71	0	14M1D6M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_D14_minus	75	0	6M1D14M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_I18_plus	71	0	19M1I	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	272	held_a_I18_minus	75	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_a	256	held_a_D18_plus	71	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_a	272	held_a_D18_minus	76	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_a	256	held_a_mixI4_plus	70	0	20M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_a	272	held_a_mixI4_minus	75	0	19M1I	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_a	256	held_a_mixD4_plus	71	0	4M1D16M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_a	272	held_a_mixD4_minus	75	0	16M1D4M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_a	256	held_a_mixI14_plus	71	0	17M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_a	272	held_a_mixI14_minus	75	0	8M1I11M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_a	256	held_a_mixD14_plus	71	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_a	272	held_a_mixD14_minus	76	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	0	held_b_exact_plus	71	3	20M	*	0	0	TCTGCATCAGAGTCATATGC	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_b	272	held_a_mixI4_plus	105	0	3M1I9M1D1M1I5M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	272	held_b_exact_minus	75	3	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_b	256	held_b_mm1_plus	72	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_mm1_minus	75	0	18M1I1M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_mm3_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_mm3_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_mm8_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_mm8_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_mm13_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_mm13_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_mm18_plus	71	0	18M1I1M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_mm18_minus	76	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_mm4_plus	72	0	1M1I16M1I1M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_b	272	held_b_mm4_minus	76	0	1M1I16M1I1M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_b	256	held_b_I1_plus	71	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_I1_minus	75	0	18M1I1M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_D1_plus	73	0	1I19M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_D1_minus	75	0	19M1I	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_I4_plus	71	0	4M1I15M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_I4_minus	75	0	15M1I4M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_D4_plus	71	0	4M1D16M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_D4_minus	75	0	15M1D5M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_I9_plus	71	0	9M1I10M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_I9_minus	75	0	10M1I9M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_D9_plus	71	0	9M1D11M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_D9_minus	75	0	11M1D9M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_I14_plus	71	0	14M1I5M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_I14_minus	75	0	5M1I14M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_D14_plus	71	0	13M1D7M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_D14_minus	75	0	6M1D14M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_I18_plus	8	0	9M1I7M1I1M1I	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_b	256	held_b_I18_plus	71	0	18M1I1M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_I18_minus	75	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_D18_plus	71	0	18M1I1M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	272	held_b_D18_minus	77	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_b	256	held_b_mixI4_plus	71	0	6M1I13M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	272	held_b_mixI4_minus	75	0	15M1I4M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	256	held_b_mixD4_plus	71	0	4M1D16M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	272	held_b_mixD4_minus	75	0	15M1D5M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	256	held_b_mixI14_plus	71	0	14M1I5M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	272	held_b_mixI14_minus	75	0	5M1I14M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	256	held_b_mixD14_plus	71	0	12M1D8M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	272	held_b_mixD14_minus	75	0	6M1D14M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_b	256	held_repeat_exact_minus	99	0	3M1I7M1I6M1D2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	0	held_repeat_exact_plus	71	3	20M	*	0	0	GAGAGAGAGAGAGAGAGAGA	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_repeat	272	held_b_mixI14_plus	43	0	1M1I1M1I7M1I2M1I5M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	256	held_b_mm3_minus	142	0	11M1I1M1I6M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	272	held_repeat_exact_minus	75	3	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_repeat	272	held_repeat_exact_minus	87	0	8M1D2M1I6M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	256	held_repeat_mm1_plus	72	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_mm1_minus	75	0	18M1I1M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_mm3_plus	69	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_mm3_plus	81	0	11M1I1M1I1M1I2M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	272	held_repeat_mm3_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_mm8_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_mm8_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_mm13_plus	71	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_mm13_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_mm18_plus	70	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_mm18_minus	75	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_mm4_plus	69	0	20M	*	0	0	*	*	AS:i:3	NM:i:3	PG:Z:Columba
+held_repeat	272	held_repeat_mm4_minus	77	0	12M1I1M1I3M1I1M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_repeat	256	held_repeat_I1_plus	71	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_I1_minus	75	0	18M1I1M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_D1_plus	73	0	1I19M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_D1_minus	75	0	19M1I	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_I4_plus	71	0	4M1I15M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_I4_minus	75	0	15M1I4M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_D4_plus	71	0	4M1D16M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_D4_minus	75	0	16M1D4M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_I9_plus	69	0	11M1I8M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_I9_minus	75	0	10M1I9M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_D9_plus	71	0	9M1D11M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_D9_plus	82	0	10M1D5M1I4M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	272	held_repeat_D9_minus	75	0	11M1D9M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_I14_plus	71	0	14M1I5M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_I14_minus	75	0	5M1I14M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_D14_plus	71	0	14M1D6M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_D14_minus	75	0	6M1D14M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_I18_plus	71	0	18M1I1M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_I18_minus	75	0	1M1I18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_D18_plus	71	0	18M1D2M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	272	held_repeat_D18_minus	75	0	2M1D18M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_repeat	256	held_repeat_mixI4_plus	71	0	4M1I15M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	272	held_repeat_mixI4_minus	75	0	15M1I4M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	256	held_repeat_mixD4_plus	71	0	4M1D16M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	272	held_repeat_mixD4_minus	75	0	16M1D4M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	256	held_repeat_mixI14_plus	69	0	16M1I2M1I	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	272	held_repeat_mixI14_minus	75	0	5M1I14M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	256	held_repeat_mixD14_plus	71	0	14M1D6M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_repeat	272	held_repeat_mixD14_minus	84	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba

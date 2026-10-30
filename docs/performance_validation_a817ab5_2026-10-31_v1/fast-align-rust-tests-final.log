@@ -1,0 +1,261 @@
+   Compiling crisprapido v0.1.0 (/export/local/home/salehi/crisprapido-pam-validation)
+warning: field `cfd_score` is never read
+  --> src/hit.rs:15:16
+   |
+4  | pub(crate) struct Hit {
+   |                   --- field in this struct
+...
+15 |     pub(crate) cfd_score: Option<f64>,
+   |                ^^^^^^^^^
+   |
+   = note: `Hit` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: methods `quality_score` and `overlaps_with` are never used
+  --> src/hit.rs:21:19
+   |
+20 | impl Hit {
+   | -------- methods in this implementation
+21 |     pub(crate) fn quality_score(&self) -> i32 {
+   |                   ^^^^^^^^^^^^^
+...
+38 |     pub(crate) fn overlaps_with(&self, other: &Hit) -> bool {
+   |                   ^^^^^^^^^^^^^
+
+warning: `crisprapido` (bin "crisprapido") generated 2 warnings
+warning: unused import: `std::fs`
+ --> tests/cfd_tests.rs:4:5
+  |
+4 | use std::fs;
+  |     ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `std::path::Path`
+ --> tests/cfd_tests.rs:5:5
+  |
+5 | use std::path::Path;
+  |     ^^^^^^^^^^^^^^^
+
+warning: function `ensure_score_files` is never used
+ --> tests/cfd_tests.rs:8:4
+  |
+8 | fn ensure_score_files() {
+  |    ^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `crisprapido` (test "cfd_tests") generated 3 warnings (run `cargo fix --test "cfd_tests"` to apply 2 suggestions)
+warning: `crisprapido` (bin "crisprapido" test) generated 1 warning (1 duplicate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.73s
+     Running unittests src/lib.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/crisprapido-9f42cdf0d0fbf72b)
+
+running 20 tests
+test cfd_score::alignment_reconstruction_tests::compact_and_expanded_cigars_reconstruct_identically ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_internal_guide_insertion ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_leading_guide_insertion ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_mismatch_only_cigar ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_perfect_compact_cigar ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_trailing_guide_insertion_without_losing_final_guide_base ... ok
+test cfd_score::alignment_reconstruction_tests::retained_position_one_gap_has_neutral_penalty ... ok
+test cfd_score::alignment_reconstruction_tests::preserves_ungapped_and_guide_bulge_scores ... ok
+test cfd_score::cfd_comparison_tests::check_mismatch_score_keys ... ok
+test cfd_score::alignment_reconstruction_tests::projects_trailing_dna_bulge_without_removing_the_gap ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_mismatch_and_trailing_guide_insertion ... ok
+test cfd_score::alignment_reconstruction_tests::preserves_mixed_bulge_and_malformed_cigar_behavior ... ok
+test cfd_score::alignment_reconstruction_tests::projects_multi_base_dna_bulge_by_total_d_length ... ok
+test cfd_score::alignment_reconstruction_tests::projects_mismatch_and_internal_dna_bulge ... ok
+test cfd_score::alignment_reconstruction_tests::scores_validated_sbds_dna_bulges ... ok
+test cfd_score::alignment_reconstruction_tests::projects_leading_dna_bulge_by_removing_the_gap_column ... ok
+test cfd_score::alignment_reconstruction_tests::removes_pam_distal_mismatch_instead_of_internal_gap ... ok
+test cfd_score::cfd_comparison_tests::test_cfd_scores_against_python ... ok
+test cfd_score::alignment_reconstruction_tests::projects_internal_dna_bulge_from_pam_distal_end ... ok
+test cfd_score::cfd_comparison_tests::test_systematic_variations ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/main.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/crisprapido-97a72e8a8c711781)
+
+running 123 tests
+test cfd_score::alignment_reconstruction_tests::compact_and_expanded_cigars_reconstruct_identically ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_internal_guide_insertion ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_leading_guide_insertion ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_mismatch_only_cigar ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_perfect_compact_cigar ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_trailing_guide_insertion_without_losing_final_guide_base ... ok
+test columba::tests::test_candidate_edit_distance_bound_mismatches_plus_bulge ... ok
+test columba::tests::test_candidate_edit_distance_bound_multiple_gap_groups ... ok
+test columba::tests::test_candidate_edit_distance_bound_saturates_on_overflow ... ok
+test columba::tests::test_candidate_edit_distance_bound_single_two_base_bulge ... ok
+test columba::tests::test_candidate_edit_distance_bound_zero ... ok
+test columba::tests::test_columba_cigar_reference_spans ... ok
+test columba::tests::test_columba_pos_11_converts_to_start0_10 ... ok
+test columba::tests::test_deduplicate_columba_candidates_keeps_guide_identity ... ok
+test columba::tests::test_deduplicate_columba_candidates_retains_exact_e0_candidate ... ok
+test columba::tests::test_parse_columba_accepts_seq_star ... ok
+test columba::tests::test_parse_columba_ignores_unmapped_record ... ok
+test columba::tests::test_parse_columba_missing_nm_is_clear_error ... ok
+test columba::tests::test_load_guide_fasta_preserves_ids_sequences_and_order ... ok
+test columba::tests::test_load_guide_fasta_rejects_duplicate_ids ... ok
+test columba::tests::test_parse_columba_primary_forward_record ... ok
+test columba::tests::test_parse_columba_secondary_forward_record ... ok
+test columba::tests::test_parse_columba_secondary_reverse_record ... ok
+test hit::tests::test_hit_quality_scoring_and_filtering ... ok
+test reporting::coordinate_regressions::compact_and_expanded_cigars_have_identical_output ... ok
+test columba::tests::test_run_columba_missing_executable ... ok
+test columba::tests::test_run_columba_missing_index ... ok
+test reporting::coordinate_regressions::terminal_deletions_never_advance_query_or_double_shift_target ... ok
+test verification::pam_regressions::reject_malformed_cigar_and_preserve_consumption ... ok
+test verification::pam_regressions::exact_pam_boundaries_and_suffixes ... ok
+test verification::pam_regressions::reject_missing_ambiguous_and_invalid_intervals ... ok
+test verification::bounded_correctness_regressions::overlap_bound_includes_every_possible_intersecting_interval ... ok
+test columba::tests::test_run_columba_failure_reports_status_and_cleans_up ... ok
+test verification::tests::test_cfd_target_extraction_preserves_ungapped_reference_bases ... ok
+test verification::tests::test_columba_candidate_near_reference_end_clamps_window ... ok
+test verification::bounded_correctness_regressions::rejected_wavefront_recovers_eligible_mismatch_alignment ... ok
+test verification::tests::test_columba_candidate_near_reference_start_clamps_window ... ok
+test verification::tests::test_cigar_operations_compact_and_wfa_style ... ok
+test columba::tests::test_run_columba_cleanup_removes_temp_files ... ok
+test columba::tests::test_run_columba_keep_sam_preserves_temp_files ... ok
+test columba::tests::test_run_columba_success_with_mocked_executable ... ok
+test verification::bounded_correctness_regressions::eligible_fallback_covers_every_single_gap_position ... ok
+test verification::tests::test_free_reference_overhangs_are_trimmed_without_counted_bulge ... ok
+test verification::tests::test_fallback_not_triggered_when_primary_candidate_passes ... ok
+test columba::tests::test_run_columba_uses_candidate_edit_distance ... ok
+test verification::tests::test_fallback_not_triggered_when_bulges_are_disabled ... ok
+test verification::tests::test_internal_bulge_remains_internal_with_flanked_window ... ok
+test verification::tests::test_imported_candidate_mode_does_not_run_normal_genome_scan ... ok
+test verification::tests::test_five_terminal_guide_bases_remain_counted_and_rejected ... ok
+test verification::tests::test_fallback_boundary_candidates_do_not_panic ... ok
+test verification::tests::test_internal_columba_insertion_recovers_as_substitutions_without_bulges ... ok
+test verification::tests::test_imported_internal_insertion_stays_internal_when_anchored ... ok
+test verification::tests::test_imported_same_span_terminal_guide_insertion_is_anchored ... ok
+test verification::tests::test_fallback_recovers_suppressed_near_terminal_two_base_insertion ... ok
+test verification::tests::test_fallback_recovers_suppressed_terminal_two_base_guide_insertion ... ok
+test verification::tests::test_one_terminal_guide_base_gap_remains_counted_and_allowed ... ok
+test verification::tests::test_ordinary_flanked_exact_target_still_verifies ... ok
+test verification::tests::test_fallback_rejects_invalid_expanded_alternatives ... ok
+test verification::tests::test_imported_deletion_uses_candidate_reference_span ... ok
+test verification::tests::test_perfect_match ... ok
+test verification::tests::test_fallback_recovers_reverse_suppressed_terminal_insertion ... ok
+test verification::tests::test_fallback_deduplicates_same_biological_hit ... ok
+test verification::tests::test_partial_guide_match_in_flanked_window_is_rejected ... ok
+test verification::tests::test_pam_boundary_does_not_panic ... ok
+test verification::tests::test_fallback_triggers_for_reverse_requested_pam_reference_insertion_primary ... ok
+test verification::tests::test_perfect_match_with_flanks ... ok
+test verification::tests::test_reference_overhang_trim_keeps_real_guide_gap ... ok
+test verification::tests::test_repetitive_flanked_exact_target_uses_terminal_overhangs ... ok
+test verification::tests::test_fallback_recovers_start_shift_four_when_z_is_two ... ok
+test verification::tests::test_scan_window_reports_offsets_with_reference_overhangs ... ok
+test verification::tests::test_reverse_columba_candidate_retains_guide_gap_accounting ... ok
+test verification::tests::test_three_terminal_guide_base_gap_is_rejected ... ok
+test verification::tests::test_too_many_differences ... ok
+test verification::tests::test_too_many_differences_with_flanks ... ok
+test verification::tests::test_fallback_recovers_real_reverse_same_start_shorter_span ... ok
+test verification::tests::test_terminal_columba_insertions_recover_as_substitutions_without_bulges ... ok
+test verification::tests::test_fallback_triggers_when_primary_passes_with_nonrequested_pam ... ok
+test verification::tests::test_fallback_triggers_for_requested_pam_reference_insertion_primary ... ok
+test verification::tests::test_verify_columba_missing_rname_skipped_safely ... ok
+test verification::tests::test_reverse_candidate_orients_target_and_pam_for_cfd ... ok
+test verification::tests::test_verify_columba_one_substitution ... ok
+test verification::tests::test_imported_reverse_terminal_guide_insertion_is_anchored ... ok
+test verification::tests::test_imported_incorrect_candidate_cannot_shift_to_disjoint_match ... ok
+test verification::tests::test_verify_columba_perfect_forward_candidate ... ok
+test verification::tests::test_reverse_columba_candidate_with_mixed_case_reference ... ok
+test verification::tests::test_with_bulge ... ok
+test verification::tests::test_with_bulge_and_flanks ... ok
+test verification::tests::test_with_mismatches ... ok
+test verification::tests::test_verify_columba_secondary_alignment_retained ... ok
+test verification::tests::test_verify_columba_uppercase_guide_matches_lowercase_reference ... ok
+test verification::tests::test_verify_columba_perfect_reverse_candidate ... ok
+test verification::tests::test_with_mismatches_and_flanks ... ok
+test verification::tests::test_verify_columba_insertion_deletion_style_candidate ... ok
+test verification::tests::test_imported_exact_candidate_does_not_shift_in_repetitive_context ... ok
+test cfd_score::cfd_comparison_tests::check_mismatch_score_keys ... ok
+test cfd_score::alignment_reconstruction_tests::reconstructs_mismatch_and_trailing_guide_insertion ... ok
+test cfd_score::alignment_reconstruction_tests::projects_leading_dna_bulge_by_removing_the_gap_column ... ok
+test reporting::tests::same_anchor_prefers_better_wavefront_score ... ok
+test reporting::tests::test_formatted_output_contains_cigar_and_cfd_tags ... ok
+test reporting::tests::test_requested_pam_hit_wins_overlap_over_nonrequested_pam ... ok
+test cfd_score::alignment_reconstruction_tests::projects_multi_base_dna_bulge_by_total_d_length ... ok
+test cfd_score::alignment_reconstruction_tests::projects_mismatch_and_internal_dna_bulge ... ok
+test cfd_score::alignment_reconstruction_tests::projects_internal_dna_bulge_from_pam_distal_end ... ok
+test reporting::tests::test_same_start_distinct_plus_pam_anchors_are_preserved ... ok
+test reporting::tests::overlapping_minus_sites_with_distinct_anchors_are_preserved ... ok
+test cfd_score::alignment_reconstruction_tests::preserves_mixed_bulge_and_malformed_cigar_behavior ... ok
+test cfd_score::alignment_reconstruction_tests::retained_position_one_gap_has_neutral_penalty ... ok
+test reporting::tests::same_pam_anchor_deduplicates_on_both_strands ... ok
+test reporting::tests::test_batch_output_uses_stable_query_name ... ok
+test cfd_score::alignment_reconstruction_tests::projects_trailing_dna_bulge_without_removing_the_gap ... ok
+test verification::tests::test_actual_pam_extracted_not_cli_pattern ... ok
+test cfd_score::alignment_reconstruction_tests::preserves_ungapped_and_guide_bulge_scores ... ok
+test verification::tests::test_normal_and_columba_perfect_forward_same_cfd_input ... ok
+test verification::tests::test_cfd_input_independent_of_flank_size ... ok
+test cfd_score::alignment_reconstruction_tests::removes_pam_distal_mismatch_instead_of_internal_gap ... ok
+test verification::tests::test_terminal_d_preserves_genomic_base_and_has_projected_cfd_score ... ok
+test verification::tests::test_normal_and_columba_one_substitution_same_cfd_input ... ok
+test cfd_score::alignment_reconstruction_tests::scores_validated_sbds_dna_bulges ... ok
+test cfd_score::cfd_comparison_tests::test_cfd_scores_against_python ... ok
+test verification::tests::test_normal_and_columba_one_deletion_same_cfd_input ... ok
+test reporting::tests::test_filtered_output_deterministic_for_different_insertion_orders ... ok
+test cfd_score::cfd_comparison_tests::test_systematic_variations ... ok
+test verification::optimization_equivalence_tests::optimized_matches_original_for_resolved_and_ambiguous_sequences ... ok
+
+test result: ok. 123 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.75s
+
+     Running tests/batch_equivalence.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/batch_equivalence-0fd903bbb492d00d)
+
+running 1 test
+test batch_mode_matches_repeated_single_guide_mode ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/bounded_coverage.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/bounded_coverage-a3203c3475bf8c9d)
+
+running 1 test
+test all_sixteen_broader_oracle_pam_sites_are_recovered ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.48s
+
+     Running tests/cfd_standalone_validation.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/cfd_standalone_validation-367ed8dfccd32ac7)
+
+running 3 tests
+test calculate_cfd_matches_pinned_standalone ... ignored, requires the pinned standalone Python source and pickle files
+test required_gap_pam_and_former_hardcode_regressions ... ok
+test calculate_cfd_matches_pinned_regression_values ... ok
+
+test result: ok. 2 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cfd_tests.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/cfd_tests-608ec24b281e1880)
+
+running 4 tests
+test test_pam_effects ... ok
+test test_cfd_score_against_python ... ok
+test test_positional_effects ... ok
+test test_bulge_effects ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/pam_anchor_coverage.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/pam_anchor_coverage-92f998471406a8e2)
+
+running 1 test
+test recovered_pam_anchors_from_independent_indexed_panels ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/pam_cli_tests.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/pam_cli_tests-196951e321ea5aa3)
+
+running 5 tests
+test direct_scan_checks_both_strands_in_one_window ... ok
+test mismatch_and_indel_coordinates_remain_consistent_on_both_strands ... ok
+test invalid_requested_pam_is_rejected_before_opening_reference ... ok
+test incomplete_or_ambiguous_pams_are_not_scored ... ok
+test canonical_policy_and_actual_cfd_on_both_strands ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests crisprapido
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s

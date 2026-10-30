@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "rows": 185,
+  "errors": 0,
+  "provenance": {
+    "paf": "/export/local/home/salehi/crisprapido-scaling-pilot-20261031/fast.paf",
+    "fasta": "/export/local/home/salehi/crisprapido-scaling-pilot-20261031/ref.fa",
+    "guides": "/export/local/home/salehi/crisprapido-scaling-pilot-20261031/guides.fa",
+    "matrices": "/export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/release",
+    "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+    "batch_size": 500,
+    "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+    "paf_sha256": "ccb5efc37130e7f45387557e5ccb6c9767361860f8130c705fbb1c754db732c5",
+    "guide_sha256": "3e5bd88f7e7d0b55a8a4067baf56327967ad9971c052fa86bbc052e5dea6256c",
+    "fai_sha256": "9f32120f7ce69d3caca243cb96cc76884af9c34b5b12381487fe47fec35d11ce",
+    "matrix_sha256": {
+      "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+      "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+    }
+  },
+  "counts": {
+    "verified": 185,
+    "strand_+": 78,
+    "SCORED": 185,
+    "bulged": 181,
+    "CFD_ge_020": 6,
+    "CFD_lt_020": 179,
+    "strand_-": 107,
+    "ungapped": 4
+  },
+  "per_guide": {
+    "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+      "verified": 9,
+      "strand_+": 5,
+      "strand_-": 4
+    },
+    "MED6_TGCCACCAATACCCTTTGGA": {
+      "verified": 11,
+      "strand_+": 1,
+      "strand_-": 10
+    },
+    "HNRNPC_AAATTCACTTACCTAAAACC": {
+      "verified": 22,
+      "strand_+": 11,
+      "strand_-": 11
+    },
+    "PPIP5K2_CATAGCTGTTATACGTCATG": {
+      "verified": 16,
+      "strand_+": 9,
+      "strand_-": 7
+    },
+    "YTHDC1_TCTGCATCAGAGTCATATGC": {
+      "verified": 18,
+      "strand_+": 12,
+      "strand_-": 6
+    },
+    "MT1X_GTTGGCTCCTGTGCCTGTGC": {
+      "verified": 23,
+      "strand_+": 11,
+      "strand_-": 12
+    },
+    "PSG8_GCAACCTGTGAGACATAGGG": {
+      "verified": 30,
+      "strand_+": 8,
+      "strand_-": 22
+    },
+    "ZNF274_TGTGGTATCTCAGTTAGAGG": {
+      "verified": 17,
+      "strand_-": 15,
+      "strand_+": 2
+    },
+    "KLHL38_CTACTGTACAGCAAACAGAC": {
+      "verified": 25,
+      "strand_+": 14,
+      "strand_-": 11
+    },
+    "YAP1_TCGAACATGCTGTGGAGTCA": {
+      "verified": 14,
+      "strand_+": 5,
+      "strand_-": 9
+    }
+  },
+  "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+}

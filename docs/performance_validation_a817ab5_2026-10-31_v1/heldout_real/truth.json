@@ -1,0 +1,522 @@
+[
+  {
+    "key": [
+      "held_real0_D",
+      "CHM13_new_1",
+      111,
+      132,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_D",
+      "CHM13_new_1",
+      113,
+      132,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_exact",
+      "CHM13_new_1",
+      111,
+      132,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_exact",
+      "CHM13_new_1",
+      112,
+      132,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_exact",
+      "CHM13_new_1",
+      112,
+      133,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_exact",
+      "CHM13_new_1",
+      113,
+      132,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_mm4",
+      "CHM13_new_1",
+      111,
+      132,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_mm4",
+      "CHM13_new_1",
+      112,
+      132,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_mm4",
+      "CHM13_new_1",
+      112,
+      133,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real0_mm4",
+      "CHM13_new_1",
+      113,
+      132,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_D",
+      "CHM13_new_2",
+      141,
+      162,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_D",
+      "CHM13_new_2",
+      143,
+      162,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_D",
+      "GRCh38_new_2",
+      662,
+      683,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_D",
+      "GRCh38_new_2",
+      664,
+      683,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_exact",
+      "CHM13_new_2",
+      141,
+      162,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_exact",
+      "CHM13_new_2",
+      142,
+      162,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_exact",
+      "CHM13_new_2",
+      143,
+      162,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_exact",
+      "GRCh38_new_2",
+      662,
+      683,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_exact",
+      "GRCh38_new_2",
+      663,
+      683,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_exact",
+      "GRCh38_new_2",
+      664,
+      683,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_mm4",
+      "CHM13_new_2",
+      141,
+      162,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_mm4",
+      "CHM13_new_2",
+      142,
+      162,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_mm4",
+      "CHM13_new_2",
+      143,
+      162,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_mm4",
+      "GRCh38_new_2",
+      662,
+      683,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_mm4",
+      "GRCh38_new_2",
+      663,
+      683,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "held_real1_mm4",
+      "GRCh38_new_2",
+      664,
+      683,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_D",
+      "GRCh38_new_1",
+      99,
+      120,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_D",
+      "GRCh38_new_1",
+      101,
+      120,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_exact",
+      "GRCh38_new_1",
+      99,
+      120,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_exact",
+      "GRCh38_new_1",
+      100,
+      120,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_exact",
+      "GRCh38_new_1",
+      101,
+      120,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_exact",
+      "GRCh38_new_1",
+      530,
+      549,
+      "-"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_mm4",
+      "GRCh38_new_1",
+      99,
+      120,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_mm4",
+      "GRCh38_new_1",
+      100,
+      120,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "held_real2_mm4",
+      "GRCh38_new_1",
+      101,
+      120,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real3_D",
+      "GRCh38_new_2",
+      110,
+      131,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real3_exact",
+      "GRCh38_new_2",
+      110,
+      131,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real3_exact",
+      "GRCh38_new_2",
+      111,
+      131,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "held_real3_exact",
+      "GRCh38_new_2",
+      112,
+      131,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real3_mm4",
+      "GRCh38_new_2",
+      110,
+      131,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "held_real3_mm4",
+      "GRCh38_new_2",
+      111,
+      131,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "held_real3_mm4",
+      "GRCh38_new_2",
+      112,
+      131,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  }
+]

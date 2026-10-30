@@ -1,0 +1,23 @@
+{
+  "regions": [
+    "CHM13#0#chr1:100000001-105000000",
+    "CHM13#0#chr9:30000001-35000000"
+  ],
+  "total_bases": 10000000,
+  "guide_count": 10,
+  "reference_sha256": "b643501c7b2e24e21c960be21227373603e272e7aff4b017b14371ae19a7fc58",
+  "guides_sha256": "3e5bd88f7e7d0b55a8a4067baf56327967ad9971c052fa86bbc052e5dea6256c",
+  "raw_e5_rows": 14807,
+  "raw_e0_rows": 0,
+  "unique_raw_candidates": 14807,
+  "duplicate_raw_candidates": 0,
+  "profile_wfa_calls": 1632892,
+  "profile_eligible_calls": 1628157,
+  "reported_anchors": 185,
+  "paf_sha256": "ccb5efc37130e7f45387557e5ccb6c9767361860f8130c705fbb1c754db732c5",
+  "paf_identical_baseline_cache_optimized": true,
+  "baseline_sha256": "b4cd93f57f512a4727a3561b6c13289f03646b58964117f13058c1884c8c8b45",
+  "optimized_sha256": "c37f4ded6e7c6afb3a7d22eccc5566f291244731bf6872dbfbd0b4d47f53aa74",
+  "source_fasta": "CHM13 recovered verified input",
+  "parameters": "-p GG -m 4 -b 1 -z 1 -f 0.75 -t 1"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "iteration": 0,
+    "binary": "base",
+    "elapsed_seconds": 23.224444865016267,
+    "paf_rows": 185,
+    "time_file": "/export/local/home/salehi/crisprapido-scaling-pilot-20261031/replicates/base_0.time"
+  },
+  {
+    "iteration": 0,
+    "binary": "fast",
+    "elapsed_seconds": 19.738031607936136,
+    "paf_rows": 185,
+    "time_file": "/export/local/home/salehi/crisprapido-scaling-pilot-20261031/replicates/fast_0.time"
+  },
+  {
+    "iteration": 1,
+    "binary": "fast",
+    "elapsed_seconds": 18.815903238020837,
+    "paf_rows": 185,
+    "time_file": "/export/local/home/salehi/crisprapido-scaling-pilot-20261031/replicates/fast_1.time"
+  },
+  {
+    "iteration": 1,
+    "binary": "base",
+    "elapsed_seconds": 21.803879051934928,
+    "paf_rows": 185,
+    "time_file": "/export/local/home/salehi/crisprapido-scaling-pilot-20261031/replicates/base_1.time"
+  }
+]

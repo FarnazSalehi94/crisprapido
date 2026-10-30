@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "rows": 223,
+  "errors": 0,
+  "provenance": {
+    "paf": "/export/local/home/salehi/crisprapido-fast-align-validation-20261031/heldout_synthetic/out.paf",
+    "fasta": "/export/local/home/salehi/crisprapido-heldout-20261031/synthetic/ref.fa",
+    "guides": "/export/local/home/salehi/crisprapido-heldout-20261031/synthetic/guides.fa",
+    "matrices": "/export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/release",
+    "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+    "batch_size": 500,
+    "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+    "paf_sha256": "4c572bbffc378b53fd535100473cc78f2fc3de6cd5a740a458f2172f86ea9df6",
+    "guide_sha256": "d318962c3da604b6e5260e7c981fb590a1c4ef9f1f1c6513c469a8d96ee8d753",
+    "fai_sha256": "d3d0001db8ce0d38997e275c0bf7679a841638e352a45c917361f4dcfd96ffbe",
+    "matrix_sha256": {
+      "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+      "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+    }
+  },
+  "counts": {
+    "verified": 223,
+    "strand_-": 110,
+    "SCORED": 223,
+    "bulged": 171,
+    "CFD_ge_020": 132,
+    "CFD_lt_020": 91,
+    "strand_+": 113,
+    "ungapped": 52
+  },
+  "per_guide": {
+    "held_a": {
+      "verified": 69,
+      "strand_-": 34,
+      "strand_+": 35
+    },
+    "held_b": {
+      "verified": 66,
+      "strand_-": 33,
+      "strand_+": 33
+    },
+    "held_repeat": {
+      "verified": 88,
+      "strand_-": 43,
+      "strand_+": 45
+    }
+  },
+  "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+}

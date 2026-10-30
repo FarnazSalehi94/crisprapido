@@ -145,3 +145,9 @@ that adds this report. Generated indexes and verbose oracle reviews remain in
 Git. Small result files and the trace are preserved here. No independent human
 review, 100-guide × 12-assembly search, production binary replacement, merge,
 or CRISPR-Bulge integration occurred.
+
+## Subsequent performance validation
+
+The later [performance and held-out report](../performance_validation_a817ab5_2026-10-31_v1/REPORT.md)
+profiles this implementation and records a separately validated optimization.
+The earlier results remain the historical baseline; the preflight remains blocked.

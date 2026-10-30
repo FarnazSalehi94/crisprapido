@@ -1,0 +1,31 @@
+warning: field `cfd_score` is never read
+  --> src/hit.rs:15:16
+   |
+4  | pub(crate) struct Hit {
+   |                   --- field in this struct
+...
+15 |     pub(crate) cfd_score: Option<f64>,
+   |                ^^^^^^^^^
+   |
+   = note: `Hit` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: methods `quality_score` and `overlaps_with` are never used
+  --> src/hit.rs:21:19
+   |
+20 | impl Hit {
+   | -------- methods in this implementation
+21 |     pub(crate) fn quality_score(&self) -> i32 {
+   |                   ^^^^^^^^^^^^^
+...
+38 |     pub(crate) fn overlaps_with(&self, other: &Hit) -> bool {
+   |                   ^^^^^^^^^^^^^
+
+warning: `crisprapido` (bin "crisprapido") generated 2 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+     Running tests/cfd_standalone_validation.rs (/export/local/home/salehi/crisprapido-fast-align-20261031-target/debug/deps/cfd_standalone_validation-367ed8dfccd32ac7)
+
+running 1 test
+test calculate_cfd_matches_pinned_standalone ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.62s
