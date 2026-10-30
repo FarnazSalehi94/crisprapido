@@ -1,0 +1,6536 @@
+{
+  "metrics": {
+    "oracle_loci": 33,
+    "reported_loci": 28,
+    "recovered_loci": 28,
+    "recall": 0.8484848484848485,
+    "missing_loci": [
+      [
+        "g1",
+        "g1_exact_plus",
+        "+",
+        81,
+        84,
+        "GGG"
+      ],
+      [
+        "g1",
+        "g1_mm1_minus",
+        "-",
+        59,
+        62,
+        "GGG"
+      ],
+      [
+        "g1",
+        "g1_mm1_plus",
+        "+",
+        81,
+        84,
+        "GGG"
+      ],
+      [
+        "g2",
+        "g2_mm1_minus",
+        "-",
+        59,
+        62,
+        "GGG"
+      ],
+      [
+        "g2",
+        "g2_mm1_plus",
+        "+",
+        81,
+        84,
+        "GGG"
+      ]
+    ],
+    "unexplained_final_loci": [],
+    "class_counts": {
+      "B": 40,
+      "C": 6
+    },
+    "raw_replay_errors": 0
+  },
+  "discrepancies": [
+    {
+      "guide": "g1",
+      "contig": "g1_D_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TCGTACGATCGATACTGACGT",
+      "oriented_target": "ACGTCAGTATCGATCGTACGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 5,
+          "aligned_guide": "ACGTC-AGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "5=1D4X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 6,
+          "aligned_guide": "ACGTCA-GTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "6=1D3X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 7,
+          "aligned_guide": "ACGTCAG-TACGATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "7=1D2X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 8,
+          "aligned_guide": "ACGTCAGT-ACGATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "8=1D1X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 10,
+          "aligned_guide": "ACGTCAGTAC-GATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "9=1X1D10="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 11,
+          "aligned_guide": "ACGTCAGTACG-ATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "9=2X1D9="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 12,
+          "aligned_guide": "ACGTCAGTACGA-TCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "9=3X1D8="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 13,
+          "aligned_guide": "ACGTCAGTACGAT-CGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "9=4X1D7="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_D_minus",
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "reference_span": 21,
+          "reference_sequence": "TCGTACGATCGATACTGACGT",
+          "oriented_target": "ACGTCAGTATCGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "11M1D9M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTA-CGATCGTACGA",
+            "aligned_target": "ACGTCAGTATCGATCGTACGA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_D_minus",
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "reference_span": 21,
+          "reference_sequence": "TCGTACGATCGATACTGACGT",
+          "oriented_target": "ACGTCAGTATCGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "9=1D11=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTA-CGATCGTACGA",
+            "aligned_target": "ACGTCAGTATCGATCGTACGA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_D_minus",
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "reference_span": 21,
+          "reference_sequence": "TCGTACGATCGATACTGACGT",
+          "oriented_target": "ACGTCAGTATCGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "9=1D11=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTA-CGATCGTACGA",
+            "aligned_target": "ACGTCAGTATCGATCGTACGA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_D_plus",
+      "start": 60,
+      "end": 81,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "ACGTCAGTATCGATCGTACGA",
+      "oriented_target": "ACGTCAGTATCGATCGTACGA",
+      "pam_start": 81,
+      "pam_end": 84,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 5,
+          "aligned_guide": "ACGTC-AGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "5=1D4X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 6,
+          "aligned_guide": "ACGTCA-GTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "6=1D3X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 7,
+          "aligned_guide": "ACGTCAG-TACGATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "7=1D2X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 8,
+          "aligned_guide": "ACGTCAGT-ACGATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "8=1D1X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 10,
+          "aligned_guide": "ACGTCAGTAC-GATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "9=1X1D10="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 11,
+          "aligned_guide": "ACGTCAGTACG-ATCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "9=2X1D9="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 12,
+          "aligned_guide": "ACGTCAGTACGA-TCGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "9=3X1D8="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 13,
+          "aligned_guide": "ACGTCAGTACGAT-CGTACGA",
+          "aligned_target": "ACGTCAGTATCGATCGTACGA",
+          "cigar": "9=4X1D7="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_D_plus",
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "reference_span": 21,
+          "reference_sequence": "ACGTCAGTATCGATCGTACGA",
+          "oriented_target": "ACGTCAGTATCGATCGTACGA",
+          "pam_start": 81,
+          "pam_end": 84,
+          "pam": "AGG",
+          "cigar_sam": "9M1D11M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTA-CGATCGTACGA",
+            "aligned_target": "ACGTCAGTATCGATCGTACGA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_D_plus",
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "reference_span": 21,
+          "reference_sequence": "ACGTCAGTATCGATCGTACGA",
+          "oriented_target": "ACGTCAGTATCGATCGTACGA",
+          "pam_start": 81,
+          "pam_end": 84,
+          "pam": "AGG",
+          "cigar": "9=1D11=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTA-CGATCGTACGA",
+            "aligned_target": "ACGTCAGTATCGATCGTACGA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_D_plus",
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "reference_span": 21,
+          "reference_sequence": "ACGTCAGTATCGATCGTACGA",
+          "oriented_target": "ACGTCAGTATCGATCGTACGA",
+          "pam_start": 81,
+          "pam_end": 84,
+          "pam": "AGG",
+          "cigar": "9=1D11=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTA-CGATCGTACGA",
+            "aligned_target": "ACGTCAGTATCGATCGTACGA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_I_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TCGTACGATCTACTGACGT",
+      "oriented_target": "ACGTCAGTAGATCGTACGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 5,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTC-AGTAGATCGTACGA",
+          "cigar": "5=1I4X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 6,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCA-GTAGATCGTACGA",
+          "cigar": "6=1I3X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 7,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAG-TAGATCGTACGA",
+          "cigar": "7=1I2X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 8,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGT-AGATCGTACGA",
+          "cigar": "8=1I1X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 10,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTAG-ATCGTACGA",
+          "cigar": "9=1X1I9="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 11,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTAGA-TCGTACGA",
+          "cigar": "9=2X1I8="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 12,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTAGAT-CGTACGA",
+          "cigar": "9=3X1I7="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 13,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTAGATC-GTACGA",
+          "cigar": "9=4X1I6="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_I_minus",
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "reference_span": 19,
+          "reference_sequence": "TCGTACGATCTACTGACGT",
+          "oriented_target": "ACGTCAGTAGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "10M1I9M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTA-GATCGTACGA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_I_minus",
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "reference_span": 19,
+          "reference_sequence": "TCGTACGATCTACTGACGT",
+          "oriented_target": "ACGTCAGTAGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "9=1I10=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTA-GATCGTACGA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_I_minus",
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "reference_span": 19,
+          "reference_sequence": "TCGTACGATCTACTGACGT",
+          "oriented_target": "ACGTCAGTAGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "9=1I10=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTA-GATCGTACGA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_I_plus",
+      "start": 60,
+      "end": 79,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "ACGTCAGTAGATCGTACGA",
+      "oriented_target": "ACGTCAGTAGATCGTACGA",
+      "pam_start": 79,
+      "pam_end": 82,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 5,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTC-AGTAGATCGTACGA",
+          "cigar": "5=1I4X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 6,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCA-GTAGATCGTACGA",
+          "cigar": "6=1I3X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 7,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAG-TAGATCGTACGA",
+          "cigar": "7=1I2X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 8,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGT-AGATCGTACGA",
+          "cigar": "8=1I1X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 10,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTAG-ATCGTACGA",
+          "cigar": "9=1X1I9="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 11,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTAGA-TCGTACGA",
+          "cigar": "9=2X1I8="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 12,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTAGAT-CGTACGA",
+          "cigar": "9=3X1I7="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 13,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "ACGTCAGTAGATC-GTACGA",
+          "cigar": "9=4X1I6="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_I_plus",
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "reference_span": 19,
+          "reference_sequence": "ACGTCAGTAGATCGTACGA",
+          "oriented_target": "ACGTCAGTAGATCGTACGA",
+          "pam_start": 79,
+          "pam_end": 82,
+          "pam": "AGG",
+          "cigar_sam": "9M1I10M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTA-GATCGTACGA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_I_plus",
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "reference_span": 19,
+          "reference_sequence": "ACGTCAGTAGATCGTACGA",
+          "oriented_target": "ACGTCAGTAGATCGTACGA",
+          "pam_start": 79,
+          "pam_end": 82,
+          "pam": "AGG",
+          "cigar": "9=1I10=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTA-GATCGTACGA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_I_plus",
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "reference_span": 19,
+          "reference_sequence": "ACGTCAGTAGATCGTACGA",
+          "oriented_target": "ACGTCAGTAGATCGTACGA",
+          "pam_start": 79,
+          "pam_end": 82,
+          "pam": "AGG",
+          "cigar": "9=1I10=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTA-GATCGTACGA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TCGTACGATCGTACTGACG",
+      "oriented_target": "CGTCAGTACGATCGTACGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "I",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 0,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "-CGTCAGTACGATCGTACGA",
+          "cigar": "1I19="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TCGTACGATCGTACTGACG",
+      "oriented_target": "CGTCAGTACGATCGTACGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 1,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "C-GTCAGTACGATCGTACGA",
+          "cigar": "1X1I18="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 2,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CG-TCAGTACGATCGTACGA",
+          "cigar": "2X1I17="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 3,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CGT-CAGTACGATCGTACGA",
+          "cigar": "3X1I16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CGTC-AGTACGATCGTACGA",
+          "cigar": "4X1I15="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TCGTACGATCGTACTGACGTA",
+      "oriented_target": "TACGTCAGTACGATCGTACGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "D",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 0,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-ACGTCAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "1D20="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TCGTACGATCGTACTGACGTA",
+      "oriented_target": "TACGTCAGTACGATCGTACGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "A-CGTCAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "1X1D19="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 2,
+          "aligned_guide": "AC-GTCAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "2X1D18="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 3,
+          "aligned_guide": "ACG-TCAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "3X1D17="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "ACGT-CAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "4X1D16="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGACGT",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_plus",
+      "start": 59,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "TACGTCAGTACGATCGTACGA",
+      "oriented_target": "TACGTCAGTACGATCGTACGA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "D",
+      "oracle_alignments": [
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 0,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-ACGTCAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "1D20="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_plus",
+      "start": 59,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "TACGTCAGTACGATCGTACGA",
+      "oriented_target": "TACGTCAGTACGATCGTACGA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "A-CGTCAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "1X1D19="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 2,
+          "aligned_guide": "AC-GTCAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "2X1D18="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 3,
+          "aligned_guide": "ACG-TCAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "3X1D17="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "ACGT-CAGTACGATCGTACGA",
+          "aligned_target": "TACGTCAGTACGATCGTACGA",
+          "cigar": "4X1D16="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_plus",
+      "start": 60,
+      "end": 81,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "ACGTCAGTACGATCGTACGAA",
+      "oriented_target": "ACGTCAGTACGATCGTACGAA",
+      "pam_start": 81,
+      "pam_end": 84,
+      "pam": "GGG",
+      "category": "D",
+      "oracle_alignments": [
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 0,
+          "bulge": "DNA",
+          "bulge_position": 19,
+          "aligned_guide": "ACGTCAGTACGATCGTACG-A",
+          "aligned_target": "ACGTCAGTACGATCGTACGAA",
+          "cigar": "19=1D1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 0,
+          "bulge": "DNA",
+          "bulge_position": 20,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA-",
+          "aligned_target": "ACGTCAGTACGATCGTACGAA",
+          "cigar": "20=1D"
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [],
+      "classification": "C"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_plus",
+      "start": 60,
+      "end": 81,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "ACGTCAGTACGATCGTACGAA",
+      "oriented_target": "ACGTCAGTACGATCGTACGAA",
+      "pam_start": 81,
+      "pam_end": 84,
+      "pam": "GGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 15,
+          "aligned_guide": "ACGTCAGTACGATCG-TACGA",
+          "aligned_target": "ACGTCAGTACGATCGTACGAA",
+          "cigar": "15=1D4X1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 16,
+          "aligned_guide": "ACGTCAGTACGATCGT-ACGA",
+          "aligned_target": "ACGTCAGTACGATCGTACGAA",
+          "cigar": "16=1D3X1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 17,
+          "aligned_guide": "ACGTCAGTACGATCGTA-CGA",
+          "aligned_target": "ACGTCAGTACGATCGTACGAA",
+          "cigar": "17=1D2X1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 18,
+          "aligned_guide": "ACGTCAGTACGATCGTAC-GA",
+          "aligned_target": "ACGTCAGTACGATCGTACGAA",
+          "cigar": "18=1D1X1="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [],
+      "classification": "C"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_plus",
+      "start": 61,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "CGTCAGTACGATCGTACGA",
+      "oriented_target": "CGTCAGTACGATCGTACGA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "I",
+      "oracle_alignments": [
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 0,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "-CGTCAGTACGATCGTACGA",
+          "cigar": "1I19="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_exact_plus",
+      "start": 61,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "CGTCAGTACGATCGTACGA",
+      "oriented_target": "CGTCAGTACGATCGTACGA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 1,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "C-GTCAGTACGATCGTACGA",
+          "cigar": "1X1I18="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 2,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CG-TCAGTACGATCGTACGA",
+          "cigar": "2X1I17="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 3,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CGT-CAGTACGATCGTACGA",
+          "cigar": "3X1I16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CGTC-AGTACGATCGTACGA",
+          "cigar": "4X1I15="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGTCAGTACGATCGTACGA",
+          "oriented_target": "ACGTCAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGTCAGTACGATCGTACGA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm1_minus",
+      "start": 62,
+      "end": 83,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TTCGTACGATCGTACTGTCGT",
+      "oriented_target": "ACGACAGTACGATCGTACGAA",
+      "pam_start": 59,
+      "pam_end": 62,
+      "pam": "GGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 16,
+          "aligned_guide": "ACGTCAGTACGATCGT-ACGA",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X12=1D3X1="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 17,
+          "aligned_guide": "ACGTCAGTACGATCGTA-CGA",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X13=1D2X1="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 18,
+          "aligned_guide": "ACGTCAGTACGATCGTAC-GA",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X14=1D1X1="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 19,
+          "aligned_guide": "ACGTCAGTACGATCGTACG-A",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X15=1D1="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 20,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA-",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X16=1D"
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGTCGT",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGTCGT",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [],
+      "classification": "C"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm1_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TCGTACGATCGTACTGTCG",
+      "oriented_target": "CGACAGTACGATCGTACGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "-CGACAGTACGATCGTACGA",
+          "cigar": "1I2=1X16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 1,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "C-GACAGTACGATCGTACGA",
+          "cigar": "1X1I1=1X16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 2,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CG-ACAGTACGATCGTACGA",
+          "cigar": "2X1I1X16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 3,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CGA-CAGTACGATCGTACGA",
+          "cigar": "3X1I16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CGAC-AGTACGATCGTACGA",
+          "cigar": "4X1I15="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGTCGT",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGTCGT",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGTCGT",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm1_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TCGTACGATCGTACTGTCGTC",
+      "oriented_target": "GACGACAGTACGATCGTACGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-ACGTCAGTACGATCGTACGA",
+          "aligned_target": "GACGACAGTACGATCGTACGA",
+          "cigar": "1D3=1X16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "A-CGTCAGTACGATCGTACGA",
+          "aligned_target": "GACGACAGTACGATCGTACGA",
+          "cigar": "1X1D2=1X16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 2,
+          "aligned_guide": "AC-GTCAGTACGATCGTACGA",
+          "aligned_target": "GACGACAGTACGATCGTACGA",
+          "cigar": "2X1D1=1X16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 3,
+          "aligned_guide": "ACG-TCAGTACGATCGTACGA",
+          "aligned_target": "GACGACAGTACGATCGTACGA",
+          "cigar": "3X1D1X16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "ACGT-CAGTACGATCGTACGA",
+          "aligned_target": "GACGACAGTACGATCGTACGA",
+          "cigar": "4X1D16="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGTCGT",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGTCGT",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGTACGATCGTACTGTCGT",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm1_plus",
+      "start": 59,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "AACGACAGTACGATCGTACGA",
+      "oriented_target": "AACGACAGTACGATCGTACGA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-ACGTCAGTACGATCGTACGA",
+          "aligned_target": "AACGACAGTACGATCGTACGA",
+          "cigar": "1D3=1X16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "A-CGTCAGTACGATCGTACGA",
+          "aligned_target": "AACGACAGTACGATCGTACGA",
+          "cigar": "1=1D2=1X16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 2,
+          "aligned_guide": "AC-GTCAGTACGATCGTACGA",
+          "aligned_target": "AACGACAGTACGATCGTACGA",
+          "cigar": "1=1X1D1=1X16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 3,
+          "aligned_guide": "ACG-TCAGTACGATCGTACGA",
+          "aligned_target": "AACGACAGTACGATCGTACGA",
+          "cigar": "1=2X1D1X16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "ACGT-CAGTACGATCGTACGA",
+          "aligned_target": "AACGACAGTACGATCGTACGA",
+          "cigar": "1=3X1D16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 5,
+          "aligned_guide": "ACGTC-AGTACGATCGTACGA",
+          "aligned_target": "AACGACAGTACGATCGTACGA",
+          "cigar": "1=4X1D15="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGACAGTACGATCGTACGA",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGACAGTACGATCGTACGA",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGACAGTACGATCGTACGA",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm1_plus",
+      "start": 60,
+      "end": 81,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "ACGACAGTACGATCGTACGAA",
+      "oriented_target": "ACGACAGTACGATCGTACGAA",
+      "pam_start": 81,
+      "pam_end": 84,
+      "pam": "GGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 16,
+          "aligned_guide": "ACGTCAGTACGATCGT-ACGA",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X12=1D3X1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 17,
+          "aligned_guide": "ACGTCAGTACGATCGTA-CGA",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X13=1D2X1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 18,
+          "aligned_guide": "ACGTCAGTACGATCGTAC-GA",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X14=1D1X1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 19,
+          "aligned_guide": "ACGTCAGTACGATCGTACG-A",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X15=1D1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 20,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA-",
+          "aligned_target": "ACGACAGTACGATCGTACGAA",
+          "cigar": "3=1X16=1D"
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGACAGTACGATCGTACGA",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGACAGTACGATCGTACGA",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [],
+      "classification": "C"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm1_plus",
+      "start": 61,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "CGACAGTACGATCGTACGA",
+      "oriented_target": "CGACAGTACGATCGTACGA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "-CGACAGTACGATCGTACGA",
+          "cigar": "1I2=1X16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 1,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "C-GACAGTACGATCGTACGA",
+          "cigar": "1X1I1=1X16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 2,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CG-ACAGTACGATCGTACGA",
+          "cigar": "2X1I1X16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 3,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CGA-CAGTACGATCGTACGA",
+          "cigar": "3X1I16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CGAC-AGTACGATCGTACGA",
+          "cigar": "4X1I15="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGACAGTACGATCGTACGA",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGACAGTACGATCGTACGA",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACGACAGTACGATCGTACGA",
+          "oriented_target": "ACGACAGTACGATCGTACGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACGACAGTACGATCGTACGA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm4_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TCGGACGAGCGTAATGAAG",
+      "oriented_target": "CTTCATTACGCTCGTCCGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "-CTTCATTACGCTCGTCCGA",
+          "cigar": "1I1=1X3=1X4=1X4=1X3="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGGACGAGCGTAATGAAGT",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:4",
+            "NM:i:4",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGGACGAGCGTAATGAAGT",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGGACGAGCGTAATGAAGT",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm4_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TCGGACGAGCGTAATGAAGTA",
+      "oriented_target": "TACTTCATTACGCTCGTCCGA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-ACGTCAGTACGATCGTACGA",
+          "aligned_target": "TACTTCATTACGCTCGTCCGA",
+          "cigar": "1D2=1X3=1X4=1X4=1X3="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGGACGAGCGTAATGAAGT",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:4",
+            "NM:i:4",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGGACGAGCGTAATGAAGT",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TCGGACGAGCGTAATGAAGT",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm4_plus",
+      "start": 59,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "CACTTCATTACGCTCGTCCGA",
+      "oriented_target": "CACTTCATTACGCTCGTCCGA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-ACGTCAGTACGATCGTACGA",
+          "aligned_target": "CACTTCATTACGCTCGTCCGA",
+          "cigar": "1D2=1X3=1X4=1X4=1X3="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACTTCATTACGCTCGTCCGA",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:4",
+            "NM:i:4",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACTTCATTACGCTCGTCCGA",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACTTCATTACGCTCGTCCGA",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g1",
+      "contig": "g1_mm4_plus",
+      "start": 61,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "CTTCATTACGCTCGTCCGA",
+      "oriented_target": "CTTCATTACGCTCGTCCGA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "ACGTCAGTACGATCGTACGA",
+          "aligned_target": "-CTTCATTACGCTCGTCCGA",
+          "cigar": "1I1=1X3=1X4=1X4=1X3="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACTTCATTACGCTCGTCCGA",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:4",
+            "NM:i:4",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACTTCATTACGCTCGTCCGA",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g1",
+          "contig": "g1_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "ACTTCATTACGCTCGTCCGA",
+          "oriented_target": "ACTTCATTACGCTCGTCCGA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "ACGTCAGTACGATCGTACGA",
+            "aligned_target": "ACTTCATTACGCTCGTCCGA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_D_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TTCTTCTTCTGACTCGGACTC",
+      "oriented_target": "GAGTCCGAGTCAGAAGAAGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGT-CCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "4=1D1=4X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTC-CGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "5=1D4X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 6,
+          "aligned_guide": "GAGTCC-GAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "6=1D3X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 7,
+          "aligned_guide": "GAGTCCG-AGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "7=1D2X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 8,
+          "aligned_guide": "GAGTCCGA-GCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "8=1D1X11="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 10,
+          "aligned_guide": "GAGTCCGAGC-AGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=1X1D10="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 11,
+          "aligned_guide": "GAGTCCGAGCA-GAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=2X1D9="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 12,
+          "aligned_guide": "GAGTCCGAGCAG-AAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=3X1D8="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 13,
+          "aligned_guide": "GAGTCCGAGCAGA-AGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=4X1D7="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 14,
+          "aligned_guide": "GAGTCCGAGCAGAA-GAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=4X1=1D6="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_D_minus",
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "reference_span": 21,
+          "reference_sequence": "TTCTTCTTCTGACTCGGACTC",
+          "oriented_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "11M1D9M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAG-CAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_D_minus",
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "reference_span": 21,
+          "reference_sequence": "TTCTTCTTCTGACTCGGACTC",
+          "oriented_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "9=1D11=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAG-CAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_D_minus",
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "reference_span": 21,
+          "reference_sequence": "TTCTTCTTCTGACTCGGACTC",
+          "oriented_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "9=1D11=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAG-CAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_D_plus",
+      "start": 60,
+      "end": 81,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "GAGTCCGAGTCAGAAGAAGAA",
+      "oriented_target": "GAGTCCGAGTCAGAAGAAGAA",
+      "pam_start": 81,
+      "pam_end": 84,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGT-CCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "4=1D1=4X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTC-CGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "5=1D4X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 6,
+          "aligned_guide": "GAGTCC-GAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "6=1D3X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 7,
+          "aligned_guide": "GAGTCCG-AGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "7=1D2X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 8,
+          "aligned_guide": "GAGTCCGA-GCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "8=1D1X11="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 10,
+          "aligned_guide": "GAGTCCGAGC-AGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=1X1D10="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 11,
+          "aligned_guide": "GAGTCCGAGCA-GAAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=2X1D9="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 12,
+          "aligned_guide": "GAGTCCGAGCAG-AAGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=3X1D8="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 13,
+          "aligned_guide": "GAGTCCGAGCAGA-AGAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=4X1D7="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 14,
+          "aligned_guide": "GAGTCCGAGCAGAA-GAAGAA",
+          "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "cigar": "9=4X1=1D6="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_D_plus",
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "reference_span": 21,
+          "reference_sequence": "GAGTCCGAGTCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "pam_start": 81,
+          "pam_end": 84,
+          "pam": "AGG",
+          "cigar_sam": "9M1D11M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAG-CAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_D_plus",
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "reference_span": 21,
+          "reference_sequence": "GAGTCCGAGTCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "pam_start": 81,
+          "pam_end": 84,
+          "pam": "AGG",
+          "cigar": "9=1D11=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAG-CAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_D_plus",
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "reference_span": 21,
+          "reference_sequence": "GAGTCCGAGTCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGTCAGAAGAAGAA",
+          "pam_start": 81,
+          "pam_end": 84,
+          "pam": "AGG",
+          "cigar": "9=1D11=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAG-CAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGTCAGAAGAAGAA",
+            "normalized_cigar": "9=1D11=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_I_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TTCTTCTTCTCTCGGACTC",
+      "oriented_target": "GAGTCCGAGAGAAGAAGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGT-CCGAGAGAAGAAGAA",
+          "cigar": "4=1I1=4X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTC-CGAGAGAAGAAGAA",
+          "cigar": "5=1I4X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 6,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCC-GAGAGAAGAAGAA",
+          "cigar": "6=1I3X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 7,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCG-AGAGAAGAAGAA",
+          "cigar": "7=1I2X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 8,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGA-GAGAAGAAGAA",
+          "cigar": "8=1I1X10="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 10,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGA-GAAGAAGAA",
+          "cigar": "9=1X1I9="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 11,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGAG-AAGAAGAA",
+          "cigar": "9=2X1I8="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 12,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGAGA-AGAAGAA",
+          "cigar": "9=3X1I7="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 13,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGAGAA-GAAGAA",
+          "cigar": "9=3X1=1I6="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 14,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGAGAAG-AAGAA",
+          "cigar": "9=3X1=1X1I5="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_I_minus",
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "reference_span": 19,
+          "reference_sequence": "TTCTTCTTCTCTCGGACTC",
+          "oriented_target": "GAGTCCGAGAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "10M1I9M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAG-AGAAGAAGAA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_I_minus",
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "reference_span": 19,
+          "reference_sequence": "TTCTTCTTCTCTCGGACTC",
+          "oriented_target": "GAGTCCGAGAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "9=1I10=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAG-AGAAGAAGAA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_I_minus",
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "reference_span": 19,
+          "reference_sequence": "TTCTTCTTCTCTCGGACTC",
+          "oriented_target": "GAGTCCGAGAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "9=1I10=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAG-AGAAGAAGAA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_I_plus",
+      "start": 60,
+      "end": 79,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "GAGTCCGAGAGAAGAAGAA",
+      "oriented_target": "GAGTCCGAGAGAAGAAGAA",
+      "pam_start": 79,
+      "pam_end": 82,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGT-CCGAGAGAAGAAGAA",
+          "cigar": "4=1I1=4X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTC-CGAGAGAAGAAGAA",
+          "cigar": "5=1I4X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 6,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCC-GAGAGAAGAAGAA",
+          "cigar": "6=1I3X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 7,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCG-AGAGAAGAAGAA",
+          "cigar": "7=1I2X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 8,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGA-GAGAAGAAGAA",
+          "cigar": "8=1I1X10="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 10,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGA-GAAGAAGAA",
+          "cigar": "9=1X1I9="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 11,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGAG-AAGAAGAA",
+          "cigar": "9=2X1I8="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 12,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGAGA-AGAAGAA",
+          "cigar": "9=3X1I7="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 13,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGAGAA-GAAGAA",
+          "cigar": "9=3X1=1I6="
+        },
+        {
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 14,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GAGTCCGAGAGAAG-AAGAA",
+          "cigar": "9=3X1=1X1I5="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_I_plus",
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "reference_span": 19,
+          "reference_sequence": "GAGTCCGAGAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGAGAAGAAGAA",
+          "pam_start": 79,
+          "pam_end": 82,
+          "pam": "AGG",
+          "cigar_sam": "9M1I10M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAG-AGAAGAAGAA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_I_plus",
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "reference_span": 19,
+          "reference_sequence": "GAGTCCGAGAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGAGAAGAAGAA",
+          "pam_start": 79,
+          "pam_end": 82,
+          "pam": "AGG",
+          "cigar": "9=1I10=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAG-AGAAGAAGAA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_I_plus",
+          "start": 60,
+          "end": 79,
+          "strand": "+",
+          "reference_span": 19,
+          "reference_sequence": "GAGTCCGAGAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGAGAAGAAGAA",
+          "pam_start": 79,
+          "pam_end": 82,
+          "pam": "AGG",
+          "cigar": "9=1I10=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAG-AGAAGAAGAA",
+            "normalized_cigar": "9=1I10=",
+            "mismatches": 0,
+            "gap_positions": [
+              9
+            ]
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_exact_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TTCTTCTTCTGCTCGGACT",
+      "oriented_target": "AGTCCGAGCAGAAGAAGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "I",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 0,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "-AGTCCGAGCAGAAGAAGAA",
+          "cigar": "1I19="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_exact_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TTCTTCTTCTGCTCGGACT",
+      "oriented_target": "AGTCCGAGCAGAAGAAGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 1,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "A-GTCCGAGCAGAAGAAGAA",
+          "cigar": "1X1I18="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 2,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AG-TCCGAGCAGAAGAAGAA",
+          "cigar": "2X1I17="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 3,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGT-CCGAGCAGAAGAAGAA",
+          "cigar": "3X1I16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGTC-CGAGCAGAAGAAGAA",
+          "cigar": "4X1I15="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGTCC-GAGCAGAAGAAGAA",
+          "cigar": "4X1=1I14="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_exact_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TTCTTCTTCTGCTCGGACTCA",
+      "oriented_target": "TGAGTCCGAGCAGAAGAAGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "D",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 0,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "TGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "1D20="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_exact_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TTCTTCTTCTGCTCGGACTCA",
+      "oriented_target": "TGAGTCCGAGCAGAAGAAGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "G-AGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "TGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "1X1D19="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 2,
+          "aligned_guide": "GA-GTCCGAGCAGAAGAAGAA",
+          "aligned_target": "TGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "2X1D18="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 3,
+          "aligned_guide": "GAG-TCCGAGCAGAAGAAGAA",
+          "aligned_target": "TGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "3X1D17="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGT-CCGAGCAGAAGAAGAA",
+          "aligned_target": "TGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "4X1D16="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGACTC",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_exact_plus",
+      "start": 59,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "CGAGTCCGAGCAGAAGAAGAA",
+      "oriented_target": "CGAGTCCGAGCAGAAGAAGAA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "D",
+      "oracle_alignments": [
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 0,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "CGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "1D20="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_exact_plus",
+      "start": 59,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "CGAGTCCGAGCAGAAGAAGAA",
+      "oriented_target": "CGAGTCCGAGCAGAAGAAGAA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "G-AGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "CGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "1X1D19="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 2,
+          "aligned_guide": "GA-GTCCGAGCAGAAGAAGAA",
+          "aligned_target": "CGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "2X1D18="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 3,
+          "aligned_guide": "GAG-TCCGAGCAGAAGAAGAA",
+          "aligned_target": "CGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "3X1D17="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGT-CCGAGCAGAAGAAGAA",
+          "aligned_target": "CGAGTCCGAGCAGAAGAAGAA",
+          "cigar": "4X1D16="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_exact_plus",
+      "start": 61,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "AGTCCGAGCAGAAGAAGAA",
+      "oriented_target": "AGTCCGAGCAGAAGAAGAA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "I",
+      "oracle_alignments": [
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 0,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "-AGTCCGAGCAGAAGAAGAA",
+          "cigar": "1I19="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_exact_plus",
+      "start": 61,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "AGTCCGAGCAGAAGAAGAA",
+      "oriented_target": "AGTCCGAGCAGAAGAAGAA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 1,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "A-GTCCGAGCAGAAGAAGAA",
+          "cigar": "1X1I18="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 2,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AG-TCCGAGCAGAAGAAGAA",
+          "cigar": "2X1I17="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 3,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGT-CCGAGCAGAAGAAGAA",
+          "cigar": "3X1I16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGTC-CGAGCAGAAGAAGAA",
+          "cigar": "4X1I15="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGTCC-GAGCAGAAGAAGAA",
+          "cigar": "4X1=1I14="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:0",
+            "NM:i:0",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_exact_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGTCCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGTCCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "20=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGTCCGAGCAGAAGAAGAA",
+            "normalized_cigar": "20=",
+            "mismatches": 0,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm1_minus",
+      "start": 62,
+      "end": 83,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TTTCTTCTTCTGCTCGGTCTC",
+      "oriented_target": "GAGACCGAGCAGAAGAAGAAA",
+      "pam_start": 59,
+      "pam_end": 62,
+      "pam": "GGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 14,
+          "aligned_guide": "GAGTCCGAGCAGAA-GAAGAA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X10=1D1X1=2X2="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 15,
+          "aligned_guide": "GAGTCCGAGCAGAAG-AAGAA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X11=1D1=2X2="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 16,
+          "aligned_guide": "GAGTCCGAGCAGAAGA-AGAA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X12=1D2X2="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 17,
+          "aligned_guide": "GAGTCCGAGCAGAAGAA-GAA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X13=1D1X2="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 18,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAG-AA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X14=1D2="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 19,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGA-A",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X15=1D1="
+        },
+        {
+          "start": 62,
+          "end": 83,
+          "strand": "-",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 20,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA-",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X16=1D"
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGTCTC",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGTCTC",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [],
+      "classification": "C"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm1_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TTCTTCTTCTGCTCGGTCT",
+      "oriented_target": "AGACCGAGCAGAAGAAGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "-AGACCGAGCAGAAGAAGAA",
+          "cigar": "1I2=1X16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 1,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "A-GACCGAGCAGAAGAAGAA",
+          "cigar": "1X1I1=1X16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 2,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AG-ACCGAGCAGAAGAAGAA",
+          "cigar": "2X1I1X16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 3,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGA-CCGAGCAGAAGAAGAA",
+          "cigar": "3X1I16="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGAC-CGAGCAGAAGAAGAA",
+          "cigar": "4X1I15="
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGACC-GAGCAGAAGAAGAA",
+          "cigar": "4X1=1I14="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGTCTC",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGTCTC",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGTCTC",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm1_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TTCTTCTTCTGCTCGGTCTCC",
+      "oriented_target": "GGAGACCGAGCAGAAGAAGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1D3=1X16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "G-AGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1=1D2=1X16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 2,
+          "aligned_guide": "GA-GTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1=1X1D1=1X16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 3,
+          "aligned_guide": "GAG-TCCGAGCAGAAGAAGAA",
+          "aligned_target": "GGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1=2X1D1X16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGT-CCGAGCAGAAGAAGAA",
+          "aligned_target": "GGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1=3X1D16="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTC-CGAGCAGAAGAAGAA",
+          "aligned_target": "GGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1=4X1D15="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 6,
+          "aligned_guide": "GAGTCC-GAGCAGAAGAAGAA",
+          "aligned_target": "GGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1=4X1=1D14="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGTCTC",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGTCTC",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCTTCTTCTGCTCGGTCTC",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm1_plus",
+      "start": 59,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "AGAGACCGAGCAGAAGAAGAA",
+      "oriented_target": "AGAGACCGAGCAGAAGAAGAA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1D3=1X16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "G-AGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGAGACCGAGCAGAAGAAGAA",
+          "cigar": "1X1D2=1X16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 2,
+          "aligned_guide": "GA-GTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGAGACCGAGCAGAAGAAGAA",
+          "cigar": "2X1D1=1X16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 3,
+          "aligned_guide": "GAG-TCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGAGACCGAGCAGAAGAAGAA",
+          "cigar": "3X1D1X16="
+        },
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGT-CCGAGCAGAAGAAGAA",
+          "aligned_target": "AGAGACCGAGCAGAAGAAGAA",
+          "cigar": "4X1D16="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGACCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGACCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGACCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm1_plus",
+      "start": 60,
+      "end": 81,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "GAGACCGAGCAGAAGAAGAAA",
+      "oriented_target": "GAGACCGAGCAGAAGAAGAAA",
+      "pam_start": 81,
+      "pam_end": 84,
+      "pam": "GGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 14,
+          "aligned_guide": "GAGTCCGAGCAGAA-GAAGAA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X10=1D1X1=2X2="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 15,
+          "aligned_guide": "GAGTCCGAGCAGAAG-AAGAA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X11=1D1=2X2="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 3,
+          "bulge": "DNA",
+          "bulge_position": 16,
+          "aligned_guide": "GAGTCCGAGCAGAAGA-AGAA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X12=1D2X2="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 2,
+          "bulge": "DNA",
+          "bulge_position": 17,
+          "aligned_guide": "GAGTCCGAGCAGAAGAA-GAA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X13=1D1X2="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 18,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAG-AA",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X14=1D2="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 19,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGA-A",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X15=1D1="
+        },
+        {
+          "start": 60,
+          "end": 81,
+          "strand": "+",
+          "pam": "GGG",
+          "mismatches": 1,
+          "bulge": "DNA",
+          "bulge_position": 20,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA-",
+          "aligned_target": "GAGACCGAGCAGAAGAAGAAA",
+          "cigar": "3=1X16=1D"
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGACCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGACCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [],
+      "classification": "C"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm1_plus",
+      "start": 61,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "AGACCGAGCAGAAGAAGAA",
+      "oriented_target": "AGACCGAGCAGAAGAAGAA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 1,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "-AGACCGAGCAGAAGAAGAA",
+          "cigar": "1I2=1X16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 2,
+          "bulge": "RNA",
+          "bulge_position": 1,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "A-GACCGAGCAGAAGAAGAA",
+          "cigar": "1X1I1=1X16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 2,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AG-ACCGAGCAGAAGAAGAA",
+          "cigar": "2X1I1X16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 3,
+          "bulge": "RNA",
+          "bulge_position": 3,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGA-CCGAGCAGAAGAAGAA",
+          "cigar": "3X1I16="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 4,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGAC-CGAGCAGAAGAAGAA",
+          "cigar": "4X1I15="
+        },
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 5,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "AGACC-GAGCAGAAGAAGAA",
+          "cigar": "4X1=1I14="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGACCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:1",
+            "NM:i:1",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGACCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm1_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GAGACCGAGCAGAAGAAGAA",
+          "oriented_target": "GAGACCGAGCAGAAGAAGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "3=1X16=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GAGACCGAGCAGAAGAAGAA",
+            "normalized_cigar": "3=1X16=",
+            "mismatches": 1,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm4_minus",
+      "start": 63,
+      "end": 82,
+      "strand": "-",
+      "reference_span": 19,
+      "reference_sequence": "TTCGTCTTATGCTAGGAAT",
+      "oriented_target": "ATTCCTAGCATAAGACGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 82,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "-ATTCCTAGCATAAGACGAA",
+          "cigar": "1I1=1X3=1X4=1X4=1X3="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCGTCTTATGCTAGGAATC",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:4",
+            "NM:i:4",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCGTCTTATGCTAGGAATC",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCGTCTTATGCTAGGAATC",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm4_minus",
+      "start": 63,
+      "end": 84,
+      "strand": "-",
+      "reference_span": 21,
+      "reference_sequence": "TTCGTCTTATGCTAGGAATCC",
+      "oriented_target": "GGATTCCTAGCATAAGACGAA",
+      "pam_start": 60,
+      "pam_end": 63,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GGATTCCTAGCATAAGACGAA",
+          "cigar": "1D2=1X3=1X4=1X4=1X3="
+        },
+        {
+          "start": 63,
+          "end": 84,
+          "strand": "-",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 1,
+          "aligned_guide": "G-AGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "GGATTCCTAGCATAAGACGAA",
+          "cigar": "1=1D1=1X3=1X4=1X4=1X3="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCGTCTTATGCTAGGAATC",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:4",
+            "NM:i:4",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCGTCTTATGCTAGGAATC",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_minus",
+          "start": 63,
+          "end": 83,
+          "strand": "-",
+          "reference_span": 20,
+          "reference_sequence": "TTCGTCTTATGCTAGGAATC",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 60,
+          "pam_end": 63,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm4_plus",
+      "start": 59,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 21,
+      "reference_sequence": "CGATTCCTAGCATAAGACGAA",
+      "oriented_target": "CGATTCCTAGCATAAGACGAA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 59,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "DNA",
+          "bulge_position": 0,
+          "aligned_guide": "-GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "CGATTCCTAGCATAAGACGAA",
+          "cigar": "1D2=1X3=1X4=1X4=1X3="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GATTCCTAGCATAAGACGAA",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:4",
+            "NM:i:4",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GATTCCTAGCATAAGACGAA",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GATTCCTAGCATAAGACGAA",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    },
+    {
+      "guide": "g2",
+      "contig": "g2_mm4_plus",
+      "start": 61,
+      "end": 80,
+      "strand": "+",
+      "reference_span": 19,
+      "reference_sequence": "ATTCCTAGCATAAGACGAA",
+      "oriented_target": "ATTCCTAGCATAAGACGAA",
+      "pam_start": 80,
+      "pam_end": 83,
+      "pam": "AGG",
+      "category": "mismatch_bulge",
+      "oracle_alignments": [
+        {
+          "start": 61,
+          "end": 80,
+          "strand": "+",
+          "pam": "AGG",
+          "mismatches": 4,
+          "bulge": "RNA",
+          "bulge_position": 0,
+          "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+          "aligned_target": "-ATTCCTAGCATAAGACGAA",
+          "cigar": "1I1=1X3=1X4=1X4=1X3="
+        }
+      ],
+      "overlapping_raw": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GATTCCTAGCATAAGACGAA",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar_sam": "20M",
+          "tags": [
+            "AS:i:4",
+            "NM:i:4",
+            "PG:Z:Columba"
+          ],
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "overlapping_final": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GATTCCTAGCATAAGACGAA",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "same_pam_reported": [
+        {
+          "guide": "g2",
+          "contig": "g2_mm4_plus",
+          "start": 60,
+          "end": 80,
+          "strand": "+",
+          "reference_span": 20,
+          "reference_sequence": "GATTCCTAGCATAAGACGAA",
+          "oriented_target": "GATTCCTAGCATAAGACGAA",
+          "pam_start": 80,
+          "pam_end": 83,
+          "pam": "AGG",
+          "cigar": "2=1X3=1X4=1X4=1X3=",
+          "alignment": {
+            "aligned_guide": "GAGTCCGAGCAGAAGAAGAA",
+            "aligned_target": "GATTCCTAGCATAAGACGAA",
+            "normalized_cigar": "2=1X3=1X4=1X4=1X3=",
+            "mismatches": 4,
+            "gap_positions": []
+          }
+        }
+      ],
+      "classification": "B"
+    }
+  ]
+}

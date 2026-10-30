@@ -32,43 +32,67 @@ def read_guides(path):
     return guides
 
 
-def scan_fasta(handle, guides):
+def scan_fasta(handle, guides, chunk_size=1024 * 1024):
+    """Scan with C-level substring search, retaining line/contig boundary context."""
+    if chunk_size < 1:
+        raise ValueError('chunk size must be positive')
     patterns = defaultdict(list)
     for name, guide in guides.items():
         if not guide or set(guide) - DNA:
             raise ValueError('guides must be nonempty uppercase A/C/G/T')
         patterns[guide].append((name, '+'))
         patterns[rc(guide)].append((name, '-'))
-    lengths = sorted({len(p) for p in patterns})
-    keep = max(lengths) + 2
+    if not patterns:
+        raise ValueError('empty guide set')
+    keep = max(map(len, patterns)) + 2
     contig, tail, consumed = None, '', 0
+    pending, pending_len = [], 0
+
+    def scan_chunk(chunk):
+        nonlocal tail, consumed
+        seq = tail + chunk
+        old = len(tail)
+        base = consumed - old
+        for pattern, entries in patterns.items():
+            start = 0
+            while True:
+                i = seq.find(pattern, start)
+                if i < 0:
+                    break
+                start = i + 1
+                for name, strand in entries:
+                    end = i + len(pattern)
+                    if strand == '+':
+                        if end + 3 > len(seq) or end + 3 <= old:
+                            continue
+                        pam = seq[end:end+3]
+                    else:
+                        if i < 3 or end <= old:
+                            continue
+                        pam = rc(seq[i-3:i])
+                    if set(pam) <= DNA and pam[1:] == 'GG':
+                        yield dict(guide=name, contig=contig, start=base+i,
+                                   end=base+end, strand=strand, pam=pam)
+        consumed += len(chunk)
+        tail = seq[-keep:]
+
     for line in handle:
         line = line.strip()
         if line.startswith('>'):
+            if pending:
+                yield from scan_chunk(''.join(pending))
             contig, tail, consumed = line[1:].split()[0], '', 0
+            pending, pending_len = [], 0
         elif line:
             if contig is None:
                 raise ValueError('sequence before FASTA header')
-            chunk = line.upper()
-            seq = tail + chunk
-            base = consumed - len(tail)
-            for length in lengths:
-                for i in range(max(0, len(tail) - length - 2), len(seq) - length + 1):
-                    for name, strand in patterns.get(seq[i:i+length], ()):
-                        start = base + i
-                        if strand == '+':
-                            if i + length + 3 > len(seq) or i + length + 3 <= len(tail):
-                                continue
-                            pam = seq[i+length:i+length+3]
-                        else:
-                            if i < 3 or i + length <= len(tail):
-                                continue
-                            pam = rc(seq[i-3:i])
-                        if set(pam) <= DNA and pam[1:] == 'GG':
-                            yield dict(guide=name, contig=contig, start=start,
-                                       end=start+length, strand=strand, pam=pam)
-            consumed += len(chunk)
-            tail = seq[-keep:]
+            pending.append(line.upper())
+            pending_len += len(line)
+            if pending_len >= chunk_size:
+                yield from scan_chunk(''.join(pending))
+                pending, pending_len = [], 0
+    if pending:
+        yield from scan_chunk(''.join(pending))
 
 
 def main():

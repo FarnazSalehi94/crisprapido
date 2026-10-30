@@ -1,0 +1,187 @@
+[
+  {
+    "key": [
+      "g1",
+      "g1_exact_plus",
+      60,
+      81,
+      "+"
+    ],
+    "pam_locus": [
+      "g1",
+      "g1_exact_plus",
+      "+",
+      81,
+      84,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg1_exact_plus\t143\t59\t80\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:1D20=\tcf:f:1.0000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg1_exact_plus\t143\t59\t80\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:1D20=\tcf:f:1.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg1_exact_plus\t143\t61\t81\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:1I19=1D"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "g1",
+      "g1_mm1_minus",
+      62,
+      83,
+      "-"
+    ],
+    "pam_locus": [
+      "g1",
+      "g1_mm1_minus",
+      "-",
+      59,
+      62,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tg1_mm1_minus\t143\t62\t83\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1X16=1D\tcf:f:0.4286"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tg1_mm1_minus\t143\t62\t83\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1X16=1D\tcf:f:0.4286"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tg1_mm1_minus\t143\t62\t81\t17\t21\t255\tas:i:16\tnm:i:1\tng:i:2\tbs:i:2\tcg:Z:2I1=1X16=1D"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "g1",
+      "g1_mm1_plus",
+      60,
+      81,
+      "+"
+    ],
+    "pam_locus": [
+      "g1",
+      "g1_mm1_plus",
+      "+",
+      81,
+      84,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg1_mm1_plus\t143\t59\t80\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:1=1D2=1X16=\tcf:f:0.4762"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg1_mm1_plus\t143\t59\t80\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:1=1D2=1X16=\tcf:f:0.4762"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg1_mm1_plus\t143\t61\t81\t18\t21\t255\tas:i:15\tnm:i:1\tng:i:2\tbs:i:1\tcg:Z:1I2=1X16=1D"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "g2",
+      "g2_mm1_minus",
+      62,
+      83,
+      "-"
+    ],
+    "pam_locus": [
+      "g2",
+      "g2_mm1_minus",
+      "-",
+      59,
+      62,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tg2_mm1_minus\t143\t62\t83\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1X16=1D\tcf:f:0.4286"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tg2_mm1_minus\t143\t62\t83\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1X16=1D\tcf:f:0.4286"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tg2_mm1_minus\t143\t62\t81\t18\t21\t255\tas:i:13\tnm:i:0\tng:i:2\tbs:i:2\tcg:Z:2=2I16=1D"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "g2",
+      "g2_mm1_plus",
+      60,
+      81,
+      "+"
+    ],
+    "pam_locus": [
+      "g2",
+      "g2_mm1_plus",
+      "+",
+      81,
+      84,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg2_mm1_plus\t143\t59\t80\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:1D3=1X16=\tcf:f:0.4762"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg2_mm1_plus\t143\t59\t80\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:1D3=1X16=\tcf:f:0.4762"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tg2_mm1_plus\t143\t61\t81\t18\t21\t255\tas:i:15\tnm:i:1\tng:i:2\tbs:i:1\tcg:Z:1I2=1X16=1D"
+        ],
+        "stderr": []
+      }
+    }
+  }
+]

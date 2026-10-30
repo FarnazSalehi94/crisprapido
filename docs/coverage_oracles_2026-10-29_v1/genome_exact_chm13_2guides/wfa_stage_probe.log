@@ -1,0 +1,32 @@
+   Compiling crisprapido v0.1.0 (/tmp/crispr-wfa-audit-20261030)
+warning: field `cfd_score` is never read
+  --> src/hit.rs:15:16
+   |
+4  | pub(crate) struct Hit {
+   |                   --- field in this struct
+...
+15 |     pub(crate) cfd_score: Option<f64>,
+   |                ^^^^^^^^^
+   |
+   = note: `Hit` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `crisprapido` (bin "crisprapido" test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 15.16s
+     Running unittests src/lib.rs (/export/local/home/salehi/crisprapido-pam-target/debug/deps/crisprapido-9f42cdf0d0fbf72b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/export/local/home/salehi/crisprapido-pam-target/debug/deps/crisprapido-97a72e8a8c711781)
+
+running 1 test
+g1_exact_plus: Some((-6, "MMMMMMMMMMMMMMMMMMMMD", 0, 1, 1))
+g1_mm1_plus: Some((-9, "MMMXMMMMMMMMMMMMMMMMD", 1, 1, 1))
+g2_mm1_plus: Some((-9, "MMMXMMMMMMMMMMMMMMMMD", 1, 1, 1))
+CHM13_plus: Some((-6, "MMMMMMMMMMMMMMMMMMMMD", 0, 1, 1))
+HG04184_plus: Some((-9, "MMMXMMMMMMMMMMMMMMMMD", 1, 1, 1))
+test verification::independent_missing_pam_stage_probe::missing_sites_pass_anchored_verification_at_frozen_limits ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 116 filtered out; finished in 0.00s

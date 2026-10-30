@@ -1,0 +1,21 @@
+{
+  "oracle_loci": 2,
+  "raw_mapped_rows": 2,
+  "strict_sam_loci": 2,
+  "recovered": 2,
+  "recall": 1.0,
+  "precision": 1.0,
+  "missed": [],
+  "unexpected": [],
+  "rejected_sam_rows": [],
+  "per_guide": {
+    "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "MED6_TGCCACCAATACCCTTTGGA": {
+      "truth": 1,
+      "recovered": 1
+    }
+  }
+}

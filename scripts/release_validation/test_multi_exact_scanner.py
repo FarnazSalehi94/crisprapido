@@ -11,7 +11,7 @@ class MultiExactTests(unittest.TestCase):
                     for name, g in guides.items() for s in enumerate_sites(seq, g, 0, False)}
         for width in (1, 3, 7, 20, 100):
             fasta = '>chr\n' + '\n'.join(seq[i:i+width] for i in range(0, len(seq), width)) + '\n'
-            rows = list(scan_fasta(io.StringIO(fasta), guides))
+            rows = list(scan_fasta(io.StringIO(fasta), guides, chunk_size=width))
             actual = {(x['guide'], x['start'], x['end'], x['strand'], x['pam']) for x in rows}
             self.assertEqual(actual, expected)
             self.assertEqual(len(rows), len(actual))

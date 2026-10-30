@@ -174,3 +174,132 @@ policy remains outstanding. Resolve the interval-level discrepancies and obtain
 that review without changing the frozen criteria before declaring the preflight
 passed. No 100-guide × 12-assembly search, binary modification, or merge was
 performed.
+
+## PAM-anchored discrepancy review and whole-genome exact pilot
+
+**Decision: the frozen preflight gate does not pass.** The unchanged strict
+interval metrics in the preceding section remain valid. A conservative
+PAM-anchored analysis exposes missing distinct target sites, and the bounded
+whole-genome exact comparison is not the frozen 100-guide, 12-assembly scope.
+
+### Independent comparison criteria
+
+The comparison has two separate levels. An **identical alignment** requires the
+same guide, contig, strand, reference interval and reconstructed aligned guide
+and target (equivalently, the same position-specific edit structure after
+replay). Gap placements are retained individually. Repeated sequence may admit
+other normalizations; no gap-shift normalization is assumed here. The existing
+strict category/interval metrics are preserved separately and do not require
+identical gap placement within their category.
+
+For a **PAM-anchored target site**, the key is `(guide ID, contig, strand,
+PAM start, PAM end, oriented PAM sequence)`, with zero-based half-open genomic
+coordinates. A positive key must have a full A/C/G/T NGG and at least one
+oracle-valid full-guide alignment at the frozen bounds. A reported hit counts
+as the same target site only when its independently reconstructed target,
+PAM, guide identity and alignment are valid and it has that identical key.
+The reference sequence and reconstructed edit structure for every comparison
+are retained in `alignment_review.json`; matching a site does not assert that
+its alternative edit structures have identical effects or CFD scores. Identical
+intervals with distinct valid alignments, and distinct intervals that end at
+the same plus-strand PAM or start at the same minus-strand PAM, are classified
+**B** (alternative alignments at the same PAM-anchored site), rather than
+identical alignments. Overlap with a different PAM position is **C** (a
+separate PAM-anchored target site); it is not used to recover the oracle site.
+This definition distinguishes genomic target sites, not experimentally proven
+cleavage outcomes. No transitive overlap clustering is used.
+
+`resolve_bulge_discrepancies.py` reconstructs every oracle alignment, target
+sequence, PAM and coordinates, normalized CIGAR, mismatch count and gap
+position; it also replays every overlapping raw SAM CIGAR (reversing the SAM
+operation order on the minus strand) and final guide-oriented PAF CIGAR. The
+three `alignment_review.json` files record every interval/category discrepancy
+and every competing alignment. The earlier `discrepancies.json` files and
+strict calculations remain unchanged. Class counts below are **discrepancy
+records**, not deduplicated sites: A identical 0; B same PAM with a different
+alignment; C different PAM-anchored site; D no reported competitor 0; E no
+classification 0. Class C establishes a missing site under the stated key;
+it does not establish a distinct in-vivo biological outcome.
+
+| Panel | B | C | Oracle PAM-anchored sites | Recovered | Locus recall |
+|---|---:|---:|---:|---:|---:|
+| Synthetic | 40 | 6 | 33 | 28 | 84.85% |
+| CHM13 windows | 8 | 2 | 3 | 2 | 66.67% |
+| Twelve-assembly windows | 6 | 3 | 4 | 2 | 50% |
+
+These are small, deliberately enriched fixtures; the real panels reuse one CHM13
+window, so their counts must not be pooled as independent evidence. Six, two,
+and three C records correspond to five, one, and two missing distinct
+PAM-anchored keys respectively. The repeated CHM13 key appears in both real
+panels. There are seven distinct missing keys across these fixtures: five
+synthetic, one CHM13 and one HG04184. Each omitted site has an oracle-valid
+21-base reference span and adjacent GGG PAM. The other final hit at each site
+uses a shifted AGG PAM. Detailed missing keys and competing sequences are
+machine-readable in each panel's `alignment_review.json`.
+
+For example, `g1` on `g1_exact_plus` has an oracle-valid `[60,81)` target and
+PAM `[81,84)` GGG, with `20=1D` or `19=1D1=` and zero mismatches. The final
+hit is `[60,80)`, `20=`, with PAM `[80,83)` AGG. Those PAMs overlap but have
+different genomic positions. Calling them one recovered site would hide the
+GGG-anchored candidate.
+
+### Stage investigation and unresolved causes
+
+None of the eight panel-specific missing intervals appears at the identical
+coordinates in the retained `e=5` raw Columba SAM. Every one has a different
+overlapping raw candidate. This establishes non-emission of the exact interval
+by Columba, but the production verifier can expand some candidates, so absence
+from raw SAM alone does not locate the ultimate loss.
+
+`probe_missing_loci.py` separately supplies each missing interval as a synthetic
+SAM candidate to the unchanged release binary. Its strict-mode output and
+permissive diagnostic controls are recorded in each panel's
+`imported_locus_probes.json`; the controls do not change the frozen results.
+Both synthetic minus-strand missing GGG intervals are emitted at their exact
+coordinates when supplied independently, showing that anchored WFA2
+verification, strict NGG filtering and single-candidate reporting can pass.
+The six panel-specific plus-strand probes instead emit an overlapping hit at a
+different PAM. A test-only Rust probe, appended to a disposable copy of the
+unchanged source, calls the actual anchored WFA2 verifier on all five distinct
+plus-strand guide/target sequences: **all five pass** at the frozen limits
+with a terminal D, and each associated PAM is strict NGG. In the individual
+imported-candidate experiments these verified, PAM-eligible plus intervals
+were displaced by overlap representative selection. The test source and log
+are `scripts/release_validation/missing_pam_wfa_test.rs` and
+`genome_exact_chm13_2guides/wfa_stage_probe.log`. It is a debug test in a
+disposable source copy, not a modification of the release binary.
+
+In the original automatic search, raw Columba omitted all eight panel-specific
+intervals. The CLI does not expose per-interval expansion or verification
+counters, so the retained logs do not establish whether each absent interval
+was ever expanded and then removed by selection during that particular run.
+The tests establish an independent discovery gap at exact-interval granularity,
+and demonstrate selection loss when the five plus intervals are supplied;
+they do not claim a complete internal trace of the automatic search.
+
+### Genome-wide exact-match pilot
+
+After a 10 Mb pilot (0.15 s wall, 14,500 KiB peak RSS), the optimized streaming
+scanner scanned the **entire verified CHM13 FASTA** for the first two frozen
+20-base guide records. This is a bounded two-guide, one-assembly exact-only
+validation, not the prohibited 100-guide × 12-assembly search. In parallel,
+Columba searched the recovered verified CHM13 index with `-a all -m edit -e 0
+-t 1`. Each SAM result was checked by a fresh `samtools faidx` fetch of the
+entire target and oriented PAM. The independent scanner found two strict NGG
+loci, one on each strand and one per guide; Columba recovered **2/2 (100%
+recall)**, with 2/2 strict SAM loci correct (100% precision), no misses and no
+unexpected strict loci. Details, exact SAM, guide FASTA, oracle and timing files
+are in `genome_exact_chm13_2guides/`.
+
+Scanner elapsed time was 61.11 s and peak RSS 14,772 KiB; Columba elapsed 4.19 s
+and peak RSS 11,558,660 KiB. Both exited zero. The pilot source is the verified
+CHM13 FASTA identified in the recovery manifest, SHA256
+`f267b6e3083a0da98d50a3e84d36a8d2de789665eba9766bac57b529e306c33d`;
+scanner SHA256 `ac982938a639a16a1c8cd204f5e3b68ad75da92a84fd13384c2eb57972c2a515`.
+Large indexes, compressed genome and 10 Mb pilot stay outside Git under
+`/export/local/home/salehi/crisprapido-coverage-20261030-panel1/`.
+This exact-only result does not assess final PAF overlap selection, imperfect
+search sensitivity, the other frozen guides, other assemblies, or index content
+at bases excluded by the oracle's A/C/G/T rule. A larger scope, per-stage
+instrumentation of the original automatic searches, and independent review
+remain required before the frozen gate can pass.
