@@ -1,0 +1,91 @@
+[
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      153,
+      174,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      154,
+      174,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      154,
+      175,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      155,
+      174,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real2",
+      "chm13_window_2",
+      130,
+      151,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real2",
+      "chm13_window_2",
+      131,
+      151,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "real2",
+      "chm13_window_2",
+      132,
+      151,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  }
+]

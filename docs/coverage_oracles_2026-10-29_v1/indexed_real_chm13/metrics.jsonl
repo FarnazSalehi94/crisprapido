@@ -1,0 +1,7 @@
+{"category": "exact", "expected": 2, "missed": [], "precision": 1.0, "predicted": 2, "recall": 1.0, "tp": 2, "unexpected": []}
+{"category": "mismatch", "expected": 0, "missed": [], "precision": null, "predicted": 0, "recall": null, "tp": 0, "unexpected": []}
+{"category": "I", "expected": 2, "missed": [["real1", "chm13_window_1", 155, 174, "+"], ["real2", "chm13_window_2", 132, 151, "+"]], "precision": null, "predicted": 0, "recall": 0.0, "tp": 0, "unexpected": []}
+{"category": "D", "expected": 3, "missed": [["real1", "chm13_window_1", 153, 174, "+"], ["real1", "chm13_window_1", 154, 175, "+"], ["real2", "chm13_window_2", 130, 151, "+"]], "precision": null, "predicted": 0, "recall": 0.0, "tp": 0, "unexpected": []}
+{"category": "mismatch_bulge", "expected": 5, "missed": [["real1", "chm13_window_1", 153, 174, "+"], ["real1", "chm13_window_1", 154, 175, "+"], ["real1", "chm13_window_1", 155, 174, "+"], ["real2", "chm13_window_2", 130, 151, "+"], ["real2", "chm13_window_2", 132, 151, "+"]], "precision": null, "predicted": 0, "recall": 0.0, "tp": 0, "unexpected": []}
+{"stage": "raw_exact", "truth": 2, "found": 2, "strict_predictions": 2, "missed": [], "unexpected_strict": []}
+{"stage": "raw_edit_exact_interval", "truth_loci": 7, "found": 2, "missed": [["real1", "chm13_window_1", 153, 174, "+"], ["real1", "chm13_window_1", 154, 175, "+"], ["real1", "chm13_window_1", 155, 174, "+"], ["real2", "chm13_window_2", 130, 151, "+"], ["real2", "chm13_window_2", 132, 151, "+"]]}

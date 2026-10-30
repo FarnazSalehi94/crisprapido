@@ -1,0 +1,101 @@
+[
+  {
+    "key": [
+      "real1",
+      "CHM13_window_1",
+      153,
+      174,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "CHM13_window_1",
+      154,
+      174,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "CHM13_window_1",
+      154,
+      175,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "CHM13_window_1",
+      155,
+      174,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "HG04184_mat_window_1",
+      307,
+      328,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "HG04184_mat_window_1",
+      308,
+      328,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "HG04184_mat_window_1",
+      308,
+      329,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "HG04184_mat_window_1",
+      309,
+      328,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  }
+]

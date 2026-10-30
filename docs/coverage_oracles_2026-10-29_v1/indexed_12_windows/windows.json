@@ -1,0 +1,170 @@
+[
+  {
+    "window": "HG00128_hap2_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG00128_hap2/input/HG00128_hap2_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG00128#2#CM090092.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG00128_hap2_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG00128_hap2/input/HG00128_hap2_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG00128#2#CM090093.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG00735_pat_window_1",
+    "source_fasta": "/moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG00735#1#CM087877.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG00735_pat_window_2",
+    "source_fasta": "/moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG00735#1#CM087878.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG01081_pat_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG01081_pat/input/HG01081_pat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG01081#1#CM088564.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG01081_pat_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG01081_pat/input/HG01081_pat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG01081#1#CM088565.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG01496_pat_window_1",
+    "source_fasta": "/moosefs/pangenomes/HPRCv2/HG01496_pat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG01496#1#CM086370.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG01496_pat_window_2",
+    "source_fasta": "/moosefs/pangenomes/HPRCv2/HG01496_pat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG01496#1#CM086371.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG02055_mat_window_1",
+    "source_fasta": "/moosefs/pangenomes/HPRCv2/HG02055_mat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG02055#2#CM092194.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG02055_mat_window_2",
+    "source_fasta": "/moosefs/pangenomes/HPRCv2/HG02055_mat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG02055#2#CM092195.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG02630_mat_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG02630_mat/input/HG02630_mat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG02630#2#CM091737.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG02630_mat_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG02630_mat/input/HG02630_mat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG02630#2#CM091738.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG03369_hap2_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG03369_hap2/input/HG03369_hap2_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG03369#2#CM094357.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG03369_hap2_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG03369_hap2/input/HG03369_hap2_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG03369#2#CM094358.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG04184_mat_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG04184_mat/input/HG04184_mat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG04184#2#CM086468.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "HG04184_mat_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG04184_mat/input/HG04184_mat_hprc_r2_v1.0.1.fa.gz",
+    "region": "HG04184#2#CM086469.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "NA18906_mat_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_NA18906_mat/input/NA18906_mat_hprc_r2_v1.0.1.fa.gz",
+    "region": "NA18906#2#CM091947.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "NA18906_mat_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_NA18906_mat/input/NA18906_mat_hprc_r2_v1.0.1.fa.gz",
+    "region": "NA18906#2#CM091948.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "NA21309_pat_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_NA21309_pat/input/NA21309_pat_hprc_r2_v1.0.1.fa.gz",
+    "region": "NA21309#1#CM092106.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "NA21309_pat_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_NA21309_pat/input/NA21309_pat_hprc_r2_v1.0.1.fa.gz",
+    "region": "NA21309#1#CM092107.1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "CHM13_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/input/chm13v2.0_maskedY_rCRS.fa.PanSN.fa.gz",
+    "region": "CHM13#0#chr1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "CHM13_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/input/chm13v2.0_maskedY_rCRS.fa.PanSN.fa.gz",
+    "region": "CHM13#0#chr2:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "GRCh38_window_1",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_GRCh38/input/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz",
+    "region": "GRCh38#0#chr1:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  },
+  {
+    "window": "GRCh38_window_2",
+    "source_fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_GRCh38/input/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz",
+    "region": "GRCh38#0#chr2:100001-101000",
+    "source_start_zero_based": 100000,
+    "length": 1000
+  }
+]

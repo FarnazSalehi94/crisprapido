@@ -1,0 +1,28 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /tmp/crispr-coverage-12-20261030/index -f /tmp/crispr-coverage-12-20261030/guides.fa -a all -m edit -e 0 -t 1 -o /tmp/crispr-coverage-12-20261030/exact.sam
+@SQ	SN:HG00128_hap2_window_1	LN:1000
+@SQ	SN:HG00128_hap2_window_2	LN:1000
+@SQ	SN:HG00735_pat_window_1	LN:1000
+@SQ	SN:HG00735_pat_window_2	LN:1000
+@SQ	SN:HG01081_pat_window_1	LN:1000
+@SQ	SN:HG01081_pat_window_2	LN:1000
+@SQ	SN:HG01496_pat_window_1	LN:1000
+@SQ	SN:HG01496_pat_window_2	LN:1000
+@SQ	SN:HG02055_mat_window_1	LN:1000
+@SQ	SN:HG02055_mat_window_2	LN:1000
+@SQ	SN:HG02630_mat_window_1	LN:1000
+@SQ	SN:HG02630_mat_window_2	LN:1000
+@SQ	SN:HG03369_hap2_window_1	LN:1000
+@SQ	SN:HG03369_hap2_window_2	LN:1000
+@SQ	SN:HG04184_mat_window_1	LN:1000
+@SQ	SN:HG04184_mat_window_2	LN:1000
+@SQ	SN:NA18906_mat_window_1	LN:1000
+@SQ	SN:NA18906_mat_window_2	LN:1000
+@SQ	SN:NA21309_pat_window_1	LN:1000
+@SQ	SN:NA21309_pat_window_2	LN:1000
+@SQ	SN:CHM13_window_1	LN:1000
+@SQ	SN:CHM13_window_2	LN:1000
+@SQ	SN:GRCh38_window_1	LN:1000
+@SQ	SN:GRCh38_window_2	LN:1000
+real1	0	CHM13_window_1	155	60	20M	*	0	0	GACTAAACCTCTCAACAAAT	*	AS:i:0	NM:i:0	PG:Z:Columba
+real2	4	*	0	0	*	*	0	0	ACTCTGTCCTTAAACATAAT	*	PG:Z:Columba

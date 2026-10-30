@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "rows": 2,
+  "errors": 0,
+  "provenance": {
+    "paf": "/tmp/crispr-coverage-12-20261030/out.paf",
+    "fasta": "/tmp/crispr-coverage-12-20261030/ref.fa",
+    "guides": "/tmp/crispr-coverage-12-20261030/guides.fa",
+    "matrices": "/export/local/home/salehi/crisprapido-pam-validation",
+    "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+    "batch_size": 500,
+    "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+    "paf_sha256": "2db291cb6ff4b25dc33755baeaa2bcf3e7b36baa1278d49059935e917ed0c99b",
+    "guide_sha256": "ce8f5bbbadad9ce93bac47d1a46be8a3ece30f1710e1525ba598f71e508ef9cc",
+    "fai_sha256": "92692d229719055c3b7ec52ee2533d0ef9f0f9ed4a866275e47aacffd62cc2dc",
+    "matrix_sha256": {
+      "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+      "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+    }
+  },
+  "counts": {
+    "verified": 2,
+    "strand_+": 2,
+    "SCORED": 2,
+    "ungapped": 2,
+    "CFD_ge_020": 2,
+    "CFD_lt_020": 0
+  },
+  "per_guide": {
+    "real1": {
+      "verified": 2,
+      "strand_+": 2
+    },
+    "real2": {}
+  },
+  "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+}

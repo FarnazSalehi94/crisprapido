@@ -1,0 +1,342 @@
+[
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      153,
+      174,
+      "+"
+    ],
+    "category": "D",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real1",
+        "chm13_window_1",
+        154,
+        174,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real1",
+          "chm13_window_1",
+          154,
+          174,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      153,
+      174,
+      "+"
+    ],
+    "category": "mismatch_bulge",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real1",
+        "chm13_window_1",
+        154,
+        174,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real1",
+          "chm13_window_1",
+          154,
+          174,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      154,
+      175,
+      "+"
+    ],
+    "category": "D",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real1",
+        "chm13_window_1",
+        154,
+        174,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real1",
+          "chm13_window_1",
+          154,
+          174,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      154,
+      175,
+      "+"
+    ],
+    "category": "mismatch_bulge",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real1",
+        "chm13_window_1",
+        154,
+        174,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real1",
+          "chm13_window_1",
+          154,
+          174,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      155,
+      174,
+      "+"
+    ],
+    "category": "I",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real1",
+        "chm13_window_1",
+        154,
+        174,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real1",
+          "chm13_window_1",
+          154,
+          174,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real1",
+      "chm13_window_1",
+      155,
+      174,
+      "+"
+    ],
+    "category": "mismatch_bulge",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real1",
+        "chm13_window_1",
+        154,
+        174,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real1",
+          "chm13_window_1",
+          154,
+          174,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real2",
+      "chm13_window_2",
+      130,
+      151,
+      "+"
+    ],
+    "category": "D",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real2",
+        "chm13_window_2",
+        131,
+        151,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real2",
+          "chm13_window_2",
+          131,
+          151,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real2",
+      "chm13_window_2",
+      130,
+      151,
+      "+"
+    ],
+    "category": "mismatch_bulge",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real2",
+        "chm13_window_2",
+        131,
+        151,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real2",
+          "chm13_window_2",
+          131,
+          151,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real2",
+      "chm13_window_2",
+      132,
+      151,
+      "+"
+    ],
+    "category": "I",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real2",
+        "chm13_window_2",
+        131,
+        151,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real2",
+          "chm13_window_2",
+          131,
+          151,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  },
+  {
+    "key": [
+      "real2",
+      "chm13_window_2",
+      132,
+      151,
+      "+"
+    ],
+    "category": "mismatch_bulge",
+    "raw_edit_exact_interval": false,
+    "overlap_raw_edit": [
+      [
+        "real2",
+        "chm13_window_2",
+        131,
+        151,
+        "+"
+      ]
+    ],
+    "overlap_final": [
+      {
+        "key": [
+          "real2",
+          "chm13_window_2",
+          131,
+          151,
+          "+"
+        ],
+        "categories": [
+          "exact"
+        ]
+      }
+    ]
+  }
+]

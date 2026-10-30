@@ -1,0 +1,7 @@
+{"category": "exact", "expected": 1, "missed": [], "precision": 1.0, "predicted": 1, "recall": 1.0, "tp": 1, "unexpected": []}
+{"category": "mismatch", "expected": 1, "missed": [], "precision": 1.0, "predicted": 1, "recall": 1.0, "tp": 1, "unexpected": []}
+{"category": "I", "expected": 1, "missed": [["real1", "CHM13_window_1", 155, 174, "+"]], "precision": null, "predicted": 0, "recall": 0.0, "tp": 0, "unexpected": []}
+{"category": "D", "expected": 2, "missed": [["real1", "CHM13_window_1", 153, 174, "+"], ["real1", "CHM13_window_1", 154, 175, "+"]], "precision": null, "predicted": 0, "recall": 0.0, "tp": 0, "unexpected": []}
+{"category": "mismatch_bulge", "expected": 6, "missed": [["real1", "CHM13_window_1", 153, 174, "+"], ["real1", "CHM13_window_1", 154, 175, "+"], ["real1", "CHM13_window_1", 155, 174, "+"], ["real1", "HG04184_mat_window_1", 307, 328, "+"], ["real1", "HG04184_mat_window_1", 308, 329, "+"], ["real1", "HG04184_mat_window_1", 309, 328, "+"]], "precision": null, "predicted": 0, "recall": 0.0, "tp": 0, "unexpected": []}
+{"stage": "raw_exact", "truth": 1, "found": 1, "strict_predictions": 1, "missed": [], "unexpected_strict": []}
+{"stage": "raw_edit_exact_interval", "truth_loci": 8, "found": 2, "missed": [["real1", "CHM13_window_1", 153, 174, "+"], ["real1", "CHM13_window_1", 154, 175, "+"], ["real1", "CHM13_window_1", 155, 174, "+"], ["real1", "HG04184_mat_window_1", 307, 328, "+"], ["real1", "HG04184_mat_window_1", 308, 329, "+"], ["real1", "HG04184_mat_window_1", 309, 328, "+"]]}

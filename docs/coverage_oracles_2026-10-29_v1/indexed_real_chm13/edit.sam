@@ -1,0 +1,9 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /tmp/crispr-coverage-real-20261030/index -f /tmp/crispr-coverage-real-20261030/guides.fa -a all -m edit -e 5 -t 1 -o /tmp/crispr-coverage-real-20261030/edit.sam
+@SQ	SN:chm13_window_1	LN:1000
+@SQ	SN:chm13_window_2	LN:1000
+real1	0	chm13_window_1	155	60	20M	*	0	0	GACTAAACCTCTCAACAAAT	*	AS:i:0	NM:i:0	PG:Z:Columba
+real1	256	chm13_window_1	132	0	7M2I1M1I4M1I2M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+real1	256	chm13_window_1	65	0	2M1I8M1D6M1D3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+real2	0	chm13_window_2	132	60	20M	*	0	0	ACTCTGTCCTTAAACATAAT	*	AS:i:0	NM:i:0	PG:Z:Columba
+real2	256	chm13_window_2	55	0	2M1I17M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
