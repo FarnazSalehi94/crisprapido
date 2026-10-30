@@ -1,0 +1,99 @@
+   Compiling crisprapido v0.1.0 (/tmp/crispr-broad-wfa-probe)
+warning: field `cfd_score` is never read
+  --> src/hit.rs:15:16
+   |
+4  | pub(crate) struct Hit {
+   |                   --- field in this struct
+...
+15 |     pub(crate) cfd_score: Option<f64>,
+   |                ^^^^^^^^^
+   |
+   = note: `Hit` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `crisprapido` (bin "crisprapido" test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.41s
+     Running unittests src/lib.rs (/export/local/home/salehi/crisprapido-pam-corrected-20261030-target/debug/deps/crisprapido-9f42cdf0d0fbf72b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/export/local/home/salehi/crisprapido-pam-corrected-20261030-target/debug/deps/crisprapido-97a72e8a8c711781)
+
+running 1 test
+ANCHOR_STATS	synthetic	frozen1	103	85	69
+EXPANSION_STATS	synthetic	frozen1	44	36	8	44	399	383	67	0	103
+Warning: skipping Columba candidate 'frozen2' on 'repeat_mm_9_minus:77' because WFA2 verification failed
+ANCHOR_STATS	synthetic	frozen2	111	85	71
+EXPANSION_STATS	synthetic	frozen2	45	36	9	45	394	379	75	0	111
+Warning: skipping Columba candidate 'repeat' on 'repeat_D_0_minus:62' because WFA2 verification failed
+Warning: skipping Columba candidate 'repeat' on 'repeat_I_10_plus:57' because WFA2 verification failed
+Warning: skipping Columba candidate 'repeat' on 'repeat_D_10_minus:61' because WFA2 verification failed
+ANCHOR_STATS	synthetic	repeat	235	130	74
+EXPANSION_STATS	synthetic	repeat	48	32	16	48	497	483	203	0	235
+Warning: skipping Columba candidate 'overlap_a' on 'frozen1_I_19_plus:96' because WFA2 verification failed
+ANCHOR_STATS	synthetic	overlap_a	5	4	4
+EXPANSION_STATS	synthetic	overlap_a	4	2	2	4	36	23	3	0	5
+Warning: skipping Columba candidate 'overlap_b' on 'repeat_mm_14_plus:100' because WFA2 verification failed
+ANCHOR_STATS	synthetic	overlap_b	5	4	4
+EXPANSION_STATS	synthetic	overlap_b	4	2	2	4	36	20	3	0	5
+Warning: skipping Columba candidate 'r1_exact' on 'CHM13_window_1:132' because WFA2 verification failed
+Warning: skipping Columba candidate 'r1_exact' on 'CHM13_window_1:65' because WFA2 verification failed
+Warning: skipping Columba candidate 'r1_exact' on 'HG04184_mat_window_1:219' because WFA2 verification failed
+Warning: skipping Columba candidate 'r1_exact' on 'HG04184_mat_window_1:286' because WFA2 verification failed
+ANCHOR_STATS	real	r1_exact	4	4	4
+EXPANSION_STATS	real	r1_exact	6	2	4	6	66	64	2	0	4
+Warning: skipping Columba candidate 'r1_mm4' on 'HG04184_mat_window_1:309' because WFA2 verification failed
+ANCHOR_STATS	real	r1_mm4	2	2	2
+EXPANSION_STATS	real	r1_mm4	2	1	1	2	18	17	1	0	2
+Warning: skipping Columba candidate 'r1_I' on 'CHM13_window_1:65' because WFA2 verification failed
+Warning: skipping Columba candidate 'r1_I' on 'HG04184_mat_window_1:219' because WFA2 verification failed
+ANCHOR_STATS	real	r1_I	2	0	0
+EXPANSION_STATS	real	r1_I	4	2	2	4	60	56	0	0	2
+Warning: skipping Columba candidate 'r1_D' on 'CHM13_window_1:131' because WFA2 verification failed
+Warning: skipping Columba candidate 'r1_D' on 'CHM13_window_1:64' because WFA2 verification failed
+Warning: skipping Columba candidate 'r1_D' on 'HG04184_mat_window_1:218' because WFA2 verification failed
+Warning: skipping Columba candidate 'r1_D' on 'HG04184_mat_window_1:285' because WFA2 verification failed
+ANCHOR_STATS	real	r1_D	2	2	2
+EXPANSION_STATS	real	r1_D	6	2	4	6	90	88	0	0	2
+Warning: skipping Columba candidate 'r2_exact' on 'HG04184_mat_window_1:518' because WFA2 verification failed
+ANCHOR_STATS	real	r2_exact	3	1	1
+EXPANSION_STATS	real	r2_exact	4	2	2	3	45	44	1	0	3
+Warning: skipping Columba candidate 'r2_mm4' on 'HG04184_mat_window_1:518' because WFA2 verification failed
+Warning: skipping Columba candidate 'r2_mm4' on 'GRCh38_window_1:778' because WFA2 verification failed
+Warning: skipping Columba candidate 'r2_mm4' on 'HG00128_hap2_window_1:817' because WFA2 verification failed
+ANCHOR_STATS	real	r2_mm4	2	1	1
+EXPANSION_STATS	real	r2_mm4	5	2	3	4	60	59	0	0	2
+Warning: skipping Columba candidate 'r2_I' on 'CHM13_window_1:844' because WFA2 verification failed
+Warning: skipping Columba candidate 'r2_I' on 'CHM13_window_1:494' because WFA2 verification failed
+Warning: skipping Columba candidate 'r2_I' on 'HG04184_mat_window_1:650' because WFA2 verification failed
+Warning: skipping Columba candidate 'r2_I' on 'GRCh38_window_1:203' because WFA2 verification failed
+ANCHOR_STATS	real	r2_I	3	0	0
+EXPANSION_STATS	real	r2_I	7	1	6	7	105	103	2	0	3
+Warning: skipping Columba candidate 'r2_D' on 'HG04184_mat_window_1:517' because WFA2 verification failed
+Warning: skipping Columba candidate 'r2_D' on 'HG00128_hap2_window_1:947' because WFA2 verification failed
+ANCHOR_STATS	real	r2_D	3	1	1
+EXPANSION_STATS	real	r2_D	5	2	3	5	75	72	1	0	3
+ANCHOR_STATS	real	r3_exact	2	2	2
+EXPANSION_STATS	real	r3_exact	1	1	0	1	3	3	1	0	2
+ANCHOR_STATS	real	r3_mm4	3	2	2
+EXPANSION_STATS	real	r3_mm4	2	1	1	2	18	18	2	0	3
+ANCHOR_STATS	real	r3_I	1	0	0
+EXPANSION_STATS	real	r3_I	1	1	0	1	15	14	0	0	1
+ANCHOR_STATS	real	r3_D	1	1	1
+EXPANSION_STATS	real	r3_D	1	1	0	1	15	14	0	0	1
+ANCHOR_STATS	real	r4_exact	1	1	1
+EXPANSION_STATS	real	r4_exact	1	1	0	0	0	0	0	0	1
+Warning: skipping Columba candidate 'r4_mm4' on 'GRCh38_window_1:894' because WFA2 verification failed
+Warning: skipping Columba candidate 'r4_mm4' on 'GRCh38_window_1:124' because WFA2 verification failed
+ANCHOR_STATS	real	r4_mm4	1	1	1
+EXPANSION_STATS	real	r4_mm4	3	1	2	2	30	30	0	0	1
+Warning: skipping Columba candidate 'r4_I' on 'GRCh38_window_1:9' because WFA2 verification failed
+ANCHOR_STATS	real	r4_I	1	0	0
+EXPANSION_STATS	real	r4_I	2	1	1	2	30	28	0	0	1
+ANCHOR_STATS	real	r4_D	1	1	1
+EXPANSION_STATS	real	r4_D	1	1	0	1	15	14	0	0	1
+test verification::broad_stats_diagnostics::per_query_stats ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 119 filtered out; finished in 0.03s

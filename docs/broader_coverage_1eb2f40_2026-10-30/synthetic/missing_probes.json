@@ -1,0 +1,1433 @@
+[
+  {
+    "key": [
+      "frozen2",
+      "frozen2_I_10_minus",
+      48,
+      67,
+      "-"
+    ],
+    "pam_locus": [
+      "frozen2",
+      "frozen2_I_10_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t46\t67\t18\t23\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:3\tcg:Z:1I9=1I9=3D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t47\t68\t19\t22\t255\tas:i:13\tnm:i:0\tng:i:2\tbs:i:2\tcg:Z:10=1I9=2D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t48\t68\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:10=1I9=1D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t50\t69\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1D10=1I8=1I"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "frozen2",
+      "frozen2_I_10_minus",
+      48,
+      68,
+      "-"
+    ],
+    "pam_locus": [
+      "frozen2",
+      "frozen2_I_10_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t46\t67\t18\t23\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:3\tcg:Z:1I9=1I9=3D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t47\t68\t19\t22\t255\tas:i:13\tnm:i:0\tng:i:2\tbs:i:2\tcg:Z:10=1I9=2D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t48\t68\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:10=1I9=1D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t50\t69\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1D10=1I8=1I"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "frozen2",
+      "frozen2_I_10_minus",
+      48,
+      69,
+      "-"
+    ],
+    "pam_locus": [
+      "frozen2",
+      "frozen2_I_10_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t46\t67\t18\t23\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:3\tcg:Z:1I9=1I9=3D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t47\t68\t19\t22\t255\tas:i:13\tnm:i:0\tng:i:2\tbs:i:2\tcg:Z:10=1I9=2D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t48\t68\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:10=1I9=1D",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769",
+          "Guide\t20\t0\t20\t-\tfrozen2_I_10_minus\t113\t50\t69\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1D10=1I8=1I"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "frozen2",
+      "frozen2_I_10_plus",
+      44,
+      65,
+      "+"
+    ],
+    "pam_locus": [
+      "frozen2",
+      "frozen2_I_10_plus",
+      "+",
+      65,
+      68,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t42\t61\t16\t23\t255\tas:i:22\tnm:i:0\tng:i:3\tbs:i:3\tcg:Z:3D10=1I6=3I",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t43\t62\t17\t22\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:2\tcg:Z:2D10=1I7=2I",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t44\t63\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1D10=1I8=1I",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t65\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:10=1I9=1D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t66\t19\t22\t255\tas:i:13\tnm:i:0\tng:i:2\tbs:i:2\tcg:Z:10=1I9=2D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t46\t67\t18\t23\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:3\tcg:Z:1I9=1I9=3D"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "frozen2",
+      "frozen2_I_10_plus",
+      45,
+      65,
+      "+"
+    ],
+    "pam_locus": [
+      "frozen2",
+      "frozen2_I_10_plus",
+      "+",
+      65,
+      68,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t43\t62\t17\t22\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:2\tcg:Z:2D10=1I7=2I",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t44\t63\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1D10=1I8=1I",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t65\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:10=1I9=1D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t66\t19\t22\t255\tas:i:13\tnm:i:0\tng:i:2\tbs:i:2\tcg:Z:10=1I9=2D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t46\t67\t18\t23\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:3\tcg:Z:1I9=1I9=3D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t47\t68\t17\t24\t255\tas:i:22\tnm:i:0\tng:i:3\tbs:i:4\tcg:Z:2I8=1I9=4D"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "frozen2",
+      "frozen2_I_10_plus",
+      46,
+      65,
+      "+"
+    ],
+    "pam_locus": [
+      "frozen2",
+      "frozen2_I_10_plus",
+      "+",
+      65,
+      68,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t44\t63\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1D10=1I8=1I",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.2769",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t65\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:10=1I9=1D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t45\t66\t19\t22\t255\tas:i:13\tnm:i:0\tng:i:2\tbs:i:2\tcg:Z:10=1I9=2D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t46\t67\t18\t23\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:3\tcg:Z:1I9=1I9=3D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t47\t68\t17\t24\t255\tas:i:22\tnm:i:0\tng:i:3\tbs:i:4\tcg:Z:2I8=1I9=4D",
+          "Guide\t20\t0\t20\t+\tfrozen2_I_10_plus\t113\t48\t69\t16\t25\t255\tas:i:24\tnm:i:0\tng:i:3\tbs:i:5\tcg:Z:3I7=1I9=5D"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_D_19_minus",
+      48,
+      67,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_D_19_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1I16=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1D2=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1I16=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t50\t70\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.0778"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t46\t66\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:15=5X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1D2=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1I16=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t50\t70\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.0778"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_D_19_minus",
+      48,
+      68,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_D_19_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t68\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1D2=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t68\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t50\t70\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.0778"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t46\t66\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:15=5X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1D2=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t68\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t50\t70\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.0778"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_D_19_minus",
+      48,
+      69,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_D_19_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t68\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1D2=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t68\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t50\t70\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.0778"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t46\t66\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:15=5X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1D2=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t48\t68\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0665",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t49\t70\t20\t21\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1D1=\tcf:f:0.1429",
+          "Guide\t20\t0\t20\t-\trepeat_D_19_minus\t115\t50\t70\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.0778"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_D_5_minus",
+      44,
+      63,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_D_5_minus",
+      "-",
+      41,
+      44,
+      "CGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t44\t63\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=1I4X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t42\t63\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=4X1=1D\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=4X1=\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t44\t63\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=1I4X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t45\t65\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:1X16=3X\tcf:f:0.0003",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t46\t65\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1X16=1I2X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t42\t63\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=4X1=1D\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=4X1=\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t44\t63\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=1I4X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t45\t65\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:1X16=3X\tcf:f:0.0003",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t46\t65\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1X16=1I2X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_D_5_minus",
+      44,
+      65,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_D_5_minus",
+      "-",
+      41,
+      44,
+      "CGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t44\t63\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=1I4X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t42\t63\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=4X1=1D\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=4X1=\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t44\t63\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=1I4X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t45\t65\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:1X16=3X\tcf:f:0.0003",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t46\t65\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1X16=1I2X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t42\t63\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=4X1=1D\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=4X1=\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t44\t63\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=1I4X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t45\t65\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:1X16=3X\tcf:f:0.0003",
+          "Guide\t20\t0\t20\t-\trepeat_D_5_minus\t115\t46\t65\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1X16=1I2X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_D_5_plus",
+      48,
+      67,
+      "+"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_D_5_plus",
+      "+",
+      67,
+      70,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1I1X15=\tcf:f:0.2482",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:3X16=1I\tcf:f:0.0138"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1I1X15=\tcf:f:0.2482",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:3X16=1I\tcf:f:0.0138",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1D16=1X\tcf:f:0.0004",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t50\t69\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1X16=1I2X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t50\t70\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:1X16=3X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t50\t71\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:1X16=1D3X\tcf:f:0.0001"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t46\t65\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1I4=1D14=1I",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1I1X15=\tcf:f:0.2482",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:3X16=1I\tcf:f:0.0138",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1D16=1X\tcf:f:0.0004",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t50\t69\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1X16=1I2X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t50\t70\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:1X16=3X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t+\trepeat_D_5_plus\t115\t50\t71\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:1X16=1D3X\tcf:f:0.0001"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_19_minus",
+      45,
+      64,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_19_minus",
+      "-",
+      42,
+      45,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t43\t64\t16\t24\t255\tas:i:20\tnm:i:1\tng:i:2\tbs:i:4\tcg:Z:15=3I1=4D1X",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t44\t64\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:15=5X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_19_minus",
+      45,
+      66,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_19_minus",
+      "-",
+      42,
+      45,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t43\t64\t16\t24\t255\tas:i:20\tnm:i:1\tng:i:2\tbs:i:4\tcg:Z:15=3I1=4D1X",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t44\t64\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:15=5X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_19_minus",
+      46,
+      65,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_19_minus",
+      "-",
+      43,
+      46,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t65\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1I16=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t65\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1I16=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t44\t64\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:15=5X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t65\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1I16=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_19_minus",
+      46,
+      66,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_19_minus",
+      "-",
+      43,
+      46,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t44\t64\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:15=5X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_19_minus",
+      46,
+      67,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_19_minus",
+      "-",
+      43,
+      46,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t44\t64\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:15=5X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=1I1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t46\t66\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0119",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:17=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_19_minus\t113\t48\t68\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.5000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_5_minus",
+      43,
+      62,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_5_minus",
+      "-",
+      40,
+      43,
+      "AGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t62\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:1I14=3X1=1X\tcf:f:0.0018"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t62\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:1I14=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1=1I15=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t41\t61\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:13=3X1=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t62\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:1I14=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1=1I15=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_5_minus",
+      43,
+      63,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_5_minus",
+      "-",
+      40,
+      43,
+      "AGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1=1I15=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t41\t61\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:13=3X1=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1=1I15=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_5_minus",
+      43,
+      64,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_5_minus",
+      "-",
+      40,
+      43,
+      "AGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1=1I15=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t41\t61\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:13=3X1=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t45\t64\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:1=1I15=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_5_minus",
+      48,
+      67,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_5_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:5=1I14=\tcf:f:0.4375"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t46\t65\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:2X15=1I2X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1I15=1X\tcf:f:0.0028",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:5=1I14=\tcf:f:0.4375"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t46\t66\t18\t21\t255\tas:i:15\tnm:i:1\tng:i:2\tbs:i:1\tcg:Z:3=1I15=1D1X",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t47\t66\t18\t20\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:3=1I15=1X\tcf:f:0.0028",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t48\t68\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:5=1I14=1D",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t49\t68\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:5=1I14=\tcf:f:0.4375",
+          "Guide\t20\t0\t20\t-\trepeat_I_5_minus\t113\t50\t70\t18\t21\t255\tas:i:15\tnm:i:1\tng:i:2\tbs:i:1\tcg:Z:1=1X5=1I12=1D"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_I_5_plus",
+      46,
+      65,
+      "+"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_I_5_plus",
+      "+",
+      65,
+      68,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:5=1I14=\tcf:f:0.4375"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:5=1I14=\tcf:f:0.4375",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t45\t66\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:5=1D14=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t48\t67\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:2X15=1I2X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t47\t68\t17\t21\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:3=1D14=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t44\t63\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1D5=1I13=1I",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t45\t64\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:5=1I14=\tcf:f:0.4375",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t45\t65\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:5=1I14=1D",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t45\t66\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:5=1D14=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t47\t67\t18\t21\t255\tas:i:15\tnm:i:1\tng:i:2\tbs:i:1\tcg:Z:3=1I15=1D1X",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t47\t68\t17\t21\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:3=1D14=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_I_5_plus\t113\t48\t69\t15\t21\t255\tas:i:21\tnm:i:5\tng:i:1\tbs:i:1\tcg:Z:2X15=1D3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_exact_plus",
+      49,
+      70,
+      "+"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_exact_plus",
+      "+",
+      70,
+      73,
+      "AGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t47\t66\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1I\tcf:f:0.0312",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t70\t17\t21\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:17=1D3X\tcf:f:0.0015"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t47\t66\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1I\tcf:f:0.0312",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t47\t67\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.0041",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:19=1D1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t69\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0008",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t70\t17\t21\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:17=1D3X\tcf:f:0.0015",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t71\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t72\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1D1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t47\t66\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:19=1I\tcf:f:0.0312",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t47\t67\t19\t20\t255\tas:i:3\tnm:i:1\tng:i:0\tbs:i:0\tcg:Z:19=1X\tcf:f:0.0041",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t47\t68\t19\t21\t255\tas:i:9\tnm:i:1\tng:i:1\tbs:i:1\tcg:Z:19=1D1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t69\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0008",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t70\t17\t21\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:17=1D3X\tcf:f:0.0015",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t71\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t72\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1D1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_exact_plus",
+      51,
+      70,
+      "+"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_exact_plus",
+      "+",
+      70,
+      73,
+      "AGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t70\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0001"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t68\t17\t20\t255\tas:i:12\tnm:i:2\tng:i:1\tbs:i:1\tcg:Z:17=1I2X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t69\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0008",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t70\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t71\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t72\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1D1X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t68\t17\t20\t255\tas:i:12\tnm:i:2\tng:i:1\tbs:i:1\tcg:Z:17=1I2X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t49\t69\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0008",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t70\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t71\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t51\t72\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1D1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t53\t73\t14\t20\t255\tas:i:18\tnm:i:6\tng:i:0\tbs:i:0\tcg:Z:13=3X1=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t+\trepeat_exact_plus\t114\t53\t74\t14\t21\t255\tas:i:24\tnm:i:6\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1D3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_four_a_minus",
+      46,
+      67,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_four_a_minus",
+      "-",
+      43,
+      46,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t46\t67\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:3=1X4=1X4=1X5=1D1X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t47\t67\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:3=1X4=1X4=1X5=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:3=1X4=1X4=1X5=1I\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t46\t67\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:3=1X4=1X4=1X5=1D1X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t47\t67\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:3=1X4=1X4=1X5=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:3=1X4=1X4=1X5=1I\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t44\t63\t13\t20\t255\tas:i:24\tnm:i:6\tng:i:1\tbs:i:1\tcg:Z:4=1X4=1X5=1I4X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t45\t65\t14\t20\t255\tas:i:18\tnm:i:6\tng:i:0\tbs:i:0\tcg:Z:1=1X4=1X4=1X5=3X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t46\t67\t16\t21\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:3=1X4=1X4=1X5=1D1X\tcf:f:0.0001",
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t47\t67\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:3=1X4=1X4=1X5=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_a_minus\t114\t48\t67\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:3=1X4=1X4=1X5=1I\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_four_b_minus",
+      48,
+      67,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_four_b_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t48\t67\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:2=1X4=1X4=1X4=1X1=1I\tcf:f:0.0002",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t49\t69\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:4=1X4=1X4=1X4=1X\tcf:f:0.0031"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t48\t67\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:2=1X4=1X4=1X4=1X1=1I\tcf:f:0.0002",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t49\t69\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:4=1X4=1X4=1X4=1X\tcf:f:0.0031",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t50\t69\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:4=1X4=1X4=1X4=1I\tcf:f:0.0004"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t46\t67\t15\t21\t255\tas:i:21\tnm:i:5\tng:i:1\tbs:i:1\tcg:Z:2=1X4=1X4=1X4=1X1=1D1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t47\t67\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:2=1X4=1X4=1X4=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t48\t67\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:2=1X4=1X4=1X4=1X1=1I\tcf:f:0.0002",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t49\t69\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:4=1X4=1X4=1X4=1X\tcf:f:0.0031",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t50\t69\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:4=1X4=1X4=1X4=1I\tcf:f:0.0004"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_four_b_minus",
+      48,
+      69,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_four_b_minus",
+      "-",
+      45,
+      48,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t48\t67\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:2=1X4=1X4=1X4=1X1=1I\tcf:f:0.0002",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t49\t69\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:4=1X4=1X4=1X4=1X\tcf:f:0.0031"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t48\t67\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:2=1X4=1X4=1X4=1X1=1I\tcf:f:0.0002",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t49\t69\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:4=1X4=1X4=1X4=1X\tcf:f:0.0031",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t50\t69\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:4=1X4=1X4=1X4=1I\tcf:f:0.0004"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t46\t67\t15\t21\t255\tas:i:21\tnm:i:5\tng:i:1\tbs:i:1\tcg:Z:2=1X4=1X4=1X4=1X1=1D1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t47\t67\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:2=1X4=1X4=1X4=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t48\t67\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:2=1X4=1X4=1X4=1X1=1I\tcf:f:0.0002",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t49\t69\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:4=1X4=1X4=1X4=1X\tcf:f:0.0031",
+          "Guide\t20\t0\t20\t-\trepeat_four_b_minus\t114\t50\t69\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:4=1X4=1X4=1X4=1I\tcf:f:0.0004"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_mm_0_minus",
+      42,
+      61,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_mm_0_minus",
+      "-",
+      39,
+      42,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t40\t61\t15\t21\t255\tas:i:21\tnm:i:5\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1X1=1D1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t41\t61\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:13=3X1=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_mm_0_minus",
+      42,
+      63,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_mm_0_minus",
+      "-",
+      39,
+      42,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t40\t61\t15\t21\t255\tas:i:21\tnm:i:5\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1X1=1D1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t41\t61\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:13=3X1=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_mm_0_minus",
+      43,
+      62,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_mm_0_minus",
+      "-",
+      40,
+      43,
+      "AGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t62\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:1I14=3X1=1X\tcf:f:0.0018"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t62\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:1I14=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t45\t65\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t41\t61\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:13=3X1=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t62\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:1I14=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t45\t65\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_mm_0_minus",
+      43,
+      63,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_mm_0_minus",
+      "-",
+      40,
+      43,
+      "AGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t45\t65\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t41\t61\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:13=3X1=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t45\t65\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  },
+  {
+    "key": [
+      "repeat",
+      "repeat_mm_0_minus",
+      43,
+      64,
+      "-"
+    ],
+    "pam_locus": [
+      "repeat",
+      "repeat_mm_0_minus",
+      "-",
+      40,
+      43,
+      "AGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018"
+        ],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t45\t65\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t41\t61\t15\t20\t255\tas:i:15\tnm:i:5\tng:i:0\tbs:i:0\tcg:Z:13=3X1=1X1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t42\t61\t15\t20\t255\tas:i:18\tnm:i:4\tng:i:1\tbs:i:1\tcg:Z:13=3X1=1I1=1X\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t43\t63\t16\t20\t255\tas:i:12\tnm:i:4\tng:i:0\tbs:i:0\tcg:Z:15=3X1=1X\tcf:f:0.0018",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t44\t63\t16\t20\t255\tas:i:15\tnm:i:3\tng:i:1\tbs:i:1\tcg:Z:15=3X1=1I\tcf:f:0.0000",
+          "Guide\t20\t0\t20\t-\trepeat_mm_0_minus\t114\t45\t65\t17\t20\t255\tas:i:9\tnm:i:3\tng:i:0\tbs:i:0\tcg:Z:17=3X\tcf:f:0.0000"
+        ],
+        "stderr": []
+      }
+    }
+  }
+]

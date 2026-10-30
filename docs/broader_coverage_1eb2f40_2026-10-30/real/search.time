@@ -1,0 +1,23 @@
+	Command being timed: "/usr/bin/timeout 180 /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/release/crisprapido -r /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/panels/real/ref.fa -G /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/panels/real/guides.fa -p GG -m 4 -b 1 -z 1 -f 0.75 -t 1 --mismatch-scores /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/release/mismatch_scores.txt --pam-scores /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/release/pam_scores.txt --columba-bin /moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba-runtime --columba-index /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/panels/real/index"
+	User time (seconds): 0.01
+	System time (seconds): 0.01
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 27424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 6132
+	Voluntary context switches: 92
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

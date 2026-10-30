@@ -1,0 +1,118 @@
+{
+  "source": "retained 12-assembly windows",
+  "designs": [
+    {
+      "guide": "r1_exact",
+      "source_contig": "CHM13_window_1",
+      "source_start": 154,
+      "design": "exact",
+      "sequence": "GACTAAACCTCTCAACAAAT"
+    },
+    {
+      "guide": "r1_mm4",
+      "source_contig": "CHM13_window_1",
+      "source_start": 154,
+      "design": "mm4",
+      "sequence": "GCCTAACCCTCACAACACAT"
+    },
+    {
+      "guide": "r1_I",
+      "source_contig": "CHM13_window_1",
+      "source_start": 154,
+      "design": "I",
+      "sequence": "GACTAAACCTACTCAACAAA"
+    },
+    {
+      "guide": "r1_D",
+      "source_contig": "CHM13_window_1",
+      "source_start": 154,
+      "design": "D",
+      "sequence": "TGACTAAACCCTCAACAAAT"
+    },
+    {
+      "guide": "r2_exact",
+      "source_contig": "HG04184_mat_window_1",
+      "source_start": 131,
+      "design": "exact",
+      "sequence": "ACAGAATTTAACAACATATT"
+    },
+    {
+      "guide": "r2_mm4",
+      "source_contig": "HG04184_mat_window_1",
+      "source_start": 131,
+      "design": "mm4",
+      "sequence": "AGAGAAATTAAGAACATCTT"
+    },
+    {
+      "guide": "r2_I",
+      "source_contig": "HG04184_mat_window_1",
+      "source_start": 131,
+      "design": "I",
+      "sequence": "ACAGAATTTAAACAACATAT"
+    },
+    {
+      "guide": "r2_D",
+      "source_contig": "HG04184_mat_window_1",
+      "source_start": 131,
+      "design": "D",
+      "sequence": "AACAGAATTTACAACATATT"
+    },
+    {
+      "guide": "r3_exact",
+      "source_contig": "GRCh38_window_1",
+      "source_start": 115,
+      "design": "exact",
+      "sequence": "TCCCTGCAGATGAAATTATA"
+    },
+    {
+      "guide": "r3_mm4",
+      "source_contig": "GRCh38_window_1",
+      "source_start": 115,
+      "design": "mm4",
+      "sequence": "TGCCTGGAGATTAAATTCTA"
+    },
+    {
+      "guide": "r3_I",
+      "source_contig": "GRCh38_window_1",
+      "source_start": 115,
+      "design": "I",
+      "sequence": "TCCCTGCAGAATGAAATTAT"
+    },
+    {
+      "guide": "r3_D",
+      "source_contig": "GRCh38_window_1",
+      "source_start": 115,
+      "design": "D",
+      "sequence": "CTCCCTGCAGTGAAATTATA"
+    },
+    {
+      "guide": "r4_exact",
+      "source_contig": "HG00128_hap2_window_1",
+      "source_start": 121,
+      "design": "exact",
+      "sequence": "CACAGAGACATGTACACGAC"
+    },
+    {
+      "guide": "r4_mm4",
+      "source_contig": "HG00128_hap2_window_1",
+      "source_start": 121,
+      "design": "mm4",
+      "sequence": "CCCAGATACATTTACACTAC"
+    },
+    {
+      "guide": "r4_I",
+      "source_contig": "HG00128_hap2_window_1",
+      "source_start": 121,
+      "design": "I",
+      "sequence": "CACAGAGACAATGTACACGA"
+    },
+    {
+      "guide": "r4_D",
+      "source_contig": "HG00128_hap2_window_1",
+      "source_start": 121,
+      "design": "D",
+      "sequence": "TCACAGAGACTGTACACGAC"
+    }
+  ],
+  "note": "reference sequences unchanged; guides include deliberate designs"
+}

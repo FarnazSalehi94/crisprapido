@@ -1,0 +1,57 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/panels/real/index -f /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/panels/real/guides.fa -a all -m edit -e 5 -t 1 -o /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/panels/real/edit.sam
+@SQ	SN:CHM13_window_1	LN:1000
+@SQ	SN:HG04184_mat_window_1	LN:1000
+@SQ	SN:GRCh38_window_1	LN:1000
+@SQ	SN:HG00128_hap2_window_1	LN:1000
+r1_exact	0	CHM13_window_1	155	60	20M	*	0	0	GACTAAACCTCTCAACAAAT	*	AS:i:0	NM:i:0	PG:Z:Columba
+r1_exact	256	CHM13_window_1	132	0	7M2I1M1I4M1I2M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_exact	256	CHM13_window_1	65	0	2M1I8M1D6M1D3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_exact	256	HG04184_mat_window_1	219	0	2M1I8M1D6M1D3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_exact	256	HG04184_mat_window_1	286	0	7M2I1M1I4M1I2M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_exact	256	HG04184_mat_window_1	309	0	20M	*	0	0	*	*	AS:i:1	NM:i:1	PG:Z:Columba
+r1_mm4	0	CHM13_window_1	155	60	20M	*	0	0	GCCTAACCCTCACAACACAT	*	AS:i:4	NM:i:4	PG:Z:Columba
+r1_mm4	256	HG04184_mat_window_1	309	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_I	0	CHM13_window_1	155	60	10M1I9M	*	0	0	GACTAAACCTACTCAACAAA	*	AS:i:1	NM:i:1	PG:Z:Columba
+r1_I	256	CHM13_window_1	65	0	2M1I6M1I2M1D8M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_I	256	HG04184_mat_window_1	219	0	2M1I6M1I2M1D8M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_I	256	HG04184_mat_window_1	309	0	10M1I9M	*	0	0	*	*	AS:i:2	NM:i:2	PG:Z:Columba
+r1_D	0	CHM13_window_1	154	60	10M1D10M	*	0	0	TGACTAAACCCTCAACAAAT	*	AS:i:1	NM:i:1	PG:Z:Columba
+r1_D	256	CHM13_window_1	131	0	9M2I4M1I2M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_D	256	CHM13_window_1	64	0	3M1I6M1D1M1D6M1D3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_D	256	HG04184_mat_window_1	218	0	3M1I6M1D1M1D6M1D3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_D	256	HG04184_mat_window_1	285	0	9M2I4M1I2M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r1_D	256	HG04184_mat_window_1	308	0	10M1D10M	*	0	0	*	*	AS:i:2	NM:i:2	PG:Z:Columba
+r2_exact	0	HG04184_mat_window_1	132	60	20M	*	0	0	ACAGAATTTAACAACATATT	*	AS:i:0	NM:i:0	PG:Z:Columba
+r2_exact	256	CHM13_window_1	948	0	1I10M1I8M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_exact	256	HG04184_mat_window_1	518	0	1M1I6M1I2M1I8M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_exact	256	GRCh38_window_1	886	0	13M1I6M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_mm4	0	HG04184_mat_window_1	132	60	20M	*	0	0	AGAGAAATTAAGAACATCTT	*	AS:i:4	NM:i:4	PG:Z:Columba
+r2_mm4	256	HG04184_mat_window_1	518	0	1M1I6M1I2M1I8M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_mm4	256	GRCh38_window_1	778	0	6M1I7M1I4M1I	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_mm4	256	GRCh38_window_1	886	0	3M1I16M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_mm4	272	HG00128_hap2_window_1	817	0	1M1I5M1I6M1D3M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_I	0	HG04184_mat_window_1	132	60	11M1I8M	*	0	0	ACAGAATTTAAACAACATAT	*	AS:i:1	NM:i:1	PG:Z:Columba
+r2_I	256	CHM13_window_1	844	0	4M1D13M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_I	256	CHM13_window_1	494	0	1I11M1I4M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_I	256	HG04184_mat_window_1	650	0	1I11M1I4M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_I	256	GRCh38_window_1	203	0	2M1I7M1D2M1I2M1I4M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_I	272	HG00128_hap2_window_1	414	0	13M1I4M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_I	272	HG00128_hap2_window_1	565	0	1M1I14M1I3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_D	0	HG04184_mat_window_1	131	60	10M1D10M	*	0	0	AACAGAATTTACAACATATT	*	AS:i:1	NM:i:1	PG:Z:Columba
+r2_D	256	CHM13_window_1	946	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_D	256	HG04184_mat_window_1	517	0	2M1I8M1I8M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_D	256	GRCh38_window_1	886	0	1M1I18M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r2_D	272	HG00128_hap2_window_1	947	0	7M3I4M1I5M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r3_exact	0	GRCh38_window_1	116	60	20M	*	0	0	TCCCTGCAGATGAAATTATA	*	AS:i:0	NM:i:0	PG:Z:Columba
+r3_mm4	0	GRCh38_window_1	116	60	20M	*	0	0	TGCCTGGAGATTAAATTCTA	*	AS:i:4	NM:i:4	PG:Z:Columba
+r3_mm4	256	GRCh38_window_1	952	0	3M1I15M1I	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r3_I	0	GRCh38_window_1	116	60	10M1I9M	*	0	0	TCCCTGCAGAATGAAATTAT	*	AS:i:1	NM:i:1	PG:Z:Columba
+r3_D	0	GRCh38_window_1	115	60	10M1D10M	*	0	0	CTCCCTGCAGTGAAATTATA	*	AS:i:1	NM:i:1	PG:Z:Columba
+r4_exact	0	HG00128_hap2_window_1	122	60	20M	*	0	0	CACAGAGACATGTACACGAC	*	AS:i:0	NM:i:0	PG:Z:Columba
+r4_mm4	0	HG00128_hap2_window_1	122	60	20M	*	0	0	CCCAGATACATTTACACTAC	*	AS:i:4	NM:i:4	PG:Z:Columba
+r4_mm4	256	GRCh38_window_1	894	0	1M2I2M1I5M1D6M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r4_mm4	272	GRCh38_window_1	124	0	1M1I1M1I2M1I4M1I8M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r4_I	0	HG00128_hap2_window_1	122	60	10M1I9M	*	0	0	CACAGAGACAATGTACACGA	*	AS:i:1	NM:i:1	PG:Z:Columba
+r4_I	256	GRCh38_window_1	9	0	7M1D10M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+r4_D	0	HG00128_hap2_window_1	121	60	10M1D10M	*	0	0	TCACAGAGACTGTACACGAC	*	AS:i:1	NM:i:1	PG:Z:Columba

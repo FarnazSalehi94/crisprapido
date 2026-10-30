@@ -1,0 +1,53 @@
+{
+  "oracle_loci": 10,
+  "raw_mapped_rows": 10,
+  "strict_sam_loci": 10,
+  "recovered": 10,
+  "recall": 1.0,
+  "precision": 1.0,
+  "missed": [],
+  "unexpected": [],
+  "rejected_sam_rows": [],
+  "per_guide": {
+    "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "MED6_TGCCACCAATACCCTTTGGA": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "HNRNPC_AAATTCACTTACCTAAAACC": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "PPIP5K2_CATAGCTGTTATACGTCATG": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "YTHDC1_TCTGCATCAGAGTCATATGC": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "MT1X_GTTGGCTCCTGTGCCTGTGC": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "PSG8_GCAACCTGTGAGACATAGGG": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "ZNF274_TGTGGTATCTCAGTTAGAGG": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "KLHL38_CTACTGTACAGCAAACAGAC": {
+      "truth": 1,
+      "recovered": 1
+    },
+    "YAP1_TCGAACATGCTGTGGAGTCA": {
+      "truth": 1,
+      "recovered": 1
+    }
+  }
+}

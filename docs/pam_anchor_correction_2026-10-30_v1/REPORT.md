@@ -132,3 +132,10 @@ Rebuilt indexes and test artifacts remain outside Git in
 `/export/local/home/salehi/crisprapido-pam-corrected-validation-20261030-v2/`.
 Small PAF/SAM, metrics, trace and audit summaries are retained here; historical
 outputs were not overwritten. No merge or production-binary replacement occurred.
+
+## Later broader validation
+
+The subsequent [broader coverage report](../broader_coverage_1eb2f40_2026-10-30/REPORT.md)
+finds additional missed PAM-anchored sites in repetitive and gap-alignment
+fixtures. The historical results above remain unchanged; the preflight gate
+continues to be blocked.

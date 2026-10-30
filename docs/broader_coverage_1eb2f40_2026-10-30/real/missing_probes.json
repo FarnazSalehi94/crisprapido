@@ -1,0 +1,43 @@
+[
+  {
+    "key": [
+      "r3_I",
+      "GRCh38_window_1",
+      115,
+      136,
+      "+"
+    ],
+    "pam_locus": [
+      "r3_I",
+      "GRCh38_window_1",
+      "+",
+      136,
+      139,
+      "GGG"
+    ],
+    "attempts": {
+      "strict": {
+        "paf": [],
+        "stderr": []
+      },
+      "allow_noncanonical": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tGRCh38_window_1\t1000\t115\t134\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.0108"
+        ],
+        "stderr": []
+      },
+      "no_filter": {
+        "paf": [
+          "Guide\t20\t0\t20\t+\tGRCh38_window_1\t1000\t113\t132\t17\t22\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:2\tcg:Z:2=2D8=1I7=2I",
+          "Guide\t20\t0\t20\t+\tGRCh38_window_1\t1000\t114\t133\t18\t21\t255\tas:i:18\tnm:i:0\tng:i:3\tbs:i:1\tcg:Z:1D10=1I8=1I",
+          "Guide\t20\t0\t20\t+\tGRCh38_window_1\t1000\t115\t134\t19\t20\t255\tas:i:6\tnm:i:0\tng:i:1\tbs:i:1\tcg:Z:10=1I9=\tcf:f:0.0108",
+          "Guide\t20\t0\t20\t+\tGRCh38_window_1\t1000\t115\t135\t19\t21\t255\tas:i:12\tnm:i:0\tng:i:2\tbs:i:1\tcg:Z:10=1I9=1D",
+          "Guide\t20\t0\t20\t+\tGRCh38_window_1\t1000\t115\t136\t19\t22\t255\tas:i:13\tnm:i:0\tng:i:2\tbs:i:2\tcg:Z:10=1I9=2D",
+          "Guide\t20\t0\t20\t+\tGRCh38_window_1\t1000\t116\t137\t18\t23\t255\tas:i:20\tnm:i:0\tng:i:3\tbs:i:3\tcg:Z:1I9=1I9=3D",
+          "Guide\t20\t0\t20\t+\tGRCh38_window_1\t1000\t117\t138\t17\t24\t255\tas:i:22\tnm:i:0\tng:i:3\tbs:i:4\tcg:Z:2I8=1I9=4D"
+        ],
+        "stderr": []
+      }
+    }
+  }
+]

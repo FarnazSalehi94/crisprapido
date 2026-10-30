@@ -1,0 +1,46 @@
+[
+  {
+    "category": "exact",
+    "oracle_loci": 4,
+    "recovered": 4,
+    "recall": 1.0,
+    "missed": []
+  },
+  {
+    "category": "mismatch",
+    "oracle_loci": 5,
+    "recovered": 5,
+    "recall": 1.0,
+    "missed": []
+  },
+  {
+    "category": "I",
+    "oracle_loci": 4,
+    "recovered": 4,
+    "recall": 1.0,
+    "missed": []
+  },
+  {
+    "category": "D",
+    "oracle_loci": 10,
+    "recovered": 10,
+    "recall": 1.0,
+    "missed": []
+  },
+  {
+    "category": "mismatch_bulge",
+    "oracle_loci": 20,
+    "recovered": 19,
+    "recall": 0.95,
+    "missed": [
+      [
+        "r3_I",
+        "GRCh38_window_1",
+        "+",
+        136,
+        139,
+        "GGG"
+      ]
+    ]
+  }
+]

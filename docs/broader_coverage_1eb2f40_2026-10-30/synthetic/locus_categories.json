@@ -1,0 +1,207 @@
+[
+  {
+    "category": "exact",
+    "oracle_loci": 20,
+    "recovered": 20,
+    "recall": 1.0,
+    "missed": []
+  },
+  {
+    "category": "mismatch",
+    "oracle_loci": 67,
+    "recovered": 61,
+    "recall": 0.9104477611940298,
+    "missed": [
+      [
+        "frozen2",
+        "frozen2_I_10_minus",
+        "-",
+        45,
+        48,
+        "GGG"
+      ],
+      [
+        "frozen2",
+        "frozen2_I_10_plus",
+        "+",
+        65,
+        68,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_D_19_minus",
+        "-",
+        45,
+        48,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_I_19_minus",
+        "-",
+        43,
+        46,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_I_5_minus",
+        "-",
+        40,
+        43,
+        "AGG"
+      ],
+      [
+        "repeat",
+        "repeat_mm_0_minus",
+        "-",
+        40,
+        43,
+        "AGG"
+      ]
+    ]
+  },
+  {
+    "category": "I",
+    "oracle_loci": 64,
+    "recovered": 64,
+    "recall": 1.0,
+    "missed": []
+  },
+  {
+    "category": "D",
+    "oracle_loci": 68,
+    "recovered": 68,
+    "recall": 1.0,
+    "missed": []
+  },
+  {
+    "category": "mismatch_bulge",
+    "oracle_loci": 237,
+    "recovered": 222,
+    "recall": 0.9367088607594937,
+    "missed": [
+      [
+        "frozen2",
+        "frozen2_I_10_minus",
+        "-",
+        45,
+        48,
+        "GGG"
+      ],
+      [
+        "frozen2",
+        "frozen2_I_10_plus",
+        "+",
+        65,
+        68,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_D_19_minus",
+        "-",
+        45,
+        48,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_D_5_minus",
+        "-",
+        41,
+        44,
+        "CGG"
+      ],
+      [
+        "repeat",
+        "repeat_D_5_plus",
+        "+",
+        67,
+        70,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_I_19_minus",
+        "-",
+        42,
+        45,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_I_19_minus",
+        "-",
+        43,
+        46,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_I_5_minus",
+        "-",
+        40,
+        43,
+        "AGG"
+      ],
+      [
+        "repeat",
+        "repeat_I_5_minus",
+        "-",
+        45,
+        48,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_I_5_plus",
+        "+",
+        65,
+        68,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_exact_plus",
+        "+",
+        70,
+        73,
+        "AGG"
+      ],
+      [
+        "repeat",
+        "repeat_four_a_minus",
+        "-",
+        43,
+        46,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_four_b_minus",
+        "-",
+        45,
+        48,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_mm_0_minus",
+        "-",
+        39,
+        42,
+        "GGG"
+      ],
+      [
+        "repeat",
+        "repeat_mm_0_minus",
+        "-",
+        40,
+        43,
+        "AGG"
+      ]
+    ]
+  }
+]

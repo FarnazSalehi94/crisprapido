@@ -1,0 +1,10 @@
+{"contig": "GRCh38#0#chr4", "end": 68333329, "guide": "YTHDC1_TCTGCATCAGAGTCATATGC", "pam": "AGG", "start": 68333309, "strand": "-"}
+{"contig": "GRCh38#0#chr4", "end": 140540209, "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG", "pam": "TGG", "start": 140540189, "strand": "-"}
+{"contig": "GRCh38#0#chr5", "end": 103153885, "guide": "PPIP5K2_CATAGCTGTTATACGTCATG", "pam": "GGG", "start": 103153865, "strand": "+"}
+{"contig": "GRCh38#0#chr8", "end": 123652020, "guide": "KLHL38_CTACTGTACAGCAAACAGAC", "pam": "CGG", "start": 123652000, "strand": "-"}
+{"contig": "GRCh38#0#chr11", "end": 102114194, "guide": "YAP1_TCGAACATGCTGTGGAGTCA", "pam": "GGG", "start": 102114174, "strand": "-"}
+{"contig": "GRCh38#0#chr14", "end": 21233960, "guide": "HNRNPC_AAATTCACTTACCTAAAACC", "pam": "TGG", "start": 21233940, "strand": "+"}
+{"contig": "GRCh38#0#chr14", "end": 70592922, "guide": "MED6_TGCCACCAATACCCTTTGGA", "pam": "AGG", "start": 70592902, "strand": "+"}
+{"contig": "GRCh38#0#chr16", "end": 56683183, "guide": "MT1X_GTTGGCTCCTGTGCCTGTGC", "pam": "CGG", "start": 56683163, "strand": "+"}
+{"contig": "GRCh38#0#chr19", "end": 42758150, "guide": "PSG8_GCAACCTGTGAGACATAGGG", "pam": "AGG", "start": 42758130, "strand": "+"}
+{"contig": "GRCh38#0#chr19", "end": 58186988, "guide": "ZNF274_TGTGGTATCTCAGTTAGAGG", "pam": "AGG", "start": 58186968, "strand": "+"}

@@ -1,0 +1,23 @@
+	Command being timed: "/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba-runtime -r /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_GRCh38/index/GRCh38 -f /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/guides10.fa -a all -m edit -e 0 -t 1 -o /export/local/home/salehi/crisprapido-broader-coverage-1eb2f40-20261030/GRCh38/exact.sam"
+	User time (seconds): 0.87
+	System time (seconds): 4.88
+	Percent of CPU this job got: 17%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:33.44
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 11494504
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 2107582
+	Voluntary context switches: 3666
+	Involuntary context switches: 28
+	Swaps: 0
+	File system inputs: 16839160
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

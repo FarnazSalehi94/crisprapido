@@ -1,0 +1,93 @@
+   Compiling crisprapido v0.1.0 (/tmp/crispr-broad-wfa-probe)
+warning: field `cfd_score` is never read
+  --> src/hit.rs:15:16
+   |
+4  | pub(crate) struct Hit {
+   |                   --- field in this struct
+...
+15 |     pub(crate) cfd_score: Option<f64>,
+   |                ^^^^^^^^^
+   |
+   = note: `Hit` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `crisprapido` (bin "crisprapido" test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.12s
+     Running unittests src/lib.rs (/export/local/home/salehi/crisprapido-pam-corrected-20261030-target/debug/deps/crisprapido-9f42cdf0d0fbf72b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/export/local/home/salehi/crisprapido-pam-corrected-20261030-target/debug/deps/crisprapido-97a72e8a8c711781)
+
+running 1 test
+WFA_RAW	synthetic|frozen2|frozen2_I_10_minus|48|67|-	IMMMMMMMMMIMMMMMMMMMD	18	0	3	1
+WFA_PROBE	synthetic|frozen2|frozen2_I_10_minus|48|67|-	None
+WFA_RAW	synthetic|frozen2|frozen2_I_10_minus|48|68|-	MMMMMMMMMMIMMMMMMMMMD	19	0	2	1
+WFA_PROBE	synthetic|frozen2|frozen2_I_10_minus|48|68|-	None
+WFA_RAW	synthetic|frozen2|frozen2_I_10_minus|48|69|-	DMMMMMMMMMMIMMMMMMMMMD	19	0	3	1
+WFA_PROBE	synthetic|frozen2|frozen2_I_10_minus|48|69|-	None
+WFA_RAW	synthetic|frozen2|frozen2_I_10_plus|44|65|+	DMMMMMMMMMMIMMMMMMMMMD	19	0	3	1
+WFA_PROBE	synthetic|frozen2|frozen2_I_10_plus|44|65|+	None
+WFA_RAW	synthetic|frozen2|frozen2_I_10_plus|45|65|+	MMMMMMMMMMIMMMMMMMMMD	19	0	2	1
+WFA_PROBE	synthetic|frozen2|frozen2_I_10_plus|45|65|+	None
+WFA_RAW	synthetic|frozen2|frozen2_I_10_plus|46|65|+	IMMMMMMMMMIMMMMMMMMMD	18	0	3	1
+WFA_PROBE	synthetic|frozen2|frozen2_I_10_plus|46|65|+	None
+WFA_RAW	synthetic|repeat|repeat_D_19_minus|48|67|-	IMMMMMMMMMMMMMMMMXXX	16	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_D_19_minus|48|67|-	Some((-15, "IMMMMMMMMMMMMMMMMXXX", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_D_19_minus|48|68|-	MMMMMMMMMMMMMMMMMXXX	17	3	0	0
+WFA_PROBE	synthetic|repeat|repeat_D_19_minus|48|68|-	Some((-9, "MMMMMMMMMMMMMMMMMXXX", 3, 0, 0))
+WFA_RAW	synthetic|repeat|repeat_D_19_minus|48|69|-	DMMMMMMMMMMMMMMMMMXXX	17	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_D_19_minus|48|69|-	Some((-15, "DMMMMMMMMMMMMMMMMMXXX", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_D_5_minus|44|63|-	MMMMMMMMMMMMMMMIXXXX	15	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_D_5_minus|44|63|-	Some((-18, "MMMMMMMMMMMMMMMIXXXX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_D_5_minus|44|65|-	XMMMMMMMMMMMMMMMMDXXX	16	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_D_5_minus|44|65|-	Some((-18, "XMMMMMMMMMMMMMMMMDXXX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_D_5_plus|48|67|+	XXXMMMMMMMMMMMMMMMMI	16	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_D_5_plus|48|67|+	Some((-15, "XXXMMMMMMMMMMMMMMMMI", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_I_19_minus|45|64|-	MMMMMMMMMMMMMMMIMXXX	16	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_I_19_minus|45|64|-	Some((-15, "MMMMMMMMMMMMMMMIMXXX", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_I_19_minus|45|66|-	MMMMMMMMMMMMMMMMMDXXX	17	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_I_19_minus|45|66|-	Some((-15, "MMMMMMMMMMMMMMMMMDXXX", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_I_19_minus|46|65|-	IMMMMMMMMMMMMMMMMXXX	16	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_I_19_minus|46|65|-	Some((-15, "IMMMMMMMMMMMMMMMMXXX", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_I_19_minus|46|66|-	MMMMMMMMMMMMMMMMMXXX	17	3	0	0
+WFA_PROBE	synthetic|repeat|repeat_I_19_minus|46|66|-	Some((-9, "MMMMMMMMMMMMMMMMMXXX", 3, 0, 0))
+WFA_RAW	synthetic|repeat|repeat_I_19_minus|46|67|-	DMMMMMMMMMMMMMMMMMXXX	17	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_I_19_minus|46|67|-	Some((-15, "DMMMMMMMMMMMMMMMMMXXX", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_I_5_minus|43|62|-	IMMMMMMMMMMMMMMXXXMX	15	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_I_5_minus|43|62|-	Some((-18, "IMMMMMMMMMMMMMMXXXMX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_I_5_minus|43|63|-	MMMMMMMMMMMMMMMXXXMX	16	4	0	0
+WFA_PROBE	synthetic|repeat|repeat_I_5_minus|43|63|-	Some((-12, "MMMMMMMMMMMMMMMXXXMX", 4, 0, 0))
+WFA_RAW	synthetic|repeat|repeat_I_5_minus|43|64|-	MDMMMMMMMMMMMMMMXXXMX	16	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_I_5_minus|43|64|-	Some((-18, "MDMMMMMMMMMMMMMMXXXMX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_I_5_minus|48|67|-	IMMMMIMMMMMMMMMMMMMMD	18	0	3	1
+WFA_PROBE	synthetic|repeat|repeat_I_5_minus|48|67|-	None
+WFA_RAW	synthetic|repeat|repeat_I_5_plus|46|65|+	IMMMMIMMMMMMMMMMMMMMD	18	0	3	1
+WFA_PROBE	synthetic|repeat|repeat_I_5_plus|46|65|+	None
+WFA_RAW	synthetic|repeat|repeat_exact_plus|49|70|+	MMMMMMMMMMMMMMMMMDXXX	17	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_exact_plus|49|70|+	Some((-15, "MMMMMMMMMMMMMMMMMDXXX", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_exact_plus|51|70|+	MMMMMMMMMMMMMMMXXXMI	16	3	1	1
+WFA_PROBE	synthetic|repeat|repeat_exact_plus|51|70|+	Some((-15, "MMMMMMMMMMMMMMMXXXMI", 3, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_four_a_minus|46|67|-	MMMXMMMMXMMMMXMMMMMDX	16	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_four_a_minus|46|67|-	Some((-18, "MMMXMMMMXMMMMXMMMMMDX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_four_b_minus|48|67|-	MMXMMMMXMMMMXMMMMXMI	15	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_four_b_minus|48|67|-	Some((-18, "MMXMMMMXMMMMXMMMMXMI", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_four_b_minus|48|69|-	MMMMXMMMMXMMMMXMMMMDX	16	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_four_b_minus|48|69|-	Some((-18, "MMMMXMMMMXMMMMXMMMMDX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_mm_0_minus|42|61|-	MMMMMMMMMMMMMXXXMIMX	15	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_mm_0_minus|42|61|-	Some((-18, "MMMMMMMMMMMMMXXXMIMX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_mm_0_minus|42|63|-	MMMMMMMMMMMMMMMXXXMDX	16	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_mm_0_minus|42|63|-	Some((-18, "MMMMMMMMMMMMMMMXXXMDX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_mm_0_minus|43|62|-	IMMMMMMMMMMMMMMXXXMX	15	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_mm_0_minus|43|62|-	Some((-18, "IMMMMMMMMMMMMMMXXXMX", 4, 1, 1))
+WFA_RAW	synthetic|repeat|repeat_mm_0_minus|43|63|-	MMMMMMMMMMMMMMMXXXMX	16	4	0	0
+WFA_PROBE	synthetic|repeat|repeat_mm_0_minus|43|63|-	Some((-12, "MMMMMMMMMMMMMMMXXXMX", 4, 0, 0))
+WFA_RAW	synthetic|repeat|repeat_mm_0_minus|43|64|-	DMMMMMMMMMMMMMMMXXXMX	16	4	1	1
+WFA_PROBE	synthetic|repeat|repeat_mm_0_minus|43|64|-	Some((-18, "DMMMMMMMMMMMMMMMXXXMX", 4, 1, 1))
+WFA_RAW	real|r3_I|GRCh38_window_1|115|136|+	MMMMMMMMMMIMMMMMMMMMDD	19	0	2	2
+WFA_PROBE	real|r3_I|GRCh38_window_1|115|136|+	None
+test verification::broad_wfa_diagnostics::enumerate_frozen_wfa_results ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 119 filtered out; finished in 0.00s

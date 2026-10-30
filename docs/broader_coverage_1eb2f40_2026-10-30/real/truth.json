@@ -1,0 +1,496 @@
+[
+  {
+    "key": [
+      "r1_D",
+      "CHM13_window_1",
+      153,
+      174,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_D",
+      "HG04184_mat_window_1",
+      307,
+      328,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_exact",
+      "CHM13_window_1",
+      153,
+      174,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_exact",
+      "CHM13_window_1",
+      154,
+      174,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "r1_exact",
+      "CHM13_window_1",
+      154,
+      175,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_exact",
+      "CHM13_window_1",
+      155,
+      174,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_exact",
+      "HG04184_mat_window_1",
+      307,
+      328,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_exact",
+      "HG04184_mat_window_1",
+      308,
+      328,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "r1_exact",
+      "HG04184_mat_window_1",
+      308,
+      329,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_exact",
+      "HG04184_mat_window_1",
+      309,
+      328,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_mm4",
+      "CHM13_window_1",
+      153,
+      174,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_mm4",
+      "CHM13_window_1",
+      154,
+      174,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "r1_mm4",
+      "CHM13_window_1",
+      154,
+      175,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r1_mm4",
+      "CHM13_window_1",
+      155,
+      174,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r2_D",
+      "HG04184_mat_window_1",
+      130,
+      151,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r2_D",
+      "HG04184_mat_window_1",
+      132,
+      151,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r2_exact",
+      "HG04184_mat_window_1",
+      130,
+      151,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r2_exact",
+      "HG04184_mat_window_1",
+      131,
+      151,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "r2_exact",
+      "HG04184_mat_window_1",
+      132,
+      151,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r2_mm4",
+      "HG04184_mat_window_1",
+      130,
+      151,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r2_mm4",
+      "HG04184_mat_window_1",
+      131,
+      151,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "r2_mm4",
+      "HG04184_mat_window_1",
+      132,
+      151,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r3_D",
+      "GRCh38_window_1",
+      114,
+      135,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r3_I",
+      "GRCh38_window_1",
+      115,
+      136,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r3_exact",
+      "GRCh38_window_1",
+      114,
+      135,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r3_exact",
+      "GRCh38_window_1",
+      115,
+      135,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "r3_exact",
+      "GRCh38_window_1",
+      115,
+      136,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r3_exact",
+      "GRCh38_window_1",
+      116,
+      135,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r3_mm4",
+      "GRCh38_window_1",
+      114,
+      135,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r3_mm4",
+      "GRCh38_window_1",
+      115,
+      135,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "r3_mm4",
+      "GRCh38_window_1",
+      115,
+      136,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r3_mm4",
+      "GRCh38_window_1",
+      116,
+      135,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r4_D",
+      "HG00128_hap2_window_1",
+      120,
+      141,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r4_D",
+      "HG00128_hap2_window_1",
+      122,
+      141,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r4_exact",
+      "HG00128_hap2_window_1",
+      120,
+      141,
+      "+"
+    ],
+    "categories": [
+      "D",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r4_exact",
+      "HG00128_hap2_window_1",
+      121,
+      141,
+      "+"
+    ],
+    "categories": [
+      "exact"
+    ]
+  },
+  {
+    "key": [
+      "r4_exact",
+      "HG00128_hap2_window_1",
+      122,
+      141,
+      "+"
+    ],
+    "categories": [
+      "I",
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r4_mm4",
+      "HG00128_hap2_window_1",
+      120,
+      141,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  },
+  {
+    "key": [
+      "r4_mm4",
+      "HG00128_hap2_window_1",
+      121,
+      141,
+      "+"
+    ],
+    "categories": [
+      "mismatch"
+    ]
+  },
+  {
+    "key": [
+      "r4_mm4",
+      "HG00128_hap2_window_1",
+      122,
+      141,
+      "+"
+    ],
+    "categories": [
+      "mismatch_bulge"
+    ]
+  }
+]
