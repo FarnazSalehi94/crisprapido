@@ -1,0 +1,6 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /export/local/home/salehi/crisprapido-pam-corrected-validation-20261030-v2/indexed_real_chm13/index -f /export/local/home/salehi/crisprapido-pam-corrected-validation-20261030-v2/indexed_real_chm13/guides.fa -a all -m edit -e 0 -t 1 -o /export/local/home/salehi/crisprapido-pam-corrected-validation-20261030-v2/indexed_real_chm13/exact.sam
+@SQ	SN:chm13_window_1	LN:1000
+@SQ	SN:chm13_window_2	LN:1000
+real1	0	chm13_window_1	155	60	20M	*	0	0	GACTAAACCTCTCAACAAAT	*	AS:i:0	NM:i:0	PG:Z:Columba
+real2	0	chm13_window_2	132	60	20M	*	0	0	ACTCTGTCCTTAAACATAAT	*	AS:i:0	NM:i:0	PG:Z:Columba

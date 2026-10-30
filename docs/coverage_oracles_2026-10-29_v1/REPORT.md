@@ -303,3 +303,10 @@ search sensitivity, the other frozen guides, other assemblies, or index content
 at bases excluded by the oracle's A/C/G/T rule. A larger scope, per-stage
 instrumentation of the original automatic searches, and independent review
 remain required before the frozen gate can pass.
+
+## Subsequent development correction
+
+The later [PAM-anchor correction report](../pam_anchor_correction_2026-10-30_v1/REPORT.md)
+traces the seven sites and records a separately built correction and fresh
+indexed revalidation. The earlier measurements in this report remain the
+historical baseline. The frozen preflight remains not passed.

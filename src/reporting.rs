@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 use std::fmt::Write;
 
 use crate::cfd_score;
@@ -50,22 +50,12 @@ fn pam_matches_requested(hit: &Hit, requested_pam: &str) -> bool {
     pam.eq_ignore_ascii_case(requested_pam)
 }
 
-fn preferred_overlap_hit(candidate: &Hit, current: &Hit, requested_pam: &str) -> bool {
-    let candidate_requested_pam = pam_matches_requested(candidate, requested_pam);
-    let current_requested_pam = pam_matches_requested(current, requested_pam);
-
-    if candidate_requested_pam != current_requested_pam {
-        return candidate_requested_pam;
-    }
-
-    if candidate_requested_pam
-        && candidate.pos == current.pos
-        && candidate.end_pos() != current.end_pos()
-    {
-        return candidate.end_pos() < current.end_pos();
-    }
-
-    candidate.quality_score() > current.quality_score()
+fn preferred_anchor_hit(candidate: &Hit, current: &Hit) -> bool {
+    // WFA2 reports a non-positive score: larger is the better alignment.
+    candidate.score > current.score
+        || (candidate.score == current.score
+            && (candidate.pos, candidate.end_pos(), &candidate.cigar)
+                < (current.pos, current.end_pos(), &current.cigar))
 }
 
 #[cfg(test)]
@@ -84,67 +74,49 @@ fn format_filtered_hits_with_policy(
     query_name: &str,
     allow_noncanonical: bool,
 ) -> String {
-    let mut hits_by_group: HashMap<(String, char), Vec<Hit>> = HashMap::new();
+    // The PAM-adjacent boundary, not overlap, identifies a target site.
+    // Per query, retain one deterministic representative at each strand/anchor.
+    let mut by_anchor: BTreeMap<(String, char, usize), Hit> = BTreeMap::new();
     for hit in hits {
-        // Apply eligibility before choosing overlap representatives.
         if !allow_noncanonical && !pam_matches_requested(&hit, pam) {
             continue;
         }
-        hits_by_group
-            .entry((hit.ref_id.clone(), hit.strand))
-            .or_insert_with(Vec::new)
-            .push(hit);
-    }
-
-    let mut groups: Vec<_> = hits_by_group.into_iter().collect();
-    groups.sort_by(
-        |((left_ref, left_strand), _), ((right_ref, right_strand), _)| {
-            left_ref
-                .cmp(right_ref)
-                .then_with(|| left_strand.cmp(right_strand))
-        },
-    );
-
-    let mut output = String::new();
-    for (_, mut group_hits) in groups {
-        group_hits.sort_by_key(|hit| hit.pos);
-
-        let _filtered_hits: Vec<Hit> = Vec::new();
-        let mut i = 0;
-        while i < group_hits.len() {
-            let mut best_idx = i;
-            let mut j = i + 1;
-
-            while j < group_hits.len() && group_hits[j].pos < group_hits[i].end_pos() {
-                if group_hits[j].overlaps_with(&group_hits[i]) {
-                    if preferred_overlap_hit(&group_hits[j], &group_hits[best_idx], pam) {
-                        best_idx = j;
-                    }
-                }
-                j += 1;
+        let anchor = if hit.strand == '+' {
+            hit.end_pos()
+        } else {
+            hit.pos
+        };
+        let key = (hit.ref_id.clone(), hit.strand, anchor);
+        match by_anchor.entry(key) {
+            std::collections::btree_map::Entry::Vacant(entry) => {
+                entry.insert(hit);
             }
-
-            let best_hit = &group_hits[best_idx];
-            output.push_str(&format_hit_for_query(
-                query_name,
-                &best_hit.ref_id,
-                best_hit.pos,
-                best_hit.guide.len(),
-                best_hit.strand,
-                best_hit.score,
-                &best_hit.cigar,
-                &best_hit.guide,
-                best_hit.target_len,
-                best_hit.max_mismatches,
-                best_hit.max_bulges,
-                best_hit.max_bulge_size,
-                &best_hit.target_seq,
-                best_hit.pam_seq.as_deref().unwrap_or(""),
-            ));
-            output.push('\n');
-
-            i = j;
+            std::collections::btree_map::Entry::Occupied(mut entry) => {
+                if preferred_anchor_hit(&hit, entry.get()) {
+                    entry.insert(hit);
+                }
+            }
         }
+    }
+    let mut output = String::new();
+    for best_hit in by_anchor.values() {
+        output.push_str(&format_hit_for_query(
+            query_name,
+            &best_hit.ref_id,
+            best_hit.pos,
+            best_hit.guide.len(),
+            best_hit.strand,
+            best_hit.score,
+            &best_hit.cigar,
+            &best_hit.guide,
+            best_hit.target_len,
+            best_hit.max_mismatches,
+            best_hit.max_bulges,
+            best_hit.max_bulge_size,
+            &best_hit.target_seq,
+            best_hit.pam_seq.as_deref().unwrap_or(""),
+        ));
+        output.push('\n');
     }
 
     output
@@ -480,7 +452,40 @@ mod tests {
     }
 
     #[test]
-    fn test_same_start_requested_pam_prefers_shorter_reference_span() {
+    fn same_pam_anchor_deduplicates_on_both_strands() {
+        for strand in ['+', '-'] {
+            let exact = test_hit("chr1", strand, 10);
+            let mut other = exact.clone();
+            if strand == '+' {
+                other.pos = 11;
+            }
+            other.cigar = "IMMMMMMMMMMMMMMMMMMM".to_string();
+            let output = format_filtered_hits(vec![other, exact.clone(), exact], "GG");
+            assert_eq!(output.lines().count(), 1, "strand {}", strand);
+        }
+    }
+
+    #[test]
+    fn same_anchor_prefers_better_wavefront_score() {
+        let exact = test_hit("chr1", '+', 10);
+        let mut bulged = exact.clone();
+        bulged.pos = 9;
+        bulged.cigar = "DMMMMMMMMMMMMMMMMMMMM".to_string();
+        bulged.score = -6;
+        let output = format_filtered_hits(vec![bulged, exact], "GG");
+        assert_eq!(output.lines().count(), 1);
+        assert!(output.contains("\tcg:Z:20="));
+    }
+
+    #[test]
+    fn overlapping_minus_sites_with_distinct_anchors_are_preserved() {
+        let a = test_hit("chr1", '-', 10);
+        let b = test_hit("chr1", '-', 11);
+        assert_eq!(format_filtered_hits(vec![a, b], "GG").lines().count(), 2);
+    }
+
+    #[test]
+    fn test_same_start_distinct_plus_pam_anchors_are_preserved() {
         cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt")
             .expect("Failed to initialize scoring matrices");
         let guide = Arc::new(b"GAGTCCGAGCAGAAGAAGAA".to_vec());
@@ -517,7 +522,7 @@ mod tests {
 
         let output = format_filtered_hits(vec![longer, shorter], "GG");
 
-        assert_eq!(output.lines().count(), 1);
+        assert_eq!(output.lines().count(), 2);
         assert!(output.contains("	10	28	"));
         assert!(output.contains("	cg:Z:2I18="));
     }

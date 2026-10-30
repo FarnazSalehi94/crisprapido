@@ -404,11 +404,19 @@ fn verify_columba_candidates_impl(
                 Vec::new()
             };
         let mut recovered = false;
+        let mut accepted_anchor = None;
         let should_expand = match primary_hit {
             Some(hit) => {
                 stats.primary_accepted += 1;
                 let requested_pam = hit_matches_requested_pam(&hit, &args.pam);
                 let accepted_reference_insertion = requested_pam && hit.cigar.contains('D');
+                if requested_pam && !accepted_reference_insertion {
+                    accepted_anchor = Some(if candidate.reverse {
+                        hit.pos
+                    } else {
+                        hit.end_pos()
+                    });
+                }
                 push_unique_hit(hit, &mut hits, &mut seen_hits, &mut stats);
                 recovered = true;
                 args.max_bulges > 0
@@ -459,6 +467,58 @@ fn verify_columba_candidates_impl(
                     stats.fallback_hits_accepted += 1;
                     push_unique_hit(hit, &mut hits, &mut seen_hits, &mut stats);
                     recovered = true;
+                }
+            }
+        }
+
+        // A passing hit can mask a distinct nearby PAM. Search only alternative
+        // intervals with another eligible PAM anchor; WFA still enforces limits.
+        if !should_expand && args.max_bulges > 0 && args.max_bulge_size > 0 {
+            if let Some(anchor) = accepted_anchor {
+                let mut scratch = ColumbaVerificationStats::default();
+                let alternatives = fallback_intervals(
+                    candidate.reference_start,
+                    candidate_end,
+                    seq.len(),
+                    guide_fwd.len(),
+                    args.max_bulge_size,
+                    &mut scratch,
+                );
+                let strand = if candidate.reverse { '-' } else { '+' };
+                let alternatives: Vec<_> = alternatives
+                    .into_iter()
+                    .filter(|&(start, end)| {
+                        let other_anchor = if candidate.reverse { start } else { end };
+                        if other_anchor == anchor {
+                            return false;
+                        }
+                        let pam = extract_adjacent_pam(seq, start, end, strand);
+                        (args.allow_noncanonical_pam || args.no_filter)
+                            || pam
+                                .as_deref()
+                                .map_or(false, |p| p.eq_ignore_ascii_case(&args.pam))
+                    })
+                    .collect();
+                if !alternatives.is_empty() {
+                    stats.expansion_triggers += 1;
+                    stats.raw_alternatives_generated += alternatives.len();
+                    stats.unique_alternatives_verified += alternatives.len();
+                    for (start, end) in alternatives {
+                        if let Some(hit) = verify_columba_interval(
+                            &mut aligner,
+                            record_id,
+                            seq,
+                            start,
+                            end,
+                            candidate.reverse,
+                            guide_fwd,
+                            args,
+                        ) {
+                            stats.fallback_hits_accepted += 1;
+                            push_unique_hit(hit, &mut hits, &mut seen_hits, &mut stats);
+                            recovered = true;
+                        }
+                    }
                 }
             }
         }
@@ -1111,8 +1171,9 @@ mod tests {
             parse_candidate("guide_20bp\t16\tchr1\t5\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
         let hits = verify_test_candidates(vec![candidate], vec![("chr1".to_string(), seq)]);
-        assert_eq!(hits.len(), 1);
-        assert_eq!(hits[0].strand, '-');
+        assert!(hits
+            .iter()
+            .any(|hit| hit.pos == 4 && hit.strand == '-' && hit.cigar == "MMMMMMMMMMMMMMMMMMMM"));
     }
 
     #[test]
@@ -1296,10 +1357,13 @@ mod tests {
             parse_candidate("guide_20bp\t16\tchr1\t11\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
         let hits = verify_test_candidates(vec![candidate], vec![("chr1".to_string(), seq)]);
-        assert_eq!(hits.len(), 1);
-        assert_eq!(hits[0].strand, '-');
-        assert_eq!(hits[0].target_seq, guide.to_vec());
-        assert_eq!(hits[0].pam_seq, Some("GG".to_string()));
+        let hit = hits
+            .iter()
+            .find(|hit| hit.pos == 10 && hit.cigar == "MMMMMMMMMMMMMMMMMMMM")
+            .expect("the exact anchored candidate must remain present");
+        assert_eq!(hit.strand, '-');
+        assert_eq!(hit.target_seq, guide.to_vec());
+        assert_eq!(hit.pam_seq, Some("GG".to_string()));
     }
 
     #[test]
@@ -2084,12 +2148,13 @@ mod tests {
             parse_candidate("guide_20bp\t16\tchr1\t11\t60\t20M\t*\t0\t0\t*\t*\tAS:i:0\tNM:i:0");
 
         let hits = verify_test_candidates(vec![candidate], vec![("chr1".to_string(), seq)]);
-        assert_eq!(hits.len(), 1);
-        assert_eq!(hits[0].pos, 10);
-        assert_eq!(hits[0].strand, '-');
-        assert_eq!(hits[0].target_seq, guide.to_vec());
-        assert_eq!(hits[0].pam_seq, Some("GG".to_string()));
-        assert_eq!(hits[0].cigar, "MMMMMMMMMMMMMMMMMMMM");
+        let hit = hits
+            .iter()
+            .find(|hit| hit.pos == 10 && hit.cigar == "MMMMMMMMMMMMMMMMMMMM")
+            .expect("the exact anchored candidate must remain present");
+        assert_eq!(hit.strand, '-');
+        assert_eq!(hit.target_seq, guide.to_vec());
+        assert_eq!(hit.pam_seq, Some("GG".to_string()));
     }
 
     #[test]

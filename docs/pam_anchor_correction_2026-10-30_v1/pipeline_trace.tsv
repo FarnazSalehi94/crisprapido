@@ -1,0 +1,9 @@
+panel	guide	contig	strand	oracle_start	oracle_end	pam_start	pam_end	pam	original_raw_start	original_raw_end	original_raw_cigar	original_raw_alignment	original_raw_pam	original_expansion	original_pam_in_final	corrected_start	corrected_end	corrected_cigar
+indexed_synthetic	g1	g1_exact_plus	+	60	81	81	84	GGG	60	80	20M	20=	AGG	not_triggered_on_accepted_primary	absent	60	81	20=1D
+indexed_synthetic	g1	g1_mm1_minus	-	62	83	59	62	GGG	63	83	20M	3=1X16=	AGG	not_triggered_on_accepted_primary	absent	62	83	3=1X16=1D
+indexed_synthetic	g1	g1_mm1_plus	+	60	81	81	84	GGG	60	80	20M	3=1X16=	AGG	not_triggered_on_accepted_primary	absent	60	81	3=1X16=1D
+indexed_synthetic	g2	g2_mm1_minus	-	62	83	59	62	GGG	63	83	20M	3=1X16=	AGG	not_triggered_on_accepted_primary	absent	62	83	3=1X16=1D
+indexed_synthetic	g2	g2_mm1_plus	+	60	81	81	84	GGG	60	80	20M	3=1X16=	AGG	not_triggered_on_accepted_primary	absent	60	81	3=1X16=1D
+indexed_real_chm13	real1	chm13_window_1	+	154	175	175	178	GGG	154	174	20M	20=	TGG	not_triggered_on_accepted_primary	absent	154	175	20=1D
+indexed_12_windows	real1	CHM13_window_1	+	154	175	175	178	GGG	154	174	20M	20=	TGG	not_triggered_on_accepted_primary	absent	154	175	20=1D
+indexed_12_windows	real1	HG04184_mat_window_1	+	308	329	329	332	GGG	308	328	20M	3=1X16=	TGG	not_triggered_on_accepted_primary	absent	308	329	3=1X16=1D
