@@ -1,0 +1,22 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /export/local/home/salehi/crisprapido-bounded-validation-20261030/broader/real/index -f /export/local/home/salehi/crisprapido-bounded-validation-20261030/broader/real/guides.fa -a all -m edit -e 0 -t 1 -o /export/local/home/salehi/crisprapido-bounded-validation-20261030/broader/real/exact.sam
+@SQ	SN:CHM13_window_1	LN:1000
+@SQ	SN:HG04184_mat_window_1	LN:1000
+@SQ	SN:GRCh38_window_1	LN:1000
+@SQ	SN:HG00128_hap2_window_1	LN:1000
+r1_exact	0	CHM13_window_1	155	60	20M	*	0	0	GACTAAACCTCTCAACAAAT	*	AS:i:0	NM:i:0	PG:Z:Columba
+r1_mm4	4	*	0	0	*	*	0	0	GCCTAACCCTCACAACACAT	*	PG:Z:Columba
+r1_I	4	*	0	0	*	*	0	0	GACTAAACCTACTCAACAAA	*	PG:Z:Columba
+r1_D	4	*	0	0	*	*	0	0	TGACTAAACCCTCAACAAAT	*	PG:Z:Columba
+r2_exact	0	HG04184_mat_window_1	132	60	20M	*	0	0	ACAGAATTTAACAACATATT	*	AS:i:0	NM:i:0	PG:Z:Columba
+r2_mm4	4	*	0	0	*	*	0	0	AGAGAAATTAAGAACATCTT	*	PG:Z:Columba
+r2_I	4	*	0	0	*	*	0	0	ACAGAATTTAAACAACATAT	*	PG:Z:Columba
+r2_D	4	*	0	0	*	*	0	0	AACAGAATTTACAACATATT	*	PG:Z:Columba
+r3_exact	0	GRCh38_window_1	116	60	20M	*	0	0	TCCCTGCAGATGAAATTATA	*	AS:i:0	NM:i:0	PG:Z:Columba
+r3_mm4	4	*	0	0	*	*	0	0	TGCCTGGAGATTAAATTCTA	*	PG:Z:Columba
+r3_I	4	*	0	0	*	*	0	0	TCCCTGCAGAATGAAATTAT	*	PG:Z:Columba
+r3_D	4	*	0	0	*	*	0	0	CTCCCTGCAGTGAAATTATA	*	PG:Z:Columba
+r4_exact	0	HG00128_hap2_window_1	122	60	20M	*	0	0	CACAGAGACATGTACACGAC	*	AS:i:0	NM:i:0	PG:Z:Columba
+r4_mm4	4	*	0	0	*	*	0	0	CCCAGATACATTTACACTAC	*	PG:Z:Columba
+r4_I	4	*	0	0	*	*	0	0	CACAGAGACAATGTACACGA	*	PG:Z:Columba
+r4_D	4	*	0	0	*	*	0	0	TCACAGAGACTGTACACGAC	*	PG:Z:Columba

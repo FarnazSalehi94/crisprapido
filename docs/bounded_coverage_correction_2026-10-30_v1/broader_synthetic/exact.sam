@@ -1,0 +1,156 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /export/local/home/salehi/crisprapido-bounded-validation-20261030/broader/synthetic/index -f /export/local/home/salehi/crisprapido-bounded-validation-20261030/broader/synthetic/guides.fa -a all -m edit -e 0 -t 1 -o /export/local/home/salehi/crisprapido-bounded-validation-20261030/broader/synthetic/exact.sam
+@SQ	SN:frozen1_exact_plus	LN:114
+@SQ	SN:frozen1_exact_minus	LN:114
+@SQ	SN:frozen1_mm_0_plus	LN:114
+@SQ	SN:frozen1_mm_0_minus	LN:114
+@SQ	SN:frozen1_mm_4_plus	LN:114
+@SQ	SN:frozen1_mm_4_minus	LN:114
+@SQ	SN:frozen1_mm_9_plus	LN:114
+@SQ	SN:frozen1_mm_9_minus	LN:114
+@SQ	SN:frozen1_mm_14_plus	LN:114
+@SQ	SN:frozen1_mm_14_minus	LN:114
+@SQ	SN:frozen1_mm_19_plus	LN:114
+@SQ	SN:frozen1_mm_19_minus	LN:114
+@SQ	SN:frozen1_four_a_plus	LN:114
+@SQ	SN:frozen1_four_a_minus	LN:114
+@SQ	SN:frozen1_four_b_plus	LN:114
+@SQ	SN:frozen1_four_b_minus	LN:114
+@SQ	SN:frozen1_I_0_plus	LN:113
+@SQ	SN:frozen1_I_0_minus	LN:113
+@SQ	SN:frozen1_D_0_plus	LN:115
+@SQ	SN:frozen1_D_0_minus	LN:115
+@SQ	SN:frozen1_I_5_plus	LN:113
+@SQ	SN:frozen1_I_5_minus	LN:113
+@SQ	SN:frozen1_D_5_plus	LN:115
+@SQ	SN:frozen1_D_5_minus	LN:115
+@SQ	SN:frozen1_I_10_plus	LN:113
+@SQ	SN:frozen1_I_10_minus	LN:113
+@SQ	SN:frozen1_D_10_plus	LN:115
+@SQ	SN:frozen1_D_10_minus	LN:115
+@SQ	SN:frozen1_I_15_plus	LN:113
+@SQ	SN:frozen1_I_15_minus	LN:113
+@SQ	SN:frozen1_D_15_plus	LN:115
+@SQ	SN:frozen1_D_15_minus	LN:115
+@SQ	SN:frozen1_I_19_plus	LN:113
+@SQ	SN:frozen1_I_19_minus	LN:113
+@SQ	SN:frozen1_D_19_plus	LN:115
+@SQ	SN:frozen1_D_19_minus	LN:115
+@SQ	SN:frozen1_mmI_5_plus	LN:113
+@SQ	SN:frozen1_mmI_5_minus	LN:113
+@SQ	SN:frozen1_mmD_5_plus	LN:115
+@SQ	SN:frozen1_mmD_5_minus	LN:115
+@SQ	SN:frozen1_mmI_15_plus	LN:113
+@SQ	SN:frozen1_mmI_15_minus	LN:113
+@SQ	SN:frozen1_mmD_15_plus	LN:115
+@SQ	SN:frozen1_mmD_15_minus	LN:115
+@SQ	SN:frozen2_exact_plus	LN:114
+@SQ	SN:frozen2_exact_minus	LN:114
+@SQ	SN:frozen2_mm_0_plus	LN:114
+@SQ	SN:frozen2_mm_0_minus	LN:114
+@SQ	SN:frozen2_mm_4_plus	LN:114
+@SQ	SN:frozen2_mm_4_minus	LN:114
+@SQ	SN:frozen2_mm_9_plus	LN:114
+@SQ	SN:frozen2_mm_9_minus	LN:114
+@SQ	SN:frozen2_mm_14_plus	LN:114
+@SQ	SN:frozen2_mm_14_minus	LN:114
+@SQ	SN:frozen2_mm_19_plus	LN:114
+@SQ	SN:frozen2_mm_19_minus	LN:114
+@SQ	SN:frozen2_four_a_plus	LN:114
+@SQ	SN:frozen2_four_a_minus	LN:114
+@SQ	SN:frozen2_four_b_plus	LN:114
+@SQ	SN:frozen2_four_b_minus	LN:114
+@SQ	SN:frozen2_I_0_plus	LN:113
+@SQ	SN:frozen2_I_0_minus	LN:113
+@SQ	SN:frozen2_D_0_plus	LN:115
+@SQ	SN:frozen2_D_0_minus	LN:115
+@SQ	SN:frozen2_I_5_plus	LN:113
+@SQ	SN:frozen2_I_5_minus	LN:113
+@SQ	SN:frozen2_D_5_plus	LN:115
+@SQ	SN:frozen2_D_5_minus	LN:115
+@SQ	SN:frozen2_I_10_plus	LN:113
+@SQ	SN:frozen2_I_10_minus	LN:113
+@SQ	SN:frozen2_D_10_plus	LN:115
+@SQ	SN:frozen2_D_10_minus	LN:115
+@SQ	SN:frozen2_I_15_plus	LN:113
+@SQ	SN:frozen2_I_15_minus	LN:113
+@SQ	SN:frozen2_D_15_plus	LN:115
+@SQ	SN:frozen2_D_15_minus	LN:115
+@SQ	SN:frozen2_I_19_plus	LN:113
+@SQ	SN:frozen2_I_19_minus	LN:113
+@SQ	SN:frozen2_D_19_plus	LN:115
+@SQ	SN:frozen2_D_19_minus	LN:115
+@SQ	SN:frozen2_mmI_5_plus	LN:113
+@SQ	SN:frozen2_mmI_5_minus	LN:113
+@SQ	SN:frozen2_mmD_5_plus	LN:115
+@SQ	SN:frozen2_mmD_5_minus	LN:115
+@SQ	SN:frozen2_mmI_15_plus	LN:113
+@SQ	SN:frozen2_mmI_15_minus	LN:113
+@SQ	SN:frozen2_mmD_15_plus	LN:115
+@SQ	SN:frozen2_mmD_15_minus	LN:115
+@SQ	SN:repeat_exact_plus	LN:114
+@SQ	SN:repeat_exact_minus	LN:114
+@SQ	SN:repeat_mm_0_plus	LN:114
+@SQ	SN:repeat_mm_0_minus	LN:114
+@SQ	SN:repeat_mm_4_plus	LN:114
+@SQ	SN:repeat_mm_4_minus	LN:114
+@SQ	SN:repeat_mm_9_plus	LN:114
+@SQ	SN:repeat_mm_9_minus	LN:114
+@SQ	SN:repeat_mm_14_plus	LN:114
+@SQ	SN:repeat_mm_14_minus	LN:114
+@SQ	SN:repeat_mm_19_plus	LN:114
+@SQ	SN:repeat_mm_19_minus	LN:114
+@SQ	SN:repeat_four_a_plus	LN:114
+@SQ	SN:repeat_four_a_minus	LN:114
+@SQ	SN:repeat_four_b_plus	LN:114
+@SQ	SN:repeat_four_b_minus	LN:114
+@SQ	SN:repeat_I_0_plus	LN:113
+@SQ	SN:repeat_I_0_minus	LN:113
+@SQ	SN:repeat_D_0_plus	LN:115
+@SQ	SN:repeat_D_0_minus	LN:115
+@SQ	SN:repeat_I_5_plus	LN:113
+@SQ	SN:repeat_I_5_minus	LN:113
+@SQ	SN:repeat_D_5_plus	LN:115
+@SQ	SN:repeat_D_5_minus	LN:115
+@SQ	SN:repeat_I_10_plus	LN:113
+@SQ	SN:repeat_I_10_minus	LN:113
+@SQ	SN:repeat_D_10_plus	LN:115
+@SQ	SN:repeat_D_10_minus	LN:115
+@SQ	SN:repeat_I_15_plus	LN:113
+@SQ	SN:repeat_I_15_minus	LN:113
+@SQ	SN:repeat_D_15_plus	LN:115
+@SQ	SN:repeat_D_15_minus	LN:115
+@SQ	SN:repeat_I_19_plus	LN:113
+@SQ	SN:repeat_I_19_minus	LN:113
+@SQ	SN:repeat_D_19_plus	LN:115
+@SQ	SN:repeat_D_19_minus	LN:115
+@SQ	SN:repeat_mmI_5_plus	LN:113
+@SQ	SN:repeat_mmI_5_minus	LN:113
+@SQ	SN:repeat_mmD_5_plus	LN:115
+@SQ	SN:repeat_mmD_5_minus	LN:115
+@SQ	SN:repeat_mmI_15_plus	LN:113
+@SQ	SN:repeat_mmI_15_minus	LN:113
+@SQ	SN:repeat_mmD_15_plus	LN:115
+@SQ	SN:repeat_mmD_15_minus	LN:115
+@SQ	SN:overlap_exact_plus	LN:114
+@SQ	SN:overlap_exact_minus	LN:114
+frozen1	0	frozen1_I_0_plus	45	1	20M	*	0	0	TCTAGCGTTTAACTTCTTCG	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen1	256	frozen1_exact_plus	46	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen1	256	frozen1_D_0_plus	47	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen1	272	frozen1_D_0_minus	50	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen1	272	frozen1_exact_minus	50	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen2	0	frozen2_D_0_plus	47	1	20M	*	0	0	TGCCACCAATACCCTTTGGA	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen2	256	frozen2_exact_plus	46	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen2	256	frozen2_I_19_plus	46	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen2	272	frozen2_D_0_minus	50	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen2	272	frozen2_exact_minus	50	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+frozen2	272	frozen2_I_19_minus	49	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+repeat	0	repeat_exact_plus	46	1	20M	*	0	0	ACACACACACACACACACAC	*	AS:i:0	NM:i:0	PG:Z:Columba
+repeat	256	repeat_I_0_plus	45	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+repeat	256	repeat_D_0_plus	47	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+repeat	272	repeat_D_0_minus	50	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+repeat	272	repeat_exact_minus	50	1	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+overlap_a	0	overlap_exact_plus	46	3	20M	*	0	0	GCTAACGTAGCTAGCATCGT	*	AS:i:0	NM:i:0	PG:Z:Columba
+overlap_a	272	overlap_exact_minus	50	3	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba
+overlap_b	0	overlap_exact_plus	47	3	20M	*	0	0	CTAACGTAGCTAGCATCGTA	*	AS:i:0	NM:i:0	PG:Z:Columba
+overlap_b	272	overlap_exact_minus	49	3	20M	*	0	0	*	*	AS:i:0	NM:i:0	PG:Z:Columba

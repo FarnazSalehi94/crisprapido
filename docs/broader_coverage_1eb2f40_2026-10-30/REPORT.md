@@ -197,3 +197,10 @@ counted as satisfying the gate. No production binary, old results, index, or
 frozen parameters were overwritten. No merge or CRISPR-Bulge integration was
 performed. The preflight remains blocked by the observed misses, missing
 independent review, and the uncompleted frozen 100-guide / 12-assembly coverage.
+
+## Subsequent development correction
+
+The later [bounded correction report](../bounded_coverage_correction_2026-10-30_v1/REPORT.md)
+traces all 16 sites and records a separately built correction and revalidation.
+The measurements above remain the historical baseline. The frozen preflight
+still does not pass.

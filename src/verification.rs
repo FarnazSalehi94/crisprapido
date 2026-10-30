@@ -481,6 +481,7 @@ fn verify_columba_candidates_impl(
                     candidate_end,
                     seq.len(),
                     guide_fwd.len(),
+                    args.max_bulges,
                     args.max_bulge_size,
                     &mut scratch,
                 );
@@ -530,6 +531,7 @@ fn verify_columba_candidates_impl(
                 candidate_end,
                 seq.len(),
                 guide_fwd.len(),
+                args.max_bulges,
                 args.max_bulge_size,
                 &mut stats,
             );
@@ -758,39 +760,35 @@ fn fallback_intervals(
     original_end: usize,
     contig_len: usize,
     guide_len: usize,
+    max_bulges: u32,
     max_bulge_size: u32,
     stats: &mut ColumbaVerificationStats,
 ) -> Vec<(usize, usize)> {
-    let z = max_bulge_size as usize;
-    let min_span = guide_len.saturating_sub(z).max(1);
-    let max_span = guide_len.saturating_add(z);
-    let mut seen = HashSet::new();
+    // Any target overlapping [original_start, original_end) has start in
+    // [original_start - (max_span - 1), original_end - 1]. Repeats make a
+    // smaller distance based only on mismatch count unjustifiable.
+    let total_gap = (max_bulges as usize).saturating_mul(max_bulge_size as usize);
+    let min_span = guide_len.saturating_sub(total_gap).max(1);
+    let max_span = guide_len.saturating_add(total_gap).min(contig_len);
+    if min_span > max_span || original_start >= original_end || original_start >= contig_len {
+        return Vec::new();
+    }
+    let first = original_start.saturating_sub(max_span - 1);
+    let last = original_end.min(contig_len) - 1;
     let mut intervals = Vec::new();
-
-    let shift_bound = z.saturating_mul(2) as isize;
-    for shift in -shift_bound..=shift_bound {
-        let start = if shift.is_negative() {
-            original_start.saturating_sub(shift.unsigned_abs())
-        } else {
-            original_start.saturating_add(shift as usize)
-        };
-        if start >= contig_len {
-            continue;
-        }
+    for start in first..=last {
         for span in min_span..=max_span {
             stats.raw_alternatives_generated += 1;
-            let Some(end) = start.checked_add(span) else {
-                continue;
-            };
-            if end > contig_len || (start == original_start && end == original_end) {
+            let Some(end) = start.checked_add(span) else { continue; };
+            if end > contig_len
+                || end <= original_start
+                || (start == original_start && end == original_end)
+            {
                 continue;
             }
-            if seen.insert((start, end)) {
-                intervals.push((start, end));
-            }
+            intervals.push((start, end));
         }
     }
-
     stats.unique_alternatives_verified += intervals.len();
     intervals
 }
@@ -860,9 +858,84 @@ fn anchored_candidate_alignment(
             validation.gaps,
             validation.max_gap_size,
         ))
+    } else if max_bulges == 1 && max_bulge_size == 1 && !no_filter {
+        eligible_single_gap_alignment(guide, candidate_span, max_mismatches, min_match_fraction)
     } else {
         None
     }
+}
+
+// End-to-end, at most one single-base gap. Enumerate only the possible gap
+// columns, and choose the best WFA-scored eligible alignment. Called only
+// after WFA's optimal CIGAR fails the independent configured limits.
+fn eligible_single_gap_alignment(
+    guide: &[u8],
+    target: &[u8],
+    max_mismatches: u32,
+    min_match_fraction: f32,
+) -> Option<(i32, String, u32, u32, u32)> {
+    let (op, positions) = if guide.len() == target.len() {
+        (None, 1)
+    } else if guide.len() == target.len().saturating_add(1) {
+        (Some('I'), guide.len())
+    } else if target.len() == guide.len().saturating_add(1) {
+        (Some('D'), target.len())
+    } else {
+        return None;
+    };
+    let mut best: Option<(i32, String, u32, u32, u32)> = None;
+    for gap in 0..positions {
+        let mut qi = 0;
+        let mut ti = 0;
+        let mut cigar = String::with_capacity(guide.len().max(target.len()));
+        while qi < guide.len() || ti < target.len() {
+            if op == Some('I') && qi == gap && qi == ti {
+                cigar.push('I');
+                qi += 1;
+            } else if op == Some('D') && ti == gap && qi == ti {
+                cigar.push('D');
+                ti += 1;
+            } else {
+                if qi >= guide.len() || ti >= target.len() {
+                    break;
+                }
+                cigar.push(if guide[qi] == target[ti] { 'M' } else { 'X' });
+                qi += 1;
+                ti += 1;
+            }
+        }
+        if qi != guide.len() || ti != target.len() {
+            continue;
+        }
+        let validation = validate_cigar_accounting(&cigar, guide, false);
+        if !validation_passes(
+            &validation,
+            guide,
+            max_mismatches,
+            1,
+            1,
+            min_match_fraction,
+            false,
+            false,
+        ) {
+            continue;
+        }
+        let raw_mismatches = cigar.bytes().filter(|&c| c == b'X').count() as i32;
+        let score = -3 * raw_mismatches - if op.is_some() { 6 } else { 0 };
+        let candidate = (
+            score,
+            cigar,
+            validation.mismatches,
+            validation.gaps,
+            validation.max_gap_size,
+        );
+        if best.as_ref().map_or(true, |b| {
+            candidate.0 > b.0 || (candidate.0 == b.0 && candidate.1 < b.1)
+        }) {
+            best = Some(candidate);
+        }
+    }
+    best
 }
 
 pub(crate) fn scan_window(
@@ -1946,7 +2019,7 @@ mod tests {
     }
 
     #[test]
-    fn test_imported_incorrect_candidate_cannot_shift_to_nearby_match() {
+    fn test_imported_incorrect_candidate_cannot_shift_to_disjoint_match() {
         let guide = "GAGTCCGAGCAGAAGAAGAA";
         let mut seq = b"CCCCCCCCCCCCCCCCCCCC".to_vec();
         seq.extend_from_slice(guide.as_bytes());
@@ -1964,7 +2037,9 @@ mod tests {
             vec![("chr1".to_string(), seq)],
         );
 
-        assert!(hits.is_empty());
+        assert!(hits.iter().all(|hit| hit.pos < 20 && hit.end_pos() > 0));
+        assert!(!hits.iter().any(|hit| hit.pos == 0 && hit.end_pos() == 20));
+        assert!(!hits.iter().any(|hit| hit.pos == 20 && hit.end_pos() == 40));
     }
 
     #[test]
@@ -2336,5 +2411,60 @@ mod pam_regressions {
         }
         assert_eq!(alignment_reference_span("10=1D10="), 21);
         assert_eq!(alignment_reference_span("10=1I9="), 19);
+    }
+}
+
+#[cfg(test)]
+mod bounded_correctness_regressions {
+    use super::*;
+
+    #[test]
+    fn overlap_bound_includes_every_possible_intersecting_interval() {
+        let mut stats = ColumbaVerificationStats::default();
+        let intervals = fallback_intervals(50, 69, 200, 20, 1, 1, &mut stats);
+        let actual: HashSet<_> = intervals.into_iter().collect();
+        for start in 0..200 {
+            for span in 19..=21 {
+                let end = start + span;
+                if end <= 200 && start < 69 && end > 50 && (start, end) != (50, 69) {
+                    assert!(actual.contains(&(start, end)), "missing {start}..{end}");
+                }
+            }
+        }
+        assert!(actual.iter().all(|&(s, e)| s < 69 && e > 50));
+    }
+
+    #[test]
+    fn eligible_fallback_covers_every_single_gap_position() {
+        let guide = b"TGCCACCAATACCCTTTGGA";
+        for gap in 0..guide.len() {
+            let mut target = guide.to_vec();
+            target.remove(gap);
+            let hit = eligible_single_gap_alignment(guide, &target, 0, 0.75)
+                .expect("each guide insertion position is eligible");
+            assert_eq!((hit.2, hit.3, hit.4), (0, 1, 1));
+            assert_eq!(alignment_reference_span(&hit.1), target.len());
+        }
+        for gap in 0..=guide.len() {
+            let mut target = guide.to_vec();
+            target.insert(gap, b'A');
+            let hit = eligible_single_gap_alignment(guide, &target, 0, 0.75)
+                .expect("each reference deletion position is eligible");
+            assert_eq!((hit.2, hit.3, hit.4), (0, 1, 1));
+            assert_eq!(alignment_reference_span(&hit.1), target.len());
+        }
+    }
+
+    #[test]
+    fn rejected_wavefront_recovers_eligible_mismatch_alignment() {
+        let guide = b"TGCCACCAATACCCTTTGGA";
+        let target = b"TGCCACCAATCCCTTTGGAA";
+        let mut aligner = AffineWavefronts::with_penalties(0, 3, 5, 1);
+        let hit = anchored_candidate_alignment(&mut aligner, guide, target, 4, 1, 1, 0.75, false)
+            .expect("four mismatches are within the frozen limits");
+        assert_eq!(hit.2, 4);
+        assert_eq!(hit.3, 0);
+        assert_eq!(hit.1.chars().filter(|&x| x == 'X').count(), 4);
+        assert!(eligible_single_gap_alignment(guide, target, 3, 0.75).is_none());
     }
 }

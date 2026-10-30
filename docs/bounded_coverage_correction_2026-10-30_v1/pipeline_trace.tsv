@@ -1,0 +1,17 @@
+panel	guide	contig	strand	pam_start	pam_end	pam	raw_start	raw_end	raw_sam_cigar	target_start	target_end	start_offset	oracle_cigar	oracle_mismatches	oracle_edit_distance	oracle_score_cost	selected_wfa_cigar	selected_wfa_mismatches	selected_wfa_edit_distance	selected_wfa_score_cost	selected_wfa_gaps	selected_wfa_max_gap_size	old_diagnosis	corrected_start	corrected_end	corrected_cigar
+synthetic	frozen2	frozen2_I_10_minus	-	45	48	GGG	49	68	9M1I10M	48	67	-1	1I9=1X2=1X2=1X1=1X1=	4	5	18	IMMMMMMMMMIMMMMMMMMMD	0	3	18	3	1	all_oracle_intervals_rejected_by_selected_wfa_alignment	48	68	10=1X2=1X2=1X1=1X1=
+synthetic	frozen2	frozen2_I_10_plus	+	65	68	GGG	45	64	10M1I9M	45	65	0	10=1X2=1X2=1X1=1X1=	4	4	12	MMMMMMMMMMIMMMMMMMMMD	0	2	12	2	1	all_oracle_intervals_rejected_by_selected_wfa_alignment	45	65	10=1X2=1X2=1X1=1X1=
+synthetic	repeat	repeat_D_19_minus	-	45	48	GGG	51	70	1I19M	48	67	-3	1I16=3X	3	4	15	IMMMMMMMMMMMMMMMMXXX	3	4	15	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	48	68	17=3X
+synthetic	repeat	repeat_D_5_minus	-	41	44	CGG	49	70	15M1D5M	44	63	-5	15=1I4X	4	5	18	MMMMMMMMMMMMMMMIXXXX	4	5	18	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	44	63	15=1I4X
+synthetic	repeat	repeat_D_5_plus	+	67	70	GGG	45	66	5M1D15M	48	67	3	3X16=1I	3	4	15	XXXMMMMMMMMMMMMMMMMI	3	4	15	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	48	67	3X16=1I
+synthetic	repeat	repeat_I_19_minus	-	42	45	GGG	49	68	1I19M	45	64	-4	15=1I1=3X	3	4	15	MMMMMMMMMMMMMMMIMXXX	3	4	15	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	45	64	15=1I1=3X
+synthetic	repeat	repeat_I_19_minus	-	43	46	GGG	49	68	1I19M	46	65	-3	1I16=3X	3	4	15	IMMMMMMMMMMMMMMMMXXX	3	4	15	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	46	66	17=3X
+synthetic	repeat	repeat_I_5_minus	-	40	43	AGG	49	68	14M1I5M	43	62	-6	1I14=3X1=1X	4	5	18	IMMMMMMMMMMMMMMXXXMX	4	5	18	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	43	63	15=3X1=1X
+synthetic	repeat	repeat_I_5_minus	-	45	48	GGG	49	68	14M1I5M	48	67	-1	4X15=1I	4	5	18	IMMMMIMMMMMMMMMMMMMMD	0	3	18	3	1	all_oracle_intervals_rejected_by_selected_wfa_alignment	48	67	4X15=1I
+synthetic	repeat	repeat_I_5_plus	+	65	68	GGG	45	64	5M1I14M	46	65	1	4X15=1I	4	5	18	IMMMMIMMMMMMMMMMMMMMD	0	3	18	3	1	all_oracle_intervals_rejected_by_selected_wfa_alignment	46	65	4X15=1I
+synthetic	repeat	repeat_exact_plus	+	70	73	AGG	45	65	20M	49	70	4	17=1D3X	3	4	15	MMMMMMMMMMMMMMMMMDXXX	3	4	15	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	49	70	17=1D3X
+synthetic	repeat	repeat_four_a_minus	-	43	46	GGG	49	67	9M1I1M1I8M	46	67	-3	3=1X4=1X4=1X5=1D1X	4	5	18	MMMXMMMMXMMMMXMMMMMDX	4	5	18	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	46	67	3=1X4=1X4=1X5=1D1X
+synthetic	repeat	repeat_four_b_minus	-	45	48	GGG	51	69	13M1I1M1I4M	48	67	-3	2=1X4=1X4=1X4=1X1=1I	4	5	18	MMXMMMMXMMMMXMMMMXMI	4	5	18	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	48	67	2=1X4=1X4=1X4=1X1=1I
+synthetic	repeat	repeat_mm_0_minus	-	39	42	GGG	48	67	1I19M	42	61	-6	13=3X1=1I1=1X	4	5	18	MMMMMMMMMMMMMXXXMIMX	4	5	18	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	42	61	13=3X1=1I1=1X
+synthetic	repeat	repeat_mm_0_minus	-	40	43	AGG	48	67	1I19M	43	62	-5	1I14=3X1=1X	4	5	18	IMMMMMMMMMMMMMMXXXMX	4	5	18	1	1	accepted_intervals_start_beyond_two_base_candidate_expansion	43	63	15=3X1=1X
+real	r3_I	GRCh38_window_1	+	136	139	GGG	115	134	10M1I9M	115	136	0	10=3X2=1X1=1D3=	4	5	18	MMMMMMMMMMIMMMMMMMMMDD	0	3	13	2	2	all_oracle_intervals_rejected_by_selected_wfa_alignment	115	136	10=3X2=1X1=1D3=
