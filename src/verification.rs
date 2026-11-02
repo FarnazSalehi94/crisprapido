@@ -858,16 +858,96 @@ fn anchored_candidate_alignment(
             validation.gaps,
             validation.max_gap_size,
         ))
-    } else if max_bulges == 1 && max_bulge_size == 1 && !no_filter {
-        eligible_single_gap_alignment(guide, candidate_span, max_mismatches, min_match_fraction)
+    } else if max_bulges == 1 && max_bulge_size > 0 && !no_filter {
+        eligible_one_gap_alignment(
+            guide,
+            candidate_span,
+            max_mismatches,
+            max_bulge_size,
+            min_match_fraction,
+        )
     } else {
         None
     }
 }
 
-// End-to-end, at most one single-base gap. Enumerate only the possible gap
-// columns, and choose the best WFA-scored eligible alignment. Called only
-// after WFA's optimal CIGAR fails the independent configured limits.
+// Enumerate end-to-end alignments with at most one contiguous gap, bounded by
+// sequence length and the configured gap size. WFA remains the fast path.
+fn eligible_one_gap_alignment(
+    guide: &[u8],
+    target: &[u8],
+    max_mismatches: u32,
+    max_bulge_size: u32,
+    min_match_fraction: f32,
+) -> Option<(i32, String, u32, u32, u32)> {
+    let gap_size = guide.len().abs_diff(target.len());
+    if gap_size > max_bulge_size as usize {
+        return None;
+    }
+    if gap_size <= 1 {
+        return eligible_single_gap_alignment(guide, target, max_mismatches, min_match_fraction);
+    }
+    let op = if guide.len() > target.len() {
+        Some('I')
+    } else if target.len() > guide.len() {
+        Some('D')
+    } else {
+        None
+    };
+    let positions = if op.is_none() {
+        1
+    } else {
+        guide.len().min(target.len()) + 1
+    };
+    let non_n_positions = guide.iter().filter(|&&b| b != b'N').count();
+    let mut best: Option<(i32, String, u32, u32, u32)> = None;
+    for gap in 0..positions {
+        let mut qi = 0;
+        let mut ti = 0;
+        let mut cigar = String::with_capacity(guide.len().max(target.len()));
+        while qi < guide.len() || ti < target.len() {
+            if op == Some('I') && qi == gap && ti == gap {
+                cigar.extend(std::iter::repeat('I').take(gap_size));
+                qi += gap_size;
+            } else if op == Some('D') && qi == gap && ti == gap {
+                cigar.extend(std::iter::repeat('D').take(gap_size));
+                ti += gap_size;
+            } else {
+                if qi >= guide.len() || ti >= target.len() {
+                    break;
+                }
+                cigar.push(if guide[qi] == target[ti] { 'M' } else { 'X' });
+                qi += 1;
+                ti += 1;
+            }
+        }
+        if qi != guide.len() || ti != target.len() {
+            continue;
+        }
+        let v = validate_cigar_accounting(&cigar, guide, false);
+        let percentage = if non_n_positions > 0 {
+            v.matches as f32 / non_n_positions as f32 * 100.0
+        } else {
+            0.0
+        };
+        if v.matches == 0
+            || v.mismatches > max_mismatches
+            || !(percentage >= min_match_fraction * 100.0)
+        {
+            continue;
+        }
+        let raw_mismatches = cigar.bytes().filter(|&c| c == b'X').count() as i32;
+        let score = -3 * raw_mismatches - if op.is_some() { 5 + gap_size as i32 } else { 0 };
+        let candidate = (score, cigar, v.mismatches, v.gaps, v.max_gap_size);
+        if best.as_ref().map_or(true, |b| {
+            candidate.0 > b.0 || (candidate.0 == b.0 && candidate.1 < b.1)
+        }) {
+            best = Some(candidate);
+        }
+    }
+    best
+}
+
 fn eligible_single_gap_alignment(
     guide: &[u8],
     target: &[u8],
@@ -2472,6 +2552,37 @@ mod bounded_correctness_regressions {
             let hit = eligible_single_gap_alignment(guide, &target, 0, 0.75)
                 .expect("each reference deletion position is eligible");
             assert_eq!((hit.2, hit.3, hit.4), (0, 1, 1));
+            assert_eq!(alignment_reference_span(&hit.1), target.len());
+        }
+    }
+
+    #[test]
+    fn default_two_base_limit_recovers_eligible_alignment_when_wfa_is_ineligible() {
+        let guide = b"TGCCACCAATACCCTTTGGA";
+        let target = b"TGCCACCAATCCCTTTGGAA";
+        let mut aligner = AffineWavefronts::with_penalties(0, 3, 5, 1);
+        assert!(
+            anchored_candidate_alignment(&mut aligner, guide, target, 5, 1, 2, 0.75, false)
+                .is_some()
+        );
+    }
+
+    #[test]
+    fn two_base_gap_positions_and_eligibility() {
+        let guide = b"TGCCACCAATACCCTTTGGA";
+        for gap in 0..=guide.len() - 2 {
+            let mut target = guide.to_vec();
+            target.drain(gap..gap + 2);
+            let hit = eligible_one_gap_alignment(guide, &target, 0, 2, 0.75).unwrap();
+            assert_eq!((hit.2, hit.3, hit.4), (0, 1, 2));
+            assert_eq!(alignment_reference_span(&hit.1), target.len());
+            assert!(eligible_one_gap_alignment(guide, &target, 0, 1, 0.75).is_none());
+        }
+        for gap in 0..=guide.len() {
+            let mut target = guide.to_vec();
+            target.splice(gap..gap, [b'A', b'C']);
+            let hit = eligible_one_gap_alignment(guide, &target, 0, 2, 0.75).unwrap();
+            assert_eq!((hit.2, hit.3, hit.4), (0, 1, 2));
             assert_eq!(alignment_reference_span(&hit.1), target.len());
         }
     }

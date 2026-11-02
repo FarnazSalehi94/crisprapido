@@ -72,9 +72,10 @@ existing multi-query SAM can instead be supplied with `--columba-sam`.
 
 - `-p, --pam <DINUCLEOTIDE>`: Required final two bases of a complete three-base PAM (default: `GG`, requiring NGG). Use `--allow-noncanonical-pam` for permissive observed-PAM scoring.
 
-- `-m, --max-mismatches <NUM>`: Maximum number of mismatches allowed (default: 4)
+- `-m, --max-mismatches <NUM>`: Maximum number of mismatches allowed (default: 5)
 - `-b, --max-bulges <NUM>`: Maximum number of bulges allowed (default: 1)
 - `-z, --max-bulge-size <NUM>`: Maximum size of each bulge in bp (default: 2)
+- `-f, --min-match-fraction <FRACTION>`: Minimum matching guide fraction (default: 0.75). For a 20-base guide, seven mismatches require `-f 0.65` or lower.
 - `-w, --window-size <NUM>`: Size of sequence window to scan (default: 4x guide length)
 - `-t, --threads <NUM>`: Number of threads to use (default: number of logical CPUs)
 - `--allow-noncanonical-pam`: Keep nonmatching or unavailable PAMs; CFD still uses the actual observed PAM suffix.

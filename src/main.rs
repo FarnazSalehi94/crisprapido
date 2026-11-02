@@ -70,7 +70,7 @@ pub(crate) struct Args {
     allow_noncanonical_pam: bool,
 
     /// Maximum number of mismatches allowed
-    #[arg(short, long, default_value = "4")]
+    #[arg(short, long, default_value = "5")]
     max_mismatches: u32,
 
     /// Maximum number of bulges allowed

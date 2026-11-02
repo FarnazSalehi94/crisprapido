@@ -1,0 +1,59 @@
+[
+  {
+    "m": 5,
+    "fraction": 0.75,
+    "edit_bound": 7,
+    "oracle": 31,
+    "reported": 31,
+    "unique": 31,
+    "recovered": 31,
+    "missed": [],
+    "unexpected": [],
+    "duplicate_count": 0,
+    "independently_audited_records": 31,
+    "deliberate_eligible": 26,
+    "deliberate_recovered": 26,
+    "raw_mapped_by_edit": {
+      "7": 63,
+      "0": 4
+    }
+  },
+  {
+    "m": 6,
+    "fraction": 0.7,
+    "edit_bound": 8,
+    "oracle": 36,
+    "reported": 36,
+    "unique": 36,
+    "recovered": 36,
+    "missed": [],
+    "unexpected": [],
+    "duplicate_count": 0,
+    "independently_audited_records": 36,
+    "deliberate_eligible": 29,
+    "deliberate_recovered": 29,
+    "raw_mapped_by_edit": {
+      "8": 123,
+      "0": 4
+    }
+  },
+  {
+    "m": 7,
+    "fraction": 0.65,
+    "edit_bound": 9,
+    "oracle": 41,
+    "reported": 41,
+    "unique": 41,
+    "recovered": 41,
+    "missed": [],
+    "unexpected": [],
+    "duplicate_count": 0,
+    "independently_audited_records": 41,
+    "deliberate_eligible": 32,
+    "deliberate_recovered": 32,
+    "raw_mapped_by_edit": {
+      "9": 177,
+      "0": 4
+    }
+  }
+]

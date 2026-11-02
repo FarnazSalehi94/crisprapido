@@ -287,3 +287,31 @@ fn invalid_requested_pam_is_rejected_before_opening_reference() {
         assert!(String::from_utf8_lossy(&output.stderr).contains("exactly two DNA bases"));
     }
 }
+
+#[test]
+fn cli_help_exposes_updated_configurable_defaults() {
+    let output = Command::new(env!("CARGO_BIN_EXE_crisprapido"))
+        .arg("--help")
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let help = String::from_utf8(output.stdout).unwrap();
+    for (option, default) in [
+        ("--max-mismatches", "5"),
+        ("--max-bulges", "1"),
+        ("--max-bulge-size", "2"),
+    ] {
+        let section = help
+            .split(option)
+            .nth(1)
+            .expect("option in help")
+            .split("\n  -")
+            .next()
+            .unwrap();
+        assert!(
+            section.contains(&format!("[default: {}]", default)),
+            "{}",
+            section
+        );
+    }
+}
