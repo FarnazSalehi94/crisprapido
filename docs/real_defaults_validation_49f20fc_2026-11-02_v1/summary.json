@@ -1,0 +1,165 @@
+{
+  "implementation_commit": "49f20fc",
+  "binary_sha256": "cb10e5d6be970bb6ef90aac4f2fe5ab035ae2b4d4ce643f28ec32f3895d7e42d",
+  "windows": 4,
+  "total_bp": 8000,
+  "guides": 96,
+  "expected": 204,
+  "reported": 204,
+  "unique_reported": 204,
+  "recovered": 204,
+  "recall": 1.0,
+  "precision": 1.0,
+  "duplicates": 0,
+  "missed": [],
+  "unexpected": [],
+  "designed_total": 96,
+  "designed_recovered": 96,
+  "categories": {
+    "D1": {
+      "expected": 19,
+      "recovered": 19
+    },
+    "D1_mm1": {
+      "expected": 36,
+      "recovered": 36
+    },
+    "D1_mm2": {
+      "expected": 52,
+      "recovered": 52
+    },
+    "D1_mm3": {
+      "expected": 68,
+      "recovered": 68
+    },
+    "D1_mm4": {
+      "expected": 92,
+      "recovered": 92
+    },
+    "D1_mm5": {
+      "expected": 132,
+      "recovered": 132
+    },
+    "D2": {
+      "expected": 19,
+      "recovered": 19
+    },
+    "D2_mm1": {
+      "expected": 32,
+      "recovered": 32
+    },
+    "D2_mm2": {
+      "expected": 56,
+      "recovered": 56
+    },
+    "D2_mm3": {
+      "expected": 72,
+      "recovered": 72
+    },
+    "D2_mm4": {
+      "expected": 92,
+      "recovered": 92
+    },
+    "D2_mm5": {
+      "expected": 122,
+      "recovered": 122
+    },
+    "I1": {
+      "expected": 25,
+      "recovered": 25
+    },
+    "I1_mm1": {
+      "expected": 45,
+      "recovered": 45
+    },
+    "I1_mm2": {
+      "expected": 63,
+      "recovered": 63
+    },
+    "I1_mm3": {
+      "expected": 92,
+      "recovered": 92
+    },
+    "I1_mm4": {
+      "expected": 133,
+      "recovered": 133
+    },
+    "I2": {
+      "expected": 29,
+      "recovered": 29
+    },
+    "I2_mm1": {
+      "expected": 52,
+      "recovered": 52
+    },
+    "I2_mm2": {
+      "expected": 82,
+      "recovered": 82
+    },
+    "I2_mm3": {
+      "expected": 115,
+      "recovered": 115
+    },
+    "exact": {
+      "expected": 9,
+      "recovered": 9
+    },
+    "mismatch_1": {
+      "expected": 12,
+      "recovered": 12
+    },
+    "mismatch_2": {
+      "expected": 13,
+      "recovered": 13
+    },
+    "mismatch_3": {
+      "expected": 13,
+      "recovered": 13
+    },
+    "mismatch_4": {
+      "expected": 19,
+      "recovered": 19
+    },
+    "mismatch_5": {
+      "expected": 31,
+      "recovered": 31
+    }
+  },
+  "groups": {
+    "CHM13_nonrepeat_candidate_+": {
+      "expected": 18,
+      "recovered": 18
+    },
+    "CHM13_nonrepeat_candidate_-": {
+      "expected": 15,
+      "recovered": 15
+    },
+    "CHM13_repeat_candidate_+": {
+      "expected": 30,
+      "recovered": 30
+    },
+    "CHM13_repeat_candidate_-": {
+      "expected": 37,
+      "recovered": 37
+    },
+    "GRCh38_nonrepeat_candidate_+": {
+      "expected": 24,
+      "recovered": 24
+    },
+    "GRCh38_nonrepeat_candidate_-": {
+      "expected": 12,
+      "recovered": 12
+    },
+    "GRCh38_repeat_candidate_+": {
+      "expected": 36,
+      "recovered": 36
+    },
+    "GRCh38_repeat_candidate_-": {
+      "expected": 32,
+      "recovered": 32
+    }
+  },
+  "oracle_seconds": 11.282775746192783,
+  "search_seconds": 13.482073864899576,
+  "independently_audited": 204
+}

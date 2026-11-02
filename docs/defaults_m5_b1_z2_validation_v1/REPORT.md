@@ -65,3 +65,10 @@ miss a different eligible alignment. The original independent-review and
 preflight requirements remain open. The previously validated four-mismatch,
 one-base-bulge resource results must not be reused as performance estimates
 for the new defaults.
+
+## Subsequent real-reference validation
+
+The [bounded CHM13 and GRCh38 panel](../real_defaults_validation_49f20fc_2026-11-02_v1/REPORT.md)
+recovered 204/204 independent PAM anchors, including the requested mismatch and
+one- and two-base bulge classes on both strands. These results do not establish
+whole-genome sensitivity or resource requirements for the new defaults.
