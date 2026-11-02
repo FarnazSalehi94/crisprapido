@@ -141,3 +141,13 @@ Python tests passed. No application source or production binary was changed;
 no full search, merge or CRISPR-Bulge integration occurred. Large FASTAs,
 indexes and per-run raw files remain in the separate versioned directory
 `/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/`.
+
+## Subsequent controlled whole-assembly pilot
+
+The separately versioned [whole-assembly pilot](../whole_assembly_pilot_0aa9944_2026-11-02_v1/REPORT.md)
+completed two guides each on CHM13 and GRCh38. All four exact truth sites were
+recovered and all 13,067 emitted rows passed independent audit. The observed
+search-only mean was 362.52 seconds per guide/assembly with four CPUs
+requested. Those four runs do not establish complete search sensitivity or a
+worst-case resource bound. The frozen preflight gate remains open and
+independent review remains outstanding.

@@ -1,0 +1,79 @@
+{
+  "assembly": "CHM13",
+  "guide": "MED6_TGCCACCAATACCCTTTGGA",
+  "search_wall_seconds": 320.69816418294795,
+  "raw_mapped_e5": 219251,
+  "raw_mapped_e0": 1,
+  "unique_candidate_keys": 219251,
+  "wfa2_calls_replay": 24366556,
+  "reported_records": 3540,
+  "exact": {
+    "oracle_loci": 1,
+    "raw_mapped_rows": 1,
+    "strict_sam_loci": 1,
+    "recovered": 1,
+    "recall": 1.0,
+    "precision": 1.0,
+    "missed": [],
+    "unexpected": [],
+    "rejected_sam_rows": [],
+    "per_guide": {
+      "MED6_TGCCACCAATACCCTTTGGA": {
+        "truth": 1,
+        "recovered": 1
+      }
+    },
+    "final_exact_truth_anchors_recovered": 1
+  },
+  "profile": {
+    "columba_wait": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "expansion_enumeration": {
+      "calls": 219251,
+      "nanoseconds": 219996690
+    },
+    "wfa_align": {
+      "calls": 24366556,
+      "nanoseconds": 215132191925
+    },
+    "eligible_enumeration": {
+      "calls": 24280716,
+      "nanoseconds": 28736865741
+    },
+    "pam_extract": {
+      "calls": 357963,
+      "nanoseconds": 34951510
+    },
+    "cfd_score": {
+      "calls": 3540,
+      "nanoseconds": 7453531
+    },
+    "representative_selection": {
+      "calls": 1,
+      "nanoseconds": 22880926
+    },
+    "unused": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_lookup": {
+      "calls": 24366556,
+      "nanoseconds": 0
+    },
+    "cache_hit": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_miss": {
+      "calls": 24366556,
+      "nanoseconds": 0
+    },
+    "total_wall": {
+      "calls": 1,
+      "nanoseconds": 295881350904
+    }
+  },
+  "search_time_file": "/moosefs/salehi/HPRCv2_CRISPRapido/results/whole_assembly_resource_pilot_0aa9944_20261102_v1/runs/CHM13/MED6_TGCCACCAATACCCTTTGGA/search.time"
+}

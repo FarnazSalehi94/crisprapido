@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "assemblies": 12,
+  "components": 144,
+  "files": 181,
+  "bytes_read": 149003337963,
+  "elapsed_seconds": 1110.1624670920428,
+  "rate_mib_per_second": 128.0
+}

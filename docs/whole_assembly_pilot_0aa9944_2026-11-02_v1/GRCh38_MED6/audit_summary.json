@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "rows": 3531,
+  "errors": 0,
+  "provenance": {
+    "paf": "/moosefs/salehi/HPRCv2_CRISPRapido/results/whole_assembly_resource_pilot_0aa9944_20261102_v1/runs/GRCh38/MED6_TGCCACCAATACCCTTTGGA/actual.paf",
+    "fasta": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_GRCh38/input/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz",
+    "guides": "/moosefs/salehi/HPRCv2_CRISPRapido/results/whole_assembly_resource_pilot_0aa9944_20261102_v1/inputs/MED6_TGCCACCAATACCCTTTGGA.fa",
+    "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+    "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+    "batch_size": 500,
+    "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+    "paf_sha256": "ff9fda0cb60f3d203702ffabd34d6e2a9e72046eba5bf8190356ff99652895dc",
+    "guide_sha256": "64d8120fc406f93de3563199f34bc0f0ff57041c01d10044c727032c35644acb",
+    "fai_sha256": "c832c3bfb29ae0ae00371949b514a6596d8645858d22b388207ebfa823e54d39",
+    "matrix_sha256": {
+      "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+      "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+    }
+  },
+  "counts": {
+    "verified": 3531,
+    "strand_+": 1774,
+    "SCORED": 3531,
+    "bulged": 3426,
+    "CFD_ge_020": 112,
+    "CFD_lt_020": 3419,
+    "ungapped": 105,
+    "strand_-": 1757
+  },
+  "per_guide": {
+    "MED6_TGCCACCAATACCCTTTGGA": {
+      "verified": 3531,
+      "strand_+": 1774,
+      "strand_-": 1757
+    }
+  },
+  "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+}

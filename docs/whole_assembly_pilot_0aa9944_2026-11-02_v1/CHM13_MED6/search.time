@@ -1,0 +1,23 @@
+	Command being timed: "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release/crisprapido -r /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/input/chm13v2.0_maskedY_rCRS.fa.PanSN.fa.gz -G /moosefs/salehi/HPRCv2_CRISPRapido/results/whole_assembly_resource_pilot_0aa9944_20261102_v1/inputs/MED6_TGCCACCAATACCCTTTGGA.fa -p GG -m 4 -b 1 -z 1 -f 0.75 -t 4 --mismatch-scores /export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release/mismatch_scores.txt --pam-scores /export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release/pam_scores.txt --columba-bin /moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba-runtime --columba-index /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN --keep-columba-sam"
+	User time (seconds): 287.62
+	System time (seconds): 14.22
+	Percent of CPU this job got: 94%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:20.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 11671328
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 5037418
+	Voluntary context switches: 2070599
+	Involuntary context switches: 381
+	Swaps: 0
+	File system inputs: 45808
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

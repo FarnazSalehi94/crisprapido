@@ -1,0 +1,79 @@
+{
+  "assembly": "GRCh38",
+  "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+  "search_wall_seconds": 450.58454664587043,
+  "raw_mapped_e5": 315144,
+  "raw_mapped_e0": 1,
+  "unique_candidate_keys": 315144,
+  "wfa2_calls_replay": 34291273,
+  "reported_records": 2969,
+  "exact": {
+    "oracle_loci": 1,
+    "raw_mapped_rows": 1,
+    "strict_sam_loci": 1,
+    "recovered": 1,
+    "recall": 1.0,
+    "precision": 1.0,
+    "missed": [],
+    "unexpected": [],
+    "rejected_sam_rows": [],
+    "per_guide": {
+      "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+        "truth": 1,
+        "recovered": 1
+      }
+    },
+    "final_exact_truth_anchors_recovered": 1
+  },
+  "profile": {
+    "columba_wait": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "expansion_enumeration": {
+      "calls": 315144,
+      "nanoseconds": 297500489
+    },
+    "wfa_align": {
+      "calls": 34291273,
+      "nanoseconds": 305958456081
+    },
+    "eligible_enumeration": {
+      "calls": 34212691,
+      "nanoseconds": 41183073542
+    },
+    "pam_extract": {
+      "calls": 266980,
+      "nanoseconds": 28505789
+    },
+    "cfd_score": {
+      "calls": 2969,
+      "nanoseconds": 6329816
+    },
+    "representative_selection": {
+      "calls": 1,
+      "nanoseconds": 27409153
+    },
+    "unused": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_lookup": {
+      "calls": 34291273,
+      "nanoseconds": 0
+    },
+    "cache_hit": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_miss": {
+      "calls": 34291273,
+      "nanoseconds": 0
+    },
+    "total_wall": {
+      "calls": 1,
+      "nanoseconds": 419708263345
+    }
+  },
+  "search_time_file": "/moosefs/salehi/HPRCv2_CRISPRapido/results/whole_assembly_resource_pilot_0aa9944_20261102_v1/runs/GRCh38/ELMOD2_TCTAGCGTTTAACTTCTTCG/search.time"
+}

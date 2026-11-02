@@ -39,3 +39,16 @@ inspect Columba candidate absence; independently verify all 16 per-guide
 profiles and audit summaries; assess whether the scale envelope and old full
 plan remain appropriate. Record reviewer identity, exact reviewed revision,
 method, findings and disposition before marking this requirement complete.
+
+## Controlled whole-assembly pilot
+
+A separately versioned [pilot report](../whole_assembly_pilot_0aa9944_2026-11-02_v1/REPORT.md)
+records the frozen-source verification and four completed serialized Slurm
+jobs. The independent exact truth was 4/4 and all 13,067 emitted rows passed
+the auditor; individual searches took 320.70–450.58 seconds, and observed
+maximum process RSS was 11.1–11.2 GiB. The search-only 1,200-process
+extrapolation is roughly 121 serial hours, with substantial uncertainty and
+without auditing or index construction. This does not constitute independent
+review. Reviewers should also
+examine the diagnostic replay equivalence, full-row audit, timing and memory
+measurement limits, and non-random guide selection.
