@@ -1,0 +1,664 @@
+[
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "audit": {
+      "status": "PASS",
+      "rows": 1,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_nonrepeat_candidate/ELMOD2_TCTAGCGTTTAACTTCTTCG/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/CHM13_nonrepeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_nonrepeat_candidate/ELMOD2_TCTAGCGTTTAACTTCTTCG/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "9378f2a5e29b61671312ecb593024ecde61a672b516830e8947bf2bb18a80dc7",
+        "guide_sha256": "6094b8539a8d78ad2c05da9462e9051c0235c613a5b8a95503e0f4a7a983315d",
+        "fai_sha256": "9096ee3f3673d34d9933badde4f3b30b3c7df62f7ee3fd8bd5b7805f60f92932",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 1,
+        "strand_+": 1,
+        "SCORED": 1,
+        "bulged": 1,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 1
+      },
+      "per_guide": {
+        "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+          "verified": 1,
+          "strand_+": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "guide": "MED6_TGCCACCAATACCCTTTGGA",
+    "audit": {
+      "status": "PASS",
+      "rows": 3,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_nonrepeat_candidate/MED6_TGCCACCAATACCCTTTGGA/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/CHM13_nonrepeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_nonrepeat_candidate/MED6_TGCCACCAATACCCTTTGGA/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "0955e8010bef0157dbf85caa923f2080620c4550cea188db8c2db0d584b7c5db",
+        "guide_sha256": "64d8120fc406f93de3563199f34bc0f0ff57041c01d10044c727032c35644acb",
+        "fai_sha256": "9096ee3f3673d34d9933badde4f3b30b3c7df62f7ee3fd8bd5b7805f60f92932",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 3,
+        "strand_+": 1,
+        "SCORED": 3,
+        "bulged": 3,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 3,
+        "strand_-": 2
+      },
+      "per_guide": {
+        "MED6_TGCCACCAATACCCTTTGGA": {
+          "verified": 3,
+          "strand_+": 1,
+          "strand_-": 2
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "guide": "HNRNPC_AAATTCACTTACCTAAAACC",
+    "audit": {
+      "status": "PASS",
+      "rows": 2,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_nonrepeat_candidate/HNRNPC_AAATTCACTTACCTAAAACC/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/CHM13_nonrepeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_nonrepeat_candidate/HNRNPC_AAATTCACTTACCTAAAACC/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "a80a98ac7f404abb2c1a7ef31c265fc1f8379e6b4187dc02a88fe5f93b7becec",
+        "guide_sha256": "6c34c8d76784b635bd3bdc0a24184d68a1884684abce8098ff45b67bac3de356",
+        "fai_sha256": "9096ee3f3673d34d9933badde4f3b30b3c7df62f7ee3fd8bd5b7805f60f92932",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 2,
+        "strand_+": 1,
+        "SCORED": 2,
+        "bulged": 2,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 2,
+        "strand_-": 1
+      },
+      "per_guide": {
+        "HNRNPC_AAATTCACTTACCTAAAACC": {
+          "verified": 2,
+          "strand_+": 1,
+          "strand_-": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "guide": "PPIP5K2_CATAGCTGTTATACGTCATG",
+    "audit": {
+      "status": "PASS",
+      "rows": 3,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_nonrepeat_candidate/PPIP5K2_CATAGCTGTTATACGTCATG/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/CHM13_nonrepeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_nonrepeat_candidate/PPIP5K2_CATAGCTGTTATACGTCATG/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "fab0e23f052ab002eede1c0a8012572258ea8b8355785561eb126c929c9dd40f",
+        "guide_sha256": "2ec522a72d9f186767bba1a52b09b65acdd60491924d0e3fe808e63d7e794919",
+        "fai_sha256": "9096ee3f3673d34d9933badde4f3b30b3c7df62f7ee3fd8bd5b7805f60f92932",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 3,
+        "strand_+": 2,
+        "SCORED": 3,
+        "bulged": 3,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 3,
+        "strand_-": 1
+      },
+      "per_guide": {
+        "PPIP5K2_CATAGCTGTTATACGTCATG": {
+          "verified": 3,
+          "strand_+": 2,
+          "strand_-": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "audit": {
+      "status": "PASS",
+      "rows": 2,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_repeat_candidate/ELMOD2_TCTAGCGTTTAACTTCTTCG/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/CHM13_repeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_repeat_candidate/ELMOD2_TCTAGCGTTTAACTTCTTCG/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "e4597b7d5dc69f7de0fc77aa0eb09648434e060231305cc1d8f8c119ba8da11c",
+        "guide_sha256": "6094b8539a8d78ad2c05da9462e9051c0235c613a5b8a95503e0f4a7a983315d",
+        "fai_sha256": "9693457c46d3e5c952920c67d54fac4ffde6b3ceb00c98fe9178172d8e0f0438",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 2,
+        "strand_+": 1,
+        "SCORED": 2,
+        "bulged": 2,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 2,
+        "strand_-": 1
+      },
+      "per_guide": {
+        "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+          "verified": 2,
+          "strand_+": 1,
+          "strand_-": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "guide": "MED6_TGCCACCAATACCCTTTGGA",
+    "audit": {
+      "status": "PASS",
+      "rows": 1,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_repeat_candidate/MED6_TGCCACCAATACCCTTTGGA/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/CHM13_repeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_repeat_candidate/MED6_TGCCACCAATACCCTTTGGA/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "27fcb2a7a799121ba9e445c4dcd15f2694ecd37c96bdebc73ec7001e166d2ec3",
+        "guide_sha256": "64d8120fc406f93de3563199f34bc0f0ff57041c01d10044c727032c35644acb",
+        "fai_sha256": "9693457c46d3e5c952920c67d54fac4ffde6b3ceb00c98fe9178172d8e0f0438",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 1,
+        "strand_-": 1,
+        "SCORED": 1,
+        "bulged": 1,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 1
+      },
+      "per_guide": {
+        "MED6_TGCCACCAATACCCTTTGGA": {
+          "verified": 1,
+          "strand_-": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "guide": "HNRNPC_AAATTCACTTACCTAAAACC",
+    "audit": {
+      "status": "PASS",
+      "rows": 6,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_repeat_candidate/HNRNPC_AAATTCACTTACCTAAAACC/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/CHM13_repeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_repeat_candidate/HNRNPC_AAATTCACTTACCTAAAACC/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "ac6bc5e1618e8902ad2ead12974a4f56938edc5300019d89d9cc18b35fb4c32f",
+        "guide_sha256": "6c34c8d76784b635bd3bdc0a24184d68a1884684abce8098ff45b67bac3de356",
+        "fai_sha256": "9693457c46d3e5c952920c67d54fac4ffde6b3ceb00c98fe9178172d8e0f0438",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 6,
+        "strand_-": 6,
+        "SCORED": 6,
+        "bulged": 6,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 6
+      },
+      "per_guide": {
+        "HNRNPC_AAATTCACTTACCTAAAACC": {
+          "verified": 6,
+          "strand_-": 6
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "guide": "PPIP5K2_CATAGCTGTTATACGTCATG",
+    "audit": {
+      "status": "PASS",
+      "rows": 3,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_repeat_candidate/PPIP5K2_CATAGCTGTTATACGTCATG/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/CHM13_repeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/CHM13_repeat_candidate/PPIP5K2_CATAGCTGTTATACGTCATG/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "3ec80627c209c1afd3e94c91ab73dff9b84df645762c55f038639211f5843a75",
+        "guide_sha256": "2ec522a72d9f186767bba1a52b09b65acdd60491924d0e3fe808e63d7e794919",
+        "fai_sha256": "9693457c46d3e5c952920c67d54fac4ffde6b3ceb00c98fe9178172d8e0f0438",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 3,
+        "strand_+": 1,
+        "SCORED": 3,
+        "bulged": 3,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 3,
+        "strand_-": 2
+      },
+      "per_guide": {
+        "PPIP5K2_CATAGCTGTTATACGTCATG": {
+          "verified": 3,
+          "strand_+": 1,
+          "strand_-": 2
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "audit": {
+      "status": "PASS",
+      "rows": 2,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_nonrepeat_candidate/ELMOD2_TCTAGCGTTTAACTTCTTCG/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/GRCh38_nonrepeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_nonrepeat_candidate/ELMOD2_TCTAGCGTTTAACTTCTTCG/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "ff8f995852fd299ed515a0dc6508fe64e1ea726545a6bdd890728e1ad9c12a21",
+        "guide_sha256": "6094b8539a8d78ad2c05da9462e9051c0235c613a5b8a95503e0f4a7a983315d",
+        "fai_sha256": "179e150393798586afc64c0a8ba1e511ba750fc61e4c96122c26a279b7170d92",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 2,
+        "strand_+": 1,
+        "SCORED": 2,
+        "bulged": 2,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 2,
+        "strand_-": 1
+      },
+      "per_guide": {
+        "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+          "verified": 2,
+          "strand_+": 1,
+          "strand_-": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "guide": "MED6_TGCCACCAATACCCTTTGGA",
+    "audit": {
+      "status": "PASS",
+      "rows": 3,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_nonrepeat_candidate/MED6_TGCCACCAATACCCTTTGGA/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/GRCh38_nonrepeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_nonrepeat_candidate/MED6_TGCCACCAATACCCTTTGGA/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "28b9099080ec4f22ef7be49a6a120f01080127692442b4ea0b77c9d81f3ec6a6",
+        "guide_sha256": "64d8120fc406f93de3563199f34bc0f0ff57041c01d10044c727032c35644acb",
+        "fai_sha256": "179e150393798586afc64c0a8ba1e511ba750fc61e4c96122c26a279b7170d92",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 3,
+        "strand_+": 1,
+        "SCORED": 3,
+        "bulged": 3,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 3,
+        "strand_-": 2
+      },
+      "per_guide": {
+        "MED6_TGCCACCAATACCCTTTGGA": {
+          "verified": 3,
+          "strand_+": 1,
+          "strand_-": 2
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "guide": "HNRNPC_AAATTCACTTACCTAAAACC",
+    "audit": {
+      "status": "PASS",
+      "rows": 2,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_nonrepeat_candidate/HNRNPC_AAATTCACTTACCTAAAACC/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/GRCh38_nonrepeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_nonrepeat_candidate/HNRNPC_AAATTCACTTACCTAAAACC/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "3254feede1c0a7c676d6e7f32a1568336cf1b2ae8ae8ecb729b9f143aba035fd",
+        "guide_sha256": "6c34c8d76784b635bd3bdc0a24184d68a1884684abce8098ff45b67bac3de356",
+        "fai_sha256": "179e150393798586afc64c0a8ba1e511ba750fc61e4c96122c26a279b7170d92",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 2,
+        "strand_+": 1,
+        "SCORED": 2,
+        "bulged": 2,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 2,
+        "strand_-": 1
+      },
+      "per_guide": {
+        "HNRNPC_AAATTCACTTACCTAAAACC": {
+          "verified": 2,
+          "strand_+": 1,
+          "strand_-": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "guide": "PPIP5K2_CATAGCTGTTATACGTCATG",
+    "audit": {
+      "status": "PASS",
+      "rows": 3,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_nonrepeat_candidate/PPIP5K2_CATAGCTGTTATACGTCATG/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/GRCh38_nonrepeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_nonrepeat_candidate/PPIP5K2_CATAGCTGTTATACGTCATG/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "debdc5f221c4c3ff3f96f3ebfafef08df7efbedd993aa03571255fc4ea54bc84",
+        "guide_sha256": "2ec522a72d9f186767bba1a52b09b65acdd60491924d0e3fe808e63d7e794919",
+        "fai_sha256": "179e150393798586afc64c0a8ba1e511ba750fc61e4c96122c26a279b7170d92",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 3,
+        "strand_+": 2,
+        "SCORED": 3,
+        "bulged": 3,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 3,
+        "strand_-": 1
+      },
+      "per_guide": {
+        "PPIP5K2_CATAGCTGTTATACGTCATG": {
+          "verified": 3,
+          "strand_+": 2,
+          "strand_-": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "audit": {
+      "status": "PASS",
+      "rows": 2,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_repeat_candidate/ELMOD2_TCTAGCGTTTAACTTCTTCG/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/GRCh38_repeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_repeat_candidate/ELMOD2_TCTAGCGTTTAACTTCTTCG/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "90f66f6233b867ce5d289f69f589bfb559b4b2d54fe2905cc060a636a85674b7",
+        "guide_sha256": "6094b8539a8d78ad2c05da9462e9051c0235c613a5b8a95503e0f4a7a983315d",
+        "fai_sha256": "bfd480cc0a4476cc2f57770dab38e4e1ba0e826e6f93202d1d2d7ab7c6102e8f",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 2,
+        "strand_+": 1,
+        "SCORED": 2,
+        "bulged": 2,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 2,
+        "strand_-": 1
+      },
+      "per_guide": {
+        "ELMOD2_TCTAGCGTTTAACTTCTTCG": {
+          "verified": 2,
+          "strand_+": 1,
+          "strand_-": 1
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "guide": "MED6_TGCCACCAATACCCTTTGGA",
+    "audit": {
+      "status": "PASS",
+      "rows": 2,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_repeat_candidate/MED6_TGCCACCAATACCCTTTGGA/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/GRCh38_repeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_repeat_candidate/MED6_TGCCACCAATACCCTTTGGA/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "790baab990eacdd29d40c9906d8f926cd29269873f0bc76a2914eb4442003512",
+        "guide_sha256": "64d8120fc406f93de3563199f34bc0f0ff57041c01d10044c727032c35644acb",
+        "fai_sha256": "bfd480cc0a4476cc2f57770dab38e4e1ba0e826e6f93202d1d2d7ab7c6102e8f",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 2,
+        "strand_-": 2,
+        "SCORED": 2,
+        "bulged": 2,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 2
+      },
+      "per_guide": {
+        "MED6_TGCCACCAATACCCTTTGGA": {
+          "verified": 2,
+          "strand_-": 2
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "guide": "HNRNPC_AAATTCACTTACCTAAAACC",
+    "audit": {
+      "status": "PASS",
+      "rows": 5,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_repeat_candidate/HNRNPC_AAATTCACTTACCTAAAACC/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/GRCh38_repeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_repeat_candidate/HNRNPC_AAATTCACTTACCTAAAACC/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "8119d7d63c4fc152d60f88e7a2c3a0cbe5ed6525fb954962ad1d37f39dca623e",
+        "guide_sha256": "6c34c8d76784b635bd3bdc0a24184d68a1884684abce8098ff45b67bac3de356",
+        "fai_sha256": "bfd480cc0a4476cc2f57770dab38e4e1ba0e826e6f93202d1d2d7ab7c6102e8f",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 5,
+        "strand_-": 5,
+        "SCORED": 5,
+        "bulged": 5,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 5
+      },
+      "per_guide": {
+        "HNRNPC_AAATTCACTTACCTAAAACC": {
+          "verified": 5,
+          "strand_-": 5
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "guide": "PPIP5K2_CATAGCTGTTATACGTCATG",
+    "audit": {
+      "status": "PASS",
+      "rows": 3,
+      "errors": 0,
+      "provenance": {
+        "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_repeat_candidate/PPIP5K2_CATAGCTGTTATACGTCATG/actual.paf",
+        "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-v2/GRCh38_repeat_candidate/ref.fa",
+        "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/scaling-results/GRCh38_repeat_candidate/PPIP5K2_CATAGCTGTTATACGTCATG/guide.fa",
+        "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+        "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+        "batch_size": 500,
+        "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+        "paf_sha256": "6bee69c1270fe081a53c4cc518549a87245bb36350236942f55547c8c227bce5",
+        "guide_sha256": "2ec522a72d9f186767bba1a52b09b65acdd60491924d0e3fe808e63d7e794919",
+        "fai_sha256": "bfd480cc0a4476cc2f57770dab38e4e1ba0e826e6f93202d1d2d7ab7c6102e8f",
+        "matrix_sha256": {
+          "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+          "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+        }
+      },
+      "counts": {
+        "verified": 3,
+        "strand_+": 1,
+        "SCORED": 3,
+        "bulged": 3,
+        "CFD_ge_020": 0,
+        "CFD_lt_020": 3,
+        "strand_-": 2
+      },
+      "per_guide": {
+        "PPIP5K2_CATAGCTGTTATACGTCATG": {
+          "verified": 3,
+          "strand_+": 1,
+          "strand_-": 2
+        }
+      },
+      "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+    }
+  }
+]

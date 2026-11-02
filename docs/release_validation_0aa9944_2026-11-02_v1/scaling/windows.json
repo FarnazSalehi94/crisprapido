@@ -1,0 +1,46 @@
+[
+  {
+    "name": "CHM13_nonrepeat_candidate",
+    "assembly": "CHM13",
+    "region": "CHM13#0#chr1:100000001-102000000",
+    "stratum_label": "nonrepeat_candidate",
+    "bases": 2000000,
+    "acgt": 2000000,
+    "ambiguous": 0,
+    "period2_matches": 600788,
+    "period2_denominator": 1999998
+  },
+  {
+    "name": "CHM13_repeat_candidate",
+    "assembly": "CHM13",
+    "region": "CHM13#0#chr9:34000001-36000000",
+    "stratum_label": "repeat_candidate",
+    "bases": 2000000,
+    "acgt": 2000000,
+    "ambiguous": 0,
+    "period2_matches": 584848,
+    "period2_denominator": 1999998
+  },
+  {
+    "name": "GRCh38_nonrepeat_candidate",
+    "assembly": "GRCh38",
+    "region": "GRCh38#0#chr1:100000001-102000000",
+    "stratum_label": "nonrepeat_candidate",
+    "bases": 2000000,
+    "acgt": 2000000,
+    "ambiguous": 0,
+    "period2_matches": 599976,
+    "period2_denominator": 1999998
+  },
+  {
+    "name": "GRCh38_repeat_candidate",
+    "assembly": "GRCh38",
+    "region": "GRCh38#0#chr9:34000001-36000000",
+    "stratum_label": "repeat_candidate",
+    "bases": 2000000,
+    "acgt": 2000000,
+    "ambiguous": 0,
+    "period2_matches": 583978,
+    "period2_denominator": 1999998
+  }
+]

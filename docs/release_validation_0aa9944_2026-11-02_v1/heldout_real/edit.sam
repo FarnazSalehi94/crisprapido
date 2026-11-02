@@ -1,0 +1,37 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/index -f /export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/guides.fa -a all -m edit -e 5 -t 1 -o /export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/edit.sam
+@SQ	SN:CHM13_new_1	LN:1000
+@SQ	SN:CHM13_new_2	LN:1000
+@SQ	SN:GRCh38_new_1	LN:1000
+@SQ	SN:GRCh38_new_2	LN:1000
+held_real0_exact	0	CHM13_new_1	224	60	20M	*	0	0	CTTTTTTCTGTCACTGACTT	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_real0_mm4	0	CHM13_new_1	225	60	8M1I9M1I1M	*	0	0	TTTTTTTTTGTCGCTGACAT	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_real0_mm4	256	GRCh38_new_2	71	0	18M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real0_mm4	256	GRCh38_new_2	372	0	9M1I8M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real0_mm4	272	GRCh38_new_2	871	0	1I19M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real0_I	0	CHM13_new_1	224	60	9M1I10M	*	0	0	CTTTTTTCTTGTCACTGACT	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_real0_I	256	GRCh38_new_2	72	0	1I6M1I12M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real0_D	0	CHM13_new_1	223	60	9M1D11M	*	0	0	CCTTTTTTCGTCACTGACTT	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_real1_exact	0	CHM13_new_2	156	60	20M	*	0	0	AATTCCTTCTCTCCTATAGA	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_real1_mm4	0	CHM13_new_2	157	60	1I19M	*	0	0	GATTCCTACTCTTCTATACA	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_real1_mm4	256	CHM13_new_2	127	0	1M1I7M1I5M1D5M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real1_mm4	256	CHM13_new_2	920	0	18M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real1_I	0	CHM13_new_2	156	60	10M1I9M	*	0	0	AATTCCTTCTTCTCCTATAG	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_real1_D	0	CHM13_new_2	155	60	9M1D11M	*	0	0	AAATTCCTTTCTCCTATAGA	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_real2_exact	0	GRCh38_new_1	115	60	20M	*	0	0	CCAACATGCAGCCTGTGCTC	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_real2_exact	256	GRCh38_new_2	350	0	3M1I9M1D1M1I2M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real2_mm4	0	GRCh38_new_1	116	60	1I19M	*	0	0	TCAACATCCAGCTTGTGCAC	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_real2_mm4	256	GRCh38_new_2	670	0	6M1I8M1I2M1I1M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real2_I	0	GRCh38_new_1	115	60	9M1I10M	*	0	0	CCAACATGCTAGCCTGTGCT	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_real2_D	0	GRCh38_new_1	114	60	9M1D11M	*	0	0	CCCAACATGAGCCTGTGCTC	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_real2_D	256	CHM13_new_2	413	0	3M2I10M2I3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real2_D	272	GRCh38_new_2	619	0	1M1I2M1I8M1I2M1I3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real3_exact	0	GRCh38_new_2	111	60	20M	*	0	0	GAGTGGAGTGGCGCGATCTC	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_real3_exact	256	GRCh38_new_1	821	0	14M1D1M1I4M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real3_exact	272	GRCh38_new_2	824	0	20M	*	0	0	*	*	AS:i:3	NM:i:3	PG:Z:Columba
+held_real3_mm4	0	GRCh38_new_2	112	60	1I19M	*	0	0	CAGTGGACTGGCCCGATCAC	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_real3_I	0	GRCh38_new_2	111	60	9M1I10M	*	0	0	GAGTGGAGTTGGCGCGATCT	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_real3_I	256	GRCh38_new_2	386	0	4M2I9M1I4M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+held_real3_I	272	GRCh38_new_2	825	0	11M1I8M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+held_real3_D	0	GRCh38_new_2	110	60	9M1D11M	*	0	0	GGAGTGGAGGGCGCGATCTC	*	AS:i:1	NM:i:1	PG:Z:Columba
+held_real3_D	272	GRCh38_new_2	824	0	11M1D9M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba

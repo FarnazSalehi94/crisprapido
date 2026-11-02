@@ -160,3 +160,9 @@ Large indexes, FASTA and raw SAMs remain outside Git at
 held-out full verbose reports remain under the corresponding heldout directory.
 No independent human review, production-binary change, full search, merge or
 CRISPR-Bulge integration occurred.
+
+## Subsequent bounded release validation
+
+The later [multi-assembly and held-out report](../release_validation_0aa9944_2026-11-02_v1/REPORT.md)
+adds per-guide measurements and a review package. The results above remain the
+historical baseline; independent review and the frozen preflight remain open.

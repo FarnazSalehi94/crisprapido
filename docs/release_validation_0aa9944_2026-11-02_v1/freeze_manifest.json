@@ -1,0 +1,42 @@
+{
+  "commit": "0aa9944e2eae4b7f8286415ee5c3fb3667cf6097",
+  "tree": "45873bc889abc9366523f1089fbf7190d07c9261",
+  "binary_sha256": "c37f4ded6e7c6afb3a7d22eccc5566f291244731bf6872dbfbd0b4d47f53aa74",
+  "cargo_lock_sha256": "93564e52dcafb54bfdacd2b7c6d69ac806aa74fb00ea1a20a6aee75f13c7f0f2",
+  "rustc": "1.85.1 (4eb161250 2025-03-15)",
+  "cargo": "1.85.1 (d73d2caf9 2024-12-31)",
+  "lib_wfa2_git": "c608c436a6753d2c21c97d9f5c338efae99d042b",
+  "wfa_static_sha256": "c19e330629971317d92aad90fa7c6c532441e4e5b3fccc72c18fd4016c927dbf",
+  "columba_sha256": "7e44974c81dad4943292fa64a71e54073908b4909ce327480464d769322c40d1",
+  "columba_wrapper_sha256": "2367ef7b053a44c83f76b059ed66a8f671f83773d3fe69240cda50893408f28a",
+  "samtools": "1.23.1",
+  "samtools_sha256": "68315154fcdd270e119d91ccb1329e265095dcab74a56db68ed9305d82ea9827",
+  "mismatch_matrix_sha256": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+  "pam_matrix_sha256": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1",
+  "search": {
+    "pam": "GG",
+    "max_mismatches": 4,
+    "max_bulges": 1,
+    "max_bulge_size": 1,
+    "min_match_fraction": 0.75,
+    "threads": 1,
+    "columba_e5_and_e0": true,
+    "allow_noncanonical": false
+  },
+  "frozen_full_plan_threads": 4,
+  "pilot_resource_limits": {
+    "timeout_seconds_per_process": 90,
+    "address_space_gib": 4
+  },
+  "dependencies": {
+    "bio": "2.2.0",
+    "clap": "4.5.31",
+    "rayon": "1.10.0",
+    "flate2": "1.1.0",
+    "columba": "2.0.3",
+    "glibc": "2.35",
+    "gcc_runtime": "12.3.0",
+    "python": "3.7.3"
+  },
+  "profile_binary_sha256": "fef24de98613802c344b8dddff6f776e60827677bc548df27c733619c813057a"
+}

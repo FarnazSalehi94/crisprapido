@@ -1,0 +1,30 @@
+[
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "sampled_20mers": 100000,
+    "duplicate_occurrences": 1233,
+    "duplicate_fraction": 0.01233,
+    "max_frequency": 14
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "sampled_20mers": 100000,
+    "duplicate_occurrences": 3923,
+    "duplicate_fraction": 0.03923,
+    "max_frequency": 23
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "sampled_20mers": 100000,
+    "duplicate_occurrences": 1317,
+    "duplicate_fraction": 0.01317,
+    "max_frequency": 9
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "sampled_20mers": 100000,
+    "duplicate_occurrences": 3720,
+    "duplicate_fraction": 0.0372,
+    "max_frequency": 23
+  }
+]

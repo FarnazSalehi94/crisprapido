@@ -1,0 +1,1042 @@
+[
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "region": "CHM13#0#chr1:100000001-102000000",
+    "wall_seconds": 0.5153972820844501,
+    "profile_wall_seconds": 0.5153679270297289,
+    "status": "PASS",
+    "raw_e5": 176,
+    "raw_e0": 0,
+    "unique_raw": 176,
+    "peak_rss_kib": 55632,
+    "wfa_calls": 19354,
+    "wfa_per_unique_candidate": 109.9659090909091,
+    "reported_rows": 1,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 275587276
+      },
+      "expansion_enumeration": {
+        "calls": 176,
+        "nanoseconds": 160085
+      },
+      "wfa_align": {
+        "calls": 19354,
+        "nanoseconds": 168822420
+      },
+      "eligible_enumeration": {
+        "calls": 19301,
+        "nanoseconds": 23336272
+      },
+      "pam_extract": {
+        "calls": 229,
+        "nanoseconds": 18835
+      },
+      "cfd_score": {
+        "calls": 1,
+        "nanoseconds": 7324
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 10930
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 19354,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 19354,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 480798139
+      }
+    }
+  },
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "guide": "MED6_TGCCACCAATACCCTTTGGA",
+    "region": "CHM13#0#chr1:100000001-102000000",
+    "wall_seconds": 0.4650192300323397,
+    "profile_wall_seconds": 0.4653890149202198,
+    "status": "PASS",
+    "raw_e5": 131,
+    "raw_e0": 0,
+    "unique_raw": 131,
+    "peak_rss_kib": 55476,
+    "wfa_calls": 14542,
+    "wfa_per_unique_candidate": 111.00763358778626,
+    "reported_rows": 3,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 295875538
+      },
+      "expansion_enumeration": {
+        "calls": 131,
+        "nanoseconds": 125476
+      },
+      "wfa_align": {
+        "calls": 14542,
+        "nanoseconds": 128427002
+      },
+      "eligible_enumeration": {
+        "calls": 14487,
+        "nanoseconds": 16950067
+      },
+      "pam_extract": {
+        "calls": 249,
+        "nanoseconds": 20966
+      },
+      "cfd_score": {
+        "calls": 3,
+        "nanoseconds": 15321
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 10711
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 14542,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 14542,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 451727629
+      }
+    }
+  },
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "guide": "HNRNPC_AAATTCACTTACCTAAAACC",
+    "region": "CHM13#0#chr1:100000001-102000000",
+    "wall_seconds": 0.7654547558631748,
+    "profile_wall_seconds": 0.7657594089396298,
+    "status": "PASS",
+    "raw_e5": 374,
+    "raw_e0": 0,
+    "unique_raw": 374,
+    "peak_rss_kib": 55556,
+    "wfa_calls": 41801,
+    "wfa_per_unique_candidate": 111.76737967914438,
+    "reported_rows": 2,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 297418431
+      },
+      "expansion_enumeration": {
+        "calls": 374,
+        "nanoseconds": 345493
+      },
+      "wfa_align": {
+        "calls": 41801,
+        "nanoseconds": 350624394
+      },
+      "eligible_enumeration": {
+        "calls": 41645,
+        "nanoseconds": 51312270
+      },
+      "pam_extract": {
+        "calls": 378,
+        "nanoseconds": 41227
+      },
+      "cfd_score": {
+        "calls": 2,
+        "nanoseconds": 11121
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 22162
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 41801,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 41801,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 722264556
+      }
+    }
+  },
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "guide": "PPIP5K2_CATAGCTGTTATACGTCATG",
+    "region": "CHM13#0#chr1:100000001-102000000",
+    "wall_seconds": 0.7154725200962275,
+    "profile_wall_seconds": 0.7157396320253611,
+    "status": "PASS",
+    "raw_e5": 329,
+    "raw_e0": 0,
+    "unique_raw": 329,
+    "peak_rss_kib": 55448,
+    "wfa_calls": 36113,
+    "wfa_per_unique_candidate": 109.76595744680851,
+    "reported_rows": 3,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 281423791
+      },
+      "expansion_enumeration": {
+        "calls": 329,
+        "nanoseconds": 277209
+      },
+      "wfa_align": {
+        "calls": 36113,
+        "nanoseconds": 327355264
+      },
+      "eligible_enumeration": {
+        "calls": 36046,
+        "nanoseconds": 43085302
+      },
+      "pam_extract": {
+        "calls": 276,
+        "nanoseconds": 22923
+      },
+      "cfd_score": {
+        "calls": 3,
+        "nanoseconds": 15990
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 14969
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 36113,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 36113,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 672192599
+      }
+    }
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "region": "CHM13#0#chr9:34000001-36000000",
+    "wall_seconds": 0.4653476069215685,
+    "profile_wall_seconds": 0.4652704200707376,
+    "status": "PASS",
+    "raw_e5": 144,
+    "raw_e0": 0,
+    "unique_raw": 144,
+    "peak_rss_kib": 55612,
+    "wfa_calls": 15825,
+    "wfa_per_unique_candidate": 109.89583333333333,
+    "reported_rows": 2,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 290141563
+      },
+      "expansion_enumeration": {
+        "calls": 144,
+        "nanoseconds": 125128
+      },
+      "wfa_align": {
+        "calls": 15825,
+        "nanoseconds": 139076283
+      },
+      "eligible_enumeration": {
+        "calls": 15777,
+        "nanoseconds": 19108810
+      },
+      "pam_extract": {
+        "calls": 221,
+        "nanoseconds": 20473
+      },
+      "cfd_score": {
+        "calls": 2,
+        "nanoseconds": 12804
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 8887
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 15825,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 15825,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 459841781
+      }
+    }
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "guide": "MED6_TGCCACCAATACCCTTTGGA",
+    "region": "CHM13#0#chr9:34000001-36000000",
+    "wall_seconds": 0.515170648926869,
+    "profile_wall_seconds": 0.5154496021568775,
+    "status": "PASS",
+    "raw_e5": 136,
+    "raw_e0": 0,
+    "unique_raw": 136,
+    "peak_rss_kib": 55548,
+    "wfa_calls": 14980,
+    "wfa_per_unique_candidate": 110.1470588235294,
+    "reported_rows": 1,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 305075226
+      },
+      "expansion_enumeration": {
+        "calls": 136,
+        "nanoseconds": 120548
+      },
+      "wfa_align": {
+        "calls": 14980,
+        "nanoseconds": 134249287
+      },
+      "eligible_enumeration": {
+        "calls": 14930,
+        "nanoseconds": 17457604
+      },
+      "pam_extract": {
+        "calls": 236,
+        "nanoseconds": 21407
+      },
+      "cfd_score": {
+        "calls": 1,
+        "nanoseconds": 7564
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 9618
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 14980,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 14980,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 467813592
+      }
+    }
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "guide": "HNRNPC_AAATTCACTTACCTAAAACC",
+    "region": "CHM13#0#chr9:34000001-36000000",
+    "wall_seconds": 0.5652855080552399,
+    "profile_wall_seconds": 0.5655361658427864,
+    "status": "PASS",
+    "raw_e5": 209,
+    "raw_e0": 0,
+    "unique_raw": 209,
+    "peak_rss_kib": 57308,
+    "wfa_calls": 23239,
+    "wfa_per_unique_candidate": 111.19138755980862,
+    "reported_rows": 6,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 313311972
+      },
+      "expansion_enumeration": {
+        "calls": 209,
+        "nanoseconds": 190558
+      },
+      "wfa_align": {
+        "calls": 23239,
+        "nanoseconds": 196789237
+      },
+      "eligible_enumeration": {
+        "calls": 23137,
+        "nanoseconds": 28751783
+      },
+      "pam_extract": {
+        "calls": 462,
+        "nanoseconds": 42244
+      },
+      "cfd_score": {
+        "calls": 6,
+        "nanoseconds": 25449
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 13596
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 23239,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 23239,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 553630058
+      }
+    }
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "guide": "PPIP5K2_CATAGCTGTTATACGTCATG",
+    "region": "CHM13#0#chr9:34000001-36000000",
+    "wall_seconds": 0.5652213410940021,
+    "profile_wall_seconds": 0.5655006528832018,
+    "status": "PASS",
+    "raw_e5": 196,
+    "raw_e0": 0,
+    "unique_raw": 196,
+    "peak_rss_kib": 55516,
+    "wfa_calls": 21551,
+    "wfa_per_unique_candidate": 109.95408163265306,
+    "reported_rows": 3,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 312805528
+      },
+      "expansion_enumeration": {
+        "calls": 196,
+        "nanoseconds": 180227
+      },
+      "wfa_align": {
+        "calls": 21551,
+        "nanoseconds": 197054983
+      },
+      "eligible_enumeration": {
+        "calls": 21501,
+        "nanoseconds": 25864263
+      },
+      "pam_extract": {
+        "calls": 237,
+        "nanoseconds": 22413
+      },
+      "cfd_score": {
+        "calls": 3,
+        "nanoseconds": 14888
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 9609
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 21551,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 21551,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 549968921
+      }
+    }
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "region": "GRCh38#0#chr1:100000001-102000000",
+    "wall_seconds": 0.515339040197432,
+    "profile_wall_seconds": 0.5151592991314828,
+    "status": "PASS",
+    "raw_e5": 173,
+    "raw_e0": 0,
+    "unique_raw": 173,
+    "peak_rss_kib": 55576,
+    "wfa_calls": 18929,
+    "wfa_per_unique_candidate": 109.41618497109826,
+    "reported_rows": 2,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 293305812
+      },
+      "expansion_enumeration": {
+        "calls": 173,
+        "nanoseconds": 150943
+      },
+      "wfa_align": {
+        "calls": 18929,
+        "nanoseconds": 162435994
+      },
+      "eligible_enumeration": {
+        "calls": 18872,
+        "nanoseconds": 23656982
+      },
+      "pam_extract": {
+        "calls": 348,
+        "nanoseconds": 27916
+      },
+      "cfd_score": {
+        "calls": 2,
+        "nanoseconds": 12403
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 8897
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 18929,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 18929,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 492219652
+      }
+    }
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "guide": "MED6_TGCCACCAATACCCTTTGGA",
+    "region": "GRCh38#0#chr1:100000001-102000000",
+    "wall_seconds": 0.4651635210029781,
+    "profile_wall_seconds": 0.4655088398139924,
+    "status": "PASS",
+    "raw_e5": 126,
+    "raw_e0": 0,
+    "unique_raw": 126,
+    "peak_rss_kib": 55432,
+    "wfa_calls": 13994,
+    "wfa_per_unique_candidate": 111.06349206349206,
+    "reported_rows": 3,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 296835384
+      },
+      "expansion_enumeration": {
+        "calls": 126,
+        "nanoseconds": 125930
+      },
+      "wfa_align": {
+        "calls": 13994,
+        "nanoseconds": 129160713
+      },
+      "eligible_enumeration": {
+        "calls": 13941,
+        "nanoseconds": 16748871
+      },
+      "pam_extract": {
+        "calls": 244,
+        "nanoseconds": 21803
+      },
+      "cfd_score": {
+        "calls": 3,
+        "nanoseconds": 15521
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 10950
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 13994,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 13994,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 453852025
+      }
+    }
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "guide": "HNRNPC_AAATTCACTTACCTAAAACC",
+    "region": "GRCh38#0#chr1:100000001-102000000",
+    "wall_seconds": 0.7657672530040145,
+    "profile_wall_seconds": 0.7655951899942011,
+    "status": "PASS",
+    "raw_e5": 378,
+    "raw_e0": 0,
+    "unique_raw": 378,
+    "peak_rss_kib": 55612,
+    "wfa_calls": 42285,
+    "wfa_per_unique_candidate": 111.86507936507937,
+    "reported_rows": 2,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 290987808
+      },
+      "expansion_enumeration": {
+        "calls": 378,
+        "nanoseconds": 357240
+      },
+      "wfa_align": {
+        "calls": 42285,
+        "nanoseconds": 353993682
+      },
+      "eligible_enumeration": {
+        "calls": 42117,
+        "nanoseconds": 51944177
+      },
+      "pam_extract": {
+        "calls": 401,
+        "nanoseconds": 42897
+      },
+      "cfd_score": {
+        "calls": 2,
+        "nanoseconds": 10359
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 24797
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 42285,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 42285,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 720781720
+      }
+    }
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "guide": "PPIP5K2_CATAGCTGTTATACGTCATG",
+    "region": "GRCh38#0#chr1:100000001-102000000",
+    "wall_seconds": 0.7154262410476804,
+    "profile_wall_seconds": 0.7155415348242968,
+    "status": "PASS",
+    "raw_e5": 326,
+    "raw_e0": 0,
+    "unique_raw": 326,
+    "peak_rss_kib": 55292,
+    "wfa_calls": 35810,
+    "wfa_per_unique_candidate": 109.84662576687117,
+    "reported_rows": 3,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 287931454
+      },
+      "expansion_enumeration": {
+        "calls": 326,
+        "nanoseconds": 292048
+      },
+      "wfa_align": {
+        "calls": 35810,
+        "nanoseconds": 321290181
+      },
+      "eligible_enumeration": {
+        "calls": 35739,
+        "nanoseconds": 43134655
+      },
+      "pam_extract": {
+        "calls": 284,
+        "nanoseconds": 25679
+      },
+      "cfd_score": {
+        "calls": 3,
+        "nanoseconds": 15789
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 15910
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 35810,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 35810,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 673205617
+      }
+    }
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "guide": "ELMOD2_TCTAGCGTTTAACTTCTTCG",
+    "region": "GRCh38#0#chr9:34000001-36000000",
+    "wall_seconds": 0.5151501561049372,
+    "profile_wall_seconds": 0.5156417528633028,
+    "status": "PASS",
+    "raw_e5": 143,
+    "raw_e0": 0,
+    "unique_raw": 143,
+    "peak_rss_kib": 55492,
+    "wfa_calls": 15719,
+    "wfa_per_unique_candidate": 109.92307692307692,
+    "reported_rows": 2,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 303329633
+      },
+      "expansion_enumeration": {
+        "calls": 143,
+        "nanoseconds": 129780
+      },
+      "wfa_align": {
+        "calls": 15719,
+        "nanoseconds": 137814815
+      },
+      "eligible_enumeration": {
+        "calls": 15671,
+        "nanoseconds": 19157462
+      },
+      "pam_extract": {
+        "calls": 221,
+        "nanoseconds": 20285
+      },
+      "cfd_score": {
+        "calls": 2,
+        "nanoseconds": 12244
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 9187
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 15719,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 15719,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 471681630
+      }
+    }
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "guide": "MED6_TGCCACCAATACCCTTTGGA",
+    "region": "GRCh38#0#chr9:34000001-36000000",
+    "wall_seconds": 0.5151329960208386,
+    "profile_wall_seconds": 0.5156661029905081,
+    "status": "PASS",
+    "raw_e5": 136,
+    "raw_e0": 0,
+    "unique_raw": 136,
+    "peak_rss_kib": 55340,
+    "wfa_calls": 14870,
+    "wfa_per_unique_candidate": 109.33823529411765,
+    "reported_rows": 2,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 308530320
+      },
+      "expansion_enumeration": {
+        "calls": 136,
+        "nanoseconds": 129840
+      },
+      "wfa_align": {
+        "calls": 14870,
+        "nanoseconds": 136846197
+      },
+      "eligible_enumeration": {
+        "calls": 14817,
+        "nanoseconds": 17803539
+      },
+      "pam_extract": {
+        "calls": 354,
+        "nanoseconds": 34525
+      },
+      "cfd_score": {
+        "calls": 2,
+        "nanoseconds": 11131
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 10239
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 14870,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 14870,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 475339868
+      }
+    }
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "guide": "HNRNPC_AAATTCACTTACCTAAAACC",
+    "region": "GRCh38#0#chr9:34000001-36000000",
+    "wall_seconds": 0.565469962079078,
+    "profile_wall_seconds": 0.5655619569588453,
+    "status": "PASS",
+    "raw_e5": 209,
+    "raw_e0": 0,
+    "unique_raw": 209,
+    "peak_rss_kib": 57044,
+    "wfa_calls": 23249,
+    "wfa_per_unique_candidate": 111.23923444976077,
+    "reported_rows": 5,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 299217487
+      },
+      "expansion_enumeration": {
+        "calls": 209,
+        "nanoseconds": 186297
+      },
+      "wfa_align": {
+        "calls": 23249,
+        "nanoseconds": 198067115
+      },
+      "eligible_enumeration": {
+        "calls": 23148,
+        "nanoseconds": 28272975
+      },
+      "pam_extract": {
+        "calls": 461,
+        "nanoseconds": 41390
+      },
+      "cfd_score": {
+        "calls": 5,
+        "nanoseconds": 22271
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 13936
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 23249,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 23249,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 540523840
+      }
+    }
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "guide": "PPIP5K2_CATAGCTGTTATACGTCATG",
+    "region": "GRCh38#0#chr9:34000001-36000000",
+    "wall_seconds": 0.5653826780617237,
+    "profile_wall_seconds": 0.5652996129356325,
+    "status": "PASS",
+    "raw_e5": 194,
+    "raw_e0": 0,
+    "unique_raw": 194,
+    "peak_rss_kib": 55696,
+    "wfa_calls": 21332,
+    "wfa_per_unique_candidate": 109.95876288659794,
+    "reported_rows": 3,
+    "profile": {
+      "columba_wait": {
+        "calls": 2,
+        "nanoseconds": 306924963
+      },
+      "expansion_enumeration": {
+        "calls": 194,
+        "nanoseconds": 167141
+      },
+      "wfa_align": {
+        "calls": 21332,
+        "nanoseconds": 193322964
+      },
+      "eligible_enumeration": {
+        "calls": 21282,
+        "nanoseconds": 25464272
+      },
+      "pam_extract": {
+        "calls": 238,
+        "nanoseconds": 20793
+      },
+      "cfd_score": {
+        "calls": 3,
+        "nanoseconds": 14377
+      },
+      "representative_selection": {
+        "calls": 1,
+        "nanoseconds": 8597
+      },
+      "unused": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_lookup": {
+        "calls": 21332,
+        "nanoseconds": 0
+      },
+      "cache_hit": {
+        "calls": 0,
+        "nanoseconds": 0
+      },
+      "cache_miss": {
+        "calls": 21332,
+        "nanoseconds": 0
+      },
+      "total_wall": {
+        "calls": 1,
+        "nanoseconds": 540525708
+      }
+    }
+  }
+]

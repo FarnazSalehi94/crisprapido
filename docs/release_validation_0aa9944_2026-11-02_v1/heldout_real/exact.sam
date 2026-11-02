@@ -1,0 +1,22 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/index -f /export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/guides.fa -a all -m edit -e 0 -t 1 -o /export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/exact.sam
+@SQ	SN:CHM13_new_1	LN:1000
+@SQ	SN:CHM13_new_2	LN:1000
+@SQ	SN:GRCh38_new_1	LN:1000
+@SQ	SN:GRCh38_new_2	LN:1000
+held_real0_exact	0	CHM13_new_1	224	60	20M	*	0	0	CTTTTTTCTGTCACTGACTT	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_real0_mm4	4	*	0	0	*	*	0	0	TTTTTTTTTGTCGCTGACAT	*	PG:Z:Columba
+held_real0_I	4	*	0	0	*	*	0	0	CTTTTTTCTTGTCACTGACT	*	PG:Z:Columba
+held_real0_D	4	*	0	0	*	*	0	0	CCTTTTTTCGTCACTGACTT	*	PG:Z:Columba
+held_real1_exact	0	CHM13_new_2	156	60	20M	*	0	0	AATTCCTTCTCTCCTATAGA	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_real1_mm4	4	*	0	0	*	*	0	0	GATTCCTACTCTTCTATACA	*	PG:Z:Columba
+held_real1_I	4	*	0	0	*	*	0	0	AATTCCTTCTTCTCCTATAG	*	PG:Z:Columba
+held_real1_D	4	*	0	0	*	*	0	0	AAATTCCTTTCTCCTATAGA	*	PG:Z:Columba
+held_real2_exact	0	GRCh38_new_1	115	60	20M	*	0	0	CCAACATGCAGCCTGTGCTC	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_real2_mm4	4	*	0	0	*	*	0	0	TCAACATCCAGCTTGTGCAC	*	PG:Z:Columba
+held_real2_I	4	*	0	0	*	*	0	0	CCAACATGCTAGCCTGTGCT	*	PG:Z:Columba
+held_real2_D	4	*	0	0	*	*	0	0	CCCAACATGAGCCTGTGCTC	*	PG:Z:Columba
+held_real3_exact	0	GRCh38_new_2	111	60	20M	*	0	0	GAGTGGAGTGGCGCGATCTC	*	AS:i:0	NM:i:0	PG:Z:Columba
+held_real3_mm4	4	*	0	0	*	*	0	0	CAGTGGACTGGCCCGATCAC	*	PG:Z:Columba
+held_real3_I	4	*	0	0	*	*	0	0	GAGTGGAGTTGGCGCGATCT	*	PG:Z:Columba
+held_real3_D	4	*	0	0	*	*	0	0	GGAGTGGAGGGCGCGATCTC	*	PG:Z:Columba

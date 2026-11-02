@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "rows": 18,
+  "errors": 0,
+  "provenance": {
+    "paf": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/out.paf",
+    "fasta": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/ref.fa",
+    "guides": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/heldout/real/guides.fa",
+    "matrices": "/export/local/home/salehi/crisprapido-release-pilot-0aa9944-20261102/release",
+    "samtools": "/export/local/home/salehi/verkko_env/bin/samtools",
+    "batch_size": 500,
+    "auditor_sha256": "0068d6a0c4b39104688ae696dab0b84cfbfe7dd0f2ee54d11cdeb43273f9e72d",
+    "paf_sha256": "88b69e172968bb800565791cfba4e4b416125a2bd84e78cd64193246c5c9eb7a",
+    "guide_sha256": "983e603b0bb55a0c83f4b964fcb2d103a6aca1a25dd552b8b2d870d114e879a7",
+    "fai_sha256": "222216db5f4af4aefb8f3de657c4ed5deaa17a4502af5d8f8624f9af44f013eb",
+    "matrix_sha256": {
+      "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+      "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1"
+    }
+  },
+  "counts": {
+    "verified": 18,
+    "strand_+": 18,
+    "SCORED": 18,
+    "ungapped": 5,
+    "CFD_ge_020": 12,
+    "CFD_lt_020": 6,
+    "bulged": 13
+  },
+  "per_guide": {
+    "held_real0_exact": {
+      "verified": 1,
+      "strand_+": 1
+    },
+    "held_real0_mm4": {
+      "verified": 1,
+      "strand_+": 1
+    },
+    "held_real0_I": {
+      "verified": 1,
+      "strand_+": 1
+    },
+    "held_real0_D": {
+      "verified": 1,
+      "strand_+": 1
+    },
+    "held_real1_exact": {
+      "verified": 2,
+      "strand_+": 2
+    },
+    "held_real1_mm4": {
+      "verified": 2,
+      "strand_+": 2
+    },
+    "held_real1_I": {},
+    "held_real1_D": {
+      "verified": 2,
+      "strand_+": 2
+    },
+    "held_real2_exact": {
+      "verified": 2,
+      "strand_+": 2
+    },
+    "held_real2_mm4": {
+      "verified": 2,
+      "strand_+": 2
+    },
+    "held_real2_I": {},
+    "held_real2_D": {
+      "verified": 1,
+      "strand_+": 1
+    },
+    "held_real3_exact": {
+      "verified": 1,
+      "strand_+": 1
+    },
+    "held_real3_mm4": {
+      "verified": 1,
+      "strand_+": 1
+    },
+    "held_real3_I": {},
+    "held_real3_D": {
+      "verified": 1,
+      "strand_+": 1
+    }
+  },
+  "limitation": "Emitted-row soundness only; not search sensitivity/completeness."
+}
