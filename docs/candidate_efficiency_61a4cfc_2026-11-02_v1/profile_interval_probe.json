@@ -1,0 +1,102 @@
+{
+  "baseline": {
+    "columba_wait": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "expansion_enumeration": {
+      "calls": 6284,
+      "nanoseconds": 6668276
+    },
+    "wfa_align": {
+      "calls": 41077,
+      "nanoseconds": 397214728
+    },
+    "eligible_enumeration": {
+      "calls": 24399,
+      "nanoseconds": 30786428
+    },
+    "pam_extract": {
+      "calls": 1124283,
+      "nanoseconds": 73743089
+    },
+    "cfd_score": {
+      "calls": 204,
+      "nanoseconds": 605109
+    },
+    "representative_selection": {
+      "calls": 96,
+      "nanoseconds": 202154
+    },
+    "unused": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_lookup": {
+      "calls": 1105628,
+      "nanoseconds": 0
+    },
+    "cache_hit": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_miss": {
+      "calls": 1105628,
+      "nanoseconds": 0
+    },
+    "total_wall": {
+      "calls": 1,
+      "nanoseconds": 703883444
+    }
+  },
+  "overlap_pam": {
+    "columba_wait": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "expansion_enumeration": {
+      "calls": 4460,
+      "nanoseconds": 4888353
+    },
+    "wfa_align": {
+      "calls": 41077,
+      "nanoseconds": 397879129
+    },
+    "eligible_enumeration": {
+      "calls": 24399,
+      "nanoseconds": 30658602
+    },
+    "pam_extract": {
+      "calls": 800770,
+      "nanoseconds": 52885940
+    },
+    "cfd_score": {
+      "calls": 204,
+      "nanoseconds": 603916
+    },
+    "representative_selection": {
+      "calls": 96,
+      "nanoseconds": 188080
+    },
+    "unused": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_lookup": {
+      "calls": 782115,
+      "nanoseconds": 0
+    },
+    "cache_hit": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_miss": {
+      "calls": 782115,
+      "nanoseconds": 0
+    },
+    "total_wall": {
+      "calls": 1,
+      "nanoseconds": 653774757
+    }
+  }
+}

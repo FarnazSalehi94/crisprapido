@@ -89,3 +89,11 @@ correctness-preserving performance strategy or an explicitly bounded
 alternative study is needed before another whole-assembly attempt; no
 candidate cap or eligibility rule should be silently relaxed. Independent
 review and the frozen release preflight remain outstanding.
+
+## Subsequent candidate-efficiency study
+
+The [bounded efficiency investigation](../candidate_efficiency_61a4cfc_2026-11-02_v1/REPORT.md)
+found no duplicate e=7 keys in the saved SAM and evaluated two distinct PAM
+screens. A disposable interval-level precheck preserved bounded oracle and
+regional records while substantially reducing WFA2 work; it has not been
+implemented in production, and it does not eliminate Columba's e=7 cost.

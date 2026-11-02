@@ -1,0 +1,87 @@
+[
+  {
+    "case": "oracle_8kb",
+    "modes": {
+      "baseline": {
+        "seconds": 15.44623426697217,
+        "max_rss_kib": 7376,
+        "rows": 204,
+        "identical_to_reference": true
+      },
+      "interval_probe": {
+        "seconds": 1.1995825131889433,
+        "max_rss_kib": 7612,
+        "rows": 204,
+        "identical_to_reference": true
+      }
+    }
+  },
+  {
+    "case": "CHM13_nonrepeat_candidate",
+    "modes": {
+      "baseline": {
+        "seconds": 34.971345553174615,
+        "max_rss_kib": 10156,
+        "rows": 10,
+        "identical_to_reference": true
+      },
+      "interval_probe": {
+        "seconds": 1.6689945689868182,
+        "max_rss_kib": 10328,
+        "rows": 10,
+        "identical_to_reference": true
+      }
+    }
+  },
+  {
+    "case": "CHM13_repeat_candidate",
+    "modes": {
+      "baseline": {
+        "seconds": 37.654069726821035,
+        "max_rss_kib": 10200,
+        "rows": 24,
+        "identical_to_reference": true
+      },
+      "interval_probe": {
+        "seconds": 1.6689474999438971,
+        "max_rss_kib": 10328,
+        "rows": 24,
+        "identical_to_reference": true
+      }
+    }
+  },
+  {
+    "case": "GRCh38_nonrepeat_candidate",
+    "modes": {
+      "baseline": {
+        "seconds": 31.139706643065438,
+        "max_rss_kib": 10116,
+        "rows": 12,
+        "identical_to_reference": true
+      },
+      "interval_probe": {
+        "seconds": 1.9976797502022237,
+        "max_rss_kib": 10184,
+        "rows": 12,
+        "identical_to_reference": true
+      }
+    }
+  },
+  {
+    "case": "GRCh38_repeat_candidate",
+    "modes": {
+      "baseline": {
+        "seconds": 34.44694413500838,
+        "max_rss_kib": 10376,
+        "rows": 23,
+        "identical_to_reference": true
+      },
+      "interval_probe": {
+        "seconds": 1.5670689370017499,
+        "max_rss_kib": 10348,
+        "rows": 23,
+        "identical_to_reference": true
+      }
+    }
+  }
+]

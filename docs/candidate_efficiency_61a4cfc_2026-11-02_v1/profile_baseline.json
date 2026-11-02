@@ -1,0 +1,102 @@
+{
+  "baseline": {
+    "columba_wait": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "expansion_enumeration": {
+      "calls": 6284,
+      "nanoseconds": 7651801
+    },
+    "wfa_align": {
+      "calls": 1105628,
+      "nanoseconds": 11243574241
+    },
+    "eligible_enumeration": {
+      "calls": 660432,
+      "nanoseconds": 899737391
+    },
+    "pam_extract": {
+      "calls": 20007,
+      "nanoseconds": 1415414
+    },
+    "cfd_score": {
+      "calls": 204,
+      "nanoseconds": 674215
+    },
+    "representative_selection": {
+      "calls": 96,
+      "nanoseconds": 311260
+    },
+    "unused": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_lookup": {
+      "calls": 1105628,
+      "nanoseconds": 0
+    },
+    "cache_hit": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_miss": {
+      "calls": 1105628,
+      "nanoseconds": 0
+    },
+    "total_wall": {
+      "calls": 1,
+      "nanoseconds": 15974176439
+    }
+  },
+  "overlap_pam": {
+    "columba_wait": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "expansion_enumeration": {
+      "calls": 4460,
+      "nanoseconds": 5385508
+    },
+    "wfa_align": {
+      "calls": 782115,
+      "nanoseconds": 8014855094
+    },
+    "eligible_enumeration": {
+      "calls": 467197,
+      "nanoseconds": 637366609
+    },
+    "pam_extract": {
+      "calls": 19618,
+      "nanoseconds": 1398219
+    },
+    "cfd_score": {
+      "calls": 204,
+      "nanoseconds": 668708
+    },
+    "representative_selection": {
+      "calls": 96,
+      "nanoseconds": 297500
+    },
+    "unused": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_lookup": {
+      "calls": 782115,
+      "nanoseconds": 0
+    },
+    "cache_hit": {
+      "calls": 0,
+      "nanoseconds": 0
+    },
+    "cache_miss": {
+      "calls": 782115,
+      "nanoseconds": 0
+    },
+    "total_wall": {
+      "calls": 1,
+      "nanoseconds": 10258493524
+    }
+  }
+}

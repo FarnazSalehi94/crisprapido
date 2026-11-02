@@ -1,0 +1,37 @@
+[
+  {
+    "sam": "/export/local/home/salehi/crisprapido-candidate-analysis-61a4cfc-20261102-v1/benchmark_v2/baseline.sam",
+    "raw": 6284,
+    "candidate_keys": 6284,
+    "verification_intervals": 6284,
+    "repeated_verification_intervals": 0
+  },
+  {
+    "sam": "/export/local/home/salehi/crisprapido-candidate-analysis-61a4cfc-20261102-v1/regions/CHM13_nonrepeat_candidate/baseline.sam",
+    "raw": 13033,
+    "candidate_keys": 13033,
+    "verification_intervals": 13033,
+    "repeated_verification_intervals": 0
+  },
+  {
+    "sam": "/export/local/home/salehi/crisprapido-candidate-analysis-61a4cfc-20261102-v1/regions/CHM13_repeat_candidate/baseline.sam",
+    "raw": 13272,
+    "candidate_keys": 13272,
+    "verification_intervals": 13272,
+    "repeated_verification_intervals": 0
+  },
+  {
+    "sam": "/export/local/home/salehi/crisprapido-candidate-analysis-61a4cfc-20261102-v1/regions/GRCh38_nonrepeat_candidate/baseline.sam",
+    "raw": 12987,
+    "candidate_keys": 12987,
+    "verification_intervals": 12987,
+    "repeated_verification_intervals": 0
+  },
+  {
+    "sam": "/export/local/home/salehi/crisprapido-candidate-analysis-61a4cfc-20261102-v1/regions/GRCh38_repeat_candidate/baseline.sam",
+    "raw": 13269,
+    "candidate_keys": 13269,
+    "verification_intervals": 13269,
+    "repeated_verification_intervals": 0
+  }
+]

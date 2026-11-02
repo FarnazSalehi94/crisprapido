@@ -1,0 +1,58 @@
+[
+  {
+    "mode": "m5",
+    "rows": 31,
+    "baseline_seconds": 0.16499539697542787,
+    "probe_seconds": 0.06456673587672412,
+    "records_identical": true
+  },
+  {
+    "mode": "m6",
+    "rows": 36,
+    "baseline_seconds": 0.2654633710626513,
+    "probe_seconds": 0.0646369291935116,
+    "records_identical": true
+  },
+  {
+    "mode": "m7",
+    "rows": 41,
+    "baseline_seconds": 0.36605999199673533,
+    "probe_seconds": 0.06451237294822931,
+    "records_identical": true
+  },
+  {
+    "mode": "strict_ga",
+    "rows": 6,
+    "baseline_seconds": 0.16490950202569366,
+    "probe_seconds": 0.06437636306509376,
+    "records_identical": true
+  },
+  {
+    "mode": "no_bulge",
+    "rows": 7,
+    "baseline_seconds": 0.03216920490376651,
+    "probe_seconds": 0.03212150395847857,
+    "records_identical": true
+  },
+  {
+    "mode": "size_one",
+    "rows": 21,
+    "baseline_seconds": 0.06431766017340124,
+    "probe_seconds": 0.06431804108433425,
+    "records_identical": true
+  },
+  {
+    "mode": "permissive",
+    "rows": 54,
+    "baseline_seconds": 0.16519750212319195,
+    "probe_seconds": 0.16519856406375766,
+    "records_identical": true
+  },
+  {
+    "mode": "no_filter",
+    "rows": 2254,
+    "baseline_seconds": 0.16574562806636095,
+    "probe_seconds": 0.1653305960353464,
+    "records_identical": true
+  }
+]

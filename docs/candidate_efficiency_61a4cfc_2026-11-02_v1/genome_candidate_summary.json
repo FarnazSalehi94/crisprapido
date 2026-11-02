@@ -1,0 +1,33 @@
+{
+  "sam": "/export/local/home/salehi/crisprapido-whole-defaults-60f9d6c-20261102-v1/runs/CHM13/ELMOD2_TCTAGCGTTTAACTTCTTCG/tmp/crisprapido-columba-29729-1793657664434156088/output.sam",
+  "mapped_raw": 17653389,
+  "mapped_unique": 17653389,
+  "duplicate_keys": 0,
+  "exact_pass_keys": 1,
+  "exact_pass_keys_already_in_e7": 1,
+  "e7_nm_distribution": {
+    "0": 1,
+    "2": 9,
+    "3": 416,
+    "4": 16505,
+    "5": 231834,
+    "6": 2455923,
+    "7": 14948701
+  },
+  "raw": {
+    "mapped": 17653389,
+    "direct_pam_valid": 676696,
+    "direct_pam_invalid": 16976693,
+    "no_possible_overlapping_pam": 6502192
+  },
+  "unique": {
+    "mapped": 17653389,
+    "direct_pam_valid": 676696,
+    "direct_pam_invalid": 16976693,
+    "no_possible_overlapping_pam": 6502192
+  },
+  "unmapped": 0,
+  "elapsed_seconds": 238.3849977659993,
+  "sort_memory_mib": 512,
+  "definition": "direct PAM is adjacent to the raw candidate span; no-overlapping-PAM tests all 18..22bp spans overlapping it on the same strand, with complete strict NGG; no other candidate rejection is assumed"
+}

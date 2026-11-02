@@ -1,0 +1,26 @@
+[
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "status": "PASS",
+    "rows": 10,
+    "errors": 0
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "status": "PASS",
+    "rows": 24,
+    "errors": 0
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "status": "PASS",
+    "rows": 12,
+    "errors": 0
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "status": "PASS",
+    "rows": 23,
+    "errors": 0
+  }
+]

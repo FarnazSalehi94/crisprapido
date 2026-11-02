@@ -1,0 +1,114 @@
+[
+  {
+    "window": "CHM13_nonrepeat_candidate",
+    "region": "CHM13#0#chr1:100000001-102000000",
+    "counts": {
+      "raw": 13033,
+      "duplicates": 0,
+      "direct_invalid": 12547,
+      "no_overlapping_pam": 5064,
+      "retained": 7969,
+      "unique": 13033,
+      "filter_seconds": 0.5900519900023937
+    },
+    "modes": {
+      "baseline": {
+        "seconds": 29.96735753887333,
+        "max_rss_kib": 10240,
+        "anchors": 10
+      },
+      "overlap": {
+        "seconds": 19.287356917979196,
+        "max_rss_kib": 10196,
+        "anchors": 10
+      }
+    },
+    "missing_anchors": 0,
+    "extra_anchors": 0,
+    "records_identical": true
+  },
+  {
+    "window": "CHM13_repeat_candidate",
+    "region": "CHM13#0#chr9:30000001-32000000",
+    "counts": {
+      "raw": 13272,
+      "duplicates": 0,
+      "direct_invalid": 12806,
+      "no_overlapping_pam": 5604,
+      "retained": 7668,
+      "unique": 13272,
+      "filter_seconds": 0.40125822788104415
+    },
+    "modes": {
+      "baseline": {
+        "seconds": 33.42480943002738,
+        "max_rss_kib": 10220,
+        "anchors": 24
+      },
+      "overlap": {
+        "seconds": 18.415944400941953,
+        "max_rss_kib": 8344,
+        "anchors": 24
+      }
+    },
+    "missing_anchors": 0,
+    "extra_anchors": 0,
+    "records_identical": true
+  },
+  {
+    "window": "GRCh38_nonrepeat_candidate",
+    "region": "GRCh38#0#chr1:100000001-102000000",
+    "counts": {
+      "raw": 12987,
+      "duplicates": 0,
+      "direct_invalid": 12514,
+      "no_overlapping_pam": 5059,
+      "retained": 7928,
+      "unique": 12987,
+      "filter_seconds": 0.5206820219755173
+    },
+    "modes": {
+      "baseline": {
+        "seconds": 34.6001675571315,
+        "max_rss_kib": 10160,
+        "anchors": 12
+      },
+      "overlap": {
+        "seconds": 19.18434102507308,
+        "max_rss_kib": 10200,
+        "anchors": 12
+      }
+    },
+    "missing_anchors": 0,
+    "extra_anchors": 0,
+    "records_identical": true
+  },
+  {
+    "window": "GRCh38_repeat_candidate",
+    "region": "GRCh38#0#chr9:30000001-32000000",
+    "counts": {
+      "raw": 13269,
+      "duplicates": 0,
+      "direct_invalid": 12800,
+      "no_overlapping_pam": 5593,
+      "retained": 7676,
+      "unique": 13269,
+      "filter_seconds": 0.44363022898323834
+    },
+    "modes": {
+      "baseline": {
+        "seconds": 34.68670928198844,
+        "max_rss_kib": 10176,
+        "anchors": 23
+      },
+      "overlap": {
+        "seconds": 17.928131822962314,
+        "max_rss_kib": 9548,
+        "anchors": 23
+      }
+    },
+    "missing_anchors": 0,
+    "extra_anchors": 0,
+    "records_identical": true
+  }
+]

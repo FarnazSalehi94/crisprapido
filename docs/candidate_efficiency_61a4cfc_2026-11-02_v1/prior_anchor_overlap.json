@@ -1,0 +1,9 @@
+{
+  "old_reported_rows": 3027,
+  "new_sam_mapped_rows": 17653389,
+  "old_rows_with_overlapping_candidate": 3027,
+  "old_rows_without_overlapping_candidate": 0,
+  "missing": [],
+  "elapsed_seconds": 98.32724421401508,
+  "limitation": "Same-guide/contig/strand interval overlap is a necessary candidate relation only; it neither proves equivalence nor guarantees final recovery."
+}
