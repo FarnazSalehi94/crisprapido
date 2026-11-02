@@ -51,6 +51,24 @@ class AuditorTests(unittest.TestCase):
                 self.assertAlmostEqual(result['independent_cfd'], .446153846154 if 'I' in cigar else 0)
                 self.assertEqual(result['bulges'], 1)
 
+    def test_explicit_new_limits_preserve_old_default(self):
+        base = ROOT / 'docs/real_defaults_validation_49f20fc_2026-11-02_v1'
+        guides = load_guides(base/'guides.fa')
+        refs = {}
+        for line in (base/'ref.fa').read_text().splitlines():
+            if line.startswith('>'): name = line[1:]; refs[name] = ''
+            else: refs[name] += line
+        rows = (base/'actual.paf').read_text().splitlines()
+        for tag in ('bs:i:2', 'nm:i:5'):
+            line = next(x for x in rows if tag in x.split('\t'))
+            parsed = parse_row(line, guides, {k:len(v) for k,v in refs.items()})
+            fields = parsed[0]; seq = refs[fields[5]]; start,end = int(fields[7]),int(fields[8])
+            target = seq[start:end]
+            pam = seq[end:end+3] if fields[4] == '+' else seq[start-3:start]
+            with self.assertRaises(AuditError):
+                validate_alignment(parsed, guides, target, pam, self.mm, self.pm)
+            validate_alignment(parsed, guides, target, pam, self.mm, self.pm, 5, 1, 2, .75)
+
     def test_reject_wrong_pam_score_orientation_and_bases(self):
         for pam in ['GGA', 'ACC', 'NGG', 'GG', '']:
             with self.assertRaises(AuditError):

@@ -1,0 +1,40 @@
+stdout:
+[00.000] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.cct...
+[00.000] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.sa.bv.4...
+[00.167] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.sa.4..
+[00.542] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.txt.bin...
+[01.787] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.bwt...
+[02.206] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.brt...
+[02.886] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.rev.brt...
+[03.567] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.pos...
+[03.567] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.sna...
+[03.568] [INFO]	Reading /export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN.fsid...
+[03.568] [INFO]	Populating FM-range table with 10-mers...
+[03.828] [INFO]	Aligning with Columba strategy
+	Mapping mode: ALL
+	Max distance: 7
+	Partitioning strategy: DYNAMIC
+	Distance metric: EDIT
+	Number of threads: 4
+	Sequencing mode: Single-end
+	Reads file: /export/local/home/salehi/crisprapido-whole-defaults-60f9d6c-20261102-v1/runs/CHM13/ELMOD2_TCTAGCGTTTAACTTCTTCG/tmp/crisprapido-columba-29729-1793657664434156088/guide.fa
+	Output file: /export/local/home/salehi/crisprapido-whole-defaults-60f9d6c-20261102-v1/runs/CHM13/ELMOD2_TCTAGCGTTTAACTTCTTCG/tmp/crisprapido-columba-29729-1793657664434156088/output.sam
+	In-text verification switch point: 4
+	CIGAR string calculation: Yes
+	Reorder output: No
+	XA tag: No
+
+[03.828] [INFO]	Start alignment at Mon Nov  2 22:14:28 2026
+[04:39.201] [INFO]	4 mapping threads finished mapping in 275.372912s
+[04:40.381] [INFO]	Processed 1 read records. Rate: 0 reads/second
+[04:57.134] [INFO]	Processed 1 read records. Rate: 0 reads/second
+[04:57.134] [INFO]	Finished writing to output file: /export/local/home/salehi/crisprapido-whole-defaults-60f9d6c-20261102-v1/runs/CHM13/ELMOD2_TCTAGCGTTTAACTTCTTCG/tmp/crisprapido-columba-29729-1793657664434156088/output.sam
+[04:57.134] [INFO]	Average no. unique matches per read: 1.76534e+07
+[04:57.134] [INFO]	Total no. matches: 17653389
+[04:57.134] [INFO]	Mapped reads: 1
+[04:57.134] [INFO]	Number of reads: 1
+[04:57.134] [INFO]	Percentage reads mapped: 100%
+[04:57.467] [INFO]	Bye...
+
+
+stderr:

@@ -103,3 +103,11 @@ whole-genome runtime or memory. Higher gap-event counts are outside this
 configuration. Independent human review and the existing release preflight
 requirements remain outstanding; previous frozen-parameter performance and
 sensitivity results cannot be treated as validation of these new defaults.
+
+## Subsequent whole-assembly attempt
+
+The [controlled whole-assembly pilot](../whole_defaults_pilot_60f9d6c_2026-11-02_v1/REPORT.md)
+was stopped after CHM13–ELMOD2 Columba e=7 discovery produced 17,653,389
+matches, approximately 70.9 times the previous e=5 count. No final output was
+available to audit or compare. The other guide–assembly pairs were not started;
+this leaves the whole-assembly correctness and resource evaluation incomplete.

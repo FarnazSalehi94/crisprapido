@@ -115,7 +115,7 @@ def independent_cfd(aligned_guide, aligned_target, ops, pam, mm, pm):
     return product
 
 
-def validate_alignment(parsed, guides, target, pam, mm, pm):
+def validate_alignment(parsed, guides, target, pam, mm, pm, max_mismatches=4, max_bulges=1, max_bulge_size=1, min_match_fraction=.75):
     f, tags, ops, _, _ = parsed
     if f[4] == '-':
         target, pam = rc(target), rc(pam)
@@ -149,7 +149,7 @@ def validate_alignment(parsed, guides, target, pam, mm, pm):
             aq.append(g)
             at.append(t)
     require(q == 20 and r == len(target), 'sequence consumption mismatch')
-    require(mismatched <= 4 and gaps <= 1 and max_gap <= 1 and matched >= 15, 'configured mismatch/bulge/match-fraction violation')
+    require(mismatched <= max_mismatches and gaps <= max_bulges and max_gap <= max_bulge_size and matched / 20 >= min_match_fraction, 'configured mismatch/bulge/match-fraction violation')
     require(int(f[9]) == matched and int(f[10]) == sum(n for n, _ in ops), 'PAF match/block count mismatch')
     expected_tags = dict(nm=mismatched, ng=gaps, bs=max_gap, **{'as': 3*mismatched+sum(5+n for n, op in ops if op in 'ID')})
     for name, value in expected_tags.items():
@@ -193,8 +193,9 @@ def fetch_regions(samtools, fasta, regions):
     return sequences
 
 
-def audit(paf, fasta, guide_path, matrix_dir, samtools, output, batch_size=500):
+def audit(paf, fasta, guide_path, matrix_dir, samtools, output, batch_size=500, max_mismatches=4, max_bulges=1, max_bulge_size=1, min_match_fraction=.75):
     require(1 <= batch_size <= 1000, 'batch size must be 1..1000')
+    require(max_mismatches >= 0 and max_bulges >= 0 and max_bulge_size >= 0 and 0 <= min_match_fraction <= 1, 'invalid eligibility limits')
     output = Path(output)
     output.mkdir(exist_ok=False)
     guides, (mm, pm) = load_guides(guide_path), matrices(matrix_dir)
@@ -226,7 +227,7 @@ def audit(paf, fasta, guide_path, matrix_dir, samtools, output, batch_size=500):
                 return
             for number, line, p in parsed:
                 try:
-                    result = validate_alignment(p, guides, sequences[p[3]], sequences[p[4]], mm, pm)
+                    result = validate_alignment(p, guides, sequences[p[3]], sequences[p[4]], mm, pm, max_mismatches, max_bulges, max_bulge_size, min_match_fraction)
                     writer.writerow(dict(line=number, **result))
                     counts['verified'] += 1
                     counts['strand_'+result['strand']] += 1
@@ -262,6 +263,7 @@ def audit(paf, fasta, guide_path, matrix_dir, samtools, output, batch_size=500):
         paf=str(Path(paf).resolve()), fasta=str(Path(fasta).resolve()),
         guides=str(Path(guide_path).resolve()), matrices=str(Path(matrix_dir).resolve()),
         samtools=str(samtools), batch_size=batch_size,
+        eligibility=dict(max_mismatches=max_mismatches, max_bulges=max_bulges, max_bulge_size=max_bulge_size, min_match_fraction=min_match_fraction),
         auditor_sha256=digest(__file__), paf_sha256=digest(paf),
         guide_sha256=digest(guide_path), fai_sha256=digest(str(fasta)+'.fai'),
         matrix_sha256={name: digest(Path(matrix_dir)/name) for name in
@@ -280,8 +282,12 @@ def main():
     for name in ['paf', 'fasta', 'guides', 'matrices', 'samtools', 'output']:
         p.add_argument('--'+name, required=True)
     p.add_argument('--batch-size', type=int, default=500)
+    p.add_argument('--max-mismatches',type=int,default=4)
+    p.add_argument('--max-bulges',type=int,default=1)
+    p.add_argument('--max-bulge-size',type=int,default=1)
+    p.add_argument('--min-match-fraction',type=float,default=.75)
     a = p.parse_args()
-    result = audit(a.paf, a.fasta, a.guides, a.matrices, a.samtools, a.output, a.batch_size)
+    result = audit(a.paf, a.fasta, a.guides, a.matrices, a.samtools, a.output, a.batch_size, a.max_mismatches, a.max_bulges, a.max_bulge_size, a.min_match_fraction)
     print(json.dumps(result, indent=2))
     return 0 if result['status'] == 'PASS' else 1
 
