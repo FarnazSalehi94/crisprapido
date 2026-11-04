@@ -1,0 +1,53 @@
+{
+  "baseline": 2,
+  "experimental": 2,
+  "both": 2,
+  "baseline_only": [],
+  "experimental_only": [],
+  "baseline_duplicates": 0,
+  "experimental_duplicates": 0,
+  "representative_differences": 1,
+  "cfd_differences": 1,
+  "alignments": [
+    {
+      "key": [
+        "guide",
+        "GRCh38#0#chr1:1-100000",
+        "-",
+        18095
+      ],
+      "baseline": {
+        "start": 18095,
+        "end": 18117,
+        "cigar": "2=1X4=1X4=2D1X1=1X4=1X",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.00011645962727489134
+      },
+      "experimental": {
+        "start": 18095,
+        "end": 18117,
+        "cigar": "2=1X4=1X2=2D2=1X1=1X4=1X",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0015527950303297104
+      }
+    }
+  ],
+  "disagreement_oracle": [],
+  "oracle": {
+    "expected": 2,
+    "baseline_recovered": 2,
+    "baseline_missing": [],
+    "baseline_unexpected": [],
+    "experimental_recovered": 2,
+    "experimental_missing": [],
+    "experimental_unexpected": []
+  }
+}

@@ -1,0 +1,131 @@
+[
+  {
+    "name": "CHM13_nonrepeat_candidate_100000",
+    "source": {
+      "parent": "CHM13#0#chr1:100000001-102000000",
+      "zero_based_offset": 0,
+      "source_sha256": "2cf870f36162af92dee7c049346b772025efe58c151d2c96a413ef01ce4832ae",
+      "stratum": "prior ordinary candidate"
+    },
+    "header": "CHM13#0#chr1:100000001-102000000_prefix_100000",
+    "bases": 100000,
+    "Ns": 0,
+    "guide": "TCTAGCGTTTAACTTCTTCG",
+    "reference_sha256": "efa80434d4d0e67d4dfd5bca9c26feab1db0034f78a9758e96994ff4d2a50b97",
+    "source_sha256": "2cf870f36162af92dee7c049346b772025efe58c151d2c96a413ef01ce4832ae",
+    "pam_gg_forward": 4648,
+    "pam_cc_reverse": 4653,
+    "index_bytes": 381072
+  },
+  {
+    "name": "CHM13_nonrepeat_candidate_1000000",
+    "source": {
+      "parent": "CHM13#0#chr1:100000001-102000000",
+      "zero_based_offset": 0,
+      "source_sha256": "2cf870f36162af92dee7c049346b772025efe58c151d2c96a413ef01ce4832ae",
+      "stratum": "prior ordinary candidate"
+    },
+    "header": "CHM13#0#chr1:100000001-102000000_prefix_1000000",
+    "bases": 1000000,
+    "Ns": 0,
+    "guide": "TCTAGCGTTTAACTTCTTCG",
+    "reference_sha256": "47a4cfaf627b46d15336dc1cc82ce8be274c9c14ab04b8d020e7b70bf163f399",
+    "source_sha256": "2cf870f36162af92dee7c049346b772025efe58c151d2c96a413ef01ce4832ae",
+    "pam_gg_forward": 45160,
+    "pam_cc_reverse": 44192,
+    "index_bytes": 3784268
+  },
+  {
+    "name": "CHM13_nonrepeat_candidate_2000000",
+    "source": {
+      "parent": "CHM13#0#chr1:100000001-102000000",
+      "zero_based_offset": 0,
+      "source_sha256": "2cf870f36162af92dee7c049346b772025efe58c151d2c96a413ef01ce4832ae",
+      "stratum": "prior ordinary candidate"
+    },
+    "header": "CHM13#0#chr1:100000001-102000000_prefix_2000000",
+    "bases": 2000000,
+    "Ns": 0,
+    "guide": "TCTAGCGTTTAACTTCTTCG",
+    "reference_sha256": "f1a415f87266c124b1051ae038bb2c03c2a7e75dedbb5e3fd740e8137e3f7609",
+    "source_sha256": "2cf870f36162af92dee7c049346b772025efe58c151d2c96a413ef01ce4832ae",
+    "pam_gg_forward": 88506,
+    "pam_cc_reverse": 85203,
+    "index_bytes": 7565500
+  },
+  {
+    "name": "GRCh38_repeat_candidate_100000",
+    "source": {
+      "parent": "GRCh38#0#chr9:34000001-36000000",
+      "zero_based_offset": 0,
+      "source_sha256": "6224ead9698325c141984cdb879f10ec5fd0f78a8ea45a780138baaf4984cff6",
+      "stratum": "prior repeat-enriched proxy"
+    },
+    "header": "GRCh38#0#chr9:34000001-36000000_prefix_100000",
+    "bases": 100000,
+    "Ns": 0,
+    "guide": "TCTAGCGTTTAACTTCTTCG",
+    "reference_sha256": "1d8a52cdc1c1f22b0099196f6c82ff4137ca565cf982fcd4094e935fc79eece6",
+    "source_sha256": "6224ead9698325c141984cdb879f10ec5fd0f78a8ea45a780138baaf4984cff6",
+    "pam_gg_forward": 6355,
+    "pam_cc_reverse": 6334,
+    "index_bytes": 381070
+  },
+  {
+    "name": "GRCh38_repeat_candidate_1000000",
+    "source": {
+      "parent": "GRCh38#0#chr9:34000001-36000000",
+      "zero_based_offset": 0,
+      "source_sha256": "6224ead9698325c141984cdb879f10ec5fd0f78a8ea45a780138baaf4984cff6",
+      "stratum": "prior repeat-enriched proxy"
+    },
+    "header": "GRCh38#0#chr9:34000001-36000000_prefix_1000000",
+    "bases": 1000000,
+    "Ns": 0,
+    "guide": "TCTAGCGTTTAACTTCTTCG",
+    "reference_sha256": "98a9da160cadc55a41f1aeb76c142ce8c5d5f8124a487385b175f0599275866d",
+    "source_sha256": "6224ead9698325c141984cdb879f10ec5fd0f78a8ea45a780138baaf4984cff6",
+    "pam_gg_forward": 66736,
+    "pam_cc_reverse": 66283,
+    "index_bytes": 3784266
+  },
+  {
+    "name": "GRCh38_repeat_candidate_2000000",
+    "source": {
+      "parent": "GRCh38#0#chr9:34000001-36000000",
+      "zero_based_offset": 0,
+      "source_sha256": "6224ead9698325c141984cdb879f10ec5fd0f78a8ea45a780138baaf4984cff6",
+      "stratum": "prior repeat-enriched proxy"
+    },
+    "header": "GRCh38#0#chr9:34000001-36000000_prefix_2000000",
+    "bases": 2000000,
+    "Ns": 0,
+    "guide": "TCTAGCGTTTAACTTCTTCG",
+    "reference_sha256": "adf80a31b5a80e8418b9030886ebfc762ea67c900fc171e01b8fd8d88b45ac92",
+    "source_sha256": "6224ead9698325c141984cdb879f10ec5fd0f78a8ea45a780138baaf4984cff6",
+    "pam_gg_forward": 130744,
+    "pam_cc_reverse": 129200,
+    "index_bytes": 7565498
+  },
+  {
+    "name": "GRCh38_nativeN_100000",
+    "source": {
+      "region": "GRCh38#0#chr1:1-100000",
+      "zero_based_offset": 0,
+      "source_bgzf": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_GRCh38/input/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz",
+      "n_run_end": 10000,
+      "guide_pam_start": 10470,
+      "guide_distance_to_N_end": 470,
+      "stratum": "naturally N-containing GRCh38 assembly gap edge"
+    },
+    "header": "GRCh38#0#chr1:1-100000",
+    "bases": 100000,
+    "Ns": 10000,
+    "guide": "AACCCTAACCCTAACCCTCG",
+    "reference_sha256": "db5b541f037c743e0b34f230f8ff36c592c51409656105da7fb3e748d4f277ef",
+    "source_sha256": null,
+    "pam_gg_forward": 4749,
+    "pam_cc_reverse": 5461,
+    "index_bytes": 381028
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "region": "CHM13_nonrepeat_candidate_100000",
+    "sampled_resolved_20mers": 100,
+    "repeated_nonoverlap_20mers": 2,
+    "pam_counts": {
+      "+": 4648,
+      "-": 4653
+    },
+    "adjacent_pam_pairs_at_most_3bp": {
+      "+": 1301,
+      "-": 1396
+    }
+  },
+  {
+    "region": "CHM13_nonrepeat_candidate_1000000",
+    "sampled_resolved_20mers": 100,
+    "repeated_nonoverlap_20mers": 7,
+    "pam_counts": {
+      "+": 45160,
+      "-": 44192
+    },
+    "adjacent_pam_pairs_at_most_3bp": {
+      "+": 12978,
+      "-": 12553
+    }
+  },
+  {
+    "region": "CHM13_nonrepeat_candidate_2000000",
+    "sampled_resolved_20mers": 100,
+    "repeated_nonoverlap_20mers": 8,
+    "pam_counts": {
+      "+": 88506,
+      "-": 85203
+    },
+    "adjacent_pam_pairs_at_most_3bp": {
+      "+": 25205,
+      "-": 23967
+    }
+  },
+  {
+    "region": "GRCh38_repeat_candidate_100000",
+    "sampled_resolved_20mers": 100,
+    "repeated_nonoverlap_20mers": 16,
+    "pam_counts": {
+      "+": 6355,
+      "-": 6334
+    },
+    "adjacent_pam_pairs_at_most_3bp": {
+      "+": 2154,
+      "-": 2052
+    }
+  },
+  {
+    "region": "GRCh38_repeat_candidate_1000000",
+    "sampled_resolved_20mers": 100,
+    "repeated_nonoverlap_20mers": 14,
+    "pam_counts": {
+      "+": 66736,
+      "-": 66283
+    },
+    "adjacent_pam_pairs_at_most_3bp": {
+      "+": 23447,
+      "-": 23253
+    }
+  },
+  {
+    "region": "GRCh38_repeat_candidate_2000000",
+    "sampled_resolved_20mers": 100,
+    "repeated_nonoverlap_20mers": 14,
+    "pam_counts": {
+      "+": 130744,
+      "-": 129200
+    },
+    "adjacent_pam_pairs_at_most_3bp": {
+      "+": 45452,
+      "-": 44665
+    }
+  },
+  {
+    "region": "GRCh38_nativeN_100000",
+    "sampled_resolved_20mers": 90,
+    "repeated_nonoverlap_20mers": 0,
+    "pam_counts": {
+      "+": 4749,
+      "-": 5461
+    },
+    "adjacent_pam_pairs_at_most_3bp": {
+      "+": 1563,
+      "-": 1866
+    }
+  }
+]

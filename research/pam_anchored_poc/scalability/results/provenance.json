@@ -1,0 +1,14 @@
+{
+  "code_commit": "8dcc2adcd636d7f75b6ded455f9250fa477824b4",
+  "host": "octopus01",
+  "cpu": "AMD EPYC 7402P 24-Core Processor",
+  "kernel": "Linux 4.19.0-27-amd64",
+  "crisprapido_development_binary_sha256": "3c1033355ecc896243197cbdb544ae5b7a5264b1c424ee81d2b78d43af64dfab",
+  "pam_native_binary_sha256": "04af7941dec36919339cd80022e0f160966b8c6555a3c140219d12a2b1338eed",
+  "timed_native_binary_sha256": "5e21e1005deee61af2a8ed3d225a1eb5d81b6ff8aa3c9026ee78b07710ee59bc",
+  "columba_runtime_sha256": "7e44974c81dad4943292fa64a71e54073908b4909ce327480464d769322c40d1",
+  "columba_builder_sha256": "5987ad90e0c4a061cbf4aac7d6b087a284ccf7fe0f9e1835219c567c5e8d1ad2",
+  "columba_recorded_source_revision": "edcc7ce2a1e28ded6784a44afbd8b9348a4805ad",
+  "source_revision_caveat": "The untracked Columba build was not independently attested to that source revision; see prior provenance report.",
+  "note": "Timed native binary adds an index-constructor timer only; on the CHM13 1 Mb case its output matched the original native binary. Baseline output in the retained-SAM phase run matched the uninstrumented run."
+}

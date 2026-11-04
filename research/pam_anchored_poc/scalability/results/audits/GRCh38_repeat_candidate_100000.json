@@ -1,0 +1,22 @@
+{
+  "baseline": 0,
+  "experimental": 0,
+  "both": 0,
+  "baseline_only": [],
+  "experimental_only": [],
+  "baseline_duplicates": 0,
+  "experimental_duplicates": 0,
+  "representative_differences": 0,
+  "cfd_differences": 0,
+  "alignments": [],
+  "disagreement_oracle": [],
+  "oracle": {
+    "expected": 0,
+    "baseline_recovered": 0,
+    "baseline_missing": [],
+    "baseline_unexpected": [],
+    "experimental_recovered": 0,
+    "experimental_missing": [],
+    "experimental_unexpected": []
+  }
+}

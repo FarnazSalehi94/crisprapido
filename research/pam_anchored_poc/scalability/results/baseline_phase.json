@@ -1,0 +1,13 @@
+{
+  "wall_seconds": 29.729111606953666,
+  "columba_processes": 2,
+  "mapping_worker_seconds": [
+    0.000143,
+    0.288506
+  ],
+  "mapping_worker_seconds_sum": 0.288649,
+  "sam_bytes": 1578046,
+  "paf_sha256": "8fe2d6cade73d0722813be25901fed0e181116362ee5b1593527276bb202345d",
+  "matches_uninstrumented_paf": true,
+  "limitations": "worker time includes mapper reporting and is not equivalent to the prototype timer; SAM write time is not isolated"
+}

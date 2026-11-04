@@ -1,0 +1,14 @@
+{
+  "bwt": true,
+  "brt": true,
+  "rev.brt": true,
+  "sa.4": true,
+  "sa.bv.4": true,
+  "pos": true,
+  "sna": true,
+  "txt.bin": true,
+  "cct": true,
+  "meta": true,
+  "fsid": true,
+  "headerSN.bin": true
+}

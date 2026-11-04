@@ -1,0 +1,27 @@
+{
+  "components_sha256": {
+    "brt": "4336419283b1ca6dd83b6615ca390cbf91283441958b8bb5b9494780ee4b2cc2",
+    "bwt": "4ccff6ce322e059df5d9aa73aff665bc0bdfb5f373f989ef0dae2b9eda1b8aed",
+    "cct": "9dedb07fbcd2ab673fbf898b79445bba4c59212f7d39d5667896fa589c6afb8c",
+    "fsid": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+    "headerSN.bin": "885968c3f8b14578a774976f6cabc8f0b27b14e5fd344f5df70d111d9fafe2cd",
+    "meta": "208a5955023ddd79e6a86868b6acbcc4b27812cc1dee2ab24bb4a00e68ad5ffb",
+    "pos": "91bfe6a14b081c724e753601c9a5511d6e6eaf8ac88b6685a26841aff0e405a0",
+    "rev.brt": "0c96b9664c440a7082fecd31bba354479d656c91ffa4946a90a2b565965f8068",
+    "sa.4": "735467a795e1fcf0186a828d5da663aea5157afd5e82a2e4559aa88d87f2e4bb",
+    "sa.bv.4": "cd965b385d7bcf143c3c923a2239ce66a7cb492575ae8d17e2cf91b0295e9742",
+    "sna": "2807684931991f4281739bac10c95f28305349bdc400ed7cf3cae5d070a3f76e",
+    "txt.bin": "fd6442ece1247f11cc627c83330352b22b4275224b6c482055213eebda3040b6"
+  },
+  "format": "crispr-poc-index-binding-v1",
+  "reference_check": {
+    "ambiguous_positions_unverifiable": 0,
+    "bases": 2000000,
+    "contigs": 1,
+    "fasta_sha256": "f1a415f87266c124b1051ae038bb2c03c2a7e75dedbb5e3fd740e8137e3f7609",
+    "indexed_text_sha256": "57242582f3a55faec99a1dbb0bd37d4e9e80cc135d4d926644066d092fb1132d",
+    "resolved_base_mismatches": 0,
+    "scope": "32-bit little-endian vanilla index; does not prove BWT/SA integrity or original ambiguous bases"
+  },
+  "reference_sha256": "f1a415f87266c124b1051ae038bb2c03c2a7e75dedbb5e3fd740e8137e3f7609"
+}

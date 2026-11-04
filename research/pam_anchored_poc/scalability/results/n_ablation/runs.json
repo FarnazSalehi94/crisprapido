@@ -1,0 +1,134 @@
+[
+  {
+    "region": "natural",
+    "run": 0,
+    "backend": "columba-wfa2",
+    "status": 0,
+    "wall_seconds": 0.62,
+    "max_individual_process_rss_kib": 48676,
+    "states": null,
+    "search_seconds": null,
+    "rows": 2
+  },
+  {
+    "region": "natural",
+    "run": 0,
+    "backend": "pam-anchored",
+    "status": 0,
+    "wall_seconds": 0.22,
+    "max_individual_process_rss_kib": 15488,
+    "states": 1411449,
+    "search_seconds": 0.111123,
+    "rows": 2
+  },
+  {
+    "region": "natural",
+    "run": 1,
+    "backend": "columba-wfa2",
+    "status": 0,
+    "wall_seconds": 0.62,
+    "max_individual_process_rss_kib": 48828,
+    "states": null,
+    "search_seconds": null,
+    "rows": 2
+  },
+  {
+    "region": "natural",
+    "run": 1,
+    "backend": "pam-anchored",
+    "status": 0,
+    "wall_seconds": 0.22,
+    "max_individual_process_rss_kib": 15488,
+    "states": 1411449,
+    "search_seconds": 0.110783,
+    "rows": 2
+  },
+  {
+    "region": "natural",
+    "run": 2,
+    "backend": "columba-wfa2",
+    "status": 0,
+    "wall_seconds": 0.62,
+    "max_individual_process_rss_kib": 50632,
+    "states": null,
+    "search_seconds": null,
+    "rows": 2
+  },
+  {
+    "region": "natural",
+    "run": 2,
+    "backend": "pam-anchored",
+    "status": 0,
+    "wall_seconds": 0.22,
+    "max_individual_process_rss_kib": 15480,
+    "states": 1411449,
+    "search_seconds": 0.110752,
+    "rows": 2
+  },
+  {
+    "region": "shadow",
+    "run": 0,
+    "backend": "columba-wfa2",
+    "status": 0,
+    "wall_seconds": 0.61,
+    "max_individual_process_rss_kib": 48776,
+    "states": null,
+    "search_seconds": null,
+    "rows": 2
+  },
+  {
+    "region": "shadow",
+    "run": 0,
+    "backend": "pam-anchored",
+    "status": 0,
+    "wall_seconds": 0.22,
+    "max_individual_process_rss_kib": 15312,
+    "states": 1411449,
+    "search_seconds": 0.111389,
+    "rows": 2
+  },
+  {
+    "region": "shadow",
+    "run": 1,
+    "backend": "columba-wfa2",
+    "status": 0,
+    "wall_seconds": 0.61,
+    "max_individual_process_rss_kib": 48712,
+    "states": null,
+    "search_seconds": null,
+    "rows": 2
+  },
+  {
+    "region": "shadow",
+    "run": 1,
+    "backend": "pam-anchored",
+    "status": 0,
+    "wall_seconds": 0.22,
+    "max_individual_process_rss_kib": 15392,
+    "states": 1411449,
+    "search_seconds": 0.11022,
+    "rows": 2
+  },
+  {
+    "region": "shadow",
+    "run": 2,
+    "backend": "columba-wfa2",
+    "status": 0,
+    "wall_seconds": 0.67,
+    "max_individual_process_rss_kib": 50064,
+    "states": null,
+    "search_seconds": null,
+    "rows": 2
+  },
+  {
+    "region": "shadow",
+    "run": 2,
+    "backend": "pam-anchored",
+    "status": 0,
+    "wall_seconds": 0.27,
+    "max_individual_process_rss_kib": 15532,
+    "states": 1411449,
+    "search_seconds": 0.140443,
+    "rows": 2
+  }
+]
