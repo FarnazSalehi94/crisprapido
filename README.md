@@ -57,6 +57,14 @@ crisprapido -r <reference.fa> -G <guides.fa> -p <pam_sequence> \
   --columba-bin <columba> --columba-index <index_prefix> [OPTIONS]
 ```
 
+The existing Columba + WFA2 search remains the default. An optional,
+single-threaded PAM-anchored Columba backend can be selected with
+`--search-backend pam-anchored --pam-search-bin <prototype>`. It requires a
+fresh reference-bound index and rejects unsupported options. See the
+[experimental backend report](research/pam_anchored_poc/integration/REPORT.md)
+for build and usage instructions, index safety, supported settings, validation,
+and limitations. Valid alternative alignments can yield different CFD scores.
+
 ### Required Arguments
 
 - `-r, --reference <FILE>`: Input reference FASTA file (supports .fa and .fa.gz)

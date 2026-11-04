@@ -13,6 +13,7 @@ use rayon::prelude::*;
 mod cfd_score;
 mod columba;
 mod hit;
+mod pam_backend;
 mod reporting;
 mod verification;
 
@@ -105,6 +106,14 @@ pub(crate) struct Args {
     #[arg(long)]
     no_filter: bool,
 
+    /// Search backend: existing Columba/WFA2 (default) or experimental PAM-anchored
+    #[arg(long, value_parser = ["columba-wfa2", "pam-anchored"], default_value = "columba-wfa2")]
+    search_backend: String,
+
+    /// Separately built experimental PAM search executable
+    #[arg(long)]
+    pam_search_bin: Option<PathBuf>,
+
     /// Existing Columba SAM file to parse for candidate locations
     #[arg(long)]
     columba_sam: Option<PathBuf>,
@@ -174,6 +183,26 @@ fn main() {
             sequence: args.guide.clone().expect("clap requires --guide"),
         }]
     };
+
+    if args.search_backend == "pam-anchored" {
+        let mut hits = pam_backend::search(&args, &queries).unwrap_or_else(|e| {
+            eprintln!("{}", e);
+            std::process::exit(1);
+        });
+        for query in &queries {
+            let selected = hits.remove(&query.query_name).unwrap_or_default();
+            if batch_mode {
+                report_filtered_hits_for_query(selected, &args.pam, &query.query_name, false);
+            } else {
+                report_filtered_hits(selected, &args.pam, false);
+            }
+        }
+        return;
+    }
+    if args.pam_search_bin.is_some() {
+        eprintln!("--pam-search-bin requires --search-backend pam-anchored");
+        std::process::exit(2);
+    }
 
     if batch_mode
         && args.columba_sam.is_none()

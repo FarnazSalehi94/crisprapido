@@ -1,0 +1,70 @@
+[
+  {
+    "backend": "columba-wfa2",
+    "run": 0,
+    "wall_seconds": 12.37,
+    "max_process_rss_kib": 22444,
+    "search_states": null,
+    "search_seconds": null,
+    "audit": {
+      "duplicates": 0,
+      "expected": 172,
+      "independently_scored": 97,
+      "missing": 0,
+      "recovered": 172,
+      "reported": 172,
+      "unexpected": 0
+    }
+  },
+  {
+    "backend": "pam-anchored",
+    "run": 0,
+    "wall_seconds": 0.42,
+    "max_process_rss_kib": 14600,
+    "search_states": 4229884,
+    "search_seconds": 0.359088,
+    "audit": {
+      "duplicates": 0,
+      "expected": 172,
+      "independently_scored": 97,
+      "missing": 0,
+      "recovered": 172,
+      "reported": 172,
+      "unexpected": 0
+    }
+  },
+  {
+    "backend": "columba-wfa2",
+    "run": 1,
+    "wall_seconds": 11.49,
+    "max_process_rss_kib": 22392,
+    "search_states": null,
+    "search_seconds": null,
+    "audit": {
+      "duplicates": 0,
+      "expected": 172,
+      "independently_scored": 97,
+      "missing": 0,
+      "recovered": 172,
+      "reported": 172,
+      "unexpected": 0
+    }
+  },
+  {
+    "backend": "pam-anchored",
+    "run": 1,
+    "wall_seconds": 0.43,
+    "max_process_rss_kib": 14552,
+    "search_states": 4229884,
+    "search_seconds": 0.358924,
+    "audit": {
+      "duplicates": 0,
+      "expected": 172,
+      "independently_scored": 97,
+      "missing": 0,
+      "recovered": 172,
+      "reported": 172,
+      "unexpected": 0
+    }
+  }
+]

@@ -1156,6 +1156,8 @@ mod tests {
             window_size: None,
             threads: None,
             no_filter: false,
+            search_backend: "columba-wfa2".into(),
+            pam_search_bin: None,
             columba_sam: None,
             columba_bin: None,
             columba_index: None,
