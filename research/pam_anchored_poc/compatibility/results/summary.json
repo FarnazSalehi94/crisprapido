@@ -1,0 +1,45 @@
+{
+  "option_runs": 96,
+  "pam_suffixes": 16,
+  "invalid_settings": 5,
+  "invalid_guide_batches": 2,
+  "checked_binding": {
+    "changed_reference": true,
+    "changed_N": true,
+    "tampered_index": true,
+    "missing_manifest": true,
+    "unsupported_reference_symbol": true
+  },
+  "independent_cfd": {
+    "all_pams": {
+      "records": 1024,
+      "scored": 896,
+      "unscorable": 128
+    },
+    "p204": {
+      "records": 204,
+      "scored": 204,
+      "unscorable": 0
+    },
+    "p172": {
+      "records": 172,
+      "scored": 97,
+      "unscorable": 75
+    }
+  },
+  "old_columba_diagnostic": {
+    "A": 40,
+    "C": 40,
+    "G": 40,
+    "T": 40,
+    "expected": 40
+  },
+  "deterministic_representatives": "204 rows identical",
+  "baseline_representative_differences": 54,
+  "mixed_gap": {
+    "expected": 2,
+    "prototype": 2,
+    "baseline": 0,
+    "cfd_none": 2
+  }
+}

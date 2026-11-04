@@ -1,0 +1,5 @@
+[00.000] [INFO]	Reading /tmp/crispr-compat-release-mixed/index.sa.bv.4...
+[00.000] [INFO]	Reading /tmp/crispr-compat-release-mixed/index.sa.4..
+guide	contig	strand	start	end	anchor	pam	cigar	mismatches	inserted_guide_bases	deleted_guide_bases	bulge_events	match_count	match_fraction
+g	plus	+	0	20	20	AGG	9=1D1I10=	0	1	1	1	19	0.95
+g	minus	-	3	23	3	AGG	9=1D1I10=	0	1	1	1	19	0.95

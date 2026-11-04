@@ -69,14 +69,15 @@ for name,(target,pam,valid) in cases.items():
    if name=='n_inside_deletion':assert int(x['mismatches'])==0 and int(x['deleted_guide_bases'])==2
    if name=='n_near_insertion':assert 'I2' in truth[key]
    if name in ('n_near_deletion','n_inside_deletion'):assert 'D2' in truth[key]
-# A true N mismatch must be rejected at a zero-mismatch budget, while N
-# consumed as reference-only D remains eligible without a mismatch.
+# At m=0 a reference N can be consumed by an adjacent I/D event or by a
+# reference-only D; neither consumes a mismatch. The no-gap test below
+# independently checks that an aligned N consumes the mismatch budget.
 with (p/'zero.tsv').open('w') as o,(p/'zero.log').open('w') as e:
  subprocess.run([poc,str(p/'index'),str(p/'ref.fa'),str(p/'guides.fa'),'0','2','.75'],check=True,stdout=o,stderr=e)
 lines=(p/'zero.tsv').read_text().splitlines(); j=next(i for i,x in enumerate(lines) if x.startswith('guide\tcontig\t'));zero=list(csv.DictReader(lines[j:],delimiter='\t'))
 for strand in '+-':
  suffix='plus' if strand=='+' else 'minus'
- assert not any(x['contig']=='target_n_'+suffix and x['strand']==strand for x in zero)
+ assert any(x['contig']=='target_n_'+suffix and x['strand']==strand and int(x['inserted_guide_bases'])==1 and int(x['deleted_guide_bases'])==1 for x in zero)
  assert any(x['contig']=='n_inside_deletion_'+suffix and x['strand']==strand and int(x['mismatches'])==0 and int(x['deleted_guide_bases'])==2 for x in zero)
 # Force a replacement-equals-guide case: use the indexed replacement at the
 # first target's N as the guide base. True replay must still charge mismatch.
@@ -84,7 +85,7 @@ indexed=(p/'index.txt.bin').read_bytes()[4:];offset=cases['target_n'][0].index('
 masked_guide=g[:offset]+replacement+g[offset+1:];(p/'replacement_guide.fa').write_text('>replacement\n'+masked_guide+'\n')
 for budget in (0,1):
  with (p/('replacement'+str(budget)+'.tsv')).open('w') as o,(p/('replacement'+str(budget)+'.log')).open('w') as e:
-  subprocess.run([poc,str(p/'index'),str(p/'ref.fa'),str(p/'replacement_guide.fa'),str(budget),'2','.75'],check=True,stdout=o,stderr=e)
+  subprocess.run([poc,str(p/'index'),str(p/'ref.fa'),str(p/'replacement_guide.fa'),str(budget),'0','.75'],check=True,stdout=o,stderr=e)
  lines=(p/('replacement'+str(budget)+'.tsv')).read_text().splitlines(); j=next(i for i,x in enumerate(lines) if x.startswith('guide\tcontig\t'));found=list(csv.DictReader(lines[j:],delimiter='\t'))
  selected=[x for x in found if x['contig']=='target_n_plus' and x['strand']=='+' and int(x['anchor'])==20]
  if budget==0:assert not selected

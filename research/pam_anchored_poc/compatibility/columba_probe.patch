@@ -1,0 +1,5 @@
+--- a/src/indexinterface.cpp
++++ b/src/indexinterface.cpp
+@@ -1467 +1467 @@
+-        if (diff <= maxDiff) {
++        if (false && diff <= maxDiff) {

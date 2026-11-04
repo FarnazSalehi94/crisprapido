@@ -1,0 +1,4 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /tmp/crispr-columba-isolate/0/index -f /tmp/crispr-columba-isolate/0/guides.fa -a all -m edit -e 7 -t 1 -o /tmp/crispr-columba-isolate/0/raw.sam
+@SQ	SN:complex_n_mm5_D1_minus	LN:33
+complex	16	complex_n_mm5_D1_minus	11	60	10M1D10M	*	0	0	TACGGTACTCAGTGCAACGT	*	AS:i:6	NM:i:6	PG:Z:Columba
