@@ -1,0 +1,519 @@
+{
+  "combinations": 64,
+  "all_pass": true,
+  "oracle_anchors": 8,
+  "results": [
+    {
+      "substitute": "AAA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "AAC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "AAG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "AAT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "ACA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "ACC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "ACG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "ACT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "AGA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "AGC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "AGG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "AGT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "ATA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "ATC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "ATG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "ATT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CAA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CAC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CAG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CAT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CCA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CCC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CCG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CCT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CGA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CGC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CGG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CGT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CTA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CTC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CTG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "CTT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GAA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GAC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GAG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GAT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GCA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GCC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GCG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GCT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GGA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GGC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GGG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GGT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GTA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GTC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GTG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "GTT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TAA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TAC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TAG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TAT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TCA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TCC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TCG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TCT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TGA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TGC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TGG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TGT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TTA",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TTC",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TTG",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    {
+      "substitute": "TTT",
+      "expected": 8,
+      "recovered": 8,
+      "missed": 0,
+      "unexpected": 0,
+      "duplicates": 0
+    }
+  ]
+}

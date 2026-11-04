@@ -1,0 +1,200 @@
+{
+  "cases": 28,
+  "oracle_anchors": 40,
+  "replacements": {
+    "A": {
+      "prototype": {
+        "expected": 40,
+        "reported": 40,
+        "recovered": 40,
+        "missed": 0,
+        "unexpected": 0,
+        "duplicates": 0
+      },
+      "baseline": {
+        "expected": 40,
+        "reported": 37,
+        "recovered": 37,
+        "missed": 3,
+        "unexpected": 0,
+        "duplicates": 0
+      },
+      "baseline_misses_with_candidate_on_same_contig": 0,
+      "baseline_missing_details": [
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D1_minus",
+            "-",
+            7
+          ],
+          "indexed_one_gap_edit_distance": 6,
+          "has_any_candidate_on_contig": false
+        },
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D1_plus",
+            "+",
+            23
+          ],
+          "indexed_one_gap_edit_distance": 6,
+          "has_any_candidate_on_contig": false
+        },
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D2_minus",
+            "-",
+            7
+          ],
+          "indexed_one_gap_edit_distance": 7,
+          "has_any_candidate_on_contig": false
+        }
+      ]
+    },
+    "C": {
+      "prototype": {
+        "expected": 40,
+        "reported": 40,
+        "recovered": 40,
+        "missed": 0,
+        "unexpected": 0,
+        "duplicates": 0
+      },
+      "baseline": {
+        "expected": 40,
+        "reported": 38,
+        "recovered": 38,
+        "missed": 2,
+        "unexpected": 0,
+        "duplicates": 0
+      },
+      "baseline_misses_with_candidate_on_same_contig": 0,
+      "baseline_missing_details": [
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D1_minus",
+            "-",
+            7
+          ],
+          "indexed_one_gap_edit_distance": 6,
+          "has_any_candidate_on_contig": false
+        },
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D2_minus",
+            "-",
+            7
+          ],
+          "indexed_one_gap_edit_distance": 7,
+          "has_any_candidate_on_contig": false
+        }
+      ]
+    },
+    "G": {
+      "prototype": {
+        "expected": 40,
+        "reported": 40,
+        "recovered": 40,
+        "missed": 0,
+        "unexpected": 0,
+        "duplicates": 0
+      },
+      "baseline": {
+        "expected": 40,
+        "reported": 37,
+        "recovered": 37,
+        "missed": 3,
+        "unexpected": 0,
+        "duplicates": 0
+      },
+      "baseline_misses_with_candidate_on_same_contig": 0,
+      "baseline_missing_details": [
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D1_plus",
+            "+",
+            23
+          ],
+          "indexed_one_gap_edit_distance": 6,
+          "has_any_candidate_on_contig": false
+        },
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D2_minus",
+            "-",
+            7
+          ],
+          "indexed_one_gap_edit_distance": 6,
+          "has_any_candidate_on_contig": false
+        },
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D2_plus",
+            "+",
+            24
+          ],
+          "indexed_one_gap_edit_distance": 7,
+          "has_any_candidate_on_contig": false
+        }
+      ]
+    },
+    "T": {
+      "prototype": {
+        "expected": 40,
+        "reported": 40,
+        "recovered": 40,
+        "missed": 0,
+        "unexpected": 0,
+        "duplicates": 0
+      },
+      "baseline": {
+        "expected": 40,
+        "reported": 37,
+        "recovered": 37,
+        "missed": 3,
+        "unexpected": 0,
+        "duplicates": 0
+      },
+      "baseline_misses_with_candidate_on_same_contig": 0,
+      "baseline_missing_details": [
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D1_minus",
+            "-",
+            7
+          ],
+          "indexed_one_gap_edit_distance": 6,
+          "has_any_candidate_on_contig": false
+        },
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D1_plus",
+            "+",
+            23
+          ],
+          "indexed_one_gap_edit_distance": 6,
+          "has_any_candidate_on_contig": false
+        },
+        {
+          "key": [
+            "complex",
+            "complex_n_mm5_D2_minus",
+            "-",
+            7
+          ],
+          "indexed_one_gap_edit_distance": 7,
+          "has_any_candidate_on_contig": false
+        }
+      ]
+    }
+  }
+}

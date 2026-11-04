@@ -1,0 +1,9 @@
+{
+  "fasta_sha256": "d64192d9b1cf365fc104bf8c9709f8566995fdddc64f3cac1930011f718df682",
+  "indexed_text_sha256": "c56c66b6c7596f938b48c9a93cbae2e13039942f0e1b7066aed08f11cc4e1ee5",
+  "bases": 8000,
+  "contigs": 8,
+  "ambiguous_positions_unverifiable": 40,
+  "resolved_base_mismatches": 0,
+  "scope": "32-bit little-endian vanilla index; does not prove BWT/SA integrity or original ambiguous bases"
+}

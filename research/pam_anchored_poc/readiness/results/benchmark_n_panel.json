@@ -1,0 +1,186 @@
+{
+  "runs": [
+    {
+      "kind": "poc",
+      "run": 0,
+      "status": 0,
+      "wall_seconds": 0.25,
+      "user_seconds": 0.25,
+      "system_seconds": 0.0,
+      "peak_process_rss_kib": 4520,
+      "states": 2930404,
+      "search_wall_seconds": 0.254305,
+      "locate_replay_seconds": 0.002173176,
+      "search_excluding_locate_replay_seconds": 0.252131824,
+      "rows": 172,
+      "unique": 172,
+      "duplicates": 0
+    },
+    {
+      "kind": "baseline",
+      "run": 0,
+      "status": 0,
+      "wall_seconds": 11.61,
+      "user_seconds": 11.57,
+      "system_seconds": 0.04,
+      "peak_process_rss_kib": 29460,
+      "profile": {
+        "columba_wait": {
+          "calls": 2,
+          "wall_ns": 189848742
+        },
+        "expansion_enumeration": {
+          "calls": 5312,
+          "wall_ns": 6827817
+        },
+        "wfa_align": {
+          "calls": 923907,
+          "wall_ns": 8701890522
+        },
+        "eligible_enumeration": {
+          "calls": 551819,
+          "wall_ns": 687926257
+        },
+        "pam_extract": {
+          "calls": 14946,
+          "wall_ns": 1008886
+        },
+        "cfd_score": {
+          "calls": 172,
+          "wall_ns": 771485
+        },
+        "representative_selection": {
+          "calls": 64,
+          "wall_ns": 196341
+        },
+        "unused": {
+          "calls": 0,
+          "wall_ns": 0
+        },
+        "cache_lookup": {
+          "calls": 923907,
+          "wall_ns": 0
+        },
+        "cache_hit": {
+          "calls": 0,
+          "wall_ns": 0
+        },
+        "cache_miss": {
+          "calls": 923907,
+          "wall_ns": 0
+        },
+        "sam_read_parse": {
+          "calls": 2,
+          "wall_ns": 3976478
+        },
+        "total_wall": {
+          "calls": 1,
+          "wall_ns": 11618310709
+        }
+      },
+      "sam_bytes": 665041,
+      "columba_mapping_worker_seconds": 0.170636,
+      "columba_processes": 2,
+      "rows": 172,
+      "unique": 172,
+      "duplicates": 0
+    },
+    {
+      "kind": "poc",
+      "run": 1,
+      "status": 0,
+      "wall_seconds": 0.25,
+      "user_seconds": 0.25,
+      "system_seconds": 0.0,
+      "peak_process_rss_kib": 4284,
+      "states": 2930404,
+      "search_wall_seconds": 0.255574,
+      "locate_replay_seconds": 0.002168754,
+      "search_excluding_locate_replay_seconds": 0.25340524600000003,
+      "rows": 172,
+      "unique": 172,
+      "duplicates": 0
+    },
+    {
+      "kind": "baseline",
+      "run": 1,
+      "status": 0,
+      "wall_seconds": 11.59,
+      "user_seconds": 11.54,
+      "system_seconds": 0.04,
+      "peak_process_rss_kib": 29356,
+      "profile": {
+        "columba_wait": {
+          "calls": 2,
+          "wall_ns": 190882640
+        },
+        "expansion_enumeration": {
+          "calls": 5312,
+          "wall_ns": 6747997
+        },
+        "wfa_align": {
+          "calls": 923907,
+          "wall_ns": 8711803412
+        },
+        "eligible_enumeration": {
+          "calls": 551819,
+          "wall_ns": 680277369
+        },
+        "pam_extract": {
+          "calls": 14946,
+          "wall_ns": 1000723
+        },
+        "cfd_score": {
+          "calls": 172,
+          "wall_ns": 756984
+        },
+        "representative_selection": {
+          "calls": 64,
+          "wall_ns": 196668
+        },
+        "unused": {
+          "calls": 0,
+          "wall_ns": 0
+        },
+        "cache_lookup": {
+          "calls": 923907,
+          "wall_ns": 0
+        },
+        "cache_hit": {
+          "calls": 0,
+          "wall_ns": 0
+        },
+        "cache_miss": {
+          "calls": 923907,
+          "wall_ns": 0
+        },
+        "sam_read_parse": {
+          "calls": 2,
+          "wall_ns": 4078531
+        },
+        "total_wall": {
+          "calls": 1,
+          "wall_ns": 11591830450
+        }
+      },
+      "sam_bytes": 665041,
+      "columba_mapping_worker_seconds": 0.170992,
+      "columba_processes": 2,
+      "rows": 172,
+      "unique": 172,
+      "duplicates": 0
+    }
+  ],
+  "anchor_comparison": [
+    {
+      "run": 0,
+      "poc_only": [],
+      "baseline_only": []
+    },
+    {
+      "run": 1,
+      "poc_only": [],
+      "baseline_only": []
+    }
+  ]
+}

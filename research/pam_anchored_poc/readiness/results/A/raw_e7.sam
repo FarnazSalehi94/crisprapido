@@ -1,0 +1,56 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /tmp/crispr-readiness-substitutions-v4/A/index -f /tmp/crispr-readiness-substitutions-v4/guides.fa -a all -m edit -e 7 -t 1 -o /tmp/crispr-readiness-substitutions-v4/A/raw_e7.sam
+@SQ	SN:complex_n_mm5_plus	LN:32
+@SQ	SN:complex_n_mm5_minus	LN:32
+@SQ	SN:complex_n_mm5_D1_plus	LN:33
+@SQ	SN:complex_n_mm5_D1_minus	LN:33
+@SQ	SN:complex_n_mm5_D2_plus	LN:34
+@SQ	SN:complex_n_mm5_D2_minus	LN:34
+@SQ	SN:complex_n_mm4_I1_plus	LN:31
+@SQ	SN:complex_n_mm4_I1_minus	LN:31
+@SQ	SN:complex_n_mm3_I2_plus	LN:30
+@SQ	SN:complex_n_mm3_I2_minus	LN:30
+@SQ	SN:complex_three_N_plus	LN:32
+@SQ	SN:complex_three_N_minus	LN:32
+@SQ	SN:complex_two_N_in_D2_plus	LN:34
+@SQ	SN:complex_two_N_in_D2_minus	LN:34
+@SQ	SN:repeat_n_mm5_plus	LN:32
+@SQ	SN:repeat_n_mm5_minus	LN:32
+@SQ	SN:repeat_n_mm5_D1_plus	LN:33
+@SQ	SN:repeat_n_mm5_D1_minus	LN:33
+@SQ	SN:repeat_n_mm5_D2_plus	LN:34
+@SQ	SN:repeat_n_mm5_D2_minus	LN:34
+@SQ	SN:repeat_n_mm4_I1_plus	LN:31
+@SQ	SN:repeat_n_mm4_I1_minus	LN:31
+@SQ	SN:repeat_n_mm3_I2_plus	LN:30
+@SQ	SN:repeat_n_mm3_I2_minus	LN:30
+@SQ	SN:repeat_three_N_plus	LN:32
+@SQ	SN:repeat_three_N_minus	LN:32
+@SQ	SN:repeat_two_N_in_D2_plus	LN:34
+@SQ	SN:repeat_two_N_in_D2_minus	LN:34
+complex	0	complex_three_N_plus	3	1	20M	*	0	0	ACGTTGCACTGAGTACCGTA	*	AS:i:2	NM:i:2	PG:Z:Columba
+complex	272	complex_n_mm5_minus	11	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+complex	256	complex_n_mm5_D2_plus	3	0	7M1D3M1D10M	*	0	0	*	*	AS:i:7	NM:i:7	PG:Z:Columba
+complex	256	complex_n_mm4_I1_plus	3	0	5M1I14M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+complex	272	complex_n_mm4_I1_minus	11	0	14M1I5M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+complex	256	complex_n_mm3_I2_plus	3	0	6M1I1M1I11M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+complex	272	complex_n_mm3_I2_minus	11	0	13M2I5M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+complex	256	complex_n_mm5_plus	3	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+complex	272	complex_three_N_minus	11	1	20M	*	0	0	*	*	AS:i:2	NM:i:2	PG:Z:Columba
+complex	256	complex_two_N_in_D2_plus	3	1	9M2D11M	*	0	0	*	*	AS:i:2	NM:i:2	PG:Z:Columba
+complex	272	complex_two_N_in_D2_minus	11	1	10M2D10M	*	0	0	*	*	AS:i:2	NM:i:2	PG:Z:Columba
+repeat	0	repeat_two_N_in_D2_plus	3	60	20M	*	0	0	ACACACACACACACACACAC	*	AS:i:1	NM:i:1	PG:Z:Columba
+repeat	272	repeat_n_mm5_minus	11	0	15M1I1M1I2M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+repeat	256	repeat_n_mm5_D1_plus	5	0	8M1D6M1I1M1I3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+repeat	272	repeat_n_mm5_D1_minus	1	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+repeat	256	repeat_n_mm5_D2_plus	5	0	8M1D1M1I10M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+repeat	272	repeat_n_mm5_D2_minus	1	0	20M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+repeat	256	repeat_n_mm4_I1_plus	5	0	3M1I10M1I1M1I3M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+repeat	272	repeat_n_mm4_I1_minus	11	0	7M1I1M1I6M1I3M	*	0	0	*	*	AS:i:5	NM:i:5	PG:Z:Columba
+repeat	256	repeat_n_mm3_I2_plus	5	0	12M1I1M1I4M1I	*	0	0	*	*	AS:i:3	NM:i:3	PG:Z:Columba
+repeat	272	repeat_n_mm3_I2_minus	10	0	1I4M1I1M1I12M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+repeat	256	repeat_three_N_plus	3	0	20M	*	0	0	*	*	AS:i:2	NM:i:2	PG:Z:Columba
+repeat	272	repeat_three_N_minus	1	0	20M	*	0	0	*	*	AS:i:3	NM:i:3	PG:Z:Columba
+repeat	256	repeat_n_mm5_plus	5	0	14M1I1M1I3M	*	0	0	*	*	AS:i:4	NM:i:4	PG:Z:Columba
+repeat	256	repeat_two_N_in_D2_plus	19	0	16M4I	*	0	0	*	*	AS:i:7	NM:i:7	PG:Z:Columba
+repeat	272	repeat_two_N_in_D2_minus	11	0	20M	*	0	0	*	*	AS:i:2	NM:i:2	PG:Z:Columba

@@ -1,0 +1,32 @@
+@HD	VN:1.6	SO:queryname
+@PG	ID:Columba2.0.3	PN:Columba	CL:/moosefs/salehi/HPRCv2_CRISPRapido/results/PAM_CFD_complete_search_v1_9c2d3f5_2026-10-28/release/columba -r /tmp/crispr-readiness-substitutions-v4/C/index -f /tmp/crispr-readiness-substitutions-v4/guides.fa -a all -m edit -e 0 -t 1 -o /tmp/crispr-readiness-substitutions-v4/C/raw_e0.sam
+@SQ	SN:complex_n_mm5_plus	LN:32
+@SQ	SN:complex_n_mm5_minus	LN:32
+@SQ	SN:complex_n_mm5_D1_plus	LN:33
+@SQ	SN:complex_n_mm5_D1_minus	LN:33
+@SQ	SN:complex_n_mm5_D2_plus	LN:34
+@SQ	SN:complex_n_mm5_D2_minus	LN:34
+@SQ	SN:complex_n_mm4_I1_plus	LN:31
+@SQ	SN:complex_n_mm4_I1_minus	LN:31
+@SQ	SN:complex_n_mm3_I2_plus	LN:30
+@SQ	SN:complex_n_mm3_I2_minus	LN:30
+@SQ	SN:complex_three_N_plus	LN:32
+@SQ	SN:complex_three_N_minus	LN:32
+@SQ	SN:complex_two_N_in_D2_plus	LN:34
+@SQ	SN:complex_two_N_in_D2_minus	LN:34
+@SQ	SN:repeat_n_mm5_plus	LN:32
+@SQ	SN:repeat_n_mm5_minus	LN:32
+@SQ	SN:repeat_n_mm5_D1_plus	LN:33
+@SQ	SN:repeat_n_mm5_D1_minus	LN:33
+@SQ	SN:repeat_n_mm5_D2_plus	LN:34
+@SQ	SN:repeat_n_mm5_D2_minus	LN:34
+@SQ	SN:repeat_n_mm4_I1_plus	LN:31
+@SQ	SN:repeat_n_mm4_I1_minus	LN:31
+@SQ	SN:repeat_n_mm3_I2_plus	LN:30
+@SQ	SN:repeat_n_mm3_I2_minus	LN:30
+@SQ	SN:repeat_three_N_plus	LN:32
+@SQ	SN:repeat_three_N_minus	LN:32
+@SQ	SN:repeat_two_N_in_D2_plus	LN:34
+@SQ	SN:repeat_two_N_in_D2_minus	LN:34
+complex	4	*	0	0	*	*	0	0	ACGTTGCACTGAGTACCGTA	*	PG:Z:Columba
+repeat	4	*	0	0	*	*	0	0	ACACACACACACACACACAC	*	PG:Z:Columba

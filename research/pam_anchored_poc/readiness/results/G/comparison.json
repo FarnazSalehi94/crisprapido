@@ -1,0 +1,73 @@
+{
+  "baseline": {
+    "duplicates": 0,
+    "expected": 40,
+    "extra_keys": [],
+    "missed": 3,
+    "missing_keys": [
+      [
+        "complex",
+        "complex_n_mm5_D1_plus",
+        "+",
+        23
+      ],
+      [
+        "complex",
+        "complex_n_mm5_D2_minus",
+        "-",
+        7
+      ],
+      [
+        "complex",
+        "complex_n_mm5_D2_plus",
+        "+",
+        24
+      ]
+    ],
+    "recovered": 37,
+    "reported": 37,
+    "unexpected": 0,
+    "unique": 37
+  },
+  "index": {
+    "ambiguous_positions_unverifiable": 40,
+    "bases": 904,
+    "contigs": 28,
+    "fasta_sha256": "266953917c875864a107562b15babe065c71f108268f88a6a86217b7d00baae0",
+    "indexed_text_sha256": "358e5035a612c12c4d9e2e26d1c7727f2d5962b6f40b398162b170ffe4efc216",
+    "resolved_base_mismatches": 0,
+    "scope": "32-bit little-endian vanilla index; does not prove BWT/SA integrity or original ambiguous bases"
+  },
+  "oracle_categories": {
+    "D1_2_N1": 4,
+    "D1_3_N1": 12,
+    "D1_4_N1": 14,
+    "D1_5_N1": 28,
+    "D2_0_N1": 4,
+    "D2_1_N1": 4,
+    "D2_2_N1": 6,
+    "D2_3_N1": 6,
+    "D2_4_N1": 6,
+    "D2_5_N1": 12,
+    "I1_2_N1": 4,
+    "I1_3_N1": 14,
+    "I1_4_N1": 20,
+    "I2_2_N1": 2,
+    "I2_3_N1": 8,
+    "M_2_N1": 2,
+    "M_3_N1": 4,
+    "M_4_N1": 2,
+    "M_5_N1": 4
+  },
+  "prototype": {
+    "duplicates": 0,
+    "expected": 40,
+    "extra_keys": [],
+    "missed": 0,
+    "missing_keys": [],
+    "recovered": 40,
+    "reported": 40,
+    "unexpected": 0,
+    "unique": 40
+  }
+}
