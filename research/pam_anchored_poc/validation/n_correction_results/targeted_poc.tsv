@@ -1,0 +1,15 @@
+[00.000] [INFO]	Reading /tmp/crispr-nfix-index-targeted3/index.sa.bv.4...
+[00.000] [INFO]	Reading /tmp/crispr-nfix-index-targeted3/index.sa.4..
+guide	contig	strand	start	end	anchor	pam	cigar	mismatches	inserted_guide_bases	deleted_guide_bases
+g	multiple_n_plus	+	0	20	20	CGG	9=3X8=	3	0	0
+g	n_inside_deletion_plus	+	0	22	22	TGG	8=2D12=	0	0	2
+g	n_near_deletion_plus	+	0	22	22	AGG	8=1X2D11=	1	0	2
+g	n_near_insertion_plus	+	0	18	18	GGG	6=2I2=1X9=	1	2	0
+g	n_near_pam_plus	+	0	20	20	TGG	19=1X	1	0	0
+g	target_n_plus	+	0	20	20	AGG	10=1X9=	1	0	0
+g	multiple_n_minus	-	3	23	3	CGG	9=3X8=	3	0	0
+g	n_inside_deletion_minus	-	3	25	3	TGG	8=2D12=	0	0	2
+g	n_near_deletion_minus	-	3	25	3	AGG	8=1X2D11=	1	0	2
+g	n_near_insertion_minus	-	3	21	3	GGG	6=2I2=1X9=	1	2	0
+g	n_near_pam_minus	-	3	23	3	TGG	19=1X	1	0	0
+g	target_n_minus	-	3	23	3	AGG	10=1X9=	1	0	0

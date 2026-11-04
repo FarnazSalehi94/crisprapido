@@ -1,0 +1,168 @@
+{
+  "runs": [
+    {
+      "kind": "poc",
+      "run": 0,
+      "status": 0,
+      "wall_seconds": 0.65,
+      "user_seconds": 0.64,
+      "system_seconds": 0.0,
+      "peak_process_rss_kib": 13116,
+      "states": 8406922,
+      "search_wall_seconds": 0.63485,
+      "rows": 10,
+      "unique": 10,
+      "duplicates": 0
+    },
+    {
+      "kind": "baseline",
+      "run": 0,
+      "status": 0,
+      "wall_seconds": 29.71,
+      "user_seconds": 29.47,
+      "system_seconds": 0.23,
+      "peak_process_rss_kib": 66888,
+      "profile": {
+        "columba_wait": {
+          "calls": 2,
+          "wall_ns": 478357669
+        },
+        "expansion_enumeration": {
+          "calls": 13033,
+          "wall_ns": 15045649
+        },
+        "wfa_align": {
+          "calls": 2313747,
+          "wall_ns": 22274721906
+        },
+        "eligible_enumeration": {
+          "calls": 1382175,
+          "wall_ns": 1694830274
+        },
+        "pam_extract": {
+          "calls": 881,
+          "wall_ns": 98552
+        },
+        "cfd_score": {
+          "calls": 10,
+          "wall_ns": 38063
+        },
+        "representative_selection": {
+          "calls": 1,
+          "wall_ns": 72248
+        },
+        "unused": {
+          "calls": 0,
+          "wall_ns": 0
+        },
+        "cache_lookup": {
+          "calls": 2313747,
+          "wall_ns": 0
+        },
+        "cache_hit": {
+          "calls": 0,
+          "wall_ns": 0
+        },
+        "cache_miss": {
+          "calls": 2313747,
+          "wall_ns": 0
+        },
+        "total_wall": {
+          "calls": 1,
+          "wall_ns": 29716478385
+        }
+      },
+      "rows": 10,
+      "unique": 10,
+      "duplicates": 0
+    },
+    {
+      "kind": "poc",
+      "run": 1,
+      "status": 0,
+      "wall_seconds": 0.67,
+      "user_seconds": 0.67,
+      "system_seconds": 0.0,
+      "peak_process_rss_kib": 13080,
+      "states": 8406922,
+      "search_wall_seconds": 0.659593,
+      "rows": 10,
+      "unique": 10,
+      "duplicates": 0
+    },
+    {
+      "kind": "baseline",
+      "run": 1,
+      "status": 0,
+      "wall_seconds": 29.31,
+      "user_seconds": 29.07,
+      "system_seconds": 0.22,
+      "peak_process_rss_kib": 67280,
+      "profile": {
+        "columba_wait": {
+          "calls": 2,
+          "wall_ns": 504965063
+        },
+        "expansion_enumeration": {
+          "calls": 13033,
+          "wall_ns": 14967326
+        },
+        "wfa_align": {
+          "calls": 2313747,
+          "wall_ns": 22164640079
+        },
+        "eligible_enumeration": {
+          "calls": 1382175,
+          "wall_ns": 1690014332
+        },
+        "pam_extract": {
+          "calls": 881,
+          "wall_ns": 88453
+        },
+        "cfd_score": {
+          "calls": 10,
+          "wall_ns": 38534
+        },
+        "representative_selection": {
+          "calls": 1,
+          "wall_ns": 82688
+        },
+        "unused": {
+          "calls": 0,
+          "wall_ns": 0
+        },
+        "cache_lookup": {
+          "calls": 2313747,
+          "wall_ns": 0
+        },
+        "cache_hit": {
+          "calls": 0,
+          "wall_ns": 0
+        },
+        "cache_miss": {
+          "calls": 2313747,
+          "wall_ns": 0
+        },
+        "total_wall": {
+          "calls": 1,
+          "wall_ns": 29311899652
+        }
+      },
+      "rows": 10,
+      "unique": 10,
+      "duplicates": 0
+    }
+  ],
+  "anchor_comparison": [
+    {
+      "run": 0,
+      "poc_only": [],
+      "baseline_only": []
+    },
+    {
+      "run": 1,
+      "poc_only": [],
+      "baseline_only": []
+    }
+  ]
+}
