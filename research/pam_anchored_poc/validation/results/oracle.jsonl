@@ -1,0 +1,172 @@
+{"anchor": 436, "categories": ["D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 437, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_3"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_4"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 487, "categories": ["D1_mm5"], "contig": "GRCh38_repeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 487, "categories": ["D1_mm5"], "contig": "GRCh38_repeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm2", "I2_mm3", "mismatch_4"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm3", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm4", "D1_mm5", "D2_mm4", "D2_mm5", "I1_mm4", "I2_mm3", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm4", "D1_mm5", "D2_mm4", "D2_mm5", "I1_mm4", "I2_mm3", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_2"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm3", "D1_mm4", "D1_mm5", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm2", "I2_mm3", "mismatch_3"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 487, "categories": ["D1_mm5"], "contig": "GRCh38_repeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 487, "categories": ["D1_mm5"], "contig": "GRCh38_repeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_4"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm3", "D1_mm4", "D1_mm5", "D2_mm5", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 487, "categories": ["D1_mm5"], "contig": "GRCh38_repeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 487, "categories": ["D1_mm5"], "contig": "GRCh38_repeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm3", "D1_mm4", "D1_mm5", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2_mm2", "I2_mm3", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm4", "D1_mm5", "D2_mm5", "I1_mm4", "I2_mm3"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 487, "categories": ["D1_mm5"], "contig": "GRCh38_repeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 487, "categories": ["D1_mm5"], "contig": "GRCh38_repeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 436, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 437, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "exact"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_1"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 961, "categories": ["D2_mm5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_exact", "strand": "+"}
+{"anchor": 436, "categories": ["D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm5", "D2_mm5", "I1_mm4", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 436, "categories": ["D1_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 437, "categories": ["D1_mm5", "D2_mm5", "I1_mm4", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 606, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_plus_D1", "strand": "+"}
+{"anchor": 606, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_plus_D1", "strand": "+"}
+{"anchor": 606, "categories": ["D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I2_mm3"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 606, "categories": ["D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 606, "categories": ["D2_mm5", "I2_mm3"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_plus_D2mm5", "strand": "+"}
+{"anchor": 606, "categories": ["D2_mm5", "I2_mm3"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_plus_D2mm5", "strand": "+"}
+{"anchor": 606, "categories": ["D1_mm5", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm3", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_plus_I1", "strand": "+"}
+{"anchor": 606, "categories": ["I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_plus_I1", "strand": "+"}
+{"anchor": 606, "categories": ["I2", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_plus_I2", "strand": "+"}
+{"anchor": 606, "categories": ["I2_mm1", "I2_mm2", "I2_mm3"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_plus_I2", "strand": "+"}
+{"anchor": 606, "categories": ["D2_mm4", "D2_mm5", "I2_mm3"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_plus_I2mm3", "strand": "+"}
+{"anchor": 606, "categories": ["D2_mm5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_plus_I2mm3", "strand": "+"}
+{"anchor": 606, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "exact"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 606, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_1"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 606, "categories": ["D1_mm5", "D2_mm5", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate", "guide": "CHM13_nonrepeat_candidate_plus_mm5", "strand": "+"}
+{"anchor": 606, "categories": ["D1_mm5", "D2_mm5", "mismatch_5"], "contig": "CHM13_nonrepeat_candidate_N", "guide": "CHM13_nonrepeat_candidate_plus_mm5", "strand": "+"}
+{"anchor": 472, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 472, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 472, "categories": ["D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm4", "mismatch_5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 472, "categories": ["D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 472, "categories": ["D2_mm5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 472, "categories": ["D2_mm5"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 472, "categories": ["I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 472, "categories": ["I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 472, "categories": ["I2", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 472, "categories": ["I2_mm1", "I2_mm2", "I2_mm3"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 472, "categories": ["I2_mm3"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 472, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "exact"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 472, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_1"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 472, "categories": ["D1_mm5", "D2_mm5", "mismatch_5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 472, "categories": ["D1_mm5", "D2_mm5", "mismatch_5"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 525, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "I1_mm4"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_D1", "strand": "+"}
+{"anchor": 525, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_D1", "strand": "+"}
+{"anchor": 524, "categories": ["D1_mm5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 525, "categories": ["D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I2_mm3"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 525, "categories": ["D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 525, "categories": ["D2_mm4", "D2_mm5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_D2mm5", "strand": "+"}
+{"anchor": 525, "categories": ["D2_mm4", "D2_mm5"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_D2mm5", "strand": "+"}
+{"anchor": 525, "categories": ["D1_mm4", "D1_mm5", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "mismatch_5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_I1", "strand": "+"}
+{"anchor": 525, "categories": ["D1_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_I1", "strand": "+"}
+{"anchor": 525, "categories": ["D1_mm5", "D2_mm4", "D2_mm5", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_I2", "strand": "+"}
+{"anchor": 525, "categories": ["D2_mm5", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_I2", "strand": "+"}
+{"anchor": 525, "categories": ["I2_mm3"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_I2mm3", "strand": "+"}
+{"anchor": 523, "categories": ["I2", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 524, "categories": ["I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 525, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "exact"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 523, "categories": ["I2_mm1", "I2_mm2", "I2_mm3"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 524, "categories": ["I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 525, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_1"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 525, "categories": ["D1_mm5", "D2_mm5", "I1_mm4", "mismatch_5"], "contig": "CHM13_repeat_candidate", "guide": "CHM13_repeat_candidate_plus_mm5", "strand": "+"}
+{"anchor": 525, "categories": ["D1_mm5", "D2_mm5", "I1_mm4", "mismatch_5"], "contig": "CHM13_repeat_candidate_N", "guide": "CHM13_repeat_candidate_plus_mm5", "strand": "+"}
+{"anchor": 888, "categories": ["D1_mm5"], "contig": "CHM13_repeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_D1", "strand": "+"}
+{"anchor": 888, "categories": ["D1_mm5"], "contig": "CHM13_repeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_D1", "strand": "+"}
+{"anchor": 288, "categories": ["D1_mm5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 289, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm5", "mismatch_5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 289, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 289, "categories": ["D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I2_mm3"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 290, "categories": ["D1_mm4", "D1_mm5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 289, "categories": ["D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 290, "categories": ["D1_mm5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 289, "categories": ["D2_mm5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 289, "categories": ["D2_mm5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 289, "categories": ["I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 289, "categories": ["I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 289, "categories": ["D1_mm5", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 289, "categories": ["D2_mm5", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 329, "categories": ["D2_mm5"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_I2", "strand": "+"}
+{"anchor": 289, "categories": ["D1_mm5", "D2_mm4", "D2_mm5", "I2_mm2", "I2_mm3"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 289, "categories": ["D2_mm5", "I2_mm3"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 329, "categories": ["I2_mm3"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_I2mm3", "strand": "+"}
+{"anchor": 288, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 289, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "exact"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 290, "categories": ["I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 288, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 289, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_1"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 290, "categories": ["I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 288, "categories": ["D1_mm5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 289, "categories": ["D1_mm5", "D2_mm5", "mismatch_5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 288, "categories": ["D1_mm5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 289, "categories": ["D1_mm5", "D2_mm5", "mismatch_5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 615, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_D1", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_D1", "strand": "+"}
+{"anchor": 614, "categories": ["I1_mm4"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_4"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm4", "I2_mm2", "I2_mm3", "mismatch_5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 615, "categories": ["D2_mm5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_D2mm5", "strand": "+"}
+{"anchor": 615, "categories": ["D2_mm5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_D2mm5", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm3", "D1_mm4", "D1_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_I1", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm4", "D1_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_I1", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm5", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_I2", "strand": "+"}
+{"anchor": 615, "categories": ["D2_mm4", "D2_mm5", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_I2", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm5", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2_mm2", "I2_mm3", "mismatch_5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_I2mm3", "strand": "+"}
+{"anchor": 615, "categories": ["D2_mm5", "I1_mm4", "I2_mm3"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_I2mm3", "strand": "+"}
+{"anchor": 614, "categories": ["I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 615, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "exact"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 614, "categories": ["I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_1"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm5", "D2_mm5", "I1_mm4", "mismatch_5"], "contig": "GRCh38_nonrepeat_candidate", "guide": "GRCh38_nonrepeat_candidate_plus_mm5", "strand": "+"}
+{"anchor": 615, "categories": ["D1_mm5", "D2_mm5", "I1_mm4", "mismatch_5"], "contig": "GRCh38_nonrepeat_candidate_N", "guide": "GRCh38_nonrepeat_candidate_plus_mm5", "strand": "+"}
+{"anchor": 398, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_3"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2_mm2", "I2_mm3", "mismatch_4"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_D1", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2_mm2", "I2_mm3", "mismatch_5"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm4", "I2_mm3"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_D2", "strand": "-"}
+{"anchor": 398, "categories": ["D2_mm5"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 398, "categories": ["D2_mm5"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_D2mm5", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm4", "D1_mm5", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm3", "mismatch_4"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm5", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "mismatch_5"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_I1", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm5", "D2_mm5", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 398, "categories": ["I2_mm1", "I2_mm2", "I2_mm3"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_I2", "strand": "-"}
+{"anchor": 405, "categories": ["D2_mm5"], "contig": "CHM13_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_I2mm3", "strand": "+"}
+{"anchor": 405, "categories": ["D2_mm5"], "contig": "CHM13_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_I2mm3", "strand": "+"}
+{"anchor": 398, "categories": ["D1_mm5", "I2_mm2", "I2_mm3"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 398, "categories": ["I2_mm3"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_I2mm3", "strand": "-"}
+{"anchor": 398, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "exact"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_1"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_exact", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm5", "D2_mm5", "I1_mm3", "I1_mm4", "mismatch_5"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 398, "categories": ["D1_mm5", "D2_mm5", "I1_mm3", "I1_mm4", "mismatch_5"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_minus_mm5", "strand": "-"}
+{"anchor": 329, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "I1_mm3", "I1_mm4"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_plus_D1", "strand": "+"}
+{"anchor": 329, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "I1_mm4"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_plus_D1", "strand": "+"}
+{"anchor": 329, "categories": ["D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm3", "I1_mm4", "I2_mm2", "I2_mm3", "mismatch_4"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 329, "categories": ["D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm4", "I2_mm3", "mismatch_5"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_plus_D2", "strand": "+"}
+{"anchor": 329, "categories": ["D2_mm5"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_plus_D2mm5", "strand": "+"}
+{"anchor": 329, "categories": ["D2_mm5"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_plus_D2mm5", "strand": "+"}
+{"anchor": 329, "categories": ["D1_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_plus_I1", "strand": "+"}
+{"anchor": 329, "categories": ["I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_plus_I1", "strand": "+"}
+{"anchor": 329, "categories": ["I2", "I2_mm1", "I2_mm2", "I2_mm3"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_plus_I2", "strand": "+"}
+{"anchor": 329, "categories": ["I2_mm1", "I2_mm2", "I2_mm3"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_plus_I2", "strand": "+"}
+{"anchor": 329, "categories": ["I2_mm3"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_plus_I2mm3", "strand": "+"}
+{"anchor": 329, "categories": ["D1", "D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2", "I2_mm1", "I2_mm2", "I2_mm3", "exact"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 329, "categories": ["D1_mm1", "D1_mm2", "D1_mm3", "D1_mm4", "D1_mm5", "D2_mm1", "D2_mm2", "D2_mm3", "D2_mm4", "D2_mm5", "I1_mm1", "I1_mm2", "I1_mm3", "I1_mm4", "I2_mm1", "I2_mm2", "I2_mm3", "mismatch_1"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_plus_exact", "strand": "+"}
+{"anchor": 329, "categories": ["D1_mm5", "D2_mm5", "mismatch_5"], "contig": "GRCh38_repeat_candidate", "guide": "GRCh38_repeat_candidate_plus_mm5", "strand": "+"}
+{"anchor": 329, "categories": ["D1_mm5", "D2_mm5", "mismatch_5"], "contig": "GRCh38_repeat_candidate_N", "guide": "GRCh38_repeat_candidate_plus_mm5", "strand": "+"}

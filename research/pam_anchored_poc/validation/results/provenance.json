@@ -1,0 +1,17 @@
+{
+  "columba_repository": "https://github.com/biointec/columba.git",
+  "recorded_checkout_commit": "edcc7ce2a1e28ded6784a44afbd8b9348a4805ad",
+  "archive_sha256": "8a726094f41372f06c5e9b59c7bfe46c8ba664e65241b5e8e1ff208af99de3c6",
+  "source_indexinterface_cpp_sha256": "8334a5cb76bb56f8cfb3acc37ea9dc8613fa130076096e58b8c0be53c31d51f4",
+  "source_fmindex_cpp_sha256": "2ad9e3810bd9cee955f5c40bc8443dba6f9f2119b74cc32fcaa9287599a44660",
+  "source_indexhelpers_h_sha256": "6e0f0046487dc826497835118b1b516411252a3c9e9186603bf742544c119944",
+  "untracked_auxiliary_library_sha256": "96e34b089a5c002014eac74414bb2c70b33ad615b5065c1556d98167fa88ca2f",
+  "binary_sha256": "7e44974c81dad4943292fa64a71e54073908b4909ce327480464d769322c40d1",
+  "wrapper_sha256": "2367ef7b053a44c83f76b059ed66a8f671f83773d3fe69240cda50893408f28a",
+  "binary_version": "Columba VANILLA 2.0.3",
+  "prototype_sha256": "5131d8a163a499a645b6e87af8547b68549ee1c80912d0ec4de174b8f22c4492",
+  "baseline_profile_sha256": "670052726b639a0fdee1570e5992270eb513630492c7300b161acb2f6cb1831e",
+  "baseline_validation_binary_sha256": "cb10e5d6be970bb6ef90aac4f2fe5ab035ae2b4d4ce643f28ec32f3895d7e42d",
+  "upstream_head": "unresolved: TLS-verified ls-remote using system CA returned no refs",
+  "caveat": "manifest ties checkout to run but untracked build is not a reproducible source-to-binary attestation"
+}

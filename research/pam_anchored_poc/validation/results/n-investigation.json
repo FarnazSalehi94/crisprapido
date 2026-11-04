@@ -1,0 +1,757 @@
+{
+  "missed": 75,
+  "all_have_ambiguous_alignment": true,
+  "with_resolved_alternative": 0,
+  "cases": [
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D1",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        436
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 2
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D1",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        437
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 43
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D2",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        436
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 1
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D2",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        437
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 42
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D2mm5",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        436
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 1
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D2mm5",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        437
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 25
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I1",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        436
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 6
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I1",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        437
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 46
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I2",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        436
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 1
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I2",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        437
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 30
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I2mm3",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        437
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 22
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_exact",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        436
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 8
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_exact",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        437
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 40
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_mm5",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        436
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 1
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_mm5",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        437
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 4
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_D1",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 15
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_D2",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 13
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_D2mm5",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 4
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_I1",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 13
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_I2",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 8
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_I2mm3",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 1
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_exact",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 20
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_mm5",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 4
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_D1",
+        "CHM13_repeat_candidate_N",
+        "-",
+        472
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 10
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_D2",
+        "CHM13_repeat_candidate_N",
+        "-",
+        472
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 12
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_D2mm5",
+        "CHM13_repeat_candidate_N",
+        "-",
+        472
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 3
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_I1",
+        "CHM13_repeat_candidate_N",
+        "-",
+        472
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 8
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_I2",
+        "CHM13_repeat_candidate_N",
+        "-",
+        472
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 6
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_exact",
+        "CHM13_repeat_candidate_N",
+        "-",
+        472
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 20
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_mm5",
+        "CHM13_repeat_candidate_N",
+        "-",
+        472
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 6
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_D1",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 16
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_D2",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 17
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_D2mm5",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 11
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_I1",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 17
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_I2",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 16
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_exact",
+        "CHM13_repeat_candidate_N",
+        "+",
+        523
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 4
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_exact",
+        "CHM13_repeat_candidate_N",
+        "+",
+        524
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 6
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_exact",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 20
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_mm5",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 5
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_D1",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        289
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 11
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_D2",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        289
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 18
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_D2",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        290
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 1
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_D2mm5",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        289
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 6
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_I1",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        289
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 7
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_I2",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        289
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 12
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_I2mm3",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        289
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 2
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_exact",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        288
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 7
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_exact",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        289
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 23
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_exact",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        290
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 6
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_mm5",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        288
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 1
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_mm5",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        289
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 5
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_D1",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 11
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_D2",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 32
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_D2mm5",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 4
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_I1",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 11
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_I2",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 23
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_I2mm3",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 10
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_exact",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        614
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 6
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_exact",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 28
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_mm5",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 7
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_D1",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        398
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 32
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_D2",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        398
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 22
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_D2mm5",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        398
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 5
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_I1",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        398
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 16
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_I2",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        398
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 7
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_I2mm3",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        398
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 1
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_exact",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        398
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 34
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_mm5",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        398
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 12
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_D1",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 11
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_D2",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 24
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_D2mm5",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 5
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_I1",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 7
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_I2",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 7
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_exact",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 28
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_mm5",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "eligible_resolved_alignments": 0,
+      "eligible_ambiguous_alignments": 9
+    }
+  ]
+}

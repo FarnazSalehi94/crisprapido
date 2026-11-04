@@ -2,6 +2,7 @@
 #include "fmindex/fmindex.h"
 #include <algorithm>
 #include <cctype>
+#include <chrono>
 #include <fstream>
 #include <iostream>
 #include <map>
@@ -73,8 +74,8 @@ struct Search {
 };
 int main(int argc,char** argv) { try {
  if(argc!=7) {cerr<<"usage: poc INDEX REF.fa GUIDES.fa MAX_MISMATCH MAX_GAP MIN_MATCH_FRACTION\n";return 2;}
- auto ref=fasta(argv[2]), guides=fasta(argv[3]); FMIndex idx(argv[1],0,true,4,false,0); long long states=0;
+ auto ref=fasta(argv[2]), guides=fasta(argv[3]); FMIndex idx(argv[1],0,true,4,false,0); long long states=0; double search_seconds=0;
  cout<<"guide\tcontig\tstrand\tstart\tend\tanchor\tpam\tcigar\tmismatches\tinserted_guide_bases\tdeleted_guide_bases\n";
- for(auto& g:guides) for(char strand:string("+-")) { for(char c:g.seq) comp(c); Search s{idx,ref,Counters(),g.name,g.seq,strand,0,stoi(argv[4]),stoi(argv[5]),stod(argv[6]),{}}; s.run(); states+=s.states; for(auto& kv:s.hits){auto& h=kv.second;cout<<h.guide<<'\t'<<h.contig<<'\t'<<h.strand<<'\t'<<h.start<<'\t'<<h.end<<'\t'<<h.anchor<<'\t'<<h.pam<<'\t'<<h.cigar<<'\t'<<h.mm<<'\t'<<h.ins<<'\t'<<h.del<<'\n';} }
- cerr<<"states="<<states<<'\n';
+ for(auto& g:guides) for(char strand:string("+-")) { for(char c:g.seq) comp(c); Search s{idx,ref,Counters(),g.name,g.seq,strand,0,stoi(argv[4]),stoi(argv[5]),stod(argv[6]),{}}; auto started=chrono::steady_clock::now(); s.run(); search_seconds+=chrono::duration<double>(chrono::steady_clock::now()-started).count(); states+=s.states; for(auto& kv:s.hits){auto& h=kv.second;cout<<h.guide<<'\t'<<h.contig<<'\t'<<h.strand<<'\t'<<h.start<<'\t'<<h.end<<'\t'<<h.anchor<<'\t'<<h.pam<<'\t'<<h.cigar<<'\t'<<h.mm<<'\t'<<h.ins<<'\t'<<h.del<<'\n';} }
+ cerr<<"states="<<states<<" search_wall_seconds="<<search_seconds<<'\n';
  } catch(const exception& e){cerr<<e.what()<<'\n';return 1;} }

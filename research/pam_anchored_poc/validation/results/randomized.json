@@ -1,0 +1,10 @@
+{
+  "seed": 44751,
+  "contigs": 16,
+  "guides": 16,
+  "expected": 29,
+  "recovered": 29,
+  "missed": 0,
+  "unexpected": 0,
+  "duplicates": 0
+}

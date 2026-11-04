@@ -1,0 +1,4 @@
+Columba build_Vanilla/columba_build (edcc7ce checkout, build untracked), default sparse SA=4; unmodified resolved 2 Mb inputs, same host, each built from ref.fa in a new scratch prefix. cmp of each existing component against its rebuilt component:
+CHM13_nonrepeat_candidate: bwt brt rev.brt sa.4 sa.bv.4 pos sna txt.bin cct meta all byte-identical.
+GRCh38_repeat_candidate: bwt brt rev.brt sa.4 sa.bv.4 pos sna txt.bin cct meta all byte-identical.
+This supports identity of these reference/index pairs and components, conditional on the builder, not a general proof for other indexes or randomized ambiguous substitutions.

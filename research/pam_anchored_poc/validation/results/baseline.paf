@@ -1,0 +1,172 @@
+CHM13_nonrepeat_candidate_plus_exact	20	0	20	+	CHM13_nonrepeat_candidate	1000	586	606	20	20	255	as:i:0	nm:i:0	ng:i:0	bs:i:0	cg:Z:20=	cf:f:1.0000
+CHM13_nonrepeat_candidate_plus_exact	20	0	20	+	CHM13_nonrepeat_candidate_N	1000	586	606	19	20	255	as:i:3	nm:i:1	ng:i:0	bs:i:0	cg:Z:15=1X4=
+CHM13_nonrepeat_candidate_plus_mm5	20	0	20	+	CHM13_nonrepeat_candidate	1000	586	606	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1=1X2=1X2=1X3=1X3=1X4=	cf:f:0.0000
+CHM13_nonrepeat_candidate_plus_mm5	20	0	20	+	CHM13_nonrepeat_candidate_N	1000	586	606	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1=1X2=1X2=1X3=1X3=1X4=
+CHM13_nonrepeat_candidate_plus_I1	20	0	20	+	CHM13_nonrepeat_candidate	1000	587	606	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1I11=	cf:f:0.2769
+CHM13_nonrepeat_candidate_plus_I1	20	0	20	+	CHM13_nonrepeat_candidate_N	1000	587	606	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1I6=1X4=
+CHM13_nonrepeat_candidate_plus_I2	20	0	20	+	CHM13_nonrepeat_candidate	1000	588	606	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:9=2I9=	cf:f:0.1704
+CHM13_nonrepeat_candidate_plus_I2	20	0	20	+	CHM13_nonrepeat_candidate_N	1000	588	606	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:9=2I4=1X4=
+CHM13_nonrepeat_candidate_plus_D1	20	0	20	+	CHM13_nonrepeat_candidate	1000	585	606	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:9=1D11=	cf:f:0.1875
+CHM13_nonrepeat_candidate_plus_D1	20	0	20	+	CHM13_nonrepeat_candidate_N	1000	585	606	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:9=1D6=1X4=
+CHM13_nonrepeat_candidate_plus_D2	20	0	20	+	CHM13_nonrepeat_candidate	1000	584	606	20	22	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:8=2D12=	cf:f:0.0000
+CHM13_nonrepeat_candidate_plus_D2	20	0	20	+	CHM13_nonrepeat_candidate_N	1000	584	606	19	22	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:8=2D7=1X4=
+CHM13_nonrepeat_candidate_plus_I2mm3	20	0	20	+	CHM13_nonrepeat_candidate	1000	588	606	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=1X1=2I9=	cf:f:0.0324
+CHM13_nonrepeat_candidate_plus_I2mm3	20	0	20	+	CHM13_nonrepeat_candidate_N	1000	584	606	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=2D1=2X2=1X5=1X4=
+CHM13_nonrepeat_candidate_plus_D2mm5	20	0	20	+	CHM13_nonrepeat_candidate	1000	588	606	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:5=2I1X3=1X3=1X4=	cf:f:0.0000
+CHM13_nonrepeat_candidate_plus_D2mm5	20	0	20	+	CHM13_nonrepeat_candidate_N	1000	588	606	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:5=2I1X3=1X3=1X4=
+CHM13_nonrepeat_candidate_minus_exact	20	0	20	-	CHM13_nonrepeat_candidate	1000	439	460	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:20=1D	cf:f:0.6000
+CHM13_nonrepeat_candidate_minus_exact	20	0	20	-	CHM13_nonrepeat_candidate	1000	440	460	20	20	255	as:i:0	nm:i:0	ng:i:0	bs:i:0	cg:Z:20=	cf:f:1.0000
+CHM13_nonrepeat_candidate_minus_exact	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	439	460	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:15=1X4=1D
+CHM13_nonrepeat_candidate_minus_exact	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	440	460	19	20	255	as:i:3	nm:i:1	ng:i:0	bs:i:0	cg:Z:15=1X4=
+CHM13_nonrepeat_candidate_minus_exact	20	0	20	+	CHM13_repeat_candidate	1000	939	961	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:2=1X3=1X2=1X1=1X7=2D1X	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_mm5	20	0	20	-	CHM13_nonrepeat_candidate	1000	439	460	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X2=1X2=1X3=1X3=1X4=1D	cf:f:0.0318
+CHM13_nonrepeat_candidate_minus_mm5	20	0	20	-	CHM13_nonrepeat_candidate	1000	440	459	15	20	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:1=1I2=1X2=1X3=1X3=1X4=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_mm5	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	439	460	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X2=1X2=1X3=1X3=1X4=1D
+CHM13_nonrepeat_candidate_minus_mm5	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	440	459	15	20	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:1=1I2=1X2=1X3=1X3=1X4=
+CHM13_nonrepeat_candidate_minus_I1	20	0	20	-	CHM13_nonrepeat_candidate	1000	439	460	18	21	255	as:i:12	nm:i:2	ng:i:1	bs:i:1	cg:Z:1=2X17=1D	cf:f:0.4364
+CHM13_nonrepeat_candidate_minus_I1	20	0	20	-	CHM13_nonrepeat_candidate	1000	440	459	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1I11=	cf:f:0.2769
+CHM13_nonrepeat_candidate_minus_I1	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	439	460	17	21	255	as:i:15	nm:i:3	ng:i:1	bs:i:1	cg:Z:1=2X12=1X4=1D
+CHM13_nonrepeat_candidate_minus_I1	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	440	459	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1I6=1X4=
+CHM13_nonrepeat_candidate_minus_I1	20	0	20	-	GRCh38_repeat_candidate	1000	490	511	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:2X6=2X7=1D1X2=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_I1	20	0	20	-	GRCh38_repeat_candidate_N	1000	490	511	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:2X6=2X7=1D1X2=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_I2	20	0	20	-	CHM13_nonrepeat_candidate	1000	439	460	16	21	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:1X1=1X4=1X1=1X10=1D	cf:f:0.3341
+CHM13_nonrepeat_candidate_minus_I2	20	0	20	-	CHM13_nonrepeat_candidate	1000	440	458	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:8=2I10=	cf:f:0.1704
+CHM13_nonrepeat_candidate_minus_I2	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	439	460	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1X1=1X4=1X1=1X5=1X4=1D
+CHM13_nonrepeat_candidate_minus_I2	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	440	458	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:8=2I5=1X4=
+CHM13_nonrepeat_candidate_minus_I2	20	0	20	-	GRCh38_repeat_candidate	1000	490	511	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X5=3X7=1D1X2=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_I2	20	0	20	-	GRCh38_repeat_candidate_N	1000	490	511	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X5=3X7=1D1X2=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_D1	20	0	20	-	CHM13_nonrepeat_candidate	1000	439	460	17	21	255	as:i:15	nm:i:3	ng:i:1	bs:i:1	cg:Z:1X1=2X16=1D	cf:f:0.3117
+CHM13_nonrepeat_candidate_minus_D1	20	0	20	-	CHM13_nonrepeat_candidate	1000	440	461	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:9=1D11=	cf:f:0.1875
+CHM13_nonrepeat_candidate_minus_D1	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	439	460	16	21	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:1X1=2X11=1X4=1D
+CHM13_nonrepeat_candidate_minus_D1	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	440	461	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:9=1D6=1X4=
+CHM13_nonrepeat_candidate_minus_D1	20	0	20	-	GRCh38_repeat_candidate	1000	490	511	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X1=1X4=2X7=1D1X2=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_D1	20	0	20	-	GRCh38_repeat_candidate_N	1000	490	511	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X1=1X4=2X7=1D1X2=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_D2	20	0	20	-	CHM13_nonrepeat_candidate	1000	439	460	16	21	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:3X1=1X15=1D	cf:f:0.2078
+CHM13_nonrepeat_candidate_minus_D2	20	0	20	-	CHM13_nonrepeat_candidate	1000	440	458	16	20	255	as:i:13	nm:i:2	ng:i:1	bs:i:2	cg:Z:2I1X1=1X15=	cf:f:0.3364
+CHM13_nonrepeat_candidate_minus_D2	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	439	460	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:3X1=1X10=1X4=1D
+CHM13_nonrepeat_candidate_minus_D2	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	440	458	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:2I1X1=1X10=1X4=
+CHM13_nonrepeat_candidate_minus_I2mm3	20	0	20	-	CHM13_nonrepeat_candidate	1000	439	460	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:3X1=1X4=1X10=1D	cf:f:0.3215
+CHM13_nonrepeat_candidate_minus_I2mm3	20	0	20	-	CHM13_nonrepeat_candidate	1000	440	458	16	20	255	as:i:13	nm:i:2	ng:i:1	bs:i:2	cg:Z:1=1X2=2I3=1X10=	cf:f:0.0692
+CHM13_nonrepeat_candidate_minus_I2mm3	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	440	458	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1=1X2=2I3=1X5=1X4=
+CHM13_nonrepeat_candidate_minus_I2mm3	20	0	20	-	GRCh38_repeat_candidate	1000	490	511	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X2=1X3=2X7=1D1X2=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_I2mm3	20	0	20	-	GRCh38_repeat_candidate_N	1000	490	511	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X2=1X3=2X7=1D1X2=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_D2mm5	20	0	20	-	CHM13_nonrepeat_candidate	1000	439	460	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1X1=1X4=1X3=1X3=1X4=1D	cf:f:0.0275
+CHM13_nonrepeat_candidate_minus_D2mm5	20	0	20	-	CHM13_nonrepeat_candidate	1000	440	460	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1X1=1X4=1X3=1X3=1X4=	cf:f:0.0000
+CHM13_nonrepeat_candidate_minus_D2mm5	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	439	460	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1X1=1X4=1X3=1X3=1X4=1D
+CHM13_nonrepeat_candidate_minus_D2mm5	20	0	20	-	CHM13_nonrepeat_candidate_N	1000	440	460	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1X1=1X4=1X3=1X3=1X4=
+CHM13_repeat_candidate_plus_exact	20	0	20	+	CHM13_repeat_candidate	1000	505	523	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:18=2I	cf:f:0.0000
+CHM13_repeat_candidate_plus_exact	20	0	20	+	CHM13_repeat_candidate	1000	505	524	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:19=1I	cf:f:0.0938
+CHM13_repeat_candidate_plus_exact	20	0	20	+	CHM13_repeat_candidate	1000	505	525	20	20	255	as:i:0	nm:i:0	ng:i:0	bs:i:0	cg:Z:20=	cf:f:1.0000
+CHM13_repeat_candidate_plus_exact	20	0	20	+	CHM13_repeat_candidate_N	1000	505	523	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:15=1X2=2I
+CHM13_repeat_candidate_plus_exact	20	0	20	+	CHM13_repeat_candidate_N	1000	505	524	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:15=1X3=1I
+CHM13_repeat_candidate_plus_exact	20	0	20	+	CHM13_repeat_candidate_N	1000	505	525	19	20	255	as:i:3	nm:i:1	ng:i:0	bs:i:0	cg:Z:15=1X4=
+CHM13_repeat_candidate_plus_mm5	20	0	20	+	CHM13_repeat_candidate	1000	506	525	15	20	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:1=1I2=1X2=1X3=1X3=1X4=	cf:f:0.1813
+CHM13_repeat_candidate_plus_mm5	20	0	20	+	CHM13_repeat_candidate_N	1000	506	525	15	20	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:1=1I2=1X2=1X3=1X3=1X4=
+CHM13_repeat_candidate_plus_I1	20	0	20	+	CHM13_repeat_candidate	1000	506	525	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:10=1I9=	cf:f:0.2769
+CHM13_repeat_candidate_plus_I1	20	0	20	+	CHM13_repeat_candidate_N	1000	506	525	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:10=1I4=1X4=
+CHM13_repeat_candidate_plus_I2	20	0	20	+	CHM13_repeat_candidate	1000	507	525	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:11=2I7=	cf:f:0.0015
+CHM13_repeat_candidate_plus_I2	20	0	20	+	CHM13_repeat_candidate_N	1000	507	525	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:11=2I2=1X4=
+CHM13_repeat_candidate_plus_D1	20	0	20	+	CHM13_repeat_candidate	1000	504	525	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:11=1D9=	cf:f:0.0769
+CHM13_repeat_candidate_plus_D1	20	0	20	+	CHM13_repeat_candidate_N	1000	504	525	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:11=1D4=1X4=
+CHM13_repeat_candidate_plus_D2	20	0	20	+	CHM13_repeat_candidate	1000	503	524	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:11=1X1=1D1=2X2=2X	cf:f:0.0012
+CHM13_repeat_candidate_plus_D2	20	0	20	+	CHM13_repeat_candidate	1000	503	525	20	22	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:11=2D9=	cf:f:0.0192
+CHM13_repeat_candidate_plus_D2	20	0	20	+	CHM13_repeat_candidate_N	1000	503	525	19	22	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:11=2D4=1X4=
+CHM13_repeat_candidate_plus_I2mm3	20	0	20	+	CHM13_repeat_candidate	1000	507	525	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=1X3=2I7=	cf:f:0.0005
+CHM13_repeat_candidate_plus_D2mm5	20	0	20	+	CHM13_repeat_candidate	1000	503	525	16	22	255	as:i:19	nm:i:4	ng:i:1	bs:i:2	cg:Z:1=1X2=2D3=1X3=1X3=1X4=	cf:f:0.0327
+CHM13_repeat_candidate_plus_D2mm5	20	0	20	+	CHM13_repeat_candidate_N	1000	503	525	16	22	255	as:i:19	nm:i:4	ng:i:1	bs:i:2	cg:Z:1=1X2=2D3=1X3=1X3=1X4=
+CHM13_repeat_candidate_minus_exact	20	0	20	-	CHM13_repeat_candidate	1000	475	495	20	20	255	as:i:0	nm:i:0	ng:i:0	bs:i:0	cg:Z:20=	cf:f:1.0000
+CHM13_repeat_candidate_minus_exact	20	0	20	-	CHM13_repeat_candidate_N	1000	475	495	19	20	255	as:i:3	nm:i:1	ng:i:0	bs:i:0	cg:Z:15=1X4=
+CHM13_repeat_candidate_minus_mm5	20	0	20	-	CHM13_repeat_candidate	1000	475	495	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1=1X2=1X2=1X3=1X3=1X4=	cf:f:0.1513
+CHM13_repeat_candidate_minus_mm5	20	0	20	-	CHM13_repeat_candidate_N	1000	475	495	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1=1X2=1X2=1X3=1X3=1X4=
+CHM13_repeat_candidate_minus_I1	20	0	20	-	CHM13_repeat_candidate	1000	475	494	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1I11=	cf:f:0.2769
+CHM13_repeat_candidate_minus_I1	20	0	20	-	CHM13_repeat_candidate_N	1000	475	494	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1I6=1X4=
+CHM13_repeat_candidate_minus_I2	20	0	20	-	CHM13_repeat_candidate	1000	475	493	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:8=2I10=	cf:f:0.1704
+CHM13_repeat_candidate_minus_I2	20	0	20	-	CHM13_repeat_candidate_N	1000	475	493	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:8=2I5=1X4=
+CHM13_repeat_candidate_minus_D1	20	0	20	-	CHM13_repeat_candidate	1000	475	496	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1D12=	cf:f:0.0625
+CHM13_repeat_candidate_minus_D1	20	0	20	-	CHM13_repeat_candidate_N	1000	475	496	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1D7=1X4=
+CHM13_repeat_candidate_minus_D2	20	0	20	-	CHM13_repeat_candidate	1000	475	497	20	22	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:8=2D12=	cf:f:0.0000
+CHM13_repeat_candidate_minus_D2	20	0	20	-	CHM13_repeat_candidate_N	1000	475	497	19	22	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:8=2D7=1X4=
+CHM13_repeat_candidate_minus_I2mm3	20	0	20	-	CHM13_repeat_candidate	1000	475	493	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2I1X10=	cf:f:0.0162
+CHM13_repeat_candidate_minus_D2mm5	20	0	20	-	CHM13_repeat_candidate	1000	475	497	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=2D2=2X3=1X3=1X4=	cf:f:0.0124
+CHM13_repeat_candidate_minus_D2mm5	20	0	20	-	CHM13_repeat_candidate_N	1000	475	497	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=2D2=2X3=1X3=1X4=
+GRCh38_nonrepeat_candidate_plus_exact	20	0	20	+	GRCh38_nonrepeat_candidate	1000	595	614	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:19=1I	cf:f:0.0312
+GRCh38_nonrepeat_candidate_plus_exact	20	0	20	+	GRCh38_nonrepeat_candidate	1000	595	615	20	20	255	as:i:0	nm:i:0	ng:i:0	bs:i:0	cg:Z:20=	cf:f:1.0000
+GRCh38_nonrepeat_candidate_plus_exact	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	595	614	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:15=1X3=1I
+GRCh38_nonrepeat_candidate_plus_exact	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	595	615	19	20	255	as:i:3	nm:i:1	ng:i:0	bs:i:0	cg:Z:15=1X4=
+GRCh38_nonrepeat_candidate_plus_mm5	20	0	20	+	GRCh38_nonrepeat_candidate	1000	596	615	15	20	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:2=1I1=1X2=1X3=1X3=1X4=	cf:f:0.0447
+GRCh38_nonrepeat_candidate_plus_mm5	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	596	615	15	20	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:2=1I1=1X2=1X3=1X3=1X4=
+GRCh38_nonrepeat_candidate_plus_I1	20	0	20	+	GRCh38_nonrepeat_candidate	1000	596	615	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1I11=	cf:f:0.2769
+GRCh38_nonrepeat_candidate_plus_I1	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	596	615	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1I6=1X4=
+GRCh38_nonrepeat_candidate_plus_I2	20	0	20	+	GRCh38_nonrepeat_candidate	1000	597	615	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:10=2I8=	cf:f:0.0130
+GRCh38_nonrepeat_candidate_plus_I2	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	597	615	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:10=2I3=1X4=
+GRCh38_nonrepeat_candidate_plus_D1	20	0	20	+	GRCh38_nonrepeat_candidate	1000	594	615	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1D12=	cf:f:0.0000
+GRCh38_nonrepeat_candidate_plus_D1	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	594	615	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1D7=1X4=
+GRCh38_nonrepeat_candidate_plus_D2	20	0	20	+	GRCh38_nonrepeat_candidate	1000	595	614	15	20	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:1X1=1X1=1X1=1X12=1I	cf:f:0.0161
+GRCh38_nonrepeat_candidate_plus_D2	20	0	20	+	GRCh38_nonrepeat_candidate	1000	593	615	20	22	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:9=2D11=	cf:f:0.0000
+GRCh38_nonrepeat_candidate_plus_D2	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	593	615	19	22	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:9=2D6=1X4=
+GRCh38_nonrepeat_candidate_plus_I2mm3	20	0	20	+	GRCh38_nonrepeat_candidate	1000	597	615	16	20	255	as:i:13	nm:i:2	ng:i:1	bs:i:2	cg:Z:1=1X2=2I3=1X10=	cf:f:0.0461
+GRCh38_nonrepeat_candidate_plus_I2mm3	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	597	615	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1=1X2=2I3=1X5=1X4=
+GRCh38_nonrepeat_candidate_plus_D2mm5	20	0	20	+	GRCh38_nonrepeat_candidate	1000	593	615	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=1X1=2D2=1X3=1X4=	cf:f:0.0000
+GRCh38_nonrepeat_candidate_plus_D2mm5	20	0	20	+	GRCh38_nonrepeat_candidate_N	1000	593	615	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=1X1=2D2=1X3=1X4=
+GRCh38_nonrepeat_candidate_minus_exact	20	0	20	-	GRCh38_nonrepeat_candidate	1000	291	312	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:20=1D	cf:f:0.0455
+GRCh38_nonrepeat_candidate_minus_exact	20	0	20	-	GRCh38_nonrepeat_candidate	1000	292	312	20	20	255	as:i:0	nm:i:0	ng:i:0	bs:i:0	cg:Z:20=	cf:f:1.0000
+GRCh38_nonrepeat_candidate_minus_exact	20	0	20	-	GRCh38_nonrepeat_candidate	1000	293	312	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:19=1I	cf:f:0.0615
+GRCh38_nonrepeat_candidate_minus_exact	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	291	312	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:15=1X4=1D
+GRCh38_nonrepeat_candidate_minus_exact	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	292	312	19	20	255	as:i:3	nm:i:1	ng:i:0	bs:i:0	cg:Z:15=1X4=
+GRCh38_nonrepeat_candidate_minus_exact	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	293	312	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:15=1X3=1I
+GRCh38_nonrepeat_candidate_minus_mm5	20	0	20	-	GRCh38_nonrepeat_candidate	1000	291	312	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X2=1X2=1X3=1X3=1X4=1D	cf:f:0.0013
+GRCh38_nonrepeat_candidate_minus_mm5	20	0	20	-	GRCh38_nonrepeat_candidate	1000	292	312	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1=1X2=1X2=1X3=1X3=1X4=	cf:f:0.0000
+GRCh38_nonrepeat_candidate_minus_mm5	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	291	312	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X2=1X2=1X3=1X3=1X4=1D
+GRCh38_nonrepeat_candidate_minus_mm5	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	292	312	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1=1X2=1X2=1X3=1X3=1X4=
+GRCh38_nonrepeat_candidate_minus_I1	20	0	20	-	GRCh38_nonrepeat_candidate	1000	292	311	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1I11=	cf:f:0.2769
+GRCh38_nonrepeat_candidate_minus_I1	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	292	311	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1I6=1X4=
+GRCh38_nonrepeat_candidate_minus_I2	20	0	20	-	GRCh38_nonrepeat_candidate	1000	292	310	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:8=2I10=	cf:f:0.1704
+GRCh38_nonrepeat_candidate_minus_I2	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	292	310	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:8=2I5=1X4=
+GRCh38_nonrepeat_candidate_minus_I2	20	0	20	+	GRCh38_repeat_candidate	1000	307	329	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X1=2X1=1X6=2D1=1X5=	cf:f:0.0002
+GRCh38_nonrepeat_candidate_minus_D1	20	0	20	+	CHM13_repeat_candidate	1000	867	888	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X6=1X2=1X2=1D2X4=	cf:f:0.0000
+GRCh38_nonrepeat_candidate_minus_D1	20	0	20	+	CHM13_repeat_candidate_N	1000	867	888	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=1X6=1X2=1X2=1D2X4=	cf:f:0.0000
+GRCh38_nonrepeat_candidate_minus_D1	20	0	20	-	GRCh38_nonrepeat_candidate	1000	291	312	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:1=2X1=1X1=2X12=1D	cf:f:0.0064
+GRCh38_nonrepeat_candidate_minus_D1	20	0	20	-	GRCh38_nonrepeat_candidate	1000	292	313	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1D12=	cf:f:0.1333
+GRCh38_nonrepeat_candidate_minus_D1	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	292	313	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1D7=1X4=
+GRCh38_nonrepeat_candidate_minus_D2	20	0	20	-	GRCh38_nonrepeat_candidate	1000	292	314	20	22	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:11=2D9=	cf:f:0.1042
+GRCh38_nonrepeat_candidate_minus_D2	20	0	20	-	GRCh38_nonrepeat_candidate	1000	293	314	16	21	255	as:i:18	nm:i:4	ng:i:1	bs:i:1	cg:Z:11=3X1=1X3=1D1=	cf:f:0.0011
+GRCh38_nonrepeat_candidate_minus_D2	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	292	314	19	22	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:11=2D4=1X4=
+GRCh38_nonrepeat_candidate_minus_D2	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	293	314	15	21	255	as:i:21	nm:i:5	ng:i:1	bs:i:1	cg:Z:11=3X1=1X1=1X1=1D1=
+GRCh38_nonrepeat_candidate_minus_I2mm3	20	0	20	-	GRCh38_nonrepeat_candidate	1000	292	310	16	20	255	as:i:13	nm:i:2	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2I11=	cf:f:0.0221
+GRCh38_nonrepeat_candidate_minus_I2mm3	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	292	310	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2I6=1X4=
+GRCh38_nonrepeat_candidate_minus_I2mm3	20	0	20	+	GRCh38_repeat_candidate	1000	311	329	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1X1=1X8=2I1=1X5=	cf:f:0.0008
+GRCh38_nonrepeat_candidate_minus_D2mm5	20	0	20	-	GRCh38_nonrepeat_candidate	1000	292	314	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=1X3=2D1X3=1X4=	cf:f:0.0000
+GRCh38_nonrepeat_candidate_minus_D2mm5	20	0	20	-	GRCh38_nonrepeat_candidate_N	1000	292	314	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=1X3=2D1X3=1X4=
+GRCh38_repeat_candidate_plus_exact	20	0	20	+	GRCh38_repeat_candidate	1000	309	329	20	20	255	as:i:0	nm:i:0	ng:i:0	bs:i:0	cg:Z:20=	cf:f:1.0000
+GRCh38_repeat_candidate_plus_exact	20	0	20	+	GRCh38_repeat_candidate_N	1000	309	329	19	20	255	as:i:3	nm:i:1	ng:i:0	bs:i:0	cg:Z:15=1X4=
+GRCh38_repeat_candidate_plus_mm5	20	0	20	+	GRCh38_repeat_candidate	1000	309	329	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1=1X2=1X2=1X3=1X3=1X4=	cf:f:0.0000
+GRCh38_repeat_candidate_plus_mm5	20	0	20	+	GRCh38_repeat_candidate_N	1000	309	329	15	20	255	as:i:15	nm:i:5	ng:i:0	bs:i:0	cg:Z:1=1X2=1X2=1X3=1X3=1X4=
+GRCh38_repeat_candidate_plus_I1	20	0	20	+	GRCh38_repeat_candidate	1000	310	329	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1I11=	cf:f:0.2769
+GRCh38_repeat_candidate_plus_I1	20	0	20	+	GRCh38_repeat_candidate_N	1000	310	329	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1I6=1X4=
+GRCh38_repeat_candidate_plus_I2	20	0	20	+	GRCh38_repeat_candidate	1000	311	329	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:10=2I8=	cf:f:0.0130
+GRCh38_repeat_candidate_plus_I2	20	0	20	+	GRCh38_repeat_candidate_N	1000	311	329	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:10=2I3=1X4=
+GRCh38_repeat_candidate_plus_D1	20	0	20	+	GRCh38_repeat_candidate	1000	308	329	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1D12=	cf:f:0.1333
+GRCh38_repeat_candidate_plus_D1	20	0	20	+	GRCh38_repeat_candidate_N	1000	308	329	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1D7=1X4=
+GRCh38_repeat_candidate_plus_D2	20	0	20	+	GRCh38_repeat_candidate	1000	307	329	20	22	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:8=2D12=	cf:f:0.0000
+GRCh38_repeat_candidate_plus_D2	20	0	20	+	GRCh38_repeat_candidate_N	1000	307	329	19	22	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:8=2D7=1X4=
+GRCh38_repeat_candidate_plus_I2mm3	20	0	20	+	GRCh38_repeat_candidate	1000	311	329	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=1X2=2I8=	cf:f:0.0038
+GRCh38_repeat_candidate_plus_D2mm5	20	0	20	+	GRCh38_repeat_candidate	1000	307	329	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2D1X3=1X3=1X4=	cf:f:0.0000
+GRCh38_repeat_candidate_plus_D2mm5	20	0	20	+	GRCh38_repeat_candidate_N	1000	307	329	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2D1X3=1X3=1X4=
+GRCh38_repeat_candidate_minus_exact	20	0	20	-	GRCh38_repeat_candidate	1000	401	421	20	20	255	as:i:0	nm:i:0	ng:i:0	bs:i:0	cg:Z:20=	cf:f:1.0000
+GRCh38_repeat_candidate_minus_exact	20	0	20	-	GRCh38_repeat_candidate_N	1000	401	421	19	20	255	as:i:3	nm:i:1	ng:i:0	bs:i:0	cg:Z:15=1X4=
+GRCh38_repeat_candidate_minus_mm5	20	0	20	-	GRCh38_repeat_candidate	1000	401	420	16	20	255	as:i:15	nm:i:3	ng:i:1	bs:i:1	cg:Z:4=1I2=1X3=1X3=1X4=	cf:f:0.1339
+GRCh38_repeat_candidate_minus_mm5	20	0	20	-	GRCh38_repeat_candidate_N	1000	401	420	16	20	255	as:i:15	nm:i:3	ng:i:1	bs:i:1	cg:Z:4=1I2=1X3=1X3=1X4=
+GRCh38_repeat_candidate_minus_I1	20	0	20	-	GRCh38_repeat_candidate	1000	401	420	19	20	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1I11=	cf:f:0.2769
+GRCh38_repeat_candidate_minus_I1	20	0	20	-	GRCh38_repeat_candidate_N	1000	401	420	18	20	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1I6=1X4=
+GRCh38_repeat_candidate_minus_I2	20	0	20	-	GRCh38_repeat_candidate	1000	401	419	18	20	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:9=2I9=	cf:f:0.1704
+GRCh38_repeat_candidate_minus_I2	20	0	20	-	GRCh38_repeat_candidate_N	1000	401	419	17	20	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:9=2I4=1X4=
+GRCh38_repeat_candidate_minus_D1	20	0	20	-	GRCh38_repeat_candidate	1000	401	422	20	21	255	as:i:6	nm:i:0	ng:i:1	bs:i:1	cg:Z:8=1D12=	cf:f:0.0000
+GRCh38_repeat_candidate_minus_D1	20	0	20	-	GRCh38_repeat_candidate_N	1000	401	422	19	21	255	as:i:9	nm:i:1	ng:i:1	bs:i:1	cg:Z:8=1D7=1X4=
+GRCh38_repeat_candidate_minus_D2	20	0	20	-	GRCh38_repeat_candidate	1000	401	423	20	22	255	as:i:7	nm:i:0	ng:i:1	bs:i:2	cg:Z:8=2D12=	cf:f:0.0000
+GRCh38_repeat_candidate_minus_D2	20	0	20	-	GRCh38_repeat_candidate_N	1000	401	423	19	22	255	as:i:10	nm:i:1	ng:i:1	bs:i:2	cg:Z:8=2D7=1X4=
+GRCh38_repeat_candidate_minus_I2mm3	20	0	20	+	CHM13_repeat_candidate	1000	383	405	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:4=1X1=2X4=1X2=1X3=2D1=	cf:f:0.0000
+GRCh38_repeat_candidate_minus_I2mm3	20	0	20	+	CHM13_repeat_candidate_N	1000	383	405	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:4=1X1=2X4=1X2=1X3=2D1=	cf:f:0.0000
+GRCh38_repeat_candidate_minus_I2mm3	20	0	20	-	GRCh38_repeat_candidate	1000	401	419	16	20	255	as:i:13	nm:i:2	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2I11=	cf:f:0.0347
+GRCh38_repeat_candidate_minus_I2mm3	20	0	20	-	GRCh38_repeat_candidate_N	1000	401	419	15	20	255	as:i:16	nm:i:3	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2I6=1X4=
+GRCh38_repeat_candidate_minus_D2mm5	20	0	20	-	GRCh38_repeat_candidate	1000	401	423	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2D1X3=1X3=1X4=	cf:f:0.0000
+GRCh38_repeat_candidate_minus_D2mm5	20	0	20	-	GRCh38_repeat_candidate_N	1000	401	423	15	22	255	as:i:22	nm:i:5	ng:i:1	bs:i:2	cg:Z:1=1X2=1X2=2D1X3=1X3=1X4=
