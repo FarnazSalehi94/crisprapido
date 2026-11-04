@@ -1,0 +1,17 @@
+{
+  "total_anchors": 204,
+  "differences": 54,
+  "both_independently_eligible": 54,
+  "mismatch_count_differs": 5,
+  "bulge_event_count_differs": 5,
+  "bulge_max_size_differs": 5,
+  "coordinates_differ": 5,
+  "bulge_placements_differ": 54,
+  "cfd_differs": 41,
+  "affine_preference_counts": {
+    "tie": 49,
+    "baseline": 4,
+    "prototype": 1
+  },
+  "rust_independent_scores_compared": 108
+}

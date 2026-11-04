@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Differential test of all four FM-index substitutes for reference N."""
-import argparse,collections,json,subprocess,sys
+import argparse,collections,json,shlex,subprocess,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'validation'))
 from index_check import check
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'compatibility'))
+from index_manifest import bind_build
 DNA='ACGT';rc=lambda s:s.translate(str.maketrans('ACGTN','TGCAN'))[::-1]
 def change(s,positions):
  s=list(s)
@@ -56,7 +58,10 @@ def main():
  summary={}
  for letter in DNA:
   sub=out/letter;sub.mkdir();prefix=sub/'index';idxfa=sub/'index_ref.fa';idxfa.write_text(''.join('>'+k+'\n'+s.replace('N',letter)+'\n' for k,s in refs.items()))
-  subprocess.run([a.builder,'-r',str(prefix),'-f',str(idxfa)],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,check=True)
+  # Trusted test builder deterministically substitutes N before calling the
+  # real builder, while the manifest binds the original N-containing FASTA.
+  adapter=sub/'substitution_builder.sh';adapter.write_text('#!/bin/sh\nexec '+shlex.quote(a.builder)+' -r "$2" -f '+shlex.quote(str(idxfa.resolve()))+'\n');adapter.chmod(0o755)
+  bind_build(str(adapter),out/'ref.fa',prefix)
   (sub/'index-check.json').write_text(json.dumps(check(prefix,out/'ref.fa'),indent=2)+'\n')
   for name in ('ref.fa','guides.fa','oracle.jsonl'):(sub/name).symlink_to((out/name).resolve())
   with (sub/'poc.tsv').open('w') as f,(sub/'poc.log').open('w') as e:subprocess.run([a.poc,str(prefix),str(out/'ref.fa'),str(out/'guides.fa'),'5','2','.75'],stdout=f,stderr=e,check=True)

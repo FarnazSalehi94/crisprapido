@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Check every replacement of three consecutive reference Ns on both strands."""
-import argparse,csv,itertools,json,subprocess
+import argparse,csv,itertools,json,shlex,subprocess,sys
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'compatibility'))
+from index_manifest import bind_build
 DNA='ACGT';rc=lambda s:s.translate(str.maketrans('ACGTN','TGCAN'))[::-1]
 a=argparse.ArgumentParser();a.add_argument('--out',required=True);a.add_argument('--builder',required=True);a.add_argument('--poc',required=True);a=a.parse_args();p=Path(a.out);p.mkdir(exist_ok=False)
 guides={'complex':'ACGTTGCACTGAGTACCGTA','repeat':'AC'*10};refs={}
@@ -29,7 +31,7 @@ for triplet in itertools.product(DNA,repeat=3):
  txt=''.join(triplet);d=p/txt;d.mkdir();idx=d/'index';f=d/'idx.fa';records={}
  for name,seq in refs.items():
   chars=iter(triplet);records[name]=''.join(next(chars) if c=='N' else c for c in seq)
- f.write_text(''.join('>'+k+'\n'+v+'\n' for k,v in records.items()));subprocess.run([a.builder,'-r',str(idx),'-f',str(f)],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,check=True)
+ f.write_text(''.join('>'+k+'\n'+v+'\n' for k,v in records.items()));adapter=d/'substitution_builder.sh';adapter.write_text('#!/bin/sh\nexec '+shlex.quote(a.builder)+' -r "$2" -f '+shlex.quote(str(f.resolve()))+'\n');adapter.chmod(0o755);bind_build(str(adapter),p/'ref.fa',idx)
  o=subprocess.run([a.poc,str(idx),str(p/'ref.fa'),str(p/'guides.fa'),'5','2','.75'],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,check=True).stdout.splitlines(); i=next(i for i,x in enumerate(o) if x.startswith('guide\tcontig\t')); rows=list(csv.DictReader(o[i:],delimiter='\t'));found={(x['guide'],x['contig'],x['strand'],int(x['anchor'])-(3 if x['strand']=='-' else 0)) for x in rows}
  results.append({'substitute':txt,'expected':len(truth),'recovered':len(truth&found),'missed':len(truth-found),'unexpected':len(found-truth),'duplicates':len(rows)-len(found)})
  assert found==truth and len(rows)==len(found),results[-1]

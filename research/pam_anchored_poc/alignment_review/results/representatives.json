@@ -1,0 +1,3153 @@
+[
+  {
+    "key": [
+      "CHM13_nonrepeat_candidate_minus_D1",
+      "CHM13_nonrepeat_candidate",
+      "-",
+      903
+    ],
+    "baseline": {
+      "start": 903,
+      "end": 925,
+      "cigar": "1X8=1X1=2D4=1X3=1X",
+      "pam": "TGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 11,
+          "target_offset": 11,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 19,
+      "cfd": 0.0020202020232272726,
+      "reported_cfd": 0.002
+    },
+    "prototype": {
+      "start": 903,
+      "end": 925,
+      "cigar": "1X7=2D1=1X5=1X3=1X",
+      "pam": "TGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 19,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_nonrepeat_candidate_minus_D1",
+      "CHM13_nonrepeat_candidate",
+      "-",
+      1070
+    ],
+    "baseline": {
+      "start": 1070,
+      "end": 1091,
+      "cigar": "8=1D12=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.133333333333,
+      "reported_cfd": 0.1333
+    },
+    "prototype": {
+      "start": 1070,
+      "end": 1091,
+      "cigar": "7=1D13=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.0588235294118
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_nonrepeat_candidate_plus_D1",
+      "CHM13_nonrepeat_candidate",
+      "+",
+      956
+    ],
+    "baseline": {
+      "start": 935,
+      "end": 956,
+      "cigar": "9=1D11=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.142857142857,
+      "reported_cfd": 0.1429
+    },
+    "prototype": {
+      "start": 935,
+      "end": 956,
+      "cigar": "7=1D13=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_nonrepeat_candidate_plus_D2",
+      "CHM13_nonrepeat_candidate",
+      "+",
+      956
+    ],
+    "baseline": {
+      "start": 934,
+      "end": 956,
+      "cigar": "9=2D11=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 7,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 934,
+      "end": 956,
+      "cigar": "8=2D12=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 7,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_nonrepeat_candidate_plus_D2mm2",
+      "CHM13_nonrepeat_candidate",
+      "+",
+      956
+    ],
+    "baseline": {
+      "start": 934,
+      "end": 956,
+      "cigar": "1=1X2=1X4=2D11=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 934,
+      "end": 956,
+      "cigar": "1=1X2=1X3=2D12=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_nonrepeat_candidate_plus_I1",
+      "CHM13_nonrepeat_candidate",
+      "+",
+      956
+    ],
+    "baseline": {
+      "start": 937,
+      "end": 956,
+      "cigar": "13=1I6=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 13,
+          "target_offset": 13,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.0461538461538,
+      "reported_cfd": 0.0462
+    },
+    "prototype": {
+      "start": 937,
+      "end": 956,
+      "cigar": "10=1I9=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 10,
+          "target_offset": 10,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.276923076923
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_nonrepeat_candidate_plus_I2",
+      "CHM13_nonrepeat_candidate",
+      "+",
+      956
+    ],
+    "baseline": {
+      "start": 938,
+      "end": 956,
+      "cigar": "9=2I9=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 7,
+      "cfd": 0.17041420118349113,
+      "reported_cfd": 0.1704
+    },
+    "prototype": {
+      "start": 938,
+      "end": 956,
+      "cigar": "8=2I10=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 7,
+      "cfd": 0.17041420118349113
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_nonrepeat_candidate_plus_I2mm2",
+      "CHM13_nonrepeat_candidate",
+      "+",
+      956
+    ],
+    "baseline": {
+      "start": 938,
+      "end": 956,
+      "cigar": "1=1X2=1X4=2I9=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 13,
+      "cfd": 0.045068218522975205,
+      "reported_cfd": 0.0451
+    },
+    "prototype": {
+      "start": 938,
+      "end": 956,
+      "cigar": "1=1X2=1X3=2I10=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 13,
+      "cfd": 0.0450682185229752
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_D1",
+      "CHM13_repeat_candidate",
+      "-",
+      711
+    ],
+    "baseline": {
+      "start": 711,
+      "end": 732,
+      "cigar": "9=1D11=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.238095238095,
+      "reported_cfd": 0.2381
+    },
+    "prototype": {
+      "start": 711,
+      "end": 732,
+      "cigar": "7=1D13=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.0588235294118
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_D1",
+      "GRCh38_repeat_candidate",
+      "+",
+      682
+    ],
+    "baseline": {
+      "start": 661,
+      "end": 682,
+      "cigar": "5=1X3=1D11=",
+      "pam": "GGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 9,
+      "cfd": 0.15151515142841993,
+      "reported_cfd": 0.1515
+    },
+    "prototype": {
+      "start": 661,
+      "end": 682,
+      "cigar": "5=1X1=1D13=",
+      "pam": "GGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 9,
+      "cfd": 0.03743315505884599
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_D2",
+      "CHM13_repeat_candidate",
+      "-",
+      711
+    ],
+    "baseline": {
+      "start": 711,
+      "end": 733,
+      "cigar": "9=2D11=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 7,
+      "cfd": 0.03174603174592063,
+      "reported_cfd": 0.0317
+    },
+    "prototype": {
+      "start": 711,
+      "end": 733,
+      "cigar": "8=2D12=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 7,
+      "cfd": 0.007843137254887058
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_D2",
+      "GRCh38_repeat_candidate",
+      "+",
+      682
+    ],
+    "baseline": {
+      "start": 660,
+      "end": 682,
+      "cigar": "1X5=1X2=2D11=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.020202020190405484,
+      "reported_cfd": 0.0202
+    },
+    "prototype": {
+      "start": 660,
+      "end": 682,
+      "cigar": "1X5=1X1=2D12=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.004991087341166988
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_D2mm2",
+      "CHM13_repeat_candidate",
+      "-",
+      711
+    ],
+    "baseline": {
+      "start": 711,
+      "end": 733,
+      "cigar": "1=1X2=1X4=2D11=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.022408963587223153,
+      "reported_cfd": 0.0224
+    },
+    "prototype": {
+      "start": 711,
+      "end": 733,
+      "cigar": "1=1X2=1X3=2D12=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.005536332180381638
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_D2mm2",
+      "GRCh38_repeat_candidate",
+      "+",
+      682
+    ],
+    "baseline": {
+      "start": 660,
+      "end": 682,
+      "cigar": "2X2=1X1=1X2=2D11=",
+      "pam": "GGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 19,
+      "cfd": 0.01426024954735693,
+      "reported_cfd": 0.0143
+    },
+    "prototype": {
+      "start": 660,
+      "end": 682,
+      "cigar": "2X2=1X1=1X1=2D12=",
+      "pam": "GGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 19,
+      "cfd": 0.003523120476411467
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_I1",
+      "CHM13_repeat_candidate",
+      "-",
+      711
+    ],
+    "baseline": {
+      "start": 711,
+      "end": 730,
+      "cigar": "9=1I10=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.569230769231,
+      "reported_cfd": 0.5692
+    },
+    "prototype": {
+      "start": 711,
+      "end": 730,
+      "cigar": "8=1I11=",
+      "pam": "GGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.276923076923
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_I1",
+      "GRCh38_repeat_candidate",
+      "+",
+      682
+    ],
+    "baseline": {
+      "start": 663,
+      "end": 682,
+      "cigar": "3=1X5=1I10=",
+      "pam": "GGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.4553846153848,
+      "reported_cfd": 0.4554
+    },
+    "prototype": {
+      "start": 663,
+      "end": 682,
+      "cigar": "3=1X4=1I11=",
+      "pam": "GGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.2215384615384
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_mm2",
+      "GRCh38_repeat_candidate",
+      "+",
+      682
+    ],
+    "baseline": {
+      "start": 663,
+      "end": 682,
+      "cigar": "1=1X3=1I14=",
+      "pam": "GGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 5,
+          "target_offset": 5,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.2485795453125,
+      "reported_cfd": 0.2486
+    },
+    "prototype": {
+      "start": 663,
+      "end": 682,
+      "cigar": "1=1I2=1X15=",
+      "pam": "GGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.2765625
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_mm3",
+      "GRCh38_repeat_candidate",
+      "+",
+      682
+    ],
+    "baseline": {
+      "start": 663,
+      "end": 682,
+      "cigar": "1=1X3=1I1=1X12=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 5,
+          "target_offset": 5,
+          "length": 1
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 12,
+      "cfd": 0.15297202778900787,
+      "reported_cfd": 0.153
+    },
+    "prototype": {
+      "start": 663,
+      "end": 682,
+      "cigar": "1=1I2=1X2=1X12=",
+      "pam": "GGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 12,
+      "cfd": 0.17019230758593748
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_mm4",
+      "GRCh38_repeat_candidate",
+      "+",
+      682
+    ],
+    "baseline": {
+      "start": 663,
+      "end": 682,
+      "cigar": "1=1X3=1I1=1X3=1X8=",
+      "pam": "GGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 5,
+          "target_offset": 5,
+          "length": 1
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 15,
+      "cfd": 0.050990675878678615,
+      "reported_cfd": 0.051
+    },
+    "prototype": {
+      "start": 663,
+      "end": 682,
+      "cigar": "1=1I2=1X2=1X3=1X8=",
+      "pam": "GGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 15,
+      "cfd": 0.05673076913858172
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_minus_mm5",
+      "GRCh38_repeat_candidate",
+      "+",
+      682
+    ],
+    "baseline": {
+      "start": 663,
+      "end": 682,
+      "cigar": "1=1X3=1I1=1X3=1X3=1X4=",
+      "pam": "GGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 5,
+          "target_offset": 5,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 18,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 663,
+      "end": 682,
+      "cigar": "1=1I2=1X2=1X3=1X3=1X4=",
+      "pam": "GGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 18,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_D2mm2",
+      "CHM13_repeat_candidate",
+      "+",
+      979
+    ],
+    "baseline": {
+      "start": 957,
+      "end": 979,
+      "cigar": "1=1X2=1X5=2D10=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 10,
+          "target_offset": 10,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.007326007333307691,
+      "reported_cfd": 0.0073
+    },
+    "prototype": {
+      "start": 957,
+      "end": 979,
+      "cigar": "1=1X2=1X3=2D12=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_D2mm2",
+      "GRCh38_repeat_candidate",
+      "-",
+      414
+    ],
+    "baseline": {
+      "start": 414,
+      "end": 436,
+      "cigar": "1=1X2=1X5=2D10=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 10,
+          "target_offset": 10,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.007326007333307691,
+      "reported_cfd": 0.0073
+    },
+    "prototype": {
+      "start": 414,
+      "end": 436,
+      "cigar": "1=1X2=1X3=2D12=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm1",
+      "CHM13_repeat_candidate",
+      "+",
+      979
+    ],
+    "baseline": {
+      "start": 960,
+      "end": 979,
+      "cigar": "3=1I16=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.68253968254,
+      "reported_cfd": 0.6825
+    },
+    "prototype": {
+      "start": 960,
+      "end": 979,
+      "cigar": "1=1I18=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.96875
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm1",
+      "GRCh38_repeat_candidate",
+      "-",
+      414
+    ],
+    "baseline": {
+      "start": 414,
+      "end": 433,
+      "cigar": "3=1I16=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.68253968254,
+      "reported_cfd": 0.6825
+    },
+    "prototype": {
+      "start": 414,
+      "end": 433,
+      "cigar": "1=1I18=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.96875
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm2",
+      "CHM13_repeat_candidate",
+      "+",
+      979
+    ],
+    "baseline": {
+      "start": 960,
+      "end": 979,
+      "cigar": "3=1I1X15=",
+      "pam": "TGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.3900226754446258,
+      "reported_cfd": 0.39
+    },
+    "prototype": {
+      "start": 960,
+      "end": 979,
+      "cigar": "1=1I2=1X15=",
+      "pam": "TGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.55357142815625
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm2",
+      "GRCh38_repeat_candidate",
+      "-",
+      414
+    ],
+    "baseline": {
+      "start": 414,
+      "end": 433,
+      "cigar": "3=1I1X15=",
+      "pam": "TGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.3900226754446258,
+      "reported_cfd": 0.39
+    },
+    "prototype": {
+      "start": 414,
+      "end": 433,
+      "cigar": "1=1I2=1X15=",
+      "pam": "TGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.55357142815625
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm3",
+      "CHM13_repeat_candidate",
+      "+",
+      979
+    ],
+    "baseline": {
+      "start": 960,
+      "end": 979,
+      "cigar": "3=1I1X2=1X12=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 12,
+      "cfd": 0.2860166285293847,
+      "reported_cfd": 0.286
+    },
+    "prototype": {
+      "start": 960,
+      "end": 979,
+      "cigar": "1=1I2=1X2=1X12=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 12,
+      "cfd": 0.4059523804633928
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm3",
+      "GRCh38_repeat_candidate",
+      "-",
+      414
+    ],
+    "baseline": {
+      "start": 414,
+      "end": 433,
+      "cigar": "3=1I1X2=1X12=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 12,
+      "cfd": 0.2860166285293847,
+      "reported_cfd": 0.286
+    },
+    "prototype": {
+      "start": 414,
+      "end": 433,
+      "cigar": "1=1I2=1X2=1X12=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 12,
+      "cfd": 0.4059523804633928
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm4",
+      "CHM13_repeat_candidate",
+      "+",
+      979
+    ],
+    "baseline": {
+      "start": 960,
+      "end": 979,
+      "cigar": "3=1I1X2=1X3=1X8=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 15,
+      "cfd": 0.20429759172498435,
+      "reported_cfd": 0.2043
+    },
+    "prototype": {
+      "start": 960,
+      "end": 979,
+      "cigar": "1=1I2=1X2=1X3=1X8=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 15,
+      "cfd": 0.28996598592929423
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm4",
+      "GRCh38_repeat_candidate",
+      "-",
+      414
+    ],
+    "baseline": {
+      "start": 414,
+      "end": 433,
+      "cigar": "3=1I1X2=1X3=1X8=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 15,
+      "cfd": 0.20429759172498435,
+      "reported_cfd": 0.2043
+    },
+    "prototype": {
+      "start": 414,
+      "end": 433,
+      "cigar": "1=1I2=1X2=1X3=1X8=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 15,
+      "cfd": 0.28996598592929423
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm5",
+      "CHM13_repeat_candidate",
+      "+",
+      979
+    ],
+    "baseline": {
+      "start": 960,
+      "end": 979,
+      "cigar": "3=1I1X2=1X3=1X3=1X4=",
+      "pam": "TGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 18,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 960,
+      "end": 979,
+      "cigar": "1=1I2=1X2=1X3=1X3=1X4=",
+      "pam": "TGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 18,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "CHM13_repeat_candidate_plus_mm5",
+      "GRCh38_repeat_candidate",
+      "-",
+      414
+    ],
+    "baseline": {
+      "start": 414,
+      "end": 433,
+      "cigar": "3=1I1X2=1X3=1X3=1X4=",
+      "pam": "TGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 18,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 414,
+      "end": 433,
+      "cigar": "1=1I2=1X2=1X3=1X3=1X4=",
+      "pam": "TGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 18,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_minus_D1",
+      "GRCh38_nonrepeat_candidate",
+      "-",
+      988
+    ],
+    "baseline": {
+      "start": 988,
+      "end": 1009,
+      "cigar": "8=1D12=",
+      "pam": "AGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 988,
+      "end": 1009,
+      "cigar": "4=1D16=",
+      "pam": "AGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 4,
+          "target_offset": 4,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.15
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_minus_D2",
+      "GRCh38_nonrepeat_candidate",
+      "-",
+      988
+    ],
+    "baseline": {
+      "start": 988,
+      "end": 1010,
+      "cigar": "8=2D12=",
+      "pam": "AGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 7,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 988,
+      "end": 1010,
+      "cigar": "5=2D15=",
+      "pam": "AGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 5,
+          "target_offset": 5,
+          "length": 2
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 7,
+      "cfd": 0.01999999999995
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_minus_I1",
+      "GRCh38_nonrepeat_candidate",
+      "-",
+      988
+    ],
+    "baseline": {
+      "start": 988,
+      "end": 1007,
+      "cigar": "9=1I10=",
+      "pam": "AGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.569230769231,
+      "reported_cfd": 0.5692
+    },
+    "prototype": {
+      "start": 988,
+      "end": 1007,
+      "cigar": "8=1I11=",
+      "pam": "AGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.276923076923
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_minus_mm1",
+      "GRCh38_repeat_candidate",
+      "+",
+      1022
+    ],
+    "baseline": {
+      "start": 1001,
+      "end": 1022,
+      "cigar": "3=1D6=3X6=2X",
+      "pam": "AGG",
+      "mismatches": 5,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 21,
+      "cfd": 0.035241907477288545,
+      "reported_cfd": 0.0352
+    },
+    "prototype": {
+      "start": 1001,
+      "end": 1022,
+      "cigar": "2=1D7=3X6=2X",
+      "pam": "AGG",
+      "mismatches": 5,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 2,
+          "target_offset": 2,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 21,
+      "cfd": 0.04271746360885063
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_minus_mm5",
+      "CHM13_repeat_candidate",
+      "-",
+      1523
+    ],
+    "baseline": {
+      "start": 1523,
+      "end": 1545,
+      "cigar": "2=1X5=1X3=2D5=3X",
+      "pam": "GGG",
+      "mismatches": 5,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 12,
+          "target_offset": 12,
+          "length": 2
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 22,
+      "cfd": 0.0019623233923673476,
+      "reported_cfd": 0.002
+    },
+    "prototype": {
+      "start": 1523,
+      "end": 1545,
+      "cigar": "2=1X5=1X2=2D6=3X",
+      "pam": "GGG",
+      "mismatches": 5,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 11,
+          "target_offset": 11,
+          "length": 2
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 22,
+      "cfd": 0.010989010997252748
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_plus_D2",
+      "GRCh38_nonrepeat_candidate",
+      "+",
+      1058
+    ],
+    "baseline": {
+      "start": 1036,
+      "end": 1058,
+      "cigar": "8=2D12=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 7,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 1036,
+      "end": 1058,
+      "cigar": "5=2D15=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 5,
+          "target_offset": 5,
+          "length": 2
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 7,
+      "cfd": 0.036
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_plus_I1",
+      "GRCh38_nonrepeat_candidate",
+      "+",
+      1058
+    ],
+    "baseline": {
+      "start": 1039,
+      "end": 1058,
+      "cigar": "8=1I11=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.276923076923,
+      "reported_cfd": 0.2769
+    },
+    "prototype": {
+      "start": 1039,
+      "end": 1058,
+      "cigar": "7=1I12=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.234375
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_plus_mm1",
+      "GRCh38_nonrepeat_candidate",
+      "+",
+      1058
+    ],
+    "baseline": {
+      "start": 1039,
+      "end": 1058,
+      "cigar": "3=1I16=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 3,
+          "target_offset": 3,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.65625,
+      "reported_cfd": 0.6562
+    },
+    "prototype": {
+      "start": 1039,
+      "end": 1058,
+      "cigar": "1=1I18=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 6,
+      "cfd": 0.953125
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_plus_mm2",
+      "GRCh38_nonrepeat_candidate",
+      "+",
+      1058
+    ],
+    "baseline": {
+      "start": 1038,
+      "end": 1058,
+      "cigar": "1=1X2=1X15=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 0,
+      "max_gap_size": 0,
+      "gap_placements": [],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 6,
+      "cfd": 0.6600000002399999,
+      "reported_cfd": 0.66
+    },
+    "prototype": {
+      "start": 1039,
+      "end": 1058,
+      "cigar": "1=1I2=1X15=",
+      "pam": "TGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 9,
+      "cfd": 0.7488839288437499
+    },
+    "mismatch_count_differs": true,
+    "bulge_event_count_differs": true,
+    "bulge_max_size_differs": true,
+    "coordinates_differ": true,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "baseline",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_plus_mm3",
+      "GRCh38_nonrepeat_candidate",
+      "+",
+      1058
+    ],
+    "baseline": {
+      "start": 1038,
+      "end": 1058,
+      "cigar": "1=1X2=1X2=1X12=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 0,
+      "max_gap_size": 0,
+      "gap_placements": [],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 9,
+      "cfd": 0.2828571432428571,
+      "reported_cfd": 0.2829
+    },
+    "prototype": {
+      "start": 1039,
+      "end": 1058,
+      "cigar": "1=1I2=1X2=1X12=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 12,
+      "cfd": 0.3209502555397002
+    },
+    "mismatch_count_differs": true,
+    "bulge_event_count_differs": true,
+    "bulge_max_size_differs": true,
+    "coordinates_differ": true,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "baseline",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_plus_mm4",
+      "GRCh38_nonrepeat_candidate",
+      "+",
+      1058
+    ],
+    "baseline": {
+      "start": 1038,
+      "end": 1058,
+      "cigar": "1=1X2=1X2=1X3=1X8=",
+      "pam": "TGG",
+      "mismatches": 4,
+      "gap_events": 0,
+      "max_gap_size": 0,
+      "gap_placements": [],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 12,
+      "cfd": 0.09428571431999999,
+      "reported_cfd": 0.0943
+    },
+    "prototype": {
+      "start": 1039,
+      "end": 1058,
+      "cigar": "1=1I2=1X2=1X3=1X8=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 15,
+      "cfd": 0.10698341840624997
+    },
+    "mismatch_count_differs": true,
+    "bulge_event_count_differs": true,
+    "bulge_max_size_differs": true,
+    "coordinates_differ": true,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "baseline",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_nonrepeat_candidate_plus_mm5",
+      "GRCh38_nonrepeat_candidate",
+      "+",
+      1058
+    ],
+    "baseline": {
+      "start": 1038,
+      "end": 1058,
+      "cigar": "1=1X2=1X2=1X3=1X3=1X4=",
+      "pam": "TGG",
+      "mismatches": 5,
+      "gap_events": 0,
+      "max_gap_size": 0,
+      "gap_placements": [],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 15,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 1039,
+      "end": 1058,
+      "cigar": "1=1I2=1X2=1X3=1X3=1X4=",
+      "pam": "TGG",
+      "mismatches": 4,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 1,
+          "target_offset": 1,
+          "length": 1
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 18,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": true,
+    "bulge_event_count_differs": true,
+    "bulge_max_size_differs": true,
+    "coordinates_differ": true,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "baseline",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_minus_D1",
+      "CHM13_repeat_candidate",
+      "+",
+      613
+    ],
+    "baseline": {
+      "start": 592,
+      "end": 613,
+      "cigar": "8=1D5=1X6=",
+      "pam": "TGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 9,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 592,
+      "end": 613,
+      "cigar": "7=1D6=1X6=",
+      "pam": "TGG",
+      "mismatches": 1,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 19,
+      "match_fraction": 0.95,
+      "affine_penalty": 9,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_minus_D1",
+      "GRCh38_repeat_candidate",
+      "-",
+      776
+    ],
+    "baseline": {
+      "start": 776,
+      "end": 797,
+      "cigar": "8=1D12=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 776,
+      "end": 797,
+      "cigar": "7=1D13=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_minus_I2mm2",
+      "CHM13_repeat_candidate",
+      "+",
+      613
+    ],
+    "baseline": {
+      "start": 595,
+      "end": 613,
+      "cigar": "1=1X2=1X5=2I1=1X6=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 10,
+          "target_offset": 10,
+          "length": 2
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 16,
+      "cfd": 0.004430769227092475,
+      "reported_cfd": 0.0044
+    },
+    "prototype": {
+      "start": 595,
+      "end": 613,
+      "cigar": "1=1X2=1X3=2I3=1X6=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 16,
+      "cfd": 0.05816804728904527
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_minus_I2mm2",
+      "GRCh38_repeat_candidate",
+      "-",
+      776
+    ],
+    "baseline": {
+      "start": 776,
+      "end": 794,
+      "cigar": "1=1X2=1X5=2I8=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 10,
+          "target_offset": 10,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 13,
+      "cfd": 0.00604195803969063,
+      "reported_cfd": 0.006
+    },
+    "prototype": {
+      "start": 776,
+      "end": 794,
+      "cigar": "1=1X2=1X3=2I10=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 13,
+      "cfd": 0.07932006452111631
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_plus_D1",
+      "CHM13_repeat_candidate",
+      "-",
+      428
+    ],
+    "baseline": {
+      "start": 428,
+      "end": 448,
+      "cigar": "2X3=2X2=1X10=",
+      "pam": "TGG",
+      "mismatches": 5,
+      "gap_events": 0,
+      "max_gap_size": 0,
+      "gap_placements": [],
+      "matches": 15,
+      "match_fraction": 0.75,
+      "affine_penalty": 15,
+      "cfd": 0.2506887049091598,
+      "reported_cfd": 0.2507
+    },
+    "prototype": {
+      "start": 428,
+      "end": 449,
+      "cigar": "1X6=1D2=1X10=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 12,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": true,
+    "bulge_event_count_differs": true,
+    "bulge_max_size_differs": true,
+    "coordinates_differ": true,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "prototype",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_plus_D1",
+      "GRCh38_repeat_candidate",
+      "+",
+      960
+    ],
+    "baseline": {
+      "start": 939,
+      "end": 960,
+      "cigar": "8=1D12=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 939,
+      "end": 960,
+      "cigar": "7=1D13=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 1,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 7,
+          "target_offset": 7,
+          "length": 1
+        }
+      ],
+      "matches": 20,
+      "match_fraction": 1.0,
+      "affine_penalty": 6,
+      "cfd": 0.0
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_plus_D2",
+      "CHM13_repeat_candidate",
+      "-",
+      428
+    ],
+    "baseline": {
+      "start": 428,
+      "end": 450,
+      "cigar": "1=1X6=2D1=1X10=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 428,
+      "end": 450,
+      "cigar": "1=1X6=1X1=2D10=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 10,
+          "target_offset": 10,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 13,
+      "cfd": 0.06448412698399802
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_plus_D2mm2",
+      "CHM13_repeat_candidate",
+      "-",
+      428
+    ],
+    "baseline": {
+      "start": 428,
+      "end": 450,
+      "cigar": "1=1X2=1X3=2D1=1X10=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 16,
+      "cfd": 0.0,
+      "reported_cfd": 0.0
+    },
+    "prototype": {
+      "start": 428,
+      "end": 450,
+      "cigar": "1=1X2=1X3=1X1=2D10=",
+      "pam": "TGG",
+      "mismatches": 3,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "D",
+          "guide_offset": 10,
+          "target_offset": 10,
+          "length": 2
+        }
+      ],
+      "matches": 17,
+      "match_fraction": 0.85,
+      "affine_penalty": 16,
+      "cfd": 0.04551820728661533
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": true,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_plus_I2",
+      "GRCh38_repeat_candidate",
+      "+",
+      960
+    ],
+    "baseline": {
+      "start": 942,
+      "end": 960,
+      "cigar": "9=2I9=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 7,
+      "cfd": 0.17041420118349113,
+      "reported_cfd": 0.1704
+    },
+    "prototype": {
+      "start": 942,
+      "end": 960,
+      "cigar": "8=2I10=",
+      "pam": "TGG",
+      "mismatches": 0,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 18,
+      "match_fraction": 0.9,
+      "affine_penalty": 7,
+      "cfd": 0.17041420118349113
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  },
+  {
+    "key": [
+      "GRCh38_repeat_candidate_plus_I2mm2",
+      "GRCh38_repeat_candidate",
+      "+",
+      960
+    ],
+    "baseline": {
+      "start": 942,
+      "end": 960,
+      "cigar": "1=1X2=1X4=2I9=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 9,
+          "target_offset": 9,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 13,
+      "cfd": 0.045068218522975205,
+      "reported_cfd": 0.0451
+    },
+    "prototype": {
+      "start": 942,
+      "end": 960,
+      "cigar": "1=1X2=1X3=2I10=",
+      "pam": "TGG",
+      "mismatches": 2,
+      "gap_events": 1,
+      "max_gap_size": 2,
+      "gap_placements": [
+        {
+          "operation": "I",
+          "guide_offset": 8,
+          "target_offset": 8,
+          "length": 2
+        }
+      ],
+      "matches": 16,
+      "match_fraction": 0.8,
+      "affine_penalty": 13,
+      "cfd": 0.0450682185229752
+    },
+    "mismatch_count_differs": false,
+    "bulge_event_count_differs": false,
+    "bulge_max_size_differs": false,
+    "coordinates_differ": false,
+    "bulge_placements_differ": true,
+    "cfd_differs": false,
+    "affine_preference": "tie",
+    "preference": "No biological preference established; select under a declared deterministic alignment objective."
+  }
+]

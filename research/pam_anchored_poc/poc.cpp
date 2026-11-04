@@ -11,7 +11,28 @@
 #include <string>
 #include <tuple>
 #include <vector>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <fcntl.h>
+#if !defined(INDEX_BINDING_HELPER) || !defined(INDEX_BINDING_PYTHON)
+#error "Build with build.sh: native index binding helper and interpreter are required"
+#endif
 using namespace std;
+// This check is mandatory even for direct invocation of the native binary.
+// The helper verifies a build-time binding for the exact FASTA and index.
+void require_index_binding(const char* reference, const char* index) {
+ pid_t child=fork();
+ if(child<0) throw runtime_error("cannot start index binding verifier");
+ if(child==0) {
+   int sink=open("/dev/null",O_WRONLY); if(sink<0 || dup2(sink,STDOUT_FILENO)<0) _exit(126);
+   close(sink);
+   execl(INDEX_BINDING_PYTHON,INDEX_BINDING_PYTHON,"-I",INDEX_BINDING_HELPER,"verify","--reference",reference,"--index",index,(char*)nullptr);
+   _exit(127);
+ }
+ int status=0; if(waitpid(child,&status,0)<0 || !WIFEXITED(status) || WEXITSTATUS(status)!=0)
+   throw runtime_error("mandatory reference/index binding verification failed");
+}
 struct Seq { string name, seq; size_t offset; };
 vector<Seq> fasta(const string& path) {
     ifstream f(path); if (!f) throw runtime_error("cannot open FASTA " + path);
@@ -88,6 +109,7 @@ int main(int argc,char** argv) { try {
  if(maxbulges>1)throw runtime_error("unsupported maximum bulge events: prototype supports only 0 or 1");
  if(maxgap>2)throw runtime_error("unsupported maximum bulge size: prototype supports 0, 1 or 2");
  if(maxbulges==0)maxgap=0;
+ require_index_binding(argv[2],argv[1]);
  auto ref=fasta(argv[2]), guides=fasta(argv[3]);
  if(ref.empty() || guides.empty())throw runtime_error("reference and guide FASTA must be nonempty");
  set<string> ref_names, guide_names;
