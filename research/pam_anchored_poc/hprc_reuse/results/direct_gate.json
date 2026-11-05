@@ -1,0 +1,10 @@
+{
+  "method": "direct native prototype invocation, exact match limits m=0,b=0,z=0; fails before loading FM index or reading guide",
+  "index_prefix": "/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG00735_pat/HG00735_pat",
+  "reference": "/moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz",
+  "guide_file": "research/pam_anchored_poc/validation/results/benchmark_guide.fa",
+  "returncode": 1,
+  "stdout_bytes": 0,
+  "stderr": "index binding error: index binding manifest missing; rebuild with index_manifest.py build\nmandatory reference/index binding verification failed\n",
+  "scope": "no FM index loaded and no query performed"
+}

@@ -1,0 +1,14 @@
+{
+  "starting_commit": "0e483f7",
+  "date_utc": "2026-11-05",
+  "host": "octopus01",
+  "panel_file": "/moosefs/salehi/HPRCv2_CRISPRapido/hprc_haplotypes.tsv",
+  "panel_sha256": "9147e9c96cc39cb42de2c9420523e88aedd1ab17d7514ce5ee90e2210fdc5fb9",
+  "resolved_manifest": "docs/index_recovery_2026-10-29_v1/verified_assemblies.tsv",
+  "resolved_manifest_sha256": "948e0c17f144bf4b30624fba62f593816472463e2e1db8f755b3be611a62b591",
+  "historical_component_manifest_sha256": "27d1db97d287b40f9ea9d7f690c38404462d411beaa6c7cdc7bffb429b46fffc",
+  "native_prototype_sha256": "04af7941dec36919339cd80022e0f160966b8c6555a3c140219d12a2b1338eed",
+  "columba_recorded_source_revision": "edcc7ce2a1e28ded6784a44afbd8b9348a4805ad",
+  "component_hashes_currently_rechecked": false,
+  "scope": "Metadata only; one fail-closed direct invocation before index opening; no HPRC search."
+}

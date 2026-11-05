@@ -1,0 +1,39 @@
+{
+  "panel_rows": 464,
+  "metadata_observed": 459,
+  "metadata_values": {
+    "21|4|VANILLA": 459,
+    "ERROR": 5
+  },
+  "panel_binding_exists": 0,
+  "panel_errors": [
+    {
+      "assembly": "hg002v1.1.mat_MT",
+      "error": "[Errno 2] No such file or directory: '/moosefs/salehi/HPRCv2_CRISPRapido/indices/hg002v1.1.mat_MT/hg002v1.1.mat_MT.meta'"
+    },
+    {
+      "assembly": "hg002v1.1.pat",
+      "error": "[Errno 2] No such file or directory: '/moosefs/salehi/HPRCv2_CRISPRapido/indices/hg002v1.1.pat/hg002v1.1.pat.meta'"
+    },
+    {
+      "assembly": "HG02723_mat",
+      "error": "[Errno 5] Input/output error"
+    },
+    {
+      "assembly": "HG06807_mat",
+      "error": "[Errno 2] No such file or directory: '/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG06807_mat/HG06807_mat.meta'"
+    },
+    {
+      "assembly": "HG06807_pat",
+      "error": "[Errno 2] No such file or directory: '/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG06807_pat/HG06807_pat.meta'"
+    }
+  ],
+  "resolved_count": 12,
+  "resolved_observed": 12,
+  "resolved_dictionary_matches": 12,
+  "resolved_offsets_match": 12,
+  "resolved_text_headers_match": 12,
+  "resolved_binding_exists": 0,
+  "resolved_gzip": 12,
+  "scope": "metadata, text length prefix and final byte only; no full component readability, hash or sequence identity check"
+}
