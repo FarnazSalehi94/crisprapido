@@ -22,6 +22,14 @@ class IndexTests(unittest.TestCase):
   for content in ('>same\nA\n>same\nC\n','>first\n>second\nC\n'):
    self.ref.write_text(content)
    with self.assertRaises(ValueError):fasta(self.ref)
+ def test_streamed_index_content_and_sentinel_are_checked(self):
+  txt=Path(self.prefix+'.txt.bin');good=txt.read_bytes()
+  # An index replacement at N is intentionally not evidence of original N.
+  txt.write_bytes(good[:-2]+b'G$');self.assertEqual(check(self.prefix,self.ref)['ambiguous_positions_unverifiable'],1)
+  txt.write_bytes(good[:4]+b'T'+good[5:])
+  with self.assertRaises(ValueError):check(self.prefix,self.ref)
+  txt.write_bytes(good[:-1]+b'X')
+  with self.assertRaises(ValueError):check(self.prefix,self.ref)
  def test_bad_boundary_rejected(self):
   Path(self.prefix+'.pos').write_bytes(struct.pack('<III',0,3,7))
   with self.assertRaises(ValueError):check(self.prefix,self.ref)

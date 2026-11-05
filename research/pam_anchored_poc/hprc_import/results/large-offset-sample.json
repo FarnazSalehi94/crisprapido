@@ -1,0 +1,22 @@
+{
+  "sampled_sa_entries": 1024,
+  "above_INT32_MAX_inside_contigs": 258,
+  "examples": [
+    {
+      "global": 3029527748,
+      "contig": "HG00735#1#JAHBCH020000082.1",
+      "offset": 146553
+    },
+    {
+      "global": 2410907752,
+      "contig": "HG00735#1#JAHBCH020000046.1",
+      "offset": 40274126
+    },
+    {
+      "global": 2410907756,
+      "contig": "HG00735#1#JAHBCH020000046.1",
+      "offset": 40274130
+    }
+  ],
+  "scope": "raw serialized SA values only; does not call findSA or validate search"
+}

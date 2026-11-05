@@ -25,13 +25,14 @@ def bind_build(builder,reference,prefix):
  return data
 def verify(reference,prefix):
  prefix=Path(prefix).resolve();manifest=Path(str(prefix)+'.crispr-binding.json')
- if not manifest.is_file():raise ValueError('index binding manifest missing; rebuild with index_manifest.py build')
+ if not manifest.is_file():raise ValueError('index binding manifest missing; import a verified existing index or build a new bound index')
  data=json.loads(manifest.read_text())
  if data.get('format')!='crispr-poc-index-binding-v1' or set(data.get('components_sha256',{}))!=set(SUFFIXES):raise ValueError('unsupported or incomplete index binding manifest')
  if digest(reference)!=data['reference_sha256']:raise ValueError('reference FASTA does not match index binding')
  for s in SUFFIXES:
   if digest(str(prefix)+'.'+s)!=data['components_sha256'][s]:raise ValueError('index component does not match binding: '+s)
- check(prefix,reference)
+ info=check(prefix,reference)
+ if info['fasta_sha256']!=data['reference_sha256']:raise ValueError('reference changed during index verification')
  return data
 if __name__=='__main__':
  try:

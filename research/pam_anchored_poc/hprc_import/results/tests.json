@@ -1,0 +1,14 @@
+{
+  "fixture_import": "PASS: existing small N-containing index; no FM rebuild",
+  "corrupt_component": "REJECTED: full SHA256 mismatch; no published binding",
+  "mismatched_reference": "REJECTED: independent normalized text comparison; no published binding",
+  "wrong_compressed_source_digest": "REJECTED: trusted hash mismatch; no published binding",
+  "post_publication_reference_and_component_mutations": "REJECTED by normal binding verifier in small fixture",
+  "streaming_checker_unit_tests": "7 passed",
+  "experimental_172_panel": "172/172 expected, zero unexpected/duplicate; 97 independently scored; PAF byte-identical to prior run",
+  "actual_staged_fake_paths": "PASS: real imported manifest rejects a mismatched reference and a truncated BWT stand-in; original stage not modified",
+  "load_only": "PASS: required binding check followed by FMIndex construction, no guide or search",
+  "reference_changed_mid_verification": "REJECTED: streamed FASTA hash differs from binding despite initial hash passing",
+  "imported_fixture_integrated_search": "PASS: imported 172-anchor fixture produced byte-identical integrated PAF",
+  "truncated_gzip": "REJECTED during decompression even when pinned to the truncated file digest; no published binding"
+}

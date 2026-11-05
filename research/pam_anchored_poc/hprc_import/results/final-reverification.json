@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "method": "current index_manifest.verify including streaming-reference hash comparison",
+  "reference_sha256": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+  "components_verified": 12,
+  "wall_seconds": 166.95,
+  "gnu_time_max_individual_rss_kib": 15372,
+  "search_run": false
+}

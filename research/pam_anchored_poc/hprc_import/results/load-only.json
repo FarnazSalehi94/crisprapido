@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "probe": "FMIndex constructor only; native binding verification before load; no guide or search",
+  "native_probe_sha256": "e7362b7272f7c18f864b4d1d321d9703790e4535d17740d71c1d9202aec1695b",
+  "text_symbols_with_sentinel": 3029527753,
+  "index_constructor_seconds": 4.11222,
+  "end_to_end_with_verification_seconds": 170.09,
+  "gnu_time_max_individual_rss_kib": 11190868,
+  "per_process_virtual_memory_limit_kib": 25165824,
+  "wall_limit_seconds": 600,
+  "interpretation": "One warm-cache load; lazy mappings may not be fully resident; excludes actual search/reference/output memory and is not aggregate process-tree RSS."
+}

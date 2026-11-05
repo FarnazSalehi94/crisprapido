@@ -1,0 +1,15 @@
+{
+  "starting_commit": "ce5c6b1",
+  "date_utc": "2026-11-05",
+  "host": "octopus01",
+  "trusted_assembly_manifest": "docs/index_recovery_2026-10-29_v1/verified_assemblies.tsv",
+  "trusted_assembly_manifest_sha256": "948e0c17f144bf4b30624fba62f593816472463e2e1db8f755b3be611b62b591",
+  "trusted_component_manifest": "docs/index_recovery_2026-10-29_v1/verified_component_checksums.tsv",
+  "trusted_component_manifest_sha256": "27d1db97d287b40f9ea9d7f690c38404462d411beaa6c7cdc7bffb429b46fffc",
+  "independent_comparator": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/tools/compare_index_text",
+  "independent_comparator_sha256": "2306463cb7a94f1da01842b554be4c1e5da83542a3d6905b6b698239ee54f89a",
+  "comparator_source_sha256": "d653b79ddf152d1447daeda000af3c1aab11ff85c64836f50d795b831e9cf641",
+  "stage": "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1",
+  "comparator_provenance_note": "Binary was checksum-pinned for this invocation; historical source hash matches the recovered verifier source. No independent reproducible-build attestation was performed.",
+  "search_run": false
+}
