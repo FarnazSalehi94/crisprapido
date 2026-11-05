@@ -1,0 +1,41 @@
+{
+  "guides": [
+    {
+      "guide": "complex",
+      "sequence": "ACGTTGCACTGAGTACCGTA",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 2,
+      "sites": 18,
+      "N_overlapping_sites": 18,
+      "strands": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "guide": "repeat",
+      "sequence": "ACACACACACACACACACAC",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 2,
+      "max_homopolymer": 1,
+      "sites": 22,
+      "N_overlapping_sites": 22,
+      "strands": [
+        "+",
+        "-"
+      ]
+    }
+  ],
+  "guide_count": 2,
+  "gc_min": 0.5,
+  "gc_max": 0.5,
+  "unique_dinucleotide_min": 2,
+  "unique_dinucleotide_max": 12,
+  "reported": 40,
+  "N_overlapping_sites": 40,
+  "N_overlapping_by_strand": {
+    "-": 20,
+    "+": 20
+  }
+}

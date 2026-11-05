@@ -41,9 +41,10 @@ def main():
                 name = line[1:].split()[0]
                 if name in seqs:
                     raise ValueError('duplicate reference record')
-                seqs[name] = ''
+                seqs[name] = []
             elif name is not None:
-                seqs[name] += ''.join(line.split()).upper()
+                seqs[name].append(''.join(line.split()).upper())
+        seqs = {name: ''.join(chunks) for name, chunks in seqs.items()}
         lines = run.stdout.splitlines()
         header = 'guide\tcontig\tstrand\tstart\tend\tanchor\tpam\tcigar\tmismatches\tinserted_guide_bases\tdeleted_guide_bases\tbulge_events\tmatch_count\tmatch_fraction'
         try:

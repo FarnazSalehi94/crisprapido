@@ -1,0 +1,54 @@
+[
+  {
+    "region": "CHM13",
+    "backend": "columba-wfa2",
+    "run": 0,
+    "status": 0,
+    "stop_reason": null,
+    "wall_seconds": 43.96178941195831,
+    "sampled_aggregate_rss_kib": 77312,
+    "sampled_processes_at_peak": 2,
+    "states": null,
+    "search_seconds": null,
+    "rows": 20
+  },
+  {
+    "region": "CHM13",
+    "backend": "pam-anchored",
+    "run": 0,
+    "status": 0,
+    "stop_reason": null,
+    "wall_seconds": 2.4410693161189556,
+    "sampled_aggregate_rss_kib": 46796,
+    "sampled_processes_at_peak": 4,
+    "states": 14756941,
+    "search_seconds": 1.07751,
+    "rows": 20
+  },
+  {
+    "region": "GRCh38",
+    "backend": "columba-wfa2",
+    "run": 0,
+    "status": 0,
+    "stop_reason": null,
+    "wall_seconds": 33.80912973196246,
+    "sampled_aggregate_rss_kib": 74240,
+    "sampled_processes_at_peak": 2,
+    "states": null,
+    "search_seconds": null,
+    "rows": 18
+  },
+  {
+    "region": "GRCh38",
+    "backend": "pam-anchored",
+    "run": 0,
+    "status": 0,
+    "stop_reason": null,
+    "wall_seconds": 2.744371999055147,
+    "sampled_aggregate_rss_kib": 47036,
+    "sampled_processes_at_peak": 4,
+    "states": 18829653,
+    "search_seconds": 1.34934,
+    "rows": 18
+  }
+]

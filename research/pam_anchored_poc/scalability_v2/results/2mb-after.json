@@ -1,0 +1,17 @@
+[
+  {
+    "run": 0,
+    "wall_seconds": 1.7516656040679663,
+    "identical_paf": true
+  },
+  {
+    "run": 1,
+    "wall_seconds": 1.740331218810752,
+    "identical_paf": true
+  },
+  {
+    "run": 2,
+    "wall_seconds": 1.724720411002636,
+    "identical_paf": true
+  }
+]

@@ -1,0 +1,104 @@
+{
+  "baseline": 18,
+  "experimental": 18,
+  "both": 18,
+  "baseline_only": [],
+  "experimental_only": [],
+  "baseline_duplicates": 0,
+  "experimental_duplicates": 0,
+  "representative_differences": 3,
+  "cfd_differences": 3,
+  "alignments": [
+    {
+      "key": [
+        "guide",
+        "GRCh38#0#chr9:34000001-37000000",
+        "+",
+        524099
+      ],
+      "baseline": {
+        "start": 524080,
+        "end": 524099,
+        "cigar": "6=1X2=1I7=3X",
+        "mismatches": 4,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.03792890794067409
+      },
+      "experimental": {
+        "start": 524080,
+        "end": 524099,
+        "cigar": "6=1I1X9=3X",
+        "mismatches": 4,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.04171338877726262
+      }
+    },
+    {
+      "key": [
+        "guide",
+        "GRCh38#0#chr9:34000001-37000000",
+        "+",
+        799531
+      ],
+      "baseline": {
+        "start": 799510,
+        "end": 799531,
+        "cigar": "4=1D2X2=1X5=1X3=1X1=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": 0.006380236309201439
+      },
+      "experimental": {
+        "start": 799510,
+        "end": 799531,
+        "cigar": "3=1D1=2X2=1X5=1X3=1X1=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": 0.03828141785520864
+      }
+    },
+    {
+      "key": [
+        "guide",
+        "GRCh38#0#chr9:34000001-37000000",
+        "-",
+        343822
+      ],
+      "baseline": {
+        "start": 343822,
+        "end": 343844,
+        "cigar": "2=2D4=2X4=1X4=2X1=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.014796631918527184
+      },
+      "experimental": {
+        "start": 343822,
+        "end": 343844,
+        "cigar": "1=2D5=2X4=1X4=2X1=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.015413158248465819
+      }
+    }
+  ],
+  "disagreement_oracle": []
+}

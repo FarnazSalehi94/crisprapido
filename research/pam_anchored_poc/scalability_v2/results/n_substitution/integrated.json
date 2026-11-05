@@ -1,0 +1,82 @@
+{
+  "A": {
+    "integrated": {
+      "duplicates": 0,
+      "expected": 40,
+      "independently_scored": 0,
+      "missing": 0,
+      "recovered": 40,
+      "reported": 40,
+      "unexpected": 0
+    },
+    "baseline": {
+      "expected": 40,
+      "reported": 37,
+      "recovered": 37,
+      "missed": 3,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    "baseline_misses_with_candidate_on_same_contig": 0
+  },
+  "C": {
+    "integrated": {
+      "duplicates": 0,
+      "expected": 40,
+      "independently_scored": 0,
+      "missing": 0,
+      "recovered": 40,
+      "reported": 40,
+      "unexpected": 0
+    },
+    "baseline": {
+      "expected": 40,
+      "reported": 38,
+      "recovered": 38,
+      "missed": 2,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    "baseline_misses_with_candidate_on_same_contig": 0
+  },
+  "G": {
+    "integrated": {
+      "duplicates": 0,
+      "expected": 40,
+      "independently_scored": 0,
+      "missing": 0,
+      "recovered": 40,
+      "reported": 40,
+      "unexpected": 0
+    },
+    "baseline": {
+      "expected": 40,
+      "reported": 37,
+      "recovered": 37,
+      "missed": 3,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    "baseline_misses_with_candidate_on_same_contig": 0
+  },
+  "T": {
+    "integrated": {
+      "duplicates": 0,
+      "expected": 40,
+      "independently_scored": 0,
+      "missing": 0,
+      "recovered": 40,
+      "reported": 40,
+      "unexpected": 0
+    },
+    "baseline": {
+      "expected": 40,
+      "reported": 37,
+      "recovered": 37,
+      "missed": 3,
+      "unexpected": 0,
+      "duplicates": 0
+    },
+    "baseline_misses_with_candidate_on_same_contig": 0
+  }
+}

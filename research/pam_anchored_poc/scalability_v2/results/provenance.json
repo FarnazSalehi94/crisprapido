@@ -1,0 +1,14 @@
+{
+  "starting_code_commit": "a2f2a07",
+  "working_tree_change": "FASTA chunk accumulation in index_check.py and run_snapshot.py",
+  "columba_recorded_source_revision": "edcc7ce2a1e28ded6784a44afbd8b9348a4805ad",
+  "columba_build_caveat": "Source checkout is tracked-clean, but its untracked build has not been independently attested to its source revision.",
+  "development_crisprapido_binary_sha256": "3c1033355ecc896243197cbdb544ae5b7a5264b1c424ee81d2b78d43af64dfab",
+  "pam_native_binary_sha256": "04af7941dec36919339cd80022e0f160966b8c6555a3c140219d12a2b1338eed",
+  "columba_runtime_sha256": "7e44974c81dad4943292fa64a71e54073908b4909ce327480464d769322c40d1",
+  "columba_builder_sha256": "5987ad90e0c4a061cbf4aac7d6b087a284ccf7fe0f9e1835219c567c5e8d1ad2",
+  "host": "octopus01",
+  "cpu": "AMD EPYC 7402P 24-Core Processor",
+  "date_utc": "2026-11-05",
+  "note": "The development executable invokes the working-tree Python checker and runner at runtime. No production binary was changed."
+}

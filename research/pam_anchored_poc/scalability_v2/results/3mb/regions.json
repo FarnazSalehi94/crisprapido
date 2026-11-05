@@ -1,0 +1,24 @@
+[
+  {
+    "name": "CHM13",
+    "region": "CHM13#0#chr1:100000001-103000000",
+    "bases": 3000000,
+    "Ns": 0,
+    "ref_sha256": "736983f53d8b5226bcf2db0211c63bb181c8d0514dff7cefb4b8a49559cabb6f",
+    "index_bytes": 11346702,
+    "index_build_and_binding_seconds": 0.76579624786973,
+    "independent_verify_seconds": 0.4654602911323309,
+    "guide": "TCTAGCGTTTAACTTCTTCG"
+  },
+  {
+    "name": "GRCh38",
+    "region": "GRCh38#0#chr9:34000001-37000000",
+    "bases": 3000000,
+    "Ns": 0,
+    "ref_sha256": "ec001f3a1f61bed1446781906cb1468c48e662271076474651a2aa75d976bbce",
+    "index_bytes": 11346700,
+    "index_build_and_binding_seconds": 0.7660722539294511,
+    "independent_verify_seconds": 0.41565993800759315,
+    "guide": "TCTAGCGTTTAACTTCTTCG"
+  }
+]

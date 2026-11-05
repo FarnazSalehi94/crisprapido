@@ -1,0 +1,1844 @@
+{
+  "baseline": 172,
+  "experimental": 172,
+  "both": 172,
+  "baseline_only": [],
+  "experimental_only": [],
+  "baseline_duplicates": 0,
+  "experimental_duplicates": 0,
+  "representative_differences": 61,
+  "cfd_differences": 22,
+  "alignments": [
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D1",
+        "CHM13_nonrepeat_candidate",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 461,
+        "cigar": "9=1D11=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.1875
+      },
+      "experimental": {
+        "start": 440,
+        "end": 461,
+        "cigar": "4=1D16=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.1
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D1",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 461,
+        "cigar": "9=1D6=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 440,
+        "end": 461,
+        "cigar": "4=1D11=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D2",
+        "CHM13_nonrepeat_candidate",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 458,
+        "cigar": "2I1X1=1X15=",
+        "mismatches": 2,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 16,
+        "pam": "TGG",
+        "cfd": 0.3363970588515625
+      },
+      "experimental": {
+        "start": 440,
+        "end": 462,
+        "cigar": "5=2D15=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D2",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 458,
+        "cigar": "2I1X1=1X10=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 440,
+        "end": 462,
+        "cigar": "5=2D10=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D2mm5",
+        "CHM13_nonrepeat_candidate",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 460,
+        "cigar": "1X1=1X4=1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 0,
+        "max_bulge": 0,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 440,
+        "end": 458,
+        "cigar": "1X5=2I3=1X3=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_D2mm5",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 460,
+        "cigar": "1X1=1X4=1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 0,
+        "max_bulge": 0,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 440,
+        "end": 458,
+        "cigar": "1X5=2I3=1X3=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I1",
+        "CHM13_nonrepeat_candidate",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 459,
+        "cigar": "8=1I11=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": 0.276923076923
+      },
+      "experimental": {
+        "start": 440,
+        "end": 459,
+        "cigar": "2=1I17=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": 0.888888888889
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I1",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 459,
+        "cigar": "8=1I6=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 18,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 440,
+        "end": 459,
+        "cigar": "2=1I12=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 18,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I2mm3",
+        "CHM13_nonrepeat_candidate",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 458,
+        "cigar": "1=1X2=2I3=1X10=",
+        "mismatches": 2,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 16,
+        "pam": "TGG",
+        "cfd": 0.06920138685268232
+      },
+      "experimental": {
+        "start": 440,
+        "end": 458,
+        "cigar": "1=1X1=2I4=1X10=",
+        "mismatches": 2,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 16,
+        "pam": "TGG",
+        "cfd": 0.14509968211042265
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_I2mm3",
+        "CHM13_nonrepeat_candidate_N",
+        "-",
+        440
+      ],
+      "baseline": {
+        "start": 440,
+        "end": 458,
+        "cigar": "1=1X2=2I3=1X5=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 440,
+        "end": 458,
+        "cigar": "1=1X1=2I4=1X5=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_minus_exact",
+        "CHM13_repeat_candidate",
+        "+",
+        961
+      ],
+      "baseline": {
+        "start": 939,
+        "end": 961,
+        "cigar": "2=1X3=1X2=1X1=1X7=2D1X",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 939,
+        "end": 961,
+        "cigar": "2=1X3=1X2=1X1=1X4=2D3=1X",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_D1",
+        "CHM13_nonrepeat_candidate",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 585,
+        "end": 606,
+        "cigar": "9=1D11=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.1875
+      },
+      "experimental": {
+        "start": 585,
+        "end": 606,
+        "cigar": "8=1D12=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.0625
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_D1",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 585,
+        "end": 606,
+        "cigar": "9=1D6=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 585,
+        "end": 606,
+        "cigar": "8=1D7=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_D2mm5",
+        "CHM13_nonrepeat_candidate",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 588,
+        "end": 606,
+        "cigar": "5=2I1X3=1X3=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 588,
+        "end": 606,
+        "cigar": "5=1X2I3=1X3=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_D2mm5",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 588,
+        "end": 606,
+        "cigar": "5=2I1X3=1X3=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 588,
+        "end": 606,
+        "cigar": "5=1X2I3=1X3=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_I1",
+        "CHM13_nonrepeat_candidate",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 587,
+        "end": 606,
+        "cigar": "8=1I11=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": 0.276923076923
+      },
+      "experimental": {
+        "start": 587,
+        "end": 606,
+        "cigar": "6=1I13=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": 0.430769230769
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_I1",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 587,
+        "end": 606,
+        "cigar": "8=1I6=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 18,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 587,
+        "end": 606,
+        "cigar": "6=1I8=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 18,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_I2",
+        "CHM13_nonrepeat_candidate",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 588,
+        "end": 606,
+        "cigar": "9=2I9=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 18,
+        "pam": "TGG",
+        "cfd": 0.17041420118349113
+      },
+      "experimental": {
+        "start": 588,
+        "end": 606,
+        "cigar": "8=2I10=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 18,
+        "pam": "TGG",
+        "cfd": 0.17041420118349113
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_I2",
+        "CHM13_nonrepeat_candidate_N",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 588,
+        "end": 606,
+        "cigar": "9=2I4=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 17,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 588,
+        "end": 606,
+        "cigar": "8=2I5=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 17,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_nonrepeat_candidate_plus_I2mm3",
+        "CHM13_nonrepeat_candidate",
+        "+",
+        606
+      ],
+      "baseline": {
+        "start": 588,
+        "end": 606,
+        "cigar": "1=1X2=1X2=1X1=2I9=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.032359971407546186
+      },
+      "experimental": {
+        "start": 588,
+        "end": 606,
+        "cigar": "1=1X2=1X1=2I1=1X10=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.042102332056768256
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_D2",
+        "CHM13_repeat_candidate",
+        "-",
+        475
+      ],
+      "baseline": {
+        "start": 475,
+        "end": 497,
+        "cigar": "8=2D12=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 475,
+        "end": 497,
+        "cigar": "7=2D13=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_D2",
+        "CHM13_repeat_candidate_N",
+        "-",
+        475
+      ],
+      "baseline": {
+        "start": 475,
+        "end": 497,
+        "cigar": "8=2D7=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 475,
+        "end": 497,
+        "cigar": "7=2D8=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_D2mm5",
+        "CHM13_repeat_candidate",
+        "-",
+        475
+      ],
+      "baseline": {
+        "start": 475,
+        "end": 497,
+        "cigar": "1=1X2=2D2=2X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.012380952371672858
+      },
+      "experimental": {
+        "start": 475,
+        "end": 497,
+        "cigar": "1=1X2=1X2=1X2D3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_D2mm5",
+        "CHM13_repeat_candidate_N",
+        "-",
+        475
+      ],
+      "baseline": {
+        "start": 475,
+        "end": 497,
+        "cigar": "1=1X2=2D2=2X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 475,
+        "end": 497,
+        "cigar": "1=1X2=1X2=1X2D3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_minus_I2mm3",
+        "CHM13_repeat_candidate",
+        "-",
+        475
+      ],
+      "baseline": {
+        "start": 475,
+        "end": 493,
+        "cigar": "1=1X2=1X2=2I1X10=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.016154968043785942
+      },
+      "experimental": {
+        "start": 475,
+        "end": 493,
+        "cigar": "1=1X2=1X2=1X2I10=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.019314950814875755
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_D1",
+        "CHM13_repeat_candidate",
+        "+",
+        525
+      ],
+      "baseline": {
+        "start": 504,
+        "end": 525,
+        "cigar": "11=1D9=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 20,
+        "pam": "GGG",
+        "cfd": 0.0769230769231
+      },
+      "experimental": {
+        "start": 504,
+        "end": 525,
+        "cigar": "10=1D10=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 20,
+        "pam": "GGG",
+        "cfd": 0.25
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_D1",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "baseline": {
+        "start": 504,
+        "end": 525,
+        "cigar": "11=1D4=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 504,
+        "end": 525,
+        "cigar": "10=1D5=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_D2",
+        "CHM13_repeat_candidate",
+        "+",
+        525
+      ],
+      "baseline": {
+        "start": 503,
+        "end": 525,
+        "cigar": "11=2D9=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "GGG",
+        "cfd": 0.019230769230775
+      },
+      "experimental": {
+        "start": 503,
+        "end": 525,
+        "cigar": "10=2D10=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "GGG",
+        "cfd": 0.046875
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_D2",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "baseline": {
+        "start": 503,
+        "end": 525,
+        "cigar": "11=2D4=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 503,
+        "end": 525,
+        "cigar": "10=2D5=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_I2",
+        "CHM13_repeat_candidate",
+        "+",
+        525
+      ],
+      "baseline": {
+        "start": 507,
+        "end": 525,
+        "cigar": "11=2I7=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 18,
+        "pam": "GGG",
+        "cfd": 0.00146484375
+      },
+      "experimental": {
+        "start": 507,
+        "end": 525,
+        "cigar": "10=2I8=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 18,
+        "pam": "GGG",
+        "cfd": 0.012980769230765625
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_I2",
+        "CHM13_repeat_candidate_N",
+        "+",
+        525
+      ],
+      "baseline": {
+        "start": 507,
+        "end": 525,
+        "cigar": "11=2I2=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 17,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 507,
+        "end": 525,
+        "cigar": "10=2I3=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 17,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "CHM13_repeat_candidate_plus_I2mm3",
+        "CHM13_repeat_candidate",
+        "+",
+        525
+      ],
+      "baseline": {
+        "start": 507,
+        "end": 525,
+        "cigar": "1=1X2=1X2=1X3=2I7=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.00045703124965722653
+      },
+      "experimental": {
+        "start": 507,
+        "end": 525,
+        "cigar": "1=1X2=1X1=2I1=1X10=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.022055384607327883
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_D2",
+        "GRCh38_nonrepeat_candidate",
+        "-",
+        292
+      ],
+      "baseline": {
+        "start": 292,
+        "end": 314,
+        "cigar": "11=2D9=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "GGG",
+        "cfd": 0.1041666666665625
+      },
+      "experimental": {
+        "start": 292,
+        "end": 314,
+        "cigar": "10=2D10=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "GGG",
+        "cfd": 0.04761904761895238
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_D2",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        292
+      ],
+      "baseline": {
+        "start": 292,
+        "end": 314,
+        "cigar": "11=2D4=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 292,
+        "end": 314,
+        "cigar": "10=2D5=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_D2mm5",
+        "GRCh38_nonrepeat_candidate",
+        "-",
+        292
+      ],
+      "baseline": {
+        "start": 292,
+        "end": 314,
+        "cigar": "1=1X2=1X2=1X3=2D1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 292,
+        "end": 314,
+        "cigar": "1=1X2=1X2=1X1=2D2=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_D2mm5",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        292
+      ],
+      "baseline": {
+        "start": 292,
+        "end": 314,
+        "cigar": "1=1X2=1X2=1X3=2D1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 292,
+        "end": 314,
+        "cigar": "1=1X2=1X2=1X1=2D2=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_I2",
+        "GRCh38_nonrepeat_candidate",
+        "-",
+        292
+      ],
+      "baseline": {
+        "start": 292,
+        "end": 310,
+        "cigar": "8=2I10=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 18,
+        "pam": "GGG",
+        "cfd": 0.17041420118349113
+      },
+      "experimental": {
+        "start": 292,
+        "end": 310,
+        "cigar": "7=2I11=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 18,
+        "pam": "GGG",
+        "cfd": 0.03408284023669823
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_I2",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        292
+      ],
+      "baseline": {
+        "start": 292,
+        "end": 310,
+        "cigar": "8=2I5=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 17,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 292,
+        "end": 310,
+        "cigar": "7=2I6=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 17,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_exact",
+        "GRCh38_nonrepeat_candidate",
+        "-",
+        293
+      ],
+      "baseline": {
+        "start": 293,
+        "end": 312,
+        "cigar": "19=1I",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "AGG",
+        "cfd": 0.0615384615385
+      },
+      "experimental": {
+        "start": 293,
+        "end": 312,
+        "cigar": "18=1I1=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "AGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_minus_exact",
+        "GRCh38_nonrepeat_candidate_N",
+        "-",
+        293
+      ],
+      "baseline": {
+        "start": 293,
+        "end": 312,
+        "cigar": "15=1X3=1I",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 18,
+        "pam": "AGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 293,
+        "end": 312,
+        "cigar": "15=1X2=1I1=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 18,
+        "pam": "AGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_D2",
+        "GRCh38_nonrepeat_candidate",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 593,
+        "end": 615,
+        "cigar": "9=2D11=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "GGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 593,
+        "end": 615,
+        "cigar": "7=2D13=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "GGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_D2",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 593,
+        "end": 615,
+        "cigar": "9=2D6=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 593,
+        "end": 615,
+        "cigar": "7=2D8=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_D2mm5",
+        "GRCh38_nonrepeat_candidate",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 593,
+        "end": 615,
+        "cigar": "1=1X2=1X2=1X1=2D2=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 593,
+        "end": 615,
+        "cigar": "1=1X2=1X2=1X1=1X2=2D3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.0005723443220817715
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_D2mm5",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 593,
+        "end": 615,
+        "cigar": "1=1X2=1X2=1X1=2D2=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 593,
+        "end": 615,
+        "cigar": "1=1X2=1X2=1X1=1X2=2D3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_I1",
+        "GRCh38_nonrepeat_candidate",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 596,
+        "end": 615,
+        "cigar": "8=1I11=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": 0.276923076923
+      },
+      "experimental": {
+        "start": 596,
+        "end": 615,
+        "cigar": "7=1I12=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 19,
+        "pam": "GGG",
+        "cfd": 0.234375
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_I1",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 596,
+        "end": 615,
+        "cigar": "8=1I6=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 18,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 596,
+        "end": 615,
+        "cigar": "7=1I7=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 18,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_I2mm3",
+        "GRCh38_nonrepeat_candidate",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 597,
+        "end": 615,
+        "cigar": "1=1X2=2I3=1X10=",
+        "mismatches": 2,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 16,
+        "pam": "GGG",
+        "cfd": 0.04606751273003604
+      },
+      "experimental": {
+        "start": 597,
+        "end": 615,
+        "cigar": "1=1X1=2I4=1X10=",
+        "mismatches": 2,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 16,
+        "pam": "GGG",
+        "cfd": 0.06776094275482492
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_I2mm3",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 597,
+        "end": 615,
+        "cigar": "1=1X2=2I3=1X5=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 597,
+        "end": 615,
+        "cigar": "1=1X1=2I4=1X5=1X4=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_mm5",
+        "GRCh38_nonrepeat_candidate",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 596,
+        "end": 615,
+        "cigar": "2=1I1=1X2=1X3=1X3=1X4=",
+        "mismatches": 4,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.044680025906146496
+      },
+      "experimental": {
+        "start": 596,
+        "end": 615,
+        "cigar": "1=1I2=1X2=1X3=1X3=1X4=",
+        "mismatches": 4,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": 0.048718412863053714
+      }
+    },
+    {
+      "key": [
+        "GRCh38_nonrepeat_candidate_plus_mm5",
+        "GRCh38_nonrepeat_candidate_N",
+        "+",
+        615
+      ],
+      "baseline": {
+        "start": 596,
+        "end": 615,
+        "cigar": "2=1I1=1X2=1X3=1X3=1X4=",
+        "mismatches": 4,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 596,
+        "end": 615,
+        "cigar": "1=1I2=1X2=1X3=1X3=1X4=",
+        "mismatches": 4,
+        "bulge_events": 1,
+        "max_bulge": 1,
+        "matches": 15,
+        "pam": "GGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_D2mm5",
+        "GRCh38_repeat_candidate",
+        "-",
+        401
+      ],
+      "baseline": {
+        "start": 401,
+        "end": 423,
+        "cigar": "1=1X2=1X2=2D1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 401,
+        "end": 423,
+        "cigar": "1=1X2=1X1=2D1=1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_D2mm5",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        401
+      ],
+      "baseline": {
+        "start": 401,
+        "end": 423,
+        "cigar": "1=1X2=1X2=2D1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 401,
+        "end": 423,
+        "cigar": "1=1X2=1X1=2D1=1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_I2",
+        "GRCh38_repeat_candidate",
+        "-",
+        401
+      ],
+      "baseline": {
+        "start": 401,
+        "end": 419,
+        "cigar": "9=2I9=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 18,
+        "pam": "AGG",
+        "cfd": 0.17041420118349113
+      },
+      "experimental": {
+        "start": 401,
+        "end": 419,
+        "cigar": "7=2I11=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 18,
+        "pam": "AGG",
+        "cfd": 0.03408284023669823
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_I2",
+        "GRCh38_repeat_candidate_N",
+        "-",
+        401
+      ],
+      "baseline": {
+        "start": 401,
+        "end": 419,
+        "cigar": "9=2I4=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 17,
+        "pam": "AGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 401,
+        "end": 419,
+        "cigar": "7=2I6=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 17,
+        "pam": "AGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_I2mm3",
+        "CHM13_repeat_candidate",
+        "+",
+        405
+      ],
+      "baseline": {
+        "start": 383,
+        "end": 405,
+        "cigar": "4=1X1=2X4=1X2=1X3=2D1=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 383,
+        "end": 405,
+        "cigar": "4=1X1=2X4=1X2=1X1=2D3=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_minus_I2mm3",
+        "CHM13_repeat_candidate_N",
+        "+",
+        405
+      ],
+      "baseline": {
+        "start": 383,
+        "end": 405,
+        "cigar": "4=1X1=2X4=1X2=1X3=2D1=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 383,
+        "end": 405,
+        "cigar": "4=1X1=2X4=1X2=1X1=2D3=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "AGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_D2",
+        "GRCh38_repeat_candidate",
+        "+",
+        329
+      ],
+      "baseline": {
+        "start": 307,
+        "end": 329,
+        "cigar": "8=2D12=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 307,
+        "end": 329,
+        "cigar": "5=2D15=",
+        "mismatches": 0,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 20,
+        "pam": "TGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_D2",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "baseline": {
+        "start": 307,
+        "end": 329,
+        "cigar": "8=2D7=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 307,
+        "end": 329,
+        "cigar": "5=2D10=1X4=",
+        "mismatches": 1,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 19,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_D2mm5",
+        "GRCh38_repeat_candidate",
+        "+",
+        329
+      ],
+      "baseline": {
+        "start": 307,
+        "end": 329,
+        "cigar": "1=1X2=1X2=2D1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      },
+      "experimental": {
+        "start": 307,
+        "end": 329,
+        "cigar": "1=1X2=1X1=2D1=1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.0
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_D2mm5",
+        "GRCh38_repeat_candidate_N",
+        "+",
+        329
+      ],
+      "baseline": {
+        "start": 307,
+        "end": 329,
+        "cigar": "1=1X2=1X2=2D1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      },
+      "experimental": {
+        "start": 307,
+        "end": 329,
+        "cigar": "1=1X2=1X1=2D1=1X3=1X3=1X4=",
+        "mismatches": 5,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": null
+      }
+    },
+    {
+      "key": [
+        "GRCh38_repeat_candidate_plus_I2mm3",
+        "GRCh38_repeat_candidate",
+        "+",
+        329
+      ],
+      "baseline": {
+        "start": 311,
+        "end": 329,
+        "cigar": "1=1X2=1X2=1X2=2I8=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.00376584952886941
+      },
+      "experimental": {
+        "start": 311,
+        "end": 329,
+        "cigar": "1=1X2=1X2=1X1=2I9=",
+        "mismatches": 3,
+        "bulge_events": 1,
+        "max_bulge": 2,
+        "matches": 15,
+        "pam": "TGG",
+        "cfd": 0.04943884509698315
+      }
+    }
+  ],
+  "disagreement_oracle": []
+}

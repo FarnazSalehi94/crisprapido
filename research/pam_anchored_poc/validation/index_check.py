@@ -8,12 +8,17 @@ import hashlib,json,struct,sys
 from pathlib import Path
 
 def fasta(p):
-    seqs=[]
-    for line in Path(p).read_text().splitlines():
-        if line.startswith('>'): seqs.append([line[1:].split()[0],''])
-        else:
-            if not seqs: raise ValueError('invalid FASTA')
-            seqs[-1][1]+=line.strip().upper()
+    # Build each record once: repeated string concatenation is quadratic for
+    # wrapped chromosome-scale FASTA. Preserve the existing parser's rules.
+    records=[]
+    with Path(p).open() as source:
+        for line in source:
+            if line.startswith('>'):
+                records.append([line[1:].split()[0], []])
+            else:
+                if not records: raise ValueError('invalid FASTA')
+                records[-1][1].append(line.strip().upper())
+    seqs=[[name, ''.join(chunks)] for name,chunks in records]
     if not seqs or len({n for n,_ in seqs})!=len(seqs) or any(not s for _,s in seqs): raise ValueError('empty or duplicate FASTA records')
     return seqs
 

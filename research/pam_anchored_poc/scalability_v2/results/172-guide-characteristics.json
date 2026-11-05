@@ -1,0 +1,788 @@
+{
+  "guides": [
+    {
+      "guide": "CHM13_nonrepeat_candidate_plus_exact",
+      "sequence": "TGCCTGGAATAAATCTCACT",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_plus_mm5",
+      "sequence": "TTCCAGGCATACATCACACT",
+      "gc_fraction": 0.45,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_plus_I1",
+      "sequence": "GCCTGGAAATAAATCTCACT",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_plus_I2",
+      "sequence": "CCTGGAATACAAATCTCACT",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_plus_D1",
+      "sequence": "ATGCCTGGATAAATCTCACT",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_plus_D2",
+      "sequence": "CATGCCTGATAAATCTCACT",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_plus_I2mm3",
+      "sequence": "CGTGTAAAACAAATCTCACT",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 4,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_plus_D2mm5",
+      "sequence": "CCTGGCTTATACATCACACT",
+      "gc_fraction": 0.45,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_minus_exact",
+      "sequence": "AATAAAAAATCTCATCAAAC",
+      "gc_fraction": 0.2,
+      "unique_dinucleotides": 7,
+      "max_homopolymer": 6,
+      "sites": 5,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_minus_mm5",
+      "sequence": "ACTACAACATCACATGAAAC",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 3,
+      "sites": 4,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_minus_I1",
+      "sequence": "ATAAAAAAATCTCATCAAAC",
+      "gc_fraction": 0.2,
+      "unique_dinucleotides": 7,
+      "max_homopolymer": 7,
+      "sites": 6,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_minus_I2",
+      "sequence": "TAAAAAATACCTCATCAAAC",
+      "gc_fraction": 0.25,
+      "unique_dinucleotides": 8,
+      "max_homopolymer": 6,
+      "sites": 6,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_minus_D1",
+      "sequence": "TAATAAAAATCTCATCAAAC",
+      "gc_fraction": 0.2,
+      "unique_dinucleotides": 7,
+      "max_homopolymer": 5,
+      "sites": 6,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_minus_D2",
+      "sequence": "GTAATAAAATCTCATCAAAC",
+      "gc_fraction": 0.25,
+      "unique_dinucleotides": 8,
+      "max_homopolymer": 4,
+      "sites": 4,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_minus_I2mm3",
+      "sequence": "TCAACAAAACCTCATCAAAC",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 7,
+      "max_homopolymer": 4,
+      "sites": 5,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_nonrepeat_candidate_minus_D2mm5",
+      "sequence": "GAAAAAACATCACATGAAAC",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 7,
+      "max_homopolymer": 6,
+      "sites": 4,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_plus_exact",
+      "sequence": "CCTGAGAAAAACAAGAAATG",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 5,
+      "sites": 6,
+      "N_overlapping_sites": 3,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_plus_mm5",
+      "sequence": "CGTGCGACAAAGAAGCAATG",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_plus_I1",
+      "sequence": "CTGAGAAAAAACAAGAAATG",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 8,
+      "max_homopolymer": 6,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_plus_I2",
+      "sequence": "TGAGAAAAACACAAGAAATG",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 7,
+      "max_homopolymer": 5,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_plus_D1",
+      "sequence": "GCCTGAGAAAACAAGAAATG",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 4,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_plus_D2",
+      "sequence": "AGCCTGAGAAACAAGAAATG",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 3,
+      "sites": 3,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_plus_I2mm3",
+      "sequence": "TTAGCAACACACAAGAAATG",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 3,
+      "sites": 1,
+      "N_overlapping_sites": 0,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_plus_D2mm5",
+      "sequence": "ATCCAGATAAAGAAGCAATG",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_minus_exact",
+      "sequence": "ATCAGATAGTTGTAGATATG",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_minus_mm5",
+      "sequence": "AACATATCGTTTTAGCTATG",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 13,
+      "max_homopolymer": 4,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_minus_I1",
+      "sequence": "TCAGATAGATTGTAGATATG",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_minus_I2",
+      "sequence": "CAGATAGTACTGTAGATATG",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 1,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_minus_D1",
+      "sequence": "GATCAGATGTTGTAGATATG",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_minus_D2",
+      "sequence": "AGATCAGAGTTGTAGATATG",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_minus_I2mm3",
+      "sequence": "CCGAAAGAACTGTAGATATG",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 3,
+      "sites": 1,
+      "N_overlapping_sites": 0,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "CHM13_repeat_candidate_minus_D2mm5",
+      "sequence": "ATATGAGCGTTTTAGCTATG",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 4,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_plus_exact",
+      "sequence": "TTATGTATAGACTCAGTGGC",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 13,
+      "max_homopolymer": 2,
+      "sites": 4,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_plus_mm5",
+      "sequence": "TAATTTAAAGAGTCATTGGC",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_plus_I1",
+      "sequence": "TATGTATAAGACTCAGTGGC",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 13,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_plus_I2",
+      "sequence": "ATGTATAGACACTCAGTGGC",
+      "gc_fraction": 0.45,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_plus_D1",
+      "sequence": "TTTATGTAAGACTCAGTGGC",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 14,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_plus_D2",
+      "sequence": "ATTTATGTAGACTCAGTGGC",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 13,
+      "max_homopolymer": 3,
+      "sites": 3,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_plus_I2mm3",
+      "sequence": "AAGTCTATACACTCAGTGGC",
+      "gc_fraction": 0.45,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_plus_D2mm5",
+      "sequence": "AATTCTGAAGAGTCATTGGC",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_minus_exact",
+      "sequence": "TCAACCTCTCTGATACACAA",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 2,
+      "sites": 6,
+      "N_overlapping_sites": 3,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_minus_mm5",
+      "sequence": "TGAAGCTGTCTTATAGACAA",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 13,
+      "max_homopolymer": 2,
+      "sites": 4,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_minus_I1",
+      "sequence": "CAACCTCTACTGATACACAA",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_minus_I2",
+      "sequence": "AACCTCTCACTGATACACAA",
+      "gc_fraction": 0.4,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 2,
+      "sites": 3,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_minus_D1",
+      "sequence": "TTCAACCTTCTGATACACAA",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 2,
+      "sites": 5,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_minus_D2",
+      "sequence": "ATTCAACCTCTGATACACAA",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 2,
+      "sites": 4,
+      "N_overlapping_sites": 2,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_minus_I2mm3",
+      "sequence": "ACCCACTGACTGATACACAA",
+      "gc_fraction": 0.45,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 3,
+      "sites": 3,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_nonrepeat_candidate_minus_D2mm5",
+      "sequence": "AATCCACGTCTTATAGACAA",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 13,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_plus_exact",
+      "sequence": "CGCCACACTGACTTCCACAA",
+      "gc_fraction": 0.55,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_plus_mm5",
+      "sequence": "CTCCCCAGTGAGTTCGACAA",
+      "gc_fraction": 0.55,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 4,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_plus_I1",
+      "sequence": "GCCACACTAGACTTCCACAA",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 11,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_plus_I2",
+      "sequence": "CCACACTGACACTTCCACAA",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_plus_D1",
+      "sequence": "TCGCCACATGACTTCCACAA",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_plus_D2",
+      "sequence": "ATCGCCACTGACTTCCACAA",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_plus_I2mm3",
+      "sequence": "CGACCCTTACACTTCCACAA",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 3,
+      "sites": 1,
+      "N_overlapping_sites": 0,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_plus_D2mm5",
+      "sequence": "AACGGCAGTGAGTTCGACAA",
+      "gc_fraction": 0.5,
+      "unique_dinucleotides": 12,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_minus_exact",
+      "sequence": "TTAAAAAGTCAGGAAACAAC",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 5,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_minus_mm5",
+      "sequence": "TAAACAATTCATGAACCAAC",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 3,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_minus_I1",
+      "sequence": "TAAAAAGTACAGGAAACAAC",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 8,
+      "max_homopolymer": 5,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_minus_I2",
+      "sequence": "AAAAAGTCACAGGAAACAAC",
+      "gc_fraction": 0.35,
+      "unique_dinucleotides": 8,
+      "max_homopolymer": 5,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_minus_D1",
+      "sequence": "ATTAAAAATCAGGAAACAAC",
+      "gc_fraction": 0.25,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 5,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_minus_D2",
+      "sequence": "CATTAAAATCAGGAAACAAC",
+      "gc_fraction": 0.3,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 4,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_minus_I2mm3",
+      "sequence": "ACAACGTGACAGGAAACAAC",
+      "gc_fraction": 0.45,
+      "unique_dinucleotides": 9,
+      "max_homopolymer": 3,
+      "sites": 4,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "guide": "GRCh38_repeat_candidate_minus_D2mm5",
+      "sequence": "CCTTCAACTCATGAACCAAC",
+      "gc_fraction": 0.45,
+      "unique_dinucleotides": 10,
+      "max_homopolymer": 2,
+      "sites": 2,
+      "N_overlapping_sites": 1,
+      "strands": [
+        "-"
+      ]
+    }
+  ],
+  "guide_count": 64,
+  "gc_min": 0.2,
+  "gc_max": 0.55,
+  "unique_dinucleotide_min": 7,
+  "unique_dinucleotide_max": 14,
+  "reported": 172,
+  "N_overlapping_sites": 75,
+  "N_overlapping_by_strand": {
+    "+": 33,
+    "-": 42
+  }
+}
