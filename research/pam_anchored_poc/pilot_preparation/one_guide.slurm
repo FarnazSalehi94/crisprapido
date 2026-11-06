@@ -21,13 +21,14 @@ FAI=/moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz.fai
 [[ $(sha256sum "$PAM_PAYLOAD" | cut -d' ' -f1) == "$PAM_PAYLOAD_SHA256" ]]
 [[ $(sha256sum "$CLI_PAYLOAD" | cut -d' ' -f1) == "$CLI_PAYLOAD_SHA256" ]]
 # Refuse to run where the process is not inside an enforced v2 memory cgroup.
+fail_preflight() { printf 'pilot preflight failed: %s\n' "$*" >&2; exit 1; }
 cgroup_rel=$(awk -F: '$1 == "0" {print $3}' /proc/self/cgroup)
-[[ -n "$cgroup_rel" && -r "/sys/fs/cgroup${cgroup_rel}/memory.max" ]]
+[[ -n "$cgroup_rel" && -r "/sys/fs/cgroup${cgroup_rel}/memory.max" ]] || fail_preflight 'a readable job cgroup-v2 memory.max is required'
 cgroup="/sys/fs/cgroup${cgroup_rel}"
 max=$(cat "$cgroup/memory.max")
-[[ "$max" =~ ^[0-9]+$ ]] && (( max <= 68719476736 ))
+[[ "$max" =~ ^[0-9]+$ ]] && (( max <= 68719476736 )) || fail_preflight 'numeric cgroup memory limit must be at most 64 GiB'
 free_bytes=$(df -PB1 "$SCRATCH_ROOT" | awk 'NR==2 {print $4}')
-(( free_bytes >= 60000000000 ))
+(( free_bytes >= 60000000000 )) || fail_preflight 'less than 60 GB available on scratch filesystem'
 out="$RESULT_ROOT/hg00735-pilot-$SLURM_JOB_ID"
 mkdir "$out"
 printf 'INCOMPLETE\n' > "$out/status"
