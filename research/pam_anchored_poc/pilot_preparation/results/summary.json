@@ -1,0 +1,19 @@
+{
+  "selected": 17,
+  "completed": 17,
+  "skipped": 0,
+  "completed_by_label_strand": {
+    "end +": 3,
+    "end -": 3,
+    "end_fallback +": 2,
+    "end_fallback -": 2,
+    "boundary_left +": 2,
+    "boundary_left -": 1,
+    "natural_target_n +": 1,
+    "natural_pam_required_n -": 1,
+    "natural_pam_required_n +": 1,
+    "natural_target_n -": 1
+  },
+  "skips": [],
+  "controls": []
+}
