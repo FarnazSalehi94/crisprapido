@@ -1,0 +1,237 @@
+{
+  "selected": 51,
+  "completed": 37,
+  "skipped": 14,
+  "completed_by_label_strand": {
+    "beginning +": 3,
+    "beginning -": 3,
+    "above_2_31 +": 3,
+    "above_2_31 -": 3,
+    "end_fallback -": 1,
+    "boundary_left +": 1,
+    "boundary_left -": 2,
+    "boundary_right +": 3,
+    "boundary_right -": 3,
+    "cross_boundary +": 1,
+    "cross_boundary -": 1,
+    "before_2_31 +": 3,
+    "before_2_31 -": 3,
+    "after_2_31 +": 3,
+    "after_2_31 -": 3,
+    "target_n +": 1
+  },
+  "skips": [
+    {
+      "label": "end",
+      "strand": "+",
+      "global_start": 3029520241,
+      "range_width": 352
+    },
+    {
+      "label": "end",
+      "strand": "+",
+      "global_start": 3029514473,
+      "range_width": 416
+    },
+    {
+      "label": "end",
+      "strand": "+",
+      "global_start": 3029513978,
+      "range_width": 307
+    },
+    {
+      "label": "end",
+      "strand": "-",
+      "global_start": 3029527386,
+      "range_width": 18756
+    },
+    {
+      "label": "end",
+      "strand": "-",
+      "global_start": 3029527344,
+      "range_width": 466
+    },
+    {
+      "label": "end",
+      "strand": "-",
+      "global_start": 3029527134,
+      "range_width": 18756
+    },
+    {
+      "label": "end_fallback",
+      "strand": "+",
+      "global_start": 3029381171,
+      "range_width": 66
+    },
+    {
+      "label": "end_fallback",
+      "strand": "+",
+      "global_start": 3029381159,
+      "range_width": 66
+    },
+    {
+      "label": "end_fallback",
+      "strand": "+",
+      "global_start": 3029381145,
+      "range_width": 66
+    },
+    {
+      "label": "end_fallback",
+      "strand": "-",
+      "global_start": 3029381170,
+      "range_width": 66
+    },
+    {
+      "label": "end_fallback",
+      "strand": "-",
+      "global_start": 3029381138,
+      "range_width": 66
+    },
+    {
+      "label": "boundary_left",
+      "strand": "+",
+      "global_start": 1383831357,
+      "range_width": 73
+    },
+    {
+      "label": "boundary_left",
+      "strand": "+",
+      "global_start": 1383831280,
+      "range_width": 2012
+    },
+    {
+      "label": "boundary_left",
+      "strand": "-",
+      "global_start": 1383831111,
+      "range_width": 4833
+    }
+  ],
+  "controls": [
+    {
+      "kind": "target_n",
+      "strand": "+",
+      "global_start": 2147483602,
+      "emitted": 1,
+      "mismatches": 1
+    },
+    {
+      "kind": "pam_wildcard_n",
+      "strand": "+",
+      "global_start": 2147483602,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "pam_required_n",
+      "strand": "+",
+      "global_start": 2147483602,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "target_n",
+      "strand": "+",
+      "global_start": 2147483560,
+      "emitted": 1,
+      "mismatches": 1
+    },
+    {
+      "kind": "pam_wildcard_n",
+      "strand": "+",
+      "global_start": 2147483560,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "pam_required_n",
+      "strand": "+",
+      "global_start": 2147483560,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "target_n",
+      "strand": "+",
+      "global_start": 2147483525,
+      "emitted": 1,
+      "mismatches": 1
+    },
+    {
+      "kind": "pam_wildcard_n",
+      "strand": "+",
+      "global_start": 2147483525,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "pam_required_n",
+      "strand": "+",
+      "global_start": 2147483525,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "target_n",
+      "strand": "-",
+      "global_start": 2147483594,
+      "emitted": 1,
+      "mismatches": 1
+    },
+    {
+      "kind": "pam_wildcard_n",
+      "strand": "-",
+      "global_start": 2147483594,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "pam_required_n",
+      "strand": "-",
+      "global_start": 2147483594,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "target_n",
+      "strand": "-",
+      "global_start": 2147483557,
+      "emitted": 1,
+      "mismatches": 1
+    },
+    {
+      "kind": "pam_wildcard_n",
+      "strand": "-",
+      "global_start": 2147483557,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "pam_required_n",
+      "strand": "-",
+      "global_start": 2147483557,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "target_n",
+      "strand": "-",
+      "global_start": 2147483543,
+      "emitted": 1,
+      "mismatches": 1
+    },
+    {
+      "kind": "pam_wildcard_n",
+      "strand": "-",
+      "global_start": 2147483543,
+      "emitted": 0,
+      "mismatches": -1
+    },
+    {
+      "kind": "pam_required_n",
+      "strand": "-",
+      "global_start": 2147483543,
+      "emitted": 0,
+      "mismatches": -1
+    }
+  ]
+}

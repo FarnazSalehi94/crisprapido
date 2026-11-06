@@ -1,0 +1,16 @@
+{
+  "starting_commit": "671d0b6",
+  "date_utc": "2026-11-05",
+  "host": "octopus01",
+  "columba_source_revision": "edcc7ce2a1e28ded6784a44afbd8b9348a4805ad",
+  "columba_build_caveat": "Source checkout and untracked build are not independently attested to one another.",
+  "prototype_source_sha256": "4907f625788cee5f60b6f07c9c5a05b05a6969878e56581e8b69bf602559c550",
+  "native_probe_64_sha256": "d9985c3e530e04aceeae60af7c35de55c8fe3c06b79fb6e24aa1787695ae42c6",
+  "native_probe_128_sha256": "c121e37e26232d2e1648e21c925a77e0ecbbc469b00ae71deb437d7d8117ec1f",
+  "imported_binding_sha256": "2fe715d09c5a8b79f20e59ff6cd85486b52c8f3836ab54b7d566b8a50ad9b0d4",
+  "reference_sha256": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+  "source_fai_sha256": "7f6187771a76e8af51b983e2df4e00970dd72722dea0b9bd5c425ef817e3c26d",
+  "main_cases_tsv_sha256": "17aedcdf0f40b8e58abda5830ce80ac9d17589d2904931eb697ec45fe540b0a7",
+  "followup_tsv_sha256": "9774a83e776892e213ffc0fbac0b5d5b2305424ea7832994d1562a11f358eb4e",
+  "method": "bounded exact probes, pre/post verified; no complete-guide or edit-distance search"
+}

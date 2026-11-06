@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "label": "end_fallback",
+      "kind": "resolved",
+      "strand": "+",
+      "global_start": 3029381171,
+      "contig": "HG00735#1#JAHBCH020000081.1",
+      "start": 68925,
+      "anchor": 68945,
+      "strict_pam": true,
+      "reference_N_target": 0,
+      "indexed_true_mismatches": 0,
+      "source_window_agrees": true
+    }
+  ],
+  "source_windows": 53,
+  "scope": "bounded random-access source windows; not a full current source hash"
+}

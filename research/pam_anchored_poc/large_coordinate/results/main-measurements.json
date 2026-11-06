@@ -1,0 +1,26 @@
+{
+  "returncode": 0,
+  "stop_reason": null,
+  "wall_seconds": 358.3179608739447,
+  "sample_interval_seconds": 0.1,
+  "sample_count": 3527,
+  "sampled_process_group_rss_peak_kib": 14225956,
+  "sampled_phase_peaks_kib": {
+    "startup": 2468,
+    "verification": 18156,
+    "index": 11176020,
+    "reference": 14210580,
+    "lookup": 14210580,
+    "postverification": 14225956,
+    "done": 12452828
+  },
+  "events": {
+    "index_seconds": 3.70199,
+    "reference_seconds": 18.7356,
+    "lookup_seconds": 0.000716645
+  },
+  "memory_note": "sum of process RSS; can double-count shared pages and miss peaks between samples",
+  "wall_limit_seconds": 900,
+  "aggregate_rss_limit_kib": 23068672,
+  "per_process_vm_limit_kib": 25165824
+}

@@ -1,0 +1,9 @@
+PHASE	verification
+PHASE	index
+EVENT	index_seconds	3.70817
+PHASE	reference
+EVENT	reference_seconds	18.7671
+PHASE	lookup
+EVENT	lookup_seconds	0.000156438
+PHASE	postverification
+PHASE	done

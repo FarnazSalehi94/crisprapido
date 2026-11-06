@@ -1,0 +1,30 @@
+{
+  "fai": "/moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz.fai",
+  "reference": "HG00735_pat imported plain FASTA",
+  "text_length": 3029527753,
+  "n_discovery_max_bytes": 1000000000,
+  "n_discovery_clusters": 3,
+  "boundary_index": 9,
+  "cases": [
+    {
+      "label": "end_fallback",
+      "kind": "resolved",
+      "contig": "HG00735#1#JAHBCH020000081.1",
+      "contig_index": 80,
+      "contig_length": 68949,
+      "global_start": 3029381171,
+      "start": 68925,
+      "end": 68948,
+      "strand": "+",
+      "anchor": 68945,
+      "reference_genomic": "CACTTCCCCGGAGGCAGCTTGGG",
+      "indexed_genomic": "CACTTCCCCGGAGGCAGCTTGGG",
+      "oriented_reference": "CACTTCCCCGGAGGCAGCTTGGG",
+      "oriented_index": "CACTTCCCCGGAGGCAGCTTGGG",
+      "guide": "CACTTCCCCGGAGGCAGCTT",
+      "pam": "GGG",
+      "true_mismatches": 0,
+      "strict_pam": true
+    }
+  ]
+}
