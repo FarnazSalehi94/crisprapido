@@ -16,7 +16,7 @@ with tempfile.TemporaryDirectory() as d:
  paf=d/'out.paf';cmd=[sys.executable,str(audit),'--reference',str(ref),'--fai',str(fai),'--guide',guide,'--paf',str(paf)]
  def run(rows,ok):
   paf.write_text('\n'.join(rows)+'\n');p=subprocess.run(cmd,capture_output=True,text=True);assert (p.returncode==0)==ok,(p.stdout,p.stderr)
- run(lines,True);run(lines+[lines[0]],False);run([lines[0].replace('nm:i:0','nm:i:1')],False);run([lines[0].replace('20=','19=1X')],False)
+ run(lines,True);paf.write_text('\n'.join(lines)+'\n');known=cmd+['--expect-contig','CHM13_nonrepeat_candidate','--expect-strand','+','--expect-anchor','606'];assert subprocess.run(known,capture_output=True).returncode==0;assert subprocess.run(known[:-1]+['607'],capture_output=True).returncode!=0;run(lines+[lines[0]],False);run([lines[0].replace('nm:i:0','nm:i:1')],False);run([lines[0].replace('20=','19=1X')],False)
  # Modify a required PAM G in a copied reference, leaving the fixture PAF untouched.
  text=ref.read_text();text=text.replace(guide+'TGG',guide+'TNG',1);ref.write_text(text);run([lines[0]],False)
 print('audit accepts eligible resolved/N sites and rejects duplicate, counts, CIGAR and invalid PAM')

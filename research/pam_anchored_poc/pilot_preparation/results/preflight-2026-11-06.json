@@ -1,0 +1,35 @@
+{
+  "utc_date": "2026-11-06",
+  "host": "octopus01",
+  "scheduler": {
+    "workers_partition": "up",
+    "memory_constrain": "no",
+    "task_plugin": "(null)",
+    "select_type_parameters": "CR_CPU",
+    "worker_ssh": "permission denied"
+  },
+  "binding": {
+    "status": "pass",
+    "reference_sha256": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+    "component_count": 12
+  },
+  "fixture": {
+    "independent_oracle_expected": 172,
+    "recovered": 172,
+    "unexpected": 0,
+    "duplicates": 0,
+    "independently_scored": 97
+  },
+  "guide": "GCCAGGTACAGGTTCCGTCC",
+  "target": {
+    "contig": "HG00735#1#JAHBCH020000014.1",
+    "strand": "+",
+    "zero_based_start": 43957004,
+    "anchor": 43957024,
+    "pam": "AGG",
+    "independently_retrieved_23mer": "GCCAGGTACAGGTTCCGTCCAGG"
+  },
+  "full_assembly_search_launched": false,
+  "slurm_job_submitted": false,
+  "ready_for_submission": false
+}
