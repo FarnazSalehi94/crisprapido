@@ -1,5 +1,17 @@
 # Optimized HG00735_pat comparison and batch preparation
 
+## Current status — preparation subsequently completed
+
+**The “not submitted” statements and commands below describe the historical preparation state, not the current experiment status.** The optimized single-guide comparison subsequently completed as job **2871283**, followed by the three-guide batch as job **2871284**, recorded in commit **`dfd1636`**. Do not resubmit these as unperformed experiments.
+
+The optimized single-guide output contained 21,447 independently audited records, with zero missing/unexpected anchors, duplicate anchors, representative-alignment differences or CFD differences versus job 2871278. Its native search took 80.5854 s; supervisor elapsed time was 645.6085467999801 s (Slurm runtime 10 min 47 s). Actual output, audit and comparison artifacts are retained in `/export/local/home/salehi/crisprapido-resource-pilot-results/hg00735-optimized-2871283/`.
+
+See the **[completed three-guide batch report](batch_2871284/REPORT.md)** for authoritative results and retained small evidence. **All 78,582 reported sites passed independent eligibility and CFD audits**, with zero duplicate anchors and all three known exact targets recovered. The pilot subset's 21,447 records were byte-identical to job 2871283. One snapshot and one native index load served all three guides. Slurm runtime was 13 min 59 s; sampled peak process-tree RSS was 14,267,208 KiB (13.61 GiB). These audits validate reported-site eligibility and scoring; **genome-wide recall remains unproven**. The sampled 48 GiB stop and requested 64 GiB remain risk-reduction measures, not a guaranteed hard memory limit.
+
+The completed batch uses per-guide instrumentation selected by **[batch.env](batch.env)**, which sources `optimized.env` and overrides the native runtime. The historical batch command below sources only `optimized.env`; it is not the current per-guide-instrumented setup. See [the project handoff](../../../docs/PROJECT_HANDOFF.md) for current status, paths, limitations and proposed next steps. No new submission is needed.
+
+## Historical preparation report (preserved)
+
 2026-11-09. The experimental development CLI was rebuilt in an isolated directory from commit **`f7de4251473ac5259e1902ca0cb36f3a7ba3ba2c`**; its SHA256 is **`9dac869a187856bff3c8309c3918ce48198d7f164b30f702c7c6f6fa33afd1ce`**. The previous executable and production binaries were not changed. The single-guide comparison and a three-guide batch are prepared for review, but **neither whole-assembly job was submitted**. Consequently there are no new whole-assembly timings, memory results, anchor comparisons, representative-alignment differences or CFD differences to report yet. This report does not claim the optimized whole workflow is faster.
 
 ## Build and instrumentation
