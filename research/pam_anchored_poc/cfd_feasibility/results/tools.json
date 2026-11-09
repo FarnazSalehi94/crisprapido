@@ -1,0 +1,21 @@
+{
+  "archived_current_cfd_and_native_source_equal": true,
+  "build_environment": {
+    "CRISPR_LIB": "/export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/target/release/deps/libcrisprapido-2400bafe0f3a8e0d.rlib",
+    "DEPS_DIR": "/export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/target/release/deps",
+    "RUSTC_EXTRA_FLAGS": "-C link-arg=-Wl,--dynamic-linker=/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib/ld-linux-x86-64.so.2 -C link-arg=-Wl,-rpath,/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib:/gnu/store/gmv6n5vy5qcsn71pkapg2hnknyn1p7g3-gcc-12.3.0-lib/lib"
+  },
+  "build_script": "research/pam_anchored_poc/compatibility/build_cfd_probe.sh",
+  "probe": "/export/local/home/salehi/crisprapido-cfd-feasibility-tools.XanPvlMD/cfd_probe",
+  "rustc": "/gnu/store/3c2mxm30rbzvnw7qsi235mrkk3m38fym-profile/bin/rustc",
+  "rustc_version": "rustc 1.94.1 (e408947bf 2026-03-25)",
+  "sha256": {
+    "/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/cfd_feasibility/test_study.py": "70b2f90c62970882111565e0abeb6dc2f5dbe0a19f8c56c78290694f3cce2067",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/compatibility/build_cfd_probe.sh": "fa3b000ff379f4e2917830dc844d87f984e2c19bb3a7c60a2b274a0859dc5b2c",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/compatibility/cfd_probe.rs": "15dc925c26ca9686498f85a4f762210bb43883f9286a5224b6f5dbee052fbf63",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/compatibility/index_manifest.py": "f409608e7b95db8037698a4028450637cc3a5480b33408fa22b96ab1c64a5fba",
+    "/export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/native/profile_native": "ce5a4f7bb6624331b8a89f3660ebe682a3ce0f1a63ba7e893671c8128669269d",
+    "/export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/native/wrapper": "f21c98ee8ac2eed24991371b9b7c0b8f5215b2ce887f2bbfc2c84edea7e3a0cd",
+    "/export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/target/release/deps/libcrisprapido-2400bafe0f3a8e0d.rlib": "ff380c26779bc53b6648114bf21eb72f8cce3fde2c046168c94c1688a6c2065f"
+  }
+}

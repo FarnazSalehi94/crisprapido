@@ -1,0 +1,12 @@
+{
+  "mismatch_and_gap_entries": 393,
+  "pam_entries": 16,
+  "mismatch_and_gap_min": 0.0,
+  "mismatch_and_gap_max": 1.0,
+  "pam_min": 0.0,
+  "pam_max": 1.0,
+  "zero_mismatch_and_gap_factors": 51,
+  "zero_pam_factors": 9,
+  "neutral_mismatch_and_gap_factors": 14,
+  "all_finite_unit_interval": true
+}
