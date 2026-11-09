@@ -1,0 +1,14 @@
+{
+  "baseline_sites": 21447,
+  "candidate_sites": 21447,
+  "shared": 21447,
+  "missing": 0,
+  "unexpected": 0,
+  "baseline_duplicate_anchors": 0,
+  "candidate_duplicate_anchors": 0,
+  "representative_alignment_differences": 0,
+  "cfd_differences": 0,
+  "known_exact_target_recovered": true,
+  "alignment_difference_examples": [],
+  "cfd_difference_examples": []
+}

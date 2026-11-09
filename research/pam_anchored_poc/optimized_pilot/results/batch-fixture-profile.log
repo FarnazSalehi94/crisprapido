@@ -1,0 +1,16 @@
+PROFILE snapshot_copy_seconds=0.000523
+PROFILE snapshot_verify_pre_seconds=0.000718
+PROFILE native_process_seconds=0.049241
+PROFILE native_binding_seconds=0.0291431
+PROFILE native_reference_load_seconds=0.000153434
+PROFILE native_index_load_seconds=0.000202057
+states=203205 search_wall_seconds=0.0173976
+PROFILE snapshot_verify_post_seconds=0.000876
+PROFILE python_reference_load_seconds=0.000057
+PROFILE runner_total_seconds=0.052785
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,15
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16

@@ -1,0 +1,5 @@
+{
+  "pilot": {"contig": "HG00735#1#JAHBCH020000014.1", "strand": "+", "anchor": 43957024},
+  "beginning": {"contig": "HG00735#1#CM087877.1", "strand": "+", "anchor": 13913},
+  "before_2_31": {"contig": "HG00735#1#JAHBCH020000014.1", "strand": "+", "anchor": 43956973}
+}

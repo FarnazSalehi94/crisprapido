@@ -1,0 +1,10 @@
+PROFILE snapshot_copy_seconds=0.000508
+PROFILE snapshot_verify_pre_seconds=0.000472
+PROFILE native_process_seconds=1.027115
+PROFILE native_binding_seconds=0.0279426
+PROFILE native_reference_load_seconds=0.000151671
+PROFILE native_index_load_seconds=0.000132834
+states=12001297 search_wall_seconds=0.99604
+PROFILE snapshot_verify_post_seconds=0.000590
+PROFILE python_reference_load_seconds=0.000045
+PROFILE runner_total_seconds=1.030496

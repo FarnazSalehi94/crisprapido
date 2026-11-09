@@ -1,0 +1,37 @@
+{
+  "source_commit": "f7de4251473ac5259e1902ca0cb36f3a7ba3ba2c",
+  "wfa2_commit": "df3dce4b99c37ac4f34fdcef74b774c80b7fadc4",
+  "cli_sha256": "9dac869a187856bff3c8309c3918ce48198d7f164b30f702c7c6f6fa33afd1ce",
+  "profile_native_sha256": "ce5a4f7bb6624331b8a89f3660ebe682a3ce0f1a63ba7e893671c8128669269d",
+  "native_wrapper_sha256": "f21c98ee8ac2eed24991371b9b7c0b8f5215b2ce887f2bbfc2c84edea7e3a0cd",
+  "cfd_profile_sha256": "83c1fb906f7d8dfbf878a4b9c6bf0ad13d8796b2a7f2faba43ed5eedd1a7350b",
+  "baseline_paf_sha256": "a28d0574a915a57d431851ab681b0602b8f5fb1740d1c8efeb6e3b4a378f23be",
+  "new_whole_assembly_job_submitted": false,
+  "full_batch_submitted": false,
+  "bounded_validation": {
+    "p172": {
+      "expected": 172,
+      "recovered": 172,
+      "unexpected": 0,
+      "duplicates": 0,
+      "scored": 97,
+      "paf_matches_prior": true
+    },
+    "p204": {
+      "expected": 204,
+      "recovered": 204,
+      "unexpected": 0,
+      "duplicates": 0,
+      "scored": 204,
+      "paf_matches_prior": true
+    },
+    "three_guide_fixture": {
+      "reported": 13,
+      "duplicates": 0,
+      "known_exact_targets": 3,
+      "scored": 7,
+      "snapshot_copy_events": 1,
+      "native_index_load_events": 1
+    }
+  }
+}

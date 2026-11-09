@@ -1,0 +1,85 @@
+PROFILE snapshot_copy_seconds=0.000519
+PROFILE snapshot_verify_pre_seconds=0.000715
+PROFILE native_process_seconds=0.387779
+PROFILE native_binding_seconds=0.0277274
+PROFILE native_reference_load_seconds=8.7869e-05
+PROFILE native_index_load_seconds=0.000126282
+states=4229884 search_wall_seconds=0.357109
+PROFILE snapshot_verify_post_seconds=0.000923
+PROFILE python_reference_load_seconds=0.000054
+PROFILE runner_total_seconds=0.391721
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,15
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,15
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,15
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,15
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,15
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,15
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,15
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rU:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,15
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,15
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,17
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rG:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rA:dN,16
+CFD score calculation error: Invalid basepair: rC:dN,16
