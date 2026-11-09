@@ -41,10 +41,12 @@ printf '>pilot\n%s\n' "$GUIDE" > "$out/guide.fa"
 { date -u; hostname; printf 'job=%s memory=sampled-process-tree-48GiB-not-hard-limit scratch=%s\n' "$SLURM_JOB_ID" "$scratch"; sha256sum "$CRISPR_BIN" "$PAM_BIN" "$CLI_PAYLOAD" "$PAM_PAYLOAD" "$STAGE/index.crispr-binding.json" "$FAI"; } > "$out/progress.log"
 cd "$REPO"
 sha256sum -c research/pam_anchored_poc/pilot_preparation/dependencies.sha256 > "$out/helper-checksums.txt"
+sha256sum -c research/pam_anchored_poc/monitored_pilot/timing.sha256 >> "$out/helper-checksums.txt"
+source research/pam_anchored_poc/monitored_pilot/portable_timing.sh
 printf '%s preflight full binding check\n' "$(date -u +%FT%TZ)" >> "$out/progress.log"
 python3 research/pam_anchored_poc/compatibility/index_manifest.py verify --reference "$STAGE/reference.fa" --index "$STAGE/index" > "$out/preverify.json"
 printf '%s start single-guide workflow\n' "$(date -u +%FT%TZ)" >> "$out/progress.log"
-/usr/bin/time -v -o "$out/time.txt" "$CRISPR_BIN" --search-backend pam-anchored --pam-search-bin "$PAM_BIN" --columba-index "$STAGE/index" -r "$STAGE/reference.fa" -G "$out/guide.fa" -t 1 -m 5 -b 1 -z 2 -f 0.75 -p GG > "$out/output.paf.incomplete" 2> "$out/workflow.stderr"
+run_timed "$out/workflow.time" "$CRISPR_BIN" --search-backend pam-anchored --pam-search-bin "$PAM_BIN" --columba-index "$STAGE/index" -r "$STAGE/reference.fa" -G "$out/guide.fa" -t 1 -m 5 -b 1 -z 2 -f 0.75 -p GG > "$out/output.paf.incomplete" 2> "$out/workflow.stderr"
 printf '%s postflight full binding check\n' "$(date -u +%FT%TZ)" >> "$out/progress.log"
 python3 research/pam_anchored_poc/compatibility/index_manifest.py verify --reference "$STAGE/reference.fa" --index "$STAGE/index" > "$out/postverify.json"
 [[ $(sha256sum "$STAGE/index.crispr-binding.json" | cut -d' ' -f1) == 2fe715d09c5a8b79f20e59ff6cd85486b52c8f3836ab54b7d566b8a50ad9b0d4 ]]
@@ -54,6 +56,7 @@ python3 research/pam_anchored_poc/pilot_preparation/audit_paf.py --reference "$S
 [[ $(sha256sum "$STAGE/reference.fa" | cut -d' ' -f1) == bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b ]]
 [[ $(sha256sum "$FAI" | cut -d' ' -f1) == 7f6187771a76e8af51b983e2df4e00970dd72722dea0b9bd5c425ef817e3c26d ]]
 sha256sum -c research/pam_anchored_poc/pilot_preparation/dependencies.sha256 >> "$out/helper-checksums.txt"
+sha256sum -c research/pam_anchored_poc/monitored_pilot/timing.sha256 >> "$out/helper-checksums.txt"
 python3 research/pam_anchored_poc/pilot_preparation/extract_metrics.py "$out/workflow.stderr" "$out/audit.json" > "$out/search-metrics.json"
 mv "$out/output.paf.incomplete" "$out/output.paf"
 printf 'COMPLETE eligibility audited; recall not assessed\n' > "$out/status"
