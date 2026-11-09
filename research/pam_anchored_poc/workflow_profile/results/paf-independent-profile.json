@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "reported": 21447,
+  "duplicate_anchors": 0,
+  "independently_scored": 21447,
+  "paf_bytes": 3122715,
+  "timings": {
+    "parse_and_reference_random_access_seconds": 0.4877898618578911,
+    "independent_emitted_alignment_replay_seconds": 0.39058937691152096,
+    "independent_cfd_scoring_seconds_including_matrix_load": 0.1798689889255911,
+    "write_flush_reread_hash_existing_paf_seconds": 0.006583310896530747
+  },
+  "caveat": "independent Python audit of emitted sites and cached PAF file copy, not production timings or full native replay"
+}

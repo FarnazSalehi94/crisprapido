@@ -1,0 +1,48 @@
+{
+  "guides": 64,
+  "runs": [
+    {
+      "repetition": 0,
+      "batch": {
+        "seconds": 0.42902109306305647,
+        "sites": 172,
+        "states": 4229884
+      },
+      "separate": {
+        "seconds": 4.619388293940574,
+        "sites": 172,
+        "states": 4229884
+      },
+      "identical_paf_multiset": true
+    },
+    {
+      "repetition": 1,
+      "batch": {
+        "seconds": 0.42770747910253704,
+        "sites": 172,
+        "states": 4229884
+      },
+      "separate": {
+        "seconds": 4.6160128868650645,
+        "sites": 172,
+        "states": 4229884
+      },
+      "identical_paf_multiset": true
+    },
+    {
+      "repetition": 2,
+      "batch": {
+        "seconds": 0.4283555138390511,
+        "sites": 172,
+        "states": 4229884
+      },
+      "separate": {
+        "seconds": 4.599111645016819,
+        "sites": 172,
+        "states": 4229884
+      },
+      "identical_paf_multiset": true
+    }
+  ],
+  "scope": "existing 8kb panel; same machine and prebuilt index; does not quantify whole-genome batch memory"
+}

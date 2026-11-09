@@ -1,0 +1,52 @@
+[
+  {
+    "run": 0,
+    "parser": "old",
+    "seconds": 0.13880580104887486
+  },
+  {
+    "run": 0,
+    "parser": "new",
+    "seconds": 0.06435616291128099
+  },
+  {
+    "run": 1,
+    "parser": "new",
+    "seconds": 0.06327946693636477
+  },
+  {
+    "run": 1,
+    "parser": "old",
+    "seconds": 0.13779537891969085
+  },
+  {
+    "run": 2,
+    "parser": "old",
+    "seconds": 0.13883503596298397
+  },
+  {
+    "run": 2,
+    "parser": "new",
+    "seconds": 0.06403450202196836
+  },
+  {
+    "run": 3,
+    "parser": "new",
+    "seconds": 0.0639018090441823
+  },
+  {
+    "run": 3,
+    "parser": "old",
+    "seconds": 0.1391930270474404
+  },
+  {
+    "run": 4,
+    "parser": "old",
+    "seconds": 0.13933289307169616
+  },
+  {
+    "run": 4,
+    "parser": "new",
+    "seconds": 0.06425375887192786
+  }
+]

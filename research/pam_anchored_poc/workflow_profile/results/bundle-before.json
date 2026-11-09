@@ -1,0 +1,186 @@
+{
+  "scope": "copy one prebuilt bundle then execute unmodified full binding verifier three times; no search",
+  "phases": [
+    {
+      "name": "copy_reference_and_12_components_and_manifest",
+      "seconds": 8.756679840851575
+    }
+  ],
+  "verification_calls": [
+    {
+      "hashes": [
+        {
+          "component": "reference.fa",
+          "seconds": 2.1659582040738314
+        },
+        {
+          "component": "index.bwt",
+          "seconds": 0.7991863039787859
+        },
+        {
+          "component": "index.brt",
+          "seconds": 1.329900718992576
+        },
+        {
+          "component": "index.rev.brt",
+          "seconds": 1.3301954669877887
+        },
+        {
+          "component": "index.sa.4",
+          "seconds": 2.127721494063735
+        },
+        {
+          "component": "index.sa.bv.4",
+          "seconds": 0.33272025105543435
+        },
+        {
+          "component": "index.pos",
+          "seconds": 5.391309969127178e-05
+        },
+        {
+          "component": "index.sna",
+          "seconds": 2.340390346944332e-05
+        },
+        {
+          "component": "index.txt.bin",
+          "seconds": 2.130828856024891
+        },
+        {
+          "component": "index.cct",
+          "seconds": 5.703885108232498e-05
+        },
+        {
+          "component": "index.meta",
+          "seconds": 1.8985942006111145e-05
+        },
+        {
+          "component": "index.fsid",
+          "seconds": 1.6913050785660744e-05
+        },
+        {
+          "component": "index.headerSN.bin",
+          "seconds": 2.072984352707863e-05
+        }
+      ],
+      "reference_text_and_metadata_check_seconds": 156.25427784305066,
+      "total_seconds": 166.4711880357936
+    },
+    {
+      "hashes": [
+        {
+          "component": "reference.fa",
+          "seconds": 2.166078038047999
+        },
+        {
+          "component": "index.bwt",
+          "seconds": 0.8215628168545663
+        },
+        {
+          "component": "index.brt",
+          "seconds": 1.3766354720573872
+        },
+        {
+          "component": "index.rev.brt",
+          "seconds": 1.3718426029663533
+        },
+        {
+          "component": "index.sa.4",
+          "seconds": 2.189297511940822
+        },
+        {
+          "component": "index.sa.bv.4",
+          "seconds": 0.3417068130802363
+        },
+        {
+          "component": "index.pos",
+          "seconds": 5.392194725573063e-05
+        },
+        {
+          "component": "index.sna",
+          "seconds": 1.973705366253853e-05
+        },
+        {
+          "component": "index.txt.bin",
+          "seconds": 2.1573880680371076
+        },
+        {
+          "component": "index.cct",
+          "seconds": 5.371216684579849e-05
+        },
+        {
+          "component": "index.meta",
+          "seconds": 1.7802929505705833e-05
+        },
+        {
+          "component": "index.fsid",
+          "seconds": 1.5568919479846954e-05
+        },
+        {
+          "component": "index.headerSN.bin",
+          "seconds": 1.89261045306921e-05
+        }
+      ],
+      "reference_text_and_metadata_check_seconds": 158.01566511113197,
+      "total_seconds": 168.44057048205286
+    },
+    {
+      "hashes": [
+        {
+          "component": "reference.fa",
+          "seconds": 2.171271981904283
+        },
+        {
+          "component": "index.bwt",
+          "seconds": 0.8015796719118953
+        },
+        {
+          "component": "index.brt",
+          "seconds": 1.3360246908850968
+        },
+        {
+          "component": "index.rev.brt",
+          "seconds": 1.3352958629839122
+        },
+        {
+          "component": "index.sa.4",
+          "seconds": 2.136181761045009
+        },
+        {
+          "component": "index.sa.bv.4",
+          "seconds": 0.3333448809571564
+        },
+        {
+          "component": "index.pos",
+          "seconds": 5.0304923206567764e-05
+        },
+        {
+          "component": "index.sna",
+          "seconds": 2.0829029381275177e-05
+        },
+        {
+          "component": "index.txt.bin",
+          "seconds": 2.1398823028430343
+        },
+        {
+          "component": "index.cct",
+          "seconds": 5.306093953549862e-05
+        },
+        {
+          "component": "index.meta",
+          "seconds": 1.6662059351801872e-05
+        },
+        {
+          "component": "index.fsid",
+          "seconds": 1.5118159353733063e-05
+        },
+        {
+          "component": "index.headerSN.bin",
+          "seconds": 2.039899118244648e-05
+        }
+      ],
+      "reference_text_and_metadata_check_seconds": 158.33187332306989,
+      "total_seconds": 168.58583701308817
+    }
+  ],
+  "status": "all_checks_passed"
+}

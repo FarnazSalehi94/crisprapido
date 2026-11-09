@@ -1,0 +1,5 @@
+PROFILE native_binding_seconds=0.0287386
+PROFILE native_reference_load_seconds=0.000153786
+PROFILE native_index_load_seconds=0.000217799
+PROFILE emit_seconds=0.00349912 emit_calls=3656 replay_seconds=0.00304361 replay_calls=3980
+states=4229884 search_wall_seconds=0.358185

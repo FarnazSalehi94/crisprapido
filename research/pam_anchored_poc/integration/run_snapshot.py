@@ -36,14 +36,17 @@ def main():
         # Extract targets only from the exact verified snapshot used by the search.
         seqs = {}
         name = None
-        for line in ref.read_text().splitlines():
-            if line.startswith('>'):
-                name = line[1:].split()[0]
-                if name in seqs:
-                    raise ValueError('duplicate reference record')
-                seqs[name] = []
-            elif name is not None:
-                seqs[name].append(''.join(line.split()).upper())
+        # Avoid materializing a second whole-reference text and split-line list.
+        # Reference contents are still read only from the verified snapshot.
+        with ref.open() as source:
+            for line in source:
+                if line.startswith('>'):
+                    name = line[1:].split()[0]
+                    if name in seqs:
+                        raise ValueError('duplicate reference record')
+                    seqs[name] = []
+                elif name is not None:
+                    seqs[name].append(''.join(line.split()).upper())
         seqs = {name: ''.join(chunks) for name, chunks in seqs.items()}
         lines = run.stdout.splitlines()
         header = 'guide\tcontig\tstrand\tstart\tend\tanchor\tpam\tcigar\tmismatches\tinserted_guide_bases\tdeleted_guide_bases\tbulge_events\tmatch_count\tmatch_fraction'

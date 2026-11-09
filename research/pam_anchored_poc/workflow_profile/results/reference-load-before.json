@@ -1,0 +1,8 @@
+{
+  "mode": "read_text",
+  "load_seconds": 34.53543376503512,
+  "digest_seconds": 4.035063365940005,
+  "contigs": 82,
+  "bases": 3029527752,
+  "ordered_record_sha256": "284bbf98353d4c5b6d36aab9064184e7db05cfae5ff2b62c9ddaed310c9fc3a9"
+}

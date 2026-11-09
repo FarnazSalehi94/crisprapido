@@ -1,0 +1,70 @@
+{
+  "scope": "one full existing binding verification; no search",
+  "hashes": [
+    {
+      "component": "reference.fa",
+      "seconds": 2.232823477126658
+    },
+    {
+      "component": "index.bwt",
+      "seconds": 0.8156437918078154
+    },
+    {
+      "component": "index.brt",
+      "seconds": 1.339741756906733
+    },
+    {
+      "component": "index.rev.brt",
+      "seconds": 1.363981098169461
+    },
+    {
+      "component": "index.sa.4",
+      "seconds": 2.2488735269289464
+    },
+    {
+      "component": "index.sa.bv.4",
+      "seconds": 0.35109259793534875
+    },
+    {
+      "component": "index.pos",
+      "seconds": 4.170997999608517e-05
+    },
+    {
+      "component": "index.sna",
+      "seconds": 2.023903653025627e-05
+    },
+    {
+      "component": "index.txt.bin",
+      "seconds": 2.2459000521339476
+    },
+    {
+      "component": "index.cct",
+      "seconds": 4.519708454608917e-05
+    },
+    {
+      "component": "index.meta",
+      "seconds": 1.6511883586645126e-05
+    },
+    {
+      "component": "index.fsid",
+      "seconds": 1.515890471637249e-05
+    },
+    {
+      "component": "index.headerSN.bin",
+      "seconds": 1.9829021766781807e-05
+    }
+  ],
+  "reference_text_and_metadata_check_seconds": 67.21030158479698,
+  "reference_check": {
+    "fasta_sha256": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+    "indexed_text_sha256": "86e4045ff2a15abe43c37d3edde9917b0047ff0a90c16cc82a6c8f81af74bcec",
+    "bases": 3029527752,
+    "contigs": 82,
+    "ambiguous_positions_unverifiable": 1287716,
+    "resolved_base_mismatches": 0,
+    "scope": "32-bit little-endian vanilla index; does not prove BWT/SA integrity or original ambiguous bases"
+  },
+  "total_seconds": 77.80870260903612,
+  "status": "passed",
+  "binding_reference_sha256": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b"
+}

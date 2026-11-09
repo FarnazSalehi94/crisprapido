@@ -42,7 +42,9 @@ def check(prefix,ref):
             seq=line.strip().upper(); indexed=index.read(len(seq))
             if len(indexed)!=len(seq): raise ValueError('index text length/sentinel mismatch')
             text_hash.update(indexed); lengths[-1]+=len(seq); total+=len(seq)
-            ambiguous+=len(seq)-sum(seq.count(bytes([b])) for b in b'ACGT')
+            # Delete resolved bases in one C-level pass; every other byte is
+            # still counted as ambiguous, exactly as in the four-count form.
+            ambiguous+=len(seq.translate(None,b'ACGT'))
             if seq!=indexed and any(a!=b for a,b in zip(seq,indexed) if a in b'ACGT'):
                 raise ValueError('index/FASTA resolved base mismatch')
         if not names or len(set(names))!=len(names) or any(n==0 for n in lengths): raise ValueError('empty or duplicate FASTA records')

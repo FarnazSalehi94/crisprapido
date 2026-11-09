@@ -1,0 +1,52 @@
+{
+  "job_id": 2871278,
+  "scope": "previously completed job; no additional whole-assembly search",
+  "status": "COMPLETE eligibility audited; recall not assessed",
+  "progress": [
+    "Mon 09 Nov 2026 04:03:33 PM UTC",
+    "octopus10",
+    "job=2871278 memory=sampled-process-tree-48GiB-not-hard-limit scratch=/export/local/home/salehi/crisprapido-resource-pilot-scratch/crispr-pilot-2871278.MbsEuPz8",
+    "18b66c801be6f5756932145f435b87cd23a0eea6d0465badeb3f190834354fdf  /export/local/home/salehi/crisprapido-pilot-rebuild-923e8d7-v4/release/crisprapido",
+    "f73b2db470c0ae89a381fff8e9f2ec02e1911eaa373f0045d2c177656117e8e9  /export/local/home/salehi/crisprapido-resource-pilot-build-20261106/native/poc-wrapper",
+    "18b66c801be6f5756932145f435b87cd23a0eea6d0465badeb3f190834354fdf  /export/local/home/salehi/crisprapido-pilot-rebuild-923e8d7-v4/release/crisprapido",
+    "9a4cec96b717ab52464b8fa7266103cc415cf50befbfb238404c51f16bc08ad4  /export/local/home/salehi/crisprapido-resource-pilot-build-20261106/native/poc_timed",
+    "2fe715d09c5a8b79f20e59ff6cd85486b52c8f3836ab54b7d566b8a50ad9b0d4  /export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/index.crispr-binding.json",
+    "7f6187771a76e8af51b983e2df4e00970dd72722dea0b9bd5c425ef817e3c26d  /moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz.fai",
+    "2026-11-09T16:03:33Z preflight full binding check",
+    "2026-11-09T16:06:03Z start single-guide workflow",
+    "2026-11-09T16:18:41Z postflight full binding check",
+    "2026-11-09T16:21:07Z independent output eligibility audit",
+    "2026-11-09T16:21:22Z finished",
+    "elapsed_script_seconds=1071 exit=0"
+  ],
+  "workflow_timing": [
+    "elapsed_seconds=758",
+    "exit_code=0",
+    "clock=bash_SECONDS_wall_seconds"
+  ],
+  "search_metrics": {
+    "known_exact_target_recovered": true,
+    "native_index_load_seconds": 3.30097,
+    "native_search_states": 856229607,
+    "native_search_wall_seconds": 82.4654,
+    "reported_sites": 21447
+  },
+  "audit": {
+    "duplicate_anchors": 0,
+    "independently_scored": 21447,
+    "known_exact_target_recovered": true,
+    "reported": 21447,
+    "scope": "eligibility of reported sites only; recall not assessed",
+    "status": "pass"
+  },
+  "supervisor": {
+    "reason": "completed",
+    "sampled_peak_rss_kib": 14272204,
+    "limit_kib": 50331648,
+    "sample_count": 8542,
+    "sample_interval_seconds": 0.1,
+    "elapsed_seconds": 1070.9657521247864,
+    "child_returncode": 0,
+    "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+  }
+}

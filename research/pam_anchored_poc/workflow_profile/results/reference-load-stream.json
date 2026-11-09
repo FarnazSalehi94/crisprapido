@@ -1,0 +1,8 @@
+{
+  "mode": "stream",
+  "load_seconds": 30.241909470874816,
+  "digest_seconds": 3.9475371779408306,
+  "contigs": 82,
+  "bases": 3029527752,
+  "ordered_record_sha256": "284bbf98353d4c5b6d36aab9064184e7db05cfae5ff2b62c9ddaed310c9fc3a9"
+}

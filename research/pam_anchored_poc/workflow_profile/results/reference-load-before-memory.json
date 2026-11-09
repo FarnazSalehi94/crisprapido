@@ -1,0 +1,10 @@
+{
+  "reason": "completed",
+  "sampled_peak_rss_kib": 12001852,
+  "limit_kib": 16777216,
+  "sample_count": 169,
+  "sample_interval_seconds": 0.2,
+  "elapsed_seconds": 38.96419896488078,
+  "child_returncode": 0,
+  "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+}
