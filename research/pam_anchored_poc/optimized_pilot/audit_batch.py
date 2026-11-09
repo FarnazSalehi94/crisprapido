@@ -15,6 +15,7 @@ for line in Path(a.guides).read_text().splitlines():
 assert guides and all(re.fullmatch('[ACGT]{20}',g) for g in guides.values())
 targets=json.loads(Path(a.targets).read_text());assert set(targets)==set(guides)
 found=set()
+per_guide={q:{'reported':0,'independently_scored':0,'duplicate_anchors':0} for q in guides}
 rows={}
 for line in open(a.fai):
  f=line.rstrip().split('\t'); assert len(f)>=5 and f[0] not in rows
@@ -58,7 +59,7 @@ with open(a.paf) as paf:
    assert mismatches==0 and events==0 and cigar=='20=', 'expected locus is not an exact match'
    found.add(f[0])
   score=independent_cfd(''.join(ga),''.join(ta),ops,pam,mmatrix,pmatrix);assert ('cf' in tags)==(score is not None)
-  if score is not None:assert abs(float(tags['cf'])-score)<.000051;scored+=1
-  count+=1
+  if score is not None:assert abs(float(tags['cf'])-score)<.000051;scored+=1;per_guide[f[0]]['independently_scored']+=1
+  count+=1;per_guide[f[0]]['reported']+=1
 assert found==set(guides), 'expected exact target missing for '+str(set(guides)-found)
-print(json.dumps({'known_exact_targets_recovered':sorted(found),'status':'pass','reported':count,'duplicate_anchors':0,'independently_scored':scored,'scope':'eligibility of reported sites only; recall not assessed'},sort_keys=True))
+print(json.dumps({'known_exact_targets_recovered':sorted(found),'per_guide':per_guide,'status':'pass','reported':count,'duplicate_anchors':0,'independently_scored':scored,'scope':'eligibility of reported sites only; recall not assessed'},sort_keys=True))

@@ -1,0 +1,16 @@
+PROFILE snapshot_copy_seconds=97.069908
+PROFILE snapshot_verify_pre_seconds=77.633145
+PROFILE native_process_seconds=368.034679
+PROFILE native_binding_seconds=78.2149
+PROFILE native_reference_load_seconds=18.6574
+PROFILE native_index_load_seconds=3.30994
+GUIDE_PROFILE	pilot	+	428235814	39.9169
+GUIDE_PROFILE	pilot	-	427993793	40.5745
+GUIDE_PROFILE	beginning	+	463494561	43.5418
+GUIDE_PROFILE	beginning	-	463448030	43.9841
+GUIDE_PROFILE	before_2_31	+	465599693	44.4567
+GUIDE_PROFILE	before_2_31	-	465999987	45.0194
+states=2714771878 search_wall_seconds=257.493
+PROFILE snapshot_verify_post_seconds=77.420074
+PROFILE python_reference_load_seconds=27.410632
+PROFILE runner_total_seconds=649.775425

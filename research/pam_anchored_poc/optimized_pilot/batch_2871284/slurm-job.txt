@@ -1,0 +1,27 @@
+JobId=2871284 JobName=crispr-hg00735-batch
+   UserId=salehi(1011) GroupId=salehi(1013) MCS_label=N/A
+   Priority=1 Nice=0 Account=(null) QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:13:59 TimeLimit=02:00:00 TimeMin=N/A
+   SubmitTime=2026-11-09T18:05:20 EligibleTime=2026-11-09T18:05:20
+   AccrueTime=2026-11-09T18:05:20
+   StartTime=2026-11-09T18:05:20 EndTime=2026-11-09T18:19:19 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-09T18:05:20 Scheduler=Main
+   Partition=workers AllocNode:Sid=octopus01:1254
+   ReqNodeList=octopus10 ExcNodeList=(null)
+   NodeList=octopus10
+   BatchHost=octopus10
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=64G,node=1,billing=1
+   AllocTRES=cpu=1,node=1,billing=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=64G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/optimized_pilot/submit_batch.slurm
+   WorkDir=/export/local/home/salehi/crisprapido-pam-validation
+   StdErr=/export/local/home/salehi/crisprapido-pam-validation/crispr-batch-2871284.slurm.log
+   StdIn=/dev/null
+   StdOut=/export/local/home/salehi/crisprapido-pam-validation/crispr-batch-2871284.slurm.log
+   TresPerTask=cpu=1

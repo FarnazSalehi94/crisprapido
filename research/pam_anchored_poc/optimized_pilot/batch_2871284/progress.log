@@ -1,0 +1,15 @@
+Mon Nov  9 18:05:21 UTC 2026
+octopus10
+job=2871284 memory=sampled-process-tree-48GiB-not-hard-limit scratch=/export/local/home/salehi/crisprapido-resource-pilot-scratch/crispr-pilot-2871284.jQdX5Z9I
+9dac869a187856bff3c8309c3918ce48198d7f164b30f702c7c6f6fa33afd1ce  /export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/target/release/crisprapido
+4e72312e1e05eebe564a73b8555c7301c00dcf9d082c6401eac78789496943c9  /export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/batch-native/wrapper
+9dac869a187856bff3c8309c3918ce48198d7f164b30f702c7c6f6fa33afd1ce  /export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/target/release/crisprapido
+8b263dbf1ae37769eba4298de87fc9efacd959266536dcb486d344198bbba4df  /export/local/home/salehi/crisprapido-pilot-rebuild-f7de425-v1/batch-native/profile_native
+2fe715d09c5a8b79f20e59ff6cd85486b52c8f3836ab54b7d566b8a50ad9b0d4  /export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/index.crispr-binding.json
+7f6187771a76e8af51b983e2df4e00970dd72722dea0b9bd5c425ef817e3c26d  /moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz.fai
+2026-11-09T18:05:22Z preflight full binding check
+2026-11-09T18:06:42Z start three-guide workflow
+2026-11-09T18:17:36Z postflight full binding check
+2026-11-09T18:18:56Z independent output eligibility audit
+2026-11-09T18:19:18Z finished
+elapsed_script_seconds=837 exit=0

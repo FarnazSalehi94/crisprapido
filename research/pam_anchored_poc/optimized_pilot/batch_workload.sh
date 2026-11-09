@@ -46,7 +46,7 @@ sha256sum -c research/pam_anchored_poc/optimized_pilot/runtime.sha256 >> "$out/h
 source research/pam_anchored_poc/monitored_pilot/portable_timing.sh
 printf '%s preflight full binding check\n' "$(date -u +%FT%TZ)" >> "$out/progress.log"
 python3 research/pam_anchored_poc/compatibility/index_manifest.py verify --reference "$STAGE/reference.fa" --index "$STAGE/index" > "$out/preverify.json"
-printf '%s start single-guide workflow\n' "$(date -u +%FT%TZ)" >> "$out/progress.log"
+printf '%s start three-guide workflow\n' "$(date -u +%FT%TZ)" >> "$out/progress.log"
 run_timed "$out/workflow.time" "$CRISPR_BIN" --search-backend pam-anchored --pam-search-bin "$PAM_BIN" --columba-index "$STAGE/index" -r "$STAGE/reference.fa" -G "$out/guide.fa" -t 1 -m 5 -b 1 -z 2 -f 0.75 -p GG > "$out/output.paf.incomplete" 2> "$out/workflow.stderr"
 printf '%s postflight full binding check\n' "$(date -u +%FT%TZ)" >> "$out/progress.log"
 python3 research/pam_anchored_poc/compatibility/index_manifest.py verify --reference "$STAGE/reference.fa" --index "$STAGE/index" > "$out/postverify.json"
@@ -60,6 +60,15 @@ sha256sum -c research/pam_anchored_poc/pilot_preparation/dependencies.sha256 >> 
 sha256sum -c research/pam_anchored_poc/monitored_pilot/timing.sha256 >> "$out/helper-checksums.txt"
 sha256sum -c research/pam_anchored_poc/optimized_pilot/runtime.sha256 >> "$out/helper-checksums.txt"
 python3 research/pam_anchored_poc/optimized_pilot/phase_metrics.py "$out/workflow.stderr" "$out/workflow.time" "$out/audit.json" > "$out/search-metrics.json"
+python3 research/pam_anchored_poc/optimized_pilot/extract_batch_metrics.py "$out/workflow.stderr" "$out/audit.json" "$out/search-metrics.json" > "$out/per-guide-metrics.json"
+baseline=/export/local/home/salehi/crisprapido-resource-pilot-results/hg00735-optimized-2871283/output.paf
+[[ $(sha256sum "$baseline" | cut -d' ' -f1) == a28d0574a915a57d431851ab681b0602b8f5fb1740d1c8efeb6e3b4a378f23be ]]
+awk -F '\t' '$1=="pilot"' "$out/output.paf.incomplete" > "$scratch/pilot.paf"
+python3 research/pam_anchored_poc/optimized_pilot/compare_paf.py --baseline "$baseline" --candidate "$scratch/pilot.paf" --out "$out/pilot-comparison.json"
+python3 - "$out/pilot-comparison.json" <<'PYCOMPARE'
+import json,sys
+x=json.load(open(sys.argv[1]));assert x['representative_alignment_differences']==0 and x['cfd_differences']==0, 'pilot results differ from 2871283'
+PYCOMPARE
 mv "$out/output.paf.incomplete" "$out/output.paf"
 printf 'COMPLETE eligibility audited; recall not assessed\n' > "$out/status"
 printf '%s finished\n' "$(date -u +%FT%TZ)" >> "$out/progress.log"
