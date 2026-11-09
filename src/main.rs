@@ -86,6 +86,10 @@ pub(crate) struct Args {
     #[arg(short = 'f', long, default_value = "0.75")]
     min_match_fraction: f32,
 
+    /// Minimum full-precision CFD after representative selection; unavailable scores are kept
+    #[arg(long, value_parser = parse_min_cfd)]
+    min_cfd: Option<f64>,
+
     /// Path to mismatch scores file for CFD calculation
     #[arg(long, default_value = "mismatch_scores.txt")]
     mismatch_scores: PathBuf,
@@ -129,6 +133,14 @@ pub(crate) struct Args {
     /// Preserve temporary Columba SAM output
     #[arg(long)]
     keep_columba_sam: bool,
+}
+
+fn parse_min_cfd(value: &str) -> Result<f64, String> {
+    let score: f64 = value.parse().map_err(|_| "--min-cfd requires a number")?;
+    if !score.is_finite() || !(0.0..=1.0).contains(&score) {
+        return Err("--min-cfd must be finite and between 0 and 1".into());
+    }
+    Ok(score)
 }
 
 fn open_reference_reader(path: &PathBuf) -> fasta::Reader<BufReader<Box<dyn BufRead>>> {
@@ -192,9 +204,15 @@ fn main() {
         for query in &queries {
             let selected = hits.remove(&query.query_name).unwrap_or_default();
             if batch_mode {
-                report_filtered_hits_for_query(selected, &args.pam, &query.query_name, false);
+                report_filtered_hits_for_query(
+                    selected,
+                    &args.pam,
+                    &query.query_name,
+                    false,
+                    args.min_cfd,
+                );
             } else {
-                report_filtered_hits(selected, &args.pam, false);
+                report_filtered_hits(selected, &args.pam, false, args.min_cfd);
             }
         }
         return;
@@ -288,13 +306,14 @@ fn main() {
                     &args.pam,
                     &query.query_name,
                     allow_noncanonical_pam,
+                    args.min_cfd,
                 );
             }
         } else {
             let guide_fwd = Arc::new(queries[0].sequence.as_bytes().to_vec());
             let hits =
                 verify_columba_candidates(&candidates, &reference_records, &guide_fwd, &args);
-            report_filtered_hits(hits, &args.pam, allow_noncanonical_pam);
+            report_filtered_hits(hits, &args.pam, allow_noncanonical_pam, args.min_cfd);
         }
         return;
     }
@@ -366,6 +385,6 @@ fn main() {
             .flatten()
             .collect();
 
-        report_filtered_hits(hits, &args.pam, allow_noncanonical_pam);
+        report_filtered_hits(hits, &args.pam, allow_noncanonical_pam, args.min_cfd);
     }
 }

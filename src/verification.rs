@@ -1151,6 +1151,7 @@ mod tests {
             max_bulges: 1,
             max_bulge_size: 2,
             min_match_fraction: 0.75,
+            min_cfd: None,
             mismatch_scores: PathBuf::from("mismatch_scores.txt"),
             pam_scores: PathBuf::from("pam_scores.txt"),
             window_size: None,

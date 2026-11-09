@@ -1,0 +1,10 @@
+test_mixed_only_unknown_representatives_survive (test_native.NativeRegressions.test_mixed_only_unknown_representatives_survive) ... ok
+test_native_and_cli_full_precision_equality (test_native.NativeRegressions.test_native_and_cli_full_precision_equality) ... ok
+test_neutral_position_one_gap_with_n (test_native.NativeRegressions.test_neutral_position_one_gap_with_n) ... ok
+test_research_binary_is_not_integrated_backend_protocol (test_native.NativeRegressions.test_research_binary_is_not_integrated_backend_protocol) ... ok
+test_zero_scores_are_not_unavailable (test_native.NativeRegressions.test_zero_scores_are_not_unavailable) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.939s
+
+OK

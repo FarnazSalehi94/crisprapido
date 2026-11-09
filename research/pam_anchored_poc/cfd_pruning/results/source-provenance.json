@@ -1,0 +1,21 @@
+{
+  "authoritative_validation": "validation-final-v4",
+  "compiler_profile": "/gnu/store/3c2mxm30rbzvnw7qsi235mrkk3m38fym-profile",
+  "old_cli_source_equivalence": true,
+  "runtime_root": "/export/local/home/salehi/crisprapido-cfd-pruning-dev-v1",
+  "sha256": {
+    "Cargo.lock": "93564e52dcafb54bfdacd2b7c6d69ac806aa74fb00ea1a20a6aee75f13c7f0f2",
+    "research/pam_anchored_poc/cfd_pruning/build.py": "5645100cb9b5683f2284d36c91a96726c9dae47d639f4da94b3de3a3641625b2",
+    "research/pam_anchored_poc/cfd_pruning/test_native.py": "2957373331a233eb1a184404baa1055cdb47d04a149f10fb8ea8e988971c46d3",
+    "research/pam_anchored_poc/integration/run_snapshot.py": "63cf737424b2ec13f9a22bcabcc96fb17200ead6975daa33df547e2d0e929f5a",
+    "research/pam_anchored_poc/poc.cpp": "4907f625788cee5f60b6f07c9c5a05b05a6969878e56581e8b69bf602559c550",
+    "src/cfd_score.rs": "fe85f6aa6a7bf6b76f79e4ea9b56eba6b7578ea4b1f88d866cb2f334d7b268ae",
+    "src/main.rs": "a3f021bda5beb8f3a239fb1173eaa9b72c26f6665f24d130ff07af24b0956540",
+    "src/pam_backend.rs": "9c31c45f7c8565892ef838c16373b65254ed12a4963bd048ed7cbb4e89ff5df0",
+    "src/reporting.rs": "33c874292001a6cde72a15a7a2d6168e68ab7384cf9072bf04ecb0258f904855",
+    "src/verification.rs": "c59029b7b4261604e65bae513711afb47a086630c6577c9e18240d5a91de86b0",
+    "tests/min_cfd_cli.rs": "79105dc4945681760d20d8f551b945742bede6b4251191d7f54b72f9bb724943"
+  },
+  "source_baseline": "252a6bb",
+  "source_status": "working-tree downstream filter plus isolated native prototype; commit follows report"
+}

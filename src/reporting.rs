@@ -24,10 +24,15 @@ fn convert_to_minimap2_cigar(cigar: &str) -> String {
     result
 }
 
-pub(crate) fn report_filtered_hits(hits: Vec<Hit>, pam: &str, allow_noncanonical: bool) {
+pub(crate) fn report_filtered_hits(
+    hits: Vec<Hit>,
+    pam: &str,
+    allow_noncanonical: bool,
+    min_cfd: Option<f64>,
+) {
     print!(
         "{}",
-        format_filtered_hits_with_policy(hits, pam, "Guide", allow_noncanonical)
+        format_filtered_hits_with_policy(hits, pam, "Guide", allow_noncanonical, min_cfd)
     );
 }
 
@@ -36,10 +41,11 @@ pub(crate) fn report_filtered_hits_for_query(
     pam: &str,
     query_name: &str,
     allow_noncanonical: bool,
+    min_cfd: Option<f64>,
 ) {
     print!(
         "{}",
-        format_filtered_hits_with_policy(hits, pam, query_name, allow_noncanonical)
+        format_filtered_hits_with_policy(hits, pam, query_name, allow_noncanonical, min_cfd)
     );
 }
 
@@ -65,7 +71,13 @@ fn format_filtered_hits(hits: Vec<Hit>, pam: &str) -> String {
 
 #[cfg(test)]
 fn format_filtered_hits_for_query(hits: Vec<Hit>, pam: &str, query_name: &str) -> String {
-    format_filtered_hits_with_policy(hits, pam, query_name, false)
+    format_filtered_hits_with_policy(hits, pam, query_name, false, None)
+}
+
+// A missing or non-finite score cannot establish that a site is below threshold.
+// Compare full precision, never the rounded PAF tag. Default mode adds no scoring.
+fn passes_cfd_threshold(score: Option<f64>, threshold: f64) -> bool {
+    score.map_or(true, |s| !s.is_finite() || s >= threshold)
 }
 
 fn format_filtered_hits_with_policy(
@@ -73,6 +85,7 @@ fn format_filtered_hits_with_policy(
     pam: &str,
     query_name: &str,
     allow_noncanonical: bool,
+    min_cfd: Option<f64>,
 ) -> String {
     // The PAM-adjacent boundary, not overlap, identifies a target site.
     // Per query, retain one deterministic representative at each strand/anchor.
@@ -100,7 +113,9 @@ fn format_filtered_hits_with_policy(
     }
     let mut output = String::new();
     for best_hit in by_anchor.values() {
-        output.push_str(&format_hit_for_query(
+        // Filter only AFTER selection, using the formatter's unrounded score.
+        // Never promote a higher-CFD alternative at the same anchor.
+        let line = format_hit_for_query(
             query_name,
             &best_hit.ref_id,
             best_hit.pos,
@@ -115,8 +130,12 @@ fn format_filtered_hits_with_policy(
             best_hit.max_bulge_size,
             &best_hit.target_seq,
             best_hit.pam_seq.as_deref().unwrap_or(""),
-        ));
-        output.push('\n');
+            min_cfd,
+        );
+        if !line.is_empty() {
+            output.push_str(&line);
+            output.push('\n');
+        }
     }
 
     output
@@ -153,6 +172,7 @@ pub(crate) fn format_hit(
         _max_bulge_size,
         target_seq,
         pam,
+        None,
     )
 }
 
@@ -171,6 +191,7 @@ fn format_hit_for_query(
     _max_bulge_size: u32,
     target_seq: &[u8],
     pam: &str,
+    min_cfd: Option<f64>,
 ) -> String {
     let ref_pos = pos;
     let mut ref_consumed = 0;
@@ -283,6 +304,10 @@ fn format_hit_for_query(
         None
     };
 
+    if min_cfd.is_some_and(|threshold| !passes_cfd_threshold(cfd_score, threshold)) {
+        return String::new();
+    }
+
     let cfd_tag = if let Some(score) = cfd_score {
         format!("\tcf:f:{:.4}", score)
     } else {
@@ -361,6 +386,7 @@ mod tests {
             2,
             guide,
             "GG",
+            None,
         );
 
         assert!(line.starts_with("guide_alpha\t20\t"));
@@ -449,6 +475,59 @@ mod tests {
         assert_eq!(output.lines().count(), 1);
         assert!(output.contains("	12	30	"));
         assert!(output.contains("	cg:Z:2I18="));
+    }
+
+    #[test]
+    fn cfd_filter_is_after_selection_and_preserves_unavailable_scores() {
+        cfd_score::init_score_matrices("mismatch_scores.txt", "pam_scores.txt").unwrap();
+        let guide = b"GAAACAGTCGATTTTATCAC";
+        for strand in ['+', '-'] {
+            let mut low = test_hit("chr1", strand, 10);
+            low.guide = Arc::new(guide.to_vec());
+            low.target_seq = [guide[..14].to_vec(), guide[15..].to_vec()].concat();
+            low.cigar = "11=1I8=".into();
+            low.score = -6;
+            let mut alternative = low.clone();
+            alternative.cigar = "10=1I1X8=".into();
+            alternative.score = -9;
+            let hits = vec![alternative, low.clone()];
+            let original = format_filtered_hits(hits.clone(), "GG");
+            assert!(original.contains("cg:Z:11=1I8="));
+            assert_eq!(
+                original,
+                format_filtered_hits_with_policy(hits.clone(), "GG", "Guide", false, Some(0.0))
+            );
+            for threshold in [0.1, 0.2, 0.5] {
+                assert!(format_filtered_hits_with_policy(
+                    hits.clone(),
+                    "GG",
+                    "Guide",
+                    false,
+                    Some(threshold)
+                )
+                .is_empty());
+                let mut unknown = low.clone();
+                unknown.target_seq = guide.to_vec();
+                unknown.cigar = "1D1I19=".into();
+                let out = format_filtered_hits_with_policy(
+                    vec![unknown],
+                    "GG",
+                    "Guide",
+                    false,
+                    Some(threshold),
+                );
+                assert_eq!(out.lines().count(), 1);
+                assert!(!out.contains("cf:f:"));
+            }
+        }
+    }
+
+    #[test]
+    fn cfd_threshold_uses_full_precision_and_inclusive_equality() {
+        assert!(!passes_cfd_threshold(Some(0.19999999), 0.2));
+        assert!(passes_cfd_threshold(Some(0.2), 0.2));
+        assert!(passes_cfd_threshold(None, 0.5));
+        assert!(passes_cfd_threshold(Some(f64::NAN), 0.5));
     }
 
     #[test]

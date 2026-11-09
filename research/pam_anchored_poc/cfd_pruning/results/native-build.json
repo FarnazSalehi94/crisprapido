@@ -1,0 +1,39 @@
+{
+  "command": [
+    "/gnu/store/3c2mxm30rbzvnw7qsi235mrkk3m38fym-profile/bin/g++",
+    "-std=gnu++14",
+    "-O3",
+    "-mpopcnt",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "-DALPHABET=5",
+    "-DTHIRTY_TWO",
+    "-DHAVE_ZLIB",
+    "-DINDEX_BINDING_HELPER=\"/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/compatibility/index_manifest.py\"",
+    "-DINDEX_BINDING_PYTHON=\"/usr/bin/python3.7\"",
+    "-include",
+    "limits",
+    "-include",
+    "cstdint",
+    "-I/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/src",
+    "-I/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/build_Vanilla/_deps/parallel-hashmap-src",
+    "-I/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/build_Vanilla/_deps/fmtlib-src/include",
+    "research/pam_anchored_poc/cfd_pruning/native.cpp",
+    "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/build_Vanilla/libAuxiliaryClasses.a",
+    "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/build_Vanilla/_deps/fmtlib-build/libfmt.a",
+    "-lz",
+    "-pthread",
+    "-Wl,--dynamic-linker=/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib/ld-linux-x86-64.so.2",
+    "-Wl,-rpath,/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib:/gnu/store/gmv6n5vy5qcsn71pkapg2hnknyn1p7g3-gcc-12.3.0-lib/lib",
+    "-o",
+    "/export/local/home/salehi/crisprapido-cfd-pruning-dev-v1/native-build-v4/native"
+  ],
+  "sha256": {
+    "/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/poc.cpp": "4907f625788cee5f60b6f07c9c5a05b05a6969878e56581e8b69bf602559c550",
+    "research/pam_anchored_poc/cfd_pruning/native.cpp": "3ea29dff9c538c7fa85e097be563faabd4c62ef390634bd499257be890ab8d77",
+    "/export/local/home/salehi/crisprapido-cfd-pruning-dev-v1/native-build-v4/native": "8c87a7d4622728fb4b0c091eda1ce03d389598425a8d0894ffe48dc92440c808",
+    "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/build_Vanilla/libAuxiliaryClasses.a": "96e34b089a5c002014eac74414bb2c70b33ad615b5065c1556d98167fa88ca2f",
+    "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/build_Vanilla/_deps/fmtlib-build/libfmt.a": "06722ce7c568aa87bdc2126b3d493c0ab2bee8627b57186337824900c5a898b9"
+  },
+  "compiler": "g++ (GCC) 12.3.0"
+}

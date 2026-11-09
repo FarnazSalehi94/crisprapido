@@ -1,0 +1,14 @@
+test_bounded_oracle_and_exact_threshold (test_study.FeasibilityTests.test_bounded_oracle_and_exact_threshold) ... ok
+test_matrix_contract (test_study.FeasibilityTests.test_matrix_contract) ... ok
+test_n_fallback_and_non20_guides (test_study.FeasibilityTests.test_n_fallback_and_non20_guides) ... ok
+test_projected_suffix_bound (test_study.FeasibilityTests.test_projected_suffix_bound) ... ok
+test_representative_refinement_needed (test_study.FeasibilityTests.test_representative_refinement_needed) ... ok
+test_supported_and_unsupported_bulges (test_study.FeasibilityTests.test_supported_and_unsupported_bulges) ... ok
+test_threshold_validation (test_study.FeasibilityTests.test_threshold_validation) ... ok
+test_unavailable_mixed_representative_survives (test_study.FeasibilityTests.test_unavailable_mixed_representative_survives) ... ok
+test_unknown_guards (test_study.FeasibilityTests.test_unknown_guards) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 4.875s
+
+OK

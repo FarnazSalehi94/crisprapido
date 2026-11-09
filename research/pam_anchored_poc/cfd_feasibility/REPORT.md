@@ -1,5 +1,7 @@
 # CFD-guided indexed searching: bounded feasibility study
 
+**Subsequent implementation:** optional downstream `--min-cfd` filtering and an isolated native pruning prototype are now documented in the [implementation report](../cfd_pruning/REPORT.md). Integrated searching remains unpruned. The feasibility study below is preserved as the historical pre-implementation record; its model timings are not native pruning measurements.
+
 ## Decision summary
 
 **A safe CFD upper bound is feasible for defined scores under a validated multiplicative scoring contract. It is not sufficient by itself for a drop-in pruning change.** The main obstacles are preserving the current representative alignment and retaining unavailable scores, especially mixed I/D paths and reference-N cases. The recommended future design is optional **score-aware candidate discovery followed by unpruned, anchor-local representative reconstruction**, with conservative unavailable-score fallbacks. Start on small resolved references; do not enable this for HPRC by default.

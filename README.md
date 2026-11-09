@@ -60,7 +60,7 @@ crisprapido -r <reference.fa> -G <guides.fa> -p <pam_sequence> \
 The existing Columba + WFA2 search remains the default. An optional,
 single-threaded PAM-anchored Columba backend can be selected with
 `--search-backend pam-anchored --pam-search-bin <prototype>`. It requires a
-fresh reference-bound index and rejects unsupported options. See the
+verified reference-bound index (freshly built or independently imported) and rejects unsupported options. See the
 [experimental backend report](research/pam_anchored_poc/integration/REPORT.md)
 for build and usage instructions, index safety, supported settings, validation,
 and limitations. Valid alternative alignments can yield different CFD scores.
@@ -87,7 +87,8 @@ existing multi-query SAM can instead be supplied with `--columba-sam`.
 - `-w, --window-size <NUM>`: Size of sequence window to scan (default: 4x guide length)
 - `-t, --threads <NUM>`: Number of threads to use (default: number of logical CPUs)
 - `--allow-noncanonical-pam`: Keep nonmatching or unavailable PAMs; CFD still uses the actual observed PAM suffix.
-- `--no-filter`: Bypass sequence thresholds and PAM eligibility; overlap representative selection still applies.
+- `--no-filter`: Bypass sequence thresholds and PAM eligibility; overlap representative selection still applies. An explicitly supplied `--min-cfd` still applies afterward.
+- `--min-cfd <SCORE>`: Optional downstream minimum CFD, finite and in `[0,1]`; disabled by default. Applied **after** existing representative selection at each PAM anchor, using the full-precision score (not the four-decimal PAF tag). Lower-scoring representatives are excluded; unavailable scores are preserved without promoting a different alignment. This does not prune the integrated search or alter mismatch/bulge limits. Omit the flag for unfiltered output.
 
 ## Output Format
 
@@ -122,8 +123,8 @@ Additionally, CRISPRapido includes these custom tags:
 
 ### CFD Score
 
-The Cutting Frequency Determination (CFD) score estimates the likelihood of a guide RNA cutting at an off-target site.
-The score ranges from 0.0 to 1.0,  taking into account:
+The Cutting Frequency Determination (CFD) score is an empirical relative score, not a calibrated probability of cleavage.
+With the supplied matrices it ranges from 0.0 to 1.0, taking into account:
 
 - Position-specific mismatch penalties
 - PAM sequence efficiency
@@ -133,6 +134,11 @@ This implementation requires two data files:
 
 - `mismatch_scores.txt` : Position-specific mismatch penalties
 - `pam_scores.txt` : Efficiency scores for different PAM sequences
+
+For example, add `--min-cfd 0.1` to an existing command to retain representatives with CFD at least 0.1 **or an unavailable score**. A missing `cf:f` tag denotes unavailable scoring under the existing output convention; it is not zero. Some pure bulges have supported CFD scores, while mixed I/D alignments or retained reference Ns can be unscorable. Threshold-selected output is not exhaustive under mismatch/bulge settings alone.
+
+An isolated [native CFD-pruning study](research/pam_anchored_poc/cfd_pruning/REPORT.md) is research-only; it is **not enabled in either integrated search backend**.
+
 ### Example Output
 
 ```
