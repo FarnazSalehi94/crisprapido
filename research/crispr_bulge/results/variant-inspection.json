@@ -1,0 +1,64 @@
+{
+  "commit": "3eddcd5bfcaff00b2bdf29425116ec9756ace870",
+  "scope": "static HDF5 inspection of component zero only; only c_2 classification was prediction-validated",
+  "variants": [
+    {
+      "task": "classification",
+      "model": "c_2",
+      "ensemble_component": 0,
+      "input_shapes": [
+        [
+          null,
+          24
+        ]
+      ],
+      "output_units": 1,
+      "output_activation": "sigmoid",
+      "sha256": "c7b54eb0ce5898e71c1d5329c2e79a83e629df13f3fc87e058de10f8497081f9"
+    },
+    {
+      "task": "classification",
+      "model": "c_3",
+      "ensemble_component": 0,
+      "input_shapes": [
+        [
+          null,
+          24,
+          25
+        ]
+      ],
+      "output_units": 1,
+      "output_activation": "sigmoid",
+      "sha256": "8b4fb8839f68d51c9965ef55c4ef3446e85df39934bd24d86bc902f0dd568a46"
+    },
+    {
+      "task": "regression",
+      "model": "c_2",
+      "ensemble_component": 0,
+      "input_shapes": [
+        [
+          null,
+          24
+        ]
+      ],
+      "output_units": 1,
+      "output_activation": "linear",
+      "sha256": "ff3db516474f54f25f9a6fd52731d402339b83f03105d5e422de31962a10e817"
+    },
+    {
+      "task": "regression",
+      "model": "c_3",
+      "ensemble_component": 0,
+      "input_shapes": [
+        [
+          null,
+          24,
+          25
+        ]
+      ],
+      "output_units": 1,
+      "output_activation": "linear",
+      "sha256": "fdfe6558a843be05b45bf139446fd34d28117dd3679405c60fc2c6d9e7f7da37"
+    }
+  ]
+}

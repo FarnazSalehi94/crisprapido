@@ -1,0 +1,81 @@
+{
+  "model_id": "crispr-bulge-c2-classification-5x-3eddcd5",
+  "model_load_count": 5,
+  "tensorflow": "2.12.0",
+  "numpy": "1.23.5",
+  "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0]",
+  "import_seconds": 1.7387747969478369,
+  "verify_pre_seconds": 0.011221121065318584,
+  "model_load_seconds": 0.8643332470674068,
+  "verify_post_seconds": 0.011605795007199049,
+  "batches": [
+    {
+      "rows": 32,
+      "encoding_seconds": 0.0004587050061672926,
+      "predict_seconds": 1.2961691471282393
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.00047256192192435265,
+      "predict_seconds": 0.1812809999100864
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.0004495179746299982,
+      "predict_seconds": 0.17739559593610466
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.000450358958914876,
+      "predict_seconds": 0.1816485219169408
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.000461159972473979,
+      "predict_seconds": 0.17690920806489885
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.00046504801139235497,
+      "predict_seconds": 0.18174832104705274
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.0004633949138224125,
+      "predict_seconds": 0.1784945430699736
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.00048775109462440014,
+      "predict_seconds": 0.17626281408593059
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.0004629229661077261,
+      "predict_seconds": 0.1825970010831952
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.0004591159522533417,
+      "predict_seconds": 0.1757125740405172
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.00046225194819271564,
+      "predict_seconds": 0.18220236711204052
+    },
+    {
+      "rows": 32,
+      "encoding_seconds": 0.00046600913628935814,
+      "predict_seconds": 0.1777674350887537
+    },
+    {
+      "rows": 1,
+      "encoding_seconds": 3.710109740495682e-05,
+      "predict_seconds": 0.17918550106696784
+    }
+  ],
+  "elapsed_seconds": 6.082796842092648,
+  "peak_worker_rss_kib": 555328,
+  "scope": "CPU worker peak, not aggregate memory; includes TF and models; not search runtime"
+}

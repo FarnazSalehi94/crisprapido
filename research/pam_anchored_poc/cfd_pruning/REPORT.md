@@ -1,5 +1,7 @@
 # Optional downstream CFD filtering and isolated native pruning
 
+**Subsequent scoring work:** a limited-domain, isolated CRISPR-Bulge postprocessor is now described in the [scoring integration report](../../crispr_bulge/REPORT.md). This report's CFD experiment/results are preserved as historical evidence; neither integrated search backend enables pruning.
+
 ## Status and scope
 
 **Implemented:** optional `--min-cfd` downstream filtering in the development CLI, plus a separately built native FM-index pruning experiment. **Not implemented/enabled:** pruning in either integrated search backend, whole-genome pruning, CRISPR-Bulge, or a new default search mode. No production binary, existing index, frozen branch or main was changed. No Slurm/whole-assembly job was launched.

@@ -1,0 +1,16 @@
+{
+  "both": {
+    "input_rows_preserved": 542,
+    "maximum_absolute_difference": 4.990997060083657e-10,
+    "predictions_compared": 385,
+    "tolerance": 1e-06,
+    "unavailable_rows_preserved": 157
+  },
+  "crispr-bulge": {
+    "input_rows_preserved": 542,
+    "maximum_absolute_difference": 4.990997060083657e-10,
+    "predictions_compared": 385,
+    "tolerance": 1e-06,
+    "unavailable_rows_preserved": 157
+  }
+}

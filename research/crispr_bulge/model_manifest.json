@@ -1,0 +1,74 @@
+{
+  "alphabet": "ACGT-",
+  "architecture": "GRU-Embd / c_2",
+  "commit": "3eddcd5bfcaff00b2bdf29425116ec9756ace870",
+  "ensemble": "arithmetic mean of five float32 component predictions",
+  "guide_pam": "NGG",
+  "input_shape": [
+    null,
+    24
+  ],
+  "license": "MIT; root LICENSE, no separate checkpoint terms found",
+  "license_sha256": "61ca66636d2c6b08388f2101a514da37c6aca91e098cd8faa947125c9ba3b925",
+  "model_id": "crispr-bulge-c2-classification-5x-3eddcd5",
+  "models": [
+    {
+      "component": 0,
+      "path": "files/bulges/1_folds/5_revision_ensemble_0_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.h5",
+      "pickle_path": "files/bulges/1_folds/5_revision_ensemble_0_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.pkl",
+      "pickle_sha256": "75c1454683fb074531bba45ef4fb38fd92f4d7c45cfd61494bbce1b0c773fb46",
+      "sha256": "c7b54eb0ce5898e71c1d5329c2e79a83e629df13f3fc87e058de10f8497081f9"
+    },
+    {
+      "component": 1,
+      "path": "files/bulges/1_folds/5_revision_ensemble_1_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.h5",
+      "pickle_path": "files/bulges/1_folds/5_revision_ensemble_1_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.pkl",
+      "pickle_sha256": "75c1454683fb074531bba45ef4fb38fd92f4d7c45cfd61494bbce1b0c773fb46",
+      "sha256": "bfc3e4530e0851fe25a0e9bc2ff2ee2b6a407e8a7642fa6f98e16e98895a735d"
+    },
+    {
+      "component": 2,
+      "path": "files/bulges/1_folds/5_revision_ensemble_2_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.h5",
+      "pickle_path": "files/bulges/1_folds/5_revision_ensemble_2_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.pkl",
+      "pickle_sha256": "75c1454683fb074531bba45ef4fb38fd92f4d7c45cfd61494bbce1b0c773fb46",
+      "sha256": "e933b6b891c2c7865725d2e2652055325ec1f9b1ff27e24b11e1fa0a5db82bf5"
+    },
+    {
+      "component": 3,
+      "path": "files/bulges/1_folds/5_revision_ensemble_3_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.h5",
+      "pickle_path": "files/bulges/1_folds/5_revision_ensemble_3_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.pkl",
+      "pickle_sha256": "75c1454683fb074531bba45ef4fb38fd92f4d7c45cfd61494bbce1b0c773fb46",
+      "sha256": "5ff2edb06e64e9abf01ec19cc4b54efcbb728f6c24a694026706d97269f72253"
+    },
+    {
+      "component": 4,
+      "path": "files/bulges/1_folds/5_revision_ensemble_4_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.h5",
+      "pickle_path": "files/bulges/1_folds/5_revision_ensemble_4_exclude_RHAMPseq_continue_from_change_seq/read_ts_0/cleavage_models/aligned/FullGUIDEseq/classification/c_2/ln_x_plus_one_trans/model_fold_0.pkl",
+      "pickle_sha256": "75c1454683fb074531bba45ef4fb38fd92f4d7c45cfd61494bbce1b0c773fb46",
+      "sha256": "f5436749b5af034f424629b4862709d3e476d099e2c386d7ea790f28a49e7d6b"
+    }
+  ],
+  "reference_domain": "resolved NGG; no gap <=6 mismatches; one gap nucleotide <=4 mismatches; conservative published GUIDE-seq preprocessing subset",
+  "repository": "https://github.com/OrensteinLab/CRISPR-Bulge",
+  "source_sha256": {
+    "OT_deep_score_src/__init__.py": "32c4858e22cc2c967b42150fa550562a2c839c2cebcaab91cabdf6f4da020022",
+    "OT_deep_score_src/base_models.py": "2b814f1420c14d8c6cd8d15ad1a05b3b7285724e25fc383983b7d07d2e780ff7",
+    "OT_deep_score_src/data_processing_utilities.py": "73c770a0afef0e8633dd24d25252778f313587e2c156994293798a0baa1085d5",
+    "OT_deep_score_src/dataset_utilities.py": "6cc9027ce633bbf2ef27510ddd23108952f1caf70319a0d65d485caee126b3e4",
+    "OT_deep_score_src/evaluate_utilities.py": "d210774bfe41c167a91865e1dd61d5b6a14971d71da5f2e3745824ef1e9a8721",
+    "OT_deep_score_src/general_utilities.py": "ac7653af03c0d4352494dcf9f4488d52df7bdefa9efcc39b2ec72e049acf0907",
+    "OT_deep_score_src/generate_synthetic_ots_for_embedding.py": "a2ebf1e92076886970a25a57284b07febf5f5e0cd8de95c4c277460dd0819516",
+    "OT_deep_score_src/models_inter.py": "b3a5520838a56212faaa161729df090316802b76a3ee55cd92c494a0286a10f6",
+    "OT_deep_score_src/models_utilities.py": "330ef5997da5612ebdcdc2b3eccdac41f96ba8a2891597f14e38fb94c2a6f1b4",
+    "OT_deep_score_src/naming_utilities.py": "37f374b792bba09a4bab1fa280b6f22a1cc26b00edada805103650eb6e78b83c",
+    "OT_deep_score_src/nn_models.py": "a217a18c7ba7459a6c1fed9dc1ba01b3984812c590e238ca92ecd97181fe1422",
+    "OT_deep_score_src/predict_utilities.py": "10256ff43f2c59df56453c0176c6b2fead9aec4c69dff701d0d5658a2451fc12",
+    "OT_deep_score_src/train_utilities.py": "5bd27132e1197d8efd831a189a326ec68aa10d3bdee3e35c01d6f1055a630f94",
+    "README.md": "a6d2f758cf8bff5aaae75d29ef5640a3abebb5f13aa701c6e5016e205c9093b4",
+    "main_predict.py": "991383ab45c4e15531380ff0a27e262b132cd04836e53fea927fa23deb0aa2e4",
+    "train_and_predict_scripts/__init__.py": "32c4858e22cc2c967b42150fa550562a2c839c2cebcaab91cabdf6f4da020022",
+    "train_and_predict_scripts/predict_config.py": "b9dea7ef34ccd34de729c3349ff4b94c1083e13119d777e4310725a0616acb54",
+    "train_and_predict_scripts/utilities.py": "491c31057e37ef0ed175677e98495b99c18e2b44288ac8563663c56caff2924e"
+  },
+  "task": "classification"
+}

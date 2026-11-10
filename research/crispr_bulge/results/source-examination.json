@@ -1,0 +1,128 @@
+{
+  "authors_tested_environment": {
+    "python": "3.10.10",
+    "tensorflow": "2.12.0"
+  },
+  "cfd_source_equals_preserved_library_source": true,
+  "documented_preprocessing": {
+    "SWOffinder_submodule_commit": "25bbffb85a5a74bb54a97a469335b5ff17202497",
+    "argument_string": "6 6 4 1 1 false 50 NGG true",
+    "java_source_sha256": "36f2787eba255335891ec8ac6c322a2ccaaab661b566389b864d1896d4f48b52",
+    "max_edits": 6,
+    "max_gapped_nucleotides": 1,
+    "max_mismatches_no_bulges": 6,
+    "max_mismatches_with_bulges": 4,
+    "note": "Known preprocessing parameters, not a complete inventory/proof of all pretrained data domains.",
+    "script_sha256": "6d3f724ec387f9f89b1b8af1f14dd47d5892b7f2f800de686e4d38c017050d5e"
+  },
+  "license": {
+    "copyright": "2024 Orenstein Lab",
+    "note": "No weights/upstream code vendored. Not a certification of all underlying data/dependency rights.",
+    "separate_checkpoint_terms_found": false,
+    "sha256": "61ca66636d2c6b08388f2101a514da37c6aca91e098cd8faa947125c9ba3b925",
+    "type": "MIT root license"
+  },
+  "models": [
+    {
+      "bytes": 2782400,
+      "component": 0,
+      "embedding_input_dim": 25,
+      "embedding_output_dim": 44,
+      "input_shape": [
+        null,
+        24
+      ],
+      "keras": "2.12.0",
+      "output_activation": "sigmoid",
+      "output_units": 1,
+      "sha256": "c7b54eb0ce5898e71c1d5329c2e79a83e629df13f3fc87e058de10f8497081f9"
+    },
+    {
+      "bytes": 2782400,
+      "component": 1,
+      "embedding_input_dim": 25,
+      "embedding_output_dim": 44,
+      "input_shape": [
+        null,
+        24
+      ],
+      "keras": "2.12.0",
+      "output_activation": "sigmoid",
+      "output_units": 1,
+      "sha256": "bfc3e4530e0851fe25a0e9bc2ff2ee2b6a407e8a7642fa6f98e16e98895a735d"
+    },
+    {
+      "bytes": 2782400,
+      "component": 2,
+      "embedding_input_dim": 25,
+      "embedding_output_dim": 44,
+      "input_shape": [
+        null,
+        24
+      ],
+      "keras": "2.12.0",
+      "output_activation": "sigmoid",
+      "output_units": 1,
+      "sha256": "e933b6b891c2c7865725d2e2652055325ec1f9b1ff27e24b11e1fa0a5db82bf5"
+    },
+    {
+      "bytes": 2782400,
+      "component": 3,
+      "embedding_input_dim": 25,
+      "embedding_output_dim": 44,
+      "input_shape": [
+        null,
+        24
+      ],
+      "keras": "2.12.0",
+      "output_activation": "sigmoid",
+      "output_units": 1,
+      "sha256": "5ff2edb06e64e9abf01ec19cc4b54efcbb728f6c24a694026706d97269f72253"
+    },
+    {
+      "bytes": 2782400,
+      "component": 4,
+      "embedding_input_dim": 25,
+      "embedding_output_dim": 44,
+      "input_shape": [
+        null,
+        24
+      ],
+      "keras": "2.12.0",
+      "output_activation": "sigmoid",
+      "output_units": 1,
+      "sha256": "f5436749b5af034f424629b4862709d3e476d099e2c386d7ea790f28a49e7d6b"
+    }
+  ],
+  "preserved_panel_root": "/export/local/home/salehi/crisprapido-bulge-validation-v1/retained172-inputs",
+  "sha256": {
+    "mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+    "pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1",
+    "research/crispr_bulge/adapter.py": "d0a210e5c52a1d2d636fbc60264a13e25daffbbc739d4097445708b3db9192f3",
+    "research/crispr_bulge/check_output.py": "8405699cc7dc2afb56ad2a8f82c4fbe9b2956de0ad816c22e59454eece22b168",
+    "research/crispr_bulge/fetch_models.py": "84285e7d722a9aaf9a668ae87851e4a2b85aa0e863902f5f8b3a5f15e580a5da",
+    "research/crispr_bulge/measure.py": "129822d6b295dd1a7a1b879c5be5ceb246291b98dbe092e039efb6cb7f9c8ae8",
+    "research/crispr_bulge/model_manifest.json": "fbba1f3207d4a64f1162c5791334fd7cf6c721710eadc615133d522897436594",
+    "research/crispr_bulge/official_reference.py": "2f3bc23c02a7fe5f7cffa92d897e9dd8422e5cf033e4bd06662c8cdff44c0ad5",
+    "research/crispr_bulge/requirements-validation.lock": "9610039483c8167434bf1bf6db522180caa56024c11828ff525c9152532fa981",
+    "research/crispr_bulge/score_paf.py": "c983395d95290ee935fae8b5132be5be39d6955d28ffb67b34d6998783cff855",
+    "research/crispr_bulge/test_adapter.py": "5a681894fa7e521a531b246a5850c0d52f4841ef6ebd98b3e54fdda79420bda1",
+    "research/crispr_bulge/validate.py": "ab0c9f554402275e5515582ec04291b52659b345382f9b0e879144df090bea26",
+    "research/crispr_bulge/worker.py": "c65905d9b78fe2f0387b691b842f20cf4122cc4d73a70800c0fdf077ab688a80",
+    "src/cfd_score.rs": "fe85f6aa6a7bf6b76f79e4ea9b56eba6b7578ea4b1f88d866cb2f334d7b268ae",
+    "src/main.rs": "a3f021bda5beb8f3a239fb1173eaa9b72c26f6665f24d130ff07af24b0956540",
+    "src/pam_backend.rs": "9c31c45f7c8565892ef838c16373b65254ed12a4963bd048ed7cbb4e89ff5df0",
+    "src/reporting.rs": "33c874292001a6cde72a15a7a2d6168e68ab7384cf9072bf04ecb0258f904855"
+  },
+  "source_baseline": "178de00",
+  "upstream_commit": "3eddcd5bfcaff00b2bdf29425116ec9756ace870",
+  "upstream_repository": "https://github.com/OrensteinLab/CRISPR-Bulge",
+  "validated_environment": {
+    "CPU_only": true,
+    "TF_intra_inter_threads": 1,
+    "environment_root": "/export/local/home/salehi/crisprapido-bulge-env-v1",
+    "host": "octopus01",
+    "python": "Python 3.11.15",
+    "tensorflow_distribution": "tensorflow-cpu==2.12.0"
+  }
+}

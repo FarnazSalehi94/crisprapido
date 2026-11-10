@@ -1,0 +1,21 @@
+{
+  "model_id": "crispr-bulge-c2-classification-5x-3eddcd5",
+  "model_load_count": 5,
+  "tensorflow": "2.12.0",
+  "numpy": "1.23.5",
+  "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0]",
+  "import_seconds": 1.764878256013617,
+  "verify_pre_seconds": 0.01132151298224926,
+  "model_load_seconds": 0.8757757609710097,
+  "verify_post_seconds": 0.011308938963338733,
+  "batches": [
+    {
+      "rows": 385,
+      "encoding_seconds": 0.005317196017131209,
+      "predict_seconds": 1.3647590689361095
+    }
+  ],
+  "elapsed_seconds": 4.035971486009657,
+  "peak_worker_rss_kib": 549852,
+  "scope": "CPU worker peak, not aggregate memory; includes TF and models; not search runtime"
+}

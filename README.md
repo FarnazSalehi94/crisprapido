@@ -139,6 +139,12 @@ For example, add `--min-cfd 0.1` to an existing command to retain representative
 
 An isolated [native CFD-pruning study](research/pam_anchored_poc/cfd_pruning/REPORT.md) is research-only; it is **not enabled in either integrated search backend**.
 
+### Optional CRISPR-Bulge postprocessing (experimental)
+
+A separate [batched scoring postprocessor](research/crispr_bulge/REPORT.md) accepts `--scoring cfd|crispr-bulge|both` (default: `cfd`). These are **postprocessor options, not new Rust CLI flags**. It preserves the supplied representative alignments; `both` preserves CFD tags and appends `cb:f` scores with `bu:Z` availability reasons. Unsupported rows are retained without a fabricated score.
+
+The pinned pretrained model does **not** cover all default `-m 5 -b 1 -z 2` alignments: two-base DNA bulges exceed its 24-column input, and other multi-base/mixed or out-of-domain cases remain unscored. No search setting is reduced to fit the model. CFD calculations, defaults and `--min-cfd` behavior remain unchanged. See the report for model licensing, a dedicated optional TensorFlow environment, exact input conversion, validation and overhead before use.
+
 ### Example Output
 
 ```
