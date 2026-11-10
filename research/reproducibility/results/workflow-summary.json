@@ -1,0 +1,670 @@
+{
+  "baseline": "6fa96d3",
+  "benchmark": [
+    {
+      "max_individual_rss_kib": 15056,
+      "max_sampled_tree_rss_kib": 51008,
+      "median_wall_seconds": 0.2146270340308547,
+      "mode": "cfd",
+      "panel": "N",
+      "repetitions": 3
+    },
+    {
+      "max_individual_rss_kib": 538428,
+      "max_sampled_tree_rss_kib": 589128,
+      "median_wall_seconds": 5.02080710302107,
+      "mode": "crispr-bulge",
+      "panel": "N",
+      "repetitions": 3
+    },
+    {
+      "max_individual_rss_kib": 536748,
+      "max_sampled_tree_rss_kib": 587724,
+      "median_wall_seconds": 4.970432149944827,
+      "mode": "both",
+      "panel": "N",
+      "repetitions": 3
+    }
+  ],
+  "host": "octopus01",
+  "official": {
+    "max_absolute_error": 1.789291992349007e-07,
+    "metrics": {
+      "categorical_sha256": "1b20378223df1dfcd067951d48d9b61fab2742fa599d946591f613b754706f90",
+      "dna_two_base_encoder_error": "actual_seq_size > seq_len",
+      "elapsed_seconds": 6.217771511059254,
+      "numpy": "1.23.5",
+      "official_commit": "3eddcd5bfcaff00b2bdf29425116ec9756ace870",
+      "official_ensemble_call_seconds": 4.053464830154553,
+      "peak_reference_rss_kib": 649428,
+      "rna_two_base_encoder_shape": [
+        1,
+        24,
+        25
+      ],
+      "rows": 1177,
+      "scope": "unmodified official function plus imports, hash validation and feature/limit probes; CPU",
+      "tensorflow": "2.12.0"
+    },
+    "predictions_sha256": "56ad9ed4a3adc90868e5391c023cb17a9cfd98bbc46f535b05f4754c16f4f8ef",
+    "requests_sha256": "f1bd4f3845f038f0581742a38e2fd4a613532a7c6eaf48fadb53268d550a2d7c",
+    "rows": 1177,
+    "tolerance": 1e-06
+  },
+  "official_check_requested": true,
+  "panels": [
+    {
+      "baseline_byte_identical": true,
+      "baseline_paf_sha256": "1dabff9c813aee91873be7a1a67572ee51ffd14576031763d4fa62e60a3ed190",
+      "bases": 13768,
+      "cfd": {
+        "defined": 566
+      },
+      "contigs": 598,
+      "duplicates": 0,
+      "expected": 566,
+      "expected_basis": "independent direct-string forward oracle",
+      "guides": 1,
+      "guides_sha256": "570bc0478d006b5de07c01f4976c8b9f38b441182d989579a6b5e0733e429937",
+      "label": "resolved",
+      "mismatches": 5,
+      "missing": 0,
+      "recovered": 566,
+      "reference_sha256": "2d7361e6e639462fa1faff24131b88731c68fe3f9183622bfeb6c31594d37c7b",
+      "runs": [
+        {
+          "measurement": {
+            "child_system_seconds": 0.01859,
+            "child_user_seconds": 0.14457899999999999,
+            "max_individual_child_rss_kib": 15080,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.164661203045398
+          },
+          "mode": "cfd",
+          "paf_sha256": "1dabff9c813aee91873be7a1a67572ee51ffd14576031763d4fa62e60a3ed190",
+          "repetition": 0,
+          "rows": 566,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.23535466892644763,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 5,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 50852
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.404551,
+            "child_user_seconds": 4.558769,
+            "max_individual_child_rss_kib": 536792,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 5.571274779038504
+          },
+          "mode": "crispr-bulge",
+          "paf_sha256": "02c0a1258ab1c24d16a64180c2a1bc515c1dedd464278992536a0ff25820a5b6",
+          "repetition": 0,
+          "rows": 566,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.652074515121058,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 125,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 586512
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.26523599999999997,
+            "child_user_seconds": 4.684559,
+            "max_individual_child_rss_kib": 537272,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 5.821710993070155
+          },
+          "mode": "both",
+          "paf_sha256": "02c0a1258ab1c24d16a64180c2a1bc515c1dedd464278992536a0ff25820a5b6",
+          "repetition": 0,
+          "rows": 566,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.8916156850755215,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 131,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 588184
+          }
+        }
+      ],
+      "scoring": {
+        "counts": {
+          "both": 550,
+          "cfd": 566,
+          "crispr_bulge": 550,
+          "crispr_bulge_unavailable": 16,
+          "records": 566
+        },
+        "unavailable": {
+          "alignment_exceeds_24_columns": 8,
+          "unsupported_multibase_bulge": 8
+        }
+      },
+      "unexpected": 0
+    },
+    {
+      "baseline_byte_identical": true,
+      "baseline_paf_sha256": "40e208f70fc60901ff366ceafd3676b4a0da7c946a4bf7f962b38e5d4ada5c0a",
+      "bases": 13956,
+      "cfd": {
+        "defined": 568,
+        "unavailable": 2
+      },
+      "contigs": 606,
+      "duplicates": 0,
+      "expected": 570,
+      "expected_basis": "independent direct-string forward oracle",
+      "guides": 1,
+      "guides_sha256": "570bc0478d006b5de07c01f4976c8b9f38b441182d989579a6b5e0733e429937",
+      "label": "N",
+      "mismatches": 5,
+      "missing": 0,
+      "recovered": 570,
+      "reference_sha256": "bc7ea928c5569cd226cbea20b1acb17ca9f19f5019ffa3140b07d2b7997ffd57",
+      "runs": [
+        {
+          "measurement": {
+            "child_system_seconds": 0.012281,
+            "child_user_seconds": 0.15179399999999998,
+            "max_individual_child_rss_kib": 15056,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.16463320096954703
+          },
+          "mode": "cfd",
+          "paf_sha256": "40e208f70fc60901ff366ceafd3676b4a0da7c946a4bf7f962b38e5d4ada5c0a",
+          "repetition": 0,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.23532702797092497,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 5,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 51008
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.331565,
+            "child_user_seconds": 4.6094919999999995,
+            "max_individual_child_rss_kib": 538008,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 5.2225905519444495
+          },
+          "mode": "crispr-bulge",
+          "paf_sha256": "13815f13e90674c4851b34b5ebaf90f63706532e71e6d2419d31da2b2d1533cf",
+          "repetition": 0,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.304092257050797,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 117,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 589128
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.348066,
+            "child_user_seconds": 4.581759,
+            "max_individual_child_rss_kib": 536672,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 4.920537936035544
+          },
+          "mode": "both",
+          "paf_sha256": "13815f13e90674c4851b34b5ebaf90f63706532e71e6d2419d31da2b2d1533cf",
+          "repetition": 0,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 4.986785418819636,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 109,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 587072
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.286669,
+            "child_user_seconds": 4.6759,
+            "max_individual_child_rss_kib": 536548,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 4.970660242019221
+          },
+          "mode": "both",
+          "paf_sha256": "13815f13e90674c4851b34b5ebaf90f63706532e71e6d2419d31da2b2d1533cf",
+          "repetition": 1,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.035415195859969,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 112,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 586708
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.299133,
+            "child_user_seconds": 4.684096,
+            "max_individual_child_rss_kib": 536160,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 4.970896279904991
+          },
+          "mode": "crispr-bulge",
+          "paf_sha256": "13815f13e90674c4851b34b5ebaf90f63706532e71e6d2419d31da2b2d1533cf",
+          "repetition": 1,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.042953951051459,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 111,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 586796
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.023721,
+            "child_user_seconds": 0.141006,
+            "max_individual_child_rss_kib": 14908,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.2146270340308547
+          },
+          "mode": "cfd",
+          "paf_sha256": "40e208f70fc60901ff366ceafd3676b4a0da7c946a4bf7f962b38e5d4ada5c0a",
+          "repetition": 1,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.2808553099166602,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 6,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 50740
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.011208,
+            "child_user_seconds": 0.154391,
+            "max_individual_child_rss_kib": 14872,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.21479367092251778
+          },
+          "mode": "cfd",
+          "paf_sha256": "40e208f70fc60901ff366ceafd3676b4a0da7c946a4bf7f962b38e5d4ada5c0a",
+          "repetition": 2,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.279818651964888,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 6,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 50716
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.317145,
+            "child_user_seconds": 4.632296,
+            "max_individual_child_rss_kib": 538428,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 5.02080710302107
+          },
+          "mode": "crispr-bulge",
+          "paf_sha256": "13815f13e90674c4851b34b5ebaf90f63706532e71e6d2419d31da2b2d1533cf",
+          "repetition": 2,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.108802371891215,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 113,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 588596
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.330982,
+            "child_user_seconds": 4.630665,
+            "max_individual_child_rss_kib": 536748,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 4.970432149944827
+          },
+          "mode": "both",
+          "paf_sha256": "13815f13e90674c4851b34b5ebaf90f63706532e71e6d2419d31da2b2d1533cf",
+          "repetition": 2,
+          "rows": 570,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.035934170940891,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 112,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 587724
+          }
+        }
+      ],
+      "scoring": {
+        "counts": {
+          "both": 552,
+          "cfd": 568,
+          "crispr_bulge": 552,
+          "crispr_bulge_unavailable": 18,
+          "records": 570
+        },
+        "unavailable": {
+          "alignment_exceeds_24_columns": 8,
+          "ambiguous_reference": 2,
+          "unsupported_multibase_bulge": 8
+        }
+      },
+      "unexpected": 0
+    },
+    {
+      "baseline_byte_identical": true,
+      "baseline_paf_sha256": "82f60a6eff01979482242ad51e84e5a77642081bb1c5e267854e6c4a12bb683a",
+      "bases": 13768,
+      "cfd": {
+        "defined": 48,
+        "unavailable": 32
+      },
+      "contigs": 598,
+      "duplicates": 0,
+      "expected": 80,
+      "expected_basis": "independent direct-string forward oracle",
+      "guides": 1,
+      "guides_sha256": "570bc0478d006b5de07c01f4976c8b9f38b441182d989579a6b5e0733e429937",
+      "label": "mixed_only",
+      "mismatches": 0,
+      "missing": 0,
+      "recovered": 80,
+      "reference_sha256": "2d7361e6e639462fa1faff24131b88731c68fe3f9183622bfeb6c31594d37c7b",
+      "runs": [
+        {
+          "measurement": {
+            "child_system_seconds": 0.018052,
+            "child_user_seconds": 0.056459999999999996,
+            "max_individual_child_rss_kib": 15068,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.11449564411304891
+          },
+          "mode": "cfd",
+          "paf_sha256": "82f60a6eff01979482242ad51e84e5a77642081bb1c5e267854e6c4a12bb683a",
+          "repetition": 0,
+          "rows": 80,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.19037544983439147,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 4,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 46780
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.287392,
+            "child_user_seconds": 4.225168,
+            "max_individual_child_rss_kib": 514400,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 4.570380550809205
+          },
+          "mode": "crispr-bulge",
+          "paf_sha256": "dcf5c034f7f0755f21d3bd1797e5528a28a06d25d9c7694e2bdbab4e38c3392c",
+          "repetition": 0,
+          "rows": 80,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 4.6523471851833165,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 102,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 564536
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.292296,
+            "child_user_seconds": 4.23432,
+            "max_individual_child_rss_kib": 515844,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 4.570156890898943
+          },
+          "mode": "both",
+          "paf_sha256": "dcf5c034f7f0755f21d3bd1797e5528a28a06d25d9c7694e2bdbab4e38c3392c",
+          "repetition": 0,
+          "rows": 80,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 4.660884645069018,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 103,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 566024
+          }
+        }
+      ],
+      "scoring": {
+        "counts": {
+          "both": 32,
+          "cfd": 48,
+          "crispr_bulge": 32,
+          "crispr_bulge_unavailable": 48,
+          "records": 80
+        },
+        "unavailable": {
+          "alignment_exceeds_24_columns": 8,
+          "unsupported_mixed_bulge": 32,
+          "unsupported_multibase_bulge": 8
+        }
+      },
+      "unexpected": 0
+    },
+    {
+      "baseline_byte_identical": true,
+      "baseline_paf_sha256": "a89f36435f4bfb388152740cff036430ab4bd3a824a20986c0a3701e0e53c943",
+      "bases": 8000,
+      "cfd": {
+        "defined": 97,
+        "unavailable": 75
+      },
+      "contigs": 8,
+      "duplicates": 0,
+      "expected": 172,
+      "expected_basis": "pinned previously independently validated 172-panel PAF",
+      "guides": 64,
+      "guides_sha256": "ac5bc0038ac29ffa064c7fc704f3709bff08d5f10f4a40c1c6237baeab56a80c",
+      "label": "retained172",
+      "mismatches": 5,
+      "missing": 0,
+      "recovered": 172,
+      "reference_sha256": "d64192d9b1cf365fc104bf8c9709f8566995fdddc64f3cac1930011f718df682",
+      "runs": [
+        {
+          "measurement": {
+            "child_system_seconds": 0.011897999999999999,
+            "child_user_seconds": 0.41808,
+            "max_individual_child_rss_kib": 14680,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.46482558897696435
+          },
+          "mode": "cfd",
+          "paf_sha256": "a89f36435f4bfb388152740cff036430ab4bd3a824a20986c0a3701e0e53c943",
+          "repetition": 0,
+          "rows": 172,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.5480432601179928,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 12,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 50476
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.330938,
+            "child_user_seconds": 4.571871,
+            "max_individual_child_rss_kib": 520336,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 5.120638161897659
+          },
+          "mode": "crispr-bulge",
+          "paf_sha256": "e561b55ecd5a34aab3e0c161a57ad0ba72eaf4191025eafde78e0d2037197182",
+          "repetition": 0,
+          "rows": 172,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.21495828195475,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 115,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 571328
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.32051399999999997,
+            "child_user_seconds": 4.57464,
+            "max_individual_child_rss_kib": 516604,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 5.321069824043661
+          },
+          "mode": "both",
+          "paf_sha256": "e561b55ecd5a34aab3e0c161a57ad0ba72eaf4191025eafde78e0d2037197182",
+          "repetition": 0,
+          "rows": 172,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 5.392250171164051,
+            "limit_kib": 4194304,
+            "reason": "completed",
+            "sample_count": 118,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 566084
+          }
+        }
+      ],
+      "scoring": {
+        "counts": {
+          "both": 43,
+          "cfd": 97,
+          "crispr_bulge": 43,
+          "crispr_bulge_unavailable": 129,
+          "records": 172
+        },
+        "unavailable": {
+          "alignment_exceeds_24_columns": 18,
+          "ambiguous_reference": 75,
+          "outside_documented_mismatch_domain": 16,
+          "unsupported_multibase_bulge": 20
+        }
+      },
+      "unexpected": 0
+    }
+  ],
+  "python": "3.12.0",
+  "scope": "full bounded PAM-anchored CLI workflow; no whole-genome search; no filtering/pruning",
+  "sha256": {
+    "/export/local/home/salehi/crisprapido-cfd-pruning-dev-v1/target/release/crisprapido": "b1de9b14c4c4d18d2729a62f5285e7c21e3b9b984bb4e1b678ed4c1e82822d6a",
+    "/export/local/home/salehi/crisprapido-pam-validation/mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+    "/export/local/home/salehi/crisprapido-pam-validation/pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/crispr_bulge/adapter.py": "d0a210e5c52a1d2d636fbc60264a13e25daffbbc739d4097445708b3db9192f3",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/crispr_bulge/score_paf.py": "312cc56c7c429751a2f63d42821f2c4cb580b32de354739d3a64fb126698903d",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/crispr_bulge/worker.py": "c65905d9b78fe2f0387b691b842f20cf4122cc4d73a70800c0fdf077ab688a80",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/cfd_feasibility/study.py": "b7b24978da16bee22815ef4558b2a18a7c91a6fa0adeadc766f18274350ebccd",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/poc.cpp": "4907f625788cee5f60b6f07c9c5a05b05a6969878e56581e8b69bf602559c550",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/reproducibility/validate_workflow.py": "cc4a1c4faa482712f2c9b7e7906d44f87ca37c466b773c9d9bb5b9b2101e451a",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/columba-build-v2/columba_build": "505734e031dcf1e9ca129ba8cb2cde29c395075db3bd979e7312e68b97fc37c9",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search": "fa07753fe24f9147a5eded2770517efae5bf8d4c87aebb681fb2213091c42988",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido": "c2a2325ebdcee8d245d0f394fceb0d70874e57c5b40a9f5a33d8bdf49049c09f"
+  }
+}

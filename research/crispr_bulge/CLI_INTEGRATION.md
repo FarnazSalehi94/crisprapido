@@ -1,10 +1,12 @@
 # Optional CLI scoring: CFD and CRISPR-Bulge
 
+**Subsequent complete-workflow validation:** see [bounded end-to-end/reproducibility report](../reproducibility/REPORT.md) and [research installation guide](../../docs/RESEARCH_INSTALLATION.md). Live PAM-anchored search now has all-mode oracle/score/output checks, repeated full-workflow benchmarks, fresh native/Rust/Python builds and an offline hash-locked Python install test. Model network setup still has a documented blocker; no release is claimed. Original saved-PAF results below remain historical, not full-workflow timings.
+
 ## Implemented contract
 
 Development baseline **`90d958a`**, branch `feature/pam-anchored-search-poc`. The Rust CLI now accepts **`--scoring cfd|crispr-bulge|both`**, default **`cfd`**. CRISPR-Bulge remains experimental and coverage-limited, not a calibrated cleavage probability or a replacement for CFD.
 
-- **`cfd`**: original search/reporting/CFD path, original PAF bytes, no Python/model dependency, no added tags or sidecar by default.
+- **`cfd`**: original search/reporting/CFD path, original PAF bytes, no neural Python/model dependency, no added tags or sidecar by default. The PAM-anchored backend still requires standard-library Python for its index/snapshot helpers.
 - **`crispr-bulge`**: request the pinned neural scorer. Retain every original record **and any existing CFD tags**, append neural score/status tags and write full sequence/score annotations.
 - **`both`**: explicitly request the combined reporting described above. The current compatibility-first implementation produces the same score columns/tags as `crispr-bulge`, with the selected mode recorded in metadata. It intentionally does **not** suppress existing CFD calculation or strip existing CFD values in neural-only mode. This preserves the user's requirement to retain both scores whenever available; the two scores are not fused.
 

@@ -1,0 +1,19 @@
+{
+  "counts": {
+    "records": 172,
+    "cfd": 97,
+    "crispr_bulge": 43,
+    "both": 43,
+    "crispr_bulge_unavailable": 129
+  },
+  "reasons": {
+    "ambiguous_reference": 75,
+    "unsupported_multibase_bulge": 20,
+    "alignment_exceeds_24_columns": 18,
+    "outside_documented_mismatch_domain": 16
+  },
+  "byte_identical_to_first_fresh_env": true,
+  "identical_frozen_versions": true,
+  "lock_sha256": "2657f9216dd8353ff4050b07d0c84c1546f33a9314c2f2600f22190b485dc3ea",
+  "output_sha256": "e561b55ecd5a34aab3e0c161a57ad0ba72eaf4191025eafde78e0d2037197182"
+}

@@ -12,7 +12,8 @@ for pam in map(''.join,itertools.product(DNA,repeat=2)):
     t=[g,g[:5]+'T'+g[6:],g[:8]+g[9:],g[:8]+'NN'+g[8:]][mode];s=t+n+pam
     refs['%s_%s_%s_%d'%(pam,n,'p' if strand=='+' else 'm',mode)]=s if strand=='+' else rc(s)
 (p/'ref.fa').write_text(''.join('>'+k+'\n'+v+'\n' for k,v in refs.items()));(p/'guides.fa').write_text('>g\n'+g+'\n')
-subprocess.run([builder,'-r',str(p/'index'),'-f',str(p/'ref.fa')],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,check=True)
+# The current native executable requires a verified reference-bound index.
+subprocess.run([sys.executable,str(Path(__file__).with_name('index_manifest.py')),'build','--builder',builder,'--reference',str(p/'ref.fa'),'--index',str(p/'index')],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,check=True)
 def oracle(pam,m,b,z,f):
  truth=set()
  for c,seq in refs.items():

@@ -1,0 +1,116 @@
+{
+  "baseline": "6fa96d3",
+  "cargo_dependency_sources": "trusted existing cache, --locked --offline; no reused target objects",
+  "clean_rust_source_archive": true,
+  "columba": {
+    "clean_libraries": true,
+    "commit": "edcc7ce2a1e28ded6784a44afbd8b9348a4805ad",
+    "dependencies": {
+      "fmtlib": {
+        "commit": "e69e5f977d458f2650bb346dadf2ad30c5320281",
+        "description": "10.2.1"
+      },
+      "libsais": {
+        "commit": "18c8f5a1a8c7b208456dce5a4967c8574d1ea125",
+        "description": "v2.8.5"
+      },
+      "parallel-hashmap": {
+        "commit": "e5b892baed478513adcb6425773cae1eda033057",
+        "description": "v1.3.12-16-ge5b892b"
+      }
+    },
+    "source_origin": "fresh local clone of trusted pinned source caches"
+  },
+  "compiler_versions": "rustc 1.94.1 (e408947bf 2026-03-25)\ncargo 1.94.1 (29ea6fb6a 2026-03-24)\ngcc (GCC) 12.3.0\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\ncmake version 3.25.1\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+  "empty_rust_target": true,
+  "executed_models": "five previously reviewed trusted HDF5 files copied to new models-verified directory, all pinned SHA256s verified; no new network model install claimed",
+  "host": "octopus01",
+  "inference": {
+    "base_prefix": "/home/salehi/miniconda3/envs/assembly_eval",
+    "executable": "/export/local/home/salehi/crisprapido-research-workflow-v1/inference-env/bin/python",
+    "h5py": "3.16.0",
+    "numpy": "1.23.5",
+    "prefix": "/export/local/home/salehi/crisprapido-research-workflow-v1/inference-env",
+    "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0]",
+    "site_packages": [
+      "/export/local/home/salehi/crisprapido-research-workflow-v1/inference-env/lib/python3.11/site-packages"
+    ],
+    "tensorflow": "2.12.0",
+    "tensorflow_path": "/export/local/home/salehi/crisprapido-research-workflow-v1/inference-env/lib/python3.11/site-packages/tensorflow/__init__.py"
+  },
+  "inference_install": "new venv, original inference requirements, cached/downloaded public wheels",
+  "license_files_sha256": {
+    "columba_AGPL3_LICENSE": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+    "project_LICENSE": "b9c4d1fc9e2ad9447c6e8d66f4deb8589a26a7e7163eef4d1850df5f1e3c4db4",
+    "wfa_MIT_LICENSE": "b968df74810f557fc1be6f9d23b1abbe70a353d09e5882ca8bf83df86d65be21"
+  },
+  "license_review_scope": "Root files inspected only; linking/distribution/service, checkpoint/dataset and transitive dependency rights/security review remain release blockers; no new license grant.",
+  "network_model_setup_attempts": [
+    {
+      "failure": "BUG config.c:129 kvi should not be set while parsing a config source; SIGABRT during partial fetch",
+      "git": "2.41.0"
+    },
+    {
+      "failure": "HTTP 400 RPC failure / expected flush after ref listing",
+      "git": "2.20.1"
+    }
+  ],
+  "network_model_setup_succeeded": false,
+  "neural_modes_and_repetitions_byte_identical_per_panel": true,
+  "official_reference_environment": "existing reviewed source/model/reference environment, not freshly installed",
+  "research_driver_python": "3.12.0",
+  "resolved_build_pitfalls": [
+    "Guix profile under nounset",
+    "system CC/G++ 8 selected with Guix 12 headers",
+    "optional WFA benchmark tools -lrt link failure",
+    "Rust linker needed matching glibc 2.35 static compatibility librt.a"
+  ],
+  "second_inference_install": "new venv, offline hash-checked wheelhouse, identical freeze and 172-row full-workflow PAF",
+  "source_sha256": {
+    "research/pam_anchored_poc/compatibility/test_mixed_gaps.py": "be009c13443fa0a2567528c0de76550699bc8537dbbefe90bf5ed5bb1e88d527",
+    "research/pam_anchored_poc/compatibility/test_options.py": "2ee443222978485ac2a2848edb1c8b077a529ba02a415d6fb7fbf85db14436bc",
+    "research/reproducibility/reproduce.sh": "4687728150103a29cfb17c7aca16c1812dc86fb046ac3e67eefc9f875aa058be",
+    "research/reproducibility/requirements-inference-linux-py311.lock": "2657f9216dd8353ff4050b07d0c84c1546f33a9314c2f2600f22190b485dc3ea",
+    "research/reproducibility/test_workflow.py": "2b2b754983e3c02730e2053084260cc480d86e1772fb5b5e17588c3956bde394",
+    "research/reproducibility/validate_workflow.py": "cc4a1c4faa482712f2c9b7e7906d44f87ca37c466b773c9d9bb5b9b2101e451a"
+  },
+  "test_fixture_maintenance": "two stale tests used raw unbound builder output; updated to index_manifest.py build; native verification NOT bypassed",
+  "tests": {
+    "binding_checks": "see binding-tests.json",
+    "cfd_model_passed": 9,
+    "invalid_guide_batches": 2,
+    "invalid_option_checks": 5,
+    "mixed_gap_strands": 2,
+    "pam_option_runs": 96,
+    "rust_passed": 164,
+    "rust_preexisting_ignored": 1,
+    "scoring_python_passed": 20,
+    "validator_passed": 4
+  },
+  "unchanged_core_files_verified": [
+    "src/main.rs",
+    "src/scoring.rs",
+    "src/reporting.rs",
+    "src/verification.rs",
+    "src/cfd_score.rs",
+    "src/pam_backend.rs",
+    "src/columba.rs",
+    "Cargo.toml",
+    "Cargo.lock",
+    "mismatch_scores.txt",
+    "pam_scores.txt",
+    "research/pam_anchored_poc/poc.cpp",
+    "research/pam_anchored_poc/integration/run_snapshot.py",
+    "research/crispr_bulge/worker.py",
+    "research/crispr_bulge/adapter.py",
+    "research/crispr_bulge/score_paf.py"
+  ],
+  "wfa": {
+    "build_options": "BUILD_TOOLS=0 BUILD_EXAMPLES=0, GCC/G++ explicitly selected",
+    "clean_library": true,
+    "commit": "df3dce4b99c37ac4f34fdcef74b774c80b7fadc4",
+    "network_clone_succeeded": true
+  },
+  "wheel_count": 46,
+  "wheel_manifest_sha256": "62577cdeddf93727aca951ce2fc7dae7fbdb915991e40deea80bf05abb59d15c"
+}
