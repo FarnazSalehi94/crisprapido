@@ -15,6 +15,7 @@ mod columba;
 mod hit;
 mod pam_backend;
 mod reporting;
+mod scoring;
 mod verification;
 
 use columba::{
@@ -50,6 +51,9 @@ fn reverse_complement(seq: &[u8]) -> Vec<u8> {
     group(ArgGroup::new("guide_input").required(true).args(["guide", "guides"]))
 )]
 pub(crate) struct Args {
+    #[command(flatten)]
+    scoring: scoring::ScoringArgs,
+
     /// Input reference FASTA file (-r)
     #[arg(short, long)]
     reference: PathBuf,
@@ -155,6 +159,20 @@ fn open_reference_reader(path: &PathBuf) -> fasta::Reader<BufReader<Box<dyn BufR
 
 fn main() {
     let mut args = Args::parse();
+    if let Err(error) = args.scoring.validate() {
+        eprintln!("{error}");
+        std::process::exit(2);
+    }
+    if args.scoring.score_paf.is_some() && (args.min_cfd.is_some() || args.columba_sam.is_some()
+        || args.columba_bin.is_some() || args.columba_index.is_some() || args.pam_search_bin.is_some()) {
+        eprintln!("--score-paf cannot be combined with --min-cfd or search executables/inputs; no search or filtering is performed");
+        std::process::exit(2);
+    }
+    let mut output = scoring::Output::new(&args).unwrap_or_else(|e| { eprintln!("{e}"); std::process::exit(1) });
+    if args.scoring.score_paf.is_some() {
+        finish_scoring(output, &args);
+        return;
+    }
     args.pam.make_ascii_uppercase();
     if args.pam.len() != 2
         || !args
@@ -210,11 +228,13 @@ fn main() {
                     &query.query_name,
                     false,
                     args.min_cfd,
+                    &mut output,
                 );
             } else {
-                report_filtered_hits(selected, &args.pam, false, args.min_cfd);
+                report_filtered_hits(selected, &args.pam, false, args.min_cfd, &mut output);
             }
         }
+        finish_scoring(output, &args);
         return;
     }
     if args.pam_search_bin.is_some() {
@@ -307,14 +327,16 @@ fn main() {
                     &query.query_name,
                     allow_noncanonical_pam,
                     args.min_cfd,
+                    &mut output,
                 );
             }
         } else {
             let guide_fwd = Arc::new(queries[0].sequence.as_bytes().to_vec());
             let hits =
                 verify_columba_candidates(&candidates, &reference_records, &guide_fwd, &args);
-            report_filtered_hits(hits, &args.pam, allow_noncanonical_pam, args.min_cfd);
+            report_filtered_hits(hits, &args.pam, allow_noncanonical_pam, args.min_cfd, &mut output);
         }
+        finish_scoring(output, &args);
         return;
     }
 
@@ -385,6 +407,14 @@ fn main() {
             .flatten()
             .collect();
 
-        report_filtered_hits(hits, &args.pam, allow_noncanonical_pam, args.min_cfd);
+        report_filtered_hits(hits, &args.pam, allow_noncanonical_pam, args.min_cfd, &mut output);
+    }
+    finish_scoring(output, &args);
+}
+
+fn finish_scoring(output: scoring::Output, args: &Args) {
+    if let Err(error) = output.finish(args) {
+        eprintln!("{error}");
+        std::process::exit(1);
     }
 }

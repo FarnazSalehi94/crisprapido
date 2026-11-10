@@ -29,11 +29,10 @@ pub(crate) fn report_filtered_hits(
     pam: &str,
     allow_noncanonical: bool,
     min_cfd: Option<f64>,
+    output: &mut dyn std::io::Write,
 ) {
-    print!(
-        "{}",
-        format_filtered_hits_with_policy(hits, pam, "Guide", allow_noncanonical, min_cfd)
-    );
+    write!(output, "{}", format_filtered_hits_with_policy(hits, pam, "Guide", allow_noncanonical, min_cfd))
+        .expect("failed to write PAF");
 }
 
 pub(crate) fn report_filtered_hits_for_query(
@@ -42,11 +41,10 @@ pub(crate) fn report_filtered_hits_for_query(
     query_name: &str,
     allow_noncanonical: bool,
     min_cfd: Option<f64>,
+    output: &mut dyn std::io::Write,
 ) {
-    print!(
-        "{}",
-        format_filtered_hits_with_policy(hits, pam, query_name, allow_noncanonical, min_cfd)
-    );
+    write!(output, "{}", format_filtered_hits_with_policy(hits, pam, query_name, allow_noncanonical, min_cfd))
+        .expect("failed to write PAF");
 }
 
 fn pam_matches_requested(hit: &Hit, requested_pam: &str) -> bool {

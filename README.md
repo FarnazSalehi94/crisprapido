@@ -139,13 +139,21 @@ For example, add `--min-cfd 0.1` to an existing command to retain representative
 
 An isolated [native CFD-pruning study](research/pam_anchored_poc/cfd_pruning/REPORT.md) is research-only; it is **not enabled in either integrated search backend**.
 
-### Optional CRISPR-Bulge postprocessing (experimental)
+### Optional scoring methods (CRISPR-Bulge experimental)
 
-A separate [batched scoring postprocessor](research/crispr_bulge/REPORT.md) accepts `--scoring cfd|crispr-bulge|both` (default: `cfd`). These are **postprocessor options, not new Rust CLI flags**. It preserves the supplied representative alignments; `both` preserves CFD tags and appends `cb:f` scores with `bu:Z` availability reasons. Unsupported rows are retained without a fabricated score.
+The development CLI accepts **`--scoring cfd|crispr-bulge|both`**, default **`cfd`**. Default CFD PAF output is unchanged and needs no Python/models. Neural modes reuse the [batched pretrained scorer](research/crispr_bulge/CLI_INTEGRATION.md), keep every hit and existing CFD tag, and append `cb:f` scores plus `bu:Z` availability reasons. A separate `annotations.tsv` supplies guide/target/aligned sequences, observed PAM, coordinates, mismatch/bulge details, both available scores, and explicit **`N/A`** reasons. Neural-only mode intentionally retains upstream CFD for compatibility; it does not fuse or calibrate the scores.
 
-The pinned pretrained model does **not** cover all default `-m 5 -b 1 -z 2` alignments: two-base DNA bulges exceed its 24-column input, and other multi-base/mixed or out-of-domain cases remain unscored. No search setting is reduced to fit the model. CFD calculations, defaults and `--min-cfd` behavior remain unchanged. See the report for model licensing, a dedicated optional TensorFlow environment, exact input conversion, validation and overhead before use.
+```bash
+# Annotate existing results WITHOUT running any search:
+crisprapido -r reference.fa -G exact-original-guides.fa \
+  --score-paf original.paf --scoring both --scoring-output-dir NEW_RESULT_DIR \
+  --crispr-bulge-python /absolute/optional-env/bin/python \
+  --crispr-bulge-model-root /trusted/pinned/CRISPR-Bulge > annotated.paf
+```
 
-The [saved HG00735_pat evaluation](research/crispr_bulge/ASSEMBLY_EVALUATION.md) retained all 21,447 records and CFD scores; 4,526 received CRISPR-Bulge scores (21.10%). Annotation took 91.6 s, mostly reference validation; 93 sampled predictions matched official inference. Core CLI promotion remains deferred because of limited coverage and packaging/availability-policy review.
+The same scoring flags can be added to a normal search command. No filtering is activated by selecting a scoring mode; `--min-cfd` remains explicitly opt-in during search and is rejected for saved-file annotation. Never redirect output over the original PAF. See [CLI setup, pinned reference-index reuse, output schema, failure semantics and validation](research/crispr_bulge/CLI_INTEGRATION.md).
+
+The model does **not** cover all default `-m 5 -b 1 -z 2` alignments; unsupported hits remain with `N/A`, not zero. On the saved HG00735_pat result, all **21,447 hits/CFD scores** were preserved; **4,526 neural scores / 16,921 unavailable**. All 4,526 predictions agreed with official inference. Prepared-index reuse reduced observed annotation time to **12.9–13.8 s**, with mandatory reference hashes retained (one-time preparation measured separately at 75.5 s). No search algorithm, defaults, CFD formulas or pruning policy changed. Production packaging and broader biological validation remain limitations.
 
 ### Example Output
 

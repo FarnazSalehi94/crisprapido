@@ -1,5 +1,7 @@
 # CRISPR-Bulge: limited optional scoring integration
 
+**Current CLI integration:** [CLI_INTEGRATION.md](CLI_INTEGRATION.md) supersedes the earlier deferral: development Rust CLI now supports optional `--scoring cfd|crispr-bulge|both`, preserves default CFD bytes/all hits, writes explicit N/A annotations and can reuse pinned reference offsets while retaining full hashes. All 4,526 supported HG00735 predictions were checked against official inference. Model coverage remains limited; no production binaries or searches were changed. The earlier bounded milestone below is historical, including statements about no core CLI flag at that time.
+
 **Subsequent saved whole-assembly evaluation:** see [HG00735_pat job 2871283](ASSEMBLY_EVALUATION.md). All 21,447 existing records were annotated without a new search: 4,526 CB-scored / 16,921 unavailable; 93 independently sampled predictions agreed with official inference. Measured annotation wall time was 91.576 s, dominated by reference scanning. This does not promote the scorer into the core CLI. The bounded-development results below are retained as their original milestone.
 
 ## Decision and current status

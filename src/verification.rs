@@ -1142,6 +1142,7 @@ mod tests {
 
     fn columba_test_args() -> Args {
         Args {
+            scoring: <Args as clap::Parser>::parse_from(["test", "-r", "unused", "-g", "ACGT"]).scoring,
             reference: PathBuf::from("unused.fa"),
             guide: Some("GAGTCCGAGCAGAAGAAGAA".to_string()),
             guides: None,

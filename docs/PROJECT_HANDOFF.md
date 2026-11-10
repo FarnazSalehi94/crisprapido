@@ -84,6 +84,7 @@ Batch reproducibility files live in `research/pam_anchored_poc/optimized_pilot/`
 | `252a6bb` | CFD bound feasibility study, independent bounded oracles and model tests |
 | `178de00` | Optional downstream CFD filtering and isolated native pruning, not enabled in the integrated backend |
 | `4756527` | Limited-domain isolated CRISPR-Bulge postprocessor and official-model validation |
+| `90d958a` | Evaluated saved 21,447-row HG00735 PAF; initial CLI deferral, subsequently superseded below |
 
 ## Remaining limitations and proposed next step
 
@@ -91,7 +92,7 @@ Batch reproducibility files live in `research/pam_anchored_poc/optimized_pilot/`
 - The experimental backend supports one thread, `b=0/1`, `z=0/1/2`, resolved A/C/G/T guides and A/C/G/T/N reference FASTA. Unsupported CLI modes fail explicitly; the existing backend remains available. The native format is the tested 32-bit vanilla, sparse-SA-4 layout, not an unrestricted index API.
 - Different valid representatives can yield different CFD scores; neither backend's representative is assumed biologically superior. CFD is not a calibrated cleavage probability. Missing/unsupported scores must not silently become zero.
 - One batch amortizes setup, but every invocation still copies the complete bundle and performs repeated full checks. There is no immutable verified cross-job cache. Unsigned manifests/read-only file modes do not protect against malicious same-user mutate-and-restore races; trusted inputs/process isolation are required. Output buffering and large/repetitive batches remain resource risks.
-- **Integrated CFD-guided pruning remains disabled.** An isolated native pruning prototype exists. CRISPR-Bulge is now available only as a limited-domain, isolated PAF postprocessor, not a Rust CLI scoring option. Wider guide/assembly performance and extreme-repeat behavior remain to be studied; three guides do not establish general scalability.
+- **Integrated CFD-guided pruning remains disabled.** An isolated native pruning prototype exists. CRISPR-Bulge is now an experimental opt-in Rust CLI scoring mode using the limited-domain batched postprocessor; see the current integration section below. Wider guide/assembly performance and extreme-repeat behavior remain to be studied; three guides do not establish general scalability.
 
 ### Completed bounded CFD feasibility investigation
 
@@ -115,7 +116,9 @@ Runtime root: `/export/local/home/salehi/crisprapido-cfd-pruning-dev-v1/`; final
 
 **Stop point:** do not enable integrated or HPRC pruning without separate approval and further independent review. Next candidates are broader bounded/randomized oracle coverage, custom-table/numerical review, matched full-workflow profiling and completeness-preserving N-aware discovery. Preserve representative policy and higher mismatch options. Threshold-selected output is not exhaustive under mismatch/bulge settings alone; successful finite tests do not establish genome-wide recall.
 
-### Limited optional CRISPR-Bulge scoring integration
+### Initial limited CRISPR-Bulge postprocessor milestone (historical)
+
+**The statements in this initial milestone about no core CLI option are superseded by the current CLI integration below.** Original results/limits are retained.
 
 See [CRISPR-Bulge report](../research/crispr_bulge/REPORT.md), scripts, manifest and retained evidence. Official source is `OrensteinLab/CRISPR-Bulge`, pinned **`3eddcd5bfcaff00b2bdf29425116ec9756ace870`**; the selected upstream-recommended model is the five-component GRU-Embd (`c_2`) classification ensemble. Root license is MIT; attribution is retained, while weights, pickles, datasets and the dedicated dependency environment remain outside Git. Inference uses checked HDF5 models without unpickling; only original-reference validation uses the trusted pinned upstream pickle loader.
 
@@ -131,7 +134,9 @@ Runtime paths: upstream/models `/export/local/home/salehi/crisprapido-crispr-bul
 
 **Stop point:** review limited coverage/availability semantics before any core integration or extension outside the documented domain. Complete two-base-DNA support needs an appropriate model/data strategy, not truncating alignments. Biological validation, larger bounded batches, licensing/packaging review and full-workflow profiling remain. Do not transfer CFD pruning bounds to this nonlinear scorer, claim either score is a calibrated cleavage probability, or promote pruning automatically. Manuscript updates and full HPRC analysis still require separate decisions.
 
-### Evaluated CRISPR-Bulge on the saved whole-assembly output
+### Evaluated CRISPR-Bulge on the saved whole-assembly output (historical milestone)
+
+The deferral below records the earlier `90d958a` decision; the user subsequently approved the optional CLI work documented next.
 
 See [saved HG00735_pat evaluation](../research/crispr_bulge/ASSEMBLY_EVALUATION.md), aggregate evidence and `evaluate_assembly.py`. Starting from `4756527`, applied the **unchanged** batched `both` postprocessor to the existing job **2871283** PAF, not a new search. All **21,447 original records and CFD scores** were preserved; input SHA256 remains `a28d0574a915a57d431851ab681b0602b8f5fb1740d1c8efeb6e3b4a378f23be`.
 
@@ -144,6 +149,21 @@ See [saved HG00735_pat evaluation](../research/crispr_bulge/ASSEMBLY_EVALUATION.
 
 **Readiness/stop point:** this is usable as an isolated research postprocessor and technically supports a future experimental opt-in wrapper, **not unrestricted production CLI promotion**. Core integration remains deferred pending agreement on partial availability, dependency/licensing packaging and CLI lifecycle/error tests. Full default-domain coverage remains unsupported. Findings are reported before any integration; no main CLI/search/default/binary changes, no new search or Slurm job, no main merge. Seek explicit user direction before proceeding.
 
+### Current optional CLI scoring integration
+
+See [CLI_INTEGRATION.md](../research/crispr_bulge/CLI_INTEGRATION.md), [small results](../research/crispr_bulge/results/cli-integration/summary.json), and `src/scoring.rs`. User approved partial-domain CLI integration starting from **`90d958a`**. Development CLI now supports **`--scoring cfd|crispr-bulge|both`**, default CFD unchanged. Neural modes spool original reporting once per invocation and call the existing five-model batched worker once, including multiple guides. They preserve all sites and existing CFD tags, append neural tags and write `annotations.tsv` with sequences/alignment/PAM/context plus explicit **N/A** values/reasons. CB-only intentionally retains existing CFD, like `both`; mode selection is recorded in metadata. No score fusion or implicit threshold is applied.
+
+- **`--score-paf PATH`** annotates existing results without any search/CFD recalculation. Neural modes require a NEW `--scoring-output-dir`, absolute `--crispr-bulge-python` and existing `--crispr-bulge-model-root`; source-bundle/script requirements are documented. Original PAF is read only. Default saved-file CFD is byte pass-through with no model/reference scan. `--min-cfd` and search executable/index/candidate options are rejected with `--score-paf`; during search the existing threshold is still explicitly opt-in/disabled by default.
+- Original default PAF bytes, both search algorithms, representative selection, CFD formulas/matrices, mismatch/bulge defaults, optional threshold semantics and integrated-unpruned policy are unchanged. Only reporting destination/lifecycle and a test fixture in verification changed. No production binary, existing index or original PAF was modified; only an external development target was built.
+- Existing 21,447 HG00735 job 2871283 rows were checked in all three modes: all CFD tags/rows preserved, **4,526 CB / 16,921 N/A** in each neural mode. Same unavailable reasons: **8,176 DNA2 over-length, 7,624 DNA1/five-mismatch domain exclusions, 1,121 RNA2 unsupported**. Both neural PAFs equal the previously evaluated annotated PAF byte-for-byte.
+- Independent samtools extraction/separate CIGAR replay plus **unmodified official ensemble inference for ALL 4,526 supported rows**, not just the prior sample. Feature hashes exact; max PAF-score difference **2.5598145825256324e-10** in each mode, within `1e-6`. This is implementation agreement, not biological accuracy/calibration/recall.
+- Optional `--scoring-reference-index` reuses explicit trusted offset manifests prepared by `research/crispr_bulge/reference_index.py`. Requires **both trusted index and reference SHA256 pins**. Full reference hashes still occur before/after scoring and index digest is rechecked; no automatic unsigned cache trust, no weakening search/index verification. Fallback remains the full original Python FASTA scan. Plain regularly wrapped FASTA required in neural modes.
+- One fresh-process saved-result measurement per mode on octopus01: **12.929960 s CB / 13.781680 s both**, worker ~6.1 s, initial pinned-index/hash check ~2.23 s; max individual RSS **573,596 / 577,588 KiB**, sampled summed tree **629,832 / 634,612 KiB**. One-time index preparation **75.4562 s** (separate, not included in annotation timing). Prior full-scan annotation was 91.576 s; this is amortized reference-validation improvement, not a search speedup or repeated median. CFD pass-through **0.007562 s** is not CFD calculation time.
+- **164 Rust tests passed** (one pre-existing ignored), **20 configured Python tests passed**, including tiny live single/multi-guide reporting, prior default compatibility, all modes, unsupported DNA2/RNA2/mixed/N/A/zero, empty inputs, failure/timeout, model reuse and pinned-index identity checks.
+- External root `/export/local/home/salehi/crisprapido-scoring-cli-v1/`: development binary `target/release/crisprapido`, trusted offsets `reference-index.json`, complete scoring bundles under `saved-results/{crispr-bulge,both}/scoring/`, full official checks `saved-results/official-all/`. No genomic/model outputs committed.
+
+**Stop point/limitations:** optional experimental CLI scoring is implemented, not a production packaging release. Full default-domain model coverage remains unsupported; no fabricated scores, truncation, retraining or re-alignment. Source-bundle/TF dependency and licensing/packaging review remain; full pre/post reference hashing and disk spooling still cost resources. No hard CLI memory cap/global timeout, GPU/concurrent-writer protection, broad biological validation or genome-wide recall guarantee. Do not transfer CFD pruning bounds, turn on thresholds/pruning automatically, change defaults, launch a new whole-genome search or merge main without separate direction.
+
 ## Working rules for future sessions
 
-Check branch, commit and status first; preserve existing experiments, frozen branches, deterministic selection, production binaries and configurable defaults. Never merge into main or submit jobs without approval. Add regression tests for code fixes and run relevant tests. Commit/push completed source and small documentation/evidence only; exclude credentials, FASTA, indexes and large outputs. The latest continuation evaluates the isolated, limited-domain neural scoring postprocessor on saved whole-assembly results; it does not integrate a core CLI mode, change either search backend, enable integrated pruning, rerun completed whole-assembly searches or modify production binaries.
+Check branch, commit and status first; preserve existing experiments, frozen branches, deterministic selection, production binaries and configurable defaults. Never merge into main or submit jobs without approval. Add regression tests for code fixes and run relevant tests. Commit/push completed source and small documentation/evidence only; exclude credentials, FASTA, indexes and large outputs. The latest continuation integrates optional, limited-domain CLI scoring and validates all supported predictions on saved whole-assembly results. It does not change either search algorithm, enable integrated pruning, rerun completed whole-assembly searches or modify production binaries.

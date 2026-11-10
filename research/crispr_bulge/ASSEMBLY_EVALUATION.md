@@ -1,5 +1,7 @@
 # CRISPR-Bulge on the saved HG00735_pat result
 
+**Subsequent user-approved CLI work:** see [CLI_INTEGRATION.md](CLI_INTEGRATION.md). Optional development CLI integration and pinned-offset reuse are now implemented, with all 4,526 predictions checked against official inference. The original evaluation/deferral below is retained as the `90d958a` milestone, not the current integration status.
+
 ## Decision
 
 **The existing postprocessor works on this whole-assembly result, but provides only 21.10% neural-score coverage. It is not ready for unrestricted production CLI promotion or as a replacement for CFD.** It is technically suitable for a future explicitly experimental, opt-in CLI wrapper, provided partial availability is an accepted contract. Before integration, agree on that contract, review dependency/model packaging and licensing, and test CLI failure/timeout/output semantics. Avoid rescanning the full reference redundantly if integrating with already verified reference handling, without weakening identity checks. **No CLI integration was performed; findings are reported first.** Complete default-domain coverage requires a separately validated model/data strategy, not cropping or silently relaxing policy.
