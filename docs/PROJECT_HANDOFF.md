@@ -83,6 +83,7 @@ Batch reproducibility files live in `research/pam_anchored_poc/optimized_pilot/`
 | `dfd1636` | Completed and audited three-guide HG00735 batch |
 | `252a6bb` | CFD bound feasibility study, independent bounded oracles and model tests |
 | `178de00` | Optional downstream CFD filtering and isolated native pruning, not enabled in the integrated backend |
+| `4756527` | Limited-domain isolated CRISPR-Bulge postprocessor and official-model validation |
 
 ## Remaining limitations and proposed next step
 
@@ -130,6 +131,19 @@ Runtime paths: upstream/models `/export/local/home/salehi/crisprapido-crispr-bul
 
 **Stop point:** review limited coverage/availability semantics before any core integration or extension outside the documented domain. Complete two-base-DNA support needs an appropriate model/data strategy, not truncating alignments. Biological validation, larger bounded batches, licensing/packaging review and full-workflow profiling remain. Do not transfer CFD pruning bounds to this nonlinear scorer, claim either score is a calibrated cleavage probability, or promote pruning automatically. Manuscript updates and full HPRC analysis still require separate decisions.
 
+### Evaluated CRISPR-Bulge on the saved whole-assembly output
+
+See [saved HG00735_pat evaluation](../research/crispr_bulge/ASSEMBLY_EVALUATION.md), aggregate evidence and `evaluate_assembly.py`. Starting from `4756527`, applied the **unchanged** batched `both` postprocessor to the existing job **2871283** PAF, not a new search. All **21,447 original records and CFD scores** were preserved; input SHA256 remains `a28d0574a915a57d431851ab681b0602b8f5fb1740d1c8efeb6e3b4a378f23be`.
+
+- **4,526 CB scores / both scores (21.10%)**, **16,921 unavailable**. Supported: 1,098 ungapped, 1,080 DNA1, 2,348 RNA1.
+- Unavailable: **8,176 two-base DNA bulges** exceed 24 columns; **7,624 DNA1/five-mismatch** rows exceed conservative with-gap mismatch policy; **1,121 RNA2** rows exceed one-gapped-nucleotide policy. Zero malformed CIGAR/mixed/multiple-gap or ambiguity statuses. No unsupported prediction was invented.
+- Independent samtools extraction and separate CIGAR reconstruction for **93 stratified/tail-enriched rows**; official feature hashes matched, official prediction maximum absolute difference **2.5598145825256324e-10**. **14 tests passed**. Implementation agreement, not biological accuracy or recall.
+- Paired Spearman **0.4281**, Pearson **0.3447**; score distributions differ markedly, especially gapped versus ungapped. No direct calibration, common thresholds or interchangeability claim.
+- One measured CPU annotation: **91.5757 s**, including **81.7841 s reference scan**, **6.0402 s neural worker**; peak individual RSS **561,608 KiB**, sampled summed tree **617,108 KiB**. Not search runtime or a repeated median; sampling caveats remain.
+- External raw artifacts: `/export/local/home/salehi/crisprapido-bulge-hg00735-2871283-v1/`, annotated output `both/output.paf`, authoritative audit `evaluation-final.json`, independent check `independent-final/`. Models/reference/original results untouched; no large inputs/outputs committed.
+
+**Readiness/stop point:** this is usable as an isolated research postprocessor and technically supports a future experimental opt-in wrapper, **not unrestricted production CLI promotion**. Core integration remains deferred pending agreement on partial availability, dependency/licensing packaging and CLI lifecycle/error tests. Full default-domain coverage remains unsupported. Findings are reported before any integration; no main CLI/search/default/binary changes, no new search or Slurm job, no main merge. Seek explicit user direction before proceeding.
+
 ## Working rules for future sessions
 
-Check branch, commit and status first; preserve existing experiments, frozen branches, deterministic selection, production binaries and configurable defaults. Never merge into main or submit jobs without approval. Add regression tests for code fixes and run relevant tests. Commit/push completed source and small documentation/evidence only; exclude credentials, FASTA, indexes and large outputs. The latest continuation adds an isolated, limited-domain neural scoring postprocessor and independent model validation; it does not change either search backend, enable integrated pruning, rerun completed whole-assembly jobs or modify production binaries.
+Check branch, commit and status first; preserve existing experiments, frozen branches, deterministic selection, production binaries and configurable defaults. Never merge into main or submit jobs without approval. Add regression tests for code fixes and run relevant tests. Commit/push completed source and small documentation/evidence only; exclude credentials, FASTA, indexes and large outputs. The latest continuation evaluates the isolated, limited-domain neural scoring postprocessor on saved whole-assembly results; it does not integrate a core CLI mode, change either search backend, enable integrated pruning, rerun completed whole-assembly searches or modify production binaries.

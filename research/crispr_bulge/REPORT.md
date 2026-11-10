@@ -1,10 +1,12 @@
 # CRISPR-Bulge: limited optional scoring integration
 
+**Subsequent saved whole-assembly evaluation:** see [HG00735_pat job 2871283](ASSEMBLY_EVALUATION.md). All 21,447 existing records were annotated without a new search: 4,526 CB-scored / 16,921 unavailable; 93 independently sampled predictions agreed with official inference. Measured annotation wall time was 91.576 s, dominated by reference scanning. This does not promote the scorer into the core CLI. The bounded-development results below are retained as their original milestone.
+
 ## Decision and current status
 
 **Implemented an isolated, batched PAF postprocessor for a conservative supported subset. It is not complete coverage of CRISPRapido's defaults `-m 5 -b 1 -z 2`.** Unsupported alignments remain in the output with an explicit unavailable reason, never a fabricated zero score. No truncation, gap splitting, realignment, model resizing or retraining workaround was implemented. The limitations were reported before implementation.
 
-**The Rust CLI and both search backends are unchanged.** CFD remains the default, `--min-cfd` remains optional/disabled by default, deterministic representative selection is unchanged, and integrated CFD pruning remains disabled. New scoring choices are available in `research/crispr_bulge/score_paf.py`, **not as a new Rust `--scoring` option yet**. No production executable, existing index, frozen branch or main was modified. No whole-genome search/scoring experiment or Slurm job was run.
+**The Rust CLI and both search backends are unchanged.** CFD remains the default, `--min-cfd` remains optional/disabled by default, deterministic representative selection is unchanged, and integrated CFD pruning remains disabled. New scoring choices are available in `research/crispr_bulge/score_paf.py`, **not as a new Rust `--scoring` option yet**. No production executable, existing index, frozen branch or main was modified. No whole-genome search/scoring experiment or Slurm job was run during this initial bounded milestone; the subsequent saved-result scoring evaluation is linked above.
 
 ## 1. Official source, models, license and dependencies
 
@@ -137,7 +139,7 @@ One end-to-end annotation per panel/mode took **5.637313 s / 4.627746 s** for sy
 
 RSS was captured by a fresh-process wrapper using Linux child `ru_maxrss`; it is a maximum individual descendant high-water mark, not aggregate unique physical memory. Tree RSS was additionally sampled every **20 ms**, including measurement/supervisor processes; shared pages may be double-counted and short spikes missed. A **4 GiB sampled process-tree stop** and 300 s child timeouts were used for benchmarks; no stop fired. This is risk reduction, not a hard aggregate memory limit.
 
-Streaming keeps the model feature batch bounded; the driver still keeps a set of anchor keys and uses disk spools proportional to input rows. It scans/hashes the entire reference and rehashes it afterward; an unusually long unwrapped FASTA line can still require a large line buffer. Full-assembly I/O, huge outputs, irregular FASTA, concurrent writers, GPU inference, many-guide production lifetimes and packaging remain unbenchmarked. No HPRC performance claim follows.
+Streaming keeps the model feature batch bounded; the driver still keeps a set of anchor keys and uses disk spools proportional to input rows. It scans/hashes the entire reference and rehashes it afterward; an unusually long unwrapped FASTA line can still require a large line buffer. Full-assembly I/O was unbenchmarked at this initial milestone; the subsequent report above measures one existing guide/assembly annotation. Huge outputs, irregular FASTA, concurrent writers, GPU inference, many-guide production lifetimes and packaging remain unbenchmarked. No general HPRC performance claim follows.
 
 ## 7. Reproducibility, artifacts and stop point
 

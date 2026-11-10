@@ -145,6 +145,8 @@ A separate [batched scoring postprocessor](research/crispr_bulge/REPORT.md) acce
 
 The pinned pretrained model does **not** cover all default `-m 5 -b 1 -z 2` alignments: two-base DNA bulges exceed its 24-column input, and other multi-base/mixed or out-of-domain cases remain unscored. No search setting is reduced to fit the model. CFD calculations, defaults and `--min-cfd` behavior remain unchanged. See the report for model licensing, a dedicated optional TensorFlow environment, exact input conversion, validation and overhead before use.
 
+The [saved HG00735_pat evaluation](research/crispr_bulge/ASSEMBLY_EVALUATION.md) retained all 21,447 records and CFD scores; 4,526 received CRISPR-Bulge scores (21.10%). Annotation took 91.6 s, mostly reference validation; 93 sampled predictions matched official inference. Core CLI promotion remains deferred because of limited coverage and packaging/availability-policy review.
+
 ### Example Output
 
 ```

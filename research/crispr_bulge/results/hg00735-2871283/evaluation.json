@@ -1,0 +1,309 @@
+{
+  "all_alignment_geometry": {
+    "DNA:I0:D1": 8704,
+    "DNA:I0:D2": 8176,
+    "RNA:I1:D0": 2348,
+    "RNA:I2:D0": 1121,
+    "ungapped:I0:D0": 1098
+  },
+  "comparison": {
+    "by_alignment": {
+      "DNA": {
+        "cfd": {
+          "max": 0.6222,
+          "median": 0.0,
+          "min": 0.0,
+          "p25": 0.0,
+          "p75": 0.0061,
+          "p90": 0.028810000000000002,
+          "p99": 0.1948520000000004,
+          "zeros": 553
+        },
+        "crispr_bulge": {
+          "max": 0.692525506,
+          "median": 1.884660325e-19,
+          "min": 3.80376975e-38,
+          "p25": 7.3418063275e-23,
+          "p75": 9.70749097e-16,
+          "p90": 2.785725861000001e-13,
+          "p99": 6.234791683900007e-08,
+          "zeros": 0
+        },
+        "kendall_tau_b": 0.1043988335465973,
+        "n": 1080,
+        "pearson": 0.32985605826792397,
+        "spearman": 0.1461411664827134
+      },
+      "RNA": {
+        "cfd": {
+          "max": 0.6417,
+          "median": 0.0017,
+          "min": 0.0,
+          "p25": 0.0,
+          "p75": 0.023825000000000002,
+          "p90": 0.06609000000000005,
+          "p99": 0.24330700000000038,
+          "zeros": 1114
+        },
+        "crispr_bulge": {
+          "max": 0.0646766201,
+          "median": 1.0707819200000001e-13,
+          "min": 6.03268762e-28,
+          "p25": 1.45632889e-16,
+          "p75": 3.0439243125e-11,
+          "p90": 3.2480165640000218e-09,
+          "p99": 1.2401318405000215e-05,
+          "zeros": 0
+        },
+        "kendall_tau_b": 0.11483211264490287,
+        "n": 2348,
+        "pearson": 0.29932911246325805,
+        "spearman": 0.1571031503628082
+      },
+      "ungapped": {
+        "cfd": {
+          "max": 1.0,
+          "median": 0.0512,
+          "min": 0.0,
+          "p25": 0.0175,
+          "p75": 0.0533,
+          "p90": 0.0852,
+          "p99": 0.2676,
+          "zeros": 75
+        },
+        "crispr_bulge": {
+          "max": 1.0,
+          "median": 2.96327785e-09,
+          "min": 1.18154581e-24,
+          "p25": 1.53235584e-11,
+          "p75": 1.06170894e-08,
+          "p90": 1.4896653960000082e-06,
+          "p99": 0.00032371172968999963,
+          "zeros": 0
+        },
+        "kendall_tau_b": 0.3884608883002754,
+        "n": 1098,
+        "pearson": 0.5764878350967382,
+        "spearman": 0.5133199131575625
+      }
+    },
+    "interpretation": "Descriptive association on supported representatives only; CFD rounded to four decimals. No calibration, biological accuracy or interchangeability inference.",
+    "paired": {
+      "cfd": {
+        "max": 1.0,
+        "median": 0.0052,
+        "min": 0.0,
+        "p25": 0.0,
+        "p75": 0.0387,
+        "p90": 0.0669,
+        "p99": 0.24112499999999998,
+        "zeros": 1742
+      },
+      "crispr_bulge": {
+        "max": 1.0,
+        "median": 1.284828095e-13,
+        "min": 3.80376975e-38,
+        "p25": 2.18718263e-17,
+        "p75": 2.86582001e-10,
+        "p90": 1.237848535e-08,
+        "p99": 4.4827356775e-05,
+        "zeros": 0
+      },
+      "kendall_tau_b": 0.3121717584236776,
+      "n": 4526,
+      "pearson": 0.34468916567779495,
+      "spearman": 0.42811831049136634
+    }
+  },
+  "counts": {
+    "both": 4526,
+    "cfd": 21447,
+    "crispr_bulge": 4526,
+    "crispr_bulge_unavailable": 16921,
+    "records": 21447
+  },
+  "input_sha256": "a28d0574a915a57d431851ab681b0602b8f5fb1740d1c8efeb6e3b4a378f23be",
+  "original_unchanged": true,
+  "sample_validation": {
+    "categorical_sha256": "6008e1e59cee065d0259f4e9843ec1f4c098d8554bbb53ba266cac201a54caed",
+    "max_absolute_error": 2.5598145825256324e-10,
+    "n": 93,
+    "official": {
+      "categorical_sha256": "6008e1e59cee065d0259f4e9843ec1f4c098d8554bbb53ba266cac201a54caed",
+      "dna_two_base_encoder_error": "actual_seq_size > seq_len",
+      "elapsed_seconds": 4.934112812858075,
+      "numpy": "1.23.5",
+      "official_commit": "3eddcd5bfcaff00b2bdf29425116ec9756ace870",
+      "official_ensemble_call_seconds": 2.8308646560180932,
+      "peak_reference_rss_kib": 595568,
+      "rna_two_base_encoder_shape": [
+        1,
+        24,
+        25
+      ],
+      "rows": 93,
+      "scope": "unmodified official function plus imports, hash validation and feature/limit probes; CPU",
+      "tensorflow": "2.12.0"
+    },
+    "predictions_sha256": "7159685f0101f3bcab543a5f8dad02cb129e1db816b48976433bb029d357066e",
+    "reconstruction": "independent samtools/htslib extraction and separate CIGAR replay",
+    "request_sha256": "4d0d8964a3daedf6f8429eba3b580b6d0635e6dca18772026f8895e5bd08b273",
+    "selection": "seed 2871283; up to four per kind/strand/mismatch stratum plus bottom/top ten of each score (ID tie-break)",
+    "strata": {
+      "DNA:+:mm1:TGG": 1,
+      "DNA:+:mm3:AGG": 2,
+      "DNA:+:mm3:TGG": 2,
+      "DNA:+:mm4:AGG": 4,
+      "DNA:+:mm4:GGG": 3,
+      "DNA:+:mm4:TGG": 4,
+      "DNA:-:mm3:GGG": 1,
+      "DNA:-:mm3:TGG": 3,
+      "DNA:-:mm4:AGG": 3,
+      "DNA:-:mm4:CGG": 1,
+      "DNA:-:mm4:TGG": 6,
+      "RNA:+:mm2:AGG": 2,
+      "RNA:+:mm2:GGG": 1,
+      "RNA:+:mm2:TGG": 2,
+      "RNA:+:mm3:AGG": 1,
+      "RNA:+:mm3:TGG": 3,
+      "RNA:+:mm4:AGG": 6,
+      "RNA:+:mm4:CGG": 2,
+      "RNA:+:mm4:GGG": 1,
+      "RNA:+:mm4:TGG": 4,
+      "RNA:-:mm2:AGG": 2,
+      "RNA:-:mm2:TGG": 2,
+      "RNA:-:mm3:AGG": 3,
+      "RNA:-:mm3:TGG": 1,
+      "RNA:-:mm4:AGG": 4,
+      "RNA:-:mm4:CGG": 1,
+      "ungapped:+:mm0:AGG": 1,
+      "ungapped:+:mm3:GGG": 1,
+      "ungapped:+:mm3:TGG": 2,
+      "ungapped:+:mm4:AGG": 1,
+      "ungapped:+:mm4:CGG": 1,
+      "ungapped:+:mm4:GGG": 2,
+      "ungapped:+:mm4:TGG": 3,
+      "ungapped:+:mm5:TGG": 5,
+      "ungapped:-:mm3:TGG": 2,
+      "ungapped:-:mm4:AGG": 1,
+      "ungapped:-:mm4:GGG": 1,
+      "ungapped:-:mm4:TGG": 3,
+      "ungapped:-:mm5:AGG": 2,
+      "ungapped:-:mm5:CGG": 1,
+      "ungapped:-:mm5:TGG": 2
+    },
+    "tolerance": 1e-06
+  },
+  "scope": "one existing guide/assembly result; no search, biological accuracy or recall evaluation",
+  "scoring_metadata": {
+    "conversion_seconds": 0.7318582949228585,
+    "elapsed_seconds": 91.52631587791257,
+    "guide_sha256": "65a167d469792f8719b9b2af7f38c02ecbdbb338fe17980f57576cffd763765c",
+    "input_sha256": "a28d0574a915a57d431851ab681b0602b8f5fb1740d1c8efeb6e3b4a378f23be",
+    "min_cfd": "not applied here; upstream filter, if any, is preserved",
+    "model_id": "crispr-bulge-c2-classification-5x-3eddcd5",
+    "model_manifest_sha256": "fbba1f3207d4a64f1162c5791334fd7cf6c721710eadc615133d522897436594",
+    "model_root": "/export/local/home/salehi/crisprapido-crispr-bulge-review-v1",
+    "output_sha256": "35a4c0441c90434c05334d5cb97221d83b4364c73ca324d35adedad0f09d15f1",
+    "reference_index_scan_seconds": 81.78408224810846,
+    "reference_sha256": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+    "representative_policy": "input PAF representative unchanged",
+    "rows": 21447,
+    "scope": "post-search scoring only; CFD unchanged upstream; no genomic recall claim",
+    "scoring": "both",
+    "single_guide": null,
+    "statuses": {
+      "alignment_exceeds_24_columns": 8176,
+      "outside_documented_mismatch_domain": 7624,
+      "scored": 4526,
+      "unsupported_multibase_bulge": 1121
+    },
+    "worker": {
+      "batches": [
+        {
+          "encoding_seconds": 0.007045132806524634,
+          "predict_seconds": 1.3685097501147538,
+          "rows": 512
+        },
+        {
+          "encoding_seconds": 0.007111710961908102,
+          "predict_seconds": 0.24480528617277741,
+          "rows": 512
+        },
+        {
+          "encoding_seconds": 0.007130827056244016,
+          "predict_seconds": 0.24164732708595693,
+          "rows": 512
+        },
+        {
+          "encoding_seconds": 0.007182915927842259,
+          "predict_seconds": 0.24734889506362379,
+          "rows": 512
+        },
+        {
+          "encoding_seconds": 0.007067095022648573,
+          "predict_seconds": 0.24210678413510323,
+          "rows": 512
+        },
+        {
+          "encoding_seconds": 0.007162337191402912,
+          "predict_seconds": 0.2506931619718671,
+          "rows": 512
+        },
+        {
+          "encoding_seconds": 0.0070828350726515055,
+          "predict_seconds": 0.24194653891026974,
+          "rows": 512
+        },
+        {
+          "encoding_seconds": 0.007165902992710471,
+          "predict_seconds": 0.24628874100744724,
+          "rows": 512
+        },
+        {
+          "encoding_seconds": 0.005935744848102331,
+          "predict_seconds": 0.2299448698759079,
+          "rows": 430
+        }
+      ],
+      "elapsed_seconds": 6.04024982592091,
+      "import_seconds": 1.7481202951166779,
+      "model_id": "crispr-bulge-c2-classification-5x-3eddcd5",
+      "model_load_count": 5,
+      "model_load_seconds": 0.8659939798526466,
+      "numpy": "1.23.5",
+      "peak_worker_rss_kib": 561608,
+      "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0]",
+      "scope": "CPU worker peak, not aggregate memory; includes TF and models; not search runtime",
+      "tensorflow": "2.12.0",
+      "verify_post_seconds": 0.011412963038310409,
+      "verify_pre_seconds": 0.011179538909345865
+    }
+  },
+  "software": {
+    "samtools": "samtools 1.14",
+    "source_sha256": {
+      "adapter.py": "d0a210e5c52a1d2d636fbc60264a13e25daffbbc739d4097445708b3db9192f3",
+      "evaluate_assembly.py": "a0d818228d68340cce5f47b2550984073d6eab90ab53eefe393674e378cb1216",
+      "official_reference.py": "2f3bc23c02a7fe5f7cffa92d897e9dd8422e5cf033e4bd06662c8cdff44c0ad5",
+      "score_paf.py": "c983395d95290ee935fae8b5132be5be39d6955d28ffb67b34d6998783cff855",
+      "worker.py": "c65905d9b78fe2f0387b691b842f20cf4122cc4d73a70800c0fdf077ab688a80"
+    }
+  },
+  "unavailable_reason_by_geometry": {
+    "alignment_exceeds_24_columns": {
+      "DNA:I0:D2": 8176
+    },
+    "outside_documented_mismatch_domain": {
+      "DNA:I0:D1": 7624
+    },
+    "unsupported_multibase_bulge": {
+      "RNA:I2:D0": 1121
+    }
+  },
+  "unavailable_reasons": {
+    "alignment_exceeds_24_columns": 8176,
+    "outside_documented_mismatch_domain": 7624,
+    "unsupported_multibase_bulge": 1121
+  }
+}

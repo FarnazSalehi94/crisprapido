@@ -1,0 +1,9 @@
+{
+  "reason": "completed",
+  "returncode": 0,
+  "wall_seconds": 91.57571307313628,
+  "child_user_seconds": 88.022665,
+  "child_system_seconds": 3.853656,
+  "max_individual_child_rss_kib": 561608,
+  "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory"
+}
