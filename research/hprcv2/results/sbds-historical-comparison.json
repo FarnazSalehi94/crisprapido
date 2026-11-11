@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "counts": {
+    "old_cigar_replay_failures": 2,
+    "old_raw_rows": 813,
+    "old_strict_eligible_witnesses": 57,
+    "old_geometry_failures": 228,
+    "old_canonical_NGG": 57,
+    "old_non_NGG": 756,
+    "eligible_old_rows_current_formula_unavailable": 0,
+    "eligible_old_cfd_reconstruction_disagreements": 25,
+    "primary_old_eligible_witnesses_missing": 0,
+    "primary_raw_shared_anchors": 57,
+    "primary_shared_representative_differences": 20,
+    "primary_shared_stored_cfd_differences": 26,
+    "historical-domain-control_old_eligible_witnesses_missing": 0,
+    "historical-domain-control_raw_shared_anchors": 57,
+    "historical-domain-control_shared_representative_differences": 20,
+    "historical-domain-control_shared_stored_cfd_differences": 26
+  },
+  "source_sha256": {
+    "/moosefs/salehi/HPRCv2_CRISPRapido/results/SBDS_all_HPRCv2/HG00735_pat/SBDS.paf": "6bcd1a67fcfc2e01c5b7622dc5587d32a8f66a2f195889d3f2a591b48cdb8f44",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/results/SBDS_all_HPRCv2/HG00735_pat/SBDS.fa": "f8d5a4d5c1636de5e14194b2a8ecdf54edd006791554dfffce72ebb518e44655",
+    "/moosefs/salehi/SBDS_CRISPRapido/analysis/SBDS_validation_audit/per_assembly/HG00735_pat/PAM_audit_records.tsv": "3e7c1a048f1fa94c844dedeae37f46f53261888a122ebdc1dad8bdca5a44e9a8"
+  },
+  "reference_sha256": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+  "scope": "One verified assembly. Legacy CIGAR witnesses separate from unmodified PAF geometry. Exact sequence-mapped guide and PAM-boundary keys, no crop/realignment or score-based representative selection. Not genome-wide recall.",
+  "records_sha256": "e8ac73aa04e403ea2a8512668abee62bca874412ffa7f8e1937a3d7d3e69f234"
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "HG00621_pat",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "HG00642_mat",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "HG00673_pat",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "HG01106_pat",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "HG03654_mat",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "HG04187_mat",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "NA18944_hap1",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "NA18945_hap2",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "NA18970_hap2",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  },
+  {
+    "run": "Brunello_all_HPRCv2_scored_unscored_v2",
+    "assembly": "NA19443_hap1",
+    "status": "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error"
+  }
+]

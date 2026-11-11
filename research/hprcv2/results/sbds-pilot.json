@@ -1,0 +1,453 @@
+{
+  "project": "sbds",
+  "status": "COMPLETE_SAFETY_PILOT",
+  "scope": "One assembly, not a full-cohort result or validated library-wide cost model.",
+  "full_brunello_authorized": false,
+  "configurations": {
+    "primary": {
+      "status": "COMPLETE",
+      "completion_marker": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/01_search/HG00735_pat/primary/SUCCESS.json",
+      "completion_sha256": "a3ed909d4bd9006e97b0c5cadcc7ce04fc2b90fb68ad184791acbbc9e4cba06f",
+      "qc": {
+        "status": "PASS",
+        "per_guide": {
+          "SBDS": {
+            "eligible_hits": 38060,
+            "cfd_defined": 38060,
+            "cb_defined": 8104,
+            "cb_unavailable": 29956,
+            "perfect_20eq": 1,
+            "mismatches_4": 7869,
+            "bulge_events_1": 37055,
+            "strand_+": 18981,
+            "view_none_defined_above": 38060,
+            "view_none_unscored_preserved": 0,
+            "view_none_rows": 38060,
+            "view_none_uncompressed_paf_bytes": 6853831,
+            "view_0.05_defined_above": 4093,
+            "view_0.05_unscored_preserved": 0,
+            "view_0.05_rows": 4093,
+            "view_0.20_defined_above": 595,
+            "view_0.20_unscored_preserved": 0,
+            "view_0.20_rows": 595,
+            "mismatches_3": 2383,
+            "mismatches_5": 27615,
+            "view_0.05_uncompressed_paf_bytes": 729930,
+            "bulge_events_0": 1005,
+            "view_0.20_uncompressed_paf_bytes": 105122,
+            "mismatches_2": 179,
+            "strand_-": 19079,
+            "mismatches_1": 11,
+            "mismatches_0": 3
+          }
+        },
+        "cb_statuses": {
+          "alignment_exceeds_24_columns": 13882,
+          "unsupported_multibase_bulge": 1698,
+          "outside_documented_mismatch_domain": 14376,
+          "scored": 8104
+        },
+        "eligible_hits": 38060,
+        "analytical_view_gzip_bytes": {
+          "none": 804478,
+          "0.05": 102350,
+          "0.20": 16294
+        },
+        "views": "Derived only; full eligible PAF is retained. Unavailable CFD remains in a separate preserved category. Neural unavailability never filters a row.",
+        "thresholds": "Independent reconstructed full-precision CFD; not four-decimal stored PAF and not biological activity/calibration.",
+        "caveat": "Emitted-row soundness, identity and score-availability checks; not genome-wide recall or biological prediction validation.",
+        "project": "sbds",
+        "task": "primary",
+        "assembly": "HG00735_pat",
+        "parameters": {
+          "m": 5,
+          "b": 1,
+          "z": 2,
+          "f": 0.75,
+          "p": "GG"
+        },
+        "plan_sha256": "93e30f676f9c9f9054001408a57a3a2762f416c0e45f09b98d4bbbf586dd248a"
+      },
+      "search_metrics": {
+        "command": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "--search-backend",
+          "pam-anchored",
+          "--pam-search-bin",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search",
+          "--columba-index",
+          "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/index",
+          "-r",
+          "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/reference.fa",
+          "-G",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/01_search/HG00735_pat/primary/attempt-2871689/guides.fa",
+          "-m",
+          "5",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-f",
+          ".75",
+          "-p",
+          "GG",
+          "-t",
+          "1",
+          "--mismatch-scores",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/source/mismatch_scores.txt",
+          "--pam-scores",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/source/pam_scores.txt"
+        ],
+        "wall_seconds": 419.61513047106564,
+        "user_seconds": 389.39305,
+        "system_seconds": 26.684631,
+        "cumulative_max_individual_descendant_rss_kib": 14244044,
+        "caveat": "ru_maxrss is cumulative maximum individual child, not per-stage aggregate or a hard cap. Tree peak is measured by supervisor."
+      },
+      "scoring_metrics": {
+        "command": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/reference.fa",
+          "-G",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/01_search/HG00735_pat/primary/attempt-2871689/guides.fa",
+          "--score-paf",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/01_search/HG00735_pat/primary/attempt-2871689/eligible.cfd.paf",
+          "--scoring",
+          "both",
+          "--scoring-output-dir",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/02_scoring/HG00735_pat/primary/attempt-2871689/neural",
+          "--crispr-bulge-python",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/inference-env/bin/python",
+          "--crispr-bulge-model-root",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/models-verified",
+          "--scoring-script",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/source/research/crispr_bulge/score_paf.py",
+          "--scoring-reference-sha256",
+          "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+          "--scoring-reference-index",
+          "/export/local/home/salehi/crisprapido-scoring-cli-v1/reference-index.json",
+          "--scoring-reference-index-sha256",
+          "c1b5465af849d2d6e7e3e20827266304e77d64f0d3795dff891005de83b1761e",
+          "--scoring-worker-timeout",
+          "1800"
+        ],
+        "wall_seconds": 17.027537040878087,
+        "user_seconds": 14.640127000000007,
+        "system_seconds": 2.320397,
+        "cumulative_max_individual_descendant_rss_kib": 14244044,
+        "caveat": "ru_maxrss is cumulative maximum individual child, not per-stage aggregate or a hard cap. Tree peak is measured by supervisor."
+      },
+      "native_states": 1004018661,
+      "native_search_seconds_including_replay": 101.03,
+      "native_batch_mean_seconds_per_guide": 101.03,
+      "other_search_wall_residual_seconds": 318.58513047106567,
+      "residual_scope": "Everything else in search call: validation/staging, loads, Python/Rust, CFD and output; not isolated index time.",
+      "monitor": {
+        "reason": "completed",
+        "sampled_peak_rss_kib": 14295252,
+        "limit_kib": 50331648,
+        "sample_count": 3581,
+        "sample_interval_seconds": 0.1,
+        "elapsed_seconds": 447.4248021130916,
+        "child_returncode": 0,
+        "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+      },
+      "scorer_worker": {
+        "batches": [
+          {
+            "encoding_seconds": 0.009956257184967399,
+            "predict_seconds": 1.493525095982477,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007219336926937103,
+            "predict_seconds": 0.2538450490683317,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007203537039458752,
+            "predict_seconds": 0.2552429111674428,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.0072030858136713505,
+            "predict_seconds": 0.2554186431225389,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007251577917486429,
+            "predict_seconds": 0.25924541312269866,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007162099005654454,
+            "predict_seconds": 0.25996941700577736,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007163451984524727,
+            "predict_seconds": 0.2622667469549924,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007265604799613357,
+            "predict_seconds": 0.2516953479498625,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007246448891237378,
+            "predict_seconds": 0.25954020000062883,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007219939026981592,
+            "predict_seconds": 0.2545538160484284,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007240979000926018,
+            "predict_seconds": 0.2619874489028007,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.0072919949889183044,
+            "predict_seconds": 0.2626210751477629,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007404647069051862,
+            "predict_seconds": 0.26060117594897747,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.0072608760092407465,
+            "predict_seconds": 0.2542265460360795,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.007326269987970591,
+            "predict_seconds": 0.2626537950709462,
+            "rows": 512
+          },
+          {
+            "encoding_seconds": 0.005833861185237765,
+            "predict_seconds": 0.24271576199680567,
+            "rows": 424
+          }
+        ],
+        "elapsed_seconds": 8.403743167873472,
+        "import_seconds": 2.106544791953638,
+        "model_id": "crispr-bulge-c2-classification-5x-3eddcd5",
+        "model_load_count": 5,
+        "model_load_seconds": 0.7534345909953117,
+        "numpy": "1.23.5",
+        "peak_worker_rss_kib": 557200,
+        "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0]",
+        "scope": "CPU worker peak, not aggregate memory; includes TF and models; not search runtime",
+        "tensorflow": "2.12.0",
+        "verify_post_seconds": 0.010886456118896604,
+        "verify_pre_seconds": 0.01263012713752687
+      },
+      "retained_artifact_bytes": 33803269,
+      "full_paf_gzip_bytes": 804478,
+      "annotations_gzip_bytes": 1435229,
+      "original_cfd_paf_gzip_bytes": 701274
+    },
+    "historical-domain-control": {
+      "status": "COMPLETE",
+      "completion_marker": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/01_search/HG00735_pat/historical-domain-control/SUCCESS.json",
+      "completion_sha256": "3c6f78a9753367eac37ae5c8dba4be7f0ac5cebbf10f555e3a3983592a0a1006",
+      "qc": {
+        "status": "PASS",
+        "per_guide": {
+          "SBDS": {
+            "eligible_hits": 61,
+            "cfd_defined": 61,
+            "cb_defined": 61,
+            "cb_unavailable": 0,
+            "perfect_20eq": 1,
+            "mismatches_2": 55,
+            "bulge_events_1": 58,
+            "strand_+": 34,
+            "view_none_defined_above": 61,
+            "view_none_unscored_preserved": 0,
+            "view_none_rows": 61,
+            "view_none_uncompressed_paf_bytes": 10227,
+            "view_0.05_defined_above": 18,
+            "view_0.05_unscored_preserved": 0,
+            "view_0.05_rows": 18,
+            "view_0.20_defined_above": 8,
+            "view_0.20_unscored_preserved": 0,
+            "view_0.20_rows": 8,
+            "view_0.05_uncompressed_paf_bytes": 3010,
+            "view_0.20_uncompressed_paf_bytes": 1317,
+            "strand_-": 27,
+            "mismatches_1": 3,
+            "mismatches_0": 3,
+            "bulge_events_0": 3
+          }
+        },
+        "cb_statuses": {
+          "scored": 61
+        },
+        "eligible_hits": 61,
+        "analytical_view_gzip_bytes": {
+          "none": 1931,
+          "0.05": 782,
+          "0.20": 435
+        },
+        "views": "Derived only; full eligible PAF is retained. Unavailable CFD remains in a separate preserved category. Neural unavailability never filters a row.",
+        "thresholds": "Independent reconstructed full-precision CFD; not four-decimal stored PAF and not biological activity/calibration.",
+        "caveat": "Emitted-row soundness, identity and score-availability checks; not genome-wide recall or biological prediction validation.",
+        "project": "sbds",
+        "task": "historical-domain-control",
+        "assembly": "HG00735_pat",
+        "parameters": {
+          "m": 2,
+          "b": 1,
+          "z": 1,
+          "f": 0.75,
+          "p": "GG"
+        },
+        "plan_sha256": "93e30f676f9c9f9054001408a57a3a2762f416c0e45f09b98d4bbbf586dd248a"
+      },
+      "search_metrics": {
+        "command": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "--search-backend",
+          "pam-anchored",
+          "--pam-search-bin",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search",
+          "--columba-index",
+          "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/index",
+          "-r",
+          "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/reference.fa",
+          "-G",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/01_search/HG00735_pat/historical-domain-control/attempt-2871691/guides.fa",
+          "-m",
+          "2",
+          "-b",
+          "1",
+          "-z",
+          "1",
+          "-f",
+          ".75",
+          "-p",
+          "GG",
+          "-t",
+          "1",
+          "--mismatch-scores",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/source/mismatch_scores.txt",
+          "--pam-scores",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/source/pam_scores.txt"
+        ],
+        "wall_seconds": 317.4546820318792,
+        "user_seconds": 292.513622,
+        "system_seconds": 24.160769,
+        "cumulative_max_individual_descendant_rss_kib": 14210732,
+        "caveat": "ru_maxrss is cumulative maximum individual child, not per-stage aggregate or a hard cap. Tree peak is measured by supervisor."
+      },
+      "scoring_metrics": {
+        "command": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/reference.fa",
+          "-G",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/01_search/HG00735_pat/historical-domain-control/attempt-2871691/guides.fa",
+          "--score-paf",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/01_search/HG00735_pat/historical-domain-control/attempt-2871691/eligible.cfd.paf",
+          "--scoring",
+          "both",
+          "--scoring-output-dir",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/02_scoring/HG00735_pat/historical-domain-control/attempt-2871691/neural",
+          "--crispr-bulge-python",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/inference-env/bin/python",
+          "--crispr-bulge-model-root",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/models-verified",
+          "--scoring-script",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/source/research/crispr_bulge/score_paf.py",
+          "--scoring-reference-sha256",
+          "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+          "--scoring-reference-index",
+          "/export/local/home/salehi/crisprapido-scoring-cli-v1/reference-index.json",
+          "--scoring-reference-index-sha256",
+          "c1b5465af849d2d6e7e3e20827266304e77d64f0d3795dff891005de83b1761e",
+          "--scoring-worker-timeout",
+          "1800"
+        ],
+        "wall_seconds": 10.016937691019848,
+        "user_seconds": 8.066217999999992,
+        "system_seconds": 1.032198000000001,
+        "cumulative_max_individual_descendant_rss_kib": 14210732,
+        "caveat": "ru_maxrss is cumulative maximum individual child, not per-stage aggregate or a hard cap. Tree peak is measured by supervisor."
+      },
+      "native_states": 2833287,
+      "native_search_seconds_including_replay": 0.196491,
+      "native_batch_mean_seconds_per_guide": 0.196491,
+      "other_search_wall_residual_seconds": 317.2581910318792,
+      "residual_scope": "Everything else in search call: validation/staging, loads, Python/Rust, CFD and output; not isolated index time.",
+      "monitor": {
+        "reason": "completed",
+        "sampled_peak_rss_kib": 14260628,
+        "limit_kib": 50331648,
+        "sample_count": 2662,
+        "sample_interval_seconds": 0.1,
+        "elapsed_seconds": 331.76898619905114,
+        "child_returncode": 0,
+        "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+      },
+      "scorer_worker": {
+        "batches": [
+          {
+            "encoding_seconds": 0.0008740080520510674,
+            "predict_seconds": 1.4317756579257548,
+            "rows": 61
+          }
+        ],
+        "elapsed_seconds": 4.392930411966518,
+        "import_seconds": 2.1603572298772633,
+        "model_id": "crispr-bulge-c2-classification-5x-3eddcd5",
+        "model_load_count": 5,
+        "model_load_seconds": 0.7670450119767338,
+        "numpy": "1.23.5",
+        "peak_worker_rss_kib": 504452,
+        "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0]",
+        "scope": "CPU worker peak, not aggregate memory; includes TF and models; not search runtime",
+        "tensorflow": "2.12.0",
+        "verify_post_seconds": 0.011093766195699573,
+        "verify_pre_seconds": 0.013102687196806073
+      },
+      "retained_artifact_bytes": 131612,
+      "full_paf_gzip_bytes": 1931,
+      "annotations_gzip_bytes": 2622,
+      "original_cfd_paf_gzip_bytes": 1459
+    }
+  },
+  "nested_domain_concordance": {
+    "full_precision_cfd_view_concordance": {
+      "0.05": {
+        "first_retained": 18,
+        "second_retained": 4093,
+        "first_only": 0,
+        "second_only": 4075
+      },
+      "0.2": {
+        "first_retained": 8,
+        "second_retained": 595,
+        "first_only": 0,
+        "second_only": 587
+      }
+    },
+    "shared_neural_available_to_unavailable": 0,
+    "first_sites": 61,
+    "second_sites": 38060,
+    "shared": 61,
+    "first_only": 0,
+    "second_only": 37999,
+    "shared_representative_differences": 0,
+    "shared_stored_cfd_differences": 0,
+    "caveat": "Exact same-guide/contig/strand/PAM-boundary keys. Stored CFD is rounded. Changes in representative can change score; no biological preference inferred."
+  },
+  "expansion_gate": "Still blocked pending input integrity, broader sampling and explicit full-Brunello review"
+}

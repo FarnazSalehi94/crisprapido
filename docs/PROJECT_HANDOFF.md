@@ -22,13 +22,34 @@ readability. Prior resolved index evidence covers 12 sets, not all 466.
 
 The requested SBDS primary search is m5/b1/z2/f0.75/GG with both scores and no
 CFD filter. Historical runs used m2/b1/z1, so a separate matched-domain control
-is needed. Initial safety pilots use the already bound HG00735_pat assembly;
-Brunello A=m4/b1/z1 and B=m5/b1/z2 share three exact frozen-library GC-stratified
-guides. **No full Brunello launch is authorized before user review.** Full SBDS
-expansion also awaits pilot/integrity gates; no 466-task search array has been
-submitted by the initial audit. No completed population rerun/updated six SBDS
-figures, IMPG mapping or allele-frequency results are claimed yet. Completed
-prior HG00735 experiments below are unchanged and must not be repeated as if new.
+is needed. Safety pilots on the already bound HG00735_pat assembly are now
+complete: SBDS primary/control Slurm **2871689/2871691**, **38,060/61** eligible
+hits, **8,104/61** neural defined. Brunello A=m4/b1/z1 and B=m5/b1/z2 share three
+exact frozen-library GC-stratified guides: jobs **2871690/2871692**, **13,474/70,364**
+hits, **13,474/14,924** neural defined. All **121,959** rows independently audited;
+**95** sampled predictions match official inference within 1e-6 (jobs 2871693/4).
+See [SBDS pilot](../research/hprcv2/SBDS_PILOT.md) and
+[Brunello review report](../research/hprcv2/BRUNELLO_PILOT.md), including actual
+resources/compression and explicitly unvalidated 76k/874k native-core-hour linear
+full-library scenarios. Forty-eight Python tests passed; core Rust unchanged.
+
+On HG00735, all **57/57** strict-eligible historical CIGAR witnesses recovered;
+old raw had **756 non-NGG/813**. Prior chr12/17 patterns have **GGC/AGT** PAMs
+and are correctly excluded. Historical gapped CFD discrepancies also remain:
+25 original eligible CIGAR scores differ from independent current reconstruction;
+24 shared unchanged representatives have changed CFD. Do not attribute every
+score change to representatives or claim new biological calibration. Brunello B
+contains every A anchor but changes 303 representatives/neural availabilities;
+thresholded A/B views are not nested despite nested eligibility.
+
+**No full Brunello launch is authorized before user review.** Full SBDS expansion
+awaits remaining integrity/binding gates; no 466-task search array has been
+submitted. Two historical SBDS PAFs and ten Brunello small-artifact checks return
+EIO; 454 index sets still lack full-content evidence here. No completed
+population rerun/updated six SBDS figures, IMPG mapping or allele-frequency
+results are claimed yet. External figures are clearly labelled n=1/three-guide
+pilot diagnostics. Completed prior HG00735 experiments below are unchanged and
+must not be repeated as if new.
 
 ## Completed validation and whole-assembly experiments
 

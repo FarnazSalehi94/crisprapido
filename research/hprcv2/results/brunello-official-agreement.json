@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "rows": 65,
+  "max_absolute_difference": 8.897399483842605e-11,
+  "tolerance": 1e-06,
+  "scope": "Sampled implementation agreement, not biological accuracy, calibrated probability or genome-wide recall.",
+  "official_metrics": {
+    "official_commit": "3eddcd5bfcaff00b2bdf29425116ec9756ace870",
+    "rows": 65,
+    "tensorflow": "2.12.0",
+    "numpy": "1.23.5",
+    "categorical_sha256": "6365cbb6342e2c936addfe4f4cd4348a4fa3169e7d7123335475241da8915a75",
+    "official_ensemble_call_seconds": 2.9013063590973616,
+    "elapsed_seconds": 7.681981424801052,
+    "peak_reference_rss_kib": 605908,
+    "dna_two_base_encoder_error": "actual_seq_size > seq_len",
+    "rna_two_base_encoder_shape": [
+      1,
+      24,
+      25
+    ],
+    "scope": "unmodified official function plus imports, hash validation and feature/limit probes; CPU"
+  },
+  "monitor": {
+    "reason": "completed",
+    "sampled_peak_rss_kib": 615036,
+    "limit_kib": 4194304,
+    "sample_count": 68,
+    "sample_interval_seconds": 0.1,
+    "elapsed_seconds": 8.435369753977284,
+    "child_returncode": 0,
+    "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+  },
+  "input_sha256": "a767041941b54ac5d122cd5ecfa5544500dbf5599ba491bb8b6e915eceec6f03",
+  "official_output_sha256": "eccefc614b31cdd8ad38c43685d89f0ebd6b7dfa3d65ec609a02f9ef55bdfd08"
+}

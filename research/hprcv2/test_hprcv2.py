@@ -1,4 +1,3 @@
-import copy
 import csv
 import json
 from pathlib import Path
@@ -6,6 +5,8 @@ import tempfile
 import unittest
 
 import inventory
+import collect
+import compare_sbds
 import qc
 import worker
 
@@ -31,6 +32,20 @@ class InventoryTests(unittest.TestCase):
     def test_strata_are_deterministic_and_input_order_independent(self):
         rows = [('g'+str(n), 'G'*(n % 21)+'A'*(20-n % 21)) for n in range(100)]
         self.assertEqual(inventory.choose_pilot(rows), inventory.choose_pilot(rows[::-1]))
+
+
+class LegacyReplayTests(unittest.TestCase):
+    def test_original_cigar_replay_without_geometry_repair(self):
+        result = compare_sbds.replay('A'*20, 'A'*19, '1I19=')
+        self.assertEqual(result[3:], (19, 0, 1, 1))
+        self.assertEqual(''.join(result[1]), 'A'*20)
+        self.assertEqual(''.join(result[2]), '-'+'A'*19)
+
+    def test_bad_base_assertion_is_not_an_eligible_witness(self):
+        with self.assertRaises(ValueError):
+            compare_sbds.replay('A'*20, 'C'+'A'*19, '20=')
+        with self.assertRaises(ValueError):
+            compare_sbds.replay('A'*20, 'A'*20, '20M')
 
 
 class PlanTests(unittest.TestCase):
@@ -65,6 +80,33 @@ class PlanTests(unittest.TestCase):
         plan['limits']['rss_kib'] += 1
         with self.assertRaises(ValueError):
             worker.validate(plan)
+
+
+class CollectionTests(unittest.TestCase):
+    def test_pending_is_not_zero_or_complete(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            result = collect.collect(Path(tmp), 'brunello')
+            self.assertEqual(result['status'], 'PENDING_OR_INCOMPLETE')
+            self.assertNotIn('unvalidated_linear_sensitivity_scenarios', result)
+            self.assertNotIn('eligible_hits', result['configurations']['A'])
+
+    def test_compression_measures_real_stream(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp)/'x'
+            p.write_bytes(b'ACGT'*1000)
+            self.assertGreater(collect.compressed_bytes(p), 0)
+            self.assertLess(collect.compressed_bytes(p), p.stat().st_size)
+
+    def test_search_signature_changes_with_science_not_qc_worker(self):
+        p = PlanTests().plan()
+        p.update(cli='/cli', native='/native', index='/idx', source='/source', guides='/g')
+        p['pins'].update({'/cli': '1'*64, '/native': '2'*64, '/idx.crispr-binding.json': '3'*64,
+                          '/g': '4'*64, '/source/native.py': '5'*64})
+        original = worker.search_signature(p, 'primary')
+        p['pins'][str(Path(worker.__file__).resolve())] = '6'*64
+        self.assertEqual(worker.search_signature(p, 'primary'), original)
+        p['pins']['/g'] = '7'*64
+        self.assertNotEqual(worker.search_signature(p, 'primary'), original)
 
 
 class AccountingTests(unittest.TestCase):

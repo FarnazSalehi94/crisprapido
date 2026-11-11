@@ -2,6 +2,11 @@
 
 Development branch only. No search/scoring algorithm, defaults, representative
 policy, production executable, historical result or main-branch changes.
+Completed safety-pilot reports: [SBDS](SBDS_PILOT.md) and
+[Brunello A/B, cost sensitivity and recommendation](BRUNELLO_PILOT.md).
+Both have external PDF/PNG pilot diagnostics. **The full 466-input SBDS rerun
+and six population figures are not complete; full Brunello has not launched.**
+
 Integrated CFD pruning is disabled. Native searches explicitly select
 `--search-backend pam-anchored`; this route does **not** use WFA2 verification
 (the development CLI still links its unchanged legacy backend).
@@ -73,7 +78,7 @@ interpreter are readable. Available memory was about 995 GiB; local scratch
 about 504 GB. This observation is specific to this worker/time, not a promise
 about all nodes. Initial free storage: about 53.0 TB MooseFS and 11.2 TB export.
 
-First safety inputs are the already bound **HG00735_pat** assembly and:
+Completed safety inputs are the already bound **HG00735_pat** assembly and:
 
 | Project | Input | Configurations |
 |---|---|---|
@@ -90,7 +95,12 @@ Resource envelope: eight CPUs reserved (one used by application), 64 GiB
 requested, 48 GiB sampled process-tree stop, 64 GiB available-memory start
 check, 8 GiB running available-memory floor, >=60 GB scratch before start,
 5 GB running free-space floor, 10 GiB per-file limit, 6,600 s stage timeout,
-two-hour Slurm tasks. Only one search task should run at a time initially.
+two-hour Slurm tasks. After the dedicated worker capability check, two independent
+serial pilot chains were submitted, at most two searches active on the same
+otherwise-idle 1-TB worker (16/48 CPUs reserved; at most 96 GiB sampled RSS and
+120 GB minimum scratch budget combined). A/B are single fresh-process calls,
+not replicated benchmarks; concurrent neighbours and warm/uncontrolled caches
+must not be hidden in comparisons.
 The RSS sampler is **not** a kernel/cgroup hard limit and can miss spikes or
 double-count shared pages. Slurm's historic CR_CPU scheduling did not reserve
 physical memory; worker checks remain mandatory.
@@ -139,9 +149,20 @@ context. Do not infer a duplicated biological locus from two reported records.
 
 The six final SBDS figures and group report require an explicit 466-input
 completion/assessability ledger. Do not relabel an n=1 safety pilot as an updated
-population figure. Planned panels: eligibility/count waterfall; perfect-match
-status; matched-domain old/new concordance; chr7/12/17 sequence/locus context;
-mismatch/bulge and CFD distributions; neural coverage/paired-score availability.
+population figure. The historical five generated panels plus separately
+hard-coded perfect-match plot must be regenerated from validated data, not copied
+counts: CFD distribution, candidate reduction, per-assembly candidates, recurrent
+high-CFD patterns, target-site variation, and perfect-match distribution. Add
+explicit neural coverage/availability and old/new eligibility/locus supplements.
+
+The prior independent SBDS PAM audit reports 26,245/373,901 canonical NGG rows,
+including only 465/1,400 rows above CFD 0.20. Sequence follow-up reports observed
+PAM **GGC** for the recurrent chr12 pattern and **AGT** for chr17; neither is NGG.
+Those specific old anchors must not survive merely to preserve historical high
+scores. This is an eligibility/reporting correction, not evidence that the
+underlying homologous regions lack other valid NGG sites. Chr7 perfect sites
+have GGG. These prior sequence/PAM audits are separate from our current 464-file
+raw reread and do not establish Brunello's PAM proportions.
 
 **Full Brunello remains prohibited until user review** of A/B pilot results,
 expanded representative validation, cost/uncertainty, retention strategy and
@@ -161,8 +182,11 @@ library frequency analysis has been run.
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s research/hprcv2 -p 'test_*.py' -v
 ```
 
-Ten unit tests currently cover alias preservation, duplicate-ID rejection without
-sequence deduplication, deterministic sampling, project/full-library/parameter
-and resource gates, actual neural zero versus unavailable, immutable PAF fields,
-and full-precision thresholds. Existing core Rust evidence is reused because
+**48 Python tests passed:** 15 new inventory/plan/accounting/collection/legacy
+replay tests, four workflow auditors, nine CFD-model tests and 20 configured
+scoring tests (none skipped). New tests include completed-search signature
+identity, pending-not-zero accounting and unavailable-versus-actual-zero cases.
+Independent live audits additionally checked all 121,959 emitted pilot rows and
+95 stratified/tail official predictions. Slurm 2871695/2871696 check completed-task
+idempotence without a new search. Existing core Rust evidence is reused because
 core sources are unchanged; this continuation has not rebuilt production code.

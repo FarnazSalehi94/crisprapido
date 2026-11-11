@@ -1,0 +1,61 @@
+{
+  "status": "PILOTS_COMPLETE_FULL_RUNS_NOT_LAUNCHED",
+  "projects": {
+    "sbds": {
+      "root": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1",
+      "plan_sha256": "93e30f676f9c9f9054001408a57a3a2762f416c0e45f09b98d4bbbf586dd248a",
+      "frozen_pilot_source_commit": "a2a84942cb86d40682efcc9975599af4f9e1a7ef",
+      "figure_provenance": {
+        "scope": "Safety-pilot diagnostic, not final SBDS six figures or population analysis",
+        "source_report": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/05_reports/pilot-complete-v2.json",
+        "report_sha256": "4e5a84902cedf3ebee8324f5d42428eca4a08b5393a95d9132599a505ca8a992",
+        "matplotlib": "3.10.1",
+        "numpy": "2.2.4",
+        "renderer_sha256": "e723e3888ef98144692d881e0f94305c7cdc4a148c55ed8d55c4c0fc562d0d5a",
+        "outputs": {
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/04_figures/pilot-v2/pilot-diagnostics.pdf": "7c122ea0981cf8d4a80780ff0fa4b833ccc7cbbdda9dd4fecdb0cdf334eb8709",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/04_figures/pilot-v2/pilot-diagnostics.png": "37e4b83bcc736ed4eec316062bcc86026b0c5353e5ab2a0b140a6c646eb0b859"
+        }
+      }
+    },
+    "brunello": {
+      "root": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/brunello_pam_aware_v1",
+      "plan_sha256": "4a91e325f79126ef1b8f864ef6c243bb1bafc9cb24de5e15a2d05ceb3398a789",
+      "frozen_pilot_source_commit": "a2a84942cb86d40682efcc9975599af4f9e1a7ef",
+      "figure_provenance": {
+        "scope": "Safety-pilot diagnostic, not final SBDS six figures or population analysis",
+        "source_report": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/brunello_pam_aware_v1/08_reports/pilot-complete-v2.json",
+        "report_sha256": "6fde5c3462bf3a835471b3a9a40d730f1cbac4440ffa05a081e55ce36345a2e9",
+        "matplotlib": "3.10.1",
+        "numpy": "2.2.4",
+        "renderer_sha256": "e723e3888ef98144692d881e0f94305c7cdc4a148c55ed8d55c4c0fc562d0d5a",
+        "outputs": {
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/brunello_pam_aware_v1/06_figures/pilot-v2/pilot-diagnostics.pdf": "26aec4725c4f6d40dbbd3b3fcfc8e5ac786dd20239da9e10a8ce3767dea48c6e",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/brunello_pam_aware_v1/06_figures/pilot-v2/pilot-diagnostics.png": "e22f7866b106d0ae18c0c141cac474fa57e990b8e682d15a4f0a062ae5af944c"
+        }
+      }
+    }
+  },
+  "jobs": {
+    "capability": "2871687",
+    "initial_audit": "2871688",
+    "sbds_primary": "2871689",
+    "brunello_A": "2871690",
+    "sbds_control": "2871691",
+    "brunello_B": "2871692",
+    "sbds_official": "2871693",
+    "brunello_official": "2871694",
+    "sbds_restart_skip": "2871695",
+    "brunello_restart_skip": "2871696"
+  },
+  "all_jobs_completed_exit_zero": true,
+  "restart_success_markers_unchanged": true,
+  "independent_emitted_row_audits": 121959,
+  "independent_official_sample_predictions": 95,
+  "full_brunello_authorized": false,
+  "full_sbds_primary_completed_inputs": 1,
+  "full_sbds_primary_expected_inputs": 466,
+  "remaining_sbds_inputs_status": "NOT_RUN; never zero-hit placeholders",
+  "core_changes": "No src/Cargo/matrix/native algorithm/default/representative changes versus b34d505",
+  "code_snapshot": "Frozen pilot execution code is a2a8494; subsequent collection/reporting scripts are separately committed and copied externally."
+}
