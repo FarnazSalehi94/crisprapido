@@ -10,6 +10,26 @@
 - `--search-backend pam-anchored` uses Columba FM-index primitives, seeds the PAM constraint, tracks mismatches/bulges, handles both strands and reference Ns, and reports one deterministic representative per PAM anchor without WFA2. CFD scoring remains downstream.
 - Keep CLI-configurable settings **`-m 5 -b 1 -z 2 -f 0.75 -p GG`**; `-p GG` means strict NGG. Do not change defaults or representative selection without discussion. Representatives minimize `(mismatches + inserted bases + deleted bases, mismatches, compressed CIGAR, start)`, not CFD.
 
+## Active HPRCv2 SBDS / Brunello request (2026-11-11)
+
+See [independent project audit and guarded pilot plan](../research/hprcv2/README.md)
+and [downstream allele/IMPG requirements](../research/hprcv2/ALLELE_PLAN.md).
+Separate run trees now exist under `/moosefs/salehi/HPRCv2_CRISPRapido/runs/`.
+Initial audit Slurm 2871688: frozen 464+2 cohort and 77,441-guide library verified;
+two historical SBDS PAFs and ten Brunello small-artifact checks currently return
+EIO. Earlier successful historical QC must not be described as current full
+readability. Prior resolved index evidence covers 12 sets, not all 466.
+
+The requested SBDS primary search is m5/b1/z2/f0.75/GG with both scores and no
+CFD filter. Historical runs used m2/b1/z1, so a separate matched-domain control
+is needed. Initial safety pilots use the already bound HG00735_pat assembly;
+Brunello A=m4/b1/z1 and B=m5/b1/z2 share three exact frozen-library GC-stratified
+guides. **No full Brunello launch is authorized before user review.** Full SBDS
+expansion also awaits pilot/integrity gates; no 466-task search array has been
+submitted by the initial audit. No completed population rerun/updated six SBDS
+figures, IMPG mapping or allele-frequency results are claimed yet. Completed
+prior HG00735 experiments below are unchanged and must not be repeated as if new.
+
 ## Completed validation and whole-assembly experiments
 
 Independent bounded oracle panels recovered **204/204** and **172/172** anchors, with no unexpected or duplicate anchors. Tests include both strands, mismatch/bulge cases, reference Ns, PAMs, alternative alignments, and supported options. Additional bounded large-coordinate probes exercised HG00735_pat positions around `2^31`, contig boundaries and near the assembly end; these are targeted checks, not an exhaustive recall oracle.

@@ -1,0 +1,176 @@
+{
+  "status": "INITIAL_AUDIT_COMPLETE_NOT_A_RUN_AUTHORIZATION",
+  "cohort": {
+    "hprcv2": 464,
+    "references": [
+      "CHM13",
+      "GRCh38"
+    ],
+    "sbds_total": 466,
+    "brunello_total": 464
+  },
+  "source_files": {
+    "/moosefs/salehi/HPRCv2_CRISPRapido/manifests/HPRCv2_all_466_fastas.txt": {
+      "sha256": "3726a59c88122137dbba02886ebf26783e93200b4adfb45ddded5ba67a11424d",
+      "bytes": 28177
+    },
+    "/moosefs/salehi/HPRCv2_CRISPRapido/manifests/HPRCv2_SBDS_fastas.txt": {
+      "sha256": "c1d96bc125c244e62a4094057d136654b078c5ed1e92b0261a79217e7104d921",
+      "bytes": 28029
+    },
+    "/moosefs/salehi/HPRCv2_CRISPRapido/analysis_genomes.tsv": {
+      "sha256": "2be841cec56e16d273904450bed66a9f58fe4310228fd5a38ba2169640fb2adb",
+      "bytes": 33969
+    },
+    "/moosefs/salehi/HPRCv2_CRISPRapido/guides/brunello_77441.fa": {
+      "sha256": "a4bac2dc4c8f5ad0c37713751835b416d1669f899de1cd05ca1a0e828be48971",
+      "bytes": 3849070
+    },
+    "/moosefs/salehi/HPRCv2_CRISPRapido/guides/brunello_clean.tsv": {
+      "sha256": "0db5c722056bbe10ac48e50e0b85e6d66e33b6612f167daead22ebbc89a06e27",
+      "bytes": 3433399
+    },
+    "/moosefs/salehi/HPRCv2_CRISPRapido/guides/Brunello.txt": {
+      "sha256": "77001ee17860df41fb5f6df87081379cf5f92e51d88614b9fbe8ccca3367905c",
+      "bytes": 9232009
+    },
+    "/moosefs/salehi/HPRCv2_CRISPRapido/guides/Brunello_unix.txt": {
+      "sha256": "79b773c4bf23bb3969a18e067c9d0f669fcc0014fa7551e9a765842dc78f0265",
+      "bytes": 9232009
+    },
+    "/moosefs/salehi/HPRCv2_CRISPRapido/analysis/PAM_Index_Recovery_2026-10-29_v1/verified_assemblies.tsv": {
+      "sha256": "948e0c17f144bf4b30624fba62f593816472463e2e1db8f755b3be611a62b591",
+      "bytes": 10143
+    }
+  },
+  "historical_sbds": {
+    "status_counts": {
+      "READ_OK": 464,
+      "FAILED_HISTORICAL_READ": 2
+    },
+    "failures": [
+      {
+        "assembly": "HG03784_hap1",
+        "status": "FAILED_HISTORICAL_READ",
+        "error": "/moosefs/salehi/HPRCv2_CRISPRapido/results/SBDS_all_HPRCv2/HG03784_hap1/SBDS.paf: [Errno 5] Input/output error",
+        "rows": null,
+        "perfect_20eq": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "assembly": "NA18983_hap1",
+        "status": "FAILED_HISTORICAL_READ",
+        "error": "/moosefs/salehi/HPRCv2_CRISPRapido/results/SBDS_all_HPRCv2/NA18983_hap1/SBDS.paf: [Errno 5] Input/output error",
+        "rows": null,
+        "perfect_20eq": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ],
+    "aggregate_readable_only": {
+      "rows": 372311,
+      "duplicate_reported_anchors": 0,
+      "cfd_ge_0.02": 21424,
+      "cfd_ge_0.05": 11725,
+      "cfd_ge_0.10": 5338,
+      "cfd_ge_0.20": 1394
+    },
+    "perfect_match_distribution_readable_only": {
+      "1": 459,
+      "2": 1,
+      "0": 4
+    }
+  },
+  "historical_brunello": {
+    "Brunello_all_HPRCv2": {
+      "status_counts": {
+        "NO_DONE_MARKER": 466
+      },
+      "summary_totals": {}
+    },
+    "Brunello_all_HPRCv2_scored_unscored_v2": {
+      "status_counts": {
+        "SMALL_ARTIFACTS_VERIFIED_LARGE_PAF_NOT_REREAD": 456,
+        "FAILED_SMALL_ARTIFACT_VALIDATION: [Errno 5] Input/output error": 10
+      },
+      "summary_totals": {
+        "total_candidates": 24426397148,
+        "scored_candidates": 24426395871,
+        "unscored_candidates": 1277,
+        "retained_candidates": 525635533,
+        "scored_below_threshold": 23900760338,
+        "cfd_tagged": 24426395871,
+        "cfd_ge_0.20": 525635533,
+        "unscored_missing_cf_f_tag": 1277,
+        "unscored_invalid_cf_tag_type": 0,
+        "unscored_duplicate_cf_f_tag": 0,
+        "unscored_invalid_cf_f_value": 0,
+        "unscored_cf_f_out_of_range": 0,
+        "cfd_lt_0.02": 22341331960,
+        "cfd_0.02_lt_0.05": 764978125,
+        "cfd_0.05_lt_0.10": 408758600,
+        "cfd_0.10_lt_0.20": 385691653,
+        "cfd_0.20_lt_0.30": 162481861,
+        "cfd_0.30_lt_0.50": 216831097,
+        "cfd_0.50_lt_0.75": 128358475,
+        "cfd_0.75_lt_0.90": 5188584,
+        "cfd_ge_0.90": 12775516
+      }
+    }
+  },
+  "library": {
+    "records": 77441,
+    "unique_ids": 77441,
+    "unique_sequences": 77441,
+    "duplicate_sequence_groups": 0,
+    "gene_symbols": 19115,
+    "non_targeting_controls": 1000,
+    "raw_unix_clean_gene_sequence_pam_multiset_match": true,
+    "raw_unix_universal_newline_text_identical": true,
+    "clean_table_id_sequence_match_with_documented_label_mapping": true,
+    "existing_fasta_label_mapping": "Spaces in source gene symbol become underscores; frozen FASTA IDs are preserved unchanged.",
+    "published_library_version_attestation": "NOT_INDEPENDENTLY_DOWNLOADED; local raw/clean/FASTA digests retained"
+  },
+  "index_content_status": {
+    "prior_verified_subset": 12,
+    "pending": 454,
+    "warning": "Stat/is_file is not a full read; damaged original sets must not be reused."
+  },
+  "storage": {
+    "/moosefs/salehi/HPRCv2_CRISPRapido": {
+      "total": 231338839441408,
+      "used": 178380281872384,
+      "free": 52958557569024
+    },
+    "/export/local/home/salehi": {
+      "total": 14883134373888,
+      "used": 2941406674944,
+      "free": 11191583768576
+    }
+  },
+  "pilot": {
+    "assembly": "HG00735_pat",
+    "guides": [
+      {
+        "guide_id": "QKI_AAATAGAGGCAAGCCCAATT",
+        "sequence": "AAATAGAGGCAAGCCCAATT",
+        "stratum": "GC_q10",
+        "gc_bases": 8
+      },
+      {
+        "guide_id": "STX12_AGCAGCTGGTCTCATTTGAC",
+        "sequence": "AGCAGCTGGTCTCATTTGAC",
+        "stratum": "GC_q50",
+        "gc_bases": 10
+      },
+      {
+        "guide_id": "TMEM145_CCAGTCGGCCGTAATCCGAG",
+        "sequence": "CCAGTCGGCCGTAATCCGAG",
+        "stratum": "GC_q90",
+        "gc_bases": 13
+      }
+    ],
+    "sampling": "GC quantiles; three-guide safety/feasibility sample, no library-wide statistical precision"
+  }
+}

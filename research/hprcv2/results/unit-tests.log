@@ -1,0 +1,15 @@
+test_actual_neural_zero_is_available (test_hprcv2.AccountingTests.test_actual_neural_zero_is_available) ... ok
+test_changed_paf_fields_or_fabricated_unavailable_rejected (test_hprcv2.AccountingTests.test_changed_paf_fields_or_fabricated_unavailable_rejected) ... ok
+test_threshold_uses_full_precision_not_rounded_stored_score (test_hprcv2.AccountingTests.test_threshold_uses_full_precision_not_rounded_stored_score) ... ok
+test_unavailable_scores_never_become_zero_or_discarded (test_hprcv2.AccountingTests.test_unavailable_scores_never_become_zero_or_discarded) ... ok
+test_explicit_assembly_aliases (test_hprcv2.InventoryTests.test_explicit_assembly_aliases) ... ok
+test_library_preserves_ids_and_rejects_duplicate_ids (test_hprcv2.InventoryTests.test_library_preserves_ids_and_rejects_duplicate_ids) ... ok
+test_strata_are_deterministic_and_input_order_independent (test_hprcv2.InventoryTests.test_strata_are_deterministic_and_input_order_independent) ... ok
+test_eligibility_and_guard_drift_rejected (test_hprcv2.PlanTests.test_eligibility_and_guard_drift_rejected) ... ok
+test_no_full_library_or_cross_project_authorization (test_hprcv2.PlanTests.test_no_full_library_or_cross_project_authorization) ... ok
+test_valid_safety_plan (test_hprcv2.PlanTests.test_valid_safety_plan) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.005s
+
+OK
