@@ -51,6 +51,27 @@ results are claimed yet. External figures are clearly labelled n=1/three-guide
 pilot diagnostics. Completed prior HG00735 experiments below are unchanged and
 must not be repeated as if new.
 
+## Performance investigation (2026-11-11, bounded; no full reruns launched)
+
+See [performance report](../research/hprcv2/performance/REPORT.md). The apparent
+7.5-min-for-one-guide discrepancy is ~310 s of fixed per-invocation overhead
+(snapshot copy, pre/post full verification, index/reference loads) that batching
+eliminates, plus the genuinely expensive requested m5/b1/z2 domain (~101 s/guide
+traversal vs 0.196 s at matched m2/b1/z1). Matched-settings benchmark
+(jobs 2871709-2871711/2871718-2871720, one verified assembly, identical first
+1/100/1000 frozen-library guides, m2/b1/z1/f0.75/GG): new backend marginal
+0.179 s/guide wall, ~20,100 guides/h/assembly on one core, all rows
+independently audited; old preserved binary 11.1/37.5/383.2 s with 99/85/79%
+of one CPU. Old emits ~575 rows/guide with only ~5% strict-eligible; **all
+28,750 old strict-eligible witnesses are contained in the new output, zero
+missing**. Old-engine full-library wall is measured at 5,775 s (~1.9 cores);
+linear extrapolation from N=1000 overestimates it 5.15x, so new-engine
+extrapolations (3.94 h/assembly matched) remain unvalidated at scale.
+Requested m5/b1/z2 full Brunello would be ~1,900 core-hours per assembly
+(~100 core-years over 464 assemblies) — infeasible without authorized
+algorithmic/domain change. Batch per assembly, parallelize across assemblies;
+full-library/full-cohort launches remain gated on user review.
+
 ## Completed validation and whole-assembly experiments
 
 Independent bounded oracle panels recovered **204/204** and **172/172** anchors, with no unexpected or duplicate anchors. Tests include both strands, mismatch/bulge cases, reference Ns, PAMs, alternative alignments, and supported options. Additional bounded large-coordinate probes exercised HG00735_pat positions around `2^31`, contig boundaries and near the assembly end; these are targeted checks, not an exhaustive recall oracle.

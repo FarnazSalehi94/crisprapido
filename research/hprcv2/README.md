@@ -4,6 +4,8 @@ Development branch only. No search/scoring algorithm, defaults, representative
 policy, production executable, historical result or main-branch changes.
 Completed safety-pilot reports: [SBDS](SBDS_PILOT.md) and
 [Brunello A/B, cost sensitivity and recommendation](BRUNELLO_PILOT.md).
+Bounded old-vs-new performance investigation with matched-settings benchmark:
+[performance/REPORT.md](performance/REPORT.md).
 Both have external PDF/PNG pilot diagnostics. **The full 466-input SBDS rerun
 and six population figures are not complete; full Brunello has not launched.**
 

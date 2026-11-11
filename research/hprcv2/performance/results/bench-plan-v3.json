@@ -1,0 +1,124 @@
+{
+  "format": "hprcv2-performance-bench-v1",
+  "root": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1",
+  "node": "octopus02",
+  "assembly": "HG00735_pat",
+  "reference": "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/reference.fa",
+  "reference_sha256": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+  "fai": "/moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz.fai",
+  "fai_sha256": "7f6187771a76e8af51b983e2df4e00970dd72722dea0b9bd5c425ef817e3c26d",
+  "settings": {
+    "m": 2,
+    "b": 1,
+    "z": 1,
+    "f": 0.75,
+    "pam": "GG"
+  },
+  "sizes": [
+    1,
+    100,
+    1000
+  ],
+  "library": {
+    "path": "/moosefs/salehi/HPRCv2_CRISPRapido/guides/brunello_77441.fa",
+    "sha256": "a4bac2dc4c8f5ad0c37713751835b416d1669f899de1cd05ca1a0e828be48971",
+    "records": 77441
+  },
+  "new": {
+    "cli": "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+    "native": "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search",
+    "index": "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/index",
+    "binding": "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/index.crispr-binding.json",
+    "samtools": "/home/salehi/miniconda3/envs/assembly_eval/bin/samtools",
+    "threads": 1,
+    "cpus": 8,
+    "mem_request": "64G"
+  },
+  "old": {
+    "binary": "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/crisprapido/target/release/crisprapido_newCFD",
+    "binary_sha256": "ee543e772ac6e956e8fc3eb88e6ea52517e5192eff9da255902c3bad6073faed",
+    "columba": "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/build_Vanilla/columba",
+    "columba_sha256": "7e44974c81dad4943292fa64a71e54073908b4909ce327480464d769322c40d1",
+    "loader": "/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib/ld-linux-x86-64.so.2",
+    "library_path": "/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib:/gnu/store/gmv6n5vy5qcsn71pkapg2hnknyn1p7g3-gcc-12.3.0-lib/lib:/gnu/store/ygm2rzg08w0w96h9587k3n2yvhndcqkn-zlib-1.2.13/lib",
+    "time_bin": "/home/salehi/miniconda3/bin/time",
+    "index_prefix": "/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG00735_pat/HG00735_pat",
+    "components": {
+      "brt": "8a101aaad5ecd04f3c13326283ce25f2b59195fc88d0fd3b8a2692649349a593",
+      "bwt": "1f8041966a0e56b8a5996879699f1eb3ce9a8b1459125b688688e385fe32e6f4",
+      "cct": "a05f147885edae7648ec5149df72e47ca8576b8dfa57d0dec7e5e9c2e7be321a",
+      "fsid": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "headerSN.bin": "cbc41d12a88455984dd0fb4a76d683aaf1e32e0aace37a40986985741a6dbdf4",
+      "meta": "208a5955023ddd79e6a86868b6acbcc4b27812cc1dee2ab24bb4a00e68ad5ffb",
+      "pos": "18867959c0b8992b4675a3b6b3fcd398b33e7397f09edfb4fbd18c36cfebd939",
+      "rev.brt": "ab344657ab63e9c0e38204b9fd43f27b9d68d74d594a182bf189829bddd0555d",
+      "sa.4": "885237f7138e70c0b19957852a719ea9b6edc922a2389dab5ccb681f5d9aaffb",
+      "sa.bv.4": "d672efddab5a66d455b9a73829331ed2d04a4793b85974b360c98df28337e2ad",
+      "sna": "2f3b356fdbd97d2d99dc67d5a9aaf355cbec6eaebec6c44d0e6b190203160359",
+      "txt.bin": "92fdb20763728874ec05104b388cfeef8a058b03f77bb0c92a89fe96673d5cf3"
+    },
+    "threads": 16,
+    "cpus": 16,
+    "mem_request": "128G"
+  },
+  "guides": {
+    "1": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-guides-N1.fa",
+    "100": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-guides-N100.fa",
+    "1000": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-guides-N1000.fa"
+  },
+  "matrices": {
+    "mismatch": "/export/local/home/salehi/crisprapido-pam-validation/mismatch_scores.txt",
+    "pam": "/export/local/home/salehi/crisprapido-pam-validation/pam_scores.txt"
+  },
+  "release_scripts": "/export/local/home/salehi/crisprapido-pam-validation/scripts/release_validation",
+  "supervisor": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/supervise.py",
+  "worker": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/bench_worker.py",
+  "validator": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/validate_old.py",
+  "limits": {
+    "stage_timeout_seconds": 3600,
+    "min_start_available_kib": 67108864,
+    "min_running_available_kib": 8388608,
+    "min_scratch_bytes": 60000000000,
+    "min_running_disk_bytes": 10000000000,
+    "file_limit_bytes": 10737418240,
+    "new_rss_kib": 41943040,
+    "old_rss_kib": 115343360
+  },
+  "provenance": {
+    "git_commit": "5242bac6ba87406af709e806c8852e574dfb2db2",
+    "scope": "Bounded 1/100/1000-guide matched-settings benchmark on one verified assembly. Historical binary output is diagnostic only (known legacy PAM/geometry semantics); it is never a valid search result or a recall standard. No full-library launch.",
+    "new_engine": "Experimental PAM-anchored backend, single-threaded, strict NGG, CFD default (no neural stage).",
+    "old_engine": "Preserved production binary crisprapido_newCFD (Columba candidates, WFA2 verification), production -t 16 configuration, production Guix runtime, index staged to local scratch exactly as in job 2856949."
+  },
+  "pins": {
+    "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/index.crispr-binding.json": "2fe715d09c5a8b79f20e59ff6cd85486b52c8f3836ab54b7d566b8a50ad9b0d4",
+    "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1/reference.fa": "bae8df3c5cf8ca96d3316b59eaa63fa37b7d3b58551c8a0700f2c530dc1e4f8b",
+    "/export/local/home/salehi/crisprapido-pam-validation/mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+    "/export/local/home/salehi/crisprapido-pam-validation/pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1",
+    "/export/local/home/salehi/crisprapido-pam-validation/scripts/release_validation/audit_emitted.py": "b4bd44b6150c4fe1fb70c14eeab7ed71511546812134d8cf5bc7b741b56e2cda",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search": "fa07753fe24f9147a5eded2770517efae5bf8d4c87aebb681fb2213091c42988",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido": "c2a2325ebdcee8d245d0f394fceb0d70874e57c5b40a9f5a33d8bdf49049c09f",
+    "/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib/ld-linux-x86-64.so.2": "e0162b5d811c238f40c3113a292c26a4eda72a904b526f5f84cb92ba27eeb0cf",
+    "/home/salehi/miniconda3/bin/time": "70df05e53088ff124a2cfdc3320e79bc72e15515c382b12714f279215b222db1",
+    "/home/salehi/miniconda3/envs/assembly_eval/bin/samtools": "dcf009b17432112476ecca878573f1a1c8e69d6b50e8c30d2f6ebe9de284a2c6",
+    "/moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz.fai": "7f6187771a76e8af51b983e2df4e00970dd72722dea0b9bd5c425ef817e3c26d",
+    "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/columba/build_Vanilla/columba": "7e44974c81dad4943292fa64a71e54073908b4909ce327480464d769322c40d1",
+    "/moosefs/raid5/salehi/crispr2/crispr-progress/columba-crispr-benchmark/crisprapido/target/release/crisprapido_newCFD": "ee543e772ac6e956e8fc3eb88e6ea52517e5192eff9da255902c3bad6073faed",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/guides/brunello_77441.fa": "a4bac2dc4c8f5ad0c37713751835b416d1669f899de1cd05ca1a0e828be48971",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-guides-N1.fa": "d5b722e8f7fe2e5605bb75749381293206e698fca8c03765f831f0c8f42c33a7",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-guides-N100.fa": "ed890aea585ca4b0a884e28870689d832f04689df0ff0ff26cdfd11c00b18f01",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-guides-N1000.fa": "ed92c324f02f22c490ee3f55fe3bb7927404d92de3e1c85518846596a4c518a3",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/bench_worker.py": "fa32061c4a5bb12907f160b08dd64a1492fdbe2d14d945992275f8f98aa85537",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/collect.py": "aa75c2a518548780af80fa190dc2d31d66db42b0e076aa2f8f5ce2f69efba774",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/compare_sbds.py": "31b9a0ca3ce81a48f37bad3d634168bb6cd0c2fe7bb95aeade0afb7ad46130c6",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/inventory.py": "97e950fe82ad5cee8622d8c5cbfe0c50a60eeefe33ab37e70c5a01be3adbda50",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/supervise.py": "e63fd42e72c1c6300ef0109ee640c6299c1e27d85f0dbec025e84c39170ce8f9",
+    "/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/00_plan/bench-tooling-v1/validate_old.py": "0aad98e46a5b12fa491d7722eadf3c9d4756620aaca43536c1205aa48b4dbff6"
+  },
+  "plan_history": {
+    "v1_sha256": "c5ee3bb188160de0c7604e3424b4bd0d1d1acfa2a7a5368f09378d55468d5326",
+    "v2_sha256": "64150601e4aa92751cf5e500c328cfc762323b91ec779d33b8e732ef02c7ac36",
+    "v3_change": "Worker validator flag spelling fixed; legacy replay failures labelled instead of aborting validation. Failed attempts 2871712/2871715 preserved.",
+    "v1_scope": "Binds completed new-engine runs N1/N100/N1000 (jobs 2871709-2871711)."
+  }
+}

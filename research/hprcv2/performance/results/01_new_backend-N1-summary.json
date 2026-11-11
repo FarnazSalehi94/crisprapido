@@ -1,0 +1,14 @@
+{
+  "engine": "new",
+  "size": 1,
+  "guides": 1,
+  "search_wall_seconds": 309.46161976410076,
+  "native_states": 2379427,
+  "native_traversal_seconds": 0.16263,
+  "rows_emitted": 20,
+  "audit_status": "PASS",
+  "audit_wall_seconds": 1.002976248972118,
+  "threads": 1,
+  "allocated_cpus": 8,
+  "caveat": "Single fresh call, quiet sequential node, uncontrolled caches; not a repeated benchmark."
+}

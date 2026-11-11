@@ -1,0 +1,252 @@
+{
+  "status": "COMPLETE_BOUNDED_BENCHMARK",
+  "total_guides": 77441,
+  "sizes": [
+    1,
+    100,
+    1000
+  ],
+  "new": {
+    "runs": {
+      "1": {
+        "engine": "new",
+        "size": 1,
+        "guides": 1,
+        "search_wall_seconds": 309.46161976410076,
+        "native_states": 2379427,
+        "native_traversal_seconds": 0.16263,
+        "rows_emitted": 20,
+        "audit_status": "PASS",
+        "audit_wall_seconds": 1.002976248972118,
+        "threads": 1,
+        "allocated_cpus": 8,
+        "caveat": "Single fresh call, quiet sequential node, uncontrolled caches; not a repeated benchmark."
+      },
+      "100": {
+        "engine": "new",
+        "size": 100,
+        "guides": 100,
+        "search_wall_seconds": 328.48844719701447,
+        "native_states": 249661189,
+        "native_traversal_seconds": 17.1038,
+        "rows_emitted": 3197,
+        "audit_status": "PASS",
+        "audit_wall_seconds": 1.003038922091946,
+        "threads": 1,
+        "allocated_cpus": 8,
+        "caveat": "Single fresh call, quiet sequential node, uncontrolled caches; not a repeated benchmark."
+      },
+      "1000": {
+        "engine": "new",
+        "size": 1000,
+        "guides": 1000,
+        "search_wall_seconds": 489.7628964690957,
+        "native_states": 2537533728,
+        "native_traversal_seconds": 173.396,
+        "rows_emitted": 33094,
+        "audit_status": "PASS",
+        "audit_wall_seconds": 4.00754325883463,
+        "threads": 1,
+        "allocated_cpus": 8,
+        "caveat": "Single fresh call, quiet sequential node, uncontrolled caches; not a repeated benchmark."
+      }
+    },
+    "measured_wall_seconds": {
+      "1": 309.46161976410076,
+      "100": 328.48844719701447,
+      "1000": 489.7628964690957
+    },
+    "fixed_overhead_single_guide_seconds": 309.2989897641008,
+    "marginal_wall_seconds_per_guide": 0.17919383252453472,
+    "linear_extrapolated_full_library_seconds": 14187.518648477055,
+    "linear_extrapolated_full_library_hours": 3.9409774023547373,
+    "extrapolated_throughput_guides_per_hour": 19650.201483959016,
+    "native_traversal_seconds": {
+      "1": 0.16263,
+      "100": 17.1038,
+      "1000": 173.396
+    },
+    "marginal_traversal_seconds_per_guide": 0.17365799999999998,
+    "rows_emitted": {
+      "1": 20,
+      "100": 3197,
+      "1000": 33094
+    },
+    "extrapolated_rows_full_library": 2562832.454,
+    "extrapolated_audit_seconds_full_library": 310.3481575074126,
+    "native_states": {
+      "1": 2379427,
+      "100": 249661189,
+      "1000": 2537533728
+    }
+  },
+  "old": {
+    "runs": {
+      "1": {
+        "engine": "old",
+        "size": 1,
+        "guides": 1,
+        "staging_seconds": 14.1559925659094,
+        "wall_seconds": 11.09,
+        "cpu_percent": 99.0,
+        "user_seconds": 4.27,
+        "system_seconds": 6.74,
+        "max_rss_kib": 11235632,
+        "rows_emitted": 722,
+        "strict_eligible_witnesses": 15,
+        "strict_eligible_contained_in_new": 15,
+        "strict_eligible_missing_in_new": 0,
+        "all_rows_contained_in_new": 15,
+        "validation": {
+          "rows": 722,
+          "accounted": 722,
+          "strict_eligible": 15,
+          "strict_eligible_contained_in_new": 15,
+          "strict_eligible_missing_in_new": 0,
+          "rows_contained_in_new": 15,
+          "cfd_compared": 15,
+          "cfd_disagreements": 6,
+          "status": "PASS",
+          "guides": 1,
+          "new_anchor_keys": 20,
+          "source_sha256": "8d7c2ed0ba8ef918249829e85fcc4ae2cb89ce061b04edfe33de1ff6e9a017d6",
+          "new_paf_sha256": "aaa8d3f583c39d8d6125b51439babc1ee55723d2dc87672caf258d6a92d96394",
+          "caveat": "Legacy-row labeling only: strict eligible CIGAR witnesses are separate from standards-valid PAF geometry and from genome-wide recall; old scores are not reinterpreted and old rows are never repaired."
+        },
+        "threads": 16,
+        "allocated_cpus": 16,
+        "stderr_bytes": 76687,
+        "caveat": "Preserved historical binary with legacy PAM/geometry semantics; output is a performance/containment diagnostic, not a valid search result."
+      },
+      "100": {
+        "engine": "old",
+        "size": 100,
+        "guides": 100,
+        "staging_seconds": 14.114066959125921,
+        "wall_seconds": 37.54,
+        "cpu_percent": 85.0,
+        "user_seconds": 22.73,
+        "system_seconds": 9.31,
+        "max_rss_kib": 11264524,
+        "rows_emitted": 63506,
+        "strict_eligible_witnesses": 2839,
+        "strict_eligible_contained_in_new": 2839,
+        "strict_eligible_missing_in_new": 0,
+        "all_rows_contained_in_new": 2852,
+        "validation": {
+          "rows": 63506,
+          "accounted": 63506,
+          "strict_eligible": 2839,
+          "strict_eligible_contained_in_new": 2839,
+          "strict_eligible_missing_in_new": 0,
+          "rows_contained_in_new": 2852,
+          "cfd_compared": 2839,
+          "cfd_disagreements": 1493,
+          "status": "PASS",
+          "guides": 100,
+          "new_anchor_keys": 3197,
+          "source_sha256": "a400840d90bfbb347c2824fa7c021e7bf738aaf21da68495666a3a2c1ccc4ba3",
+          "new_paf_sha256": "bfa88f8b3bdb8629e52b7b18fdbc8e6a69b4e49cd515de6ded13dc43c66e929d",
+          "caveat": "Legacy-row labeling only: strict eligible CIGAR witnesses are separate from standards-valid PAF geometry and from genome-wide recall; old scores are not reinterpreted and old rows are never repaired."
+        },
+        "threads": 16,
+        "allocated_cpus": 16,
+        "stderr_bytes": 9074832,
+        "caveat": "Preserved historical binary with legacy PAM/geometry semantics; output is a performance/containment diagnostic, not a valid search result."
+      },
+      "1000": {
+        "engine": "old",
+        "size": 1000,
+        "guides": 1000,
+        "staging_seconds": 14.145121364854276,
+        "wall_seconds": 383.25,
+        "cpu_percent": 79.0,
+        "user_seconds": 246.26,
+        "system_seconds": 59.69,
+        "max_rss_kib": 11690248,
+        "rows_emitted": 575350,
+        "strict_eligible_witnesses": 28750,
+        "strict_eligible_contained_in_new": 28750,
+        "strict_eligible_missing_in_new": 0,
+        "all_rows_contained_in_new": 28911,
+        "validation": {
+          "rows": 575350,
+          "accounted": 575350,
+          "strict_eligible": 28750,
+          "strict_eligible_contained_in_new": 28750,
+          "strict_eligible_missing_in_new": 0,
+          "rows_contained_in_new": 28911,
+          "cfd_compared": 28750,
+          "cfd_disagreements": 13184,
+          "status": "PASS",
+          "guides": 1000,
+          "new_anchor_keys": 33094,
+          "source_sha256": "a251f1d65693ff3b50c1425f1971a8406842c5ba8889793a66be12f8fa924ee0",
+          "new_paf_sha256": "15dcba4bea7c07698ca55bb4ad2c09717972c09fa872b11794cd281bb1d0d6f3",
+          "caveat": "Legacy-row labeling only: strict eligible CIGAR witnesses are separate from standards-valid PAF geometry and from genome-wide recall; old scores are not reinterpreted and old rows are never repaired."
+        },
+        "threads": 16,
+        "allocated_cpus": 16,
+        "stderr_bytes": 173048813,
+        "caveat": "Preserved historical binary with legacy PAM/geometry semantics; output is a performance/containment diagnostic, not a valid search result."
+      }
+    },
+    "measured_wall_seconds": {
+      "1": 11.09,
+      "100": 37.54,
+      "1000": 383.25
+    },
+    "fixed_overhead_single_guide_seconds": 11.09,
+    "marginal_wall_seconds_per_guide": 0.3841222222222222,
+    "linear_extrapolated_full_library_seconds": 29745.93678888889,
+    "linear_extrapolated_full_library_hours": 8.262760219135803,
+    "extrapolated_throughput_guides_per_hour": 9372.291818495914,
+    "historical_validation": {
+      "extrapolated_seconds": 29745.93678888889,
+      "actual_measured_full_library_seconds": 5775.0,
+      "note": "Compare with historical full-library measurement below; closeness validates the linear model, not a guarantee.",
+      "extrapolation_vs_actual_ratio": 5.150811565175565
+    }
+  },
+  "historical": {
+    "full_library": {
+      "wall_seconds": 5775.0,
+      "cpu_percent": 190.0,
+      "user_seconds": 10782.08,
+      "system_seconds": 240.43,
+      "max_rss_kib": 87989928,
+      "guides": 77441,
+      "allocated_cpus": 32,
+      "application_threads": 16,
+      "node": "tux09",
+      "total_candidates": 53898064,
+      "description": "Preserved production full-library run, one assembly, m2/b1/z1/f0.75/GG, index pre-staged on local scratch",
+      "throughput_guides_per_hour": 48274.90909090909
+    },
+    "sbds_single": {
+      "wall_seconds": 58.54,
+      "cpu_percent": 24.0,
+      "user_seconds": 4.36,
+      "system_seconds": 10.15,
+      "max_rss_kib": 11235568,
+      "guides": 1,
+      "description": "Preserved production single-guide SBDS run, same assembly, m2/b1/z1, index read from MooseFS, -t 1"
+    }
+  },
+  "cpu_utilization": {
+    "new": "1 of 8 allocated CPUs used; experimental backend is single-threaded by design and rejects -t != 1",
+    "old": "measured cpu_percent per run; historical full library averaged 190% of one CPU despite -t 16"
+  },
+  "full_hprcv2_464_assemblies_sequential_hours": {
+    "new": 1828.613514692598,
+    "old": 3833.9207416790127
+  },
+  "caveats": [
+    "First 1/100/1000 guides of the frozen library on ONE verified assembly; not a random or complete sample.",
+    "Single fresh call per (engine, size) on a quiet sequential node; uncontrolled caches; not repeated medians.",
+    "Linear extrapolation through the two largest measured points only; validated only where the preserved full-library measurement exists.",
+    "The new engine runs strict NGG with corrected eligibility; the old engine emits legacy non-NGG/geometry rows, so row counts are NOT directly comparable.",
+    "Per-assembly one-time costs (index build/import/verification, staging) are excluded from marginal rates and listed separately.",
+    "No full-library or cohort launch is authorized by these numbers."
+  ]
+}
