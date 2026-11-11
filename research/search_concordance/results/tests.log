@@ -1,0 +1,11 @@
+test_anchor_is_pam_adjacent_boundary_not_overlapping_interval (test_benchmark.ConcordanceAuditTests.test_anchor_is_pam_adjacent_boundary_not_overlapping_interval) ... ok
+test_duplicate_records_are_preserved_for_audit (test_benchmark.ConcordanceAuditTests.test_duplicate_records_are_preserved_for_audit) ... ok
+test_legacy_schema_is_not_silently_repaired_to_paf (test_benchmark.ConcordanceAuditTests.test_legacy_schema_is_not_silently_repaired_to_paf) ... ok
+test_mixed_witness_and_unavailable_score (test_benchmark.ConcordanceAuditTests.test_mixed_witness_and_unavailable_score) ... ok
+test_oracle_sam_has_required_tags_and_reference_oriented_negative_cigar (test_benchmark.ConcordanceAuditTests.test_oracle_sam_has_required_tags_and_reference_oriented_negative_cigar) ... ok
+test_wrong_gap_span_and_query_coordinates_are_reported_not_rewritten (test_benchmark.ConcordanceAuditTests.test_wrong_gap_span_and_query_coordinates_are_reported_not_rewritten) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.005s
+
+OK

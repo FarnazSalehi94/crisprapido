@@ -1,0 +1,25 @@
+test_cigar_assertions_and_consumption_fail_clearly (test_adapter.AdapterTests.test_cigar_assertions_and_consumption_fail_clearly) ... ok
+test_default_cfd_mode_is_byte_identical_without_tensorflow (test_adapter.AdapterTests.test_default_cfd_mode_is_byte_identical_without_tensorflow) ... ok
+test_duplicate_or_wrong_reference_leaves_incomplete_result (test_adapter.AdapterTests.test_duplicate_or_wrong_reference_leaves_incomplete_result) ... ok
+test_independent_encoding_padding_and_structural_n (test_adapter.AdapterTests.test_independent_encoding_padding_and_structural_n) ... ok
+test_indexed_fasta_wrapping_crlf_and_last_line (test_adapter.AdapterTests.test_indexed_fasta_wrapping_crlf_and_last_line) ... ok
+test_model_checksum_gate_rejects_changed_weights (test_adapter.AdapterTests.test_model_checksum_gate_rejects_changed_weights) ... ok
+test_supported_inputs_on_both_strands (test_adapter.AdapterTests.test_supported_inputs_on_both_strands) ... ok
+test_unsupported_domain_is_not_fabricated (test_adapter.AdapterTests.test_unsupported_domain_is_not_fabricated) ... ok
+test_unsupported_rows_preserved_and_worker_not_loaded (test_adapter.AdapterTests.test_unsupported_rows_preserved_and_worker_not_loaded) ... ok
+test_worker_failure_is_not_published_as_unavailable_predictions (test_adapter.AdapterTests.test_worker_failure_is_not_published_as_unavailable_predictions) ... ok
+test_cfd_default_pass_through_and_option_errors (test_cli.CliTests.test_cfd_default_pass_through_and_option_errors) ... ok
+test_empty_input_is_complete_without_loading_models (test_cli.CliTests.test_empty_input_is_complete_without_loading_models) ... ok
+test_live_search_modes_batch_reuse_and_default_compatibility (test_cli.CliTests.test_live_search_modes_batch_reuse_and_default_compatibility) ... ok
+test_unsupported_is_na_and_existing_cfd_or_missing_cfd_preserved (test_cli.CliTests.test_unsupported_is_na_and_existing_cfd_or_missing_cfd_preserved) ... ok
+test_worker_failure_and_existing_directory_publish_no_stdout (test_cli.CliTests.test_worker_failure_and_existing_directory_publish_no_stdout) ... ok
+test_geometry (test_evaluate_assembly.AssemblyAuditTests.test_geometry) ... ok
+test_independent_reconstruction_both_strands (test_evaluate_assembly.AssemblyAuditTests.test_independent_reconstruction_both_strands) ... ok
+test_preservation_and_unavailable_not_zero (test_evaluate_assembly.AssemblyAuditTests.test_preservation_and_unavailable_not_zero) ... ok
+test_sampling_reproducible_includes_tails_and_all_strata (test_evaluate_assembly.AssemblyAuditTests.test_sampling_reproducible_includes_tails_and_all_strata) ... ok
+test_valid_reuse_and_wrong_or_changed_inputs (test_reference_index.PinnedIndexTests.test_valid_reuse_and_wrong_or_changed_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 15.353s
+
+OK

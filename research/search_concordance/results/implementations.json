@@ -1,0 +1,128 @@
+{
+  "additional_mandatory_match_block_length_fields_verified": 177,
+  "associated_source_objects": {
+    "46cf652:Cargo.lock": "8105b206a19a497c115f43692c47180705053461050704b18595e002d3165ae0",
+    "46cf652:Cargo.toml": "8405f341a9b3ad5a9a98ab1014fb7b5593efb3fabf95d6a99241f60104b83f47",
+    "46cf652:src/main.rs": "5eb55c76bf6b313dc3e6b7bfa157cadf05c6c43785a7ae629b2df50f7650118b",
+    "main:Cargo.lock": "9a4c52dc0725e3824c8bd05f4d16612055077182586d07134bd5467bc98719f5",
+    "main:Cargo.toml": "1b3815eb8060c124a035436170b83348f0602bb36bee2a5b314cad0f873353ae",
+    "main:src/main.rs": "f35fbb460ed665adb16c2feb03502016373f21800162a9cb8232de6db1e39c43"
+  },
+  "body_policy_review": "Official journal scope/author-guideline URLs identified by web search 2026-11-11; specific fees, lengths and article-type rules require direct current-policy verification before submission.",
+  "bounded_input_provenance": {
+    "common_z1": {
+      "binding_sha256": "1f3fc4f917edb172e8b80308f801fbf10a6ad4338b47601c8ff08535783a1f1a",
+      "guide_fasta_sha256": "d7e775edf3337450731aa00cb04e747bd91bbd72a6b33caf5c2c7697b6238e0b",
+      "index_component_sha256": {
+        "brt": "9991cdf66f86a4524136b2784c6f5d9543ba94efbfecb7afdc61064efe6bef0b",
+        "bwt": "d292bd4995d528f5d5e3b2c6774b863d6bb1ad9d1c36524600b15dff2977a2c1",
+        "cct": "9799ed5f49b6419134d3b1076bd00134874c38eef86d01434932750fd61b9dbd",
+        "fsid": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "headerSN.bin": "4a84bbba966dae29ab1b3aa8e4c2d08ce890a1eba3226717d11c2024786d74cb",
+        "meta": "208a5955023ddd79e6a86868b6acbcc4b27812cc1dee2ab24bb4a00e68ad5ffb",
+        "pos": "31de53c71bb003157ab064c6ddf4ff24b8f3f44ec032434d5b6372b1d1358ab2",
+        "rev.brt": "2c1ef26209bcf9a69e3ebe6e0dbcbba28a944f270829ff2f19525ed630259e67",
+        "sa.4": "dddaea5149e68299aadff123bc37b6c91b882c446278d4248d2f5af4ab984ae5",
+        "sa.bv.4": "6c06b7e33bdb40024c67adbf144a63f0d8bac1c2bdb9cc23145f15ec39d71959",
+        "sna": "be8e7a106248b139c1b6c62827082ccc5d1c888f1856ed90ce1faef2c15916d4",
+        "txt.bin": "8adf1b6d3a94617c8c64befa3b499cccfac04210b5762b46d402b959809fc506"
+      },
+      "post_run_reference_and_components_match_trusted_pre_run_build_binding": true,
+      "reference_sha256": "8a2bbaa4b25429e8d3e4a61e6b50c1bb9e43e1800f10f3fe6a38dc19410e1123"
+    },
+    "mixed_only": {
+      "binding_sha256": "8c0bb8b4c0649e89adae19d8a81b553664fd0a0dcafdf5832ca7505a1b1db41a",
+      "guide_fasta_sha256": "d7e775edf3337450731aa00cb04e747bd91bbd72a6b33caf5c2c7697b6238e0b",
+      "index_component_sha256": {
+        "brt": "11a07cddc1434c820e3d1b266cc56673763280b8f3fb033ae94df135a404e77b",
+        "bwt": "b458c2203900b5d002b56133d54e3546f67be4d0f62f73026011778ed836f878",
+        "cct": "cef1431d10e3ea0c8d0384c5e4bc8c7c1e74bd580feaa693f4e0bcdb56e3ba73",
+        "fsid": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "headerSN.bin": "e664bab72bd9bc69d29f1636907328d4b40faa6ef1dfb3968271db6605bf9d95",
+        "meta": "208a5955023ddd79e6a86868b6acbcc4b27812cc1dee2ab24bb4a00e68ad5ffb",
+        "pos": "8697189d891635fcdb2ba74ba2526f6006508992f4490e55c1ddaef505ee1eb8",
+        "rev.brt": "c3c744ec81325206828e075eb3b471aa9ede1688834954e3eab435231c1cad32",
+        "sa.4": "731f812728b5328daba8009c45bb905758a2382ef68c0061cb2d1c785b16cd36",
+        "sa.bv.4": "4edcfc7db18e0f6e03d4025a7f2b2455a895c0b7d07c5f94286c238ae12c0127",
+        "sna": "dd1b7c29978548775a0d2065c1040d99b185fba1538d572599bec3fe379da4de",
+        "txt.bin": "26b937f4084ad4f395dfdf050d36425aa00d2f97238451be2b365484f15855f0"
+      },
+      "post_run_reference_and_components_match_trusted_pre_run_build_binding": true,
+      "reference_sha256": "f90b7d2f50ecbdee37410d79445a10480f4f1eff59656dc85bf481b2616f8e7b"
+    },
+    "z2_radius_diagnostic": {
+      "binding_sha256": "1f3fc4f917edb172e8b80308f801fbf10a6ad4338b47601c8ff08535783a1f1a",
+      "guide_fasta_sha256": "d7e775edf3337450731aa00cb04e747bd91bbd72a6b33caf5c2c7697b6238e0b",
+      "index_component_sha256": {
+        "brt": "9991cdf66f86a4524136b2784c6f5d9543ba94efbfecb7afdc61064efe6bef0b",
+        "bwt": "d292bd4995d528f5d5e3b2c6774b863d6bb1ad9d1c36524600b15dff2977a2c1",
+        "cct": "9799ed5f49b6419134d3b1076bd00134874c38eef86d01434932750fd61b9dbd",
+        "fsid": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "headerSN.bin": "4a84bbba966dae29ab1b3aa8e4c2d08ce890a1eba3226717d11c2024786d74cb",
+        "meta": "208a5955023ddd79e6a86868b6acbcc4b27812cc1dee2ab24bb4a00e68ad5ffb",
+        "pos": "31de53c71bb003157ab064c6ddf4ff24b8f3f44ec032434d5b6372b1d1358ab2",
+        "rev.brt": "2c1ef26209bcf9a69e3ebe6e0dbcbba28a944f270829ff2f19525ed630259e67",
+        "sa.4": "dddaea5149e68299aadff123bc37b6c91b882c446278d4248d2f5af4ab984ae5",
+        "sa.bv.4": "6c06b7e33bdb40024c67adbf144a63f0d8bac1c2bdb9cc23145f15ec39d71959",
+        "sna": "be8e7a106248b139c1b6c62827082ccc5d1c888f1856ed90ce1faef2c15916d4",
+        "txt.bin": "8adf1b6d3a94617c8c64befa3b499cccfac04210b5762b46d402b959809fc506"
+      },
+      "post_run_reference_and_components_match_trusted_pre_run_build_binding": true,
+      "reference_sha256": "8a2bbaa4b25429e8d3e4a61e6b50c1bb9e43e1800f10f3fe6a38dc19410e1123"
+    }
+  },
+  "current_binary": {
+    "built_source": "6fa96d3",
+    "core_identical_to": "ce52c158058c28bfde8e61caf4faae25e72915aa",
+    "note": "one exact executable for window, Columba+WFA2, and PAM-aware adapter modes",
+    "path": "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+    "profile": "release; Rust 1.94.1/GCC 12.3.0; WFA2 df3dce4; lib_wfa2 c608c436",
+    "sha256": "c2a2325ebdcee8d245d0f394fceb0d70874e57c5b40a9f5a33d8bdf49049c09f"
+  },
+  "historical": {
+    "binary": "/export/local/home/salehi/crisprapido/target/release/crisprapido",
+    "binding_revision": "c608c436a6753d2c21c97d9f5c338efae99d042b",
+    "cfd_implemented": false,
+    "nominal_checked_out_wfa_submodule": "2ec28919af3a1b545acfb38e9bdefd160a87f266",
+    "pam_filter": false,
+    "profile": "existing release artifact; exact compiler/build-to-source attestation not recovered",
+    "sha256": "293203043baa097fb3a1df809696a29cfd154a2550932f89e135fbe2b232dfb3",
+    "source_commit": "46cf652bf878dd48df73de919d77ccb560ca6928",
+    "source_tracked_clean": true,
+    "tree": "/export/local/home/salehi/crisprapido"
+  },
+  "native_oracle_representatives_verified": 58,
+  "old_manuscript_benchmark_source": "f75f82aa8a5301235bbd12501933530cb6b282e4 lineage; figure files/legends refer to window vs automatic Columba+WFA2, not Sassy/PAM-aware current comparison",
+  "oracle_source_sha256": {
+    "research/pam_anchored_poc/cfd_feasibility/study.py": "b7b24978da16bee22815ef4558b2a18a7c91a6fa0adeadc766f18274350ebccd",
+    "scripts/release_validation/audit_emitted.py": "b4bd44b6150c4fe1fb70c14eeab7ed71511546812134d8cf5bc7b741b56e2cda"
+  },
+  "original_name_ambiguity": "Historical original 46cf652, original window branch in old f75f82aa benchmark figures, and Sassy-labelled original in divergent main are not the same executable/configuration.",
+  "sassy": {
+    "allow_indels_explicit": true,
+    "binary": "/moosefs/raid5/salehi/crispr2/crispr-progress/crispr-bwt/target/debug/crisprapido",
+    "candidate_radius": "m + b, NOT m + b*z",
+    "pam_option_role": "CFD input, not discovery/output PAM predicate",
+    "profile": "existing debug artifact; no source-to-executable rebuild attestation",
+    "release_rebuild_attempt": "default Cargo cannot read lock v4; Cargo 1.94 offline attempt blocked by missing pinned Sassy Git cache; production binary untouched",
+    "sassy_revision": "6edc9f325f888af34082b50d771eeb6473acf543",
+    "sassy_version": "0.2.4",
+    "schema": "eleven mandatory-like fields: missing PAF block length; target end fixed at start+guide length even for gapped alignments",
+    "sha256": "281730ac90afc63fefec1ac8bd740b809085ad508e173dfe96461caf92504827",
+    "source_commit": "cfb15874fdaef082e1a9cf2f83d30e1d10d4252a",
+    "source_tracked_clean": true,
+    "tree": "/moosefs/raid5/salehi/crispr2/crispr-progress/crispr-bwt"
+  },
+  "source_sha256": {
+    "research/search_concordance/benchmark.py": "9197ebcc7fc082e27682a9b0d7203e0784b675ed35350e909004dfc12bddb713",
+    "research/search_concordance/export_results.py": "f0060acb4d1c2539b728439b63bd754fe83c1af321a65e99b1229b4326137746",
+    "research/search_concordance/test_benchmark.py": "007a5ccfb4ed134420f84790dd6138c6a510014a56f3c0903a3eff3ada9c1d43"
+  },
+  "tests_this_continuation": {
+    "cfd_model_existing": 9,
+    "concordance_new": 6,
+    "core_rust": "source unchanged; previous 164-pass ce52c15 record reused, not freshly rebuilt in this continuation",
+    "repro_audit_existing": 4,
+    "scoring_existing": 20
+  }
+}

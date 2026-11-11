@@ -1,0 +1,1468 @@
+{
+  "audited_rows_sha256": {
+    "common_z1": "a91b188576e11cb914559b7027271757162072a7a9ef364479aa2886d0e4b641",
+    "mixed_only": "ed4e48cb02cb9a81bc319d16b52522f6b6078736a3bb5dbc944f23169903b12f",
+    "z2_radius_diagnostic": "54bbfdd44ac9b251aebe326ae0af5266393759cae418d3a7a20b9e42f4138556"
+  },
+  "baseline": "ce52c15",
+  "case_ledger_sha256": "63ad031a0b98f76bc4bf202d19e499f280fd63cc9ddd02f6f41f424f06dce4be",
+  "current_applicable_modes": [
+    "window_wfa2",
+    "columba_wfa2",
+    "pam_columba"
+  ],
+  "external_summary_sha256": "bd3db00e19095044cd9015af62295d9367af4c7796b99867632684a51b2d3b5d",
+  "historical_modes": "diagnostics only; externally restricted PAMs, nonstandard/invalid exports, non-equivalent z2 Sassy budget, debug Sassy build",
+  "panels": [
+    {
+      "b": 1,
+      "bases": 700,
+      "commands": {
+        "columba_wfa2": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/common_z1/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "1",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--columba-bin",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/columba-build-v2/columba",
+          "--columba-index",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/common_z1/index"
+        ],
+        "historical_wfa2": [
+          "/export/local/home/salehi/crisprapido/target/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/common_z1/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "1",
+          "-t",
+          "1"
+        ],
+        "pam_columba": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/common_z1/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "1",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--search-backend",
+          "pam-anchored",
+          "--pam-search-bin",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search",
+          "--columba-index",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/common_z1/index"
+        ],
+        "sassy_diagnostic": [
+          "/moosefs/raid5/salehi/crispr2/crispr-progress/crispr-bwt/target/debug/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/common_z1/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "1",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--allow-indels",
+          "--mismatch-scores",
+          "/export/local/home/salehi/crisprapido-pam-validation/mismatch_scores.txt",
+          "--pam-scores",
+          "/export/local/home/salehi/crisprapido-pam-validation/pam_scores.txt"
+        ],
+        "window_wfa2": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/common_z1/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "1",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75"
+        ]
+      },
+      "contigs": 28,
+      "expected": 26,
+      "f": 0.75,
+      "five_diagnostic_all_shared": 7,
+      "guide_sequence": "GAAACAGTCGATTTTATCAC",
+      "m": 3,
+      "modern_all_shared": 20,
+      "modes": {
+        "columba_wfa2": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 26,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 0,
+          "raw_rows": 26,
+          "reported_cfd_agreement": {
+            "True": 26
+          },
+          "standard_valid_sites": 26,
+          "unexpected_eligible": 0
+        },
+        "historical_wfa2": {
+          "alignment_rejection_reasons": {
+            "cigar_base_assertion": 6,
+            "cigar_guide_consumption": 2,
+            "not_requested_complete_NGG": 2
+          },
+          "diagnostic_eligible_sites": 11,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {
+            "query_coordinates_not_full_guide": 4
+          },
+          "missing_expected": 15,
+          "raw_rows": 21,
+          "reported_cfd_agreement": {
+            "None": 11
+          },
+          "standard_valid_sites": 10,
+          "unexpected_eligible": 0
+        },
+        "pam_columba": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 26,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 0,
+          "raw_rows": 26,
+          "reported_cfd_agreement": {
+            "True": 26
+          },
+          "standard_valid_sites": 26,
+          "unexpected_eligible": 0
+        },
+        "sassy_diagnostic": {
+          "alignment_rejection_reasons": {
+            "cigar_reference_span_disagrees_with_export": 6,
+            "not_requested_complete_NGG": 5,
+            "reference_coordinates": 2
+          },
+          "diagnostic_eligible_sites": 16,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {
+            "missing_mandatory_block_length": 24
+          },
+          "missing_expected": 10,
+          "raw_rows": 24,
+          "reported_cfd_agreement": {
+            "True": 16
+          },
+          "standard_valid_sites": 0,
+          "unexpected_eligible": 0
+        },
+        "window_wfa2": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 20,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 6,
+          "raw_rows": 20,
+          "reported_cfd_agreement": {
+            "True": 20
+          },
+          "standard_valid_sites": 20,
+          "unexpected_eligible": 0
+        }
+      },
+      "name": "common_z1",
+      "pairs": {
+        "columba_wfa2__pam_columba": {
+          "differences": {
+            "cfd": 1,
+            "cigar": 1,
+            "deleted": 1,
+            "end": 0,
+            "events": 0,
+            "inserted": 1,
+            "max_gap": 0,
+            "mismatches": 0,
+            "start": 1
+          },
+          "examples": [
+            {
+              "cfd_differs": true,
+              "key": [
+                "D5_2+",
+                "+",
+                22
+              ],
+              "left": {
+                "alignment_errors": [],
+                "cfd_agrees": true,
+                "cigar": "1X2=1D2X15=",
+                "comparable_record": true,
+                "deleted": 1,
+                "eligible": true,
+                "end": 22,
+                "events": 1,
+                "export_errors": [],
+                "independent_cfd": 0.2699724514822287,
+                "inserted": 0,
+                "key": [
+                  "D5_2+",
+                  "+",
+                  22
+                ],
+                "max_gap": 1,
+                "mismatches": 3,
+                "pam": "AGG",
+                "reported_cfd": 0.27,
+                "row": 6,
+                "schema": "paf12",
+                "start": 1
+              },
+              "right": {
+                "alignment_errors": [],
+                "cfd_agrees": true,
+                "cigar": "1I1=3X15=",
+                "comparable_record": true,
+                "deleted": 0,
+                "eligible": true,
+                "end": 22,
+                "events": 1,
+                "export_errors": [],
+                "independent_cfd": 0.1735537189834711,
+                "inserted": 1,
+                "key": [
+                  "D5_2+",
+                  "+",
+                  22
+                ],
+                "max_gap": 1,
+                "mismatches": 3,
+                "pam": "AGG",
+                "reported_cfd": 0.1736,
+                "row": 6,
+                "schema": "paf12",
+                "start": 3
+              }
+            }
+          ],
+          "left_only": 0,
+          "right_only": 0,
+          "shared": 26
+        },
+        "window_wfa2__columba_wfa2": {
+          "differences": {
+            "cfd": 0,
+            "cigar": 0,
+            "deleted": 0,
+            "end": 0,
+            "events": 0,
+            "inserted": 0,
+            "max_gap": 0,
+            "mismatches": 0,
+            "start": 0
+          },
+          "examples": [],
+          "left_only": 0,
+          "right_only": 6,
+          "shared": 20
+        },
+        "window_wfa2__pam_columba": {
+          "differences": {
+            "cfd": 0,
+            "cigar": 0,
+            "deleted": 0,
+            "end": 0,
+            "events": 0,
+            "inserted": 0,
+            "max_gap": 0,
+            "mismatches": 0,
+            "start": 0
+          },
+          "examples": [],
+          "left_only": 0,
+          "right_only": 6,
+          "shared": 20
+        }
+      },
+      "pam": "NGG",
+      "performance": {
+        "columba_wfa2": {
+          "max_individual_rss_kib": 20376,
+          "max_tree_rss_kib": 27060,
+          "median_wall_seconds": 0.016266436083242297,
+          "ranking_applicable": true,
+          "repetitions": 3
+        },
+        "historical_wfa2": {
+          "max_individual_rss_kib": 7024,
+          "max_tree_rss_kib": 27088,
+          "median_wall_seconds": 0.004249188117682934,
+          "ranking_applicable": false,
+          "repetitions": 3
+        },
+        "pam_columba": {
+          "max_individual_rss_kib": 15100,
+          "max_tree_rss_kib": 46740,
+          "median_wall_seconds": 0.11438827100209892,
+          "ranking_applicable": true,
+          "repetitions": 3
+        },
+        "sassy_diagnostic": {
+          "max_individual_rss_kib": 7108,
+          "max_tree_rss_kib": 27116,
+          "median_wall_seconds": 0.01671570399776101,
+          "ranking_applicable": false,
+          "repetitions": 3
+        },
+        "window_wfa2": {
+          "max_individual_rss_kib": 7076,
+          "max_tree_rss_kib": 27112,
+          "median_wall_seconds": 0.004152152920141816,
+          "ranking_applicable": true,
+          "repetitions": 3
+        }
+      },
+      "raw_candidate_control_matches_automatic": true,
+      "runs": [
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.0026049999999999997,
+            "max_individual_child_rss_kib": 7040,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004200444091111422
+          },
+          "mode": "window_wfa2",
+          "output_sha256": "941e87372f5f6b5d3c1a4bf20a74add78cf039943f93fb65c22b27e4fc8fd813",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09791543078608811,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 27088
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.00543,
+            "child_user_seconds": 0.009165,
+            "max_individual_child_rss_kib": 18484,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.016266436083242297
+          },
+          "mode": "columba_wfa2",
+          "output_sha256": "68807695a0c8cf07bc2a420b4133e02784cd7d9ee3e99a84e034e41f325b62fa",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09638296300545335,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26916
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.009649999999999999,
+            "child_user_seconds": 0.056540999999999994,
+            "max_individual_child_rss_kib": 14844,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.11438827100209892
+          },
+          "mode": "pam_columba",
+          "output_sha256": "a133de2649b857a208d086acfa702fe620378b34eec68986256a65129f3e7926",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.18546706205233932,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 4,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 46552
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.002695,
+            "child_user_seconds": 0.0,
+            "max_individual_child_rss_kib": 7020,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004138725809752941
+          },
+          "mode": "historical_wfa2",
+          "output_sha256": "e844b03b8df96d4813789c3ac98e26aada65d88ab1ea386cde57933aed738d84",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09669473813846707,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26908
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.009087,
+            "max_individual_child_rss_kib": 7024,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.016536361072212458
+          },
+          "mode": "sassy_diagnostic",
+          "output_sha256": "fbdd09e3db1650c335bbceaed3a5a18b1cfb2897774c2a9441c3a4b63722337f",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09587517194449902,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26716
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.008007,
+            "child_user_seconds": 0.006186,
+            "max_individual_child_rss_kib": 18352,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.016224315157160163
+          },
+          "mode": "columba_wfa2",
+          "output_sha256": "68807695a0c8cf07bc2a420b4133e02784cd7d9ee3e99a84e034e41f325b62fa",
+          "repetition": 1,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09691977803595364,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26912
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.066274,
+            "max_individual_child_rss_kib": 15100,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.11435495619662106
+          },
+          "mode": "pam_columba",
+          "output_sha256": "a133de2649b857a208d086acfa702fe620378b34eec68986256a65129f3e7926",
+          "repetition": 1,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.1850547429639846,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 4,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 46740
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.002781,
+            "max_individual_child_rss_kib": 6956,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004287480842322111
+          },
+          "mode": "historical_wfa2",
+          "output_sha256": "e844b03b8df96d4813789c3ac98e26aada65d88ab1ea386cde57933aed738d84",
+          "repetition": 1,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09643111517652869,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 27088
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.008789,
+            "max_individual_child_rss_kib": 7108,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.017189668957144022
+          },
+          "mode": "sassy_diagnostic",
+          "output_sha256": "fbdd09e3db1650c335bbceaed3a5a18b1cfb2897774c2a9441c3a4b63722337f",
+          "repetition": 1,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09708969201892614,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26968
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.002425,
+            "max_individual_child_rss_kib": 7076,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004139638971537352
+          },
+          "mode": "window_wfa2",
+          "output_sha256": "941e87372f5f6b5d3c1a4bf20a74add78cf039943f93fb65c22b27e4fc8fd813",
+          "repetition": 1,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09693345404230058,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26760
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.017567,
+            "child_user_seconds": 0.048695999999999996,
+            "max_individual_child_rss_kib": 14812,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.11461474187672138
+          },
+          "mode": "pam_columba",
+          "output_sha256": "a133de2649b857a208d086acfa702fe620378b34eec68986256a65129f3e7926",
+          "repetition": 2,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.1871514671947807,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 4,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 46192
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.002845,
+            "max_individual_child_rss_kib": 7024,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004249188117682934
+          },
+          "mode": "historical_wfa2",
+          "output_sha256": "e844b03b8df96d4813789c3ac98e26aada65d88ab1ea386cde57933aed738d84",
+          "repetition": 2,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09624603996053338,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 27056
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.009221,
+            "max_individual_child_rss_kib": 6972,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.01671570399776101
+          },
+          "mode": "sassy_diagnostic",
+          "output_sha256": "fbdd09e3db1650c335bbceaed3a5a18b1cfb2897774c2a9441c3a4b63722337f",
+          "repetition": 2,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09619089495390654,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 27116
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0024519999999999998,
+            "child_user_seconds": 0.0,
+            "max_individual_child_rss_kib": 7024,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004152152920141816
+          },
+          "mode": "window_wfa2",
+          "output_sha256": "941e87372f5f6b5d3c1a4bf20a74add78cf039943f93fb65c22b27e4fc8fd813",
+          "repetition": 2,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09697737800888717,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 27112
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.008145,
+            "child_user_seconds": 0.006506,
+            "max_individual_child_rss_kib": 20376,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.01634528604336083
+          },
+          "mode": "columba_wfa2",
+          "output_sha256": "68807695a0c8cf07bc2a420b4133e02784cd7d9ee3e99a84e034e41f325b62fa",
+          "repetition": 2,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09513919614255428,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 27060
+          }
+        }
+      ],
+      "z": 1
+    },
+    {
+      "b": 1,
+      "bases": 700,
+      "commands": {
+        "columba_wfa2": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/z2_radius_diagnostic/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--columba-bin",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/columba-build-v2/columba",
+          "--columba-index",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/z2_radius_diagnostic/index"
+        ],
+        "historical_wfa2": [
+          "/export/local/home/salehi/crisprapido/target/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/z2_radius_diagnostic/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1"
+        ],
+        "pam_columba": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/z2_radius_diagnostic/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--search-backend",
+          "pam-anchored",
+          "--pam-search-bin",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search",
+          "--columba-index",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/z2_radius_diagnostic/index"
+        ],
+        "sassy_diagnostic": [
+          "/moosefs/raid5/salehi/crispr2/crispr-progress/crispr-bwt/target/debug/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/z2_radius_diagnostic/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--allow-indels",
+          "--mismatch-scores",
+          "/export/local/home/salehi/crisprapido-pam-validation/mismatch_scores.txt",
+          "--pam-scores",
+          "/export/local/home/salehi/crisprapido-pam-validation/pam_scores.txt"
+        ],
+        "window_wfa2": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/z2_radius_diagnostic/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "3",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75"
+        ]
+      },
+      "contigs": 28,
+      "expected": 30,
+      "f": 0.75,
+      "five_diagnostic_all_shared": 7,
+      "guide_sequence": "GAAACAGTCGATTTTATCAC",
+      "m": 3,
+      "modern_all_shared": 24,
+      "modes": {
+        "columba_wfa2": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 28,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 2,
+          "raw_rows": 28,
+          "reported_cfd_agreement": {
+            "True": 28
+          },
+          "standard_valid_sites": 28,
+          "unexpected_eligible": 0
+        },
+        "historical_wfa2": {
+          "alignment_rejection_reasons": {
+            "cigar_base_assertion": 8,
+            "cigar_guide_consumption": 2,
+            "not_requested_complete_NGG": 2
+          },
+          "diagnostic_eligible_sites": 13,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {
+            "query_coordinates_not_full_guide": 6
+          },
+          "missing_expected": 17,
+          "raw_rows": 25,
+          "reported_cfd_agreement": {
+            "None": 13
+          },
+          "standard_valid_sites": 11,
+          "unexpected_eligible": 0
+        },
+        "pam_columba": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 30,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 0,
+          "raw_rows": 30,
+          "reported_cfd_agreement": {
+            "None": 2,
+            "True": 28
+          },
+          "standard_valid_sites": 30,
+          "unexpected_eligible": 0
+        },
+        "sassy_diagnostic": {
+          "alignment_rejection_reasons": {
+            "cigar_reference_span_disagrees_with_export": 10,
+            "not_requested_complete_NGG": 7,
+            "reference_coordinates": 3
+          },
+          "diagnostic_eligible_sites": 16,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {
+            "missing_mandatory_block_length": 28
+          },
+          "missing_expected": 14,
+          "raw_rows": 28,
+          "reported_cfd_agreement": {
+            "True": 16
+          },
+          "standard_valid_sites": 0,
+          "unexpected_eligible": 0
+        },
+        "window_wfa2": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 24,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 6,
+          "raw_rows": 24,
+          "reported_cfd_agreement": {
+            "True": 24
+          },
+          "standard_valid_sites": 24,
+          "unexpected_eligible": 0
+        }
+      },
+      "name": "z2_radius_diagnostic",
+      "pairs": {
+        "columba_wfa2__pam_columba": {
+          "differences": {
+            "cfd": 0,
+            "cigar": 0,
+            "deleted": 0,
+            "end": 0,
+            "events": 0,
+            "inserted": 0,
+            "max_gap": 0,
+            "mismatches": 0,
+            "start": 0
+          },
+          "examples": [],
+          "left_only": 0,
+          "right_only": 2,
+          "shared": 28
+        },
+        "window_wfa2__columba_wfa2": {
+          "differences": {
+            "cfd": 0,
+            "cigar": 0,
+            "deleted": 0,
+            "end": 0,
+            "events": 0,
+            "inserted": 0,
+            "max_gap": 0,
+            "mismatches": 0,
+            "start": 0
+          },
+          "examples": [],
+          "left_only": 0,
+          "right_only": 4,
+          "shared": 24
+        },
+        "window_wfa2__pam_columba": {
+          "differences": {
+            "cfd": 0,
+            "cigar": 0,
+            "deleted": 0,
+            "end": 0,
+            "events": 0,
+            "inserted": 0,
+            "max_gap": 0,
+            "mismatches": 0,
+            "start": 0
+          },
+          "examples": [],
+          "left_only": 0,
+          "right_only": 6,
+          "shared": 24
+        }
+      },
+      "pam": "NGG",
+      "raw_candidate_control_matches_automatic": true,
+      "runs": [
+        {
+          "measurement": {
+            "child_system_seconds": 0.002741,
+            "child_user_seconds": 0.0,
+            "max_individual_child_rss_kib": 7100,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004133987007662654
+          },
+          "mode": "window_wfa2",
+          "output_sha256": "e3ad744a447f92657ac74fb314f951800469e4b11eea95d077a82b4725f4abc5",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09628209797665477,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26924
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.005490999999999999,
+            "child_user_seconds": 0.009881,
+            "max_individual_child_rss_kib": 18452,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.016510151093825698
+          },
+          "mode": "columba_wfa2",
+          "output_sha256": "85017198fd1ab1eb4a74fbe6cf41b603528e52dddaf21b5ad79fd1a6ef062faa",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09744842583313584,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26892
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.004504,
+            "child_user_seconds": 0.06325,
+            "max_individual_child_rss_kib": 14696,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.1144190279301256
+          },
+          "mode": "pam_columba",
+          "output_sha256": "302a6b130bb04c390ba0b244811cb68c00414f0c9c02f640dc56e9f1add13611",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.1841283410321921,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 4,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 46404
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.0030069999999999997,
+            "max_individual_child_rss_kib": 7988,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004142022924497724
+          },
+          "mode": "historical_wfa2",
+          "output_sha256": "f819de2effcf46f859a8951dd864b775eed61c3a7e4d7dcd018e65110d462687",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09559641918167472,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26808
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0044329999999999994,
+            "child_user_seconds": 0.0044329999999999994,
+            "max_individual_child_rss_kib": 7096,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.017038110177963972
+          },
+          "mode": "sassy_diagnostic",
+          "output_sha256": "9074d8e8de2ef295bf0c515c41111dccebaaa656a7b90704d2203832be4f9786",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09681774093769491,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26916
+          }
+        }
+      ],
+      "z": 2
+    },
+    {
+      "b": 1,
+      "bases": 46,
+      "commands": {
+        "columba_wfa2": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/mixed_only/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "0",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--columba-bin",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/columba-build-v2/columba",
+          "--columba-index",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/mixed_only/index"
+        ],
+        "historical_wfa2": [
+          "/export/local/home/salehi/crisprapido/target/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/mixed_only/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "0",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1"
+        ],
+        "pam_columba": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/mixed_only/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "0",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--search-backend",
+          "pam-anchored",
+          "--pam-search-bin",
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search",
+          "--columba-index",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/mixed_only/index"
+        ],
+        "sassy_diagnostic": [
+          "/moosefs/raid5/salehi/crispr2/crispr-progress/crispr-bwt/target/debug/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/mixed_only/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "0",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75",
+          "--allow-indels",
+          "--mismatch-scores",
+          "/export/local/home/salehi/crisprapido-pam-validation/mismatch_scores.txt",
+          "--pam-scores",
+          "/export/local/home/salehi/crisprapido-pam-validation/pam_scores.txt"
+        ],
+        "window_wfa2": [
+          "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido",
+          "-r",
+          "/export/local/home/salehi/crisprapido-concordance-v1/final-v4/mixed_only/reference.fa",
+          "-g",
+          "GAAACAGTCGATTTTATCAC",
+          "-m",
+          "0",
+          "-b",
+          "1",
+          "-z",
+          "2",
+          "-t",
+          "1",
+          "-p",
+          "GG",
+          "-f",
+          ".75"
+        ]
+      },
+      "contigs": 2,
+      "expected": 2,
+      "f": 0.75,
+      "five_diagnostic_all_shared": 0,
+      "guide_sequence": "GAAACAGTCGATTTTATCAC",
+      "m": 0,
+      "modern_all_shared": 0,
+      "modes": {
+        "columba_wfa2": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 0,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 2,
+          "raw_rows": 0,
+          "reported_cfd_agreement": {},
+          "standard_valid_sites": 0,
+          "unexpected_eligible": 0
+        },
+        "historical_wfa2": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 0,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 2,
+          "raw_rows": 0,
+          "reported_cfd_agreement": {},
+          "standard_valid_sites": 0,
+          "unexpected_eligible": 0
+        },
+        "pam_columba": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 2,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 0,
+          "raw_rows": 2,
+          "reported_cfd_agreement": {
+            "None": 2
+          },
+          "standard_valid_sites": 2,
+          "unexpected_eligible": 0
+        },
+        "sassy_diagnostic": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 0,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 2,
+          "raw_rows": 0,
+          "reported_cfd_agreement": {},
+          "standard_valid_sites": 0,
+          "unexpected_eligible": 0
+        },
+        "window_wfa2": {
+          "alignment_rejection_reasons": {},
+          "diagnostic_eligible_sites": 0,
+          "duplicate_diagnostic_anchors": 0,
+          "duplicate_standard_anchors": 0,
+          "export_errors": {},
+          "missing_expected": 2,
+          "raw_rows": 0,
+          "reported_cfd_agreement": {},
+          "standard_valid_sites": 0,
+          "unexpected_eligible": 0
+        }
+      },
+      "name": "mixed_only",
+      "pairs": {
+        "columba_wfa2__pam_columba": {
+          "differences": {},
+          "examples": [],
+          "left_only": 0,
+          "right_only": 2,
+          "shared": 0
+        },
+        "window_wfa2__columba_wfa2": {
+          "differences": {},
+          "examples": [],
+          "left_only": 0,
+          "right_only": 0,
+          "shared": 0
+        },
+        "window_wfa2__pam_columba": {
+          "differences": {},
+          "examples": [],
+          "left_only": 0,
+          "right_only": 2,
+          "shared": 0
+        }
+      },
+      "pam": "NGG",
+      "raw_candidate_control_matches_automatic": true,
+      "runs": [
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.001808,
+            "max_individual_child_rss_kib": 7012,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.004252715036273003
+          },
+          "mode": "window_wfa2",
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09643561113625765,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26912
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0029219999999999997,
+            "child_user_seconds": 0.0095,
+            "max_individual_child_rss_kib": 19552,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.016302313888445497
+          },
+          "mode": "columba_wfa2",
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09655329608358443,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 26992
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.013271999999999999,
+            "child_user_seconds": 0.052518999999999996,
+            "max_individual_child_rss_kib": 14504,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.11439415905624628
+          },
+          "mode": "pam_columba",
+          "output_sha256": "4fcdbcdf839075d37fad3997df5e8ce5b44ccd90593ae7fcf42ffcf5f7b096d6",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.1846362198702991,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 4,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 46080
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0017239999999999998,
+            "child_user_seconds": 0.0,
+            "max_individual_child_rss_kib": 7052,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.17466362891718745
+          },
+          "mode": "historical_wfa2",
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.27167760394513607,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 6,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 28576
+          }
+        },
+        {
+          "measurement": {
+            "child_system_seconds": 0.0,
+            "child_user_seconds": 0.004177,
+            "max_individual_child_rss_kib": 7060,
+            "memory_scope": "Linux max individual descendant RSS, not simultaneous process-tree memory",
+            "reason": "completed",
+            "returncode": 0,
+            "wall_seconds": 0.009100045077502728
+          },
+          "mode": "sassy_diagnostic",
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "repetition": 0,
+          "tree": {
+            "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit",
+            "child_returncode": 0,
+            "elapsed_seconds": 0.09601573902182281,
+            "limit_kib": 2097152,
+            "reason": "completed",
+            "sample_count": 2,
+            "sample_interval_seconds": 0.02,
+            "sampled_peak_rss_kib": 27060
+          }
+        }
+      ],
+      "z": 2
+    }
+  ],
+  "record_ledger_sha256": "5968d665606ca9d75449c5ed7fbe52a55441cef0a02d0cfcecbd022c67b7ebdc",
+  "sha256": {
+    "/export/local/home/salehi/crisprapido-pam-validation/mismatch_scores.txt": "8e3b1e2fac9924c4ab80f2ab72c96b81f20ef37aaf024fbd94f83d6eb72ebbe4",
+    "/export/local/home/salehi/crisprapido-pam-validation/pam_scores.txt": "6b17a4083b6e736328fa29c13d60c42f8dda10290107ceb6e3fa7fefc36f10b1",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/pam_anchored_poc/poc.cpp": "4907f625788cee5f60b6f07c9c5a05b05a6969878e56581e8b69bf602559c550",
+    "/export/local/home/salehi/crisprapido-pam-validation/research/search_concordance/benchmark.py": "9197ebcc7fc082e27682a9b0d7203e0784b675ed35350e909004dfc12bddb713",
+    "/export/local/home/salehi/crisprapido-pam-validation/src/columba.rs": "c6419a35404c4ef5b4c44ba80ead42097ba01da149b977fde3131d12fa4eaa03",
+    "/export/local/home/salehi/crisprapido-pam-validation/src/main.rs": "21d7d79f21f03a29cfa625a9b32c67baf2d6eeb22dce94c66a53a3d0c5d39040",
+    "/export/local/home/salehi/crisprapido-pam-validation/src/reporting.rs": "69487d002cb58d22429eb90cc677b5a36c8c0d11ca7a3b7a432f6583a0ca7bce",
+    "/export/local/home/salehi/crisprapido-pam-validation/src/verification.rs": "7ea412de095026bee6b7c5f1bdb9720ce8ca79af95c37b93d45d0d2e04c78d03",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/columba-build-v2/columba": "b2f64d105794351230a02a146e53f9ede98e260a90bac7313041c1530a5a4065",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/columba-build-v2/columba_build": "505734e031dcf1e9ca129ba8cb2cde29c395075db3bd979e7312e68b97fc37c9",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/pam-search": "fa07753fe24f9147a5eded2770517efae5bf8d4c87aebb681fb2213091c42988",
+    "/export/local/home/salehi/crisprapido-research-workflow-v1/target-final/release/crisprapido": "c2a2325ebdcee8d245d0f394fceb0d70874e57c5b40a9f5a33d8bdf49049c09f",
+    "/export/local/home/salehi/crisprapido/target/release/crisprapido": "293203043baa097fb3a1df809696a29cfd154a2550932f89e135fbe2b232dfb3",
+    "/moosefs/raid5/salehi/crispr2/crispr-progress/crispr-bwt/target/debug/crisprapido": "281730ac90afc63fefec1ac8bd740b809085ad508e173dfe96461caf92504827"
+  }
+}

@@ -1,0 +1,3950 @@
+[
+  {
+    "independent_eligible": true,
+    "key": [
+      "D0_1+",
+      "+",
+      21
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 21,
+      "ins": 0,
+      "mm": 0,
+      "start": 1
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        0
+      ],
+      "historical_wfa2": [
+        11
+      ],
+      "pam_columba": [
+        0
+      ],
+      "sassy_diagnostic": [
+        12
+      ],
+      "window_wfa2": [
+        12
+      ]
+    },
+    "witness_alignments": 13
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D0_1-",
+      "-",
+      3
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        1
+      ],
+      "historical_wfa2": [
+        12
+      ],
+      "pam_columba": [
+        1
+      ],
+      "sassy_diagnostic": [
+        13
+      ],
+      "window_wfa2": [
+        13
+      ]
+    },
+    "witness_alignments": 13
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "D20_1+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "common_z1",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [
+        15
+      ],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        16
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D20_1+",
+      "+",
+      21
+    ],
+    "missing": [
+      "window_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.6,
+      "cigar": "20=1D",
+      "dele": 1,
+      "end": 21,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        2
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        2
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "20=",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 20,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "D20_1+",
+            "+",
+            20
+          ],
+          "max_gap": 0,
+          "mismatches": 0,
+          "pam": "TAG",
+          "reported_cfd": 0.2593,
+          "row": 44,
+          "schema": "paf12",
+          "start": 0
+        }
+      ]
+    },
+    "witness_alignments": 4
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D20_1-",
+      "-",
+      3
+    ],
+    "missing": [
+      "window_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.6,
+      "cigar": "20=1D",
+      "dele": 1,
+      "end": 24,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        3
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        3
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "20=",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 24,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "D20_1-",
+            "-",
+            4
+          ],
+          "max_gap": 0,
+          "mismatches": 0,
+          "pam": "TAG",
+          "reported_cfd": 0.2593,
+          "row": 47,
+          "schema": "paf12",
+          "start": 4
+        }
+      ]
+    },
+    "witness_alignments": 4
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "D20_1-",
+      "-",
+      4
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "common_z1",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [
+        16
+      ],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        17
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "D5_1+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "common_z1",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        8
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D5_1+",
+      "+",
+      21
+    ],
+    "missing": [
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.133333333333,
+      "cigar": "5=1D15=",
+      "dele": 1,
+      "end": 21,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        4
+      ],
+      "historical_wfa2": [
+        7
+      ],
+      "pam_columba": [
+        4
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": [
+        8
+      ]
+    },
+    "witness_alignments": 15
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D5_1-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.133333333333,
+      "cigar": "5=1D15=",
+      "dele": 1,
+      "end": 24,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        5
+      ],
+      "historical_wfa2": [
+        8
+      ],
+      "pam_columba": [
+        5
+      ],
+      "sassy_diagnostic": [
+        9
+      ],
+      "window_wfa2": [
+        9
+      ]
+    },
+    "witness_alignments": 15
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D5_2+",
+      "+",
+      22
+    ],
+    "missing": [
+      "window_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.1735537189834711,
+      "cigar": "1I1=3X15=",
+      "dele": 0,
+      "end": 22,
+      "ins": 1,
+      "mm": 3,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        6
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        6
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=2D15=",
+          "comparable_record": false,
+          "deleted": 2,
+          "eligible": false,
+          "end": 22,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "D5_2+",
+            "+",
+            22
+          ],
+          "max_gap": 2,
+          "mismatches": 0,
+          "pam": "AGG",
+          "reported_cfd": 0.02,
+          "row": 24,
+          "schema": "paf12",
+          "start": 0
+        }
+      ]
+    },
+    "witness_alignments": 4
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D5_2-",
+      "-",
+      3
+    ],
+    "missing": [
+      "window_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.1735537189834711,
+      "cigar": "1I1=3X15=",
+      "dele": 0,
+      "end": 22,
+      "ins": 1,
+      "mm": 3,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        7
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        7
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=2D15=",
+          "comparable_record": false,
+          "deleted": 2,
+          "eligible": false,
+          "end": 25,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "D5_2-",
+            "-",
+            3
+          ],
+          "max_gap": 2,
+          "mismatches": 0,
+          "pam": "AGG",
+          "reported_cfd": 0.02,
+          "row": 27,
+          "schema": "paf12",
+          "start": 3
+        }
+      ]
+    },
+    "witness_alignments": 4
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I0_1+",
+      "+",
+      19
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "1I19=",
+      "dele": 0,
+      "end": 19,
+      "ins": 1,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        8
+      ],
+      "historical_wfa2": [
+        13
+      ],
+      "pam_columba": [
+        8
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": [
+        14
+      ]
+    },
+    "witness_alignments": 6
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "I0_1+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "common_z1",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        14
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I0_1-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "1I19=",
+      "dele": 0,
+      "end": 22,
+      "ins": 1,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        9
+      ],
+      "historical_wfa2": [
+        14
+      ],
+      "pam_columba": [
+        9
+      ],
+      "sassy_diagnostic": [
+        15
+      ],
+      "window_wfa2": [
+        15
+      ]
+    },
+    "witness_alignments": 6
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I5_1+",
+      "+",
+      19
+    ],
+    "missing": [
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.276923076923,
+      "cigar": "5=1I14=",
+      "dele": 0,
+      "end": 19,
+      "ins": 1,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        10
+      ],
+      "historical_wfa2": [
+        9
+      ],
+      "pam_columba": [
+        10
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": [
+        10
+      ]
+    },
+    "witness_alignments": 9
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "I5_1+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "common_z1",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        10
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I5_1-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.276923076923,
+      "cigar": "5=1I14=",
+      "dele": 0,
+      "end": 22,
+      "ins": 1,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        11
+      ],
+      "historical_wfa2": [
+        10
+      ],
+      "pam_columba": [
+        11
+      ],
+      "sassy_diagnostic": [
+        11
+      ],
+      "window_wfa2": [
+        11
+      ]
+    },
+    "witness_alignments": 9
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "dense_minus",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        12
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        12
+      ],
+      "sassy_diagnostic": [
+        22
+      ],
+      "window_wfa2": [
+        19
+      ]
+    },
+    "witness_alignments": 13
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "dense_minus",
+      "-",
+      30
+    ],
+    "missing": [
+      "window_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 50,
+      "ins": 0,
+      "mm": 0,
+      "start": 30
+    },
+    "panel": "common_z1",
+    "present": [
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        13
+      ],
+      "historical_wfa2": [
+        20
+      ],
+      "pam_columba": [
+        13
+      ],
+      "sassy_diagnostic": [
+        23
+      ],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [],
+          "cfd_agrees": true,
+          "cigar": "20=",
+          "comparable_record": true,
+          "deleted": 0,
+          "eligible": true,
+          "end": 23,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": 1.0,
+          "inserted": 0,
+          "key": [
+            "dense_minus",
+            "-",
+            3
+          ],
+          "max_gap": 0,
+          "mismatches": 0,
+          "pam": "AGG",
+          "reported_cfd": 1.0,
+          "row": 55,
+          "schema": "paf12",
+          "start": 3
+        }
+      ]
+    },
+    "witness_alignments": 7
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "dense_plus",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        14
+      ],
+      "historical_wfa2": [
+        19
+      ],
+      "pam_columba": [
+        14
+      ],
+      "sassy_diagnostic": [
+        20
+      ],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [],
+          "cfd_agrees": true,
+          "cigar": "20=",
+          "comparable_record": true,
+          "deleted": 0,
+          "eligible": true,
+          "end": 47,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": 1.0,
+          "inserted": 0,
+          "key": [
+            "dense_plus",
+            "+",
+            47
+          ],
+          "max_gap": 0,
+          "mismatches": 0,
+          "pam": "AGG",
+          "reported_cfd": 1.0,
+          "row": 52,
+          "schema": "paf12",
+          "start": 27
+        }
+      ]
+    },
+    "witness_alignments": 7
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "dense_plus",
+      "+",
+      47
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 47,
+      "ins": 0,
+      "mm": 0,
+      "start": 27
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        15
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        15
+      ],
+      "sassy_diagnostic": [
+        21
+      ],
+      "window_wfa2": [
+        18
+      ]
+    },
+    "witness_alignments": 13
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "mixed5+",
+      "+",
+      20
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 0.454545455,
+      "cigar": "5=1X14=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 1,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        16
+      ],
+      "historical_wfa2": [
+        17
+      ],
+      "pam_columba": [
+        16
+      ],
+      "sassy_diagnostic": [
+        18
+      ],
+      "window_wfa2": [
+        16
+      ]
+    },
+    "witness_alignments": 8
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "mixed5-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.454545455,
+      "cigar": "5=1X14=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 1,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        17
+      ],
+      "historical_wfa2": [
+        18
+      ],
+      "pam_columba": [
+        17
+      ],
+      "sassy_diagnostic": [
+        19
+      ],
+      "window_wfa2": [
+        17
+      ]
+    },
+    "witness_alignments": 8
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_AAAA+",
+      "+",
+      20
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.14358974337692307,
+      "cigar": "16=2X1=1X",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 3,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        18
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        18
+      ],
+      "sassy_diagnostic": [
+        6
+      ],
+      "window_wfa2": [
+        6
+      ]
+    },
+    "witness_alignments": 2
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_AAAA-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.14358974337692307,
+      "cigar": "16=2X1=1X",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 3,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        19
+      ],
+      "historical_wfa2": [
+        6
+      ],
+      "pam_columba": [
+        19
+      ],
+      "sassy_diagnostic": [
+        7
+      ],
+      "window_wfa2": [
+        7
+      ]
+    },
+    "witness_alignments": 2
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_AAAC+",
+      "+",
+      20
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 0.28717948675384614,
+      "cigar": "16=2X2=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 2,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        20
+      ],
+      "historical_wfa2": [
+        4
+      ],
+      "pam_columba": [
+        20
+      ],
+      "sassy_diagnostic": [
+        4
+      ],
+      "window_wfa2": [
+        4
+      ]
+    },
+    "witness_alignments": 5
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_AAAC-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.28717948675384614,
+      "cigar": "16=2X2=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 2,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        21
+      ],
+      "historical_wfa2": [
+        5
+      ],
+      "pam_columba": [
+        21
+      ],
+      "sassy_diagnostic": [
+        5
+      ],
+      "window_wfa2": [
+        5
+      ]
+    },
+    "witness_alignments": 5
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_ACAC+",
+      "+",
+      20
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 0.533333333,
+      "cigar": "16=1X3=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 1,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        22
+      ],
+      "historical_wfa2": [
+        2
+      ],
+      "pam_columba": [
+        22
+      ],
+      "sassy_diagnostic": [
+        2
+      ],
+      "window_wfa2": [
+        2
+      ]
+    },
+    "witness_alignments": 6
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_ACAC-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.533333333,
+      "cigar": "16=1X3=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 1,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        23
+      ],
+      "historical_wfa2": [
+        3
+      ],
+      "pam_columba": [
+        23
+      ],
+      "sassy_diagnostic": [
+        3
+      ],
+      "window_wfa2": [
+        3
+      ]
+    },
+    "witness_alignments": 6
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_TCAC+",
+      "+",
+      20
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        24
+      ],
+      "historical_wfa2": [
+        0
+      ],
+      "pam_columba": [
+        24
+      ],
+      "sassy_diagnostic": [
+        0
+      ],
+      "window_wfa2": [
+        0
+      ]
+    },
+    "witness_alignments": 7
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_TCAC-",
+      "-",
+      3
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "common_z1",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        25
+      ],
+      "historical_wfa2": [
+        1
+      ],
+      "pam_columba": [
+        25
+      ],
+      "sassy_diagnostic": [
+        1
+      ],
+      "window_wfa2": [
+        1
+      ]
+    },
+    "witness_alignments": 7
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D0_1+",
+      "+",
+      21
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 21,
+      "ins": 0,
+      "mm": 0,
+      "start": 1
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        0
+      ],
+      "historical_wfa2": [
+        15
+      ],
+      "pam_columba": [
+        0
+      ],
+      "sassy_diagnostic": [
+        16
+      ],
+      "window_wfa2": [
+        16
+      ]
+    },
+    "witness_alignments": 59
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D0_1-",
+      "-",
+      3
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        1
+      ],
+      "historical_wfa2": [
+        16
+      ],
+      "pam_columba": [
+        1
+      ],
+      "sassy_diagnostic": [
+        17
+      ],
+      "window_wfa2": [
+        17
+      ]
+    },
+    "witness_alignments": 59
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "D20_1+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "z2_radius_diagnostic",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [
+        19
+      ],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        20
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D20_1+",
+      "+",
+      21
+    ],
+    "missing": [
+      "window_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.6,
+      "cigar": "20=1D",
+      "dele": 1,
+      "end": 21,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        2
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        2
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "20=",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 20,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "D20_1+",
+            "+",
+            20
+          ],
+          "max_gap": 0,
+          "mismatches": 0,
+          "pam": "TAG",
+          "reported_cfd": 0.2593,
+          "row": 44,
+          "schema": "paf12",
+          "start": 0
+        }
+      ]
+    },
+    "witness_alignments": 4
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D20_1-",
+      "-",
+      3
+    ],
+    "missing": [
+      "window_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.6,
+      "cigar": "20=1D",
+      "dele": 1,
+      "end": 24,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        3
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        3
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "20=",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 24,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "D20_1-",
+            "-",
+            4
+          ],
+          "max_gap": 0,
+          "mismatches": 0,
+          "pam": "TAG",
+          "reported_cfd": 0.2593,
+          "row": 47,
+          "schema": "paf12",
+          "start": 4
+        }
+      ]
+    },
+    "witness_alignments": 4
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "D20_1-",
+      "-",
+      4
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "z2_radius_diagnostic",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [
+        20
+      ],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        21
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "D5_1+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "z2_radius_diagnostic",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        8
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D5_1+",
+      "+",
+      21
+    ],
+    "missing": [
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.133333333333,
+      "cigar": "5=1D15=",
+      "dele": 1,
+      "end": 21,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        4
+      ],
+      "historical_wfa2": [
+        7
+      ],
+      "pam_columba": [
+        4
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": [
+        8
+      ]
+    },
+    "witness_alignments": 60
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D5_1-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.133333333333,
+      "cigar": "5=1D15=",
+      "dele": 1,
+      "end": 24,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        5
+      ],
+      "historical_wfa2": [
+        8
+      ],
+      "pam_columba": [
+        5
+      ],
+      "sassy_diagnostic": [
+        9
+      ],
+      "window_wfa2": [
+        9
+      ]
+    },
+    "witness_alignments": 60
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "D5_2+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "z2_radius_diagnostic",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        10
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D5_2+",
+      "+",
+      22
+    ],
+    "missing": [
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.01999999999995,
+      "cigar": "5=2D15=",
+      "dele": 2,
+      "end": 22,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        6
+      ],
+      "historical_wfa2": [
+        9
+      ],
+      "pam_columba": [
+        6
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": [
+        10
+      ]
+    },
+    "witness_alignments": 25
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "D5_2-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.01999999999995,
+      "cigar": "5=2D15=",
+      "dele": 2,
+      "end": 25,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        7
+      ],
+      "historical_wfa2": [
+        10
+      ],
+      "pam_columba": [
+        7
+      ],
+      "sassy_diagnostic": [
+        11
+      ],
+      "window_wfa2": [
+        11
+      ]
+    },
+    "witness_alignments": 25
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I0_1+",
+      "+",
+      19
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "1I19=",
+      "dele": 0,
+      "end": 19,
+      "ins": 1,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        8
+      ],
+      "historical_wfa2": [
+        17
+      ],
+      "pam_columba": [
+        8
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": [
+        18
+      ]
+    },
+    "witness_alignments": 12
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "I0_1+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "z2_radius_diagnostic",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        18
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I0_1-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "1I19=",
+      "dele": 0,
+      "end": 22,
+      "ins": 1,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        9
+      ],
+      "historical_wfa2": [
+        18
+      ],
+      "pam_columba": [
+        9
+      ],
+      "sassy_diagnostic": [
+        19
+      ],
+      "window_wfa2": [
+        19
+      ]
+    },
+    "witness_alignments": 12
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I5_1+",
+      "+",
+      19
+    ],
+    "missing": [
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.276923076923,
+      "cigar": "5=1I14=",
+      "dele": 0,
+      "end": 19,
+      "ins": 1,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        10
+      ],
+      "historical_wfa2": [
+        11
+      ],
+      "pam_columba": [
+        10
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": [
+        12
+      ]
+    },
+    "witness_alignments": 15
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "I5_1+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "z2_radius_diagnostic",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        12
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I5_1-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.276923076923,
+      "cigar": "5=1I14=",
+      "dele": 0,
+      "end": 22,
+      "ins": 1,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        11
+      ],
+      "historical_wfa2": [
+        12
+      ],
+      "pam_columba": [
+        11
+      ],
+      "sassy_diagnostic": [
+        13
+      ],
+      "window_wfa2": [
+        13
+      ]
+    },
+    "witness_alignments": 15
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I5_2+",
+      "+",
+      18
+    ],
+    "missing": [
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.13626373626356214,
+      "cigar": "5=2I13=",
+      "dele": 0,
+      "end": 18,
+      "ins": 2,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        12
+      ],
+      "historical_wfa2": [
+        13
+      ],
+      "pam_columba": [
+        12
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": [
+        14
+      ]
+    },
+    "witness_alignments": 9
+  },
+  {
+    "independent_eligible": false,
+    "key": [
+      "I5_2+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "panel": "z2_radius_diagnostic",
+    "present": [],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [],
+      "sassy_diagnostic": [
+        14
+      ],
+      "window_wfa2": []
+    },
+    "witness_alignments": 0
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "I5_2-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": 0.13626373626356214,
+      "cigar": "5=2I13=",
+      "dele": 0,
+      "end": 21,
+      "ins": 2,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        13
+      ],
+      "historical_wfa2": [
+        14
+      ],
+      "pam_columba": [
+        13
+      ],
+      "sassy_diagnostic": [
+        15
+      ],
+      "window_wfa2": [
+        15
+      ]
+    },
+    "witness_alignments": 9
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "dense_minus",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        14
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        14
+      ],
+      "sassy_diagnostic": [
+        26
+      ],
+      "window_wfa2": [
+        23
+      ]
+    },
+    "witness_alignments": 64
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "dense_minus",
+      "-",
+      30
+    ],
+    "missing": [
+      "window_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 50,
+      "ins": 0,
+      "mm": 0,
+      "start": 30
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        15
+      ],
+      "historical_wfa2": [
+        24
+      ],
+      "pam_columba": [
+        15
+      ],
+      "sassy_diagnostic": [
+        27
+      ],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [],
+          "cfd_agrees": true,
+          "cigar": "20=",
+          "comparable_record": true,
+          "deleted": 0,
+          "eligible": true,
+          "end": 23,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": 1.0,
+          "inserted": 0,
+          "key": [
+            "dense_minus",
+            "-",
+            3
+          ],
+          "max_gap": 0,
+          "mismatches": 0,
+          "pam": "AGG",
+          "reported_cfd": 1.0,
+          "row": 55,
+          "schema": "paf12",
+          "start": 3
+        }
+      ]
+    },
+    "witness_alignments": 53
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "dense_plus",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        16
+      ],
+      "historical_wfa2": [
+        23
+      ],
+      "pam_columba": [
+        16
+      ],
+      "sassy_diagnostic": [
+        24
+      ],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [],
+          "cfd_agrees": true,
+          "cigar": "20=",
+          "comparable_record": true,
+          "deleted": 0,
+          "eligible": true,
+          "end": 47,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": 1.0,
+          "inserted": 0,
+          "key": [
+            "dense_plus",
+            "+",
+            47
+          ],
+          "max_gap": 0,
+          "mismatches": 0,
+          "pam": "AGG",
+          "reported_cfd": 1.0,
+          "row": 52,
+          "schema": "paf12",
+          "start": 27
+        }
+      ]
+    },
+    "witness_alignments": 53
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "dense_plus",
+      "+",
+      47
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 47,
+      "ins": 0,
+      "mm": 0,
+      "start": 27
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        17
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        17
+      ],
+      "sassy_diagnostic": [
+        25
+      ],
+      "window_wfa2": [
+        22
+      ]
+    },
+    "witness_alignments": 64
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "mixed5+",
+      "+",
+      20
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 0.454545455,
+      "cigar": "5=1X14=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 1,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        18
+      ],
+      "historical_wfa2": [
+        21
+      ],
+      "pam_columba": [
+        18
+      ],
+      "sassy_diagnostic": [
+        22
+      ],
+      "window_wfa2": [
+        20
+      ]
+    },
+    "witness_alignments": 53
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "mixed5-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.454545455,
+      "cigar": "5=1X14=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 1,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        19
+      ],
+      "historical_wfa2": [
+        22
+      ],
+      "pam_columba": [
+        19
+      ],
+      "sassy_diagnostic": [
+        23
+      ],
+      "window_wfa2": [
+        21
+      ]
+    },
+    "witness_alignments": 53
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_AAAA+",
+      "+",
+      20
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.14358974337692307,
+      "cigar": "16=2X1=1X",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 3,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        20
+      ],
+      "historical_wfa2": [],
+      "pam_columba": [
+        20
+      ],
+      "sassy_diagnostic": [
+        6
+      ],
+      "window_wfa2": [
+        6
+      ]
+    },
+    "witness_alignments": 43
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_AAAA-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.14358974337692307,
+      "cigar": "16=2X1=1X",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 3,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        21
+      ],
+      "historical_wfa2": [
+        6
+      ],
+      "pam_columba": [
+        21
+      ],
+      "sassy_diagnostic": [
+        7
+      ],
+      "window_wfa2": [
+        7
+      ]
+    },
+    "witness_alignments": 43
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_AAAC+",
+      "+",
+      20
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 0.28717948675384614,
+      "cigar": "16=2X2=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 2,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        22
+      ],
+      "historical_wfa2": [
+        4
+      ],
+      "pam_columba": [
+        22
+      ],
+      "sassy_diagnostic": [
+        4
+      ],
+      "window_wfa2": [
+        4
+      ]
+    },
+    "witness_alignments": 48
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_AAAC-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.28717948675384614,
+      "cigar": "16=2X2=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 2,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        23
+      ],
+      "historical_wfa2": [
+        5
+      ],
+      "pam_columba": [
+        23
+      ],
+      "sassy_diagnostic": [
+        5
+      ],
+      "window_wfa2": [
+        5
+      ]
+    },
+    "witness_alignments": 48
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_ACAC+",
+      "+",
+      20
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 0.533333333,
+      "cigar": "16=1X3=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 1,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        24
+      ],
+      "historical_wfa2": [
+        2
+      ],
+      "pam_columba": [
+        24
+      ],
+      "sassy_diagnostic": [
+        2
+      ],
+      "window_wfa2": [
+        2
+      ]
+    },
+    "witness_alignments": 51
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_ACAC-",
+      "-",
+      3
+    ],
+    "missing": [
+      "historical_wfa2"
+    ],
+    "oracle_representative": {
+      "cfd": 0.533333333,
+      "cigar": "16=1X3=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 1,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        25
+      ],
+      "historical_wfa2": [
+        3
+      ],
+      "pam_columba": [
+        25
+      ],
+      "sassy_diagnostic": [
+        3
+      ],
+      "window_wfa2": [
+        3
+      ]
+    },
+    "witness_alignments": 51
+  },
+  {
+    "columba_missing_investigation": {
+      "any_candidate_same_contig_strand": true,
+      "candidate_at_same_anchor": false,
+      "identical_candidate_interval": false,
+      "interpretation": "eligible witness supplied but pipeline still omits anchor: verifier/fallback/report selection limitation",
+      "oracle_candidate_injection_recovers_anchor": false,
+      "preferred_anchored_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "16=2I2X",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 18,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 2,
+          "key": [
+            "suffix_GGGG+",
+            "+",
+            18
+          ],
+          "max_gap": 2,
+          "mismatches": 2,
+          "pam": "GGA",
+          "reported_cfd": 0.0,
+          "row": 0,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "16=1I3X",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 19,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 1,
+          "key": [
+            "suffix_GGGG+",
+            "+",
+            19
+          ],
+          "max_gap": 1,
+          "mismatches": 3,
+          "pam": "GAG",
+          "reported_cfd": 0.0,
+          "row": 1,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "16=4X",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 20,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "suffix_GGGG+",
+            "+",
+            20
+          ],
+          "max_gap": 0,
+          "mismatches": 4,
+          "pam": "AGG",
+          "reported_cfd": 0.0003,
+          "row": 2,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "16=1D4X",
+          "comparable_record": false,
+          "deleted": 1,
+          "eligible": false,
+          "end": 21,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "suffix_GGGG+",
+            "+",
+            21
+          ],
+          "max_gap": 1,
+          "mismatches": 4,
+          "pam": "GG",
+          "reported_cfd": null,
+          "row": 3,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "16=2D2X1=1X",
+          "comparable_record": false,
+          "deleted": 2,
+          "eligible": false,
+          "end": 22,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "suffix_GGGG+",
+            "+",
+            22
+          ],
+          "max_gap": 2,
+          "mismatches": 3,
+          "pam": "G",
+          "reported_cfd": null,
+          "row": 4,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "1I15=3D4X",
+          "comparable_record": false,
+          "deleted": 3,
+          "eligible": false,
+          "end": 23,
+          "events": 2,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 1,
+          "key": [
+            "suffix_GGGG+",
+            "+",
+            23
+          ],
+          "max_gap": 3,
+          "mismatches": 4,
+          "pam": "",
+          "reported_cfd": null,
+          "row": 5,
+          "schema": "paf12",
+          "start": 1
+        }
+      ]
+    },
+    "independent_eligible": true,
+    "key": [
+      "suffix_GGGG+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": null,
+      "cigar": "16=1D1I3X",
+      "dele": 1,
+      "end": 20,
+      "ins": 1,
+      "mm": 3,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [
+        26
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "16=4I",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 16,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 4,
+          "key": [
+            "suffix_GGGG+",
+            "+",
+            16
+          ],
+          "max_gap": 4,
+          "mismatches": 0,
+          "pam": "GGG",
+          "reported_cfd": 0.0,
+          "row": 16,
+          "schema": "paf12",
+          "start": 0
+        }
+      ]
+    },
+    "witness_alignments": 8
+  },
+  {
+    "columba_missing_investigation": {
+      "any_candidate_same_contig_strand": true,
+      "candidate_at_same_anchor": false,
+      "identical_candidate_interval": false,
+      "interpretation": "eligible witness supplied but pipeline still omits anchor: verifier/fallback/report selection limitation",
+      "oracle_candidate_injection_recovers_anchor": false,
+      "preferred_anchored_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "1I15=3D4X",
+          "comparable_record": false,
+          "deleted": 3,
+          "eligible": false,
+          "end": 22,
+          "events": 2,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 1,
+          "key": [
+            "suffix_GGGG-",
+            "-",
+            0
+          ],
+          "max_gap": 3,
+          "mismatches": 4,
+          "pam": "",
+          "reported_cfd": null,
+          "row": 6,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "16=2D2X1=1X",
+          "comparable_record": false,
+          "deleted": 2,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "suffix_GGGG-",
+            "-",
+            1
+          ],
+          "max_gap": 2,
+          "mismatches": 3,
+          "pam": "G",
+          "reported_cfd": null,
+          "row": 7,
+          "schema": "paf12",
+          "start": 1
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "16=1D4X",
+          "comparable_record": false,
+          "deleted": 1,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "suffix_GGGG-",
+            "-",
+            2
+          ],
+          "max_gap": 1,
+          "mismatches": 4,
+          "pam": "GG",
+          "reported_cfd": null,
+          "row": 8,
+          "schema": "paf12",
+          "start": 2
+        },
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "16=4X",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 23,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "suffix_GGGG-",
+            "-",
+            3
+          ],
+          "max_gap": 0,
+          "mismatches": 4,
+          "pam": "AGG",
+          "reported_cfd": 0.0003,
+          "row": 9,
+          "schema": "paf12",
+          "start": 3
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "16=1I3X",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 1,
+          "key": [
+            "suffix_GGGG-",
+            "-",
+            4
+          ],
+          "max_gap": 1,
+          "mismatches": 3,
+          "pam": "GAG",
+          "reported_cfd": 0.0,
+          "row": 10,
+          "schema": "paf12",
+          "start": 4
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "16=2I2X",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 2,
+          "key": [
+            "suffix_GGGG-",
+            "-",
+            5
+          ],
+          "max_gap": 2,
+          "mismatches": 2,
+          "pam": "GGA",
+          "reported_cfd": 0.0,
+          "row": 11,
+          "schema": "paf12",
+          "start": 5
+        }
+      ]
+    },
+    "independent_eligible": true,
+    "key": [
+      "suffix_GGGG-",
+      "-",
+      3
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": null,
+      "cigar": "16=1D1I3X",
+      "dele": 1,
+      "end": 23,
+      "ins": 1,
+      "mm": 3,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [
+        27
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "16=4I",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 4,
+          "key": [
+            "suffix_GGGG-",
+            "-",
+            7
+          ],
+          "max_gap": 4,
+          "mismatches": 0,
+          "pam": "GGG",
+          "reported_cfd": 0.0,
+          "row": 19,
+          "schema": "paf12",
+          "start": 7
+        }
+      ]
+    },
+    "witness_alignments": 8
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_TCAC+",
+      "+",
+      20
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 20,
+      "ins": 0,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        26
+      ],
+      "historical_wfa2": [
+        0
+      ],
+      "pam_columba": [
+        28
+      ],
+      "sassy_diagnostic": [
+        0
+      ],
+      "window_wfa2": [
+        0
+      ]
+    },
+    "witness_alignments": 53
+  },
+  {
+    "independent_eligible": true,
+    "key": [
+      "suffix_TCAC-",
+      "-",
+      3
+    ],
+    "missing": [],
+    "oracle_representative": {
+      "cfd": 1.0,
+      "cigar": "20=",
+      "dele": 0,
+      "end": 23,
+      "ins": 0,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "z2_radius_diagnostic",
+    "present": [
+      "window_wfa2",
+      "columba_wfa2",
+      "pam_columba",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "record_ids": {
+      "columba_wfa2": [
+        27
+      ],
+      "historical_wfa2": [
+        1
+      ],
+      "pam_columba": [
+        29
+      ],
+      "sassy_diagnostic": [
+        1
+      ],
+      "window_wfa2": [
+        1
+      ]
+    },
+    "witness_alignments": 53
+  },
+  {
+    "columba_missing_investigation": {
+      "any_candidate_same_contig_strand": true,
+      "candidate_at_same_anchor": true,
+      "identical_candidate_interval": true,
+      "interpretation": "eligible witness supplied but pipeline still omits anchor: verifier/fallback/report selection limitation",
+      "oracle_candidate_injection_recovers_anchor": false,
+      "preferred_anchored_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=1X12=2I",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 18,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 2,
+          "key": [
+            "mixed+",
+            "+",
+            18
+          ],
+          "max_gap": 2,
+          "mismatches": 1,
+          "pam": "ACA",
+          "reported_cfd": 0.0,
+          "row": 0,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=1X13=1I",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 19,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 1,
+          "key": [
+            "mixed+",
+            "+",
+            19
+          ],
+          "max_gap": 1,
+          "mismatches": 1,
+          "pam": "CAG",
+          "reported_cfd": 0.0037,
+          "row": 1,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=1X14=",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 20,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "mixed+",
+            "+",
+            20
+          ],
+          "max_gap": 0,
+          "mismatches": 1,
+          "pam": "AGG",
+          "reported_cfd": 0.4545,
+          "row": 2,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "5=1X14=1D",
+          "comparable_record": false,
+          "deleted": 1,
+          "eligible": false,
+          "end": 21,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "mixed+",
+            "+",
+            21
+          ],
+          "max_gap": 1,
+          "mismatches": 1,
+          "pam": "GG",
+          "reported_cfd": null,
+          "row": 3,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "5=1X14=2D",
+          "comparable_record": false,
+          "deleted": 2,
+          "eligible": false,
+          "end": 22,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "mixed+",
+            "+",
+            22
+          ],
+          "max_gap": 2,
+          "mismatches": 1,
+          "pam": "G",
+          "reported_cfd": null,
+          "row": 4,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "1I4=1X14=3D",
+          "comparable_record": false,
+          "deleted": 3,
+          "eligible": false,
+          "end": 23,
+          "events": 2,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 1,
+          "key": [
+            "mixed+",
+            "+",
+            23
+          ],
+          "max_gap": 3,
+          "mismatches": 1,
+          "pam": "",
+          "reported_cfd": null,
+          "row": 5,
+          "schema": "paf12",
+          "start": 1
+        }
+      ]
+    },
+    "independent_eligible": true,
+    "key": [
+      "mixed+",
+      "+",
+      20
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": null,
+      "cigar": "5=1D1I14=",
+      "dele": 1,
+      "end": 20,
+      "ins": 1,
+      "mm": 0,
+      "start": 0
+    },
+    "panel": "mixed_only",
+    "present": [
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [
+        0
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=1X14=",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 20,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "mixed+",
+            "+",
+            20
+          ],
+          "max_gap": 0,
+          "mismatches": 1,
+          "pam": "AGG",
+          "reported_cfd": 0.4545,
+          "row": 0,
+          "schema": "paf12",
+          "start": 0
+        }
+      ]
+    },
+    "witness_alignments": 2
+  },
+  {
+    "columba_missing_investigation": {
+      "any_candidate_same_contig_strand": true,
+      "candidate_at_same_anchor": true,
+      "identical_candidate_interval": true,
+      "interpretation": "eligible witness supplied but pipeline still omits anchor: verifier/fallback/report selection limitation",
+      "oracle_candidate_injection_recovers_anchor": false,
+      "preferred_anchored_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "1I4=1X14=3D",
+          "comparable_record": false,
+          "deleted": 3,
+          "eligible": false,
+          "end": 22,
+          "events": 2,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 1,
+          "key": [
+            "mixed-",
+            "-",
+            0
+          ],
+          "max_gap": 3,
+          "mismatches": 1,
+          "pam": "",
+          "reported_cfd": null,
+          "row": 6,
+          "schema": "paf12",
+          "start": 0
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "5=1X14=2D",
+          "comparable_record": false,
+          "deleted": 2,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "mixed-",
+            "-",
+            1
+          ],
+          "max_gap": 2,
+          "mismatches": 1,
+          "pam": "G",
+          "reported_cfd": null,
+          "row": 7,
+          "schema": "paf12",
+          "start": 1
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": null,
+          "cigar": "5=1X14=1D",
+          "comparable_record": false,
+          "deleted": 1,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "mixed-",
+            "-",
+            2
+          ],
+          "max_gap": 1,
+          "mismatches": 1,
+          "pam": "GG",
+          "reported_cfd": null,
+          "row": 8,
+          "schema": "paf12",
+          "start": 2
+        },
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=1X14=",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 23,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "mixed-",
+            "-",
+            3
+          ],
+          "max_gap": 0,
+          "mismatches": 1,
+          "pam": "AGG",
+          "reported_cfd": 0.4545,
+          "row": 9,
+          "schema": "paf12",
+          "start": 3
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=1X13=1I",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 1,
+          "key": [
+            "mixed-",
+            "-",
+            4
+          ],
+          "max_gap": 1,
+          "mismatches": 1,
+          "pam": "CAG",
+          "reported_cfd": 0.0037,
+          "row": 10,
+          "schema": "paf12",
+          "start": 4
+        },
+        {
+          "alignment_errors": [
+            "not_requested_complete_NGG"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=1X12=2I",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 23,
+          "events": 1,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 2,
+          "key": [
+            "mixed-",
+            "-",
+            5
+          ],
+          "max_gap": 2,
+          "mismatches": 1,
+          "pam": "ACA",
+          "reported_cfd": 0.0,
+          "row": 11,
+          "schema": "paf12",
+          "start": 5
+        }
+      ]
+    },
+    "independent_eligible": true,
+    "key": [
+      "mixed-",
+      "-",
+      3
+    ],
+    "missing": [
+      "window_wfa2",
+      "columba_wfa2",
+      "historical_wfa2",
+      "sassy_diagnostic"
+    ],
+    "oracle_representative": {
+      "cfd": null,
+      "cigar": "5=1D1I14=",
+      "dele": 1,
+      "end": 23,
+      "ins": 1,
+      "mm": 0,
+      "start": 3
+    },
+    "panel": "mixed_only",
+    "present": [
+      "pam_columba"
+    ],
+    "record_ids": {
+      "columba_wfa2": [],
+      "historical_wfa2": [],
+      "pam_columba": [
+        1
+      ],
+      "sassy_diagnostic": [],
+      "window_wfa2": []
+    },
+    "window_missing_investigation": {
+      "interpretation": "single ends-free optimum per window/strand then constraints/PAM; eligible alternative witness exists; see controlled preferred-alignment rows and source",
+      "preferred_unfiltered_same_contig_strand": [
+        {
+          "alignment_errors": [
+            "outside_common_mismatch_bulge_fraction_limits"
+          ],
+          "cfd_agrees": false,
+          "cigar": "5=1X14=",
+          "comparable_record": false,
+          "deleted": 0,
+          "eligible": false,
+          "end": 23,
+          "events": 0,
+          "export_errors": [],
+          "independent_cfd": null,
+          "inserted": 0,
+          "key": [
+            "mixed-",
+            "-",
+            3
+          ],
+          "max_gap": 0,
+          "mismatches": 1,
+          "pam": "AGG",
+          "reported_cfd": 0.4545,
+          "row": 3,
+          "schema": "paf12",
+          "start": 3
+        }
+      ]
+    },
+    "witness_alignments": 2
+  }
+]

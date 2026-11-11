@@ -1,5 +1,7 @@
 # CRISPRapido Benchmarks
 
+**Current normalized concordance:** see [bounded search-mode report](../research/search_concordance/REPORT.md), [implementation taxonomy](../research/search_concordance/IMPLEMENTATIONS.md), and [manuscript evidence/reuse gates](../manuscript/EVIDENCE.md). The assets below describe their original historical Columba/WFA2 experiments; “original,” interval/locus equivalence, strict PAM policy, output formats and timing scopes must not be silently reinterpreted as a current five-engine comparison. Existing figure files are preserved, not recertified under today's search/score contract.
+
 This directory contains reproducible benchmarks for the Columba-enabled CRISPRapido implementation.
 
 The `controlled/` benchmark checks correctness on a small reference by comparing manual Columba SAM import against automatic Columba execution. For every verification configuration, the benchmark computes `candidate_e = m + b*z`, generates a fresh manual SAM with that exact Columba edit-distance threshold, and verifies that manual and automatic modes produce byte-identical PAF output after the shared WFA2 verification, CFD scoring, filtering, and reporting pipeline.

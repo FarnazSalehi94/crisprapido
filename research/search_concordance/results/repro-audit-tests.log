@@ -1,0 +1,9 @@
+test_duplicates_rejected_but_query_ids_distinct (test_workflow.WorkflowAuditTests.test_duplicates_rejected_but_query_ids_distinct) ... ok
+test_independent_cfd_replay_detects_score_mutation (test_workflow.WorkflowAuditTests.test_independent_cfd_replay_detects_score_mutation) ... ok
+test_missing_unexpected_and_changed_representative_rejected (test_workflow.WorkflowAuditTests.test_missing_unexpected_and_changed_representative_rejected) ... ok
+test_unavailable_not_promoted_to_zero (test_workflow.WorkflowAuditTests.test_unavailable_not_promoted_to_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

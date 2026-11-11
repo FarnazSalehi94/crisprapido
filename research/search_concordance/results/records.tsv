@@ -1,0 +1,255 @@
+panel	guide_sequence	mode	row	contig	strand	anchor	start	end	cigar	schema	eligible	comparable_record	export_errors	alignment_errors	mismatches	inserted	deleted	events	max_gap	pam	independent_cfd_status	independent_cfd	reported_cfd	cfd_agrees
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	0	suffix_TCAC+	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	1	suffix_TCAC-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	2	suffix_ACAC+	+	20	0	20	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	3	suffix_ACAC-	-	3	3	23	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	4	suffix_AAAC+	+	20	0	20	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	5	suffix_AAAC-	-	3	3	23	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	6	suffix_AAAA+	+	20	0	20	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	7	suffix_AAAA-	-	3	3	23	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	8	D5_1+	+	21	0	21	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	9	D5_1-	-	3	3	24	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	10	I5_1+	+	19	0	19	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	11	I5_1-	-	3	3	22	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	12	D0_1+	+	21	1	21	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	13	D0_1-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	14	I0_1+	+	19	0	19	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	15	I0_1-	-	3	3	22	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	16	mixed5+	+	20	0	20	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	17	mixed5-	-	3	3	23	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	18	dense_plus	+	47	27	47	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	window_wfa2	19	dense_minus	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	0	D0_1+	+	21	1	21	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	1	D0_1-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	2	D20_1+	+	21	0	21	20=1D	paf12	True	True			0	0	1	1	1	AGG	defined	0.6	0.6	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	3	D20_1-	-	3	3	24	20=1D	paf12	True	True			0	0	1	1	1	AGG	defined	0.6	0.6	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	4	D5_1+	+	21	0	21	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	5	D5_1-	-	3	3	24	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	6	D5_2+	+	22	1	22	1X2=1D2X15=	paf12	True	True			3	0	1	1	1	AGG	defined	0.2699724514822287	0.27	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	7	D5_2-	-	3	3	22	1I1=3X15=	paf12	True	True			3	1	0	1	1	AGG	defined	0.1735537189834711	0.1736	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	8	I0_1+	+	19	0	19	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	9	I0_1-	-	3	3	22	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	10	I5_1+	+	19	0	19	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	11	I5_1-	-	3	3	22	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	12	dense_minus	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	13	dense_minus	-	30	30	50	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	14	dense_plus	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	15	dense_plus	+	47	27	47	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	16	mixed5+	+	20	0	20	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	17	mixed5-	-	3	3	23	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	18	suffix_AAAA+	+	20	0	20	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	19	suffix_AAAA-	-	3	3	23	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	20	suffix_AAAC+	+	20	0	20	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	21	suffix_AAAC-	-	3	3	23	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	22	suffix_ACAC+	+	20	0	20	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	23	suffix_ACAC-	-	3	3	23	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	24	suffix_TCAC+	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	columba_wfa2	25	suffix_TCAC-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	0	D0_1+	+	21	1	21	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	1	D0_1-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	2	D20_1+	+	21	0	21	20=1D	paf12	True	True			0	0	1	1	1	AGG	defined	0.6	0.6	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	3	D20_1-	-	3	3	24	20=1D	paf12	True	True			0	0	1	1	1	AGG	defined	0.6	0.6	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	4	D5_1+	+	21	0	21	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	5	D5_1-	-	3	3	24	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	6	D5_2+	+	22	3	22	1I1=3X15=	paf12	True	True			3	1	0	1	1	AGG	defined	0.1735537189834711	0.1736	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	7	D5_2-	-	3	3	22	1I1=3X15=	paf12	True	True			3	1	0	1	1	AGG	defined	0.1735537189834711	0.1736	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	8	I0_1+	+	19	0	19	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	9	I0_1-	-	3	3	22	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	10	I5_1+	+	19	0	19	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	11	I5_1-	-	3	3	22	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	12	dense_minus	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	13	dense_minus	-	30	30	50	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	14	dense_plus	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	15	dense_plus	+	47	27	47	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	16	mixed5+	+	20	0	20	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	17	mixed5-	-	3	3	23	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	18	suffix_AAAA+	+	20	0	20	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	19	suffix_AAAA-	-	3	3	23	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	20	suffix_AAAC+	+	20	0	20	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	21	suffix_AAAC-	-	3	3	23	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	22	suffix_ACAC+	+	20	0	20	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	23	suffix_ACAC-	-	3	3	23	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	24	suffix_TCAC+	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	pam_columba	25	suffix_TCAC-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	0	suffix_TCAC+	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	1	suffix_TCAC-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	2	suffix_ACAC+	+	20	0	20	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	3	suffix_ACAC-	-	3	3	23	3=1X16=	paf12	False	False		cigar_base_assertion	1	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	4	suffix_AAAC+	+	20	0	20	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	5	suffix_AAAC-	-	3	3	23	2=2X16=	paf12	False	False		cigar_base_assertion	2	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	6	suffix_AAAA-	-	3	3	23	1X1=2X16=	paf12	False	False		cigar_base_assertion	3	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	7	D5_1+	+	21	0	21	5=1D15=	paf12	True	False	query_coordinates_not_full_guide		0	0	1	1	1	AGG	defined	0.133333333333	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	8	D5_1-	-	3	3	24	15=1D5=	paf12	False	False	query_coordinates_not_full_guide	cigar_base_assertion	7	0	1	1	1	AGG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	9	I5_1+	+	19	0	19	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	10	I5_1-	-	3	3	22	14=1I5=	paf12	False	False		cigar_base_assertion	6	1	0	1	1	AGG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	11	D0_1+	+	21	1	21	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	12	D0_1-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	13	I0_1+	+	19	0	19	19=	paf12	False	False	query_coordinates_not_full_guide	cigar_guide_consumption	0	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	14	I0_1-	-	3	3	22	19=	paf12	False	False	query_coordinates_not_full_guide	cigar_guide_consumption	0	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	15	D20_1+	+	20	0	20	20=	paf12	False	False		not_requested_complete_NGG	0	0	0	0	0	TAG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	16	D20_1-	-	4	4	24	20=	paf12	False	False		not_requested_complete_NGG	0	0	0	0	0	TAG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	17	mixed5+	+	20	0	20	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	18	mixed5-	-	3	3	23	14=1X5=	paf12	False	False		cigar_base_assertion	1	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	19	dense_plus	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	historical_wfa2	20	dense_minus	-	30	30	50	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	0	suffix_TCAC+	+	20	0	20	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	1	suffix_TCAC-	-	3	3	23	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	2	suffix_ACAC+	+	20	0	20	16=1X3=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	3	suffix_ACAC-	-	3	3	23	16=1X3=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	4	suffix_AAAC+	+	20	0	20	16=2X2=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	5	suffix_AAAC-	-	3	3	23	16=2X2=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	6	suffix_AAAA+	+	20	0	20	16=2X1=1X	legacy11_missing_block_length	True	False	missing_mandatory_block_length		3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	7	suffix_AAAA-	-	3	3	23	16=2X1=1X	legacy11_missing_block_length	True	False	missing_mandatory_block_length		3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	8	D5_1+	+	20	0	20	5=1D15=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;not_requested_complete_NGG	0	0	0	0	0	CAG	not_auditable	N/A	0.0667	False
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	9	D5_1-	-	3	3	23	5=1D15=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export	0	0	0	0	0	AGG	not_auditable	N/A	0.0	False
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	10	I5_1+	+	20	0	20	5=1I14=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;not_requested_complete_NGG	0	0	0	0	0	GG	not_auditable	N/A	0.2769	False
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	11	I5_1-	-	3	3	23	5=1I14=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;reference_coordinates	0	0	0	0	0	AGG	not_auditable	N/A	0.2769	False
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	12	D0_1+	+	21	1	21	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	13	D0_1-	-	3	3	23	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	14	I0_1+	+	20	0	20	1I19=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;not_requested_complete_NGG	0	0	0	0	0	GG	not_auditable	N/A	1.0	False
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	15	I0_1-	-	3	3	23	1I19=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;reference_coordinates	0	0	0	0	0	AGG	not_auditable	N/A	1.0	False
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	16	D20_1+	+	20	0	20	20=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	not_requested_complete_NGG	0	0	0	0	0	TAG	not_auditable	N/A	1.0	False
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	17	D20_1-	-	4	4	24	20=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	not_requested_complete_NGG	0	0	0	0	0	TAG	not_auditable	N/A	1.0	False
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	18	mixed5+	+	20	0	20	5=1X14=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	19	mixed5-	-	3	3	23	5=1X14=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	20	dense_plus	+	20	0	20	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	21	dense_plus	+	47	27	47	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	22	dense_minus	-	3	3	23	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+common_z1	GAAACAGTCGATTTTATCAC	sassy_diagnostic	23	dense_minus	-	30	30	50	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	0	suffix_TCAC+	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	1	suffix_TCAC-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	2	suffix_ACAC+	+	20	0	20	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	3	suffix_ACAC-	-	3	3	23	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	4	suffix_AAAC+	+	20	0	20	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	5	suffix_AAAC-	-	3	3	23	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	6	suffix_AAAA+	+	20	0	20	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	7	suffix_AAAA-	-	3	3	23	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	8	D5_1+	+	21	0	21	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	9	D5_1-	-	3	3	24	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	10	D5_2+	+	22	0	22	5=2D15=	paf12	True	True			0	0	2	1	2	AGG	defined	0.01999999999995	0.02	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	11	D5_2-	-	3	3	25	5=2D15=	paf12	True	True			0	0	2	1	2	AGG	defined	0.01999999999995	0.02	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	12	I5_1+	+	19	0	19	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	13	I5_1-	-	3	3	22	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	14	I5_2+	+	18	0	18	5=2I13=	paf12	True	True			0	2	0	1	2	AGG	defined	0.13626373626356214	0.1363	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	15	I5_2-	-	3	3	21	5=2I13=	paf12	True	True			0	2	0	1	2	AGG	defined	0.13626373626356214	0.1363	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	16	D0_1+	+	21	1	21	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	17	D0_1-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	18	I0_1+	+	19	0	19	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	19	I0_1-	-	3	3	22	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	20	mixed5+	+	20	0	20	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	21	mixed5-	-	3	3	23	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	22	dense_plus	+	47	27	47	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	window_wfa2	23	dense_minus	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	0	D0_1+	+	21	1	21	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	1	D0_1-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	2	D20_1+	+	21	0	21	20=1D	paf12	True	True			0	0	1	1	1	AGG	defined	0.6	0.6	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	3	D20_1-	-	3	3	24	20=1D	paf12	True	True			0	0	1	1	1	AGG	defined	0.6	0.6	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	4	D5_1+	+	21	0	21	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	5	D5_1-	-	3	3	24	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	6	D5_2+	+	22	0	22	5=2D15=	paf12	True	True			0	0	2	1	2	AGG	defined	0.01999999999995	0.02	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	7	D5_2-	-	3	3	25	5=2D15=	paf12	True	True			0	0	2	1	2	AGG	defined	0.01999999999995	0.02	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	8	I0_1+	+	19	0	19	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	9	I0_1-	-	3	3	22	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	10	I5_1+	+	19	0	19	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	11	I5_1-	-	3	3	22	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	12	I5_2+	+	18	0	18	5=2I13=	paf12	True	True			0	2	0	1	2	AGG	defined	0.13626373626356214	0.1363	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	13	I5_2-	-	3	3	21	5=2I13=	paf12	True	True			0	2	0	1	2	AGG	defined	0.13626373626356214	0.1363	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	14	dense_minus	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	15	dense_minus	-	30	30	50	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	16	dense_plus	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	17	dense_plus	+	47	27	47	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	18	mixed5+	+	20	0	20	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	19	mixed5-	-	3	3	23	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	20	suffix_AAAA+	+	20	0	20	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	21	suffix_AAAA-	-	3	3	23	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	22	suffix_AAAC+	+	20	0	20	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	23	suffix_AAAC-	-	3	3	23	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	24	suffix_ACAC+	+	20	0	20	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	25	suffix_ACAC-	-	3	3	23	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	26	suffix_TCAC+	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	columba_wfa2	27	suffix_TCAC-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	0	D0_1+	+	21	1	21	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	1	D0_1-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	2	D20_1+	+	21	0	21	20=1D	paf12	True	True			0	0	1	1	1	AGG	defined	0.6	0.6	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	3	D20_1-	-	3	3	24	20=1D	paf12	True	True			0	0	1	1	1	AGG	defined	0.6	0.6	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	4	D5_1+	+	21	0	21	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	5	D5_1-	-	3	3	24	5=1D15=	paf12	True	True			0	0	1	1	1	AGG	defined	0.133333333333	0.1333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	6	D5_2+	+	22	0	22	5=2D15=	paf12	True	True			0	0	2	1	2	AGG	defined	0.01999999999995	0.02	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	7	D5_2-	-	3	3	25	5=2D15=	paf12	True	True			0	0	2	1	2	AGG	defined	0.01999999999995	0.02	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	8	I0_1+	+	19	0	19	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	9	I0_1-	-	3	3	22	1I19=	paf12	True	True			0	1	0	1	1	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	10	I5_1+	+	19	0	19	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	11	I5_1-	-	3	3	22	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	0.2769	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	12	I5_2+	+	18	0	18	5=2I13=	paf12	True	True			0	2	0	1	2	AGG	defined	0.13626373626356214	0.1363	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	13	I5_2-	-	3	3	21	5=2I13=	paf12	True	True			0	2	0	1	2	AGG	defined	0.13626373626356214	0.1363	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	14	dense_minus	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	15	dense_minus	-	30	30	50	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	16	dense_plus	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	17	dense_plus	+	47	27	47	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	18	mixed5+	+	20	0	20	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	19	mixed5-	-	3	3	23	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	20	suffix_AAAA+	+	20	0	20	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	21	suffix_AAAA-	-	3	3	23	16=2X1=1X	paf12	True	True			3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	22	suffix_AAAC+	+	20	0	20	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	23	suffix_AAAC-	-	3	3	23	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	24	suffix_ACAC+	+	20	0	20	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	25	suffix_ACAC-	-	3	3	23	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	26	suffix_GGGG+	+	20	0	20	16=1D1I3X	paf12	True	True			3	1	1	1	2	AGG	unavailable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	27	suffix_GGGG-	-	3	3	23	16=1D1I3X	paf12	True	True			3	1	1	1	2	AGG	unavailable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	28	suffix_TCAC+	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	pam_columba	29	suffix_TCAC-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	0	suffix_TCAC+	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	1	suffix_TCAC-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	2	suffix_ACAC+	+	20	0	20	16=1X3=	paf12	True	True			1	0	0	0	0	AGG	defined	0.533333333	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	3	suffix_ACAC-	-	3	3	23	3=1X16=	paf12	False	False		cigar_base_assertion	1	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	4	suffix_AAAC+	+	20	0	20	16=2X2=	paf12	True	True			2	0	0	0	0	AGG	defined	0.28717948675384614	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	5	suffix_AAAC-	-	3	3	23	2=2X16=	paf12	False	False		cigar_base_assertion	2	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	6	suffix_AAAA-	-	3	3	23	1X1=2X16=	paf12	False	False		cigar_base_assertion	3	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	7	D5_1+	+	21	0	21	5=1D15=	paf12	True	False	query_coordinates_not_full_guide		0	0	1	1	1	AGG	defined	0.133333333333	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	8	D5_1-	-	3	3	24	15=1D5=	paf12	False	False	query_coordinates_not_full_guide	cigar_base_assertion	7	0	1	1	1	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	9	D5_2+	+	22	0	22	5=2D15=	paf12	True	False	query_coordinates_not_full_guide		0	0	2	1	2	AGG	defined	0.01999999999995	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	10	D5_2-	-	3	3	25	15=2D5=	paf12	False	False	query_coordinates_not_full_guide	cigar_base_assertion	8	0	2	1	2	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	11	I5_1+	+	19	0	19	5=1I14=	paf12	True	True			0	1	0	1	1	AGG	defined	0.276923076923	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	12	I5_1-	-	3	3	22	14=1I5=	paf12	False	False		cigar_base_assertion	6	1	0	1	1	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	13	I5_2+	+	18	0	18	5=2I13=	paf12	True	True			0	2	0	1	2	AGG	defined	0.13626373626356214	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	14	I5_2-	-	3	3	21	13=2I5=	paf12	False	False		cigar_base_assertion	6	2	0	1	2	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	15	D0_1+	+	21	1	21	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	16	D0_1-	-	3	3	23	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	17	I0_1+	+	19	0	19	19=	paf12	False	False	query_coordinates_not_full_guide	cigar_guide_consumption	0	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	18	I0_1-	-	3	3	22	19=	paf12	False	False	query_coordinates_not_full_guide	cigar_guide_consumption	0	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	19	D20_1+	+	20	0	20	20=	paf12	False	False		not_requested_complete_NGG	0	0	0	0	0	TAG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	20	D20_1-	-	4	4	24	20=	paf12	False	False		not_requested_complete_NGG	0	0	0	0	0	TAG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	21	mixed5+	+	20	0	20	5=1X14=	paf12	True	True			1	0	0	0	0	AGG	defined	0.454545455	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	22	mixed5-	-	3	3	23	14=1X5=	paf12	False	False		cigar_base_assertion	1	0	0	0	0	AGG	not_auditable	N/A	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	23	dense_plus	+	20	0	20	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	historical_wfa2	24	dense_minus	-	30	30	50	20=	paf12	True	True			0	0	0	0	0	AGG	defined	1.0	N/A	N/A
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	0	suffix_TCAC+	+	20	0	20	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	1	suffix_TCAC-	-	3	3	23	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	2	suffix_ACAC+	+	20	0	20	16=1X3=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	3	suffix_ACAC-	-	3	3	23	16=1X3=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		1	0	0	0	0	AGG	defined	0.533333333	0.5333	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	4	suffix_AAAC+	+	20	0	20	16=2X2=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	5	suffix_AAAC-	-	3	3	23	16=2X2=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		2	0	0	0	0	AGG	defined	0.28717948675384614	0.2872	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	6	suffix_AAAA+	+	20	0	20	16=2X1=1X	legacy11_missing_block_length	True	False	missing_mandatory_block_length		3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	7	suffix_AAAA-	-	3	3	23	16=2X1=1X	legacy11_missing_block_length	True	False	missing_mandatory_block_length		3	0	0	0	0	AGG	defined	0.14358974337692307	0.1436	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	8	D5_1+	+	20	0	20	5=1D15=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;not_requested_complete_NGG	0	0	0	0	0	CAG	not_auditable	N/A	0.0667	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	9	D5_1-	-	3	3	23	5=1D15=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export	0	0	0	0	0	AGG	not_auditable	N/A	0.0	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	10	D5_2+	+	20	0	20	5=2D15=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;not_requested_complete_NGG	0	0	0	0	0	ACA	not_auditable	N/A	0.0	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	11	D5_2-	-	3	3	23	5=2D15=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export	0	0	0	0	0	AGG	not_auditable	N/A	0.0	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	12	I5_1+	+	20	0	20	5=1I14=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;not_requested_complete_NGG	0	0	0	0	0	GG	not_auditable	N/A	0.2769	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	13	I5_1-	-	3	3	23	5=1I14=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;reference_coordinates	0	0	0	0	0	AGG	not_auditable	N/A	0.2769	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	14	I5_2+	+	20	0	20	5=2I13=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;not_requested_complete_NGG	0	0	0	0	0	G	not_auditable	N/A	0.1363	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	15	I5_2-	-	3	3	23	5=2I13=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;reference_coordinates	0	0	0	0	0	AGG	not_auditable	N/A	0.1363	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	16	D0_1+	+	21	1	21	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	17	D0_1-	-	3	3	23	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	18	I0_1+	+	20	0	20	1I19=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;not_requested_complete_NGG	0	0	0	0	0	GG	not_auditable	N/A	1.0	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	19	I0_1-	-	3	3	23	1I19=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	cigar_reference_span_disagrees_with_export;reference_coordinates	0	0	0	0	0	AGG	not_auditable	N/A	1.0	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	20	D20_1+	+	20	0	20	20=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	not_requested_complete_NGG	0	0	0	0	0	TAG	not_auditable	N/A	1.0	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	21	D20_1-	-	4	4	24	20=	legacy11_missing_block_length	False	False	missing_mandatory_block_length	not_requested_complete_NGG	0	0	0	0	0	TAG	not_auditable	N/A	1.0	False
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	22	mixed5+	+	20	0	20	5=1X14=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	23	mixed5-	-	3	3	23	5=1X14=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		1	0	0	0	0	AGG	defined	0.454545455	0.4545	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	24	dense_plus	+	20	0	20	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	25	dense_plus	+	47	27	47	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	26	dense_minus	-	3	3	23	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+z2_radius_diagnostic	GAAACAGTCGATTTTATCAC	sassy_diagnostic	27	dense_minus	-	30	30	50	20=	legacy11_missing_block_length	True	False	missing_mandatory_block_length		0	0	0	0	0	AGG	defined	1.0	1.0	True
+mixed_only	GAAACAGTCGATTTTATCAC	pam_columba	0	mixed+	+	20	0	20	5=1D1I14=	paf12	True	True			0	1	1	1	2	AGG	unavailable	N/A	N/A	N/A
+mixed_only	GAAACAGTCGATTTTATCAC	pam_columba	1	mixed-	-	3	3	23	5=1D1I14=	paf12	True	True			0	1	1	1	2	AGG	unavailable	N/A	N/A	N/A
