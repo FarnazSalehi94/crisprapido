@@ -1,5 +1,26 @@
 # CRISPRapido project handoff
 
+## MooseFS incident, reconciliation and recovery pilot (2026-11-13)
+
+[RECOVERY_PLAN.md](../research/hprcv2/sbds_nrr/RECOVERY_PLAN.md) and
+[INCIDENT_REPORT.md](../research/hprcv2/sbds_nrr/INCIDENT_REPORT.md).
+Ledger corrected: the previous "20+10+438=468" double-counted HG02055_mat
+and NA18906_mat. Authoritative manifest v2 has **exactly 466 unique,
+mutually exclusive** assemblies: 11 READY_BOUND + 10 TRUSTED_EVIDENCE +
+7 INDEX_EIO + 438 UNATTEMPTED. Incident scan of all ten failed sets:
+**persistent, reproducible errno-5 unreadable regions** (not transient, not
+missing files, **not corrupted assemblies** — every source FASTA.gz verifies
+with valid CRC/SHA256). Damage is distributed across the MooseFS index
+store and grew since 2026-10-28; admin-facing report with paths/offsets/
+reproducer is ready. Controlled rebuild pilot (3 assemblies, onto healthy
+/export, jobs 2871822): **~16–17 min build, ~40–42 GB peak RSS, 11.1–11.55 GB
+index each**, all components hashed; all three bound (2871828–30) and
+**HG03784_hap1 passed a complete four-PAM verification search** (2871832,
+30 min, 192,353 audited hits, full scoring). Campaign plans prepared but NOT
+launched: verification ≤5.3 TB reads / ~19 CPU-h; rebuild scenario ~190 sets
+≈ 55–60 rebuild-days at %4, ~2.9 TB on /export; do NOT rebuild onto MooseFS
+before cluster-team diagnosis (replica recovery may avoid most rebuilds).
+
 ## SBDS deep-verification batch 1 (2026-11-13; campaign not launched)
 
 [VERIFICATION_BATCH1.md](../research/hprcv2/sbds_nrr/VERIFICATION_BATCH1.md):

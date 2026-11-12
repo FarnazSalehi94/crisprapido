@@ -1,0 +1,1033 @@
+[
+  {
+    "assembly": "HG00321_hap2",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "HG00321_hap2.brt",
+        "bytes_read": 1275068416,
+        "first_failing_offset": 1275068416,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "HG00321_hap2.txt.bin",
+        "bytes_read": 2885681152,
+        "first_failing_offset": 2885681152,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "HG00321_hap2.bwt",
+        "bytes": 1132500528
+      },
+      {
+        "file": "HG00321_hap2.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "HG00321_hap2.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "HG00321_hap2.headerSN.bin",
+        "bytes": 2515
+      },
+      {
+        "file": "HG00321_hap2.meta",
+        "bytes": 13
+      },
+      {
+        "file": "HG00321_hap2.pos",
+        "bytes": 232
+      },
+      {
+        "file": "HG00321_hap2.rev.brt",
+        "bytes": 1887500944
+      },
+      {
+        "file": "HG00321_hap2.sa.4",
+        "bytes": 3020001352
+      },
+      {
+        "file": "HG00321_hap2.sa.bv.4",
+        "bytes": 471875240
+      },
+      {
+        "file": "HG00321_hap2.sna",
+        "bytes": 1883
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/HG00321_hap2_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 3070336276,
+      "decompressed_sha256": "a6cdee052a2941384279bcf87e46201bec1eda24ece9f10be085b42d84c749e4",
+      "seconds": 11.7
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "HG005_pat",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "HG005_pat.brt",
+        "bytes_read": 805306368,
+        "first_failing_offset": 805306368,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "HG005_pat.rev.brt",
+        "bytes_read": 1409286144,
+        "first_failing_offset": 1409286144,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "HG005_pat.txt.bin",
+        "bytes_read": 1140850688,
+        "first_failing_offset": 1140850688,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "HG005_pat.bwt",
+        "bytes": 1101210080
+      },
+      {
+        "file": "HG005_pat.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "HG005_pat.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "HG005_pat.headerSN.bin",
+        "bytes": 4706
+      },
+      {
+        "file": "HG005_pat.meta",
+        "bytes": 13
+      },
+      {
+        "file": "HG005_pat.pos",
+        "bytes": 444
+      },
+      {
+        "file": "HG005_pat.sa.4",
+        "bytes": 2936560156
+      },
+      {
+        "file": "HG005_pat.sa.bv.4",
+        "bytes": 458837552
+      },
+      {
+        "file": "HG005_pat.sna",
+        "bytes": 3553
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/HG005_pat_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 2985505766,
+      "decompressed_sha256": "8df59d5ee4a3f5f089261c7486f02d893d3e8032fbfb1ef66e7863fe63b0d386",
+      "seconds": 11.3
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "HG02258_mat",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "HG02258_mat.txt.bin",
+        "bytes_read": 0,
+        "first_failing_offset": 0,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "UNREADABLE",
+          "errno": 5,
+          "error": "[Errno 5] Input/output error"
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "HG02258_mat.brt",
+        "bytes": 1902934896
+      },
+      {
+        "file": "HG02258_mat.bwt",
+        "bytes": 1141760904
+      },
+      {
+        "file": "HG02258_mat.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "HG02258_mat.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "HG02258_mat.headerSN.bin",
+        "bytes": 2786
+      },
+      {
+        "file": "HG02258_mat.meta",
+        "bytes": 13
+      },
+      {
+        "file": "HG02258_mat.pos",
+        "bytes": 256
+      },
+      {
+        "file": "HG02258_mat.rev.brt",
+        "bytes": 1902934896
+      },
+      {
+        "file": "HG02258_mat.sa.4",
+        "bytes": 3044695696
+      },
+      {
+        "file": "HG02258_mat.sa.bv.4",
+        "bytes": 475733728
+      },
+      {
+        "file": "HG02258_mat.sna",
+        "bytes": 2100
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/HG02258_mat_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 3095442374,
+      "decompressed_sha256": "a8754e4235d40c9cca9ae6d3cd8c5c4fdf6cf885625170dc3ab1fdd3f0c44e9a",
+      "seconds": 11.7
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "HG02451_pat",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "HG02451_pat.bwt",
+        "bytes_read": 738197504,
+        "first_failing_offset": 738197504,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "HG02451_pat.sa.4",
+        "bytes_read": 805306368,
+        "first_failing_offset": 805306368,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "HG02451_pat.txt.bin",
+        "bytes_read": 134217728,
+        "first_failing_offset": 134217728,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "HG02451_pat.brt",
+        "bytes": 1899282224
+      },
+      {
+        "file": "HG02451_pat.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "HG02451_pat.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "HG02451_pat.headerSN.bin",
+        "bytes": 4261
+      },
+      {
+        "file": "HG02451_pat.meta",
+        "bytes": 13
+      },
+      {
+        "file": "HG02451_pat.pos",
+        "bytes": 384
+      },
+      {
+        "file": "HG02451_pat.rev.brt",
+        "bytes": 1899282224
+      },
+      {
+        "file": "HG02451_pat.sa.bv.4",
+        "bytes": 474820568
+      },
+      {
+        "file": "HG02451_pat.sna",
+        "bytes": 3255
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/HG02451_pat_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 3089501777,
+      "decompressed_sha256": "12fafa1143265839f0f2c1dedeff3d2dc324a3138e055461c67fb074ec63af4d",
+      "seconds": 11.7
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "HG03195_hap1",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "HG03195_hap1.bwt",
+        "bytes_read": 1006632960,
+        "first_failing_offset": 1006632960,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "HG03195_hap1.txt.bin",
+        "bytes_read": 1811939328,
+        "first_failing_offset": 1811939328,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "HG03195_hap1.brt",
+        "bytes": 1897972688
+      },
+      {
+        "file": "HG03195_hap1.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "HG03195_hap1.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "HG03195_hap1.headerSN.bin",
+        "bytes": 3431
+      },
+      {
+        "file": "HG03195_hap1.meta",
+        "bytes": 13
+      },
+      {
+        "file": "HG03195_hap1.pos",
+        "bytes": 312
+      },
+      {
+        "file": "HG03195_hap1.rev.brt",
+        "bytes": 1897972688
+      },
+      {
+        "file": "HG03195_hap1.sa.4",
+        "bytes": 3036756204
+      },
+      {
+        "file": "HG03195_hap1.sa.bv.4",
+        "bytes": 474493176
+      },
+      {
+        "file": "HG03195_hap1.sna",
+        "bytes": 2604
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/HG03195_hap1_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 3087370987,
+      "decompressed_sha256": "9abe42e000ef62a40b727e9cc8c1a94010b91cda393faa36a07fa70c4f598510",
+      "seconds": 11.6
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "HG03225_hap1",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "HG03225_hap1.rev.brt",
+        "bytes_read": 872415232,
+        "first_failing_offset": 872415232,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "HG03225_hap1.brt",
+        "bytes": 1838810896
+      },
+      {
+        "file": "HG03225_hap1.bwt",
+        "bytes": 1103286528
+      },
+      {
+        "file": "HG03225_hap1.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "HG03225_hap1.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "HG03225_hap1.headerSN.bin",
+        "bytes": 3410
+      },
+      {
+        "file": "HG03225_hap1.meta",
+        "bytes": 13
+      },
+      {
+        "file": "HG03225_hap1.pos",
+        "bytes": 312
+      },
+      {
+        "file": "HG03225_hap1.sa.4",
+        "bytes": 2942097364
+      },
+      {
+        "file": "HG03225_hap1.sa.bv.4",
+        "bytes": 459702736
+      },
+      {
+        "file": "HG03225_hap1.sna",
+        "bytes": 2590
+      },
+      {
+        "file": "HG03225_hap1.txt.bin",
+        "bytes": 2942097365
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/HG03225_hap1_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 2991134482,
+      "decompressed_sha256": "e16c1be4c2b78bd8955887e350daf3e8b109224cafafaab93b8e76706261192f",
+      "seconds": 11.3
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "HG03784_hap1",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "HG03784_hap1.rev.brt",
+        "bytes_read": 536870912,
+        "first_failing_offset": 536870912,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "HG03784_hap1.sa.4",
+        "bytes_read": 671088640,
+        "first_failing_offset": 671088640,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "HG03784_hap1.brt",
+        "bytes": 1908325136
+      },
+      {
+        "file": "HG03784_hap1.bwt",
+        "bytes": 1144995080
+      },
+      {
+        "file": "HG03784_hap1.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "HG03784_hap1.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "HG03784_hap1.headerSN.bin",
+        "bytes": 4099
+      },
+      {
+        "file": "HG03784_hap1.meta",
+        "bytes": 13
+      },
+      {
+        "file": "HG03784_hap1.pos",
+        "bytes": 372
+      },
+      {
+        "file": "HG03784_hap1.sa.bv.4",
+        "bytes": 477081296
+      },
+      {
+        "file": "HG03784_hap1.sna",
+        "bytes": 3122
+      },
+      {
+        "file": "HG03784_hap1.txt.bin",
+        "bytes": 3053320166
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/HG03784_hap1_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 3104211448,
+      "decompressed_sha256": "6f7071502a0b15f842a1db0066fb267767d6989f1b84b9a6e680eaf4d479406a",
+      "seconds": 11.7
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "HG03834_mat",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "HG03834_mat.bwt",
+        "bytes_read": 805306368,
+        "first_failing_offset": 805306368,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "HG03834_mat.rev.brt",
+        "bytes_read": 1879048192,
+        "first_failing_offset": 1879048192,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "HG03834_mat.brt",
+        "bytes": 1897476656
+      },
+      {
+        "file": "HG03834_mat.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "HG03834_mat.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "HG03834_mat.headerSN.bin",
+        "bytes": 3836
+      },
+      {
+        "file": "HG03834_mat.meta",
+        "bytes": 13
+      },
+      {
+        "file": "HG03834_mat.pos",
+        "bytes": 348
+      },
+      {
+        "file": "HG03834_mat.sa.4",
+        "bytes": 3035962556
+      },
+      {
+        "file": "HG03834_mat.sa.bv.4",
+        "bytes": 474369168
+      },
+      {
+        "file": "HG03834_mat.sna",
+        "bytes": 2919
+      },
+      {
+        "file": "HG03834_mat.txt.bin",
+        "bytes": 3035962560
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/HG03834_mat_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 3086564376,
+      "decompressed_sha256": "6b1ca9533db953db99e4d7d485883ca97ab0d64e581cc30abad54737e40d57ad",
+      "seconds": 11.7
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "NA18747_hap2",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "NA18747_hap2.rev.brt",
+        "bytes_read": 1811939328,
+        "first_failing_offset": 1811939328,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "NA18747_hap2.txt.bin",
+        "bytes_read": 1409286144,
+        "first_failing_offset": 1409286144,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "NA18747_hap2.brt",
+        "bytes": 1893571952
+      },
+      {
+        "file": "NA18747_hap2.bwt",
+        "bytes": 1136143128
+      },
+      {
+        "file": "NA18747_hap2.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "NA18747_hap2.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "NA18747_hap2.headerSN.bin",
+        "bytes": 3415
+      },
+      {
+        "file": "NA18747_hap2.meta",
+        "bytes": 13
+      },
+      {
+        "file": "NA18747_hap2.pos",
+        "bytes": 308
+      },
+      {
+        "file": "NA18747_hap2.sa.4",
+        "bytes": 3029714944
+      },
+      {
+        "file": "NA18747_hap2.sa.bv.4",
+        "bytes": 473392976
+      },
+      {
+        "file": "NA18747_hap2.sna",
+        "bytes": 2590
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/NA18747_hap2_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 3080212364,
+      "decompressed_sha256": "fdd87253d9e28fb9c4ae3d0dbaddace25ac34a1469eec5009508e6486537b5bd",
+      "seconds": 11.7
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  },
+  {
+    "assembly": "NA19443_hap1",
+    "incident_kind": "persistent-unreadable-regions",
+    "failing_components": [
+      {
+        "file": "NA19443_hap1.bwt",
+        "bytes_read": 671088640,
+        "first_failing_offset": 671088640,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      },
+      {
+        "file": "NA19443_hap1.sa.4",
+        "bytes_read": 1073741824,
+        "first_failing_offset": 1073741824,
+        "errno": 5,
+        "error": "[Errno 5] Input/output error",
+        "window_rechecks": [
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          },
+          {
+            "status": "UNREADABLE",
+            "errno": 5,
+            "error": "[Errno 5] Input/output error"
+          }
+        ],
+        "start_recheck": {
+          "status": "READABLE",
+          "bytes": 4194304
+        }
+      }
+    ],
+    "readable_components": [
+      {
+        "file": "NA19443_hap1.brt",
+        "bytes": 1849334032
+      },
+      {
+        "file": "NA19443_hap1.cct",
+        "bytes": 1024
+      },
+      {
+        "file": "NA19443_hap1.fsid",
+        "bytes": 4
+      },
+      {
+        "file": "NA19443_hap1.headerSN.bin",
+        "bytes": 4228
+      },
+      {
+        "file": "NA19443_hap1.meta",
+        "bytes": 13
+      },
+      {
+        "file": "NA19443_hap1.pos",
+        "bytes": 384
+      },
+      {
+        "file": "NA19443_hap1.rev.brt",
+        "bytes": 1849334032
+      },
+      {
+        "file": "NA19443_hap1.sa.bv.4",
+        "bytes": 462333520
+      },
+      {
+        "file": "NA19443_hap1.sna",
+        "bytes": 3227
+      },
+      {
+        "file": "NA19443_hap1.txt.bin",
+        "bytes": 2958934341
+      }
+    ],
+    "source_fasta": {
+      "path": "/moosefs/pangenomes/HPRCv2/NA19443_hap1_hprc_r2_v1.0.1.fa.gz",
+      "status": "READABLE",
+      "decompressed_bytes": 3008252613,
+      "decompressed_sha256": "2be3b98248499bc570fe0f3b7b01aba26f85ae98eb15ae3e9fd2f9c8b8a437c8",
+      "seconds": 11.4
+    },
+    "assembly_fastq_intact": true,
+    "originals_modified": false
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "assemblies": {
+    "HG03784_hap1": {
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG03784_hap1/attempt-2871832",
+      "outputs": 81,
+      "counts": {
+        "NGG": {
+          "rows": 38210,
+          "cfd_defined": 38210,
+          "cb_alignment_exceeds_24_columns": 13963,
+          "cb_outside_documented_mismatch_domain": 14444,
+          "cb_scored": 8105,
+          "cb_unsupported_multibase_bulge": 1698
+        },
+        "NAG": {
+          "rows": 46307,
+          "cfd_defined": 46307,
+          "cb_alignment_exceeds_24_columns": 17354,
+          "cb_scored": 10434,
+          "cb_outside_documented_mismatch_domain": 16276,
+          "cb_unsupported_multibase_bulge": 2243
+        },
+        "NGA": {
+          "rows": 42878,
+          "cfd_defined": 42878,
+          "cb_outside_documented_mismatch_domain": 15266,
+          "cb_alignment_exceeds_24_columns": 15663,
+          "cb_scored": 9418,
+          "cb_unsupported_multibase_bulge": 2531
+        },
+        "NAA": {
+          "rows": 64958,
+          "cfd_defined": 64958,
+          "cb_outside_documented_mismatch_domain": 23369,
+          "cb_alignment_exceeds_24_columns": 23647,
+          "cb_scored": 14458,
+          "cb_unsupported_multibase_bulge": 3484
+        }
+      },
+      "totals": {
+        "hits": 192353,
+        "cfd_defined": 192353,
+        "cb_scored": 42415,
+        "cb_na": 149938
+      }
+    }
+  },
+  "missing": [],
+  "failed": [],
+  "status": "COMPLETE"
+}

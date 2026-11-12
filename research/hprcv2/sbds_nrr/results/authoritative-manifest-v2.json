@@ -1,0 +1,1891 @@
+{
+  "format": "sbds-cohort-manifest-v1",
+  "cohort_size": 466,
+  "status_counts": {
+    "READY_BOUND": 11,
+    "UNATTEMPTED": 438,
+    "TRUSTED_EVIDENCE": 10,
+    "INDEX_EIO": 7
+  },
+  "mutually_exclusive": true,
+  "reconciliation": {
+    "previous_reported_ready": 20,
+    "double_counted": [
+      "HG02055_mat",
+      "NA18906_mat"
+    ],
+    "corrected_ready": 21,
+    "explanation": "READY_BOUND and TRUSTED_EVIDENCE are disjoint; every assembly appears exactly once."
+  },
+  "rows": [
+    {
+      "assembly": "HG00097_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00097_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00099_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00099_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00126_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00126_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00128_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00128_hap2",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG00133_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00133_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00140_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00140_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00146_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00146_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00232_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00232_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00235_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00235_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00253_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00253_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00272_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00272_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00280_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00280_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00290_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00290_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "hg002v1.1.mat_MT",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "hg002v1.1.pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00320_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00320_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00321_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00321_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00323_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00323_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00329_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00329_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00344_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00344_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00350_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00350_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00408_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00408_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00423_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00423_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00438_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00438_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00544_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00544_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00558_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00558_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00597_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00597_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG005_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG005_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00609_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00609_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00621_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00621_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00639_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00639_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00642_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00642_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00658_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00658_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00673_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00673_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00706_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00706_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00733_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00733_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00735_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00735_pat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG00738_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00738_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00741_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG00741_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01071_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01071_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01074_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01074_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01081_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01081_pat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG01099_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01099_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01106_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01106_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01109_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01109_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01123_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01123_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01150_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01150_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01167_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01167_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01175_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01175_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01192_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01192_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01243_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01243_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01252_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01252_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01255_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01255_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01258_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01258_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01261_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01261_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01346_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01346_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01358_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01358_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01361_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01361_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01433_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01433_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01496_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01496_pat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG01530_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01530_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01784_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01784_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01786_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01786_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01884_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01884_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01891_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01891_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01928_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01928_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01934_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01934_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01940_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01940_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01943_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01943_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01952_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01952_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01960_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01960_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01969_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01969_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01975_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01975_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01978_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01978_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01981_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01981_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01993_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG01993_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02004_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02004_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02015_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02015_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02027_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02027_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02040_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02040_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02055_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02055_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02056_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02056_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02071_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02071_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02074_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02074_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02080_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02080_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02083_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02083_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02109_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02109_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02129_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02129_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02132_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02132_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02135_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02135_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02145_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02145_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02148_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02148_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02155_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02155_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02165_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02165_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02178_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02178_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02257_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02257_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02258_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02258_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02273_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02273_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02280_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02280_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02293_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02293_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02300_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02300_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02391_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02391_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02392_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02392_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02451_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02451_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02486_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02486_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02514_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02514_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02523_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02523_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02559_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02559_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02572_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02572_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02583_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02583_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02602_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02602_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02615_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02615_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02622_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02622_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02630_mat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG02630_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02647_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02647_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02668_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02668_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02698_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02698_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02717_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02717_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02723_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02723_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02735_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02735_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02738_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02738_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02809_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02809_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02818_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02818_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02841_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02841_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02886_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02886_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02922_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02922_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02965_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02965_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02976_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02976_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02984_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG02984_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03017_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03017_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03041_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03041_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03050_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03050_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03098_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03098_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03130_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03130_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03139_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03139_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03195_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03195_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03209_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03209_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03225_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03225_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03239_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03239_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03270_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03270_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03369_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03369_hap2",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG03453_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03453_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03470_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03470_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03471_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03471_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03486_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03486_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03516_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03516_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03521_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03521_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03540_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03540_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03579_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03579_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03583_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03583_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03654_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03654_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03669_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03669_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03688_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03688_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03704_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03704_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03710_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03710_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03742_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03742_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03784_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03784_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03804_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03804_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03816_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03816_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03831_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03831_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03834_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03834_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03874_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03874_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03927_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03927_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03942_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG03942_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04115_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04115_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04157_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04157_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04160_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04160_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04184_mat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG04184_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04187_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04187_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04199_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04199_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04204_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04204_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04228_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG04228_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG06807_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "HG06807_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18505_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18505_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18508_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18508_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18522_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18522_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18565_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18565_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18570_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18570_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18608_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18608_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18620_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18620_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18747_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18747_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18879_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18879_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18906_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18906_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18940_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18940_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18943_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18943_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18944_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18944_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18945_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18945_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18948_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18948_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18952_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18952_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18959_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18959_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18960_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18960_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18967_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18967_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18970_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18970_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18971_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18971_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18974_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18974_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18976_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18976_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18982_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18982_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA18983_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18983_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19036_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19036_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19043_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19043_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19087_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19087_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19159_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19159_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19185_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19185_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19240_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19240_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19338_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19338_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19391_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19391_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19443_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19443_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19468_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19468_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19682_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19682_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19700_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19700_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19776_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19776_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19835_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19835_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19909_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA19909_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20129_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20129_pat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20282_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20282_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20346_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20346_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20503_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20503_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20752_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20752_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20762_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20762_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20799_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20799_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20805_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20805_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20806_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20806_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20809_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20809_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20827_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20827_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20850_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20850_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20870_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20870_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20905_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA20905_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21093_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21093_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21102_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21102_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21106_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21106_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21110_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21110_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21144_hap1",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21144_hap2",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21309_mat",
+      "status": "UNATTEMPTED"
+    },
+    {
+      "assembly": "NA21309_pat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "CHM13",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "GRCh38",
+      "status": "TRUSTED_EVIDENCE"
+    }
+  ],
+  "caveats": [
+    "READY_BOUND requires a committed binding; TRUSTED_EVIDENCE assemblies still need binding preparation.",
+    "INDEX_EIO originals are preserved untouched; status refers to index components only, never the assembly FASTA.",
+    "UNATTEMPTED means no full-content evidence either way."
+  ]
+}
