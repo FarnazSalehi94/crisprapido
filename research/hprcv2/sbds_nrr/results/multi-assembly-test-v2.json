@@ -1,0 +1,95 @@
+{
+  "assemblies": {
+    "HG02055_mat": {
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02055_mat/attempt-2871781",
+      "outputs": 78,
+      "counts": {
+        "NGG": {
+          "rows": 38037,
+          "cfd_defined": 38037,
+          "cb_outside_documented_mismatch_domain": 14367,
+          "cb_unsupported_multibase_bulge": 1695,
+          "cb_alignment_exceeds_24_columns": 13877,
+          "cb_scored": 8098
+        },
+        "NAG": {
+          "rows": 46380,
+          "cfd_defined": 46380,
+          "cb_alignment_exceeds_24_columns": 17373,
+          "cb_scored": 10469,
+          "cb_outside_documented_mismatch_domain": 16293,
+          "cb_unsupported_multibase_bulge": 2245
+        },
+        "NGA": {
+          "rows": 42870,
+          "cfd_defined": 42870,
+          "cb_outside_documented_mismatch_domain": 15209,
+          "cb_alignment_exceeds_24_columns": 15692,
+          "cb_scored": 9439,
+          "cb_unsupported_multibase_bulge": 2530
+        },
+        "NAA": {
+          "rows": 65091,
+          "cfd_defined": 65091,
+          "cb_unsupported_multibase_bulge": 3477,
+          "cb_scored": 14459,
+          "cb_outside_documented_mismatch_domain": 23697,
+          "cb_alignment_exceeds_24_columns": 23458
+        }
+      },
+      "totals": {
+        "hits": 192378,
+        "cfd_defined": 192378,
+        "cb_scored": 42465,
+        "cb_na": 149913
+      }
+    },
+    "NA18906_mat": {
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/NA18906_mat/attempt-2871780",
+      "outputs": 78,
+      "counts": {
+        "NGG": {
+          "rows": 38180,
+          "cfd_defined": 38180,
+          "cb_alignment_exceeds_24_columns": 13970,
+          "cb_outside_documented_mismatch_domain": 14430,
+          "cb_scored": 8088,
+          "cb_unsupported_multibase_bulge": 1692
+        },
+        "NAG": {
+          "rows": 46421,
+          "cfd_defined": 46421,
+          "cb_scored": 10451,
+          "cb_outside_documented_mismatch_domain": 16302,
+          "cb_alignment_exceeds_24_columns": 17433,
+          "cb_unsupported_multibase_bulge": 2235
+        },
+        "NGA": {
+          "rows": 42851,
+          "cfd_defined": 42851,
+          "cb_scored": 9406,
+          "cb_alignment_exceeds_24_columns": 15706,
+          "cb_outside_documented_mismatch_domain": 15214,
+          "cb_unsupported_multibase_bulge": 2525
+        },
+        "NAA": {
+          "rows": 64696,
+          "cfd_defined": 64696,
+          "cb_unsupported_multibase_bulge": 3471,
+          "cb_outside_documented_mismatch_domain": 23303,
+          "cb_scored": 14444,
+          "cb_alignment_exceeds_24_columns": 23478
+        }
+      },
+      "totals": {
+        "hits": 192148,
+        "cfd_defined": 192148,
+        "cb_scored": 42389,
+        "cb_na": 149759
+      }
+    }
+  },
+  "missing": [],
+  "failed": [],
+  "status": "COMPLETE"
+}

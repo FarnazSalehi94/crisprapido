@@ -1,5 +1,27 @@
 # CRISPRapido project handoff
 
+## SBDS 466-genome readiness (2026-11-13; cohort NOT launched)
+
+Infrastructure blockers resolved and a controlled multi-assembly test passed:
+[COHORT_READINESS.md](../research/hprcv2/sbds_nrr/COHORT_READINESS.md).
+Ledger audit: **12 assemblies** have trusted full-content index evidence
+(incl. GRCh38/CHM13); **454 require deep verification** (~5.6 TB component
+reads, ~20-35 CPU-hours at measured rates; EIO assemblies will stop with
+explicit failures, never zero-filled). Expansion tooling rewritten and
+unit-tested (restart-safe checkpoints, tamper detection, process-group kills,
+per-assembly pins; 6 regression tests). Two new bindings (HG02055_mat,
+NA18906_mat) committed via the repaired trusted binding helper. Cohort test
+array 2871780 (one CPU, 56G): 192,378/192,148 total hits per assembly, all
+CFD-defined, 42,465/42,389 CRISPR-Bulge-defined (NRR scorer byte-identical
+to the officially validated bundle), 149,913/149,759 explicit N/A, all eight
+(assembly,PAM) audits PASS. Searches ~28-30 min/assembly on one CPU; full
+466 scenario ≈233 one-CPU job-hours, ~4.75 GB compressed outputs, bindings
+~1.45 TB on /export. Remaining blockers: the 454-assembly deep-verification
+campaign (needs I/O budget + EIO-rebuild authorization), noncanonical
+biological-validity caveat, historical EIO/no-perfect input investigations.
+Recommended submission settings are in the readiness report; nothing submitted
+for the cohort.
+
 ## SBDS resumed: NGG/NRR pilot completed; NRR scoring validated; cohort still gated
 
 Latest SBDS request supersedes the PAM pause below: standard SpCas9 NGG is

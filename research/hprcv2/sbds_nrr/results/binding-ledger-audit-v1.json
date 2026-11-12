@@ -1,0 +1,2877 @@
+{
+  "status": "METADATA_AUDIT",
+  "cohort": 466,
+  "verified_bindings": [
+    "CHM13",
+    "GRCh38",
+    "HG00128_hap2",
+    "HG00735_pat",
+    "HG01081_pat",
+    "HG01496_pat",
+    "HG02055_mat",
+    "HG02630_mat",
+    "HG03369_hap2",
+    "HG04184_mat",
+    "NA18906_mat",
+    "NA21309_pat"
+  ],
+  "verified_count": 12,
+  "unverified_count": 454,
+  "unverified": [
+    "HG00097_hap1",
+    "HG00097_hap2",
+    "HG00099_hap1",
+    "HG00099_hap2",
+    "HG00126_hap1",
+    "HG00126_hap2",
+    "HG00128_hap1",
+    "HG00133_hap1",
+    "HG00133_hap2",
+    "HG00140_hap1",
+    "HG00140_hap2",
+    "HG00146_hap1",
+    "HG00146_hap2",
+    "HG00232_hap1",
+    "HG00232_hap2",
+    "HG00235_hap1",
+    "HG00235_hap2",
+    "HG00253_hap1",
+    "HG00253_hap2",
+    "HG00272_hap1",
+    "HG00272_hap2",
+    "HG00280_hap1",
+    "HG00280_hap2",
+    "HG00290_hap1",
+    "HG00290_hap2",
+    "HG00320_hap1",
+    "HG00320_hap2",
+    "HG00321_hap1",
+    "HG00321_hap2",
+    "HG00323_hap1",
+    "HG00323_hap2",
+    "HG00329_hap1",
+    "HG00329_hap2",
+    "HG00344_hap1",
+    "HG00344_hap2",
+    "HG00350_hap1",
+    "HG00350_hap2",
+    "HG00408_mat",
+    "HG00408_pat",
+    "HG00423_mat",
+    "HG00423_pat",
+    "HG00438_mat",
+    "HG00438_pat",
+    "HG00544_mat",
+    "HG00544_pat",
+    "HG00558_mat",
+    "HG00558_pat",
+    "HG00597_mat",
+    "HG00597_pat",
+    "HG005_mat",
+    "HG005_pat",
+    "HG00609_mat",
+    "HG00609_pat",
+    "HG00621_mat",
+    "HG00621_pat",
+    "HG00639_mat",
+    "HG00639_pat",
+    "HG00642_mat",
+    "HG00642_pat",
+    "HG00658_mat",
+    "HG00658_pat",
+    "HG00673_mat",
+    "HG00673_pat",
+    "HG00706_mat",
+    "HG00706_pat",
+    "HG00733_mat",
+    "HG00733_pat",
+    "HG00735_mat",
+    "HG00738_mat",
+    "HG00738_pat",
+    "HG00741_mat",
+    "HG00741_pat",
+    "HG01071_mat",
+    "HG01071_pat",
+    "HG01074_mat",
+    "HG01074_pat",
+    "HG01081_mat",
+    "HG01099_mat",
+    "HG01099_pat",
+    "HG01106_mat",
+    "HG01106_pat",
+    "HG01109_mat",
+    "HG01109_pat",
+    "HG01123_mat",
+    "HG01123_pat",
+    "HG01150_mat",
+    "HG01150_pat",
+    "HG01167_hap1",
+    "HG01167_hap2",
+    "HG01175_mat",
+    "HG01175_pat",
+    "HG01192_mat",
+    "HG01192_pat",
+    "HG01243_mat",
+    "HG01243_pat",
+    "HG01252_mat",
+    "HG01252_pat",
+    "HG01255_mat",
+    "HG01255_pat",
+    "HG01258_mat",
+    "HG01258_pat",
+    "HG01261_mat",
+    "HG01261_pat",
+    "HG01346_mat",
+    "HG01346_pat",
+    "HG01358_mat",
+    "HG01358_pat",
+    "HG01361_mat",
+    "HG01361_pat",
+    "HG01433_mat",
+    "HG01433_pat",
+    "HG01496_mat",
+    "HG01530_hap1",
+    "HG01530_hap2",
+    "HG01784_hap1",
+    "HG01784_hap2",
+    "HG01786_hap1",
+    "HG01786_hap2",
+    "HG01884_mat",
+    "HG01884_pat",
+    "HG01891_mat",
+    "HG01891_pat",
+    "HG01928_mat",
+    "HG01928_pat",
+    "HG01934_mat",
+    "HG01934_pat",
+    "HG01940_mat",
+    "HG01940_pat",
+    "HG01943_mat",
+    "HG01943_pat",
+    "HG01952_mat",
+    "HG01952_pat",
+    "HG01960_mat",
+    "HG01960_pat",
+    "HG01969_mat",
+    "HG01969_pat",
+    "HG01975_mat",
+    "HG01975_pat",
+    "HG01978_mat",
+    "HG01978_pat",
+    "HG01981_mat",
+    "HG01981_pat",
+    "HG01993_mat",
+    "HG01993_pat",
+    "HG02004_mat",
+    "HG02004_pat",
+    "HG02015_mat",
+    "HG02015_pat",
+    "HG02027_mat",
+    "HG02027_pat",
+    "HG02040_hap1",
+    "HG02040_hap2",
+    "HG02055_pat",
+    "HG02056_mat",
+    "HG02056_pat",
+    "HG02071_mat",
+    "HG02071_pat",
+    "HG02074_mat",
+    "HG02074_pat",
+    "HG02080_mat",
+    "HG02080_pat",
+    "HG02083_mat",
+    "HG02083_pat",
+    "HG02109_mat",
+    "HG02109_pat",
+    "HG02129_mat",
+    "HG02129_pat",
+    "HG02132_mat",
+    "HG02132_pat",
+    "HG02135_mat",
+    "HG02135_pat",
+    "HG02145_mat",
+    "HG02145_pat",
+    "HG02148_mat",
+    "HG02148_pat",
+    "HG02155_hap1",
+    "HG02155_hap2",
+    "HG02165_hap1",
+    "HG02165_hap2",
+    "HG02178_hap1",
+    "HG02178_hap2",
+    "HG02257_mat",
+    "HG02257_pat",
+    "HG02258_mat",
+    "HG02258_pat",
+    "HG02273_hap1",
+    "HG02273_hap2",
+    "HG02280_mat",
+    "HG02280_pat",
+    "HG02293_mat",
+    "HG02293_pat",
+    "HG02300_mat",
+    "HG02300_pat",
+    "HG02391_hap1",
+    "HG02391_hap2",
+    "HG02392_hap1",
+    "HG02392_hap2",
+    "HG02451_mat",
+    "HG02451_pat",
+    "HG02486_mat",
+    "HG02486_pat",
+    "HG02514_mat",
+    "HG02514_pat",
+    "HG02523_mat",
+    "HG02523_pat",
+    "HG02559_mat",
+    "HG02559_pat",
+    "HG02572_mat",
+    "HG02572_pat",
+    "HG02583_hap1",
+    "HG02583_hap2",
+    "HG02602_mat",
+    "HG02602_pat",
+    "HG02615_mat",
+    "HG02615_pat",
+    "HG02622_mat",
+    "HG02622_pat",
+    "HG02630_pat",
+    "HG02647_mat",
+    "HG02647_pat",
+    "HG02668_mat",
+    "HG02668_pat",
+    "HG02698_mat",
+    "HG02698_pat",
+    "HG02717_mat",
+    "HG02717_pat",
+    "HG02723_mat",
+    "HG02723_pat",
+    "HG02735_mat",
+    "HG02735_pat",
+    "HG02738_mat",
+    "HG02738_pat",
+    "HG02809_mat",
+    "HG02809_pat",
+    "HG02818_mat",
+    "HG02818_pat",
+    "HG02841_mat",
+    "HG02841_pat",
+    "HG02886_mat",
+    "HG02886_pat",
+    "HG02922_hap1",
+    "HG02922_hap2",
+    "HG02965_hap1",
+    "HG02965_hap2",
+    "HG02976_hap1",
+    "HG02976_hap2",
+    "HG02984_mat",
+    "HG02984_pat",
+    "HG03017_mat",
+    "HG03017_pat",
+    "HG03041_mat",
+    "HG03041_pat",
+    "HG03050_mat",
+    "HG03050_pat",
+    "HG03098_mat",
+    "HG03098_pat",
+    "HG03130_hap1",
+    "HG03130_hap2",
+    "HG03139_hap1",
+    "HG03139_hap2",
+    "HG03195_hap1",
+    "HG03195_hap2",
+    "HG03209_hap1",
+    "HG03209_hap2",
+    "HG03225_hap1",
+    "HG03225_hap2",
+    "HG03239_mat",
+    "HG03239_pat",
+    "HG03270_hap1",
+    "HG03270_hap2",
+    "HG03369_hap1",
+    "HG03453_mat",
+    "HG03453_pat",
+    "HG03470_hap1",
+    "HG03470_hap2",
+    "HG03471_hap1",
+    "HG03471_hap2",
+    "HG03486_mat",
+    "HG03486_pat",
+    "HG03516_mat",
+    "HG03516_pat",
+    "HG03521_hap1",
+    "HG03521_hap2",
+    "HG03540_mat",
+    "HG03540_pat",
+    "HG03579_mat",
+    "HG03579_pat",
+    "HG03583_hap1",
+    "HG03583_hap2",
+    "HG03654_mat",
+    "HG03654_pat",
+    "HG03669_mat",
+    "HG03669_pat",
+    "HG03688_mat",
+    "HG03688_pat",
+    "HG03704_mat",
+    "HG03704_pat",
+    "HG03710_mat",
+    "HG03710_pat",
+    "HG03742_hap1",
+    "HG03742_hap2",
+    "HG03784_hap1",
+    "HG03784_hap2",
+    "HG03804_mat",
+    "HG03804_pat",
+    "HG03816_mat",
+    "HG03816_pat",
+    "HG03831_mat",
+    "HG03831_pat",
+    "HG03834_mat",
+    "HG03834_pat",
+    "HG03874_hap1",
+    "HG03874_hap2",
+    "HG03927_mat",
+    "HG03927_pat",
+    "HG03942_mat",
+    "HG03942_pat",
+    "HG04115_mat",
+    "HG04115_pat",
+    "HG04157_mat",
+    "HG04157_pat",
+    "HG04160_mat",
+    "HG04160_pat",
+    "HG04184_pat",
+    "HG04187_mat",
+    "HG04187_pat",
+    "HG04199_mat",
+    "HG04199_pat",
+    "HG04204_mat",
+    "HG04204_pat",
+    "HG04228_mat",
+    "HG04228_pat",
+    "HG06807_mat",
+    "HG06807_pat",
+    "NA18505_hap1",
+    "NA18505_hap2",
+    "NA18508_hap1",
+    "NA18508_hap2",
+    "NA18522_hap1",
+    "NA18522_hap2",
+    "NA18565_hap1",
+    "NA18565_hap2",
+    "NA18570_hap1",
+    "NA18570_hap2",
+    "NA18608_hap1",
+    "NA18608_hap2",
+    "NA18620_hap1",
+    "NA18620_hap2",
+    "NA18747_hap1",
+    "NA18747_hap2",
+    "NA18879_hap1",
+    "NA18879_hap2",
+    "NA18906_pat",
+    "NA18940_hap1",
+    "NA18940_hap2",
+    "NA18943_hap1",
+    "NA18943_hap2",
+    "NA18944_hap1",
+    "NA18944_hap2",
+    "NA18945_hap1",
+    "NA18945_hap2",
+    "NA18948_hap1",
+    "NA18948_hap2",
+    "NA18952_hap1",
+    "NA18952_hap2",
+    "NA18959_hap1",
+    "NA18959_hap2",
+    "NA18960_hap1",
+    "NA18960_hap2",
+    "NA18967_hap1",
+    "NA18967_hap2",
+    "NA18970_hap1",
+    "NA18970_hap2",
+    "NA18971_hap1",
+    "NA18971_hap2",
+    "NA18974_hap1",
+    "NA18974_hap2",
+    "NA18976_hap1",
+    "NA18976_hap2",
+    "NA18982_hap1",
+    "NA18982_hap2",
+    "NA18983_hap1",
+    "NA18983_hap2",
+    "NA19036_hap1",
+    "NA19036_hap2",
+    "NA19043_hap1",
+    "NA19043_hap2",
+    "NA19087_hap1",
+    "NA19087_hap2",
+    "NA19159_hap1",
+    "NA19159_hap2",
+    "NA19185_hap1",
+    "NA19185_hap2",
+    "NA19240_mat",
+    "NA19240_pat",
+    "NA19338_hap1",
+    "NA19338_hap2",
+    "NA19391_hap1",
+    "NA19391_hap2",
+    "NA19443_hap1",
+    "NA19443_hap2",
+    "NA19468_hap1",
+    "NA19468_hap2",
+    "NA19682_hap1",
+    "NA19682_hap2",
+    "NA19700_hap1",
+    "NA19700_hap2",
+    "NA19776_hap1",
+    "NA19776_hap2",
+    "NA19835_hap1",
+    "NA19835_hap2",
+    "NA19909_hap1",
+    "NA19909_hap2",
+    "NA20129_mat",
+    "NA20129_pat",
+    "NA20282_hap1",
+    "NA20282_hap2",
+    "NA20346_hap1",
+    "NA20346_hap2",
+    "NA20503_hap1",
+    "NA20503_hap2",
+    "NA20752_hap1",
+    "NA20752_hap2",
+    "NA20762_hap1",
+    "NA20762_hap2",
+    "NA20799_hap1",
+    "NA20799_hap2",
+    "NA20805_hap1",
+    "NA20805_hap2",
+    "NA20806_hap1",
+    "NA20806_hap2",
+    "NA20809_hap1",
+    "NA20809_hap2",
+    "NA20827_hap1",
+    "NA20827_hap2",
+    "NA20850_hap1",
+    "NA20850_hap2",
+    "NA20870_hap1",
+    "NA20870_hap2",
+    "NA20905_hap1",
+    "NA20905_hap2",
+    "NA21093_hap1",
+    "NA21093_hap2",
+    "NA21102_hap1",
+    "NA21102_hap2",
+    "NA21106_hap1",
+    "NA21106_hap2",
+    "NA21110_hap1",
+    "NA21110_hap2",
+    "NA21144_hap1",
+    "NA21144_hap2",
+    "NA21309_mat",
+    "hg002v1.1.mat_MT",
+    "hg002v1.1.pat"
+  ],
+  "ready_binding_sidecars": {
+    "HG00735_pat": "/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1",
+    "HG01496_pat": "/export/local/home/salehi/crisprapido-hprc-import-hg01496-20261112-v1"
+  },
+  "rows": [
+    {
+      "assembly": "HG00097_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00097_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00099_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00099_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00126_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00126_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00128_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00128_hap2",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "FULL_REBUILD",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG00128_hap2_attempt02/index/HG00128_hap2",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/HG00128_hap2_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "HG00133_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00133_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00140_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00140_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00146_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00146_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00232_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00232_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00235_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00235_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00253_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00253_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00272_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00272_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00280_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00280_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00290_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00290_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "hg002v1.1.mat_MT",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "hg002v1.1.pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00320_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00320_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00321_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00321_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00323_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00323_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00329_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00329_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00344_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00344_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00350_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00350_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00408_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00408_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00423_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00423_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00438_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00438_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00544_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00544_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00558_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00558_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00597_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00597_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG005_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG005_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00609_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00609_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00621_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00621_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00639_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00639_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00642_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00642_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00658_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00658_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00673_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00673_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00706_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00706_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00733_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00733_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00735_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00735_pat",
+      "ledger_status": "ORIGINAL_VERIFIED",
+      "method": "UNCHANGED_ORIGINAL",
+      "index_prefix": "/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG00735_pat/HG00735_pat",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/HG00735_pat_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "HG00738_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00738_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00741_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG00741_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01071_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01071_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01074_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01074_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01081_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01081_pat",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "FULL_REBUILD",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG01081_pat/index/HG01081_pat",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/HG01081_pat_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "HG01099_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01099_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01106_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01106_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01109_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01109_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01123_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01123_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01150_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01150_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01167_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01167_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01175_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01175_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01192_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01192_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01243_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01243_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01252_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01252_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01255_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01255_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01258_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01258_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01261_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01261_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01346_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01346_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01358_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01358_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01361_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01361_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01433_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01433_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01496_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01496_pat",
+      "ledger_status": "ORIGINAL_VERIFIED",
+      "method": "UNCHANGED_ORIGINAL",
+      "index_prefix": "/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG01496_pat/HG01496_pat",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/HG01496_pat_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "HG01530_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01530_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01784_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01784_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01786_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01786_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01884_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01884_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01891_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01891_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01928_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01928_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01934_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01934_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01940_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01940_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01943_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01943_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01952_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01952_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01960_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01960_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01969_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01969_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01975_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01975_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01978_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01978_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01981_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01981_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01993_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG01993_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02004_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02004_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02015_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02015_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02027_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02027_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02040_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02040_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02055_mat",
+      "ledger_status": "ORIGINAL_VERIFIED",
+      "method": "UNCHANGED_ORIGINAL",
+      "index_prefix": "/moosefs/salehi/HPRCv2_CRISPRapido/indices/HG02055_mat/HG02055_mat",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/HG02055_mat_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "HG02055_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02056_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02056_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02071_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02071_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02074_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02074_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02080_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02080_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02083_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02083_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02109_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02109_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02129_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02129_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02132_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02132_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02135_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02135_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02145_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02145_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02148_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02148_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02155_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02155_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02165_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02165_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02178_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02178_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02257_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02257_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02258_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02258_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02273_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02273_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02280_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02280_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02293_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02293_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02300_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02300_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02391_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02391_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02392_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02392_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02451_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02451_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02486_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02486_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02514_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02514_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02523_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02523_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02559_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02559_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02572_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02572_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02583_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02583_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02602_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02602_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02615_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02615_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02622_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02622_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02630_mat",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "FULL_REBUILD",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG02630_mat/index/HG02630_mat",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/HG02630_mat_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "HG02630_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02647_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02647_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02668_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02668_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02698_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02698_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02717_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02717_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02723_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02723_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02735_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02735_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02738_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02738_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02809_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02809_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02818_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02818_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02841_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02841_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02886_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02886_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02922_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02922_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02965_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02965_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02976_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02976_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02984_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG02984_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03017_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03017_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03041_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03041_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03050_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03050_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03098_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03098_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03130_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03130_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03139_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03139_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03195_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03195_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03209_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03209_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03225_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03225_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03239_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03239_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03270_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03270_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03369_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03369_hap2",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "FULL_REBUILD",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG03369_hap2/index/HG03369_hap2",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/HG03369_hap2_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "HG03453_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03453_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03470_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03470_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03471_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03471_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03486_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03486_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03516_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03516_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03521_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03521_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03540_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03540_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03579_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03579_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03583_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03583_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03654_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03654_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03669_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03669_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03688_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03688_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03704_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03704_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03710_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03710_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03742_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03742_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03784_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03784_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03804_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03804_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03816_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03816_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03831_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03831_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03834_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03834_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03874_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03874_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03927_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03927_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03942_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG03942_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04115_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04115_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04157_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04157_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04160_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04160_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04184_mat",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "FULL_REBUILD",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_HG04184_mat/index/HG04184_mat",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/HG04184_mat_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "HG04184_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04187_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04187_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04199_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04199_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04204_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04204_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04228_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG04228_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG06807_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "HG06807_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18505_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18505_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18508_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18508_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18522_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18522_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18565_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18565_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18570_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18570_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18608_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18608_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18620_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18620_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18747_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18747_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18879_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18879_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18906_mat",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "TEXT_COMPONENT_REGENERATION",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_NA18906_mat/index/NA18906_mat",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/NA18906_mat_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "NA18906_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18940_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18940_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18943_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18943_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18944_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18944_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18945_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18945_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18948_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18948_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18952_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18952_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18959_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18959_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18960_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18960_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18967_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18967_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18970_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18970_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18971_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18971_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18974_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18974_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18976_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18976_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18982_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18982_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18983_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA18983_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19036_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19036_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19043_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19043_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19087_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19087_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19159_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19159_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19185_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19185_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19240_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19240_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19338_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19338_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19391_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19391_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19443_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19443_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19468_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19468_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19682_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19682_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19700_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19700_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19776_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19776_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19835_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19835_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19909_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA19909_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20129_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20129_pat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20282_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20282_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20346_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20346_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20503_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20503_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20752_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20752_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20762_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20762_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20799_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20799_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20805_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20805_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20806_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20806_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20809_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20809_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20827_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20827_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20850_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20850_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20870_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20870_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20905_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA20905_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21093_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21093_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21102_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21102_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21106_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21106_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21110_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21110_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21144_hap1",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21144_hap2",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21309_mat",
+      "ledger_status": "UNVERIFIED",
+      "reason": "no trusted full-content index evidence; deep verification required"
+    },
+    {
+      "assembly": "NA21309_pat",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "TEXT_COMPONENT_REGENERATION",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_NA21309_pat/index/NA21309_pat",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/NA21309_pat_hprc_r2_v1.0.1.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "CHM13",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "TEXT_COMPONENT_REGENERATION",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/recovered_text_CHM13/index/chm13v2.0_maskedY_rCRS.fa.PanSN",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/chm13v2.0_maskedY_rCRS.fa.PanSN.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    },
+    {
+      "assembly": "GRCh38",
+      "ledger_status": "REBUILT_VERIFIED",
+      "method": "FULL_REBUILD",
+      "index_prefix": "/export/local/home/salehi/crisprapido-index-recovery-v1-2026-10-28/rebuilt_GRCh38/index/GRCh38",
+      "frozen_fasta": "/moosefs/pangenomes/HPRCv2/GCA_000001405.15_GRCh38_no_alt_analysis_set.PanSN.fa.gz",
+      "component_evidence": "full checksums",
+      "index_present": true,
+      "reason": ""
+    }
+  ],
+  "caveats": [
+    "Metadata presence is never content verification; deep mode hashes every component byte.",
+    "Verified sets were confirmed 2026-10-28/29; components could degrade again before use.",
+    "This audit authorizes nothing; per-run binding checks still re-verify at execution time."
+  ]
+}
