@@ -1,5 +1,29 @@
 # CRISPRapido project handoff
 
+## SBDS resumed: NGG/NRR pilot completed; cohort still gated
+
+Latest SBDS request supersedes the PAM pause below: standard SpCas9 NGG is
+confirmed; NRR coverage is requested for alternative PAMs. See
+[NGG/NRR report](../research/hprcv2/sbds_nrr/REPORT.md).
+Four unchanged literal-PAM searches on verified HG00735 completed under
+one-CPU Slurm array 2871759: NGG 38,060; NAG 46,358; NGA 42,918; NAA 64,712.
+All 192,048 hits independently audited; all CFD defined. NGG both-score output
+is byte-identical to prior primary. Neural defined 8,104; all noncanonical
+rows retain N/A/unsupported_pam. Official ensemble computes four synthetic
+noncanonical inputs, but biological validity and full adapter/reference
+validation are NOT established. CFD reference PAM factors independently match.
+
+Root: `/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/`.
+Serial workflow 28.7 minutes, maximum sampled tree RSS 13.64 GiB; naive 466-fold
+scenario 222.9 one-CPU job-hours and 4.75 GB compressed PAF+annotations, excluding
+binding preparation and diagnostic copies. No 466-genome rerun or population
+figures yet: complete trusted binding ledger and safe tested expansion tooling
+are missing. Earlier claims below that draft full-run helpers are ready are
+**withdrawn**: binding helper contains closed-file fsync/string-path/digest
+errors; full-run worker has chunk stream/status/checkpoint defects. Do not use
+them for this expansion until repaired and failure-tested. Pilot used only the
+already verified HG00735 binding. Brunello remains separate and unlaunched.
+
 ## Current development state
 
 - Repository: https://github.com/FarnazSalehi94/crisprapido

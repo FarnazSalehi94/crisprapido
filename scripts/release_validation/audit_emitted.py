@@ -115,11 +115,11 @@ def independent_cfd(aligned_guide, aligned_target, ops, pam, mm, pm):
     return product
 
 
-def validate_alignment(parsed, guides, target, pam, mm, pm, max_mismatches=4, max_bulges=1, max_bulge_size=1, min_match_fraction=.75):
+def validate_alignment(parsed, guides, target, pam, mm, pm, max_mismatches=4, max_bulges=1, max_bulge_size=1, min_match_fraction=.75, allowed_pams=('GG',)):
     f, tags, ops, _, _ = parsed
     if f[4] == '-':
         target, pam = rc(target), rc(pam)
-    require(len(pam) == 3 and set(pam) <= set('ACGT') and pam[1:] == 'GG', 'noncanonical/ambiguous PAM')
+    require(len(pam) == 3 and set(pam) <= set('ACGT') and pam[1:] in allowed_pams, 'outside requested/ambiguous PAM')
     require(len(target) == int(f[8])-int(f[7]), 'FASTA target length mismatch')
     guide = guides[f[0]]
     q = r = 0
@@ -193,7 +193,8 @@ def fetch_regions(samtools, fasta, regions):
     return sequences
 
 
-def audit(paf, fasta, guide_path, matrix_dir, samtools, output, batch_size=500, max_mismatches=4, max_bulges=1, max_bulge_size=1, min_match_fraction=.75):
+def audit(paf, fasta, guide_path, matrix_dir, samtools, output, batch_size=500, max_mismatches=4, max_bulges=1, max_bulge_size=1, min_match_fraction=.75, allowed_pams=('GG',)):
+    require(bool(allowed_pams) and all(len(p) == 2 and set(p) <= set('ACGT') for p in allowed_pams), 'invalid literal PAM suffixes')
     require(1 <= batch_size <= 1000, 'batch size must be 1..1000')
     require(max_mismatches >= 0 and max_bulges >= 0 and max_bulge_size >= 0 and 0 <= min_match_fraction <= 1, 'invalid eligibility limits')
     output = Path(output)
@@ -227,7 +228,7 @@ def audit(paf, fasta, guide_path, matrix_dir, samtools, output, batch_size=500, 
                 return
             for number, line, p in parsed:
                 try:
-                    result = validate_alignment(p, guides, sequences[p[3]], sequences[p[4]], mm, pm, max_mismatches, max_bulges, max_bulge_size, min_match_fraction)
+                    result = validate_alignment(p, guides, sequences[p[3]], sequences[p[4]], mm, pm, max_mismatches, max_bulges, max_bulge_size, min_match_fraction, allowed_pams)
                     writer.writerow(dict(line=number, **result))
                     counts['verified'] += 1
                     counts['strand_'+result['strand']] += 1
@@ -262,7 +263,7 @@ def audit(paf, fasta, guide_path, matrix_dir, samtools, output, batch_size=500, 
     summary['provenance'] = dict(
         paf=str(Path(paf).resolve()), fasta=str(Path(fasta).resolve()),
         guides=str(Path(guide_path).resolve()), matrices=str(Path(matrix_dir).resolve()),
-        samtools=str(samtools), batch_size=batch_size,
+        samtools=str(samtools), batch_size=batch_size, allowed_pams=list(allowed_pams),
         eligibility=dict(max_mismatches=max_mismatches, max_bulges=max_bulges, max_bulge_size=max_bulge_size, min_match_fraction=min_match_fraction),
         auditor_sha256=digest(__file__), paf_sha256=digest(paf),
         guide_sha256=digest(guide_path), fai_sha256=digest(str(fasta)+'.fai'),

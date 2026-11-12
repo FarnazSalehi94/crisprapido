@@ -38,6 +38,20 @@ class AuditorTests(unittest.TestCase):
                 self.assertEqual(result['independent_cfd'], 1)
                 self.assertEqual(result['pam'], pam)
 
+    def test_literal_nrr_pams_explicit_opt_in_both_strands(self):
+        for suffix in ('GG', 'AG', 'GA', 'AA'):
+            for first in 'ACGT':
+                pam = first+suffix
+                for strand in ('+', '-'):
+                    parsed = parse_row(record(strand=strand, cf=str(self.pm[suffix])), {'g': GUIDE}, {'chr': 100})
+                    args = (parsed, {'g': GUIDE}, GUIDE if strand == '+' else rc(GUIDE), pam if strand == '+' else rc(pam), self.mm, self.pm)
+                    result = validate_alignment(*args, allowed_pams=(suffix,))
+                    self.assertEqual(result['pam'], pam)
+                    self.assertEqual(result['independent_cfd'], self.pm[suffix])
+                    if suffix != 'GG':
+                        with self.assertRaises(AuditError):
+                            validate_alignment(*args)
+
     def test_independent_mismatch_and_rna_dna_bulge_fixtures(self):
         # Stored standalone CFD fixture: position-10 mismatch score .857142857.
         target = 'ATCGATCGAACGATCGATCG'

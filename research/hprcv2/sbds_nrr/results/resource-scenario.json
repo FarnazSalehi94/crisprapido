@@ -1,0 +1,7 @@
+{
+  "gzip_paf_annotations_bytes": 10190698,
+  "serial_workflow_seconds": 1722.2278245219495,
+  "scenario_466_serial_hours": 222.9328239520079,
+  "scenario_466_gzip_bytes": 4748865268,
+  "limitation": "Single-assembly multiplication, excludes verification/import, full QC and extra diagnostic copies; cache/concurrency uncontrolled"
+}

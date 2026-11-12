@@ -1,0 +1,17 @@
+{
+  "official_commit": "3eddcd5bfcaff00b2bdf29425116ec9756ace870",
+  "rows": 4,
+  "tensorflow": "2.12.0",
+  "numpy": "1.23.5",
+  "categorical_sha256": "ad2283c81fb84fdc7dd34107b36f3b2bd3fbbcd5a2d85cf21c198b604eb34110",
+  "official_ensemble_call_seconds": 2.823599067982286,
+  "elapsed_seconds": 7.2953828510362655,
+  "peak_reference_rss_kib": 605264,
+  "dna_two_base_encoder_error": "actual_seq_size > seq_len",
+  "rna_two_base_encoder_shape": [
+    1,
+    24,
+    25
+  ],
+  "scope": "unmodified official function plus imports, hash validation and feature/limit probes; CPU"
+}

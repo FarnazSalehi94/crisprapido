@@ -1,5 +1,9 @@
 # SBDS: completed guarded pilot and historical comparison
 
+**Update:** standard SpCas9 NGG is confirmed; the new requested NGG/NRR pilot
+is complete. See [NGG/NRR results and expansion blockers](sbds_nrr/REPORT.md).
+This older report remains the historical NGG/edit-domain comparison.
+
 **2026-11-11 — one assembly, not the requested completed 466-input rerun.**
 The other 465 primary searches have not been launched. Full-cohort findings and
 six updated population figures remain pending input-integrity/binding gates.

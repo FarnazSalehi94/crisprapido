@@ -1,0 +1,8 @@
+{
+  "old": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_pam_aware_v1/02_scoring/HG00735_pat/primary/attempt-2871689/eligible.both.paf",
+  "new": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/01_pilot/NGG/attempt-2871760/scoring.stdout",
+  "old_sha256": "595d95fef8146418373a6afcee2fffcd4a9fa803c6a462ae50cb14acdddbc836",
+  "new_sha256": "595d95fef8146418373a6afcee2fffcd4a9fa803c6a462ae50cb14acdddbc836",
+  "byte_identical": true,
+  "scope": "Previously audited NGG primary, including stored CFD and neural scores"
+}
