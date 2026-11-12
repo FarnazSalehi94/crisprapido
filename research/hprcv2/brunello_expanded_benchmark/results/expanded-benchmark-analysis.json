@@ -1,0 +1,699 @@
+{
+  "status": "COMPLETE",
+  "scope": "16-guide panel, two assemblies, four configurations",
+  "runs": {
+    "HG00735_pat/historical": {
+      "search_wall_seconds": 314.45299942512065,
+      "native_traversal_seconds": 2.9412,
+      "native_mean_seconds_per_guide": 0.183825,
+      "native_states": 43482526,
+      "audit_wall_seconds": 1.0030040689744055,
+      "scoring_wall_seconds": 12.018387722084299,
+      "workflow_wall_seconds": 370.7678706201259,
+      "peak_tree_rss_kib": 14259596,
+      "rows": 499,
+      "cb_statuses": {
+        "scored": 499
+      },
+      "per_guide_sites": {
+        "RPS29_CAAACCGGCACGGTCTGATC": 13,
+        "ANO4_ATAAATACTGTCCATTCATG": 60,
+        "CLLU1_GCTGCTAGCAGAATTGTCTG": 43,
+        "TVP23A_CGATACCGAGGATGTGTCCC": 7,
+        "ASIC5_AAGCCTAACCCATCAAACTG": 17,
+        "EMC9_ATGCAGCTGTGAACGATCAG": 29,
+        "SPTB_ATTGCGAGGAGACCAGCAAG": 18,
+        "NUPL1_AATTCACATATAACCCCTCA": 30,
+        "LDHA_CCGATTCCGTTACCTAATGG": 14,
+        "FDFT1_AGGCGCTGGATGGGGAAATG": 83,
+        "MTBP_TGACTCAAAGGAATTATGGA": 61,
+        "ZKSCAN3_TCACCAGCTTCTGCACATGT": 52,
+        "OR4C11_ATCAAGTCCAGCCGGACACT": 13,
+        "RBMY1E_TGACATGCGATCATTTCTCC": 24,
+        "RBMY1E_GAGTATGCTCCACCATCTAG": 24,
+        "Non-Targeting_Control_AAAAAGCTTCCGCCTGATGG": 11
+      },
+      "per_guide_site_spread": {
+        "min": 7,
+        "max": 83
+      },
+      "all_sites_cfd": {
+        "total": 499,
+        "defined": 499,
+        "unavailable": 0,
+        "ge_0.02": 292,
+        "ge_0.05": 225,
+        "ge_0.10": 168,
+        "ge_0.20": 103,
+        "ge_0.30": 68,
+        "ge_0.50": 31,
+        "median": 0.03720238093748512,
+        "max": 1.0
+      },
+      "views": {
+        "none": 499,
+        "0.05": 225,
+        "0.20": 103
+      },
+      "view_gzip_bytes": {
+        "none": 15105,
+        "0.05": 7265,
+        "0.20": 3568
+      },
+      "full_paf_gzip_bytes": 15105,
+      "annotations_gzip_bytes": 21609,
+      "raw_paf_bytes": 95287,
+      "raw_annotations_bytes": 111102,
+      "additional_vs_narrower": null
+    },
+    "HG00735_pat/intermediate": {
+      "search_wall_seconds": 336.4764003159944,
+      "native_traversal_seconds": 24.5462,
+      "native_mean_seconds_per_guide": 1.5341375,
+      "native_states": 312630674,
+      "audit_wall_seconds": 1.003337341826409,
+      "scoring_wall_seconds": 16.024823857005686,
+      "workflow_wall_seconds": 396.94016556604765,
+      "peak_tree_rss_kib": 14259616,
+      "rows": 7552,
+      "cb_statuses": {
+        "scored": 7552
+      },
+      "per_guide_sites": {
+        "RPS29_CAAACCGGCACGGTCTGATC": 75,
+        "ANO4_ATAAATACTGTCCATTCATG": 789,
+        "CLLU1_GCTGCTAGCAGAATTGTCTG": 672,
+        "TVP23A_CGATACCGAGGATGTGTCCC": 105,
+        "ASIC5_AAGCCTAACCCATCAAACTG": 329,
+        "EMC9_ATGCAGCTGTGAACGATCAG": 473,
+        "SPTB_ATTGCGAGGAGACCAGCAAG": 481,
+        "NUPL1_AATTCACATATAACCCCTCA": 550,
+        "LDHA_CCGATTCCGTTACCTAATGG": 60,
+        "FDFT1_AGGCGCTGGATGGGGAAATG": 1051,
+        "MTBP_TGACTCAAAGGAATTATGGA": 823,
+        "ZKSCAN3_TCACCAGCTTCTGCACATGT": 802,
+        "OR4C11_ATCAAGTCCAGCCGGACACT": 242,
+        "RBMY1E_TGACATGCGATCATTTCTCC": 427,
+        "RBMY1E_GAGTATGCTCCACCATCTAG": 400,
+        "Non-Targeting_Control_AAAAAGCTTCCGCCTGATGG": 273
+      },
+      "per_guide_site_spread": {
+        "min": 60,
+        "max": 1051
+      },
+      "all_sites_cfd": {
+        "total": 7552,
+        "defined": 7552,
+        "unavailable": 0,
+        "ge_0.02": 3429,
+        "ge_0.05": 2327,
+        "ge_0.10": 1358,
+        "ge_0.20": 576,
+        "ge_0.30": 259,
+        "ge_0.50": 56,
+        "median": 0.014285714282792204,
+        "max": 1.0
+      },
+      "views": {
+        "none": 7552,
+        "0.05": 2327,
+        "0.20": 576
+      },
+      "view_gzip_bytes": {
+        "none": 209027,
+        "0.05": 67794,
+        "0.20": 17691
+      },
+      "full_paf_gzip_bytes": 209027,
+      "annotations_gzip_bytes": 312916,
+      "raw_paf_bytes": 1471925,
+      "raw_annotations_bytes": 1715039,
+      "additional_vs_narrower": {
+        "count": 7053,
+        "cfd": {
+          "total": 7053,
+          "defined": 7053,
+          "unavailable": 0,
+          "ge_0.02": 3137,
+          "ge_0.05": 2102,
+          "ge_0.10": 1190,
+          "ge_0.20": 473,
+          "ge_0.30": 191,
+          "ge_0.50": 25,
+          "median": 0.013456937802567497,
+          "max": 0.8047619054428573
+        },
+        "neural_available": 7053
+      }
+    },
+    "HG00735_pat/candidate-A": {
+      "search_wall_seconds": 458.6550594388973,
+      "native_traversal_seconds": 147.103,
+      "native_mean_seconds_per_guide": 9.1939375,
+      "native_states": 1625109806,
+      "audit_wall_seconds": 9.01394435018301,
+      "scoring_wall_seconds": 69.09409327991307,
+      "workflow_wall_seconds": 583.6033800749574,
+      "peak_tree_rss_kib": 14268604,
+      "rows": 88462,
+      "cb_statuses": {
+        "scored": 88462
+      },
+      "per_guide_sites": {
+        "RPS29_CAAACCGGCACGGTCTGATC": 1139,
+        "ANO4_ATAAATACTGTCCATTCATG": 8426,
+        "CLLU1_GCTGCTAGCAGAATTGTCTG": 7455,
+        "TVP23A_CGATACCGAGGATGTGTCCC": 1827,
+        "ASIC5_AAGCCTAACCCATCAAACTG": 4497,
+        "EMC9_ATGCAGCTGTGAACGATCAG": 5260,
+        "SPTB_ATTGCGAGGAGACCAGCAAG": 6173,
+        "NUPL1_AATTCACATATAACCCCTCA": 6630,
+        "LDHA_CCGATTCCGTTACCTAATGG": 936,
+        "FDFT1_AGGCGCTGGATGGGGAAATG": 10750,
+        "MTBP_TGACTCAAAGGAATTATGGA": 8525,
+        "ZKSCAN3_TCACCAGCTTCTGCACATGT": 8613,
+        "OR4C11_ATCAAGTCCAGCCGGACACT": 3314,
+        "RBMY1E_TGACATGCGATCATTTCTCC": 4826,
+        "RBMY1E_GAGTATGCTCCACCATCTAG": 6480,
+        "Non-Targeting_Control_AAAAAGCTTCCGCCTGATGG": 3611
+      },
+      "per_guide_site_spread": {
+        "min": 936,
+        "max": 10750
+      },
+      "all_sites_cfd": {
+        "total": 88462,
+        "defined": 88462,
+        "unavailable": 0,
+        "ge_0.02": 28213,
+        "ge_0.05": 15943,
+        "ge_0.10": 7780,
+        "ge_0.20": 2503,
+        "ge_0.30": 944,
+        "ge_0.50": 97,
+        "median": 0.00576923076923077,
+        "max": 1.0
+      },
+      "views": {
+        "none": 88462,
+        "0.05": 15943,
+        "0.20": 2503
+      },
+      "view_gzip_bytes": {
+        "none": 2277932,
+        "0.05": 442232,
+        "0.20": 71220
+      },
+      "full_paf_gzip_bytes": 2277932,
+      "annotations_gzip_bytes": 3573602,
+      "raw_paf_bytes": 17439351,
+      "raw_annotations_bytes": 20375580,
+      "additional_vs_narrower": {
+        "count": 80910,
+        "cfd": {
+          "total": 80910,
+          "defined": 80910,
+          "unavailable": 0,
+          "ge_0.02": 24784,
+          "ge_0.05": 13616,
+          "ge_0.10": 6422,
+          "ge_0.20": 1927,
+          "ge_0.30": 685,
+          "ge_0.50": 41,
+          "median": 0.005281461824412142,
+          "max": 0.7292173064657269
+        },
+        "neural_available": 80910
+      }
+    },
+    "HG00735_pat/candidate-B": {
+      "search_wall_seconds": 1817.477361609228,
+      "native_traversal_seconds": 1498.05,
+      "native_mean_seconds_per_guide": 93.628125,
+      "native_states": 15592788243,
+      "audit_wall_seconds": 51.06839422788471,
+      "scoring_wall_seconds": 111.1577291211579,
+      "workflow_wall_seconds": 2044.6607049510349,
+      "peak_tree_rss_kib": 14325072,
+      "rows": 560138,
+      "cb_statuses": {
+        "alignment_exceeds_24_columns": 294273,
+        "scored": 97112,
+        "outside_documented_mismatch_domain": 148095,
+        "unsupported_multibase_bulge": 20658
+      },
+      "per_guide_sites": {
+        "RPS29_CAAACCGGCACGGTCTGATC": 7955,
+        "ANO4_ATAAATACTGTCCATTCATG": 42531,
+        "CLLU1_GCTGCTAGCAGAATTGTCTG": 32549,
+        "TVP23A_CGATACCGAGGATGTGTCCC": 9955,
+        "ASIC5_AAGCCTAACCCATCAAACTG": 23392,
+        "EMC9_ATGCAGCTGTGAACGATCAG": 24893,
+        "SPTB_ATTGCGAGGAGACCAGCAAG": 28428,
+        "NUPL1_AATTCACATATAACCCCTCA": 27837,
+        "LDHA_CCGATTCCGTTACCTAATGG": 5753,
+        "FDFT1_AGGCGCTGGATGGGGAAATG": 55104,
+        "MTBP_TGACTCAAAGGAATTATGGA": 43667,
+        "ZKSCAN3_TCACCAGCTTCTGCACATGT": 36994,
+        "OR4C11_ATCAAGTCCAGCCGGACACT": 142178,
+        "RBMY1E_TGACATGCGATCATTTCTCC": 26378,
+        "RBMY1E_GAGTATGCTCCACCATCTAG": 20383,
+        "Non-Targeting_Control_AAAAAGCTTCCGCCTGATGG": 32141
+      },
+      "per_guide_site_spread": {
+        "min": 5753,
+        "max": 142178
+      },
+      "all_sites_cfd": {
+        "total": 560138,
+        "defined": 560138,
+        "unavailable": 0,
+        "ge_0.02": 73771,
+        "ge_0.05": 35806,
+        "ge_0.10": 14661,
+        "ge_0.20": 4047,
+        "ge_0.30": 1296,
+        "ge_0.50": 128,
+        "median": 0.0,
+        "max": 1.0
+      },
+      "views": {
+        "none": 560138,
+        "0.05": 35806,
+        "0.20": 4047
+      },
+      "view_gzip_bytes": {
+        "none": 10428702,
+        "0.05": 887464,
+        "0.20": 106588
+      },
+      "full_paf_gzip_bytes": 10428702,
+      "annotations_gzip_bytes": 18327991,
+      "raw_paf_bytes": 113706450,
+      "raw_annotations_bytes": 139201667,
+      "additional_vs_narrower": {
+        "count": 471676,
+        "cfd": {
+          "total": 471676,
+          "defined": 471676,
+          "unavailable": 0,
+          "ge_0.02": 45692,
+          "ge_0.05": 19973,
+          "ge_0.10": 6918,
+          "ge_0.20": 1526,
+          "ge_0.30": 308,
+          "ge_0.50": 12,
+          "median": 0.0,
+          "max": 0.6719999999999999
+        },
+        "neural_available": 11317
+      }
+    },
+    "HG01496_pat/historical": {
+      "search_wall_seconds": 319.45361006702296,
+      "native_traversal_seconds": 2.95596,
+      "native_mean_seconds_per_guide": 0.1847475,
+      "native_states": 43482483,
+      "audit_wall_seconds": 1.0028455399442464,
+      "scoring_wall_seconds": 10.016387414885685,
+      "workflow_wall_seconds": 373.4916426858399,
+      "peak_tree_rss_kib": 14335356,
+      "rows": 496,
+      "cb_statuses": {
+        "scored": 496
+      },
+      "per_guide_sites": {
+        "RPS29_CAAACCGGCACGGTCTGATC": 14,
+        "ANO4_ATAAATACTGTCCATTCATG": 61,
+        "CLLU1_GCTGCTAGCAGAATTGTCTG": 43,
+        "TVP23A_CGATACCGAGGATGTGTCCC": 6,
+        "ASIC5_AAGCCTAACCCATCAAACTG": 18,
+        "EMC9_ATGCAGCTGTGAACGATCAG": 28,
+        "SPTB_ATTGCGAGGAGACCAGCAAG": 18,
+        "NUPL1_AATTCACATATAACCCCTCA": 28,
+        "LDHA_CCGATTCCGTTACCTAATGG": 14,
+        "FDFT1_AGGCGCTGGATGGGGAAATG": 84,
+        "MTBP_TGACTCAAAGGAATTATGGA": 60,
+        "ZKSCAN3_TCACCAGCTTCTGCACATGT": 52,
+        "OR4C11_ATCAAGTCCAGCCGGACACT": 14,
+        "RBMY1E_TGACATGCGATCATTTCTCC": 21,
+        "RBMY1E_GAGTATGCTCCACCATCTAG": 25,
+        "Non-Targeting_Control_AAAAAGCTTCCGCCTGATGG": 10
+      },
+      "per_guide_site_spread": {
+        "min": 6,
+        "max": 84
+      },
+      "all_sites_cfd": {
+        "total": 496,
+        "defined": 496,
+        "unavailable": 0,
+        "ge_0.02": 287,
+        "ge_0.05": 221,
+        "ge_0.10": 165,
+        "ge_0.20": 99,
+        "ge_0.30": 64,
+        "ge_0.50": 30,
+        "median": 0.035047792381855944,
+        "max": 1.0
+      },
+      "views": {
+        "none": 496,
+        "0.05": 221,
+        "0.20": 99
+      },
+      "view_gzip_bytes": {
+        "none": 14893,
+        "0.05": 7081,
+        "0.20": 3396
+      },
+      "full_paf_gzip_bytes": 14893,
+      "annotations_gzip_bytes": 21444,
+      "raw_paf_bytes": 94040,
+      "raw_annotations_bytes": 109695,
+      "additional_vs_narrower": null
+    },
+    "HG01496_pat/intermediate": {
+      "search_wall_seconds": 336.4637563228607,
+      "native_traversal_seconds": 23.3095,
+      "native_mean_seconds_per_guide": 1.45684375,
+      "native_states": 312639865,
+      "audit_wall_seconds": 1.0022149218712002,
+      "scoring_wall_seconds": 15.022019888041541,
+      "workflow_wall_seconds": 395.50888161198236,
+      "peak_tree_rss_kib": 14335104,
+      "rows": 7579,
+      "cb_statuses": {
+        "scored": 7579
+      },
+      "per_guide_sites": {
+        "RPS29_CAAACCGGCACGGTCTGATC": 76,
+        "ANO4_ATAAATACTGTCCATTCATG": 787,
+        "CLLU1_GCTGCTAGCAGAATTGTCTG": 683,
+        "TVP23A_CGATACCGAGGATGTGTCCC": 108,
+        "ASIC5_AAGCCTAACCCATCAAACTG": 334,
+        "EMC9_ATGCAGCTGTGAACGATCAG": 471,
+        "SPTB_ATTGCGAGGAGACCAGCAAG": 474,
+        "NUPL1_AATTCACATATAACCCCTCA": 562,
+        "LDHA_CCGATTCCGTTACCTAATGG": 66,
+        "FDFT1_AGGCGCTGGATGGGGAAATG": 1051,
+        "MTBP_TGACTCAAAGGAATTATGGA": 823,
+        "ZKSCAN3_TCACCAGCTTCTGCACATGT": 803,
+        "OR4C11_ATCAAGTCCAGCCGGACACT": 248,
+        "RBMY1E_TGACATGCGATCATTTCTCC": 422,
+        "RBMY1E_GAGTATGCTCCACCATCTAG": 397,
+        "Non-Targeting_Control_AAAAAGCTTCCGCCTGATGG": 274
+      },
+      "per_guide_site_spread": {
+        "min": 66,
+        "max": 1051
+      },
+      "all_sites_cfd": {
+        "total": 7579,
+        "defined": 7579,
+        "unavailable": 0,
+        "ge_0.02": 3446,
+        "ge_0.05": 2363,
+        "ge_0.10": 1371,
+        "ge_0.20": 575,
+        "ge_0.30": 258,
+        "ge_0.50": 53,
+        "median": 0.01435897436923508,
+        "max": 1.0
+      },
+      "views": {
+        "none": 7579,
+        "0.05": 2363,
+        "0.20": 575
+      },
+      "view_gzip_bytes": {
+        "none": 208694,
+        "0.05": 68157,
+        "0.20": 17616
+      },
+      "full_paf_gzip_bytes": 208694,
+      "annotations_gzip_bytes": 313619,
+      "raw_paf_bytes": 1466598,
+      "raw_annotations_bytes": 1709705,
+      "additional_vs_narrower": {
+        "count": 7083,
+        "cfd": {
+          "total": 7083,
+          "defined": 7083,
+          "unavailable": 0,
+          "ge_0.02": 3159,
+          "ge_0.05": 2142,
+          "ge_0.10": 1206,
+          "ge_0.20": 476,
+          "ge_0.30": 194,
+          "ge_0.50": 23,
+          "median": 0.013605442174610998,
+          "max": 0.8047619054428573
+        },
+        "neural_available": 7083
+      }
+    },
+    "HG01496_pat/candidate-A": {
+      "search_wall_seconds": 456.6480638869107,
+      "native_traversal_seconds": 143.362,
+      "native_mean_seconds_per_guide": 8.960125,
+      "native_states": 1625143132,
+      "audit_wall_seconds": 9.013278282014653,
+      "scoring_wall_seconds": 70.100331841968,
+      "workflow_wall_seconds": 582.5816435560118,
+      "peak_tree_rss_kib": 14343184,
+      "rows": 88807,
+      "cb_statuses": {
+        "scored": 88807
+      },
+      "per_guide_sites": {
+        "RPS29_CAAACCGGCACGGTCTGATC": 1145,
+        "ANO4_ATAAATACTGTCCATTCATG": 8412,
+        "CLLU1_GCTGCTAGCAGAATTGTCTG": 7477,
+        "TVP23A_CGATACCGAGGATGTGTCCC": 1828,
+        "ASIC5_AAGCCTAACCCATCAAACTG": 4503,
+        "EMC9_ATGCAGCTGTGAACGATCAG": 5253,
+        "SPTB_ATTGCGAGGAGACCAGCAAG": 6191,
+        "NUPL1_AATTCACATATAACCCCTCA": 6584,
+        "LDHA_CCGATTCCGTTACCTAATGG": 943,
+        "FDFT1_AGGCGCTGGATGGGGAAATG": 10873,
+        "MTBP_TGACTCAAAGGAATTATGGA": 8635,
+        "ZKSCAN3_TCACCAGCTTCTGCACATGT": 8669,
+        "OR4C11_ATCAAGTCCAGCCGGACACT": 3346,
+        "RBMY1E_TGACATGCGATCATTTCTCC": 4860,
+        "RBMY1E_GAGTATGCTCCACCATCTAG": 6477,
+        "Non-Targeting_Control_AAAAAGCTTCCGCCTGATGG": 3611
+      },
+      "per_guide_site_spread": {
+        "min": 943,
+        "max": 10873
+      },
+      "all_sites_cfd": {
+        "total": 88807,
+        "defined": 88807,
+        "unavailable": 0,
+        "ge_0.02": 28319,
+        "ge_0.05": 16080,
+        "ge_0.10": 7830,
+        "ge_0.20": 2506,
+        "ge_0.30": 940,
+        "ge_0.50": 91,
+        "median": 0.0057799343484765675,
+        "max": 1.0
+      },
+      "views": {
+        "none": 88807,
+        "0.05": 16080,
+        "0.20": 2506
+      },
+      "view_gzip_bytes": {
+        "none": 2279526,
+        "0.05": 443453,
+        "0.20": 71027
+      },
+      "full_paf_gzip_bytes": 2279526,
+      "annotations_gzip_bytes": 3578284,
+      "raw_paf_bytes": 17390777,
+      "raw_annotations_bytes": 20329917,
+      "additional_vs_narrower": {
+        "count": 81228,
+        "cfd": {
+          "total": 81228,
+          "defined": 81228,
+          "unavailable": 0,
+          "ge_0.02": 24873,
+          "ge_0.05": 13717,
+          "ge_0.10": 6459,
+          "ge_0.20": 1931,
+          "ge_0.30": 682,
+          "ge_0.50": 38,
+          "median": 0.005295868341240663,
+          "max": 0.7292173064657269
+        },
+        "neural_available": 81228
+      }
+    },
+    "HG01496_pat/candidate-B": {
+      "search_wall_seconds": 1911.7513552019373,
+      "native_traversal_seconds": 1584.67,
+      "native_mean_seconds_per_guide": 99.041875,
+      "native_states": 15592727412,
+      "audit_wall_seconds": 52.072496969019994,
+      "scoring_wall_seconds": 112.16532458807342,
+      "workflow_wall_seconds": 2141.4190415767953,
+      "peak_tree_rss_kib": 14399916,
+      "rows": 561390,
+      "cb_statuses": {
+        "outside_documented_mismatch_domain": 148552,
+        "scored": 97458,
+        "alignment_exceeds_24_columns": 295383,
+        "unsupported_multibase_bulge": 19997
+      },
+      "per_guide_sites": {
+        "RPS29_CAAACCGGCACGGTCTGATC": 7303,
+        "ANO4_ATAAATACTGTCCATTCATG": 42427,
+        "CLLU1_GCTGCTAGCAGAATTGTCTG": 32568,
+        "TVP23A_CGATACCGAGGATGTGTCCC": 9940,
+        "ASIC5_AAGCCTAACCCATCAAACTG": 23354,
+        "EMC9_ATGCAGCTGTGAACGATCAG": 25026,
+        "SPTB_ATTGCGAGGAGACCAGCAAG": 28675,
+        "NUPL1_AATTCACATATAACCCCTCA": 27977,
+        "LDHA_CCGATTCCGTTACCTAATGG": 5824,
+        "FDFT1_AGGCGCTGGATGGGGAAATG": 55767,
+        "MTBP_TGACTCAAAGGAATTATGGA": 43948,
+        "ZKSCAN3_TCACCAGCTTCTGCACATGT": 37020,
+        "OR4C11_ATCAAGTCCAGCCGGACACT": 142594,
+        "RBMY1E_TGACATGCGATCATTTCTCC": 26426,
+        "RBMY1E_GAGTATGCTCCACCATCTAG": 20383,
+        "Non-Targeting_Control_AAAAAGCTTCCGCCTGATGG": 32158
+      },
+      "per_guide_site_spread": {
+        "min": 5824,
+        "max": 142594
+      },
+      "all_sites_cfd": {
+        "total": 561390,
+        "defined": 561390,
+        "unavailable": 0,
+        "ge_0.02": 73943,
+        "ge_0.05": 35950,
+        "ge_0.10": 14692,
+        "ge_0.20": 4043,
+        "ge_0.30": 1292,
+        "ge_0.50": 121,
+        "median": 0.0,
+        "max": 1.0
+      },
+      "views": {
+        "none": 561390,
+        "0.05": 35950,
+        "0.20": 4043
+      },
+      "view_gzip_bytes": {
+        "none": 10441439,
+        "0.05": 887989,
+        "0.20": 106177
+      },
+      "full_paf_gzip_bytes": 10441439,
+      "annotations_gzip_bytes": 18343528,
+      "raw_paf_bytes": 113203010,
+      "raw_annotations_bytes": 138700640,
+      "additional_vs_narrower": {
+        "count": 472583,
+        "cfd": {
+          "total": 472583,
+          "defined": 472583,
+          "unavailable": 0,
+          "ge_0.02": 45760,
+          "ge_0.05": 19975,
+          "ge_0.10": 6898,
+          "ge_0.20": 1518,
+          "ge_0.30": 307,
+          "ge_0.50": 12,
+          "median": 0.0,
+          "max": 0.6719999999999999
+        },
+        "neural_available": 11338
+      }
+    }
+  },
+  "nested": {
+    "HG00735_pat": {
+      "historical->intermediate": {
+        "narrower_sites": 499,
+        "broader_sites": 7552,
+        "shared": 499,
+        "added_sites": 7053,
+        "removed_sites": 0,
+        "shared_representative_differences": 0,
+        "shared_stored_cfd_differences": 0,
+        "shared_neural_availability_changes": 0,
+        "caveat": "Exact same-guide/contig/strand/PAM-boundary keys; representative policy is edit/mismatch/CIGAR/start-ordered, not CFD-ordered; no biological preference."
+      },
+      "intermediate->candidate-A": {
+        "narrower_sites": 7552,
+        "broader_sites": 88462,
+        "shared": 7552,
+        "added_sites": 80910,
+        "removed_sites": 0,
+        "shared_representative_differences": 0,
+        "shared_stored_cfd_differences": 0,
+        "shared_neural_availability_changes": 0,
+        "caveat": "Exact same-guide/contig/strand/PAM-boundary keys; representative policy is edit/mismatch/CIGAR/start-ordered, not CFD-ordered; no biological preference."
+      },
+      "candidate-A->candidate-B": {
+        "narrower_sites": 88462,
+        "broader_sites": 560138,
+        "shared": 88462,
+        "added_sites": 471676,
+        "removed_sites": 0,
+        "shared_representative_differences": 2667,
+        "shared_stored_cfd_differences": 2405,
+        "shared_neural_availability_changes": 2667,
+        "caveat": "Exact same-guide/contig/strand/PAM-boundary keys; representative policy is edit/mismatch/CIGAR/start-ordered, not CFD-ordered; no biological preference."
+      }
+    },
+    "HG01496_pat": {
+      "historical->intermediate": {
+        "narrower_sites": 496,
+        "broader_sites": 7579,
+        "shared": 496,
+        "added_sites": 7083,
+        "removed_sites": 0,
+        "shared_representative_differences": 0,
+        "shared_stored_cfd_differences": 0,
+        "shared_neural_availability_changes": 0,
+        "caveat": "Exact same-guide/contig/strand/PAM-boundary keys; representative policy is edit/mismatch/CIGAR/start-ordered, not CFD-ordered; no biological preference."
+      },
+      "intermediate->candidate-A": {
+        "narrower_sites": 7579,
+        "broader_sites": 88807,
+        "shared": 7579,
+        "added_sites": 81228,
+        "removed_sites": 0,
+        "shared_representative_differences": 0,
+        "shared_stored_cfd_differences": 0,
+        "shared_neural_availability_changes": 0,
+        "caveat": "Exact same-guide/contig/strand/PAM-boundary keys; representative policy is edit/mismatch/CIGAR/start-ordered, not CFD-ordered; no biological preference."
+      },
+      "candidate-A->candidate-B": {
+        "narrower_sites": 88807,
+        "broader_sites": 561390,
+        "shared": 88807,
+        "added_sites": 472583,
+        "removed_sites": 0,
+        "shared_representative_differences": 2687,
+        "shared_stored_cfd_differences": 2428,
+        "shared_neural_availability_changes": 2687,
+        "caveat": "Exact same-guide/contig/strand/PAM-boundary keys; representative policy is edit/mismatch/CIGAR/start-ordered, not CFD-ordered; no biological preference."
+      }
+    }
+  },
+  "caveats": [
+    "Single fresh call per (assembly, config); concurrent sibling chain on the same node; uncontrolled caches.",
+    "16 timing-blind, deterministically selected guides; not a random library sample.",
+    "Additional-site CFD profiles use independent full-precision reconstruction; unavailable CFD is kept separate.",
+    "Nested set comparisons are exact-anchor keys; representative changes can alter scores without search loss.",
+    "No genome-wide recall, biological calibration or full-library timing claim."
+  ]
+}

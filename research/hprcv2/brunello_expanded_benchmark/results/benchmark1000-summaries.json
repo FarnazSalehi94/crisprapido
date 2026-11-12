@@ -1,0 +1,74 @@
+{
+  "HG00735_pat/intermediate": {
+    "rows": 522687,
+    "native_traversal_seconds": 1460.39,
+    "native_states": 18398575196,
+    "cb_statuses": {
+      "scored": 522687
+    },
+    "monitor": {
+      "reason": "completed",
+      "sampled_peak_rss_kib": 14319844,
+      "limit_kib": 50331648,
+      "sample_count": 18231,
+      "sample_interval_seconds": 0.1,
+      "elapsed_seconds": 2286.657846963033,
+      "child_returncode": 0,
+      "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+    }
+  },
+  "HG00735_pat/candidate-A": {
+    "rows": 5833431,
+    "native_traversal_seconds": 8315.85,
+    "native_states": 96761812896,
+    "cb_statuses": {
+      "scored": 5833431
+    },
+    "monitor": {
+      "reason": "completed",
+      "sampled_peak_rss_kib": 14951576,
+      "limit_kib": 50331648,
+      "sample_count": 107465,
+      "sample_interval_seconds": 0.1,
+      "elapsed_seconds": 13491.20503697195,
+      "child_returncode": 0,
+      "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+    }
+  },
+  "HG01496_pat/intermediate": {
+    "rows": 524232,
+    "native_traversal_seconds": 1435.37,
+    "native_states": 18399749561,
+    "cb_statuses": {
+      "scored": 524232
+    },
+    "monitor": {
+      "reason": "completed",
+      "sampled_peak_rss_kib": 14393204,
+      "limit_kib": 50331648,
+      "sample_count": 18106,
+      "sample_interval_seconds": 0.1,
+      "elapsed_seconds": 2269.795627143001,
+      "child_returncode": 0,
+      "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+    }
+  },
+  "HG01496_pat/candidate-A": {
+    "rows": 5876550,
+    "native_traversal_seconds": 8240.92,
+    "native_states": 96766217553,
+    "cb_statuses": {
+      "scored": 5876550
+    },
+    "monitor": {
+      "reason": "completed",
+      "sampled_peak_rss_kib": 15023064,
+      "limit_kib": 50331648,
+      "sample_count": 107572,
+      "sample_interval_seconds": 0.1,
+      "elapsed_seconds": 13495.857025133912,
+      "child_returncode": 0,
+      "caveat": "sampled summed process-tree RSS; may miss spikes and double-count shared pages; not a hard memory limit"
+    }
+  }
+}

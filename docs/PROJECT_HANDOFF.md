@@ -51,6 +51,37 @@ results are claimed yet. External figures are clearly labelled n=1/three-guide
 pilot diagnostics. Completed prior HG00735 experiments below are unchanged and
 must not be repeated as if new.
 
+## Brunello expanded benchmark and full-run preparation (2026-11-12; SBDS paused)
+
+**SBDS is PAUSED pending confirmation of the prime editor's PAM; no SBDS
+search/parameter work is in progress.** The completed bounded benchmark is in
+[brunello_expanded_benchmark/REPORT.md](../research/hprcv2/brunello_expanded_benchmark/REPORT.md):
+16 timing-blind stratum-selected guides x 2 verified assemblies (HG01496_pat
+safely bound this session, 371 s trusted import) x 4 configurations, plus a
+1,000-guide library-mix scaling benchmark at m3 and m4; **11.7 M rows audited
+with zero errors; nothing full-scale launched**. Key measured results: m3/b1/z1
+≈ 1.45 s/guide, 523 rows/guide, 100 % both scores; m4/b1/z1 ≈ 8.3 s/guide,
+5,855 rows/guide, 100 % both scores, and it adds ~100 CFD>=0.20 sites per guide
+that m3 omits with *perfect nesting* (zero representative/CFD changes at shared
+anchors); m5/b1/z2 ≈ 96 s/guide, 83 % neural N/A, 2,667 representative changes
+and fewer additional high-CFD sites than m4 — rejected. Full-HPRCv2 campaign
+estimates: m4 ≈ 128,000 CPU-hours/~19.4 TB; m3 ≈ 19,000 CPU-hours/~1.7 TB;
+m2 rejected (misses high-CFD sites). Recommended scientific config: candidate-A
+(m4); pragmatic staged alternative: m3 (forward-compatible because nesting is
+perfect). All four configurations are fully compatible with -f 0.75 (the
+match-fraction rule is matched/20 and clips nothing at m<=5).
+
+Prepared but NOT launched (Task 6 of the request): prepare_binding.py (in-place
+trusted binding for the 12 recovery-verified assemblies; 452 others need the
+verification campaign first), make_full_plan.py (requires a recorded user
+authorization token), full_run_worker.py (chunked, checkpointed, restart-safe,
+1 CPU/assembly, full audits, explicit N/A), submit_full_run.slurm (464-task
+array template), verify_full_run.py (ledger; never zero-fills). Storage/filtering
+strategy: keep complete eligible both-score PAF + annotations compressed as
+authoritative; CFD thresholds are derived views only and can never define
+allele-frequency denominators. IMPG/Figure-1C needs remain specified in
+research/hprcv2/ALLELE_PLAN.md; nothing mapped or plotted yet.
+
 ## Performance investigation (2026-11-11, bounded; no full reruns launched)
 
 See [performance report](../research/hprcv2/performance/REPORT.md). The apparent
