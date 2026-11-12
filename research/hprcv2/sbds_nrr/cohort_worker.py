@@ -195,9 +195,19 @@ def main():
         success = logical/'SUCCESS.json'
         if success.exists():
             data = json.loads(success.read_text())
-            require(data['plan_sha256'] == plan['_plan_sha256'], 'completed assembly has a different plan')
             for path, spec in data['outputs'].items():
                 require(digest(path) == spec['sha256'], 'completed output changed: '+path)
+            # Incremental expansion: a completed assembly is skipped under a NEW
+            # plan only when its scientific search identity is unchanged.
+            stored = data.get('search_signatures')
+            if data['plan_sha256'] == plan['_plan_sha256']:
+                pass
+            elif stored:
+                current = {pam: search_signature(plan, entry, SUFFIX[pam]) for pam in PAMS}
+                require(stored == current, 'completed assembly has a different scientific search identity')
+            else:
+                raise ValueError('completed assembly was produced by a different plan and carries no '
+                                 'recorded search signatures; refusing silent reuse')
             print('Already complete; checksums verified; no rerun.')
             return
         attempt = logical/('attempt-'+os.environ['SLURM_JOB_ID'])
@@ -228,7 +238,8 @@ def main():
                     if f.is_file() and job in str(f):
                         outputs[str(f)] = dict(sha256=digest(f), bytes=f.stat().st_size)
             save(success, dict(status='COMPLETE', plan_sha256=plan['_plan_sha256'], attempt=str(attempt),
-                 assembly=a.assembly, outputs=outputs, pams=PAMS))
+                 assembly=a.assembly, outputs=outputs, pams=PAMS,
+                 search_signatures={pam: search_signature(plan, entry, SUFFIX[pam]) for pam in PAMS}))
             (attempt/'INCOMPLETE.json').unlink()
         except BaseException as exc:
             save(attempt/'FAILED.json', dict(error=str(exc), plan_sha256=plan['_plan_sha256']))

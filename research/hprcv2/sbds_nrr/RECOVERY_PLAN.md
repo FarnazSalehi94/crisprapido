@@ -73,13 +73,17 @@ Conservative settings: `%4–%12`, 1 CPU, 8G, nodes with scratch headroom
 metadata presence authorizes nothing; restart rechecks completed work.
 
 **Rebuild campaign (conditional on verification outcome + cluster-team
-advice):** if EIO prevalence stays ≈44% of ordinary assemblies, roughly
-**~190 of 438** will need rebuilds: **~55–60 rebuild-days of one-CPU wall
-(~19–20 h measured per batch of 60 at %4 on 41 GB-RAM nodes)**, ~2.9 TB of
-rebuilt indexes + ~0.6 TB staged FASTAs on /export (11 TB free — fits, but
-needs a reservation), plus ~0.6 TB of bindings on MooseFS. RAM-bound
-concurrency is the limiter. **Do not rebuild onto MooseFS before the
-incident is diagnosed**; keep rebuilt sets on /export as the pilot did.
+advice):** corrected arithmetic (see CORRECTED-ESTIMATES below): if EIO
+prevalence stays ≈44% of ordinary assemblies, roughly **~190 of 438** will
+need rebuilds: **~65 one-CPU hours (~2.7 core-days)** end to end, i.e. wall
+≈ 17 h at %4, ≈ 8 h at %8 (RAM-bounded: each build peaks ~41 GB, so real
+concurrency is what fits in free node memory; Slurm queues the rest).
+Storage: ~2.8 TB rebuilt indexes + staged FASTAs on /export (10.3 TB free —
+fits, needs a reservation), plus ~0.6 TB of bindings on MooseFS.
+**Do not rebuild onto MooseFS before the incident is diagnosed**; keep
+rebuilt sets on /export as the pilot did. An earlier draft of this report
+stated "55–60 rebuild-days"; that figure was **serial one-CPU HOURS
+mis-labeled as days** (~54 h ≈ 190 × 17 min) and is superseded here.
 
 **Recommended order:** (1) administrator diagnosis of the MooseFS damage
 (INCIDENT_REPORT.md) — replica recovery could avoid most rebuilds;

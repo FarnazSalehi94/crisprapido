@@ -1,5 +1,24 @@
 # CRISPRapido project handoff
 
+## Corrected estimates, admin message, campaign preparation (2026-11-13)
+
+[CORRECTED_ESTIMATES.md](../research/hprcv2/sbds_nrr/CORRECTED_ESTIMATES.md):
+the earlier "55–60 rebuild-days" figure was serial one-CPU HOURS mislabeled
+as days. Corrected: rebuilds cost **0.34 one-CPU h per assembly end to end**;
+~190 rebuilds ≈ **65 one-CPU hours (2.7 core-days)**, wall ≈17 h at %4, ≈8 h
+at %8 (real limiter is ~41 GB RAM per build), ~2.8 TB on /export.
+[ADMIN_MESSAGE.md](../research/hprcv2/sbds_nrr/ADMIN_MESSAGE.md) is ready to
+send: affected store, reproducible errno-5 evidence, healthy source FASTAs,
+request for chunk/replica recovery. Verification campaign for the 438
+UNATTEMPTED is fully prepared (`verify-campaign-unattempted-438.txt`, sbatch
+validated with --test-only; ≤5.3 TB reads, ~19 CPU-h, %12) — **awaiting
+explicit I/O authorization**. SBDS incremental driver prepared and
+dry-run (11 READY_BOUND, 8 pending, plan sha
+`966f4cb9291646e74810ed396a36108b67330f62a5e251922d0128d6202cb5d9`): worker
+now records per-PAM scientific search signatures so completed assemblies
+are never rerun across plan expansions; 10 regression tests pass. Brunello
+untouched.
+
 ## MooseFS incident, reconciliation and recovery pilot (2026-11-13)
 
 [RECOVERY_PLAN.md](../research/hprcv2/sbds_nrr/RECOVERY_PLAN.md) and

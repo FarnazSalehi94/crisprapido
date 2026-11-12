@@ -184,5 +184,24 @@ class CohortWorkerTests(unittest.TestCase):
         fcntl.flock(lock, fcntl.LOCK_UN)
 
 
+
+    def test_incremental_expansion_skips_unchanged_identity(self):
+        self.assertEqual(self.invoke('1').returncode, 0)
+        # expand the plan: add another assembly + extra shared pin; same scientific identity for TEST
+        other = self.root/'other.fa'; other.write_text('>c\n'+self.ref.read_text().splitlines()[1]+'\n')
+        self.plan['assemblies']['OTHER'] = dict(self.plan['assemblies']['TEST'], assembly='OTHER')
+        self.plan['pins'][str(other)] = digest(other)
+        self.plan['excluded_extra'] = True
+        self.plan_file.write_text(json.dumps(self.plan))
+        r = self.invoke('2')
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn('Already complete', r.stdout)
+        # scientific identity change (different reference hash) must be refused
+        self.plan['assemblies']['TEST']['reference_sha256'] = '0'*64
+        self.plan_file.write_text(json.dumps(self.plan))
+        r2 = self.invoke('3')
+        self.assertNotEqual(r2.returncode, 0)
+        self.assertIn('scientific search identity', r2.stderr)
+
 if __name__ == '__main__':
     unittest.main()
