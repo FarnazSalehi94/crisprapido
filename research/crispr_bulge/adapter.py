@@ -191,7 +191,9 @@ def convert(raw, guides, reference):
     pam = reference.fetch(f[5], hi, hi+3) if f[4] == '+' else rc(reference.fetch(f[5], lo-3, lo))
     if not set(pam) <= DNA:
         return key, 'ambiguous_pam', None
-    if pam[1:] != 'GG':
+    # NRR is computationally validated; noncanonical biological validity is
+    # not established. Keep the actual target PAM; guide representation is NGG.
+    if pam[1:] not in ('GG', 'AG', 'GA', 'AA'):
         return key, 'unsupported_pam', None
     if len(ag)+3 > 24:
         return key, 'alignment_exceeds_24_columns', None
@@ -221,7 +223,7 @@ def encode_tokens(rows):
         g, t = row['guide'], row['target']
         if len(g) != len(t) or not 23 <= len(g) <= 24 or g[-3:] != 'NGG':
             raise ValueError('invalid model input geometry/PAM')
-        if set(g[:-3]) - set(alphabet) or set(t) - set(alphabet) or t[-2:] != 'GG':
+        if set(g[:-3]) - set(alphabet) or set(t) - set(alphabet) or set(t[-3:]) - DNA or t[-2:] not in ('GG', 'AG', 'GA', 'AA'):
             raise ValueError('ambiguous/unsupported model input')
         gap_bases = g[:-3].count('-') + t[:-3].count('-')
         mismatches = sum(a != b for a, b in zip(g[:-3], t[:-3]) if a != '-' and b != '-')

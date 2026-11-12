@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "rows": 8272,
+  "max_absolute_error": 6.110667527536862e-13,
+  "categorical_sha256": "1809936e1faaf2b61c1019d614eee57c74ce46b4d87cd0036f1fd44fc8c8200d",
+  "scope": "16 NRR triplets; ungapped 0..6 mismatches; single RNA/DNA gaps 0..4 mismatches; every feasible gap position and DNA base; computational not biological validation"
+}

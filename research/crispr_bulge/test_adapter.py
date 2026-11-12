@@ -48,6 +48,34 @@ class AdapterTests(unittest.TestCase):
                 self.assertTrue(features['target'].endswith('AGG'))
                 self.assertEqual(features['guide'].replace('-','')[:-3],GUIDE)
 
+    def test_nrr_all_mismatch_counts_gap_types_and_strands(self):
+        for suffix in ('GG', 'AG', 'GA', 'AA'):
+            for first in 'ACGT':
+                pam = first+suffix
+                for m in range(7):
+                    prefix = (str(m)+'X') if m else ''
+                    for gap in ('none', 'DNA', 'RNA'):
+                        if gap == 'none':
+                            target = changed(GUIDE[:m])+GUIDE[m:]
+                            cigar = prefix+str(20-m)+'='
+                        elif gap == 'DNA':
+                            target = changed(GUIDE[:m])+'T'+GUIDE[m:]
+                            cigar = prefix+'1D'+str(20-m)+'='
+                        else:
+                            target = changed(GUIDE[:m])+GUIDE[m+1:]
+                            cigar = prefix+'1I'+str(19-m)+'='
+                        for strand in '+-':
+                            _, status, features = self.converted(target,cigar,strand,pam=pam)
+                            expected = 'scored' if gap == 'none' or m <= 4 else 'outside_documented_mismatch_domain'
+                            self.assertEqual(status, expected)
+                            if features:
+                                self.assertTrue(features['guide'].endswith('NGG'))
+                                self.assertTrue(features['target'].endswith(pam))
+                                tokens = encode_tokens([features])[0]
+                                self.assertEqual(tokens[-2:], [10+'ACGT'.index(x) for x in suffix])
+                for target,cigar,reason in [(GUIDE[:5]+'TT'+GUIDE[5:],'5=2D15=','alignment_exceeds_24_columns'), (GUIDE[:5]+GUIDE[7:],'5=2I13=','unsupported_multibase_bulge')]:
+                    self.assertEqual(self.converted(target,cigar,pam=pam)[1],reason)
+
     def test_unsupported_domain_is_not_fabricated(self):
         cases=[(GUIDE[:5]+'TT'+GUIDE[5:],'5=2D15=','alignment_exceeds_24_columns'),
                (GUIDE[:5]+GUIDE[7:],'5=2I13=','unsupported_multibase_bulge'),
@@ -61,7 +89,7 @@ class AdapterTests(unittest.TestCase):
                 self.assertEqual(status,expected)
                 self.assertIsNone(features)
         self.assertEqual(self.converted(GUIDE,'20=',pam='NGG')[1],'ambiguous_pam')
-        self.assertEqual(self.converted(GUIDE,'20=',pam='AAG')[1],'unsupported_pam')
+        self.assertEqual(self.converted(GUIDE,'20=',pam='AAC')[1],'unsupported_pam')
         self.assertEqual(self.converted(GUIDE,'20=',guide='N'+GUIDE[1:])[1],'ambiguous_guide')
 
     def test_independent_encoding_padding_and_structural_n(self):

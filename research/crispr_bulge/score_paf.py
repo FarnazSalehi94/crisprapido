@@ -64,6 +64,7 @@ def main():
     metadata = dict(scoring=a.scoring, input_sha256=source_sha,
                     min_cfd='not applied here; upstream filter, if any, is preserved',
                     representative_policy='input PAF representative unchanged',
+                    neural_pam_policy='NRR computational support: guide NGG, actual target PAM; noncanonical biological validity not established',
                     rows=0, statuses={}, worker=None)
     output = a.out_dir/'output.paf.incomplete'
     reference = None

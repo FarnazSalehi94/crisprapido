@@ -1,17 +1,28 @@
 # CRISPRapido project handoff
 
-## SBDS resumed: NGG/NRR pilot completed; cohort still gated
+## SBDS resumed: NGG/NRR pilot completed; NRR scoring validated; cohort still gated
 
 Latest SBDS request supersedes the PAM pause below: standard SpCas9 NGG is
 confirmed; NRR coverage is requested for alternative PAMs. See
-[NGG/NRR report](../research/hprcv2/sbds_nrr/REPORT.md).
+[NGG/NRR report](../research/hprcv2/sbds_nrr/REPORT.md) and the
+[saved-pilot NRR reannotation](../research/hprcv2/sbds_nrr/REANNOTATION.md).
 Four unchanged literal-PAM searches on verified HG00735 completed under
 one-CPU Slurm array 2871759: NGG 38,060; NAG 46,358; NGA 42,918; NAA 64,712.
 All 192,048 hits independently audited; all CFD defined. NGG both-score output
-is byte-identical to prior primary. Neural defined 8,104; all noncanonical
-rows retain N/A/unsupported_pam. Official ensemble computes four synthetic
-noncanonical inputs, but biological validity and full adapter/reference
-validation are NOT established. CFD reference PAM factors independently match.
+is byte-identical to prior primary.
+
+**Saved-pilot reannotation (searches NOT repeated):** the Python scorer now
+supports NRR target suffixes within the unchanged mismatch/gap domain; guide
+NGG / actual target PAM. Neural defined **42,425** total: NGG 8,104, NAG
+10,452, NGA 9,421, NAA 14,448 (**+34,321 noncanonical**). Remaining 149,623
+retain N/A with reasons (>24 columns 70,474; gapped mismatch domain 69,176;
+multibase RNA 9,973). All **42,425** supported predictions independently match
+official inference (max diff 2.2e-9), plus 8,272 synthetic domain fixtures
+(max diff 6.1e-13); categorical features hash-equal. Default CFD pass-through
+byte-identical on all four inputs. Reannotation job 2871764 (103.7 s, peak
+0.944 GiB sampled); domain job 2871765. **Noncanonical biological validity is
+NOT established**; scores are experimental. Full 466-genome rerun remains
+BLOCKED and explicitly stopped pending further authorization.
 
 Root: `/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/`.
 Serial workflow 28.7 minutes, maximum sampled tree RSS 13.64 GiB; naive 466-fold

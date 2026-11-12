@@ -36,7 +36,7 @@ The upstream preprocessing call is `6 6 4 1 1 false 50 NGG true`. Its pinned SWO
 
 | CRISPRapido representative | Encoder/checkpoint compatibility | Adapter policy |
 |---|---|---|
-| Resolved 20-base guide, no gap, strict NGG, ≤6 mismatches | 23 columns, left-padded to 24 | Score |
+| Resolved 20-base guide, no gap, NRR, ≤6 mismatches | 23 columns, left-padded to 24 | Score; noncanonical biological validity not established |
 | One-base RNA/I bulge, ≤4 mismatches | 23 columns, left-padded to 24 | Score |
 | One-base DNA/D bulge, ≤4 mismatches | 24 columns | Score |
 | One-base bulge with 5 mismatches | Numerically encodable, outside documented with-gap preprocessing cap | Unavailable |
@@ -44,7 +44,8 @@ The upstream preprocessing call is `6 6 4 1 1 false 50 NGG true`. Its pinned SWO
 | Two-base RNA/I bulge | Fits 23 columns but outside one-gapped-nucleotide policy | Unavailable, not a claim that the encoder rejects it |
 | Adjacent mixed I/D, or multiple gap events | Some fit the tensor but exceed the documented gap budget | Unavailable |
 | True reference ambiguity, guide ambiguity, incomplete/ambiguous PAM | Upstream maps some Ns to matches, while training loader excludes target Ns | Unavailable, not an inferred match |
-| Non-NGG observed PAM, other guide lengths, partial guides | Not in this integration's validated subset | Unavailable |
+| NAG, NGA, NAA observed PAM | Independently validated computationally; guide stays NGG, target retains real PAM | Score within the same mismatch/gap policy; biological validity not established |
+| PAM outside NRR, other guide lengths, partial guides | Not in this integration's validated subset | Unavailable |
 
 Thus **all search settings remain configurable and unchanged**; the scoring layer reports availability per emitted representative. `-m 5 -b 1 -z 2` is **not** reduced to four mismatches/one-base bulges. Sites outside the scoring policy are retained. The neural network has no hard mismatch-count check in its input encoder; our mismatch caps are explicit conservative policy, not a claim that a high-mismatch tensor cannot produce a number. Wider data/PAM/gap-position generalization, and alignment-policy differences from upstream SWOffinder, remain scientifically unvalidated.
 

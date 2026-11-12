@@ -1,5 +1,12 @@
 # SBDS NGG/NRR controlled pilot
 
+**Scoring update:** [saved-pilot NRR reannotation](REANNOTATION.md) supersedes
+this report's initial `unsupported_pam` results. No searches repeated. Neural
+scores now defined for 42,425 hits (+34,321 noncanonical); all supported
+predictions independently match official inference. Remaining 149,623 retain
+N/A domain reasons. Noncanonical biological validity remains unestablished.
+Full cohort launch is explicitly stopped pending further authorization.
+
 SBDS resumed after confirmation of standard SpCas9 NGG and requested FDA NRR
 coverage. Baseline HEAD: `6f2b53f`; core search/scoring binaries and formulas
 unchanged. Brunello remains separate and was not launched. No subagent tool

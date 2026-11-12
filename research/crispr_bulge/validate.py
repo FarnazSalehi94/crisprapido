@@ -54,7 +54,9 @@ def synthetic_panel(out,probe):
     add('distal_gap_N','D'+'='*20,dna='N',expected='ambiguous_reference')
     add('guide19','='*19,guide=g[:-1],expected='unsupported_guide_length')
     add('guideN','='*20,guide='N'+g[1:],expected='ambiguous_guide')
-    add('nonGG','='*20,pam='AAG',expected='unsupported_pam')
+    add('nonNRR','='*20,pam='AAC',expected='unsupported_pam')
+    for pam in ('AAG', 'AGA', 'AAA'):
+        add('nrr_'+pam,'='*20,pam=pam,expected='scored')
     add('pamN','='*20,pam='NGG',expected='ambiguous_pam')
     add('incomplete','='*20,pam='GG',expected='incomplete_pam')
     # Different valid alignments of the SAME target string on separate fixture

@@ -2,6 +2,21 @@
 
 **Subsequent complete-workflow validation:** see [bounded end-to-end/reproducibility report](../reproducibility/REPORT.md) and [research installation guide](../../docs/RESEARCH_INSTALLATION.md). Live PAM-anchored search now has all-mode oracle/score/output checks, repeated full-workflow benchmarks, fresh native/Rust/Python builds and an offline hash-locked Python install test. Model network setup still has a documented blocker; no release is claimed. Original saved-PAF results below remain historical, not full-workflow timings.
 
+## NRR scoring update (saved SBDS pilot)
+
+Target PAM suffixes GG/AG/GA/AA are now computationally supported within the
+unchanged mismatch/gap domain. The guide uses appended NGG; the target keeps
+its actual three-base PAM. The former GG-only check was integration policy,
+not a checkpoint requirement. Noncanonical biological validity/calibration is
+**not established**; metadata records this limitation. Other PAMs remain
+unsupported. Default CFD output, CFD formulas and NGG predictions are unchanged.
+All 42,425 supported saved SBDS pilot predictions and 8,272 synthetic domain
+fixtures matched official inference; see
+[reannotation evidence](../hprcv2/sbds_nrr/REANNOTATION.md).
+No production binaries changed; use the matching updated Python scorer bundle
+via `--scoring-script`, including its sibling adapter/worker/manifest files.
+Earlier numerical results below remain historical.
+
 ## Implemented contract
 
 Development baseline **`90d958a`**, branch `feature/pam-anchored-search-poc`. The Rust CLI now accepts **`--scoring cfd|crispr-bulge|both`**, default **`cfd`**. CRISPR-Bulge remains experimental and coverage-limited, not a calibrated cleavage probability or a replacement for CFD.
