@@ -45,10 +45,23 @@ def main():
             index_present=ready,
             reason='' if ready else 'verified index prefix missing on disk'))
     bound = {r['assembly'] for r in rows if r['ledger_status'] in ('ORIGINAL_VERIFIED', 'REBUILT_VERIFIED')}
+    committed = {}
+    runs = Path('/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1')
+    bindings = runs/'00_manifest/bindings'
+    batch = runs/'00_manifest/verification-batch-1'
+    for stage in sorted(bindings.glob('*/binding.json')) if bindings.exists() else []:
+        committed[stage.parent.name] = 'DEEP_VERIFIED_BOUND'
+    batch_failures = {}
+    if batch.exists():
+        for rec in sorted(batch.glob('*.json')):
+            data = json.loads(rec.read_text())
+            if data['status'] == 'FAILED':
+                batch_failures[data['assembly']] = data['failure_kind']+': '+data['error'][:80]
     report = dict(status='METADATA_AUDIT', cohort=466,
         verified_bindings=sorted(bound), verified_count=len(bound),
         unverified_count=466-len(bound),
         unverified=sorted(r['assembly'] for r in rows if r['ledger_status'] == 'UNVERIFIED'),
+        committed_bindings=committed, batch_failures=batch_failures,
         ready_binding_sidecars={
             'HG00735_pat': '/export/local/home/salehi/crisprapido-hprc-import-hg00735-20261105-v1',
             'HG01496_pat': '/export/local/home/salehi/crisprapido-hprc-import-hg01496-20261112-v1'},

@@ -1,0 +1,198 @@
+[
+  {
+    "assembly": "HG00097_hap1",
+    "status": "BOUND",
+    "elapsed_seconds": 171.5847598288674,
+    "read_bytes": 12375710790,
+    "written_bytes": 14557529672,
+    "timings": {
+      "component_full_read_seconds": 29.987091053975746,
+      "decompress_verify_seconds": 27.723301080986857,
+      "scoring_reference_index_seconds": 113.79704841505736
+    },
+    "reference_sha256": "0d87ecb42a54c514d7d2dc72b0f8103c881e0af477431c5f2fba2710ab228b32",
+    "components_sha256_count": 0,
+    "method": "deep full-content verification; new checksums produced this run",
+    "reusable_check": "digest(reference.fa) matches binding record"
+  },
+  {
+    "assembly": "HG00321_hap2",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG00321_hap2",
+    "elapsed_seconds": 56.27908845199272,
+    "read_bytes_planned": 12320026381,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "HG005_pat",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG005_pat",
+    "elapsed_seconds": 55.233583071036264,
+    "read_bytes_planned": 11970419021,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "HG01258_mat",
+    "status": "BOUND",
+    "elapsed_seconds": 155.69546267413534,
+    "read_bytes": 12397133086,
+    "written_bytes": 14584903130,
+    "timings": {
+      "component_full_read_seconds": 25.296238346025348,
+      "decompress_verify_seconds": 23.376624593045563,
+      "scoring_reference_index_seconds": 106.93742186902091
+    },
+    "reference_sha256": "8defb2cc713f5d63847234e7c578e4b64c424f1af36b5555094555db34bebc87",
+    "components_sha256_count": 0,
+    "method": "deep full-content verification; new checksums produced this run",
+    "reusable_check": "digest(reference.fa) matches binding record"
+  },
+  {
+    "assembly": "HG02027_mat",
+    "status": "BOUND",
+    "elapsed_seconds": 150.03585380106233,
+    "read_bytes": 12375888820,
+    "written_bytes": 14559535881,
+    "timings": {
+      "component_full_read_seconds": 25.79593668319285,
+      "decompress_verify_seconds": 24.27990808011964,
+      "scoring_reference_index_seconds": 99.88202047604136
+    },
+    "reference_sha256": "26458dd7163e6ccfbe5f138a30261887492e9f0353809f72f9cf161df40255dc",
+    "components_sha256_count": 0,
+    "method": "deep full-content verification; new checksums produced this run",
+    "reusable_check": "digest(reference.fa) matches binding record"
+  },
+  {
+    "assembly": "HG02258_mat",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG02258_mat",
+    "elapsed_seconds": 100.38228804408573,
+    "read_bytes_planned": 12414727550,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "HG02451_pat",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG02451_pat",
+    "elapsed_seconds": 58.194099145010114,
+    "read_bytes_planned": 12393584804,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "HG02984_pat",
+    "status": "BOUND",
+    "elapsed_seconds": 146.81126320594922,
+    "read_bytes": 11916421804,
+    "written_bytes": 14023289287,
+    "timings": {
+      "component_full_read_seconds": 21.412042086943984,
+      "decompress_verify_seconds": 21.72905776486732,
+      "scoring_reference_index_seconds": 103.58928280510008
+    },
+    "reference_sha256": "30887a912aefbbc462151a8a7886d39551925e86fed08dbfdc5cb11f0e3d7385",
+    "components_sha256_count": 0,
+    "method": "deep full-content verification; new checksums produced this run",
+    "reusable_check": "digest(reference.fa) matches binding record"
+  },
+  {
+    "assembly": "HG03195_hap1",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG03195_hap1",
+    "elapsed_seconds": 82.81607858999632,
+    "read_bytes_planned": 12384052719,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "HG03225_hap1",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG03225_hap1",
+    "elapsed_seconds": 72.9253895629663,
+    "read_bytes_planned": 11992782577,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "HG03710_pat",
+    "status": "BOUND",
+    "elapsed_seconds": 152.07824636506848,
+    "read_bytes": 11915517225,
+    "written_bytes": 14020555915,
+    "timings": {
+      "component_full_read_seconds": 29.364044457208365,
+      "decompress_verify_seconds": 30.754845618037507,
+      "scoring_reference_index_seconds": 91.86982925306074
+    },
+    "reference_sha256": "4466e0a311fa03b7955a60d7ccfbf7e5c116e847ddbded5412f87c88d03f5c2b",
+    "components_sha256_count": 0,
+    "method": "deep full-content verification; new checksums produced this run",
+    "reusable_check": "digest(reference.fa) matches binding record"
+  },
+  {
+    "assembly": "HG03784_hap1",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG03784_hap1",
+    "elapsed_seconds": 70.60392369516194,
+    "read_bytes_planned": 12449791303,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "HG03834_mat",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG03834_mat",
+    "elapsed_seconds": 87.48376820003614,
+    "read_bytes_planned": 12382068871,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "NA18747_hap2",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/NA18747_hap2",
+    "elapsed_seconds": 73.20168863213621,
+    "read_bytes_planned": 12356649804,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  {
+    "assembly": "NA18983_hap1",
+    "status": "BOUND",
+    "elapsed_seconds": 162.4756033611484,
+    "read_bytes": 12006730425,
+    "written_bytes": 14134470040,
+    "timings": {
+      "component_full_read_seconds": 26.007462792098522,
+      "decompress_verify_seconds": 33.79166511702351,
+      "scoring_reference_index_seconds": 102.56526516308077
+    },
+    "reference_sha256": "93a487c21d556c208986d29612d6df542de89abdd7443a667a186627f193faa6",
+    "components_sha256_count": 0,
+    "method": "deep full-content verification; new checksums produced this run",
+    "reusable_check": "digest(reference.fa) matches binding record"
+  },
+  {
+    "assembly": "NA19443_hap1",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/NA19443_hap1",
+    "elapsed_seconds": 59.445548749063164,
+    "read_bytes_planned": 12060675742,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  }
+]

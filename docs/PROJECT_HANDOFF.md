@@ -1,5 +1,22 @@
 # CRISPRapido project handoff
 
+## SBDS deep-verification batch 1 (2026-11-13; campaign not launched)
+
+[VERIFICATION_BATCH1.md](../research/hprcv2/sbds_nrr/VERIFICATION_BATCH1.md):
+16-assembly controlled Stage-1 batch (array 2871790, %4 concurrency, one
+CPU, octopus06/07/08; octopus05 excluded for 16 G scratch). **6 deep-verified
+bindings committed; 10 EIO failures, originals untouched.** Measured per
+successful assembly: 12.16 GB read, 147–172 s; committed bindings ~3.06 GB
+each; reusability recheck passes. EIO prevalence: 6/7 historically notable
+assemblies (all four historical no-perfect-match cases, HG00321_hap2,
+HG03784_hap1) plus 4/9 of an ordinary spread ≈ **44% of ordinary assemblies
+may need index rebuilds**. Ledger v2: **20 of 466 currently search-ready**
+(12 trusted + 8 committed bindings), 10 EIO recorded, 438 unattempted.
+Remaining-campaign scenario: ≤5.3 TB reads, ~19 CPU-hours, ~1.4 TB bindings —
+**safe to proceed with verification in batches**; a complete search also
+needs an authorized, separately piloted **index-rebuild campaign** and a
+cluster-team escalation of the MooseFS degradation. Rebuild cost unmeasured.
+
 ## SBDS 466-genome readiness (2026-11-13; cohort NOT launched)
 
 Infrastructure blockers resolved and a controlled multi-assembly test passed:
