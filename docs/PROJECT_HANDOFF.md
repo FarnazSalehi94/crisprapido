@@ -1,5 +1,35 @@
 # CRISPRapido project handoff
 
+## Rebuild+SBDS campaigns RUNNING (2026-11-13, authorized)
+
+User authorized proceeding without waiting for the admin: controlled rebuilding
+AND concurrent SBDS searches, with ONE authoritative index directory
+(`indices/` — no new /export datasets). Promotion pipeline implemented and
+proven (`promote_index.py` quarantine+rollback renames, `repoint_binding.py`
+keeps binding sidecars byte-identical so completed searches stay valid,
+`delete_original.py` deletes quarantined originals only after promoted
+replacement passes cross-node verification + binding + COMPLETE checksummed
+SBDS search, preserving error reports and a deletion log). **All 11 previously
+rebuilt sets promoted into `indices/`, originals quarantined; bindings
+re-pointed with unchanged sidecars; HG03784_hap1's completed search remained
+valid (no rerun).**
+
+Active: SBDS four-PAM search wave (array 2873335, 141→129 remaining after 15
+COMPLETE with 2.87 M audited hits, 640,646 CB-scored, rest explicit N/A;
+first submission was correctly stopped 129× by the octopus05 scratch-full
+guard and resubmitted on scratch-healthy nodes); rebuild wave 1 of the
+remaining 322 sets (48 assemblies, chained arrays 2873212 rebuild → 2873213
+reverify → 2873214 promote+bind, all restartable). Cluster is currently
+heavily allocated by other users, so arrays advance as resources free —
+all tooling is restart-safe; re-run `run_sbds_incremental.py --submit` and
+`rebuild_wave` lists to continue. Deletion of quarantined originals runs via
+`delete_original.py` as assemblies' searches complete. Brunello: full
+readiness review prepared ([BRUNELLO_READINESS.md], includes storage math
+(19.4 TB vs 41.7 TB free), the 128k CPU-h model, safe throughput-only
+reductions, and the proposed 10,000-guide linearity timing experiment —
+launch gated on final capacity review). `status_report.py` is the live
+ledger. Manifest v5: 144 READY_BOUND / 318 INDEX_EIO / 4 MISSING_INDEX.
+
 ## Storage policy correction implemented (2026-11-13)
 
 Per the user's correction, ALL new genomic data now lives under

@@ -1,0 +1,31 @@
+{
+  "cohort": 466,
+  "index_ledger": {
+    "INDEX_EIO": 318,
+    "INDEX_FAILED_MISSING_INDEX": 4,
+    "READY_BOUND": 144
+  },
+  "healthy_originals": 133,
+  "promoted_rebuilt": 11,
+  "quarantined_originals": 11,
+  "originals_deleted_after_verification": 0,
+  "sbds": {
+    "completed": 15,
+    "remaining": 129,
+    "failed": 129,
+    "total_hits": 2874788,
+    "cfd_defined": 2874788,
+    "crispr_bulge_defined": 640646,
+    "cb_na": 2234142
+  },
+  "brunello": "prepared, not launched; see BRUNELLO_READINESS.md",
+  "storage_gb": {
+    "indices": 4942.8,
+    "quarantine": 116.5,
+    "bindings": 411.3
+  },
+  "caveats": [
+    "Every figure is read from committed manifests; no zero-filling.",
+    "cb scores on NAG/NGA/NAA are computational predictions with unestablished biological calibration."
+  ]
+}

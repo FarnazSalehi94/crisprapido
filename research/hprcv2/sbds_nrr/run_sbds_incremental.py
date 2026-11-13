@@ -26,6 +26,7 @@ def main():
     p.add_argument('--submit', action='store_true')
     p.add_argument('--authorization', default='')
     p.add_argument('--time-limit', default='12:00:00')
+    p.add_argument('--nodelist', default='octopus06,octopus07,octopus08,octopus09,octopus10,octopus11')
     a = p.parse_args()
     manifest = json.loads(a.manifest.read_text())
     assert manifest['cohort_size'] == 466 and manifest['mutually_exclusive']
@@ -47,6 +48,7 @@ def main():
     names_path.write_text(''.join(x+'\n' for x in pending))
     command = ['sbatch', '--array=0-%d%%%d' % (len(pending)-1, a.concurrency),
         '--cpus-per-task=1', '--mem=56G', '--time', a.time_limit,
+        '--nodelist='+ (a.nodelist or 'octopus06,octopus07,octopus08,octopus09,octopus10,octopus11'),
         '--output', str(ROOT/'logs/sbds-%A_%a.log'),
         '--export=ALL,PLAN=%s,ASSEMBLIES_FILE=%s' % (plan_path, names_path),
         str(ROOT/'00_manifest/nrr-tooling-v1/submit_cohort.slurm')]
