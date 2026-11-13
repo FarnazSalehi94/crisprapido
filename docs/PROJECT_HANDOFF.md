@@ -1,5 +1,27 @@
 # CRISPRapido project handoff
 
+## Storage policy correction implemented (2026-11-13)
+
+Per the user's correction, ALL new genomic data now lives under
+`/moosefs/salehi/HPRCv2_CRISPRapido/` — rebuilt indexes in `indices_rebuilt_v1/`,
+results in `runs/sbds_ngg_nrr_v1/`; no new persistent datasets under /export.
+See [STORAGE_POLICY.md](../research/hprcv2/sbds_nrr/STORAGE_POLICY.md).
+Rebuild pipeline rewritten: build on node scratch → full component verify →
+MooseFS placement with fsync + write-back hash verification → **cross-worker
+re-read gate** before a set is trusted; checksummed completion manifests;
+originals never modified or deleted (deletion needs a reviewed manifest, not
+implemented). Reliability evidence: 2 GB synthetic test + 3 migrated pilot
+sets + 8-set rebuild batch — **~137 GB of new MooseFS writes verified from
+independent workers, zero mismatches**; HG03784_hap1 search rerun after
+index relocation gave **identical results** (192,353 hits / 42,415 CB /
+149,938 N/A; old SUCCESS preserved as SUPERSEDED). All 12 trusted-recovery
+assemblies bound. **Manifest v4: 144 READY_BOUND / 318 INDEX_EIO / 4
+MISSING_INDEX = 466.** 124-assembly incremental search plan prepared but
+NOT launched; mass rebuilding of the remaining ~322 sets is deliberately held
+pending the administrators' answer on MooseFS health (updated
+[ADMIN_MESSAGE.md](../research/hprcv2/sbds_nrr/ADMIN_MESSAGE.md)). /export
+pilot copies preserved pending deletion review.
+
 ## Stage-1 verification campaign COMPLETE (2026-11-13, authorized)
 
 [VERIFICATION_CAMPAIGN.md](../research/hprcv2/sbds_nrr/VERIFICATION_CAMPAIGN.md).

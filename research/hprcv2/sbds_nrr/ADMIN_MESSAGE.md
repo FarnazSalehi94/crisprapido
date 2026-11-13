@@ -39,10 +39,16 @@ CRISPRapido store are damaged.
 1. Please check chunk health/replication for the affected files (e.g. via
    `mfscli`/master metadata) and tell us whether the damaged chunks can be
    recovered from replicas or backups.
-2. Let us know if an fsck/migration is advisable — we have stopped writing
-   to this store pending your guidance.
-3. If recovery is possible, we would much prefer it over rebuilding: a
-   mass rebuild would cost us roughly 65–90 one-CPU hours and ~2.8 TB of new
+2. **Is the filesystem healthy enough for us to rebuild ~320 replacement
+   index sets onto it (we propose a separate `indices_rebuilt_v1/` tree)?**
+   We have empirically verified ~137 GB of new writes with cross-worker
+   read-back (all checksums match), but the original damage appeared over
+   time, so we need your judgment on the store's current health, the root
+   cause, and whether new writes are expected to persist.
+3. Let us know if an fsck/migration is advisable — we have stopped writing
+   to the damaged `indices/` tree pending your guidance.
+4. If recovery is possible, we would much prefer it over rebuilding: a
+   mass rebuild would cost us roughly 65–90 one-CPU hours and ~3.8 TB of new
    storage, and rebuilding back onto the same store would risk recurrence
    if the root cause remains.
 
