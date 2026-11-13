@@ -1,5 +1,21 @@
 # CRISPRapido project handoff
 
+## Stage-1 verification campaign COMPLETE (2026-11-13, authorized)
+
+[VERIFICATION_CAMPAIGN.md](../research/hprcv2/sbds_nrr/VERIFICATION_CAMPAIGN.md).
+Authorized 438-assembly campaign (array 2871846, %12, 1 h 22 m wall, within
+the 5.3 TB budget): **115 newly verified+bound → 126 READY_BOUND total;
+326 INDEX_EIO; 4 MISSING_INDEX; 10 TRUSTED_EVIDENCE** (authoritative
+manifest-v3, exactly 466, mutually exclusive). Sequential %1 rescan of a
+10-assembly EIO sample reproduced identical persistent failures — real
+chunk-level damage, not load artifacts. Actual usage: 1.41 TB measured
+success reads, 360 GB committed bindings, 931 GB partial stages preserved
+(archived, not deleted). Recovery plan: bind the 10 trusted (~26 min),
+rebuild/build 330 sets onto /export (~116 one-CPU h, ~4.9 TB, RAM-bounded
+~41 GB each) pending admin replica-recovery outcome (admin message ready,
+updated scope ~333 damaged sets), then incremental SBDS search via the
+driver (136 assemblies ≈ 68 CPU-h at first). No rebuilds or searches launched.
+
 ## Corrected estimates, admin message, campaign preparation (2026-11-13)
 
 [CORRECTED_ESTIMATES.md](../research/hprcv2/sbds_nrr/CORRECTED_ESTIMATES.md):

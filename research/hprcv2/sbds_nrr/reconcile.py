@@ -44,6 +44,8 @@ def main():
             status = 'TRUSTED_EVIDENCE'
         elif assembly in eio:
             status = 'INDEX_EIO' if eio[assembly] == 'EIO' else 'INDEX_FAILED_'+eio[assembly]
+        elif not Path('/moosefs/salehi/HPRCv2_CRISPRapido/indices/'+assembly+'/'+assembly+'.bwt').exists():
+            status = 'MISSING_INDEX'
         else:
             status = 'UNATTEMPTED'
         rows.append(dict(assembly=assembly, status=status))

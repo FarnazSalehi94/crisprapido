@@ -1,0 +1,1891 @@
+{
+  "format": "sbds-cohort-manifest-v1",
+  "cohort_size": 466,
+  "status_counts": {
+    "READY_BOUND": 126,
+    "INDEX_EIO": 326,
+    "TRUSTED_EVIDENCE": 10,
+    "INDEX_FAILED_MISSING_INDEX": 4
+  },
+  "mutually_exclusive": true,
+  "reconciliation": {
+    "previous_reported_ready": 20,
+    "double_counted": [
+      "HG02055_mat",
+      "NA18906_mat"
+    ],
+    "corrected_ready": 136,
+    "explanation": "READY_BOUND and TRUSTED_EVIDENCE are disjoint; every assembly appears exactly once."
+  },
+  "rows": [
+    {
+      "assembly": "HG00097_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00097_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00099_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00099_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00126_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00126_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00128_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00128_hap2",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG00133_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00133_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00140_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00140_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00146_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00146_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00232_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00232_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00235_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00235_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00253_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00253_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00272_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00272_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00280_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00280_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00290_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00290_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "hg002v1.1.mat_MT",
+      "status": "INDEX_FAILED_MISSING_INDEX"
+    },
+    {
+      "assembly": "hg002v1.1.pat",
+      "status": "INDEX_FAILED_MISSING_INDEX"
+    },
+    {
+      "assembly": "HG00320_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00320_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00321_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00321_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00323_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00323_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00329_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00329_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00344_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00344_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00350_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00350_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00408_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00408_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00423_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00423_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00438_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00438_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00544_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00544_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00558_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00558_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00597_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00597_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG005_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG005_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00609_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00609_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00621_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00621_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00639_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG00639_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00642_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00642_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00658_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00658_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00673_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00673_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00706_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00706_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00733_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00733_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00735_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00735_pat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG00738_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00738_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00741_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG00741_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01071_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01071_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01074_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01074_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01081_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01081_pat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG01099_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01099_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01106_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01106_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01109_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01109_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01123_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01123_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01150_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01150_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01167_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01167_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01175_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01175_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01192_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01192_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01243_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01243_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01252_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01252_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01255_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01255_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01258_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01258_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01261_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01261_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01346_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01346_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01358_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01358_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01361_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01361_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01433_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01433_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01496_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01496_pat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG01530_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01530_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01784_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01784_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01786_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01786_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01884_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01884_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01891_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01891_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01928_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01928_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01934_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01934_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01940_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01940_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01943_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01943_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01952_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01952_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01960_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01960_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01969_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01969_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01975_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01975_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01978_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01978_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01981_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG01981_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01993_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG01993_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02004_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02004_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02015_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02015_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02027_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02027_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02040_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02040_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02055_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02055_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02056_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02056_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02071_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02071_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02074_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02074_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02080_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02080_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02083_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02083_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02109_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02109_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02129_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02129_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02132_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02132_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02135_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02135_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02145_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02145_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02148_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02148_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02155_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02155_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02165_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02165_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02178_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02178_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02257_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02257_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02258_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02258_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02273_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02273_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02280_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02280_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02293_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02293_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02300_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02300_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02391_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02391_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02392_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02392_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02451_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02451_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02486_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02486_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02514_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02514_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02523_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02523_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02559_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02559_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02572_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02572_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02583_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02583_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02602_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02602_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02615_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02615_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02622_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02622_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02630_mat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG02630_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02647_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02647_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02668_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02668_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02698_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02698_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02717_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02717_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02723_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02723_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02735_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02735_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02738_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02738_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02809_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02809_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02818_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02818_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02841_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02841_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02886_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02886_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02922_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02922_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02965_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02965_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02976_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02976_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG02984_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG02984_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03017_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03017_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03041_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03041_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03050_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03050_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03098_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03098_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03130_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03130_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03139_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03139_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03195_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03195_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03209_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03209_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03225_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03225_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03239_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03239_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03270_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03270_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03369_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03369_hap2",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG03453_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03453_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03470_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03470_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03471_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03471_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03486_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03486_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03516_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03516_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03521_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03521_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03540_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03540_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03579_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03579_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03583_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03583_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03654_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03654_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03669_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03669_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03688_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03688_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03704_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03704_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03710_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03710_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03742_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03742_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03784_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03784_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03804_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03804_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03816_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03816_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03831_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03831_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03834_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03834_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03874_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG03874_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03927_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03927_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03942_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG03942_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04115_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG04115_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04157_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04157_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04160_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04160_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG04184_mat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "HG04184_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG04187_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04187_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04199_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04199_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG04204_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04204_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG04228_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "HG04228_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "HG06807_mat",
+      "status": "INDEX_FAILED_MISSING_INDEX"
+    },
+    {
+      "assembly": "HG06807_pat",
+      "status": "INDEX_FAILED_MISSING_INDEX"
+    },
+    {
+      "assembly": "NA18505_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18505_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18508_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18508_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18522_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18522_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18565_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18565_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18570_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18570_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18608_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18608_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18620_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18620_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18747_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18747_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18879_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18879_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18906_mat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18906_pat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18940_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18940_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18943_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18943_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18944_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18944_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18945_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18945_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18948_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18948_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18952_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18952_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18959_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18959_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18960_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18960_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18967_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18967_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18970_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18970_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18971_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18971_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18974_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18974_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18976_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18976_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18982_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18982_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA18983_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA18983_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19036_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA19036_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA19043_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA19043_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19087_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA19087_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19159_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA19159_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19185_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19185_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19240_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19240_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA19338_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19338_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19391_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19391_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19443_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19443_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19468_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA19468_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19682_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19682_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19700_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19700_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19776_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19776_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19835_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19835_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA19909_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA19909_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA20129_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20129_pat",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA20282_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20282_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20346_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20346_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20503_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20503_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20752_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20752_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20762_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20762_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20799_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20799_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20805_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20805_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20806_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20806_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20809_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20809_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA20827_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20827_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA20850_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20850_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20870_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA20870_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20905_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA20905_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA21093_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21093_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21102_hap1",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA21102_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21106_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21106_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21110_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21110_hap2",
+      "status": "READY_BOUND"
+    },
+    {
+      "assembly": "NA21144_hap1",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21144_hap2",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21309_mat",
+      "status": "INDEX_EIO"
+    },
+    {
+      "assembly": "NA21309_pat",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "CHM13",
+      "status": "TRUSTED_EVIDENCE"
+    },
+    {
+      "assembly": "GRCh38",
+      "status": "TRUSTED_EVIDENCE"
+    }
+  ],
+  "caveats": [
+    "READY_BOUND requires a committed binding; TRUSTED_EVIDENCE assemblies still need binding preparation.",
+    "INDEX_EIO originals are preserved untouched; status refers to index components only, never the assembly FASTA.",
+    "UNATTEMPTED means no full-content evidence either way."
+  ]
+}
