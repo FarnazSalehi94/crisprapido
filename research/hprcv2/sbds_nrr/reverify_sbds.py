@@ -29,12 +29,14 @@ def main():
     build_host = sys.argv[2] if len(sys.argv) > 2 else None
     dest = Path('/moosefs/salehi/HPRCv2_CRISPRapido/indices_rebuilt_v1')/assembly
     manifest = json.loads((dest/'completion.json').read_text())
-    if manifest.get('status') == 'TRUSTED_CROSS_NODE':
-        print(json.dumps(dict(assembly=assembly, status='ALREADY_TRUSTED',
-            recheck=manifest.get('cross_node_recheck'))))
-        return
+    recorded_host = manifest.get('build_host')
+    if not recorded_host and (dest/'build-host.txt').exists():
+        recorded_host = (dest/'build-host.txt').read_text().strip().split('=', 1)[1]
+    if not recorded_host or (build_host and build_host != recorded_host):
+        raise SystemExit('missing or inconsistent build-host evidence')
+    build_host = recorded_host
     this_host = socket.gethostname()
-    if build_host and this_host == build_host:
+    if this_host == build_host:
         raise SystemExit('recheck must run on a worker different from the build node: '+this_host)
     t = time.monotonic()
     for s in SUFFIXES:
@@ -45,7 +47,10 @@ def main():
     manifest['cross_node_recheck'] = dict(host=this_host, build_host=build_host,
         seconds=round(elapsed, 1), result='PASS', all_components_match=True)
     manifest['status'] = 'TRUSTED_CROSS_NODE'
-    (dest/'completion.json').write_text(json.dumps(manifest, indent=2)+'\n')
+    temporary = dest/'completion.json.recheck-tmp'
+    with temporary.open('x') as f:
+        json.dump(manifest, f, indent=2); f.write('\n'); f.flush(); os.fsync(f.fileno())
+    os.replace(temporary, dest/'completion.json')
     (dest/'INCOMPLETE').unlink(missing_ok=True)
     print(json.dumps(dict(assembly=assembly, status='TRUSTED_CROSS_NODE',
         recheck_host=this_host, seconds=round(elapsed, 1))))

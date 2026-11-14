@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE",
+  "review_sha256": "9c3e01bd6856076d70095d39b6bda193b5485f73abf30eda76c45d75f9b43dee",
+  "deleted": [
+    "HG005_pat.brt",
+    "HG005_pat.bwt",
+    "HG005_pat.cct",
+    "HG005_pat.fsid",
+    "HG005_pat.headerSN.bin",
+    "HG005_pat.meta",
+    "HG005_pat.pos",
+    "HG005_pat.rev.brt",
+    "HG005_pat.sa.4",
+    "HG005_pat.sa.bv.4",
+    "HG005_pat.sna",
+    "HG005_pat.txt.bin",
+    "index_build.time"
+  ],
+  "logical_removed_bytes": 11103879106,
+  "finished_unix": 1794619847.646617
+}

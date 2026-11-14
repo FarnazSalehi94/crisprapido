@@ -1,0 +1,103 @@
+{
+  "assembly": "HG005_pat",
+  "root": "/moosefs/salehi/HPRCv2_CRISPRapido",
+  "quarantine": "/moosefs/salehi/HPRCv2_CRISPRapido/indices_quarantine_v1/HG005_pat-original",
+  "entries": [
+    {
+      "name": "HG005_pat.brt",
+      "bytes": 1835350192,
+      "inode": 4987263,
+      "mtime_ns": 1790889773000000000
+    },
+    {
+      "name": "HG005_pat.bwt",
+      "bytes": 1101210080,
+      "inode": 4987257,
+      "mtime_ns": 1790889748000000000
+    },
+    {
+      "name": "HG005_pat.cct",
+      "bytes": 1024,
+      "inode": 5015151,
+      "mtime_ns": 1790889419000000000
+    },
+    {
+      "name": "HG005_pat.fsid",
+      "bytes": 4,
+      "inode": 5015147,
+      "mtime_ns": 1790889417000000000
+    },
+    {
+      "name": "HG005_pat.headerSN.bin",
+      "bytes": 4706,
+      "inode": 5015026,
+      "mtime_ns": 1790889417000000000
+    },
+    {
+      "name": "HG005_pat.meta",
+      "bytes": 13,
+      "inode": 4987654,
+      "mtime_ns": 1790890083000000000
+    },
+    {
+      "name": "HG005_pat.pos",
+      "bytes": 444,
+      "inode": 5015033,
+      "mtime_ns": 1790889417000000000
+    },
+    {
+      "name": "HG005_pat.rev.brt",
+      "bytes": 1835350192,
+      "inode": 4987551,
+      "mtime_ns": 1790890081000000000
+    },
+    {
+      "name": "HG005_pat.sa.4",
+      "bytes": 2936560156,
+      "inode": 4991166,
+      "mtime_ns": 1790889698000000000
+    },
+    {
+      "name": "HG005_pat.sa.bv.4",
+      "bytes": 458837552,
+      "inode": 4991162,
+      "mtime_ns": 1790889694000000000
+    },
+    {
+      "name": "HG005_pat.sna",
+      "bytes": 3553,
+      "inode": 5015054,
+      "mtime_ns": 1790889417000000000
+    },
+    {
+      "name": "HG005_pat.txt.bin",
+      "bytes": 2936560159,
+      "inode": 5007214,
+      "mtime_ns": 1790889413000000000
+    },
+    {
+      "name": "index_build.time",
+      "bytes": 1031,
+      "inode": 4999173,
+      "mtime_ns": 1790890083000000000
+    }
+  ],
+  "validation": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/postpromotion-review-v1/HG005_pat.json",
+  "validation_sha256": "7e7f4dfaa4eadf4e16570860293d6d41b42a049dd4dce81a1f65589f7551bd5d",
+  "monitor": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/postpromotion-review-v1/HG005_pat-monitor.json",
+  "monitor_sha256": "b89ca1cbc8e78b58ad91a9a245eb645141984a85c93f1a20e0582c130d1876a9",
+  "success_sha256": "fad0a401094711bf6c267ef5a179eda1e35f82cd81d34a677d737c1b0a2c3d5a",
+  "completion_sha256": "dc0dec9808331adb74af561adc2c05b3c862f796bb9426f6b6d7a46967b5c057",
+  "error_report": {
+    "assembly": "HG005_pat",
+    "status": "FAILED",
+    "failure_kind": "EIO",
+    "error": "binding preparation failed: [Errno 5] Input/output error",
+    "attempted_stage": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/bindings/HG005_pat",
+    "elapsed_seconds": 55.233583071036264,
+    "read_bytes_planned": 11970419021,
+    "note": "Originals untouched; partial stage preserved; no rebuild attempted."
+  },
+  "logical_removed_bytes": 11103879106,
+  "note": "Only confirmed corrupted-original regular files reviewed; no FASTA or historical result eligible."
+}

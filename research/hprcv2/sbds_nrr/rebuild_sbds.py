@@ -18,6 +18,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import time
+import socket
 
 SUFFIXES = 'brt bwt cct fsid headerSN.bin meta pos rev.brt sa.4 sa.bv.4 sna txt.bin'.split()
 LOADER = '/gnu/store/ln6hxqjvz6m9gdd9s97pivlqck7hzs99-glibc-2.35/lib/ld-linux-x86-64.so.2'
@@ -52,7 +53,18 @@ def main():
     a = p.parse_args()
     fasta_gz = dict(l.split('\t') for l in
         Path('/moosefs/salehi/HPRCv2_CRISPRapido/analysis_genomes.tsv').read_text().splitlines() if l.strip())[a.assembly]
-    scratch = Path(os.environ.get('SBDS_REBUILD_SCRATCH') or '/scratch/salehi')/('rebuild-'+a.assembly+'-'+os.environ['SLURM_JOB_ID'])
+    if '/' in a.assembly or a.assembly in ('', '.', '..'):
+        raise SystemExit('invalid assembly name')
+    if sha256(a.builder) != '5987ad90e0c4a061cbf4aac7d6b087a284ccf7fe0f9e1835219c567c5e8d1ad2':
+        raise SystemExit('builder pin mismatch')
+    scratch_base = Path(os.environ.get('SBDS_REBUILD_SCRATCH') or '/scratch/salehi')
+    scratch_base.mkdir(parents=True, exist_ok=True)
+    if shutil.disk_usage(scratch_base).free < 80_000_000_000:
+        raise SystemExit('scratch free-space preflight failed (<80 GB)')
+    if shutil.disk_usage(DEST_ROOT.parent).free < 2_000_000_000_000:
+        raise SystemExit('persistent storage floor breached (<2 TB)')
+    source_gz_sha_before = sha256(fasta_gz)
+    scratch = scratch_base/('rebuild-'+a.assembly+'-'+os.environ['SLURM_JOB_ID'])
     scratch.mkdir(parents=True)
     dest = DEST_ROOT/a.assembly
     if dest.exists():
@@ -67,6 +79,8 @@ def main():
         dst.flush(); os.fsync(dst.fileno())
     source_plain_sha = h.hexdigest()
     source_gz_sha = sha256(fasta_gz)
+    if source_gz_sha != source_gz_sha_before:
+        raise SystemExit('source FASTA changed while decompressing; scratch preserved')
     timings['decompress_verify_seconds'] = time.monotonic()-t
     t = time.monotonic()
     index_prefix = scratch/'index'/a.assembly
@@ -101,6 +115,7 @@ def main():
             k, v = line.rsplit(':', 1); build_time[k.strip()] = v.strip()
     manifest = dict(format='sbds-rebuilt-index-completion-v1', assembly=a.assembly,
         status='WRITTEN_AWAITING_CROSS_NODE_RECHECK', destination=str(dest),
+        build_host=socket.gethostname(),
         source_fasta=fasta_gz, source_compressed_sha256=source_gz_sha,
         source_plain_sha256=source_plain_sha, builder_sha256=sha256(a.builder),
         components_sha256=mfs_hashes, timings=timings, build_time=build_time,

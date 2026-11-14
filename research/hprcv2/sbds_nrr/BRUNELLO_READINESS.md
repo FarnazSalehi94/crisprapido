@@ -1,5 +1,12 @@
 # Brunello full-cohort readiness review (2026-11-13) — prepared, NOT launched
 
+**Correction:** see [timing/storage reconciliation](TIMING_RECONCILIATION.md).
+178 h is traversal only; ~276 h (~11.5 days) includes audit and scoring.
+The compressed authoritative PAF+annotations scenario is ~13 TB, not 5.4 TB;
+audit records ~6.4 TB, not 14 TB. The 10,000-guide inputs/commands are now
+frozen, but its restart/monitor execution wrapper is still launch-gated.
+Statements below are historical and must not be used instead of the correction.
+
 Separate manuscript project. Library: 77,441 unique guides, frozen FASTA
 SHA256 re-verified `a4bac2dc4c8f5ad0c37713751835b416d1669f899de1cd05ca1a0e828be48971`.
 Provisional configuration **m4/b1/z1/f0.75/GG** (the validated candidate-A

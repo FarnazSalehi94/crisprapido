@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE",
+  "review_sha256": "4d812cf51e492e1814e72a8a69e9977b35d5b5566272787ac4ff3248b75c2b1c",
+  "deleted": [
+    "HG00099_hap2.brt",
+    "HG00099_hap2.bwt",
+    "HG00099_hap2.cct",
+    "HG00099_hap2.fsid",
+    "HG00099_hap2.headerSN.bin",
+    "HG00099_hap2.meta",
+    "HG00099_hap2.pos",
+    "HG00099_hap2.rev.brt",
+    "HG00099_hap2.sa.4",
+    "HG00099_hap2.sa.bv.4",
+    "HG00099_hap2.sna",
+    "HG00099_hap2.txt.bin",
+    "index_build.time"
+  ],
+  "logical_removed_bytes": 11490107798,
+  "finished_unix": 1794619858.4750519
+}

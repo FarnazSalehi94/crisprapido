@@ -1,0 +1,3551 @@
+{
+  "cohort": 466,
+  "unique_entries": 466,
+  "index_counts": {
+    "READY_BOUND": 192,
+    "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK": 44,
+    "INDEX_EIO": 228,
+    "INDEX_FAILED_MISSING_INDEX": 2
+  },
+  "promoted": 59,
+  "sbds_complete": 89,
+  "sbds_remaining": 377,
+  "totals": {
+    "hits": 17027043,
+    "cfd_defined": 17027043,
+    "cb_scored": 3820762,
+    "cb_na": 13206281
+  },
+  "verified_output_hashes": false,
+  "deletions": [
+    {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/postpromotion-review-v1/HG00099_hap2-review.deletion.json",
+      "bytes": 11490107798
+    },
+    {
+      "path": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/postpromotion-review-v1/HG005_pat-review.deletion.json",
+      "bytes": 11103879106
+    }
+  ],
+  "logical_removed_bytes": 22593986904,
+  "filesystem": {
+    "free_bytes": 42465496137728,
+    "total_bytes": 231338839441408
+  },
+  "rows": [
+    {
+      "assembly": "HG00097_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192086,
+        "cfd_defined": 192086,
+        "cb_scored": 42420,
+        "cb_na": 149666
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00097_hap1/attempt-2873072",
+      "completion_sha256": "561bdc5cb156971dbbe07ebd86c9ea6f3ce2a87489aa00716ff626d1d1d8713b"
+    },
+    {
+      "assembly": "HG00097_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192302,
+        "cfd_defined": 192302,
+        "cb_scored": 42344,
+        "cb_na": 149958
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00097_hap2/attempt-2873073",
+      "completion_sha256": "00a6d9c2d0b2736184f72820d1536d3beebe9b1b8beca06a8814e958fa7e4434"
+    },
+    {
+      "assembly": "HG00099_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191909,
+        "cfd_defined": 191909,
+        "cb_scored": 42284,
+        "cb_na": 149625
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00099_hap1/attempt-2873074",
+      "completion_sha256": "d3a31cfe5ec6d01fb83a1c4952a4abe9aacf498d5f01327151f74c9fa22fe2ea"
+    },
+    {
+      "assembly": "HG00099_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192619,
+        "cfd_defined": 192619,
+        "cb_scored": 42417,
+        "cb_na": 150202
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00099_hap2/attempt-2873075",
+      "completion_sha256": "dd08c332ebbde7c3d2e79e9544db4875728763b1e287ef9f36c576a581c3ff21"
+    },
+    {
+      "assembly": "HG00126_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 187906,
+        "cfd_defined": 187906,
+        "cb_scored": 44252,
+        "cb_na": 143654
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00126_hap1/attempt-2873758",
+      "completion_sha256": "712926ed9ec37be615a7f0315d914f39861de957ce6d71b8fdcd46b88ea2bf0f"
+    },
+    {
+      "assembly": "HG00126_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192297,
+        "cfd_defined": 192297,
+        "cb_scored": 42267,
+        "cb_na": 150030
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00126_hap2/attempt-2873759",
+      "completion_sha256": "10e5f609ffaaaa4868c7dbde6f95f851ef52bc7139be65f32c299d945befa336"
+    },
+    {
+      "assembly": "HG00128_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 193051,
+        "cfd_defined": 193051,
+        "cb_scored": 42530,
+        "cb_na": 150521
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00128_hap1/attempt-2873766",
+      "completion_sha256": "fad991094aab33fa26844b9851a616a351270aed7d3e39cdf5a05143bdd4e44f"
+    },
+    {
+      "assembly": "HG00128_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191847,
+        "cfd_defined": 191847,
+        "cb_scored": 42341,
+        "cb_na": 149506
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00128_hap2/attempt-2873515",
+      "completion_sha256": "8770f8b98b61824e97637f67a3f6ebe07f5dc1356abab6e375c657b2fa086a94"
+    },
+    {
+      "assembly": "HG00133_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191903,
+        "cfd_defined": 191903,
+        "cb_scored": 42360,
+        "cb_na": 149543
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00133_hap1/attempt-2873767",
+      "completion_sha256": "1dca342e0ec0e6f9c359f1cd476e1affb6e69cb982da06d856c3f212858a7110"
+    },
+    {
+      "assembly": "HG00133_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191917,
+        "cfd_defined": 191917,
+        "cb_scored": 42319,
+        "cb_na": 149598
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00133_hap2/attempt-2873788",
+      "completion_sha256": "82ea83b6c42ef078634218d584db97941f1c1fd109e22ea70abd7deaf6237500"
+    },
+    {
+      "assembly": "HG00140_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188475,
+        "cfd_defined": 188475,
+        "cb_scored": 45038,
+        "cb_na": 143437
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00140_hap1/attempt-2873516",
+      "completion_sha256": "0558691ff4977ddbeab0952c63a724cbd2c6ebb4e65fc28128815fee144ba4e4"
+    },
+    {
+      "assembly": "HG00140_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192703,
+        "cfd_defined": 192703,
+        "cb_scored": 42433,
+        "cb_na": 150270
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00140_hap2/attempt-2873517",
+      "completion_sha256": "c4b9ad2035ed554bcc6ad07a305351959649fdafbf9ce5cad3c4ceb8def5769f"
+    },
+    {
+      "assembly": "HG00146_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191819,
+        "cfd_defined": 191819,
+        "cb_scored": 42211,
+        "cb_na": 149608
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00146_hap1/attempt-2873789",
+      "completion_sha256": "7db4a53f05dc60981d8c759331dea81dd743d3ed5d1339a6104368fdf67c1ba3"
+    },
+    {
+      "assembly": "HG00146_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192988,
+        "cfd_defined": 192988,
+        "cb_scored": 42626,
+        "cb_na": 150362
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00146_hap2/attempt-2873802",
+      "completion_sha256": "7a3c9c342935d287f83fc0d64de0cbdbd2f163f756a3eec47d33ac99d71410b9"
+    },
+    {
+      "assembly": "HG00232_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192675,
+        "cfd_defined": 192675,
+        "cb_scored": 42462,
+        "cb_na": 150213
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00232_hap1/attempt-2873804",
+      "completion_sha256": "eb4413ccdbabf61658e3a4f5b7b21ec48caa77443f12acb4798fe613c4a8143e"
+    },
+    {
+      "assembly": "HG00232_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191911,
+        "cfd_defined": 191911,
+        "cb_scored": 42325,
+        "cb_na": 149586
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00232_hap2/attempt-2873825",
+      "completion_sha256": "3ced04968e9015ef56e78add97b2466cc249417d9dfa6633dacb969ce5de023c"
+    },
+    {
+      "assembly": "HG00235_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191954,
+        "cfd_defined": 191954,
+        "cb_scored": 42336,
+        "cb_na": 149618
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00235_hap1/attempt-2873518",
+      "completion_sha256": "bdc0264950d1cdd4c23908cef63a6ded3f7ea1c9e16dcd95e1adc2b3b31c44cb"
+    },
+    {
+      "assembly": "HG00235_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192370,
+        "cfd_defined": 192370,
+        "cb_scored": 42511,
+        "cb_na": 149859
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00235_hap2/attempt-2873827",
+      "completion_sha256": "9408f2e3d6949df4f2ecfe564d7ee61354a5f904fa61eacc341579af4db004e4"
+    },
+    {
+      "assembly": "HG00253_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192139,
+        "cfd_defined": 192139,
+        "cb_scored": 42413,
+        "cb_na": 149726
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00253_hap1/attempt-2873852",
+      "completion_sha256": "f29d2ea6cce50a515b67cbb15a03c10695f6feaa78190ef0b63448ab72336df8"
+    },
+    {
+      "assembly": "HG00253_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192681,
+        "cfd_defined": 192681,
+        "cb_scored": 42459,
+        "cb_na": 150222
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00253_hap2/attempt-2873853",
+      "completion_sha256": "31d47bca4202d44e3c4112f136f23bdd2e71562d553ca1f4b0389fda610edbea"
+    },
+    {
+      "assembly": "HG00272_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192642,
+        "cfd_defined": 192642,
+        "cb_scored": 42347,
+        "cb_na": 150295
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00272_hap1/attempt-2873871",
+      "completion_sha256": "f0506ec742fb204dfdb08ef5f9e450e2c74853a98f67a400b6770a99f4b324c8"
+    },
+    {
+      "assembly": "HG00272_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192077,
+        "cfd_defined": 192077,
+        "cb_scored": 42405,
+        "cb_na": 149672
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00272_hap2/attempt-2873872",
+      "completion_sha256": "3dbb48bd63209af08bee0d9a44fde98914613de7df7224b14055769c1656fb71"
+    },
+    {
+      "assembly": "HG00280_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188953,
+        "cfd_defined": 188953,
+        "cb_scored": 45239,
+        "cb_na": 143714
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00280_hap1/attempt-2873881",
+      "completion_sha256": "fafd1754ace6f535c9860e57e1e774ba67b55b4a6738c93028262bc922ec333c"
+    },
+    {
+      "assembly": "HG00280_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191768,
+        "cfd_defined": 191768,
+        "cb_scored": 42362,
+        "cb_na": 149406
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00280_hap2/attempt-2873882",
+      "completion_sha256": "7bacb624a43c105219644a4f8ec64b617368b4939f9edc7f68fc3ea65edb47e9"
+    },
+    {
+      "assembly": "HG00290_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188827,
+        "cfd_defined": 188827,
+        "cb_scored": 45267,
+        "cb_na": 143560
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00290_hap1/attempt-2873538",
+      "completion_sha256": "02457484bf34de301c4b84b6cdb0dc04820fe1fe4dc3d8cb9f47927141d55b91"
+    },
+    {
+      "assembly": "HG00290_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191997,
+        "cfd_defined": 191997,
+        "cb_scored": 42339,
+        "cb_na": 149658
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00290_hap2/attempt-2873539",
+      "completion_sha256": "61a9946f54f51dbf04cecb0f0f3c6dcd7d520192e59514e5424f56070fccd613"
+    },
+    {
+      "assembly": "hg002v1.1.mat_MT",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192244,
+        "cfd_defined": 192244,
+        "cb_scored": 42378,
+        "cb_na": 149866
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/hg002v1.1.mat_MT/attempt-2873891",
+      "completion_sha256": "d465041a0a115d4b74511b04d9eeebd890c5e7ebe99987ec5d158dc5eeb34878"
+    },
+    {
+      "assembly": "hg002v1.1.pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 189122,
+        "cfd_defined": 189122,
+        "cb_scored": 45821,
+        "cb_na": 143301
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/hg002v1.1.pat/attempt-2873892",
+      "completion_sha256": "af10ffd1fba51106c230e67c47dbfb318b0dcdb5fe7d442552fe6ce64471237a"
+    },
+    {
+      "assembly": "HG00320_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00320_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00321_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00321_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00323_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00323_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191584,
+        "cfd_defined": 191584,
+        "cb_scored": 42332,
+        "cb_na": 149252
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00323_hap2/attempt-2873082",
+      "completion_sha256": "22a2ef279e587abb4c9c3233ff3e2b4382417ab17f83dfe8e37da0d1c6bd751b"
+    },
+    {
+      "assembly": "HG00329_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00329_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192212,
+        "cfd_defined": 192212,
+        "cb_scored": 42484,
+        "cb_na": 149728
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00329_hap2/attempt-2873083",
+      "completion_sha256": "4b99df5592e882d65fa702192f0d76c4100a6f9a1cd0d38ab6aea12c432a2f1d"
+    },
+    {
+      "assembly": "HG00344_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00344_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00350_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191991,
+        "cfd_defined": 191991,
+        "cb_scored": 42409,
+        "cb_na": 149582
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00350_hap1/attempt-2873084",
+      "completion_sha256": "60cfd220698d8a5a6dcf764e983365550c4a79088a7d2d09867cff52ed602729"
+    },
+    {
+      "assembly": "HG00350_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00408_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00408_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00423_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00423_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192133,
+        "cfd_defined": 192133,
+        "cb_scored": 42353,
+        "cb_na": 149780
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00423_pat/attempt-2873085",
+      "completion_sha256": "095d36e716be35591f34acce60e1521a82dcb1b01ec756af104746ff1c16d440"
+    },
+    {
+      "assembly": "HG00438_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00438_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00544_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00544_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00558_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00558_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192246,
+        "cfd_defined": 192246,
+        "cb_scored": 42412,
+        "cb_na": 149834
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00558_pat/attempt-2873086",
+      "completion_sha256": "80861b4e04255b083edf71b7344bc2de2419d5846e9c648c1734963ffd5eb103"
+    },
+    {
+      "assembly": "HG00597_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00597_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG005_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG005_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188847,
+        "cfd_defined": 188847,
+        "cb_scored": 45506,
+        "cb_na": 143341
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG005_pat/attempt-2873087",
+      "completion_sha256": "fad0a401094711bf6c267ef5a179eda1e35f82cd81d34a677d737c1b0a2c3d5a"
+    },
+    {
+      "assembly": "HG00609_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00609_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00621_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00621_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 187728,
+        "cfd_defined": 187728,
+        "cb_scored": 44091,
+        "cb_na": 143637
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00621_pat/attempt-2873540",
+      "completion_sha256": "10dc03cad536998bee2dc9605c8850ef62c05fd11cb72dc3a6eea0cc9125afac"
+    },
+    {
+      "assembly": "HG00639_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191805,
+        "cfd_defined": 191805,
+        "cb_scored": 42347,
+        "cb_na": 149458
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00639_mat/attempt-2873639",
+      "completion_sha256": "d60a4e7fd664d3f670115c5353445116847e103c7cf1bb6f9be2ad31bb361164"
+    },
+    {
+      "assembly": "HG00639_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00642_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00642_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00658_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00658_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00673_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00673_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00706_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00706_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00733_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00733_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00735_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00735_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192048,
+        "cfd_defined": 192048,
+        "cb_scored": 42425,
+        "cb_na": 149623
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG00735_pat/attempt-2873640",
+      "completion_sha256": "1e66db919153ba658a8acbf48dbc3da6f984a309b806183d1903616243b66e4f"
+    },
+    {
+      "assembly": "HG00738_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00738_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00741_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG00741_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01071_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01071_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01074_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191843,
+        "cfd_defined": 191843,
+        "cb_scored": 42370,
+        "cb_na": 149473
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01074_mat/attempt-2873641",
+      "completion_sha256": "19ffb28b3992408754cac4f6df3830e4a503d48bbf8a347159c2fa7a3b02cb6c"
+    },
+    {
+      "assembly": "HG01074_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 187086,
+        "cfd_defined": 187086,
+        "cb_scored": 43651,
+        "cb_na": 143435
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01074_pat/attempt-2873642",
+      "completion_sha256": "c796a5fc1b6466a2e33ecfb25e06978ac6e0ace4cb42569944bf1b2c6509ba88"
+    },
+    {
+      "assembly": "HG01081_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01081_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191802,
+        "cfd_defined": 191802,
+        "cb_scored": 42308,
+        "cb_na": 149494
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01081_pat/attempt-2873705",
+      "completion_sha256": "b341c13f479248e036a0192c2e2c7d97c614b2960997dd17adf7666e25454492"
+    },
+    {
+      "assembly": "HG01099_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01099_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 187134,
+        "cfd_defined": 187134,
+        "cb_scored": 43735,
+        "cb_na": 143399
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01099_pat/attempt-2873709",
+      "completion_sha256": "e25cde64895d38edcd6395b80e732a651f9645a540879825e3b678897eb79628"
+    },
+    {
+      "assembly": "HG01106_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01106_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01109_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01109_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01123_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01123_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01150_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01150_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01167_hap1",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01167_hap2",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01175_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01175_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192164,
+        "cfd_defined": 192164,
+        "cb_scored": 42426,
+        "cb_na": 149738
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01175_pat/attempt-2873711",
+      "completion_sha256": "ec256861c526e429e53841d3d874676edb44e4e37b8b4669f5d435ae9917dc44"
+    },
+    {
+      "assembly": "HG01192_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01192_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 186607,
+        "cfd_defined": 186607,
+        "cb_scored": 42631,
+        "cb_na": 143976
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01192_pat/attempt-2873712",
+      "completion_sha256": "12071591d547b038c19c8d93bb4bfcfbc98c83255df1ee320670dc0f487427fa"
+    },
+    {
+      "assembly": "HG01243_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191621,
+        "cfd_defined": 191621,
+        "cb_scored": 42425,
+        "cb_na": 149196
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01243_mat/attempt-2873760",
+      "completion_sha256": "ccb78efb48b1ef53ca963428e9deb41448d22845d1834df2343c61e07ec6eab3"
+    },
+    {
+      "assembly": "HG01243_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01252_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01252_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01255_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01255_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01258_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192296,
+        "cfd_defined": 192296,
+        "cb_scored": 42428,
+        "cb_na": 149868
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01258_mat/attempt-2873761",
+      "completion_sha256": "48f287c9813f4af900a8463260e55cc7080d187823d8215c0bf860acc185eda5"
+    },
+    {
+      "assembly": "HG01258_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01261_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192273,
+        "cfd_defined": 192273,
+        "cb_scored": 42406,
+        "cb_na": 149867
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01261_mat/attempt-2873762",
+      "completion_sha256": "c06978f358bdeb4fb2cad91b397bd95aa3816c34647947f2766f1498b7be80d8"
+    },
+    {
+      "assembly": "HG01261_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01346_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192344,
+        "cfd_defined": 192344,
+        "cb_scored": 42382,
+        "cb_na": 149962
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01346_mat/attempt-2873763",
+      "completion_sha256": "e4393227d48669d3c27e3b7a651c3a105b8b9c26b1b31b6449d4d45c8a54fc02"
+    },
+    {
+      "assembly": "HG01346_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01358_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01358_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188308,
+        "cfd_defined": 188308,
+        "cb_scored": 44344,
+        "cb_na": 143964
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01358_pat/attempt-2873770",
+      "completion_sha256": "cd7210e90c5a70202fb87d9f4a4c3569d85201ceda5d09cadc5e9e2f0bd51a69"
+    },
+    {
+      "assembly": "HG01361_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191930,
+        "cfd_defined": 191930,
+        "cb_scored": 42396,
+        "cb_na": 149534
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01361_mat/attempt-2873771",
+      "completion_sha256": "f53597bcdf527187954462cf5f9db0f531a2be66307cb5b7c3f97727cdd13306"
+    },
+    {
+      "assembly": "HG01361_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01433_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191836,
+        "cfd_defined": 191836,
+        "cb_scored": 42376,
+        "cb_na": 149460
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01433_mat/attempt-2873772",
+      "completion_sha256": "c5c9e9500a8d8348e5a70024ec7fb1d9208c1edbd9b577ece7d9b0639eda0e33"
+    },
+    {
+      "assembly": "HG01433_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191150,
+        "cfd_defined": 191150,
+        "cb_scored": 47273,
+        "cb_na": 143877
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01433_pat/attempt-2873773",
+      "completion_sha256": "e0348b6ee8052204334e18c2ffeb5b4a1a8b0a2ad41db4067caaf3fdb03c8785"
+    },
+    {
+      "assembly": "HG01496_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191976,
+        "cfd_defined": 191976,
+        "cb_scored": 42330,
+        "cb_na": 149646
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01496_mat/attempt-2873792",
+      "completion_sha256": "7a78e451d923e207b1021ce4d6ab798cb09f6e91aec27aebadc5c942470d6e4e"
+    },
+    {
+      "assembly": "HG01496_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192672,
+        "cfd_defined": 192672,
+        "cb_scored": 42473,
+        "cb_na": 150199
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01496_pat/attempt-2873793",
+      "completion_sha256": "f419a82b61481af4b997b6baf5676ff3ae5873a76be7e78ba8b8688f1140b232"
+    },
+    {
+      "assembly": "HG01530_hap1",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01530_hap2",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01784_hap1",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01784_hap2",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01786_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192299,
+        "cfd_defined": 192299,
+        "cb_scored": 42427,
+        "cb_na": 149872
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01786_hap1/attempt-2873795",
+      "completion_sha256": "9494dedf66f1770525f730cd74a5390a1d191332666b301305f28d846a2f5c4f"
+    },
+    {
+      "assembly": "HG01786_hap2",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01884_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192640,
+        "cfd_defined": 192640,
+        "cb_scored": 42543,
+        "cb_na": 150097
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01884_mat/attempt-2873796",
+      "completion_sha256": "a89a32092b6038fe520c6b82a1808115e3052cb54ce945bfa44351dda424e2e9"
+    },
+    {
+      "assembly": "HG01884_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192354,
+        "cfd_defined": 192354,
+        "cb_scored": 42436,
+        "cb_na": 149918
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01884_pat/attempt-2873809",
+      "completion_sha256": "d2a705b4fab3e8b70c946c2bed9942dc02d61325c183cf813a4b288663308979"
+    },
+    {
+      "assembly": "HG01891_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191894,
+        "cfd_defined": 191894,
+        "cb_scored": 42390,
+        "cb_na": 149504
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01891_mat/attempt-2873812",
+      "completion_sha256": "2812fb017a1f6a68b32123fa0f3be761172d11747b4cbcbe4e7e9f6f3438dd0d"
+    },
+    {
+      "assembly": "HG01891_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01928_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191949,
+        "cfd_defined": 191949,
+        "cb_scored": 42367,
+        "cb_na": 149582
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01928_mat/attempt-2873813",
+      "completion_sha256": "2d89b41df7a4cfcb194757252204bdf6c40fb78b91e5f52a2ce8b70a6f766c91"
+    },
+    {
+      "assembly": "HG01928_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01934_mat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01934_pat",
+      "index_status": "STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01940_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01940_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01943_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01943_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188099,
+        "cfd_defined": 188099,
+        "cb_scored": 44247,
+        "cb_na": 143852
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01943_pat/attempt-2873814",
+      "completion_sha256": "7987040060558de4ce16c911e110552c2997b903305c66cca3345154b39a5328"
+    },
+    {
+      "assembly": "HG01952_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01952_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01960_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192085,
+        "cfd_defined": 192085,
+        "cb_scored": 42434,
+        "cb_na": 149651
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01960_mat/attempt-2873830",
+      "completion_sha256": "a7cfb2f3c1e272b76c7ec88c7a7d8ad392bea213fdaddea7d1b6f39e5fdc38e5"
+    },
+    {
+      "assembly": "HG01960_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192541,
+        "cfd_defined": 192541,
+        "cb_scored": 42403,
+        "cb_na": 150138
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01960_pat/attempt-2873831",
+      "completion_sha256": "6d2dede0d2dc1d517ecfdf7b022d14e66b3b484130e0274e6be934c8e0d6b46a"
+    },
+    {
+      "assembly": "HG01969_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01969_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192188,
+        "cfd_defined": 192188,
+        "cb_scored": 42487,
+        "cb_na": 149701
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01969_pat/attempt-2873832",
+      "completion_sha256": "96f737489e5fc32811c73338dff35be2d85b478c7d6e0122993d22cdbd41ec43"
+    },
+    {
+      "assembly": "HG01975_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191746,
+        "cfd_defined": 191746,
+        "cb_scored": 42256,
+        "cb_na": 149490
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01975_mat/attempt-2873570",
+      "completion_sha256": "c73803b59f4401a73a3c4b34377677ce3b7a93cb8746509d032c58c306678550"
+    },
+    {
+      "assembly": "HG01975_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01978_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192187,
+        "cfd_defined": 192187,
+        "cb_scored": 42313,
+        "cb_na": 149874
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01978_mat/attempt-2873833",
+      "completion_sha256": "f02b4a04f2515d98a9d18010c121fcb30a3ccc0bfefb4d5254afb4578061c5dd"
+    },
+    {
+      "assembly": "HG01978_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01981_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG01981_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192211,
+        "cfd_defined": 192211,
+        "cb_scored": 42384,
+        "cb_na": 149827
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01981_pat/attempt-2873847",
+      "completion_sha256": "eed794feb431e6373acb5b6cc4eb9b758d04464291582a5cb91e3e2628929e65"
+    },
+    {
+      "assembly": "HG01993_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192291,
+        "cfd_defined": 192291,
+        "cb_scored": 42410,
+        "cb_na": 149881
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01993_mat/attempt-2873849",
+      "completion_sha256": "bd1692456846e5a32f5171cc55116e868fcf58e0d293f6b8d9e79ce9df2400e2"
+    },
+    {
+      "assembly": "HG01993_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191780,
+        "cfd_defined": 191780,
+        "cb_scored": 42380,
+        "cb_na": 149400
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG01993_pat/attempt-2873850",
+      "completion_sha256": "c5b836c796f35355ccae9dc3cced1bddd14ca03a4700007938d60e94cbf05cb7"
+    },
+    {
+      "assembly": "HG02004_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02004_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191985,
+        "cfd_defined": 191985,
+        "cb_scored": 42291,
+        "cb_na": 149694
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02004_pat/attempt-2873851",
+      "completion_sha256": "5858e001b7b55d67e6c74a592d2403925609ddd8f6f6d3c021fba10afc6fa247"
+    },
+    {
+      "assembly": "HG02015_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02015_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 186598,
+        "cfd_defined": 186598,
+        "cb_scored": 43283,
+        "cb_na": 143315
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02015_pat/attempt-2873860",
+      "completion_sha256": "96685f28f3c06b48be6c9a722b98e3bd93d104b0e342edf312632691d244d960"
+    },
+    {
+      "assembly": "HG02027_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192032,
+        "cfd_defined": 192032,
+        "cb_scored": 42358,
+        "cb_na": 149674
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02027_mat/attempt-2873861",
+      "completion_sha256": "352c94041cbca05cd2f29ac37ac01cdbe0a20e970c7ea4ca7607a2ed269e4d99"
+    },
+    {
+      "assembly": "HG02027_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02040_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188643,
+        "cfd_defined": 188643,
+        "cb_scored": 45411,
+        "cb_na": 143232
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02040_hap1/attempt-2873862",
+      "completion_sha256": "b88fc28e3bd4b0aa034d3d744cbd60376a47a40fc24d60ccfb6b96b36aae5094"
+    },
+    {
+      "assembly": "HG02040_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02055_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192378,
+        "cfd_defined": 192378,
+        "cb_scored": 42465,
+        "cb_na": 149913
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02055_mat/attempt-2871781",
+      "completion_sha256": "193f174b42137e42d7b3d1b3d5155f9458a1206e8fa82b8a776097db856fb823"
+    },
+    {
+      "assembly": "HG02055_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02056_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191572,
+        "cfd_defined": 191572,
+        "cb_scored": 42326,
+        "cb_na": 149246
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02056_mat/attempt-2873863",
+      "completion_sha256": "fa576fa4906edd391cb87fa106b1659a9e82c44db768f0a91cccda95c293a3ca"
+    },
+    {
+      "assembly": "HG02056_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02071_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192140,
+        "cfd_defined": 192140,
+        "cb_scored": 42310,
+        "cb_na": 149830
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02071_mat/attempt-2873875",
+      "completion_sha256": "af96e144b81d9e9dc3e1c587e5188ea1fc825e4d11fa5867957d21bcbe697d29"
+    },
+    {
+      "assembly": "HG02071_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02074_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191949,
+        "cfd_defined": 191949,
+        "cb_scored": 42416,
+        "cb_na": 149533
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02074_mat/attempt-2873876",
+      "completion_sha256": "813045f9b3d3ff1af5d16a080792649aeaa556a804d94953324cfabc534ac2b6"
+    },
+    {
+      "assembly": "HG02074_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188392,
+        "cfd_defined": 188392,
+        "cb_scored": 44741,
+        "cb_na": 143651
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02074_pat/attempt-2873877",
+      "completion_sha256": "8bb353b58ab2e44ddbbab486be4982f3303bddb2a46ada4f27ac05afa2fadbb7"
+    },
+    {
+      "assembly": "HG02080_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02080_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02083_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192212,
+        "cfd_defined": 192212,
+        "cb_scored": 42404,
+        "cb_na": 149808
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02083_mat/attempt-2873878",
+      "completion_sha256": "3a27df9f7f08546a71910a76d20ca753c22388b0246e98ee32c2451babd03b8a"
+    },
+    {
+      "assembly": "HG02083_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 190714,
+        "cfd_defined": 190714,
+        "cb_scored": 47012,
+        "cb_na": 143702
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02083_pat/attempt-2873885",
+      "completion_sha256": "27ae0870044e948cdce0d54511843b7fad0676de96721da7ec383c198dfe34e0"
+    },
+    {
+      "assembly": "HG02109_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192169,
+        "cfd_defined": 192169,
+        "cb_scored": 42373,
+        "cb_na": 149796
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02109_mat/attempt-2873886",
+      "completion_sha256": "f96057b9555e36e9a00e130e246c8eb1e4c9e29dc9ceea8787d1df8fc95299da"
+    },
+    {
+      "assembly": "HG02109_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192442,
+        "cfd_defined": 192442,
+        "cb_scored": 42383,
+        "cb_na": 150059
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02109_pat/attempt-2873887",
+      "completion_sha256": "3b004d6952a3b9df96c3d0e1a646271c937a704ab63802466b5a8abd241626aa"
+    },
+    {
+      "assembly": "HG02129_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 191976,
+        "cfd_defined": 191976,
+        "cb_scored": 42376,
+        "cb_na": 149600
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02129_mat/attempt-2873888",
+      "completion_sha256": "229cb519165e9aa02a1baa478a6468e228fe02defc93237371aa723ee3755c00"
+    },
+    {
+      "assembly": "HG02129_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02132_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192439,
+        "cfd_defined": 192439,
+        "cb_scored": 42371,
+        "cb_na": 150068
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02132_mat/attempt-2873895",
+      "completion_sha256": "1fd70f1b0a2be4a90b2b90f15e882fe34fca6d7cec6f8bb7bfac423475d3197e"
+    },
+    {
+      "assembly": "HG02132_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188774,
+        "cfd_defined": 188774,
+        "cb_scored": 45305,
+        "cb_na": 143469
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02132_pat/attempt-2873896",
+      "completion_sha256": "04731933da2a71647340f925a4bc7352f021c1d8c12ac25ca8d3df44351301d9"
+    },
+    {
+      "assembly": "HG02135_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02135_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 188793,
+        "cfd_defined": 188793,
+        "cb_scored": 45005,
+        "cb_na": 143788
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02135_pat/attempt-2873897",
+      "completion_sha256": "1c3c4623ac4f0f9867932a0ea2b2845ebd23210ab1001655126b36fb51689e64"
+    },
+    {
+      "assembly": "HG02145_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192272,
+        "cfd_defined": 192272,
+        "cb_scored": 42416,
+        "cb_na": 149856
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG02145_mat/attempt-2873898",
+      "completion_sha256": "89720ddcdbd57035dcc2b6afe4698a2e40db073721de0e06a3c2aa80c77a705b"
+    },
+    {
+      "assembly": "HG02145_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02148_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02148_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02155_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02155_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02165_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02165_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02178_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02178_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02257_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02257_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02258_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02258_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02273_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02273_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02280_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02280_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02293_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02293_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02300_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02300_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02391_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02391_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02392_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02392_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02451_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02451_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02486_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02486_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02514_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02514_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02523_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02523_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02559_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02559_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02572_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02572_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02583_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02583_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02602_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02602_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02615_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02615_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02622_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02622_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02630_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02630_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02647_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02647_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02668_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02668_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02698_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02698_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02717_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02717_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02723_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02723_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02735_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02735_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02738_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02738_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02809_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02809_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02818_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02818_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02841_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02841_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02886_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02886_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02922_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02922_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02965_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02965_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02976_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02976_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02984_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG02984_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03017_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03017_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03041_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03041_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03050_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03050_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03098_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03098_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03130_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03130_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03139_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03139_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03195_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03195_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03209_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03209_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03225_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03225_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03239_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03239_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03270_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03270_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03369_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03369_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03453_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03453_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03470_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03470_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03471_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03471_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03486_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03486_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03516_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03516_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03521_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03521_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03540_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03540_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03579_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03579_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03583_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03583_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03654_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03654_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03669_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03669_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03688_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03688_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03704_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03704_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03710_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03710_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03742_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03742_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03784_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192353,
+        "cfd_defined": 192353,
+        "cb_scored": 42415,
+        "cb_na": 149938
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/HG03784_hap1/attempt-2872660",
+      "completion_sha256": "87db973e12a8b8ffd8f30a5936a8dc82c66d20f2a7400ec3295952ffb33011cc"
+    },
+    {
+      "assembly": "HG03784_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03804_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03804_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03816_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03816_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03831_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03831_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03834_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03834_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03874_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03874_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03927_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03927_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03942_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG03942_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04115_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04115_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04157_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04157_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04160_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04160_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04184_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04184_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04187_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04187_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04199_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04199_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04204_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04204_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04228_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG04228_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG06807_mat",
+      "index_status": "INDEX_FAILED_MISSING_INDEX",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "HG06807_pat",
+      "index_status": "INDEX_FAILED_MISSING_INDEX",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18505_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18505_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18508_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18508_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18522_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18522_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18565_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18565_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18570_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18570_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18608_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18608_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18620_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18620_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18747_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18747_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18879_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18879_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18906_mat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192148,
+        "cfd_defined": 192148,
+        "cb_scored": 42389,
+        "cb_na": 149759
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/NA18906_mat/attempt-2871780",
+      "completion_sha256": "becf6fd01bc11178cf5752be8cac6a2011019262cbf958dca7508823c32266ff"
+    },
+    {
+      "assembly": "NA18906_pat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18940_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18940_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18943_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18943_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18944_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18944_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18945_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18945_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18948_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18948_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18952_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18952_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18959_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18959_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18960_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18960_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18967_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18967_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18970_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18970_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18971_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18971_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18974_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18974_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18976_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18976_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18982_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18982_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18983_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA18983_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19036_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19036_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19043_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19043_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19087_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19087_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19159_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19159_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19185_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19185_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19240_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19240_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19338_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19338_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "PROMOTED_REBUILT",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19391_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19391_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19443_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19443_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19468_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19468_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19682_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19682_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19700_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19700_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19776_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19776_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19835_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19835_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19909_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA19909_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20129_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20129_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20282_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20282_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20346_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20346_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20503_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20503_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20752_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20752_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20762_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20762_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20799_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20799_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20805_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20805_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20806_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20806_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20809_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20809_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20827_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20827_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20850_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20850_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20870_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 187862,
+        "cfd_defined": 187862,
+        "cb_scored": 44021,
+        "cb_na": 143841
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/NA20870_hap1/attempt-2873206",
+      "completion_sha256": "90bf173437a65b88390955a51e36b97474ce5f901ae24dc590aa9a342a6f995e"
+    },
+    {
+      "assembly": "NA20870_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20905_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA20905_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "COMPLETE",
+      "counts": {
+        "hits": 192118,
+        "cfd_defined": 192118,
+        "cb_scored": 42395,
+        "cb_na": 149723
+      },
+      "attempt": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/02_search/NA20905_hap2/attempt-2873207",
+      "completion_sha256": "d19066da995762945cd054a1fa723fe2a2943582bb785831444e7398f276acdf"
+    },
+    {
+      "assembly": "NA21093_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21093_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21102_hap1",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21102_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21106_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21106_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21110_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21110_hap2",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21144_hap1",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21144_hap2",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21309_mat",
+      "index_status": "INDEX_EIO",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "NA21309_pat",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "CHM13",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    },
+    {
+      "assembly": "GRCh38",
+      "index_status": "READY_BOUND",
+      "index_origin": "ORIGINAL_OR_PRIOR_RECOVERY",
+      "sbds_status": "INCOMPLETE"
+    }
+  ],
+  "caveats": [
+    "READY_BOUND denotes committed binding evidence, not a fresh hash scan of every input.",
+    "Historical failed attempts are retained, not counted as currently failed completed assemblies.",
+    "Physical storage reclamation/replication is controlled by MooseFS; logical removed bytes are not physical free bytes.",
+    "Noncanonical neural scores are computational, not biologically calibrated."
+  ]
+}

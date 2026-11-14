@@ -1,5 +1,37 @@
 # CRISPRapido project handoff
 
+## Session 2026-11-14: wave-1 validated, wave-2 running, deletions gated
+
+**Wave 1 complete and independently validated: 48/48 rebuilt indexes** passed
+cross-worker recheck, promotion, binding, AND an independent reference-to-
+indexed-text comparison (preserved comparator, pinned SHA256) — evidence in
+`00_manifest/wave1-independent-validation-v1/`. Ledger v6: **192 READY_BOUND /
+274 remaining** (44 wave-2 builds staged pending recheck, 2 still EIO-pending).
+**SBDS: 89 assemblies COMPLETE** (17.03 M hits, 100 % CFD, 3.82 M
+CRISPR-Bulge defined, rest explicit N/A); active: wave1c (121 tasks, %4,
+octopus08) and wave1-new48 (48 tasks, %2, octopus09) — the driver now requires
+explicit `--exclude-assemblies-file` lists whenever cohort jobs are queued
+(no duplicate submissions) and writes checksummed submission records.
+
+**First two quarantine deletions executed under full gates:** HG005_pat and
+HG00099_hap2 corrupted originals (22.59 GB logical) removed only after
+independent replacement validation + COMPLETE checksummed four-PAM search +
+supervisor success, with pinned review manifests and per-file deletion logs
+(`review_quarantine.py`; regular-file unlink only, inode/mtime re-checked,
+symlink-swap detection, PARTIAL on failure; 5 unit tests). The old
+`delete_original.py` is REFUSED/withdrawn (it "freed" storage by renaming and
+hashed unreadable files). Wave 2 (48 disjoint assemblies) submitted with
+monitored build→cross-check→promote chains (2873752/53/54, %2).
+
+**Brunello (NOT launched):** timing claims reconciled — 178 h is
+traversal-only; full audited both-score workflow ≈ **276 h (11.5 days)** per
+assembly at m4; storage corrected: authoritative PAF+annotations ≈ **13 TB**,
+audit records ≈ 6.4 TB, total ≈ 19.4 TB (previous 5.4/14 TB split was wrong —
+see `TIMING_RECONCILIATION.md`). 10,000-guide timing inputs/commands frozen
+(`brunello_pam_aware_v1/00_manifest/timing-10000-v1/`) but its
+restart/monitor wrapper is NOT yet launch-ready; submission remains gated on
+resource review. `campaign_snapshot.py` is the live evidence-derived ledger.
+
 ## Rebuild+SBDS campaigns RUNNING (2026-11-13, authorized)
 
 User authorized proceeding without waiting for the admin: controlled rebuilding

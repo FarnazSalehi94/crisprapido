@@ -26,12 +26,23 @@ def main():
     p.add_argument('--submit', action='store_true')
     p.add_argument('--authorization', default='')
     p.add_argument('--time-limit', default='12:00:00')
-    p.add_argument('--nodelist', default='octopus06,octopus07,octopus08,octopus09,octopus10,octopus11')
+    p.add_argument('--nodelist', default='octopus08', help='ONE preflighted worker; use separate waves to spread jobs')
+    p.add_argument('--exclude-assemblies-file', type=Path, action='append', default=[],
+                   help='frozen name lists of active search waves; required when extending an active campaign')
     a = p.parse_args()
+    if ',' in a.nodelist or '[' in a.nodelist or ']' in a.nodelist:
+        raise SystemExit('--nodelist must be one worker, not a multi-node allocation')
     manifest = json.loads(a.manifest.read_text())
     assert manifest['cohort_size'] == 466 and manifest['mutually_exclusive']
     ready = [r['assembly'] for r in manifest['rows'] if r['status'] == 'READY_BOUND']
-    pending = [x for x in ready if not (ROOT/'02_search'/x/'SUCCESS.json').exists()]
+    excluded = set()
+    for path in a.exclude_assemblies_file:
+        excluded.update(x for x in path.read_text().splitlines() if x)
+    if a.submit:
+        queue = subprocess.check_output(['squeue', '-u', __import__('os').environ['USER'], '-h', '-o', '%j'], text=True)
+        if 'sbds-nrr-cohort' in queue and not a.exclude_assemblies_file:
+            raise SystemExit('active SBDS jobs: supply their frozen --exclude-assemblies-file lists to avoid duplicates')
+    pending = [x for x in ready if x not in excluded and not (ROOT/'02_search'/x/'SUCCESS.json').exists()]
     if not pending:
         print(json.dumps(dict(status='NOTHING_TO_DO', ready=ready)))
         return
@@ -47,8 +58,8 @@ def main():
     names_path = ROOT/'00_manifest'/('sbds-assemblies-%s.txt' % a.plan_tag)
     names_path.write_text(''.join(x+'\n' for x in pending))
     command = ['sbatch', '--array=0-%d%%%d' % (len(pending)-1, a.concurrency),
-        '--cpus-per-task=1', '--mem=56G', '--time', a.time_limit,
-        '--nodelist='+ (a.nodelist or 'octopus06,octopus07,octopus08,octopus09,octopus10,octopus11'),
+        '--nodes=1', '--ntasks=1', '--cpus-per-task=1', '--mem=56G', '--time', a.time_limit,
+        '--nodelist='+a.nodelist,
         '--output', str(ROOT/'logs/sbds-%A_%a.log'),
         '--export=ALL,PLAN=%s,ASSEMBLIES_FILE=%s' % (plan_path, names_path),
         str(ROOT/'00_manifest/nrr-tooling-v1/submit_cohort.slurm')]
@@ -60,6 +71,11 @@ def main():
         if a.concurrency > 32:
             raise SystemExit('concurrency above 32 requires new resource review')
         result = subprocess.run(command, check=True, capture_output=True, text=True)
+        submission = dict(job=result.stdout.strip(), command=command, assemblies=pending,
+                          excluded_active=sorted(excluded), plan=str(plan_path),
+                          plan_sha256=__import__('hashlib').sha256(plan_path.read_bytes()).hexdigest())
+        with plan_path.with_suffix('.submission.json').open('x') as f:
+            json.dump(submission, f, indent=2); f.write('\n')
         print(result.stdout)
 
 
