@@ -1,5 +1,52 @@
 # CRISPRapido project handoff
 
+## Session 2026-11-15 (later): wave-2 validated 48/48, SBDS at 199, Brunello 10k launched
+
+Milestones since commit `7b93c4f`:
+
+- **Wave-2 independent validation COMPLETE: 48/48 PASS, no STOP**
+  (`00_manifest/wave2-independent-validation-v1/`, pinned wave-1 comparator).
+  The `afterok` gate cleared and **wave-3 rebuilds (2874447) are running** on
+  octopus10 — first builds already `STAGED_WRITTEN_AWAITING_CROSS_NODE_RECHECK`;
+  recheck (2874448) and promote/bind (2874449) remain dependency-queued. All
+  guarded; wave STOP absent.
+- **SBDS search 2874424: 8 tasks COMPLETED** (0–7, ~30 min each), tasks 8–11
+  running, rest pending at `%4`. **Ledger: 199 COMPLETE / 267 remaining**;
+  38,099,500 hits, all CFD-defined, 8,556,941 CB-scored, 29,542,559 explicit
+  N/A. No new FAILED markers.
+- **Brunello bounded 10,000-guide timing benchmark LAUNCHED: job 2874508** on
+  octopus06 (disjoint from SBDS octopus08 and recovery octopus10/07), one CPU,
+  56 GiB, 72 h, 48 GiB sampled tree-RSS stop, guarded by the reviewed
+  wave_guard → frozen supervise.py chain. Frozen tooling + checksummed
+  execution plan: `runs/brunello_pam_aware_v1/00_manifest/timing-10000-execution-v2/`
+  (plan SHA256 `d5226c6c8002646581b135ebc4c1d13d9f5b9567dd26df6b5b5c4a57ca23fd9b`).
+  Output: `runs/brunello_pam_aware_v1/01_pilot/timing-10000-v1/HG00735_pat/`.
+  Estimated ~35.6 h (traversal ~23.1 h + audit ~1.5 h + annotation ~11 h).
+
+**Brunello wrapper** (`research/hprcv2/brunello_expanded_benchmark/timing_worker.py`):
+bounded to the frozen 10k plan (rejects cohort scope/config drift); immutable
+attempt dirs; checksummed search/audit/score checkpoints with atomic
+no-clobber publication (crash before publication leaves no false checkpoint);
+scratch reference alias with recomputed and pin-verified `.fai`; explicit
+CB availability accounting (`scored` vs `unsupported_*`, never zero-filled);
+scoring stdout/bundle byte-equality and `metadata.json` input-identity checks;
+final `SUCCESS.json` only after the external supervisor reports success.
+**10 unit tests pass**, including crash/tamper/pin-drift/lock/supervisor-gate
+failures and restart reuse without duplicated work. Real on-node preflight
+**2874502 PASSED** (all pins, FAI provenance, scratch 145 GB, output 34.8 TB
+free). A first preflight (2874491) correctly failed closed on a node-dependent
+system-interpreter pin; system python is now recorded, not pinned (v1 frozen
+dir retained as evidence). Independent reviewer attempts were blocked by
+provider usage limits and a scheduler admission timeout — three attempts,
+all infrastructure failures — so launch proceeded on the user's stated gate
+(wrapper tests + resources), with this handoff recording the deviation.
+
+Next: monitor 2874508 (first full-scale m4 linearity evidence); continue SBDS
+search wave to 49 completions; wave-3 recheck/promote then a new guarded
+recovery wave for the ~178 still-EIO assemblies (exclude frozen wave-3 list);
+schedule newly bound searches with active-list exclusions. Full Brunello
+cohort remains gated on capacity review and the timing evidence.
+
 ## Astra resume 2026-11-15: SBDS restarted, guarded wave 3 queued
 
 Verified main model **openai-codex/gpt-6-astra**, branch
