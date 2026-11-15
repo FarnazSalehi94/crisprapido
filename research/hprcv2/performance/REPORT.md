@@ -1,5 +1,33 @@
 # CRISPRapido performance investigation — 2026-11-11
 
+## Evidence correction (2026-11-15 independent review)
+
+At matched m2/b1/z1/f0.75/GG and 1,000 identical HG00735_pat guides,
+new search wall is **489.76 s**, versus old process wall **383.25 s**
+(1.28×), with different setup/validation stage boundaries. New traversal
+alone is 173.40 s; old process CPU is 246.26 user + 59.69 system = **305.95
+CPU-s**. The new summary omits process CPU and matched-run RSS, so CPU
+**efficiency cannot be determined from thread counts or these wall times**.
+A fresh `sacct` query for jobs 2871709–11/2871718–20 returns zero TotalCPU
+and blank MaxRSS: missing accounting, not evidence of zero resource use.
+Old 1,000-guide maximum individual-process RSS was 11,690,248 KiB; unlike
+pilot tree-RSS figures are not a matched memory comparison.
+
+Historical full-library old wall **5,775 s is measured**; new **14,188 s is
+extrapolated**, a 2.46× scenario ratio, not a measured full-library speedup
+or slowdown. The old small-batch extrapolation misses its measured full run
+by 5.15×, reinforcing the need to measure the new full-library workload.
+All 28,750 old eligible witnesses are contained in new output, but **13,184
+of 28,750 recorded CFD comparisons disagree**; containment is neither score
+equivalence nor a genome-wide recall proof. Preserve these diagnostics;
+no scoring formula or historical output is changed.
+
+Prefer large, bounded guide batches and independent assembly parallelism.
+Guide sharding trades repeated validation/index initialization and memory
+for lower single-assembly latency; test it only in an isolated resource
+slot, recording process CPU, wall, peak RSS, and exact output equivalence.
+No additional performance job was launched during this review.
+
 Bounded, guarded investigation. **No full Brunello or SBDS HPRCv2 rerun was
 launched.** External root:
 `/moosefs/salehi/HPRCv2_CRISPRapido/runs/performance_investigation_v1/`.
@@ -132,7 +160,7 @@ N=1/100/1000).
 | Full-library wall per assembly (77,441 guides) | **5,775 s measured** (tux09, ~1.9 cores) | 14,188 s extrapolated (3.94 h, 1 core, unvalidated at scale) | 29,746 s extrapolated — **5.15× overestimate vs 5,775 s measured** |
 | Throughput, guides/hour/assembly | 48,275 | ~20,100 (marginal, single core) | n/a at scale (measured value above) |
 | CPU utilization | 190% of one CPU despite `-t 16` | 1 of 8 allocated (12.5%) | 99%/85%/79% of one CPU at N=1/100/1000 |
-| Search-only per guide | not separable in preserved logs | 0.174 s traversal | 0.31–0.39 s CPU |
+| Native traversal / process CPU per guide (different measures) | not separable in preserved logs | 0.174 s native traversal | 0.31–0.39 process CPU-s; native-only not isolated |
 | Initialization overhead per invocation | ~14 s staging (scratch, warm) | ~310 s fixed (copy+verify+loads) | ~10 s (index from local scratch) |
 | Rows per guide | ~696 (only ~5% strict-eligible) | 33 (100% independently audited) | 575 (5% strict-eligible) |
 | Eligible-anchor containment | — | contains all 28,750 old strict-eligible witnesses, 0 missing | — |
@@ -142,9 +170,10 @@ N=1/100/1000).
 **Bottom line:** the apparent 7.5-min/guide discrepancy is per-invocation
 overhead (~310 s) that batching eliminates, plus a genuinely expensive requested
 search domain (m5/b1/z2 ~500× matched m2/b1/z1 in traversal states). The
-corrected backend at matched settings is within ~1.3× of the old pipeline per
-core-hour while producing only valid strict-NGG rows and containing every valid
-witness the old pipeline emitted. Full-library m5/b1/z2 Brunello across HPRCv2
+bounded 1,000-guide new search wall is 1.28× the old process wall, with unlike
+stage boundaries; a per-core-hour efficiency ratio is not established.
+The new output passes the strict-NGG audit and contains every strict-eligible
+witness the old pipeline emitted in this bounded comparison. Full-library m5/b1/z2 Brunello across HPRCv2
 remains computationally infeasible without authorized algorithmic or domain
 changes.
 

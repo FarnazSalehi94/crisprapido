@@ -1,5 +1,99 @@
 # CRISPRapido project handoff
 
+## Astra resume 2026-11-15: SBDS restarted, guarded wave 3 queued
+
+Verified main model **openai-codex/gpt-6-astra**, branch
+`feature/pam-anchored-search-poc`, starting HEAD
+`e2687245e972df18441aedef00f15e04aa6a487c`. Three independent **read-only**
+`scout`/`gpt-6-luna` reviews completed successfully (SBDS, performance,
+Brunello). The earlier `researcher` tool-allowlist failure was avoided by
+using the repository scout profile; no main-model configuration was changed.
+
+Fresh evidence-derived **manifest v7: 240 READY_BOUND / 224 INDEX_EIO /
+2 INDEX_FAILED_MISSING_INDEX = 466**. SBDS baseline: **191 COMPLETE /
+275 remaining**, 36,568,238 hits, all CFD-defined, 8,213,194 CB-scored and
+28,355,044 explicit N/A. This is summary/completion evidence, not a fresh
+full-output hash scan. All 48 tasks in each wave-2 build/recheck/promote array
+2873752/53/54 completed exit 0.
+
+Main-agent approved jobs (no completed searches included):
+
+- **2874424**: 49 pending READY_BOUND assemblies (48 wave-2 + GRCh38),
+  SBDS four-PAM m5/b1/z2/f0.75, `%4`, octopus08, 1 CPU / 56 GiB / 12 h.
+  Four tasks running at checkpoint, with no new FAILED markers observed.
+  Frozen plan/list/receipt: `00_manifest/sbds-{plan,assemblies}-wave2-ready-20261115.*`.
+- **2874431**: wave-2 independent full-component/source/binding/indexed-text
+  validation, `%2`, octopus07, 1 CPU / 8 GiB / 2 h. **13/48 PASS at the saved
+  checkpoint**; still running. Uses preserved wave-1 comparator SHA256
+  `2306463cb7a94f1da01842b554be4c1e5da83542a3d6905b6b698239ee54f89a`.
+  Evidence: `00_manifest/wave2-independent-validation-v1/`.
+- **2874447 → 2874448 → 2874449**: 48 disjoint wave-3 assemblies,
+  build → cross-node recheck → rollback-safe promote/bind. **Queued, not yet
+  running**: whole-array `afterok:2874431` before build, then whole-array
+  `afterok` between stages. Build octopus10 `%2`, 1 CPU / 64 GiB / 4 h;
+  recheck/promote octopus07 `%2`, 1 CPU / 8 GiB / 2 h. Frozen guarded tooling,
+  assembly list, hashes and submission receipt:
+  `00_manifest/recovery-wave3-tooling-v2/`. v1 was prepared but never submitted;
+  retain it as superseded review evidence, do not launch it.
+
+New `prepare_recovery_wave.py` only freezes a bounded disjoint wave; it never
+submits. New `wave_guard.py` checks shared STOP, scratch/output free space and
+available memory; any guarded failure blocks later tasks and terminates current
+wave descendants across process sessions, even if STOP persistence fails.
+Frozen tooling checks run inside the guard. Independent `reviewer`/`gpt-6-sol`
+review found and resolved five fail-closed issues; final review accepted the
+code with launch gates. **30 SBDS unit tests pass**, including 10 guard tests;
+Slurm guard+supervisor smoke job **2874444** passed. Shell syntax and frozen
+checksums verified, and `scontrol` confirms the exact whole-array dependencies.
+
+Resource preflights 2874423/2874429/2874430: octopus08/10/07 each ~400 GB
+available memory; scratch free ~411/623/341 GB respectively. MooseFS free
+~34.7 TB. Early SBDS sampled tree peaks ~13.2–13.7 GiB. Slurm CPU/RSS
+accounting is missing/zero for historical matched benchmark jobs; do not
+interpret that as zero usage. Node SSH failed host-key validation; no SSH
+security settings were weakened—resource checks used bounded Slurm tasks.
+No running job was canceled; unrelated job 2873575 remains untouched.
+
+Performance report corrected: 1k new wall 489.76 s versus old 383.25 s is a
+1.28× wall ratio with unlike stage boundaries, **not a CPU-efficiency ratio**.
+Old process CPU 305.95 s; new comparable CPU unavailable. Historical full-library
+5,775 s measured versus new 14,188 s extrapolated is not a measured comparison.
+All 28,750 eligible old witnesses contained, but 13,184 CFD comparisons disagree.
+No formulas/algorithms/binaries changed. Brunello review and concrete wrapper
+failure-test requirements are in `research/hprcv2/sbds_nrr/BRUNELLO_WRAPPER_REVIEW.md`;
+**the 10k wrapper remains unfinished**. No performance/Brunello jobs submitted.
+
+Next: monitor wave-2 validation and the dependency-gated wave-3 chain; halt
+escalation on any new integrity error; refresh completion ledger and schedule
+newly bound searches with active-list exclusions. Do not rerun matching completed
+assemblies. Additional recovery waves must exclude the frozen wave-3 list and
+any staged/bound sets. Rebuilt outputs remain under MooseFS `indices/` after
+promotion. **No quarantine deletion this session**; all prior independent
+validation, full-search-checksum, supervisor, and reviewed-deletion-manifest
+gates remain mandatory. Full SBDS figures await all 466 completions. Session
+receipt: `research/hprcv2/sbds_nrr/results/resume-20261115.json`.
+
+## Resume checkpoint 2026-11-15: wave-2 finished, campaigns idle
+
+Read-only recovery of live campaign state at 17:26 UTC:
+`campaign_snapshot.py` reports **240 READY_BOUND**, 224 INDEX_EIO, and
+2 INDEX_FAILED_MISSING_INDEX (466 total); **191 SBDS COMPLETE / 275 remaining**,
+36,568,238 hits, all CFD-defined, 8,213,194 CB-scored and 28,355,044 explicit
+CB N/A. These are completion/summary evidence counts, **not a fresh full-output
+hash verification**. Snapshot: `/tmp/crispr-campaign-resume-20261115T172611.json`
+(local temporary report, not authoritative persistent evidence).
+
+All 48 tasks in each wave-2 array 2873752 (build), 2873753 (recheck), and
+2873754 (promote/bind) are COMPLETED with exit 0:0 according to `sacct`.
+No CRISPR campaign jobs remain queued/running; the user's unrelated
+`bn_verkko_gt100kb` job is still running. Independent reference comparison of
+wave-2 replacements has **not** been established by this resume check.
+Only the two previously documented quarantine deletions are recorded;
+MooseFS free space is approximately 34.7 TB decimal. No new jobs or deletions
+were launched. Next: independent wave-2 validation, reconcile the pending
+search cohort against a fresh authoritative manifest, then continue the
+controlled rebuild/search campaign. Brunello remains launch-gated.
+
 ## Session 2026-11-14: wave-1 validated, wave-2 running, deletions gated
 
 **Wave 1 complete and independently validated: 48/48 rebuilt indexes** passed

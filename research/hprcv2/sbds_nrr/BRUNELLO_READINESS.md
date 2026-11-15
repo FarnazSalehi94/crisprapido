@@ -1,5 +1,8 @@
 # Brunello full-cohort readiness review (2026-11-13) — prepared, NOT launched
 
+**Latest wrapper review (2026-11-15):** [implementation and failure-test checklist](BRUNELLO_WRAPPER_REVIEW.md).
+The 10k execution wrapper is still unfinished; no benchmark/cohort was launched.
+
 **Correction:** see [timing/storage reconciliation](TIMING_RECONCILIATION.md).
 178 h is traversal only; ~276 h (~11.5 days) includes audit and scoring.
 The compressed authoritative PAF+annotations scenario is ~13 TB, not 5.4 TB;

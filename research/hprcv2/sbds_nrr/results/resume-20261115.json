@@ -1,0 +1,171 @@
+{
+  "timestamp": "2026-11-15T17:46:21.573876+00:00",
+  "baseline_head": "e2687245e972df18441aedef00f15e04aa6a487c",
+  "main_model": "openai-codex/gpt-6-astra",
+  "subagents": {
+    "independent_streams": "scout/openai-codex/gpt-6-luna",
+    "guard_review": "reviewer/openai-codex/gpt-6-sol",
+    "all_read_only": true
+  },
+  "counts": {
+    "ready_bound": 240,
+    "sbds_complete": 191,
+    "sbds_remaining": 275,
+    "recovery_remaining": 226,
+    "wave2_independent_pass": 13
+  },
+  "search_submission": {
+    "job": "Submitted batch job 2874424",
+    "command": [
+      "sbatch",
+      "--array=0-48%4",
+      "--nodes=1",
+      "--ntasks=1",
+      "--cpus-per-task=1",
+      "--mem=56G",
+      "--time",
+      "12:00:00",
+      "--nodelist=octopus08",
+      "--output",
+      "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/logs/sbds-%A_%a.log",
+      "--export=ALL,PLAN=/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/sbds-plan-wave2-ready-20261115.json,ASSEMBLIES_FILE=/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/sbds-assemblies-wave2-ready-20261115.txt",
+      "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/nrr-tooling-v1/submit_cohort.slurm"
+    ],
+    "assemblies": [
+      "HG00706_mat",
+      "HG00706_pat",
+      "HG00733_mat",
+      "HG00733_pat",
+      "HG00735_mat",
+      "HG00738_mat",
+      "HG00738_pat",
+      "HG00741_mat",
+      "HG00741_pat",
+      "HG01071_mat",
+      "HG01071_pat",
+      "HG01081_mat",
+      "HG01099_mat",
+      "HG01106_mat",
+      "HG01106_pat",
+      "HG01109_mat",
+      "HG01109_pat",
+      "HG01123_mat",
+      "HG01123_pat",
+      "HG01150_mat",
+      "HG01150_pat",
+      "HG01167_hap1",
+      "HG01167_hap2",
+      "HG01175_mat",
+      "HG01192_mat",
+      "HG01243_pat",
+      "HG01252_mat",
+      "HG01252_pat",
+      "HG01255_mat",
+      "HG01255_pat",
+      "HG01258_pat",
+      "HG01261_pat",
+      "HG01346_pat",
+      "HG01358_mat",
+      "HG01361_pat",
+      "HG01530_hap1",
+      "HG01530_hap2",
+      "HG01784_hap1",
+      "HG01784_hap2",
+      "HG01786_hap2",
+      "HG01891_pat",
+      "HG01928_pat",
+      "HG01934_mat",
+      "HG01934_pat",
+      "HG01940_mat",
+      "HG01940_pat",
+      "HG01943_mat",
+      "HG01952_mat",
+      "GRCh38"
+    ],
+    "excluded_active": [],
+    "plan": "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/sbds-plan-wave2-ready-20261115.json",
+    "plan_sha256": "9967403ec3a92425f20d7fcb1caac4833e1df7e74abf55959f0ad07111faa5fc"
+  },
+  "recovery_submission": {
+    "created_utc": "2026-11-15T17:45:50.979254+00:00",
+    "authorization": "I authorize continuing the existing controlled rebuilding campaign until all required indexes are recovered.",
+    "scope": "48 disjoint assemblies, no quarantine deletions; execution waits for whole wave2 independent validation success",
+    "preparation_sha256": "5fd89d44ad4b029703560ed0b509d0d4fc1f2dd92efdb4afbad769feb2f356a6",
+    "jobs": [
+      {
+        "stage": "build",
+        "job": "2874447",
+        "command": [
+          "sbatch",
+          "--parsable",
+          "--job-name=sbds-rw3-build",
+          "--array=0-47%2",
+          "--nodes=1",
+          "--ntasks=1",
+          "--cpus-per-task=1",
+          "--mem=64G",
+          "--time=04:00:00",
+          "--nodelist=octopus10",
+          "--dependency=afterok:2874431",
+          "--output=/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/recovery-wave3-tooling-v2/build-%A_%a.log",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/recovery-wave3-tooling-v2/build-guarded.slurm"
+        ]
+      },
+      {
+        "stage": "recheck",
+        "job": "2874448",
+        "command": [
+          "sbatch",
+          "--parsable",
+          "--job-name=sbds-rw3-recheck",
+          "--array=0-47%2",
+          "--nodes=1",
+          "--ntasks=1",
+          "--cpus-per-task=1",
+          "--mem=8G",
+          "--time=02:00:00",
+          "--nodelist=octopus07",
+          "--dependency=afterok:2874447",
+          "--output=/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/recovery-wave3-tooling-v2/recheck-%A_%a.log",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/recovery-wave3-tooling-v2/recheck-guarded.slurm"
+        ]
+      },
+      {
+        "stage": "promote",
+        "job": "2874449",
+        "command": [
+          "sbatch",
+          "--parsable",
+          "--job-name=sbds-rw3-promote",
+          "--array=0-47%2",
+          "--nodes=1",
+          "--ntasks=1",
+          "--cpus-per-task=1",
+          "--mem=8G",
+          "--time=02:00:00",
+          "--nodelist=octopus07",
+          "--dependency=afterok:2874448",
+          "--output=/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/recovery-wave3-tooling-v2/promote-%A_%a.log",
+          "/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/recovery-wave3-tooling-v2/promote-guarded.slurm"
+        ]
+      }
+    ]
+  },
+  "validation_job": "2874431",
+  "guard_slurm_smoke_job": "2874444",
+  "preflight_jobs": [
+    "2874423",
+    "2874429",
+    "2874430"
+  ],
+  "tests": {
+    "sbds_unit_tests": 30,
+    "result": "PASS"
+  },
+  "caveats": [
+    "No fresh full-output hash scan of all 191 completed assemblies in this session.",
+    "Wave3 is dependency-gated on all wave2 independent validations; not running yet.",
+    "No deletion/performance/Brunello jobs launched.",
+    "Brunello restart wrapper remains unfinished."
+  ]
+}
