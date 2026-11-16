@@ -1,5 +1,54 @@
 # CRISPRapido project handoff
 
+## Session 2026-11-16 (evening): SBDS 335/466; Brunello search+audit measured, scoring restart
+
+**Brunello 10k job 2874508: search and audit COMPLETE and checkpointed;
+scoring killed by the memory guard.** Measured (HG00735_pat, m4/b1/z1/GG,
+10,000 first-in-file guides): search wall **76,266.6 s (21.2 h, 7.63 s/guide,
+972.79e9 states, 76,071 s user CPU)**, raw PAF **9.47 GB**; independent audit
+**PASS, 0 errors, 57,578,781 rows verified in 5,400.6 s** (5,758 rows/guide;
+56.65 M bulged / 0.93 M ungapped; 1.47 M CFD≥0.02; strands ≈ balanced).
+The both-score stage was killed at 94,015 s when sampled tree RSS hit
+**50,333,920 KiB (>48 GiB stop)** — the scorer's memory grows with input rows,
+so the 1k-derived 48 GiB envelope was insufficient at 57.6 M rows.
+**Implication for full-library design: single-pass scoring is infeasible at
+446 M rows/assembly; the full-library worker must score in verified chunks
+(coverage/order/merge gates), exactly as the wrapper review required.**
+Restart **2875902** (execution-v3) reuses the byte-identical plan (SHA
+`d5226c6c…23fd9b`) so checksummed search+audit checkpoints are verified and
+reused — **only scoring reruns**, under 128 GiB requested / 110 GiB sampled-RSS
+stop on octopus10; deviation documented in `timing-10000-execution-v3/RESOURCE_DEVIATION.md`.
+Measured-basis estimates (10k): search **164 h/assembly** (was 178.9 h
+extrapolated), cohort search ≈ **76,000 CPU-h**; audit 11.6 h/assembly ≈ 5,400
+CPU-h cohort; scoring time unmeasured (memory-bound). Storage scenario
+(19.4 TB compressed) roughly confirmed at 5,758 rows/guide.
+
+**GRCh38 chain failed twice more, both diagnosed and fixed:** 2874811 died at
+45:28 because the plain-FASTA decompression called `cp` with stdin/stdout
+(conversion itself completed; partial gz preserved as evidence); 2875375
+died in 7 s on `FileExistsError` — the preserved-evidence output dir blocked
+`mkdir(exist_ok=False)`. The converter now takes `--out-dir` (fresh v2 dir;
+failed v1 dir preserved), writes a `fai_sha256` provenance record, and
+produces byte-deterministic gzip. 35 unit tests + end-to-end mini-run pass.
+Resubmitted chain: **2875898 convert → 2875899 build → 2875900 recheck →
+2875901 promote+rebind** (dead 2875376–78 cancelled; STOPs preserved as
+`STOP-2874811-evidence`/`STOP-2875375-evidence`).
+
+**SBDS: 335/466 COMPLETE** (search array 2875379 all 48/48 exit 0, ~31 min
+per assembly): 64,118,953 audited hits, all CFD-defined, 14,398,176
+CB-scored, 49,720,777 explicit N/A. Remaining 131 = 128 INDEX_EIO (wave-5
+2875393→94→95 pending on cluster occupancy — all octopus nodes currently
+fully allocated by other users; this is normal, do not cancel) + GRCh38
+(fix running) + HG06807_mat/pat (never-built; wave-5 includes them; source
+FASTAs verified intact). Wave-4's 48 replacements promoted and searched;
+**independent validation 2875903 queued** (same pinned comparator as
+wave-2/wave-3 PASS gates).
+
+Next: monitor 2875902/2875898–901/2875393–95/2875903; wave-6 for the final
+~80 EIO; GRCh38 search after rebind; measured 10k report once scoring
+completes; SBDS deliverables at 466/466.
+
+
 ## Session 2026-11-16 (afternoon): SBDS 287/466, waves 4 done, wave 5 queued
 
 **GRCh38 convert 2874811 failure root-caused and fixed:** the conversion

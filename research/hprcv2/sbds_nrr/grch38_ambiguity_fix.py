@@ -19,7 +19,7 @@ import subprocess
 import time
 
 ROOT = Path('/moosefs/salehi/HPRCv2_CRISPRapido')
-OUT = ROOT/'runs/sbds_ngg_nrr_v1/00_manifest/grch38-acgtn-fix-v1'
+OUT = Path('/moosefs/salehi/HPRCv2_CRISPRapido/runs/sbds_ngg_nrr_v1/00_manifest/grch38-acgtn-fix-v2')
 ALLOWED = set('ACGTNacgtn')
 
 
@@ -70,11 +70,15 @@ def convert(source_gz, derived_gz, samtools):
 
 
 def main():
+    global OUT
     p = argparse.ArgumentParser()
     p.add_argument('--source-gz', type=Path, default=None)
     p.add_argument('--samtools', type=Path,
                    default=Path('/home/salehi/miniconda3/envs/assembly_eval/bin/samtools'))
+    p.add_argument('--out-dir', type=Path, default=OUT,
+                   help='fresh empty output dir; prior failed dirs are preserved as evidence')
     a = p.parse_args()
+    OUT = a.out_dir
     OUT.mkdir(exist_ok=False)
     source_gz = a.source_gz or Path(dict(l.split('\t') for l in
         (ROOT/'analysis_genomes.tsv').read_text().splitlines() if l.strip())['GRCh38'])
