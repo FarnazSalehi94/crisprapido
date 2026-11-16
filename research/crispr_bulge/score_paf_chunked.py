@@ -194,8 +194,10 @@ def main():
     p.add_argument('--preserve-cfd', action='store_true')
     p.add_argument('--batch-size', type=int, default=512)
     p.add_argument('--worker-timeout', type=float, default=300)
-    p.add_argument('--chunk-rows', type=int, default=5_000_000,
-                   help='rows per chunk; bounds the inner scorer memory')
+    p.add_argument('--chunk-rows',
+                   type=int, default=int(os.environ.get('CHUNKED_SCORING_ROWS', 5_000_000)),
+                   help='rows per chunk; bounds the inner scorer memory '
+                        '(env CHUNKED_SCORING_ROWS as CLI-invocable default)')
     p.add_argument('--inner-script', type=Path,
                    default=Path(__file__).with_name('score_paf.py'),
                    help='the UNMODIFIED validated scorer this wrapper calls per chunk')

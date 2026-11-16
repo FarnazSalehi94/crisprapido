@@ -1,5 +1,43 @@
 # CRISPRapido project handoff
 
+## Session 2026-11-16 (night): chunked 10k scoring restart; waves 5–6 queued
+
+**Brunello 10k scoring restart switched to the validated chunked scorer.**
+The pending 128 G single-pass retry **2875902 was cancelled while still
+PENDING** (never started, nothing lost): single-pass memory is unbounded by
+design and already failed once at 48 GiB, while a 16 G job schedules far
+sooner on the busy cluster. Measured scaling probe (1M rows, 2×500k chunks,
+`chunked-scoring-probe-v1/`): **1.59 GiB peak per 500k-row chunk, 1,582 rows/s**
+→ full 57.6 M-row scoring ≈ **10.2 h**. Restart **2875915**
+(`timing-10000-execution-v4/`): byte-identical plan (search 76,267 s + audit
+57,578,781 PASS checkpoints REUSED — only scoring runs), `BRUNELLO_SCORING_SCRIPT`
+env override in timing_worker (narrow; actual command recorded in metrics),
+`CHUNKED_SCORING_ROWS=2,000,000` (~29 chunks, ~5 GiB/chunk projected),
+16 G request / 12 GiB sampled-RSS stop, octopus06. Inner scorer is the pinned
+scorer-v2 `score_paf.py` byte-identical copy (SHA `51cde989…` verified).
+
+**Recovery waves 5–6 + GRCh38 all queued** (cluster fully allocated by other
+users; jobs advance as capacity frees): wave-5 builds running (4 done, 2
+active, %2 on octopus10, array 2875393 → recheck 2875394 → promote 2875395);
+**wave-6 chain 2875917 → 2875918 → 2875919** prepared and queued (48 disjoint
+of the 80 EIO remaining after wave-5; exclusions wave1–6 all frozen);
+GRCh38 chain **2875898 → 2875899 → 2875900 → 2875901**; wave-4 independent
+validation **2875903** (48 tasks). After waves 5–6 promote: **32 EIO remain**
+(wave-7) plus GRCh38 and HG06807 (in wave 5). Ledger: **SBDS 335/466**.
+
+Chunked-scoring summary for the record: wrapper + equivalence validator
+committed (`0393161`); real-data equivalence PASS (max cb Δ 2.2e-16,
+batch-ULP only); global annotation row_index restored at merge; INCOMPLETE-
+resume reuses verified chunks. Independent reviews of the chunked implementation
+and full-library readiness are in flight.
+
+Next: as promotions land — wave-7 for the last ~32 EIO, search waves with
+frozen-list exclusions, GRCh38 search after rebind; 2875915 completes the 10k
+benchmark (search/audit/scoring walls, CB availability, peak RSS, compressed
+sizes) and finalizes the full-library single-assembly plan (~164 h search +
+~11.6 h audit + ~79 h chunked scoring ≈ 255 h/assembly).
+
+
 ## Session 2026-11-16 (late): SBDS 335/466; chunked scoring implemented and validated
 
 **Memory-safe chunked scoring is implemented, unit-tested, and validated

@@ -204,6 +204,15 @@ def work(plan, signature, job, scratch_base=None):
         def score():
             directory = attempt/'score-stage'
             cmd = replace(c['score'], **{'--score-paf':paf, '--scoring-output-dir':directory/'neural'})
+            # Execution-layer override only: same plan identity, so search/audit
+            # checkpoints stay valid. The replacement scorer must wrap the same
+            # pinned inner implementation (chunked wrapper); the actual command
+            # is recorded in metrics.json for provenance.
+            override = os.environ.get('BRUNELLO_SCORING_SCRIPT')
+            if override:
+                require(Path(override).is_file() and not Path(override).is_symlink(),
+                        'scoring override missing: '+override)
+                cmd = replace(cmd, **{'--scoring-script': override})
             scored = command_run(cmd, directory, 'eligible.both.paf')
             require(digest(scored) == digest(directory/'neural/scoring/output.paf'), 'scoring stdout/bundle mismatch')
             counts = score_counts(directory/'neural/scoring/annotations.tsv', audit_data['rows'])
