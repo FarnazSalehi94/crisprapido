@@ -1,5 +1,51 @@
 # CRISPRapido project handoff
 
+## Session 2026-11-16 (late): SBDS 335/466; chunked scoring implemented and validated
+
+**Memory-safe chunked scoring is implemented, unit-tested, and validated
+against the single-pass reference on real data**
+(`research/crispr_bulge/score_paf_chunked.py` + `compare_scored_pafs.py`;
+validation evidence: `sbds_ngg_nrr_v1/00_manifest/chunked-scoring-validation-v1/`).
+Design: drop-in replacement with the exact score_paf.py CLI contract; splits
+the input PAF into `--chunk-rows` chunks, scores each with the UNMODIFIED
+pinned scorer (no model/CFD/representative/eligibility change), merges with
+row-for-row input verification (stronger than the inner scorer's chunk-local
+duplicate check), restores GLOBAL annotation row_index at merge, publishes
+only after verification, and cleans derived chunk scratch only afterwards.
+Restart-safe: `INCOMPLETE` out-dirs resume; verified chunks are reused.
+**Validation on HG00706_mat NGG (38,085 rows, 4 chunks, pinned scorer-v2 +
+models): PAF equivalence PASS — 0 differences beyond tolerance; 40 rows show
+cb:f ULP differences from TF batch-composition effects, max |Δ| = 2.2e-16 at
+scores < 1e-14; annotations identical modulo the same 40 ULP rows; peak
+child RSS ~526 MB/chunk; wall 43 s.** Cause of the single-pass blowup
+confirmed: the inner scorer holds a per-input duplicate-key set scaling with
+rows (57.6 M rows → >48 GiB); chunking bounds it. This is the scoring design
+for both the 10k restart (if 2875902's 110 GiB also trips) and the full
+77,441-guide library (446 M rows → ~90 chunks).
+
+**Brunello:** search (76,267 s) and audit (57,578,781 rows PASS) remain
+checkpointed from 2874508; single-pass scoring restart **2875902** (128 G /
+110 GiB stop) still queued behind cluster priority. If it trips again, the
+restart uses chunked scoring with the same byte-identical plan. **Full-library
+timing estimate (measured 10k basis): search ~164 h/assembly (~76,000 CPU-h
+cohort), audit 11.6 h/assembly; scoring ~86 h/assembly extrapolated from 1k,
+now chunk-safe; total ~262 h/assembly, ~121,000 CPU-h cohort.** Storage
+~19.4 TB compressed unchanged.
+
+**SBDS: 335/466 COMPLETE** (64.1 M hits, all CFD, 14.4 M CB-scored, 49.7 M
+explicit N/A). Remaining 131 = 128 EIO + GRCh38 + HG06807 pair. Active:
+wave-5 builds 2875393 (2 tasks running on octopus10, rest queued — cluster
+busy with other users); wave-4 independent validation 2875903 queued; GRCh38
+chain 2875898–78 requeued after the two diagnosed failures (cp-stdin bug,
+then FileExistsError from the preserved-evidence dir; converter now takes
+`--out-dir`, deterministic gzip, 35 tests). Brunello 2875902 queued.
+
+Next: continue waves 5–6 to finish all indexes; GRCh38 search after rebind;
+complete 10k scoring (2875902 or chunked) for the measured scoring time;
+then the restartable full-library single-assembly validation run; SBDS final
+figures at 466/466.
+
+
 ## Session 2026-11-16 (evening): SBDS 335/466; Brunello search+audit measured, scoring restart
 
 **Brunello 10k job 2874508: search and audit COMPLETE and checkpointed;
