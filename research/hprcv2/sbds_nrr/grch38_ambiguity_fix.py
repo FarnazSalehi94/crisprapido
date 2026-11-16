@@ -14,6 +14,7 @@ import gzip
 import hashlib
 import json
 from pathlib import Path
+import shutil
 import subprocess
 import time
 
@@ -36,28 +37,30 @@ def convert(source_gz, derived_gz, samtools):
     in_header = False
     contig = offset = None
     started = time.monotonic()
-    with gzip.open(source_gz, 'rt') as src, gzip.open(derived_gz, 'wt') as dst:
-        for line in src:
-            if line.startswith('>'):
-                headers += 1
-                in_header = True
-                contig = line[1:].split()[0]
-                offset = 0
-                dst.write(line)
-                continue
-            in_header = False
-            sequences += 1
-            out = []
-            for i, ch in enumerate(line.rstrip('\n')):
-                if ch in 'RYKMSWBDHVrykmswbdhv':
-                    positions.append([contig, offset+i, ch.upper(), 'N'])
-                    out.append('N')
-                elif ch in ALLOWED:
-                    out.append(ch)
-                else:
-                    raise ValueError('invalid reference character: '+repr(ch))
-            offset += len(out)
-            dst.write(''.join(out)+'\n')
+    # mtime=0 makes the derived gzip byte-deterministic for a fixed source.
+    with gzip.open(source_gz, 'rt') as src, open(derived_gz, 'wb') as raw:
+        with gzip.GzipFile(filename='', mode='wb', fileobj=raw, mtime=0) as dst:
+            for line in src:
+                if line.startswith('>'):
+                    headers += 1
+                    in_header = True
+                    contig = line[1:].split()[0]
+                    offset = 0
+                    dst.write(line.encode())
+                    continue
+                in_header = False
+                sequences += 1
+                out = []
+                for i, ch in enumerate(line.rstrip('\n')):
+                    if ch in 'RYKMSWBDHVrykmswbdhv':
+                        positions.append([contig, offset+i, ch.upper(), 'N'])
+                        out.append('N')
+                    elif ch in ALLOWED:
+                        out.append(ch)
+                    else:
+                        raise ValueError('invalid reference character: '+repr(ch))
+                offset += len(out)
+                dst.write((''.join(out)+'\n').encode())
     if not headers or in_header or offset is None or offset == 0:
         raise ValueError('malformed FASTA structure')
     return positions, dict(source_gz=str(source_gz), source_gz_sha256=digest(source_gz),
@@ -82,7 +85,7 @@ def main():
     # Coordinate-preserving check: .fai of the derived FASTA must be byte-identical
     # to the original .fai (94 substitutions change no lengths).
     with gzip.open(derived_gz, 'rb') as f, (OUT/'GRCh38_acgtn.fa').open('wb') as plain:
-        subprocess.run(['cp'], stdin=f, stdout=plain, check=True)
+        shutil.copyfileobj(f, plain, 8*1024*1024)  # plain streaming decompression
     subprocess.run([str(a.samtools), 'faidx', str(OUT/'GRCh38_acgtn.fa')], check=True)
     original_fai = Path(str(source_gz)+'.fai')
     if original_fai.is_file():
@@ -94,6 +97,7 @@ def main():
         summary=summary, positions=positions)
     (OUT/'transformation.json').write_text(json.dumps(record, indent=2)+'\n')
     (OUT/'GRCh38_acgtn.fa').unlink()  # uncompressed scratch copy; gz is authoritative
+    (OUT/'fai_sha256').write_text(digest(OUT/'GRCh38_acgtn.fa.fai')+'\n')
     print(json.dumps(dict(status=record['status'], converted=len(positions),
         derived_sha256=summary['derived_gz_sha256'])))
 

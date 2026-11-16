@@ -1,5 +1,51 @@
 # CRISPRapido project handoff
 
+## Session 2026-11-16 (afternoon): SBDS 287/466, waves 4 done, wave 5 queued
+
+**GRCh38 convert 2874811 failure root-caused and fixed:** the conversion
+itself completed (`GRCh38_acgtn.fa.gz`, 836 MB, written fully) but my
+decompression step called `cp` with stdin/stdout redirection, which `cp`
+rejects — the job died at 45:28 with a 0-byte `.fa` and no
+`transformation.json`. Corrected to pure-Python streaming
+(`shutil.copyfileobj`) and made the derived gzip byte-deterministic
+(`gzip.GzipFile(filename='', mtime=0)` — the filename field and mtime are
+the two nondeterminism sources; **5 conversion unit tests + end-to-end
+mini-verification with the pinned samtools now pass**, including the
+coordinate-preserving `.fai` equality check). Failed-run outputs preserved
+(`*.partial-2874811`), STOP latch preserved (`STOP-2874811-evidence`), dead
+chain 2874812–14 cancelled, and the reviewer's vacuous `.fai` check in
+promote-rebind-run.sh replaced with a digest comparison against the new
+conversion-written `fai_sha256` record. Corrected chain:
+**2875375 convert → 2875376 build → 2875377 recheck → 2875378 promote+rebind**.
+
+**Duplicate-submission incident (resolved):** piping the driver through
+`tail -1` hid that the first invocation had already submitted **2875379**;
+a second invocation submitted **2875384** on the same 48 assemblies. The
+duplicate was cancelled within seconds (tasks ≤6 s old; restartable worker
+cleans partial attempts); 2875379 retained. Lesson recorded: never pipe
+`run_sbds_incremental.py` output through filters, and check `squeue` before
+re-invoking.
+
+**Overnight results (all exit 0):** SBDS search wave 2874795 **48/48**;
+wave-4 chain 2874802/03/04 **48/48 each**; wave-3 independent validation
+2874815 **48/48 PASS** (`wave3-independent-validation-v1/`, pinned
+comparator). **Ledger v9: 336 READY_BOUND / 128 INDEX_EIO / 2 MISSING;
+SBDS 287/466 COMPLETE** — 54,931,603 hits, all CFD-defined, 12,336,740
+CB-scored, 42,594,863 explicit N/A.
+
+Active: **2875379** search wave (48 wave-4 assemblies, octopus08 %4,
+GRCh38 still excluded); **2875393 → 2875394 → 2875395** guarded wave-5
+chain (48 disjoint, **includes both never-built HG06807 sets** whose
+source FASTAs verified intact — 900 MB each, gzip-CRC clean);
+**2875375–78** GRCh38 fix chain; **2874508** Brunello 10k at ~20.6 h,
+~20.5 GiB peak tree RSS, still in buffered single-invocation search
+(expected ~23.1 h traversal + audit + annotation).
+
+Next: wave-6 for the final ~80 EIO + GRCh38 search once rebound; further
+search waves as promotions complete; Brunello measured report on 2874508
+completion; SBDS final deliverables at 466/466.
+
+
 ## Session 2026-11-16 (early): SBDS 239, wave-4 queued, GRCh38 root-caused
 
 **Correction to the first GRCh38 chain (2874807–810):** the hand-written

@@ -1,5 +1,6 @@
 import gzip
 import importlib.util
+import shutil
 import json
 from pathlib import Path
 import tempfile
@@ -16,6 +17,25 @@ class ConversionTests(unittest.TestCase):
         with gzip.open(src, 'wt') as f:
             f.write('>chr1 first\nACGTRYKM\nacgtn\n>chr2 second\nNNNNBDHV\n')
         return src
+
+    def test_derived_gzip_is_deterministic(self):
+        with tempfile.TemporaryDirectory() as d:
+            src = self.make_source(d)
+            first, second = Path(d)/'a.gz', Path(d)/'b.gz'
+            fix.convert(src, first, 'samtools')
+            fix.convert(src, second, 'samtools')
+            self.assertEqual(first.read_bytes(), second.read_bytes())
+
+    def test_streaming_decompression_roundtrip(self):
+        with tempfile.TemporaryDirectory() as d:
+            src = self.make_source(d); derived = Path(d)/'d.gz'
+            fix.convert(src, derived, 'samtools')
+            plain = Path(d)/'d.fa'
+            with gzip.open(derived, 'rb') as f, plain.open('wb') as out:
+                shutil.copyfileobj(f, out, 8*1024*1024)
+            with gzip.open(src, 'rt') as f:
+                expected = f.read().replace('R', 'N').replace('Y', 'N').replace('K', 'N').replace('M', 'N').replace('B', 'N').replace('D', 'N').replace('H', 'N').replace('V', 'N')
+            self.assertEqual(plain.read_text(), expected)
 
     def test_conversion_positions_and_lengths(self):
         with tempfile.TemporaryDirectory() as d:
