@@ -2,6 +2,22 @@
 
 ## Session 2026-11-16 (early): SBDS 239, wave-4 queued, GRCh38 root-caused
 
+**Correction to the first GRCh38 chain (2874807–810):** the hand-written
+slurm wrappers expanded `$D` to an empty string at generation time; job 2874807
+failed in 1 s on `sha256sum` and the dependent jobs could never run. The
+independent reviewer found the same blocker. All four wrappers were
+regenerated with runtime expansion, and the reviewer's additional gaps were
+fixed: superseded-binding target preflight (`test ! -e` prevents mv nesting),
+an ERR trap restoring the binding rename if fresh binding fails, and a derived
+`.fai` digest check before binding. Dead chain cancelled; corrected chain
+resubmitted: **2874811 convert → 2874812 build → 2874813 cross-node recheck →
+2874814 promote+fresh-bind** (frozen `00_manifest/grch38-fix-tooling-v1/`).
+Also submitted **2874815**: wave-3 independent reference-to-indexed-text
+validation for all 48 wave-3 replacements (`wave3-independent-validation-v1/`,
+same pinned comparator as wave-2's 48/48 PASS), closing the audit gap the
+SBDS scout flagged (wave-3 had only build verify + cross-node recheck +
+promotion evidence until now).
+
 Overnight the full wave-3 recovery chain completed (48/48 build, 48/48
 cross-node recheck, 48/48 promote/bind; arrays 2874447/48/49 all exit 0) and
 the wave-2-ready SBDS search wave (2874424) completed **48 of 49** tasks.
