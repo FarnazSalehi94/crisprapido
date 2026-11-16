@@ -39,6 +39,25 @@ def choose(rows, root, excluded, count):
     return selected[:count]
 
 
+def load_pins(template):
+    record = template/'tooling-sha256.json'
+    if record.is_file():
+        return {str(template/name): sha for name, sha in json.loads(record.read_text()).items()}
+    checksums = template/'tooling.sha256'
+    if not checksums.is_file():
+        raise ValueError('template has neither tooling-sha256.json nor tooling.sha256')
+    pins = {}
+    for line in checksums.read_text().splitlines():
+        sha, name = line.split(None, 1)
+        path = template/name.strip()
+        if not path.is_file():
+            raise ValueError('pinned template file missing: '+name)
+        if digest(path) != sha:
+            raise ValueError('template pin mismatch: '+name)
+        pins[str(path)] = sha
+    return pins
+
+
 def prepare(root, manifest_path, template, dest, count, exclude):
     if not 1 <= count <= 48:
         raise ValueError('controlled wave size must be 1..48')
@@ -49,7 +68,7 @@ def prepare(root, manifest_path, template, dest, count, exclude):
     for path in exclude:
         excluded.update(path.read_text().splitlines())
     names = choose(manifest['rows'], root, excluded, count)
-    pins = json.loads((template/'tooling-sha256.json').read_text())
+    pins = load_pins(template)
     for path, sha in pins.items():
         if Path(path).parent != template or digest(path) != sha:
             raise ValueError('template pin/path mismatch: ' + path)

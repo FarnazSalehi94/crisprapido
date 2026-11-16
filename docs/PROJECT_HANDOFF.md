@@ -1,5 +1,49 @@
 # CRISPRapido project handoff
 
+## Session 2026-11-16 (early): SBDS 239, wave-4 queued, GRCh38 root-caused
+
+Overnight the full wave-3 recovery chain completed (48/48 build, 48/48
+cross-node recheck, 48/48 promote/bind; arrays 2874447/48/49 all exit 0) and
+the wave-2-ready SBDS search wave (2874424) completed **48 of 49** tasks.
+**Ledger v8: 288 READY_BOUND / 176 INDEX_EIO / 2 INDEX_FAILED_MISSING_INDEX;
+SBDS 239/466 COMPLETE**, 45,739,759 audited hits, all CFD-defined,
+10,273,454 CRISPR-Bulge-scored, 35,466,305 explicit N/A.
+
+**GRCh38 root cause found (the one 2874424 failure):** its PanSN analysis
+reference contains **94 IUPAC ambiguity positions** (Y/R/W/M/K/S/B) and the
+native PAM search accepts only A/C/G/T/N, so every GRCh38 search fails fast
+with `reference must be nonempty A/C/G/T/N` (attempts 2873071/2873638/2874424,
+all preserved). CHM13 confirmed COMPLETE — lowercase soft-masking is accepted.
+Fix implemented: audited IUPAC→N conversion (`grch38_ambiguity_fix.py`, full
+per-position record, coordinate-preserving .fai check; 3 unit tests — one
+caught a real write bug), `rebuild_sbds.py` gained a `--fasta-gz` override
+recorded as `source_override` in completion manifests. Guarded chain submitted:
+**2874807 convert → 2874808 build → 2874809 cross-node recheck → 2874810
+promote+fresh-bind** (old binding renamed `GRCh38-ambiguity-superseded-v1`, never
+deleted; promote uses the original_existed=False path — no /export original is
+touched). Frozen tooling: `00_manifest/grch38-fix-tooling-v1/`.
+
+Continuations launched this session: **2874795** SBDS search wave for the 48
+newly promoted wave-3 assemblies (octopus08, %4; GRCh38 excluded until fixed
+via `exclude-grch38-pendingfix.txt` — remove that exclusion after rebind);
+**2874802 → 2874803 → 2874804** guarded recovery wave-4 for 48 disjoint
+assemblies of the remaining 176 EIO (frozen `recovery-wave4-tooling-v1`, afterok
+chain, %2 per stage). `prepare_recovery_wave.py` now accepts both wave-2 JSON
+and wave-3 sha256sum tooling pin formats (tested).
+
+**Brunello 10k benchmark (2874508) RUNNING HEALTHY at ~7 h**: steady ~16.5 GiB
+sampled tree RSS (48 GiB stop), 5 processes, mid-search (single-invocation PAF
+writes at traversal end; 1k-derived expectation ~23.1 h traversal + ~1.5 h
+audit + ~11 h annotation ≈ 35.6 h). No guard trips, no stderr output.
+Three read-only independent reviews in flight (GRCh38 fix soundness, SBDS/wave
+progress audit, full-scale Brunello estimate framework).
+
+Next: finalize the 10k measurement report when 2874508 completes (runtime,
+guides, search/audit/score walls, hits, CB availability, peak RSS, compressed
+sizes, audit PASS) and derive full-library estimates; after wave-4 completes,
+launch wave-5 (128 EIO remain) and further search waves; rerun GRCh38 search
+after rebind; SBDS final deliverables once 466/466.
+
 ## Session 2026-11-15 (later): wave-2 validated 48/48, SBDS at 199, Brunello 10k launched
 
 Milestones since commit `7b93c4f`:

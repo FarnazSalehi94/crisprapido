@@ -50,9 +50,13 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--assembly', required=True)
     p.add_argument('--builder', default=BUILDER)
+    p.add_argument('--fasta-gz', default=None,
+                   help='verified derived source override (e.g. audited ambiguity fix); recorded in the manifest')
     a = p.parse_args()
-    fasta_gz = dict(l.split('\t') for l in
-        Path('/moosefs/salehi/HPRCv2_CRISPRapido/analysis_genomes.tsv').read_text().splitlines() if l.strip())[a.assembly]
+    fasta_gz = Path(a.fasta_gz) if a.fasta_gz else None
+    if not fasta_gz:
+        fasta_gz = dict(l.split('\t') for l in
+            Path('/moosefs/salehi/HPRCv2_CRISPRapido/analysis_genomes.tsv').read_text().splitlines() if l.strip())[a.assembly]
     if '/' in a.assembly or a.assembly in ('', '.', '..'):
         raise SystemExit('invalid assembly name')
     if sha256(a.builder) != '5987ad90e0c4a061cbf4aac7d6b087a284ccf7fe0f9e1835219c567c5e8d1ad2':
@@ -118,6 +122,7 @@ def main():
         build_host=socket.gethostname(),
         source_fasta=fasta_gz, source_compressed_sha256=source_gz_sha,
         source_plain_sha256=source_plain_sha, builder_sha256=sha256(a.builder),
+        source_override=bool(a.fasta_gz),
         components_sha256=mfs_hashes, timings=timings, build_time=build_time,
         total_component_bytes=sum((dest/(a.assembly+'.'+s)).stat().st_size for s in SUFFIXES),
         integrity='all components verified on scratch, after MooseFS write-back, and pending re-read from a different worker',
