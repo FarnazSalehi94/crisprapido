@@ -1,5 +1,35 @@
 # CRISPRapido project handoff
 
+## Session 2026-11-16 (night, addendum): all reviewer findings fixed pre-launch
+
+Independent review of the chunked scorer (4 findings: 3×P1, 1×P2) — all
+fixed, unit-tested (8 chunked + 10 worker tests green), and the **still-
+PENDING** 2875915's frozen v4 tooling was refreshed before start (state
+verified PENDING before and after; a mid-update start would fail closed on
+the tooling checksum):
+1. **Chunk reuse now binds a config identity** (`chunk-config.json` per
+   chunk: hash of inner-scorer digest, scoring mode, reference/guides/model
+   inputs, batch size, chunk size, flags). Stale chunks with any changed
+   setting are rescored, never reused. Regression test covers config drift.
+2. **Merge-crash recovery**: stale wrapper-owned `*.incomplete` merge
+   artifacts are removed on resume; a crash mid-merge no longer wedges the
+   out-dir.
+3. **Worker override pinned**: `BRUNELLO_SCORING_SCRIPT_SHA256` must match
+   the override's digest or the run refuses to start — the comment's
+   "same pinned inner scorer" constraint is now enforced, not assumed.
+4. **Annotations publish is conditional** (matches inner scorer contract).
+Reviewer's memory note accepted: 2M-row chunks project ~6.4 GiB (linear
+scaling), still under the 12 GiB stop.
+
+Full-library readiness review (scout) confirms: not ready for cohort launch
+(as planned). Arithmetic verified: search 163.8 h, audit 11.6 h, chunked
+scoring 78.3 h ≈ **~254 h/assembly; ~118,000 CPU-h cohort; ~19.1–19.4 TB**
+at measured 5,758 rows/guide (207.3B rows). Storage remainder vs current
+free is tight (~15 TB after cohort data, before spools/staging) — a formal
+reservation remains a launch prerequisite. The full-library worker still
+needs guide-chunk search coverage/order/merge gates beyond the 10k worker.
+
+
 ## Session 2026-11-16 (night): chunked 10k scoring restart; waves 5–6 queued
 
 **Brunello 10k scoring restart switched to the validated chunked scorer.**

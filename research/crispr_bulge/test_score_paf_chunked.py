@@ -100,6 +100,33 @@ class ChunkedScorerTests(unittest.TestCase):
         self.assertEqual(calls, [2])
         self.assertTrue((out/'output.paf').is_file())
 
+    def test_resume_rejects_config_drift(self):
+        out = self.root/'out'
+        out.mkdir()
+        (out/'status').write_text('INCOMPLETE chunked\n')
+        (out/'chunks').mkdir()
+        for i in range(3):
+            chunk_out = out/('chunks/%05d' % i)
+            chunk_out.mkdir()
+            (chunk_out/'status').write_text('COMPLETE scoring only\n')
+            (chunk_out/'metadata.json').write_text(json.dumps(dict(rows=10)))
+            (chunk_out/'chunk-config.json').write_text(json.dumps(dict(config_id='stale')))
+            (chunk_out/'output.paf').write_text('stale\n')
+        calls = []
+        real = w.score_chunk
+        def counting(a, inner, chunk, out_dir):
+            calls.append(chunk['index'])
+            return real(a, inner, chunk, out_dir)
+        with unittest.mock.patch.object(w, 'score_chunk', counting):
+            with unittest.mock.patch.object(sys, 'argv', ['x']+self.args(out, 10)):
+                w.main()
+        self.assertEqual(calls, [0, 1, 2])  # stale chunks never reused
+
+    def test_merge_crash_recovery_removes_stale_artifacts(self):
+        out = self.root/'out'
+        self.run_main(out, 10)
+        self.assertEqual((out/'output.paf.incomplete').exists(), False)
+
     def test_verify_merged_rejects_divergence(self):
         merged = self.root/'m.paf'
         merged.write_text(''.join(r + chr(9)+'X'+chr(10) for r in self.rows[:24]))

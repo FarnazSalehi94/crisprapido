@@ -82,6 +82,19 @@ def chunk_out_dir(root, index):
     return root/('chunks/%05d' % index)
 
 
+def config_identity(a):
+    # Everything that can change chunk scores; reuse requires an exact match.
+    identity = dict(inner_script_sha256=digest(a.inner_script), scoring=a.scoring,
+        reference=str(a.reference), guides=str(a.guides) if a.guides else None,
+        guide=a.guide, model_root=str(a.model_root), model_python=str(a.model_python),
+        reference_index=str(a.reference_index), reference_index_sha256=a.reference_index_sha256,
+        expected_reference_sha256=a.expected_reference_sha256,
+        batch_size=a.batch_size, worker_timeout=a.worker_timeout,
+        preserve_cfd=bool(a.preserve_cfd), annotations=bool(a.annotations),
+        chunk_rows=a.chunk_rows)
+    return hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
+
+
 def score_chunk(args, inner, chunk, out_dir):
     # The inner scorer creates out_dir itself (exclusive); the wrapper keeps
     # its invocation log beside it.
@@ -169,12 +182,22 @@ def verify_merged(input_paf, merged, expected_rows):
     return n
 
 
-def publish(out_dir, metadata):
-    for name in ('metadata.json', 'output.paf', 'annotations.tsv'):
+def publish(out_dir, metadata, annotations):
+    names = ['metadata.json', 'output.paf'] + (['annotations.tsv'] if annotations else [])
+    for name in names:
         target = out_dir/name
         temporary = out_dir/(name+'.tmp-'+uuid.uuid4().hex)
         (out_dir/(name+'.incomplete')).replace(temporary)
         os.replace(temporary, target)
+
+
+def clean_stale_merge_artifacts(out_dir, annotations):
+    # Wrapper-owned derived artifacts from a crashed merge; nothing was
+    # published, so removal is the only correct resume state.
+    names = ['metadata.json.incomplete', 'output.paf.incomplete'] + \
+            (['annotations.tsv.incomplete'] if annotations else [])
+    for name in names:
+        (out_dir/name).unlink(missing_ok=True)
 
 
 def main():
@@ -208,6 +231,7 @@ def main():
                                   and a.model_root and a.model_python):
         p.error('CB modes require reference, guide(s), model root and model Python')
     started = time.monotonic()
+    config_id = config_identity(a)
     resume = False
     if a.out_dir.exists():
         status_path = a.out_dir/'status'
@@ -216,6 +240,7 @@ def main():
         if not resumable:
             p.error('out-dir exists and is not a resumable INCOMPLETE chunked run')
         resume = True
+        clean_stale_merge_artifacts(a.out_dir, a.annotations)
     else:
         a.out_dir.mkdir(exist_ok=False)
     status_path = a.out_dir/'status'
@@ -233,10 +258,13 @@ def main():
     for chunk in chunks:
         out = chunk_out_dir(a.out_dir, chunk['index'])
         record = None
-        if (out/'status').exists() and (out/'metadata.json').is_file():
+        if (out/'status').exists() and (out/'chunk-config.json').is_file():
             try:
                 prior = json.loads((out/'metadata.json').read_text())
-                if prior.get('rows') == chunk['rows'] and digest(out/'output.paf') == prior['output_sha256']:
+                bound = json.loads((out/'chunk-config.json').read_text())
+                if (bound.get('config_id') == config_id
+                        and prior.get('rows') == chunk['rows']
+                        and digest(out/'output.paf') == prior['output_sha256']):
                     record = dict(reused=True, elapsed_seconds=None, child_peak_rss_kib=None,
                                   output_sha256=prior['output_sha256'],
                                   annotation_rows=count_lines(out/'annotations.tsv')-1 if a.annotations else None)
@@ -245,8 +273,13 @@ def main():
         if record is None:
             if out.exists():
                 shutil.rmtree(out)  # only this chunk's uncommitted scratch
+        if record is None:
+            if out.exists():
+                shutil.rmtree(out)  # only this chunk's uncommitted scratch
             record = score_chunk(a, a.inner_script, chunk, out)
             record['reused'] = False
+            # Pin the exact configuration that produced this chunk's scores.
+            (out/'chunk-config.json').write_text(json.dumps(dict(config_id=config_id)))
         record.update(index=chunk['index'], rows=chunk['rows'],
                       input_sha256=chunk['sha256'])
         metadata['chunks'].append(record)
@@ -263,12 +296,16 @@ def main():
             raise ValueError('merged annotation row mismatch')
     metadata['elapsed_seconds'] = round(time.monotonic()-started, 1)
     (a.out_dir/'metadata.json.incomplete').write_text(json.dumps(metadata, indent=2, sort_keys=True)+'\n')
-    publish(a.out_dir, metadata)
+    publish(a.out_dir, metadata, a.annotations)
     status_path.write_text('COMPLETE chunked; verified merge identical to input rows\n')
     # Transient chunk working data: derived deterministically from the input.
     # Removed only after the verified merge is published and checkpointed.
     for chunk in chunks:
         Path(chunk['path']).unlink(missing_ok=True)
+        # Preserve the small chunk-config.json provenance pins.
+        keep = chunk_out_dir(a.out_dir, chunk['index'])/'chunk-config.json'
+        if keep.is_file():
+            shutil.copyfile(keep, a.out_dir/('chunk-config-%05d.json' % chunk['index']))
         shutil.rmtree(chunk_out_dir(a.out_dir, chunk['index']))
     return 0
 

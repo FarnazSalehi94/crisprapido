@@ -209,10 +209,14 @@ def work(plan, signature, job, scratch_base=None):
             # pinned inner implementation (chunked wrapper); the actual command
             # is recorded in metrics.json for provenance.
             override = os.environ.get('BRUNELLO_SCORING_SCRIPT')
+            override_sha = os.environ.get('BRUNELLO_SCORING_SCRIPT_SHA256')
             if override:
                 require(Path(override).is_file() and not Path(override).is_symlink(),
                         'scoring override missing: '+override)
-                cmd = replace(cmd, **{'--scoring-script': override})
+                # The override must be the reviewed chunked wrapper exactly;
+                # a digest mismatch refuses to run rather than changing science.
+                require(override_sha and digest(override) == override_sha,
+                        'scoring override digest mismatch: '+override)
             scored = command_run(cmd, directory, 'eligible.both.paf')
             require(digest(scored) == digest(directory/'neural/scoring/output.paf'), 'scoring stdout/bundle mismatch')
             counts = score_counts(directory/'neural/scoring/annotations.tsv', audit_data['rows'])
