@@ -1,5 +1,85 @@
 # CRISPRapido project handoff
 
+## 2026-11-17 outcome reconciliation (supersedes earlier readiness claims)
+
+Main model verified: `openai-codex/gpt-6-astra`; starting commit `c00c109`.
+Actual accounting, not queue absence:
+- Search 2875379: 48/48 COMPLETED, exit 0. Duplicate 2875384 was cancelled,
+  not successful work.
+- Wave 5 (2875393–95) and wave 6 (2875917–19): each build/recheck/promote
+  stage 48/48 COMPLETED. All 96 promoted indexes and bindings are present.
+- Wave-4 independent validation 2875903: 48/48 COMPLETED and 48 PASS JSONs.
+- GRCh38 conversion 2875898 COMPLETED. Build 2875899 FAILED after 14:38:
+  `source_fasta` was a Path and `json.dumps(manifest)` raised TypeError.
+  Index construction and staged write-back had finished; scratch was retained.
+- Brunello 2875915 FAILED after 1:41, before scoring: missing override digest
+  in the submitted script. **Slurm snapshots scripts on submission**; editing
+  the script file while pending did NOT update that submitted script. Also,
+  the override code never assigned the replacement command. Prior claims
+  that all reviewer issues were resolved and deployment was safe were wrong.
+
+Snapshot `00_manifest/outcome-snapshot-20261117T151705Z.json`:
+**335 unique COMPLETE / 466**, 131 remaining: 96 newly recovered + GRCh38 +
+**34 EIO** (not 32). 432 READY_BOUND includes the then-old GRCh38 binding.
+Counts: 64,118,953 hits/CFD-defined; 14,398,176 CB-scored;
+49,720,777 explicit CB N/A. This snapshot checks SUCCESS-selected summaries,
+not every output hash. Full output rehash job **2876340** writes
+`00_manifest/outcome-review-20261117/verified-completions.json` on success.
+That directory also preserves accounting and the two failure logs.
+Current free space at snapshot: 27.78 TB decimal, not the older 34.7 TB.
+
+### Work submitted and verified this session
+- **2876318**: search/scoring for exactly 96 newly recovered assemblies,
+  concurrency 4, octopus08; completed assemblies and GRCh38 excluded.
+  Frozen plan/list: `sbds-plan-recovery56-20261117.json` and
+  `sbds-assemblies-recovery56-20261117.txt` under `00_manifest/`.
+- **2876323 → 2876324 → 2876325**: final 34 EIO rebuild/recheck/promote,
+  concurrency 2, frozen `recovery-wave7-tooling-v1/`. No overlap with 96 searches.
+- **2876334 / 2876335**: wave-5 / wave-6 independent indexed-text validation,
+  48 tasks each, concurrency 2; separate from prior cross-node checksum checks.
+- GRCh38 **2876328 → 2876329 → 2876330 all COMPLETED exit 0**.
+  New `grch38-manifest-recovery-v1/` tooling rehashes the derived gzip,
+  decompressed source, original scratch reference, and every scratch/staged
+  component before recovering the manifest; no conversion or index rebuild
+  repeated. Cross-node recheck on octopus07 reported TRUSTED_CROSS_NODE.
+  Promotion/rebind completed; old references and failure evidence retained.
+  Blocked jobs 2875900/01 cancelled. Rollback now renames partial bindings
+  aside before restoring the old binding, rather than nesting directories.
+  **2876345** submitted for GRCh38 search only, excluding active 2876318 list.
+- Brunello **2876332** RUNNING: scoring-only retry using the **unchanged v3
+  worker and pinned monolithic scorer**, 128G request / 110GiB sampled guard,
+  octopus06. Frozen `timing-10000-execution-v5/`; plan SHA remains
+  `d5226c6c8002646581b135ebc4c1d13d9f5b9567dd26df6b5b5c4a57ca23fd9b`.
+  Search/audit checkpoints must exist and pass their hash validation; only
+  `score-stage` exists in the new attempt (no repeated search/audit).
+  This retains the scorer's global checks, but may still exceed its memory
+  envelope. Do not cancel healthy work. No final scoring runtime, coverage,
+  checksum PASS, or peak-memory result is available yet.
+
+### Corrections and remaining gates
+The chunked scorer is a **prototype**, not production-ready: config identity
+uses paths rather than content hashes for several scientific inputs; global
+cross-chunk duplicate validation, locking, failed-chunk invocation-log reuse,
+annotation integrity, and crash-safe multi-file publication remain incomplete.
+The repository timing worker now rejects environment scoring overrides until
+an explicit validated checkpoint migration exists. The running v5 uses the
+unchanged original worker and no override. The 500k-row probe is not a
+measurement of 2M-row chunks, nor evidence of full-workflow CPU cost.
+GRCh38's historical transformation JSON also overclaims “all hits preserved”
+and its `bases` field counts only the final contig. Coordinate-preserving
+IUPAC→N is a derived-reference policy, not proof of equivalence for hits
+spanning ambiguous positions. Original evidence has not been rewritten.
+
+Tests: SBDS suite **36 PASS**, timing-worker suite **11 PASS**. New recovery
+verification test rejects changed source, scratch reference, or index bytes.
+Next: monitor active searches; after wave-7 verified promotion, submit only
+its 34 still-incomplete assemblies with active-list exclusions. Generate six
+SBDS figures only after 466 COMPLETE. Full Brunello single-assembly search
+still needs validated guide coverage/order/merge and restart safeguards;
+IMPG allele-frequency/Figure 1C information must remain preserved. No
+77,441-guide or 464-assembly cohort run launched.
+
+
 ## Session 2026-11-16 (night, addendum): all reviewer findings fixed pre-launch
 
 Independent review of the chunked scorer (4 findings: 3×P1, 1×P2) — all

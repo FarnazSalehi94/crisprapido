@@ -120,7 +120,7 @@ def main():
     manifest = dict(format='sbds-rebuilt-index-completion-v1', assembly=a.assembly,
         status='WRITTEN_AWAITING_CROSS_NODE_RECHECK', destination=str(dest),
         build_host=socket.gethostname(),
-        source_fasta=fasta_gz, source_compressed_sha256=source_gz_sha,
+        source_fasta=str(fasta_gz), source_compressed_sha256=source_gz_sha,
         source_plain_sha256=source_plain_sha, builder_sha256=sha256(a.builder),
         source_override=bool(a.fasta_gz),
         components_sha256=mfs_hashes, timings=timings, build_time=build_time,

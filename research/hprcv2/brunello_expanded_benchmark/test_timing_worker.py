@@ -14,6 +14,13 @@ w = importlib.util.module_from_spec(spec); spec.loader.exec_module(w)
 
 
 class CheckpointTests(unittest.TestCase):
+    def test_unvalidated_scoring_override_rejected(self):
+        with patch.dict(os.environ, {'BRUNELLO_SCORING_SCRIPT': '/some/wrapper'}):
+            with self.assertRaisesRegex(ValueError, 'override disabled'):
+                w.reject_scoring_override()
+        with patch.dict(os.environ, {}, clear=True):
+            w.reject_scoring_override()
+
     def test_reuse_tampering_and_identity(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d); output = root/'stage'; output.mkdir(); (output/'paf').write_text('hit\n')

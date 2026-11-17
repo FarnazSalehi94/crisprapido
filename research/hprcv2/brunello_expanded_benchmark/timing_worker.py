@@ -204,19 +204,7 @@ def work(plan, signature, job, scratch_base=None):
         def score():
             directory = attempt/'score-stage'
             cmd = replace(c['score'], **{'--score-paf':paf, '--scoring-output-dir':directory/'neural'})
-            # Execution-layer override only: same plan identity, so search/audit
-            # checkpoints stay valid. The replacement scorer must wrap the same
-            # pinned inner implementation (chunked wrapper); the actual command
-            # is recorded in metrics.json for provenance.
-            override = os.environ.get('BRUNELLO_SCORING_SCRIPT')
-            override_sha = os.environ.get('BRUNELLO_SCORING_SCRIPT_SHA256')
-            if override:
-                require(Path(override).is_file() and not Path(override).is_symlink(),
-                        'scoring override missing: '+override)
-                # The override must be the reviewed chunked wrapper exactly;
-                # a digest mismatch refuses to run rather than changing science.
-                require(override_sha and digest(override) == override_sha,
-                        'scoring override digest mismatch: '+override)
+            reject_scoring_override()
             scored = command_run(cmd, directory, 'eligible.both.paf')
             require(digest(scored) == digest(directory/'neural/scoring/output.paf'), 'scoring stdout/bundle mismatch')
             counts = score_counts(directory/'neural/scoring/annotations.tsv', audit_data['rows'])
@@ -254,6 +242,13 @@ def finalize(out, signature, job, supervisor):
     data.update(status='COMPLETE', supervisor=str(supervisor), supervisor_sha256=digest(supervisor))
     data['files'][str(supervisor)] = dict(bytes=supervisor.stat().st_size, sha256=digest(supervisor))
     publish(success, data)
+
+
+def reject_scoring_override():
+    # A different scoring implementation needs a separately validated stage
+    # identity/migration, not an environment override of a pinned plan.
+    require(not os.environ.get('BRUNELLO_SCORING_SCRIPT'),
+            'scoring override disabled pending validated checkpoint migration')
 
 
 def main():
