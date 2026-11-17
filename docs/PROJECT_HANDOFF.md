@@ -23,9 +23,12 @@ Snapshot `00_manifest/outcome-snapshot-20261117T151705Z.json`:
 **34 EIO** (not 32). 432 READY_BOUND includes the then-old GRCh38 binding.
 Counts: 64,118,953 hits/CFD-defined; 14,398,176 CB-scored;
 49,720,777 explicit CB N/A. This snapshot checks SUCCESS-selected summaries,
-not every output hash. Full output rehash job **2876340** writes
+not every output hash. Full output rehash job **2876348** writes
 `00_manifest/outcome-review-20261117/verified-completions.json` on success.
 That directory also preserves accounting and the two failure logs.
+Initial rehash submission 2876340 failed immediately because Slurm's
+`--wrap` used /bin/sh, which rejects `set -o pipefail`; retry 2876348
+explicitly invokes bash. No output was produced by the failed attempt.
 Current free space at snapshot: 27.78 TB decimal, not the older 34.7 TB.
 
 ### Work submitted and verified this session
