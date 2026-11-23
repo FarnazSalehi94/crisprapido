@@ -34,7 +34,7 @@ class ChunkedScorerTests(unittest.TestCase):
         self.inner = self.root/'fake_scorer.py'
         self.inner.write_text(FAKE_SCORER)
         self.input = self.root/'in.paf'
-        self.rows = ['row%d\tfield\tvalue' % i for i in range(25)]
+        self.rows = ['row%d\t20\t0\t20\t+\tctg\t1000\t%d\t%d\t20\t20\t255' % (i, i, i+20) for i in range(25)]
         self.input.write_text(chr(10).join(self.rows)+chr(10))
         self.args = lambda out, chunk_rows: [
             '--input', str(self.input), '--out-dir', str(out), '--scoring', 'both',
@@ -99,6 +99,66 @@ class ChunkedScorerTests(unittest.TestCase):
                 w.main()
         self.assertEqual(calls, [2])
         self.assertTrue((out/'output.paf').is_file())
+
+    def interrupted(self, out):
+        real = w.score_chunk
+        def crash(a, inner, chunk, directory):
+            if chunk['index'] == 2:
+                raise RuntimeError('injected interruption')
+            return real(a, inner, chunk, directory)
+        with unittest.mock.patch.object(w, 'score_chunk', crash):
+            with self.assertRaises(RuntimeError):
+                self.run_main(out, 10)
+
+    def test_duplicate_anchor_across_chunks_rejected(self):
+        self.input.write_text(self.input.read_text()+self.rows[0]+'\n')
+        with self.assertRaisesRegex(ValueError, 'duplicate input PAM anchor'):
+            self.run_main(self.root/'out', 10)
+
+    def test_changed_input_never_reused(self):
+        out = self.root/'out'
+        self.interrupted(out)
+        self.input.write_text(self.input.read_text().replace('row0\t', 'NEW0\t'))
+        self.run_main(out, 10)
+        meta = json.loads((out/'metadata.json').read_text())
+        self.assertFalse(meta['chunks'][0]['reused'])
+        self.assertTrue(meta['chunks'][1]['reused'])
+        self.assertTrue((out/'output.paf').read_text().startswith('NEW0\t'))
+
+    def test_annotation_corruption_never_reused(self):
+        out = self.root/'out'
+        self.interrupted(out)
+        ann = out/'chunks/00000/annotations.tsv'
+        ann.write_text(ann.read_text().replace('local', 'WRONG'))
+        self.run_main(out, 10)
+        self.assertFalse(json.loads((out/'metadata.json').read_text())['chunks'][0]['reused'])
+        self.assertTrue(list((out/'chunks').glob('00000.failed-*')))
+
+    def test_incomplete_status_never_reused(self):
+        out = self.root/'out'
+        self.interrupted(out)
+        (out/'chunks/00000/status').write_text('INCOMPLETE\n')
+        self.run_main(out, 10)
+        self.assertFalse(json.loads((out/'metadata.json').read_text())['chunks'][0]['reused'])
+
+    def test_partial_attempt_log_does_not_block_restart(self):
+        out = self.root/'out'
+        self.interrupted(out)
+        (out/'chunks/invocation-00002.stdout').write_text('old failed invocation\n')
+        self.run_main(out, 10)
+        self.assertTrue((out/'output.paf').is_file())
+
+    def test_actual_merge_interruption_recovery(self):
+        out = self.root/'out'
+        real = w.merge
+        def crash(*args):
+            real(*args)
+            raise RuntimeError('crashed after merge')
+        with unittest.mock.patch.object(w, 'merge', crash):
+            with self.assertRaises(RuntimeError):
+                self.run_main(out, 10)
+        self.run_main(out, 10)
+        self.assertTrue(all(c['reused'] for c in json.loads((out/'metadata.json').read_text())['chunks']))
 
     def test_resume_rejects_config_drift(self):
         out = self.root/'out'

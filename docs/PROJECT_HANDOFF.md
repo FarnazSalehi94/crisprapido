@@ -1,5 +1,118 @@
 # CRISPRapido project handoff
 
+## 2026-11-23 Brunello 10k scoring-only completion submitted (NOT complete)
+
+Writable checkout (original read-only checkout untouched):
+`/moosefs/salehi/HPRCv2_CRISPRapido/brunello-writable-checkout`, branch
+`brunello/bounded-10k-scoring-20261123`. Saved patches applied after preserving
+the pre-existing 803-line handoff delta; that prior delta is not staged as new
+Brunello work. Source/test/docs changes are confined to this task.
+
+Full continuation: [BRUNELLO_10K_SCORING.md](BRUNELLO_10K_SCORING.md).
+New evidence root:
+`/moosefs/salehi/HPRCv2_CRISPRapido/brunello_10k_scoring_20261123_v1/`.
+**2880112 scoring-only**, one CPU / concurrency 1 / 8G / 4-GiB sampled-tree
+RSS guard / 50,000-row chunks / 36-hour cap. **2880113 finalizer** depends on
+successful completion of 2880112. Both submitted; no full-10k success claimed.
+Scope: existing 10,000-guide HG00735_pat pilot, 57,578,781 rows, m4/b1/z1/GG;
+reuse original search/audit with fresh hashes, preserve all prior attempts.
+Frozen plan SHA256 `d18707776e531285459c572a8a66a0a12c1938e153335c2c85ef47219cec1e6d`.
+
+38 relevant tests PASS. Reconfirmed original 101k comparison and three input
+checkpoint hashes: maximum CB delta 1.51e-9 <= predeclared 1e-6, exact coverage,
+order, CFD and availability. Validated wrapper byte-identical to prior pilot;
+full global disk-backed duplicate check precedes scoring, reuse binds input
+SHA256 plus output/annotation hashes. Progress/memory/storage/failures recorded
+under the new root. Independent final full-stream validation checks all source
+rows, CFD, non-CB annotations and availability against the preserved complete
+historical conversion spool (archived SHA256 required; predictions never reused).
+New-stage SUCCESS requires validation + supervisor + successful Slurm scoring
+job + afterok finalizer. Do not confuse wrapper COMPLETE or CANDIDATE with it.
+
+No SBDS, new search, full library or full cohort launch. 2876332 remains an
+RSS-guard failure, not confirmed kernel OOM. Original archived resume report
+and signed evidence are unchanged; see its CONTINUATION.md for this stage.
+Once final SUCCESS exists, reconcile final accounting on login and commit/push
+actual result documentation; do not predeclare completion for a long run.
+
+## 2026-11-23 Brunello reconciliation / bounded scoring pilot COMPLETE
+
+User directs Brunello across HPRC; SBDS is complete enough and excluded.
+No full-cohort launch is authorized. Evidence and fixed tooling:
+`/moosefs/salehi/HPRCv2_CRISPRapido/brunello_resume_20261123_v1/`.
+**Repository /export filesystem is read-only (EROFS)**. This is a reconciled
+handoff COPY; original `docs/PROJECT_HANDOFF.md` could not be updated. Apply
+`scoring-fix.patch` and the handoff patch only after home is writable again.
+No remount, permission changes, relocation changes, or git commits were made.
+
+Frozen full guide file: `guides/brunello_77441.fa` under the project root;
+77,441 FASTA records / unique IDs / unique 20-nt ACGT sequences. Expected SHA256
+`a4bac2dc4c8f5ad0c37713751835b416d1669f899de1cd05ca1a0e828be48971`.
+The reusable pilot uses the first 10,000 records, HG00735_pat,
+m4/b1/z1/f0.75/GG; it is NOT a 77,441-guide run.
+Brunello `00_manifest/assemblies.tsv` is **464 HPRCv2 haplotype assemblies**,
+not the SBDS 466 including two references. All 464 source FASTA paths exist.
+Original manifest index-status fields are historical and must not be used as
+current readiness evidence. `binding-paths.json` records all 464 committed
+binding pointers and 5,568 current component paths/resolutions/sizes: 457
+resolve under project `indices/`, seven under relocated index-recovery home.
+Historical `binding.json:trusted=false` on imported inputs is not a current
+readiness determination; never silently promote that flag. Cohort-wide path
+checks are not a fresh multi-terabyte content hash or native-load validation.
+
+2876332: Slurm FAILED 1:0, 06:35:49, octopus06, 128G; no MaxRSS supplied.
+Exact recorded cause is sampled process-tree RSS guard, not confirmed kernel
+OOM: 174,890,644 KiB summed RSS versus 115,343,360 KiB limit; child -9.
+This can double-count shared pages; no unique-memory peak or cause of the
+abrupt increase was established. Preserve all failed outputs and original
+failure/evidence inventories. New small evidence copies/hashes and large-file
+size/mtime inventory live here; large partial spools stay untouched in place.
+No partial historical predictions are treated as completed scores.
+
+Reconciliation job **2880107 COMPLETED 0:0 (0:35)** verified every frozen
+plan pin and search/audit output size/hash; `reconciliation.json` is PASS.
+The client-side compute mount reports read-write, but actual login edits fail
+EROFS; the repository has not been altered by this task.
+
+2874508 search and 57,578,781-row audit remain the reusable stages. Existing
+search/audit signature must remain `d5226c6c8002646581b135ebc4c1d13d9f5b9567dd26df6b5b5c4a57ca23fd9b`.
+No score checkpoint/SUCCESS exists. Earlier reconciliation checks 2880099 and
+2880100 failed closed on incorrect assumptions (466 versus actual 464, and
+historical trusted flag). 2880102 passed data checks but compute-local sacct
+was unavailable; accounting is now captured on login. 2880106 reverified pins
+and checkpoints but stopped on an existing evidence-copy directory; this
+rerun/idempotence bug was fixed. All logs retained, original outputs untouched.
+
+Fixed bounded wrapper is separate frozen tooling, not an environment override
+of the pinned old timing plan. Default 50,000 rows, hard maximum 100,000;
+content-bound chunk reuse, annotation hashes/completion checks, unique attempt
+logs, preserved failed chunks, output-directory lock, pre/post content checks,
+and disk-backed global duplicate-anchor rejection. The inner scorer, models,
+CFD, representative choices, and eligibility formulas are unchanged. Fourteen
+unit tests pass, including changed input, annotation corruption, incomplete
+status, invocation collision, cross-chunk duplicates, and actual merge crash.
+
+Pilot job 2880101 started after successful reconciliation. It reads
+original search output only; selects first 1,025 rows + every 576th source row
++ first strand/edit stratum (100k–110k rows total), preserving source order.
+Compares monolithic versus 50k-row scoring, deliberately interrupts after one
+verified chunk, then verifies that resume reuses it. All PAF/annotation fields
+must match except numeric CB within pre-existing 1e-6 absolute tolerance.
+One CPU, 8G request, 4-GiB sampled-tree guard with per-PID RSS evidence, 1 hour.
+**Pilot 2880101 COMPLETED 0:0 (6:20)**, validation/supervisor PASS:
+101,000 rows / 9,995 guides, all 20 observed strand/edit strata, all scored;
+1,660 ungapped, 77,832 target-gap/RNA-bulge, 21,508 guide-gap/DNA-bulge;
+35,416 CFD-zero rows retained. No N/A examples occurred in this real-data
+sample. Three chunks 50,000/50,000/1,000; interrupted after the first, which
+was demonstrably reused on resume. All non-CB PAF/annotation fields match;
+max numeric CB delta 1.51e-9 versus predeclared 1e-6 tolerance. Sampled summed
+tree peak 890,124 KiB (0.848888 GiB), not a unique physical-memory measurement.
+No full 10k scoring retry/full-cohort or SBDS launch. See REPORT.md and
+pilot-validation.json. This is not exhaustive per-guide/cohort validation.
+Full 10k scoring restart still requires a separate validated stage identity /
+migration record; original search/audit need not be rerun. Do not launch full
+library/cohort or reuse old unvalidated override paths.
+
 ## 2026-11-17 outcome reconciliation (supersedes earlier readiness claims)
 
 Main model verified: `openai-codex/gpt-6-astra`; starting commit `c00c109`.

@@ -13,18 +13,19 @@ set, which scales with rows; chunking bounds it to --chunk-rows. Restart-safe:
 verified completed chunks are skipped; chunk outputs are removed only after
 the fully verified merge is published.
 
-Global integrity: the inner scorer's duplicate-anchor check is chunk-local.
-The merge instead enforces a strictly stronger end-to-end property: every
-input row appears exactly once, in order, as the prefix of its annotated
-output row (streaming, O(1) memory).
+Global integrity: disk-backed SQLite checks duplicate anchors across all chunks
+with a bounded page cache. Merge independently verifies row-preserving output.
+Chunk reuse binds input content, completion, configuration and both output hashes.
 """
 import argparse
+import fcntl
 import hashlib
 import json
 import os
 from pathlib import Path
 import resource
 import shutil
+import sqlite3
 import subprocess
 import sys
 import time
@@ -47,6 +48,33 @@ def count_lines(path):
         for _ in f:
             n += 1
     return n
+
+
+def verify_unique_anchors(input_paf, work):
+    # Match adapter.convert's (guide, contig, strand, PAM-proximal coordinate).
+    # A crash leaves only a disposable derived database, never a valid checkpoint.
+    database = work/'anchor-check.sqlite.incomplete'
+    database.unlink(missing_ok=True)
+    db = sqlite3.connect(database)
+    try:
+        db.execute('PRAGMA cache_size=-8192')
+        db.execute('PRAGMA temp_store=FILE')
+        db.execute('PRAGMA journal_mode=OFF')
+        db.execute('CREATE TABLE anchors (guide TEXT, contig TEXT, strand TEXT, anchor INTEGER, PRIMARY KEY (guide,contig,strand,anchor)) WITHOUT ROWID')
+        with open(input_paf) as source:
+            for n, raw in enumerate(source):
+                fields = raw.rstrip('\n').split('\t')
+                if len(fields) < 12:
+                    raise ValueError('malformed input PAF at row %d' % n)
+                key = (fields[0], fields[5], fields[4], int(fields[8] if fields[4] == '+' else fields[7]))
+                try:
+                    db.execute('INSERT INTO anchors VALUES (?,?,?,?)', key)
+                except sqlite3.IntegrityError:
+                    raise ValueError('duplicate input PAM anchor at row %d' % n) from None
+        db.commit()
+    finally:
+        db.close()
+    database.unlink()
 
 
 def split_input(input_paf, chunks_dir, chunk_rows, resume=False):
@@ -84,14 +112,24 @@ def chunk_out_dir(root, index):
 
 def config_identity(a):
     # Everything that can change chunk scores; reuse requires an exact match.
-    identity = dict(inner_script_sha256=digest(a.inner_script), scoring=a.scoring,
+    identity = dict(wrapper_sha256=digest(__file__),
+        reference_content_sha256=digest(a.reference) if a.reference and a.reference.is_file() else None,
+        inner_script_sha256=digest(a.inner_script), scoring=a.scoring,
         reference=str(a.reference), guides=str(a.guides) if a.guides else None,
         guide=a.guide, model_root=str(a.model_root), model_python=str(a.model_python),
         reference_index=str(a.reference_index), reference_index_sha256=a.reference_index_sha256,
         expected_reference_sha256=a.expected_reference_sha256,
         batch_size=a.batch_size, worker_timeout=a.worker_timeout,
         preserve_cfd=bool(a.preserve_cfd), annotations=bool(a.annotations),
-        chunk_rows=a.chunk_rows)
+        chunk_rows=a.chunk_rows,
+        content_pins={str(path): digest(path) for path in
+                      [a.guides, a.model_python, a.reference_index]
+                      if path is not None and path.is_file()},
+        scorer_dependencies={p.name: digest(p) for p in
+                             sorted(a.inner_script.parent.glob('*.py')) +
+                             sorted(a.inner_script.parent.glob('model_manifest.json'))},
+        model_pins={str(p): digest(p) for p in
+                    sorted(a.model_root.rglob('*.h5'))} if a.model_root and a.model_root.is_dir() else {})
     return hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
 
 
@@ -117,7 +155,7 @@ def score_chunk(args, inner, chunk, out_dir):
         command += ['--reference-index', args.reference_index,
                     '--reference-index-sha256', args.reference_index_sha256]
     before = resource.getrusage(resource.RUSAGE_CHILDREN); start = time.monotonic()
-    log = out_dir.parent/('invocation-%05d.stdout' % chunk['index'])
+    log = out_dir.parent/('invocation-%05d-%s.stdout' % (chunk['index'], uuid.uuid4().hex))
     with log.open('x') as stdout:
         result = subprocess.run(command, stdout=stdout, stderr=subprocess.STDOUT, check=True)
     after = resource.getrusage(resource.RUSAGE_CHILDREN)
@@ -218,18 +256,26 @@ def main():
     p.add_argument('--batch-size', type=int, default=512)
     p.add_argument('--worker-timeout', type=float, default=300)
     p.add_argument('--chunk-rows',
-                   type=int, default=int(os.environ.get('CHUNKED_SCORING_ROWS', 5_000_000)),
+                   type=int, default=int(os.environ.get('CHUNKED_SCORING_ROWS', 50_000)),
                    help='rows per chunk; bounds the inner scorer memory '
                         '(env CHUNKED_SCORING_ROWS as CLI-invocable default)')
     p.add_argument('--inner-script', type=Path,
                    default=Path(__file__).with_name('score_paf.py'),
                    help='the UNMODIFIED validated scorer this wrapper calls per chunk')
     a = p.parse_args()
-    if not 1 <= a.chunk_rows <= 100_000_000:
-        p.error('--chunk-rows must be 1..100000000')
+    if not 1 <= a.chunk_rows <= 100_000:
+        p.error('--chunk-rows must be 1..100000 (bounded scoring)')
     if a.scoring != 'cfd' and not (a.reference and (a.guides or a.guide)
                                   and a.model_root and a.model_python):
         p.error('CB modes require reference, guide(s), model root and model Python')
+    # Held until this invocation returns, including split/merge/publication.
+    a.out_dir.parent.mkdir(parents=True, exist_ok=True)
+    with (a.out_dir.parent/(a.out_dir.name+'.lock')).open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        return run(a, p)
+
+
+def run(a, p):
     started = time.monotonic()
     config_id = config_identity(a)
     resume = False
@@ -253,6 +299,8 @@ def main():
         'validated single-pass scorer; merged output verified row-for-row against input')
     chunks_dir = a.out_dir/'chunks'
     chunks_dir.mkdir(exist_ok=resume)
+    if a.scoring != 'cfd':
+        verify_unique_anchors(a.input, chunks_dir)
     chunks = split_input(a.input, chunks_dir, a.chunk_rows, resume=resume)
     metadata['rows'] = sum(c['rows'] for c in chunks)
     for chunk in chunks:
@@ -262,9 +310,14 @@ def main():
             try:
                 prior = json.loads((out/'metadata.json').read_text())
                 bound = json.loads((out/'chunk-config.json').read_text())
-                if (bound.get('config_id') == config_id
+                if ((out/'status').read_text().startswith('COMPLETE')
+                        and bound.get('config_id') == config_id
+                        and bound.get('input_sha256') == chunk['sha256']
                         and prior.get('rows') == chunk['rows']
-                        and digest(out/'output.paf') == prior['output_sha256']):
+                        and digest(out/'output.paf') == prior['output_sha256']
+                        and (not a.annotations or (
+                            digest(out/'annotations.tsv') == bound.get('annotations_sha256')
+                            and count_lines(out/'annotations.tsv')-1 == chunk['rows']))):
                     record = dict(reused=True, elapsed_seconds=None, child_peak_rss_kib=None,
                                   output_sha256=prior['output_sha256'],
                                   annotation_rows=count_lines(out/'annotations.tsv')-1 if a.annotations else None)
@@ -272,14 +325,14 @@ def main():
                 record = None  # unverifiable partial attempt: rescore chunk
         if record is None:
             if out.exists():
-                shutil.rmtree(out)  # only this chunk's uncommitted scratch
-        if record is None:
-            if out.exists():
-                shutil.rmtree(out)  # only this chunk's uncommitted scratch
+                # Preserve partial/corrupt attempts for diagnosis, never overwrite.
+                out.rename(out.with_name(out.name+'.failed-'+uuid.uuid4().hex))
             record = score_chunk(a, a.inner_script, chunk, out)
             record['reused'] = False
             # Pin the exact configuration that produced this chunk's scores.
-            (out/'chunk-config.json').write_text(json.dumps(dict(config_id=config_id)))
+            (out/'chunk-config.json').write_text(json.dumps(dict(
+                config_id=config_id, input_sha256=chunk['sha256'],
+                annotations_sha256=digest(out/'annotations.tsv') if a.annotations else None)))
         record.update(index=chunk['index'], rows=chunk['rows'],
                       input_sha256=chunk['sha256'])
         metadata['chunks'].append(record)
@@ -296,6 +349,8 @@ def main():
             raise ValueError('merged annotation row mismatch')
     metadata['elapsed_seconds'] = round(time.monotonic()-started, 1)
     (a.out_dir/'metadata.json.incomplete').write_text(json.dumps(metadata, indent=2, sort_keys=True)+'\n')
+    if digest(a.input) != metadata['input_sha256'] or config_identity(a) != config_id:
+        raise ValueError('input/configuration changed during scoring')
     publish(a.out_dir, metadata, a.annotations)
     status_path.write_text('COMPLETE chunked; verified merge identical to input rows\n')
     # Transient chunk working data: derived deterministically from the input.
