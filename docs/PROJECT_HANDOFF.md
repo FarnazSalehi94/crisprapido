@@ -32,8 +32,14 @@ job + afterok finalizer. Do not confuse wrapper COMPLETE or CANDIDATE with it.
 No SBDS, new search, full library or full cohort launch. 2876332 remains an
 RSS-guard failure, not confirmed kernel OOM. Original archived resume report
 and signed evidence are unchanged; see its CONTINUATION.md for this stage.
-Once final SUCCESS exists, reconcile final accounting on login and commit/push
-actual result documentation; do not predeclare completion for a long run.
+**Publication 2880114** depends on afterok:2880113 and will commit/push actual
+results and its own handoff section only after scientific SUCCESS. Hash-pinned
+publisher uses a private index and branch/HEAD/staged-state/remote guards,
+never commits the pre-existing 803-line delta, and never force pushes. Six Git
+integration tests PASS (44 relevant tests total). Failure is visible and needs
+manual follow-up; scientific completion and Git publication are separate.
+Source/submission documentation already pushed; no actual full-10k result is
+predeclared. Final detailed accounting remains queryable on login.
 
 ## 2026-11-23 Brunello reconciliation / bounded scoring pilot COMPLETE
 

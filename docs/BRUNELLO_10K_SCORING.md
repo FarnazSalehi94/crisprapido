@@ -132,7 +132,19 @@ job ID. Do not edit frozen plan/tooling, reuse partial predictions, delete old
 attempts, or run search/SBDS/cohort. A completed wrapper after a controller
 failure is independently revalidated rather than rescored.
 
-Once SUCCESS exists, reconcile final Slurm accounting on login and publish a
-follow-up source/documentation commit of actual results. Until then, source
-repair/submission documentation can be committed and pushed, but no full-10k
-completion/result commit is claimed.
+**Publication job 2880114** requires afterok:2880113. Its hash-pinned publisher
+checks scientific SUCCESS, expected local branch/HEAD, empty staged index and
+expected origin before writing. It commits only generated actual results and
+its own handoff section via a private index, leaving the pre-existing 803-line
+handoff delta and unrelated working changes uncommitted. Push is fast-forward
+only, with noninteractive SSH and normal strict host-key checking. Six Git
+integration tests PASS (44 total relevant tests), including changed HEAD/branch,
+remote or staged files and preservation of unrelated changes.
+
+On success `PUBLICATION.json` records the pushed result commit; the new report
+and handoff copies update to actual results. If Git/authentication/concurrency
+checks fail, the publication log and FAILED marker require manual follow-up;
+scientific SUCCESS is separate and must not be confused with successful Git
+publication. The source repair/submission commit is already pushed, but no
+full-10k completion/result commit is claimed while scoring runs. Reconcile
+final detailed sacct accounting on login when available.
