@@ -1,5 +1,9 @@
 # CRISPRapido project handoff
 
+## 2026-11-24 Brunello 10k scoring completion — verified after long run
+
+Scoring **2880112**, afterok finalizer **2880113**: new-stage SUCCESS / full-stream validation PASS, 57,578,781 rows. Actual results: [BRUNELLO_10K_SCORING_RESULTS.md](BRUNELLO_10K_SCORING_RESULTS.md). Evidence `/moosefs/salehi/HPRCv2_CRISPRapido/brunello_10k_scoring_20261123_v1`. All prior failures/checkpoints preserved; no SBDS/search/cohort run.
+
 ## 2026-11-23 Brunello 10k scoring-only completion submitted (NOT complete)
 
 Writable checkout (original read-only checkout untouched):
